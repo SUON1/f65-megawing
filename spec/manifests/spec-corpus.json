@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "manifest_date": "2026-08-17",
+  "project": "F-65 Megawing",
+  "authority_note": "This manifest records declared document states. Inclusion does not approve a draft, proposal, TBD, TARGET, R0-GATED value, recommendation, or planning assumption.",
+  "documents": [
+    {
+      "filename": "F-65 Megawing Revision 1.4.1.md",
+      "relative_path": "spec/architecture/F-65 Megawing Revision 1.4.1.md",
+      "title": "F-65 Megawing Revision 1.4.1 — Architecture Invariants and Documentation Update",
+      "version": "1.4.1",
+      "declared_status": "Frozen architecture baseline",
+      "sha256": "c54f77c817b8263f8d03de3ed442c115ff06b0b622c1f14be122df8963079922",
+      "authority_role": "Architecture authority",
+      "authority_state": "authoritative_with_unresolved_predecessor_corpus",
+      "currently_authoritative": true,
+      "present": true,
+      "parent_document": null,
+      "supersedes": "Revision 1.4",
+      "notes": "Revision 1.4 is referenced as superseded and completely retained, but was not supplied."
+    },
+    {
+      "filename": "F65_Gameplay_and_Simulation_Requirements_Supplement_Draft_0.2.md",
+      "relative_path": "spec/gameplay/F65_Gameplay_and_Simulation_Requirements_Supplement_Draft_0.2.md",
+      "title": "F-65 Megawing — Gameplay and Simulation Requirements Supplement",
+      "version": "Draft 0.2",
+      "declared_status": "Freeze candidate",
+      "sha256": "5db0344f8e7fd66143874310c3794a64391d4767229a90f5caee5e5e287d84e4",
+      "authority_role": "Candidate player-facing requirements subordinate to Architecture",
+      "authority_state": "freeze_candidate",
+      "currently_authoritative": false,
+      "present": true,
+      "parent_document": "F-65 Megawing Revision 1.4.1",
+      "supersedes": "Gameplay and Simulation Supplement Draft 0.1",
+      "notes": "The document states that it becomes binding only once approved; no such approval is recorded by this bootstrap."
+    },
+    {
+      "filename": "F65_Engine_Runtime_and_Toolchain_Design_Supplement_Draft_0.1.md",
+      "relative_path": "spec/engine/F65_Engine_Runtime_and_Toolchain_Design_Supplement_Draft_0.1.md",
+      "title": "F-65 Megawing — Engine, Runtime, and Toolchain Design Supplement",
+      "version": "Draft 0.1",
+      "declared_status": "Architecture-review candidate",
+      "sha256": "63f0d2e136507485296bd3424e83e9db796b2bf612d81f3fe5ac2744297d27aa",
+      "authority_role": "Candidate implementation contracts subordinate to Architecture and Gameplay",
+      "authority_state": "architecture_review_candidate",
+      "currently_authoritative": false,
+      "present": true,
+      "parent_document": "F-65 Megawing Revision 1.4.1 and Gameplay Supplement Draft 0.2",
+      "supersedes": null,
+      "notes": "No approval is recorded by this bootstrap."
+    },
+    {
+      "filename": "F-65_Technical_Alignment_and_Corrections_Supplement_v0.2.md",
+      "relative_path": "spec/alignment/F-65_Technical_Alignment_and_Corrections_Supplement_v0.2.md",
+      "title": "F-65 Technical Alignment and Corrections Supplement",
+      "version": "0.2",
+      "declared_status": "DRAFT — REQUIRES HUMAN REVIEW",
+      "sha256": "fd8188f3787d902466a3d07b13c46e88f9afe32d7d5839945c4bc33143e0249b",
+      "authority_role": "Draft review, correction, traceability, and orientation layer",
+      "authority_state": "draft_proposals_not_approved",
+      "currently_authoritative": false,
+      "present": true,
+      "parent_document": "Review of Architecture 1.4.1, Gameplay 0.2, and Engine 0.1",
+      "supersedes": "Technical Alignment and Corrections Supplement v0.1",
+      "notes": "Proposed corrections and decisions have no release effect until the required human approvals are recorded."
+    },
+    {
+      "filename": null,
+      "relative_path": null,
+      "title": "F-65 Megawing Revision 1.4",
+      "version": "1.4",
+      "declared_status": "Referenced predecessor corpus; not supplied",
+      "sha256": null,
+      "authority_role": "Predecessor stated by Revision 1.4.1 to be superseded and retained",
+      "authority_state": "unresolved_missing",
+      "currently_authoritative": false,
+      "present": false,
+      "parent_document": null,
+      "supersedes": null,
+      "notes": "The exact filename, bytes, contents, and hash are unknown. They are not inferred or invented."
+    }
+  ]
+}

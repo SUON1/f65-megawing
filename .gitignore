@@ -1,0 +1,43 @@
+# macOS
+.DS_Store
+._*
+
+# Editors and local workspace state
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Java and host build caches
+.gradle/
+tools/**/target/
+tools/**/out/
+*.class
+
+# Local tool downloads and emulator state
+toolchain/downloads/
+toolchain/runtime/
+.xemu/
+*.xemu-state
+@mega65-template.cfg*
+
+# Private system software and media images
+MEGA65.ROM
+private-system-files/
+MEGA65-SD.img
+
+# Transient build/distribution output
+build/*
+!build/.gitkeep
+dist/*
+!dist/.gitkeep
+
+# Local logs, captures, and unretained evidence
+*.tmp
+docs/evidence/local/
+docs/reports/local/
+tests/evidence/local/
+
+# Intentionally retained authoritative/generated artifacts must be added under
+# their contracted paths rather than hidden by a broad extension rule.
