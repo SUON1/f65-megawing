@@ -12,7 +12,7 @@ This file is the primary status and configuration index for the project. It does
 | Host tooling and reference models | Java |
 | Repository | `f65-megawing` |
 | Branch | `main` |
-| GitHub remote | Not configured; GitHub CLI is not currently installed/authenticated on the bootstrap host |
+| GitHub remote | `https://github.com/SUON1/f65-megawing.git` (private) |
 
 ## 2. Specification authority
 
@@ -91,3 +91,4 @@ These later-phase gaps do not prohibit independent, bounded R0-A work unless an 
 | Date | Bootstrap/project version | Major action | Commit | Human approval status |
 |---|---|---|---|---|
 | 2026-08-17 | Repository bootstrap 0.1 | Created the local project home, preserved the four supplied documents, recorded hashes/status, and established empty ownership structure | Initial bootstrap commit containing this record; resolve with Git history after commit creation | User authorized repository bootstrap only; no draft, correction, TBD, or architecture decision was approved by this action |
+| 2026-08-17 | Repository bootstrap 0.1 | Configured the private GitHub remote and published `main` | Initial bootstrap commit `7c9beb26a33e7a47c75893b595bc2e56c131aa8f`; this append-only publication entry is in the following project-control commit | User created the private repository and authorized publication; specification approval state is unchanged |
