@@ -53,6 +53,7 @@ Any controlling document/status, compiler/SDK/runtime, linker/assembler, generat
 
 ## Current blockers
 
-- No LLVM-MOS or Java runtime is currently available on PATH.
+- The required `$0200` 45GS02 base-page/startup path is not verified for the selected LLVM-MOS release. The default driver emits compiler imaginary-register accesses at `$0002–$008f`.
+- No verified D81 construction and auto-boot path exists, so the D81, Xemu, evidence, and hardware stages cannot start.
 - `DEC-002` and `DEC-003` are open; they do not block construction but prevent formal scope/platform closure.
 - Physical MEGA65 evidence requires the project owner after the reproducible D81 exists.
