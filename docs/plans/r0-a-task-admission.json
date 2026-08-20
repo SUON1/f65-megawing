@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "task_id": "F65-R0-A",
+  "milestone": "Phase 0 / R0-A",
+  "classification": "non-gameplay proof/candidate",
+  "requirements": ["ENGINE-001", "ENGINE-002:R0-A", "ENGINE-006", "MEM-001", "MEM-002", "TOOL-001", "TOOL-003", "TOOL-004", "TEST-003", "TEST-005", "RF-FND-001", "RF-FND-002", "RF-FND-003", "RF-FND-005", "RF-FND-007", "RF-FND-009", "MR-001", "MR-002", "MR-003", "MR-004", "ABI-01", "TOOL-01"],
+  "decisions": ["AD-001", "CORR-REF-001", "CORR-TIME-001", "CORR-IFACE-001", "CORR-PLAT-001:C-adapted", "CORR-MEM-001", "CORR-TOOL-001:C-adapted", "CORR-TEST-001"],
+  "open_human_decisions": ["DEC-002", "DEC-003"],
+  "interfaces": {"version": "r0a-0.1.0-candidate", "scope": ["FarPtr32", "ResourceHandle16", "ResourceDirectoryEntry16", "PlatformABI", "R0AResultBlock", "schema envelopes only"]},
+  "mutable_state_owners": {"map_and_base_page": "MemoryAccessABI/CoreRuntime", "dma_and_irq": "PlatformABI/CoreRuntime", "proof_buffers": "R0-A proof harness", "control_records": "Configuration Control"},
+  "memory": {"canonical_cpu_visible": ["$0100-$01FF stack", "$0200-$02FF base page", "$8000-$BFFF temporary MAP scope"], "physical_proof_candidate": "$050000-$057FFF subject to generated ledger and review", "reserve": "$058000-$05FFFF untouched"},
+  "register_and_interrupt_contract": {"registers": ["A", "X", "Y", "Z", "Q", "P flags"], "entry_exit": ["MAP offsets cleared/EOM complete", "$01=$35", "MEGA65 I/O personality", "base page $0200", "resident vectors"], "irq": "temporary scopes save P, mask IRQ only while bounded, restore P and canonical map; no NMI source enabled"},
+  "toolchain": {"primary_target": "LLVM-MOS C", "low_level": "narrow 45GS02 wrappers only", "identity": "UNVERIFIED"},
+  "evidence": {"host": true, "xemu": true, "hardware": "required; awaiting human execution"},
+  "package_ids": ["F65-R0A-PROOF-D81", "F65-R0A-EVIDENCE-SET", "F65-R0A-PLATFORM-ABI-CANDIDATE", "F65-R0A-MEMORY-LEDGER"],
+  "prohibited": ["gameplay", "flight", "controls", "environment", "sensors", "weapons", "ai", "graphics", "input", "audio", "missions", "resources", "production scheduler", "public production ABI changes", "reserve use"],
+  "revalidation_triggers": ["authority identity/status", "toolchain/SDK/runtime", "linker/assembler", "registry/wrapper/source", "D81", "Xemu/core/ROM/system configuration"],
+  "exit_condition": "R0-A IMPLEMENTATION COMPLETE only after all required evidence, clean committed/pushed branch, and human hardware test remains explicitly pending; R0-A GATE PASSED requires separate human acceptance."
+}

@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "task_id": "F65-R0-A",
+  "authorized_prefixes": ["AGENTS.md", "F65_OFFICIAL_RECORD.md", "README.md", "spec/manifests/", "spec/alignment/", "spec/architecture/", "spec/engine/", "docs/decisions/", "docs/approvals/", "docs/plans/", "docs/agents/", "docs/testing/", "docs/evidence/r0a/", "docs/reports/", "interfaces/", "memory/", "toolchain/", "tools/build/", "tools/generators/", "tools/schemas/", "tools/diagnostics/", "tests/host/", "tests/target/", "tests/fixtures/r0a/", "tests/evidence/r0a/", "src/r0a/", "src/platform/", "src/core/r0a/", "src/diagnostics/r0a/", "Makefile", ".gitignore", ".gitattributes"],
+  "prohibited_prefixes": ["src/flight/", "src/controls/", "src/environment/", "src/sensors/", "src/weapons/", "src/ai/", "src/contact/", "src/graphics/", "src/input/", "src/audio/", "src/mission/", "src/resources/"],
+  "forbidden_change_classes": ["production memory ownership", "pool capacities", "measured-limits reserve", "100 Hz tick order", "public production ABI", "production gameplay behavior"],
+  "allowed_state_owners": {"map_base_page": "MemoryAccessABI", "dma_irq": "PlatformABI", "proof_result": "R0A harness"}
+}
