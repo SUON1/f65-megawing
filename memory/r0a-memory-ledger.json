@@ -1,0 +1,9 @@
+{
+  "schema_version": 1, "ledger_status": "candidate proof ledger", "physical_regions": [
+    {"range": "$000000-$00ffff", "owner": "resident executable/base page/stack/vectors", "r0a_allocation": 0},
+    {"range": "$050000-$057fff", "owner": "resource staging and DMA lists", "r0a_allocation": 1024, "allocation": "R0A_RESULT_BLOCK at $057000-$0573ff"},
+    {"range": "$058000-$05ffff", "owner": "measured-limits reserve", "r0a_allocation": 0, "must_remain_untouched": true}
+  ],
+  "code_budget": {"callable_bank0_max": 53248, "core_platform_irq_map_dma_max": 10240, "diagnostics_max": 2048, "unassigned_reserve": 6144},
+  "stack": {"bound": "UNVERIFIED", "canary": "required by target proof", "high_water": "UNVERIFIED"}
+}

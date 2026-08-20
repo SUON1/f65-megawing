@@ -1,0 +1,10 @@
+{
+  "schema_version": "r0a-0.1.0-candidate",
+  "scope": "proof-only; not a production gameplay ABI",
+  "records": [
+    {"name": "FarPtr32", "size": 4, "owner": "MemoryAccessABI", "byte_order": "little", "rule": "bits 0-27 normalized physical address; zero is null; bits 28-31 must be zero"},
+    {"name": "ResourceHandle16", "size": 2, "owner": "MemoryAccessABI", "byte_order": "little", "rule": "0x0000-0xfffe directory index; 0xffff invalid"},
+    {"name": "ResourceDirectoryEntry16", "size": 16, "owner": "MemoryAccessABI", "byte_order": "little", "rule": "source FarPtr32, encoded/decoded uint24 sizes, type, residency, alignment, version, integrity"},
+    {"name": "R0AResultBlock", "size": 408, "owner": "Diagnostics/R0-A", "byte_order": "little", "rule": "24-byte header plus 24 fixed 16-byte test entries; proof-only"}
+  ]
+}

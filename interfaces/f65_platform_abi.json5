@@ -1,0 +1,7 @@
+{
+  "schema_version": "r0a-0.1.0-candidate", "status": "candidate; compiler-specific mechanics are measured, not presumed",
+  "canonical_entry_exit": {"map": "offsets cleared and EOM complete", "cpu_port_01": "0x35", "io_personality": "MEGA65", "base_page": "0x0200", "stack": "0x0100-0x01ff", "vectors": "resident bank-0"},
+  "public_registers": ["A", "X", "Y", "Z", "Q", "P"],
+  "temporary_map_scope": {"window": "0x8000-0xbfff", "nesting": "forbidden", "irq": "save P; mask only in bounded scope; restore P", "forbidden": ["public calls", "callbacks", "DMA waits", "scheduler yields"]},
+  "wrappers": [{"name": "r0a_abi_echo_u8", "direction": "C-to-low-level", "status": "implemented probe", "clobbers": "compiler ABI measurement required"}, {"name": "r0a_map_scope", "status": "UNVERIFIED hardware wrapper"}, {"name": "r0a_dma", "status": "UNVERIFIED hardware wrapper"}, {"name": "r0a_irq", "status": "UNVERIFIED hardware wrapper"}]
+}
