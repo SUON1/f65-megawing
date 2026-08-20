@@ -33,6 +33,8 @@ This is an evidence log and forward plan, not a record of private reasoning.
 - Pin an inspected local LLVM-MOS SDK archive and extracted binary identity in `toolchain/f65_toolchain.lock.json`.
 - Verify the MEGA65 frontend, CPU-selection mechanism, object format, compiler driver expansion, map/symbol/disassembly tools, and C/assembly interoperability. Unknown fields remain `UNVERIFIED`.
 
+Finding on 2026-08-20: LLVM-MOS v23.1.0 verifies the MEGA65 frontend and `-mcpu=mos45gs02` object flags/macros. Its default MEGA65 startup/link flow assigns compiler imaginary registers to `$0002–$008f`; retained disassembly confirms C uses that range. The governing ABI requires base page `$0200–$02FF`. The selected release's compatible 45GS02 base-page/startup mechanism has not been verified, so target conformance, D81, Xemu, and hardware stages are blocked rather than inferred.
+
 ### 3. Generated contracts and diagnostics — pending
 
 - Implement canonical registry sources and generators for the R0-A subset, memory ledger, evidence schema, capacity skeleton, scope validation, status board, and golden vectors.

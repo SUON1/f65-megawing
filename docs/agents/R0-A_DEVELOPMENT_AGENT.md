@@ -41,4 +41,4 @@ Stop the affected implementation and report the exact authority section if a pub
 
 ## Current state
 
-Configuration control is synchronized and committed as `5a97d63`. Governance artifacts are being established. LLVM-MOS/45GS02 ABI, target toolchain, target build, Xemu execution, and physical hardware proof remain unverified.
+Configuration control and governance are committed. LLVM-MOS v23.1.0, Temurin 21.0.12+8, KickAssembler 5.25, and the candidate Xemu identity are pinned from inspected artifacts. The compiler's default MEGA65 startup uses `$0002–$008f` for imaginary registers; the required `$0200` base-page setup path is unverified and blocks conforming target/Xemu/hardware proof. See `docs/evidence/r0a/R0A-TOOLCHAIN-BASE-PAGE-FINDING.md`.
