@@ -54,6 +54,6 @@ Any controlling document/status, compiler/SDK/runtime, linker/assembler, generat
 ## Current blockers
 
 - VICE 3.10 `c1541` now reproducibly formats and verifies an 80-track D81 containing a BASIC-65 `AUTOBOOT.C65` and the proof PRG. The D81 still requires an Xemu boot/run result.
-- A candidate `xmega65` binary is present and version-pinned, but the protected owner ROM, system-file configuration, headless invocation, result capture, and runtime behavior remain unverified. The B-register sentinel proof therefore still requires Xemu and physical-MEGA65 execution; static/container evidence is not a runtime PASS.
+- The version-pinned `xmega65` binary accepts the owner-supplied ROM, boots in virtual-SD mode, and has a D81/autoload/capture runner. Initial Xemu onboarding still precedes the D81 autoload unless a persistent owner SD image is supplied. The B-register sentinel proof still requires Xemu and physical-MEGA65 execution; static/container evidence is not a runtime PASS.
 - `DEC-002` and `DEC-003` are open; they do not block construction but prevent formal scope/platform closure.
 - Physical MEGA65 evidence requires the project owner after the reproducible D81 exists.

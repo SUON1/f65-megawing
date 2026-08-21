@@ -10,6 +10,7 @@ nm="$root/toolchain/runtime/llvm-mos/bin/llvm-nm"
 vice="$root/toolchain/vice/VICE.app/Contents/Resources/bin"
 c1541="$vice/c1541"
 petcat="$vice/petcat"
+xemu="$root/toolchain/xemu/xmega65"
 out="$root/build/r0a"
 classes="$out/host-classes"
 
@@ -31,15 +32,39 @@ build() {
   python3 "$root/tools/diagnostics/r0a_validate_package.py" "$root"
   shasum -a 256 "$out/artifacts/F65-R0A-PROOF.prg" > "$out/artifacts/F65-R0A-PROOF.prg.sha256"
   shasum -a 256 "$out/artifacts/F65-R0A-PROOF.d81" > "$out/artifacts/F65-R0A-PROOF.d81.sha256"
-  printf '%s\n' 'Xemu/hardware execution is BLOCKED: a verified xmega65 binary, owner-provided ROM, and system-file configuration are not available locally.' > "$out/reports/R0A_BUILD_BLOCKER.txt"
-  return 2
+}
+xemu() {
+  test -x "$xemu" || { echo 'R0-A Xemu blocked: no verified xmega65 binary is installed.' >&2; exit 2; }
+  test -n "${F65_MEGA65_ROM:-}" || { echo 'R0-A Xemu blocked: set F65_MEGA65_ROM to the owner ROM; do not copy it into this repository.' >&2; exit 2; }
+  test -f "$F65_MEGA65_ROM" || { echo "R0-A Xemu blocked: ROM not found: $F65_MEGA65_ROM" >&2; exit 2; }
+  test -f "$out/artifacts/F65-R0A-PROOF.d81" || { echo 'R0-A Xemu blocked: exact proof D81 has not been produced.' >&2; exit 2; }
+  mkdir -p "$out/reports"
+  rom_sha=$(shasum -a 256 "$F65_MEGA65_ROM" | awk '{print $1}')
+  test "$rom_sha" = 'af3c447f791a2fdc48cb21e1bd3fab015e32641228d9d30d21259b9e878c6fa0' || { echo "R0-A Xemu blocked: unexpected ROM SHA-256: $rom_sha" >&2; exit 2; }
+  if test -n "${F65_MEGA65_SD_IMAGE:-}"; then
+    test -f "$F65_MEGA65_SD_IMAGE" || { echo "R0-A Xemu blocked: SD image not found: $F65_MEGA65_SD_IMAGE" >&2; exit 2; }
+    set -- -sdimg "$F65_MEGA65_SD_IMAGE"
+    sd_identity=$(shasum -a 256 "$F65_MEGA65_SD_IMAGE" | awk '{print $1}')
+  else
+    mkdir -p "$out/xemu-virtsd"
+    set -- -sdimg "$out/xemu-virtsd" -virtsd
+    sd_identity='virtual-SD (initial onboarding may require GUI mode)'
+  fi
+  if test "${F65_XEMU_GUI:-0}" = 1; then
+    ui_mode='GUI'
+  else
+    set -- -headless "$@"
+    ui_mode='headless'
+  fi
+  printf '%s\n' "xmega65=$xemu" "rom_sha256=$rom_sha" "sd_identity=$sd_identity" "d81_sha256=$(shasum -a 256 "$out/artifacts/F65-R0A-PROOF.d81" | awk '{print $1}')" "ui_mode=$ui_mode" 'arguments=-sleepless -fastboot -rom <owner ROM> -8 F65-R0A-PROOF.d81 -autoload' > "$out/reports/R0A-XEMU-INVOCATION.txt"
+  exec "$xemu" "$@" -sleepless -fastboot -rom "$F65_MEGA65_ROM" -8 "$out/artifacts/F65-R0A-PROOF.d81" -autoload -dumpscreen "$out/reports/R0A-XEMU.screen.txt" -dumpmem "$out/reports/R0A-XEMU.memory.bin"
 }
 case ${1:-} in
   bootstrap) need_tools; "$cc" --version; "$java" -version 2>&1 ;;
   generate) generate ;;
   host-test) host_test ;;
   build) build ;;
-  xemu) test -x "$root/toolchain/xemu/xmega65" || { echo 'R0-A Xemu blocked: no verified xmega65 binary is installed.' >&2; exit 2; }; test -n "${F65_MEGA65_ROM:-}" || { echo 'R0-A Xemu blocked: set F65_MEGA65_ROM to the owner ROM; do not copy it into this repository.' >&2; exit 2; }; test -f "$out/artifacts/F65-R0A-PROOF.d81" || { echo 'R0-A Xemu blocked: exact proof D81 has not been produced.' >&2; exit 2; }; echo 'R0-A Xemu blocked: the candidate binary/ROM invocation and captured result protocol require an approved runtime configuration.' >&2; exit 2 ;;
+  xemu) xemu ;;
   evidence) host_test ;;
   verify) host_test; build ;;
   clean) test -d "$out" && rm -rf "$out" || true ;;

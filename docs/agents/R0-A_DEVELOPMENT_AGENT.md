@@ -41,4 +41,4 @@ Stop the affected implementation and report the exact authority section if a pub
 
 ## Current state
 
-Configuration control and governance are committed. LLVM-MOS v23.1.0, Temurin 21.0.12+8, KickAssembler 5.25, and the candidate Xemu identity are pinned from inspected artifacts. The compiler's default MEGA65 startup uses `$0002–$008f` for imaginary registers; the required `$0200` base-page setup path is unverified and blocks conforming target/Xemu/hardware proof. See `docs/evidence/r0a/R0A-TOOLCHAIN-BASE-PAGE-FINDING.md`.
+Configuration control and governance are committed. LLVM-MOS v23.1.0, Temurin 21.0.12+8, KickAssembler 5.25, and the candidate Xemu identity are pinned from inspected artifacts. The compiler's logical `$0002–$0021` ABI registers are proved statically with 45GS02 `B=$02`, yielding the required physical `$0202–$0221` base page while general LTO direct-page allocation remains disabled. Xemu and physical runtime evidence remain pending. See `docs/evidence/r0a/R0A-TOOLCHAIN-BASE-PAGE-FINDING.md`.
