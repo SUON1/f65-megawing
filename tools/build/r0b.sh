@@ -77,6 +77,21 @@ build_d031_safe() {
   shasum -a 256 "$out/artifacts/F65-R0B-D031-SAFE.prg" > "$out/artifacts/F65-R0B-D031-SAFE.prg.sha256"
   shasum -a 256 "$out/artifacts/F65-R0B-D031-SAFE.d81" > "$out/artifacts/F65-R0B-D031-SAFE.d81.sha256"
 }
+build_final() {
+  host_test
+  mkdir -p "$out/reports" "$out/artifacts" "$out/evidence"
+  "$cc" -mcpu=mos45gs02 -mlto-zp=0 -Os -Wall -Wextra -Wconversion -Werror -I"$root/interfaces/generated" "$root/src/r0b/final_main.c" "$root/src/diagnostics/r0b/final_composite.c" "$root/src/platform/r0b/final_45gs02.s" "$root/src/platform/r0b/timing.c" "$root/src/input/r0b/input_ascii_event.c" "$root/src/audio/r0b/audio_fixture.c" "$root/src/platform/r0a_platform_45gs02.s" -Wl,-Map,"$out/reports/F65-R0B-FINAL.map" -o "$out/artifacts/F65-R0B-FINAL.prg"
+  "$nm" "$out/artifacts/F65-R0B-FINAL.prg.elf" > "$out/reports/F65-R0B-FINAL.symbols"
+  "$objdump" -d --print-imm-hex "$out/artifacts/F65-R0B-FINAL.prg.elf" > "$out/reports/F65-R0B-FINAL.disassembly"
+  python3 "$root/tools/diagnostics/r0b_validate_final_target.py" "$root"
+  "$petcat" -w65 -o "$out/artifacts/AUTOBOOT-FINAL.C65" -- "$root/src/r0b/autoboot_final.bas"
+  "$petcat" -65 "$out/artifacts/AUTOBOOT-FINAL.C65" > "$out/reports/AUTOBOOT-FINAL.C65.listing"
+  "$c1541" -format 'F65 R0-B FINAL,65' d81 "$out/artifacts/F65-R0B-FINAL.d81" -write "$out/artifacts/AUTOBOOT-FINAL.C65" autoboot.c65 -write "$out/artifacts/F65-R0B-FINAL.prg" f65-r0b-final -list > "$out/reports/F65-R0B-FINAL.d81-create.txt" 2>&1
+  "$c1541" "$out/artifacts/F65-R0B-FINAL.d81" -list > "$out/reports/F65-R0B-FINAL.d81-list.txt" 2>&1
+  python3 "$root/tools/diagnostics/r0b_validate_final_package.py" "$root"
+  shasum -a 256 "$out/artifacts/F65-R0B-FINAL.prg" > "$out/artifacts/F65-R0B-FINAL.prg.sha256"
+  shasum -a 256 "$out/artifacts/F65-R0B-FINAL.d81" > "$out/artifacts/F65-R0B-FINAL.d81.sha256"
+}
 xemu_run() {
   test -x "$xemu" || { echo 'R0-B Xemu blocked: no verified xmega65 binary.' >&2; exit 2; }
   test -n "${F65_MEGA65_ROM:-}" && test -f "$F65_MEGA65_ROM" || { echo 'R0-B Xemu blocked: set F65_MEGA65_ROM to the owner ROM outside the repository.' >&2; exit 2; }
@@ -117,6 +132,16 @@ xemu_d031_safe_run() {
   pid=$!; sleep "${F65_XEMU_RUN_SECONDS:-25}"; kill -TERM "$pid" 2>/dev/null || true; wait "$pid" || true
   python3 "$root/tools/diagnostics/r0b_validate_d031_safe_xemu.py" "$root"
 }
+xemu_final_run() {
+  test -x "$xemu" || { echo 'R0-B final Xemu blocked: no verified xmega65 binary.' >&2; exit 2; }
+  test -n "${F65_MEGA65_ROM:-}" && test -f "$F65_MEGA65_ROM" || { echo 'R0-B final Xemu blocked: set F65_MEGA65_ROM to the owner ROM outside the repository.' >&2; exit 2; }
+  test -f "$out/artifacts/F65-R0B-FINAL.d81" || build_final
+  rom_sha=$(shasum -a 256 "$F65_MEGA65_ROM" | awk '{print $1}')
+  test "$rom_sha" = 'af3c447f791a2fdc48cb21e1bd3fab015e32641228d9d30d21259b9e878c6fa0' || { echo "R0-B final Xemu blocked: unexpected ROM SHA-256: $rom_sha" >&2; exit 2; }
+  "$xemu" -headless -sleepless -fastboot -rom "$F65_MEGA65_ROM" -8 "$out/artifacts/F65-R0B-FINAL.d81" -autoload -dumpscreen "$out/reports/R0B-FINAL-XEMU.screen.txt" -dumpmem "$out/reports/R0B-FINAL-XEMU.memory.bin" -screenshot "$out/reports/R0B-FINAL-XEMU.png" &
+  pid=$!; sleep "${F65_XEMU_RUN_SECONDS:-30}"; kill -TERM "$pid" 2>/dev/null || true; wait "$pid" || true
+  python3 "$root/tools/diagnostics/r0b_validate_final_xemu.py" "$root"
+}
 case ${1:-} in
  bootstrap) need_tools; "$cc" --version; "$java" -version 2>&1 ;;
  generate) generate ;;
@@ -129,8 +154,10 @@ case ${1:-} in
  fcm-safe-xemu) xemu_fcm_safe_run ;;
  d031-safe-build) build_d031_safe ;;
  d031-safe-xemu) xemu_d031_safe_run ;;
+ final-build) build_final ;;
+ final-xemu) xemu_final_run ;;
  evidence) host_test ;;
  verify) host_test; build ;;
  clean) test -d "$out" && rm -rf "$out" || true ;;
- *) echo "usage: $0 {bootstrap|generate|host-test|build|xemu|fcm-safe-build|fcm-safe-xemu|fcm-visible-build|fcm-visible-xemu|d031-safe-build|d031-safe-xemu|evidence|verify|clean}" >&2; exit 64 ;;
+ *) echo "usage: $0 {bootstrap|generate|host-test|build|xemu|fcm-safe-build|fcm-safe-xemu|fcm-visible-build|fcm-visible-xemu|d031-safe-build|d031-safe-xemu|final-build|final-xemu|evidence|verify|clean}" >&2; exit 64 ;;
 esac

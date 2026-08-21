@@ -21,3 +21,26 @@ acceptance matrix and does not authorize production implementation.
 `DEFERRED` is intentional only where the exact clearing condition is stated
 above. It is not a pass and must not be used as a substitute for hardware
 evidence.
+
+## Final composite candidate — `F65-R0B-FINAL.d81`
+
+The final composite candidate supersedes the separate Stage 2 disks as the
+single hardware-run artifact. It is still an R0-B bounded proof harness, not
+a production graphics, input, audio, or gameplay implementation.
+
+| Required R0-B evidence | Final-composite method | Xemu result | Physical clearing condition |
+|---|---|---|---|
+| 1. Safe VIC-IV FCM probe | Captures `$D018/$D031/$D054/$D060-$D063/$D070`; writes only `$D031` H640-clear and `$D054` low three FCM bits; reads them back and restores exact saved values. No `$D02F`, MAP, DMA, or IRQ access. | `R0B-FINAL-XEMU-001 PASS` | Same screen/result capture reports `FCM SAFE ... PASS` and exact rollback PASS. |
+| 2. Complete-buffer presentation | Fully compose 2,000-byte matrix B at `$1000`, preserve/hash prior matrix A at `$0800`, set only documented pointer bytes `$D060-$D063`, hold visibly, then restore. | `COMPLETE MATRIX ... PASS`; `POINTER FLIP+RESTORE: PASS` | Visible complete B matrix and matching PASS rows. This is a controlled transition, not a raster-atomicity claim. |
+| 3. Mode/palette behavior | Candidate uses 40-pair FCM context. The active palette mapping is observed through `$D070`; one active red palette byte is save/write/read/restore checked without changing the mapper. | `ACTIVE PALETTE ... PASS` | Matching PASS row and result block. |
+| 4. Cockpit/HUD/MFD composition | The complete B matrix contains readable FCM/HUD identity/status before it is selected. | `HUD/MFD ... PASS` | Matching PASS row. |
+| 5. Input edge plus latency | Reads one documented MEGA65 ASCII event from `$D610`, acknowledges it by writing that event byte, and measures the service with the raster timer. | `DEFERRED (NO KEY EVENT)` in headless Xemu; no synthetic pass claimed. | Press one key in the displayed input window; both input status bytes become `01` and the captured result has nonzero `input_ticks`. |
+| 6. Timed audio service | Performs 512 real SID register service writes and reports raster-timer delta. | `SID 512-WRITE SERVICE ... PASS` | Matching PASS row with nonzero `audio_ticks`. PCM/DMA is documented as out of this bounded R0-B service proof because no pinned start/stop wrapper has been authorized. |
+| 7. Bounded renderer | Writes an aligned 64-byte deterministic FCM proxy-scene card used by the complete matrix. | `RENDERER ... PASS` | Matching PASS row. |
+| 8. Non-baseline hardware run | `$D60F.5` distinguishes physical MEGA65 from Xemu and is written into the resident result identity. | `HARDWARE: DEFERRED` by design in Xemu | Physical status line reports `ENV: PHYSICAL MEGA65 DETECTED`; hardware status byte is `01`. |
+| 9. Pinned identity/results | Fixed 96-byte `$1800-$185F` record contains `R0B2`, schema, environment, outcome, revision, contract digest, toolchain/ABI identity, test statuses, reason codes, timings, hashes, and transaction observations. | Header: `52 30 42 32 02 01 03 05`; validator PASS | Photograph the status page and the on-screen `$1800` dump from the same run. |
+
+Current composite identity: `F65-R0B-FINAL.d81`
+`43fe855abac93b355b36fa509d83cd302920e87fe0a49e64287285f0a8e980f1`.
+Its Xemu evidence is `R0B-FINAL-XEMU-001 PASS`; it does **not** close the
+physical R0-B gate.

@@ -20,6 +20,7 @@ and has not passed owner hardware review.
 | Isolated VIC-IV `$D054` `CHR16|FCLRHI` latch and exact restore | `R0B-FCM-SAFE-XEMU-001` PASS | PASS: no `$D02F`, pointer, DMA, MAP, or IRQ path; text sentinel retained | NOT RUN | physical capture of exact `F65-R0B-FCM-SAFE.d81` required; not visible FCM |
 | Deterministic 10,000-case edge fixture | PASS | target fixture PASS | NOT RUN | no CIA/input-latency conclusion |
 | Presentation priority model / SID proxy configuration | PASS | target model PASS; dummy audio | AWAITING OWNER | no timing/PCM conclusion |
+| Final composite FCM/presentation candidate | `R0B-FINAL-STATIC-001` PASS | `R0B-FINAL-XEMU-001` PASS: reversible `$D031/$D054`, full matrix B pointer selection/restore, active-palette round trip, HUD, FCM proxy card, and timed SID writes | NOT RUN | the single remaining R0-B hardware capture |
 
 ## Present evidence and debug output
 
@@ -29,19 +30,29 @@ and has not passed owner hardware review.
 - Target build inspection: map, symbols, disassembly in `build/r0b/reports/`.
 - Xemu result block and screen dump: `build/r0b/reports/R0B-XEMU.*`.
 - Isolated FCM-safe Xemu capture: `build/r0b/reports/R0B-FCM-SAFE-XEMU.*` and `r0b-fcm-safe-xemu-evidence.json`.
+- Final composite Xemu capture: `build/r0b/reports/R0B-FINAL-XEMU.*`.
+- Final hardware artifact and instructions:
+  `build/r0b/artifacts/F65-R0B-FINAL.d81` and
+  `docs/testing/R0-B_FINAL_COMPOSITE_TEST_GUIDE.md`.
 - Scope findings: `docs/evidence/r0b/`.
 
-## Still open
+## Still open before any R0-B gate claim
 
-- Physical result of the isolated FCM restore disk, then visible FCM
-  character/pointer-table operation, clear/span/face operations,
-  complete-buffer presentation, swap/raster and tearing proof.
-- Renderer tiers, cockpit/HUD/MFD proxy, day/dusk/night and grayout captures.
-- Hardware input sample path and calibrated latency.
-- SID service cadence, audible latency/preemption, PCM/DMA, graphics-DMA
-  contention, ten-minute stability.
-- RRB/affine disposition, integrated test, code/stack/cycle distributions,
-  acceptance matrix closure, full hardware guide and owner review.
+- One physical run of the final composite D81, with one real key event during
+  the displayed input window and one readable status-plus-`$1800` capture.
+  This is required to convert the Xemu environment and real-input deferrals
+  into physical evidence.
+- Owner review of that capture against
+  `docs/testing/R0-B_FINAL_COMPOSITE_TEST_GUIDE.md`. No R0-B gate is closed
+  by this handoff.
+
+The candidate intentionally does **not** prove raster-atomic presentation,
+audible latency/preemption, PCM/DMA playback, graphics-DMA contention,
+ten-minute stability, RRB/affine behavior, or production renderer/input/audio
+selection. Those are outside this bounded R0-B proof unless separately
+authorized. The timed 512-write SID service satisfies the stated
+representative-audio-service measurement; PCM/DMA is documented as deferred,
+not silently counted as a pass.
 
 No entry selects a production display mode, renderer, controls, audio format,
 quality tier, palette, or cockpit art.
