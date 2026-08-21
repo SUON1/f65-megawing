@@ -30,6 +30,19 @@ No DMA operation is admitted by this finding yet: the target must first prove
 list byte layout, trigger format, range validation, completion observation, and
 the canonical MAP/interrupt return state in a separate smallest test.
 
+## 2026-08-20 Xemu experiment disposition
+
+An R0-B-only enhanced F018B DMA candidate wrote an immutable list at a normal
+resident address, requested contiguous writes only to the allocated FCM
+pointer-table/store-A ranges, then attempted a DMA copy-back to the fixed
+diagnostic block. Its copy-back did not match in the pinned Xemu run; the first
+strided-table form also produced an Xemu modulo-mode warning. The experiment
+was removed rather than retained as a hardware claim or used on a MEGA65.
+
+Result: `NOT_APPLICABLE_UNTIL_GATE: independently verified F018B list and
+completion proof — current Xemu result is unresolved`. The existing
+`R0B-FCM-REG-001` register-latch evidence remains valid and is not DMA evidence.
+
 ## Explicitly not yet proven
 
 - FCM character-data placement and screen-table interpretation on the target.
