@@ -45,10 +45,13 @@ xemu() {
     test -f "$F65_MEGA65_SD_IMAGE" || { echo "R0-A Xemu blocked: SD image not found: $F65_MEGA65_SD_IMAGE" >&2; exit 2; }
     set -- -sdimg "$F65_MEGA65_SD_IMAGE"
     sd_identity=$(shasum -a 256 "$F65_MEGA65_SD_IMAGE" | awk '{print $1}')
-  else
+  elif test "${F65_XEMU_VIRTUAL_SD:-0}" = 1; then
     mkdir -p "$out/xemu-virtsd"
     set -- -sdimg "$out/xemu-virtsd" -virtsd
     sd_identity='virtual-SD (initial onboarding may require GUI mode)'
+  else
+    set --
+    sd_identity='Xemu default local SD image (initialized separately; not repository content)'
   fi
   if test "${F65_XEMU_GUI:-0}" = 1; then
     ui_mode='GUI'
@@ -57,7 +60,15 @@ xemu() {
     ui_mode='headless'
   fi
   printf '%s\n' "xmega65=$xemu" "rom_sha256=$rom_sha" "sd_identity=$sd_identity" "d81_sha256=$(shasum -a 256 "$out/artifacts/F65-R0A-PROOF.d81" | awk '{print $1}')" "ui_mode=$ui_mode" 'arguments=-sleepless -fastboot -rom <owner ROM> -8 F65-R0A-PROOF.d81 -autoload' > "$out/reports/R0A-XEMU-INVOCATION.txt"
-  exec "$xemu" "$@" -sleepless -fastboot -rom "$F65_MEGA65_ROM" -8 "$out/artifacts/F65-R0A-PROOF.d81" -autoload -dumpscreen "$out/reports/R0A-XEMU.screen.txt" -dumpmem "$out/reports/R0A-XEMU.memory.bin"
+  if test "$ui_mode" = GUI; then
+    exec "$xemu" "$@" -sleepless -fastboot -rom "$F65_MEGA65_ROM" -8 "$out/artifacts/F65-R0A-PROOF.d81" -autoload -dumpscreen "$out/reports/R0A-XEMU.screen.txt" -dumpmem "$out/reports/R0A-XEMU.memory.bin"
+  fi
+  "$xemu" "$@" -sleepless -fastboot -rom "$F65_MEGA65_ROM" -8 "$out/artifacts/F65-R0A-PROOF.d81" -autoload -dumpscreen "$out/reports/R0A-XEMU.screen.txt" -dumpmem "$out/reports/R0A-XEMU.memory.bin" &
+  xemu_pid=$!
+  sleep "${F65_XEMU_RUN_SECONDS:-40}"
+  kill -TERM "$xemu_pid" 2>/dev/null || true
+  if wait "$xemu_pid"; then :; else :; fi
+  python3 "$root/tools/diagnostics/r0a_validate_xemu.py" "$root"
 }
 case ${1:-} in
   bootstrap) need_tools; "$cc" --version; "$java" -version 2>&1 ;;
