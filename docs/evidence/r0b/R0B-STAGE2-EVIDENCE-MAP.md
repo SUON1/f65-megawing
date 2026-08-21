@@ -22,7 +22,7 @@ acceptance matrix and does not authorize production implementation.
 above. It is not a pass and must not be used as a substitute for hardware
 evidence.
 
-## Final composite candidate — `F65-R0B-FINAL.d81`
+## Final composite candidate — `R0BFINAL.D81`
 
 The final composite candidate supersedes the separate Stage 2 disks as the
 single hardware-run artifact. It is still an R0-B bounded proof harness, not
@@ -40,7 +40,7 @@ a production graphics, input, audio, or gameplay implementation.
 | 8. Non-baseline hardware run | `$D60F.5` distinguishes physical MEGA65 from Xemu and is written into the resident result identity. | `HARDWARE: DEFERRED` by design in Xemu | Physical status line reports `ENV: PHYSICAL MEGA65 DETECTED`; hardware status byte is `01`. |
 | 9. Pinned identity/results | Fixed 96-byte `$1800-$185F` record contains `R0B2`, schema, environment, outcome, revision, contract digest, toolchain/ABI identity, test statuses, reason codes, timings, hashes, and transaction observations. | Header: `52 30 42 32 02 01 03 05`; validator PASS | Photograph the status page and the on-screen `$1800` dump from the same run. |
 
-Current composite identity: `F65-R0B-FINAL.d81`
-`43fe855abac93b355b36fa509d83cd302920e87fe0a49e64287285f0a8e980f1`.
+Current composite identity: `R0BFINAL.D81` (uppercase 8.3 SD-card filename).
+SHA-256: `43fe855abac93b355b36fa509d83cd302920e87fe0a49e64287285f0a8e980f1`.
 Its Xemu evidence is `R0B-FINAL-XEMU-001 PASS`; it does **not** close the
 physical R0-B gate.

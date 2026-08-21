@@ -32,7 +32,7 @@ and has not passed owner hardware review.
 - Isolated FCM-safe Xemu capture: `build/r0b/reports/R0B-FCM-SAFE-XEMU.*` and `r0b-fcm-safe-xemu-evidence.json`.
 - Final composite Xemu capture: `build/r0b/reports/R0B-FINAL-XEMU.*`.
 - Final hardware artifact and instructions:
-  `build/r0b/artifacts/F65-R0B-FINAL.d81` and
+  `build/r0b/artifacts/R0BFINAL.D81` and
   `docs/testing/R0-B_FINAL_COMPOSITE_TEST_GUIDE.md`.
 - Scope findings: `docs/evidence/r0b/`.
 

@@ -8,7 +8,7 @@ work.
 
 Copy this exact disk image to the SD-card workflow used for the MEGA65:
 
-`build/r0b/artifacts/F65-R0B-FINAL.d81`
+`build/r0b/artifacts/R0BFINAL.D81`
 
 SHA-256:
 
@@ -16,6 +16,9 @@ SHA-256:
 
 The D81 contains PETSCII-encoded `AUTOBOOT.C65`, which loads
 `F65-R0B-FINAL`. Do not rename files inside the disk image.
+
+Keep the *outer SD-card filename* exactly `R0BFINAL.D81`: it is uppercase 8.3
+so it is safe for the MEGA65 virtual-disk loader.
 
 ## Run
 
