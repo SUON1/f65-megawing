@@ -4,6 +4,13 @@
 extern uint8_t r0b_fcm_visible_begin(void);
 extern uint8_t r0b_fcm_visible_restore(void);
 extern void r0b_fcm_visible_hold(void);
+extern uint8_t r0b_fcm_visible_observed_d018;
+extern uint8_t r0b_fcm_visible_observed_d031;
+extern uint8_t r0b_fcm_visible_observed_d054;
+extern uint8_t r0b_fcm_visible_observed_d060;
+extern uint8_t r0b_fcm_visible_observed_d061;
+extern uint8_t r0b_fcm_visible_observed_d062;
+extern uint8_t r0b_fcm_visible_observed_d063;
 
 /* The admitted default C65 80-column text matrix, not a physical pointer. */
 static volatile uint8_t *const screen = (volatile uint8_t *)0x0800;
@@ -153,7 +160,7 @@ void r0b_fcm_visible_run(void) {
   clear_screen();
   text(0u, "R0-B ISOLATED FCM VISIBLE/RESTORE");
   text(1u, "NO D02F; NO MAP; NO DMA; NO IRQ; NO PALETTE");
-  text(2u, pass ? "R0B-FCM-VIS-001 LOCAL TEST: PASS" : "R0B-FCM-VIS-001 DEFERRED/FAIL");
+  text(2u, pass ? "R0B-FCM-VIS-001 LOCAL TEST: PASS" : "R0B-FCM-VIS-001 CONTEXT DEFERRED");
   text(3u, (flags & 0x01u) ? "C65 CONTEXT: PASS" : "C65 CONTEXT: FAIL");
   text(4u, (flags & 0x02u) ? "D031 40-PAIR PRECONDITION: PASS" : "D031 40-PAIR PRECONDITION: FAIL");
   text(5u, (flags & 0x04u) ? "D060 DEFAULT $0800 PRECONDITION: PASS" : "D060 DEFAULT $0800 PRECONDITION: FAIL");
@@ -162,7 +169,7 @@ void r0b_fcm_visible_run(void) {
   text(8u, restored ? "D054 EXACT RESTORE: PASS" : "D054 EXACT RESTORE: FAIL");
   text(9u, screen_ok ? "SCREEN BYTES EXACT RESTORE: PASS" : "SCREEN BYTES EXACT RESTORE: FAIL");
   text(10u, card_ok ? "FCM CARD BYTES EXACT RESTORE: PASS" : "FCM CARD BYTES EXACT RESTORE: FAIL");
-  text(11u, "OWNER: CAPTURE CARD PHASE + THIS RESULT DUMP");
+  text(11u, "OBSERVED D031/D060-D063 IN RESULT $1850+");
   text(24u, "GATE OPEN; NO POINTER-SWAP OR PALETTE CLAIM");
 
   result->status[FCM_SAFE] = pass ? PASS : DEFERRED; result->reason[FCM_SAFE] = pass ? NONE : FCM_RESTORE;
@@ -180,6 +187,13 @@ void r0b_fcm_visible_run(void) {
   result->palette_state = DEFERRED; result->hardware_state = DEFERRED;
   result->reserved[0] = flags; result->reserved[1] = card_address_ok;
   result->reserved[2] = restored; result->reserved[3] = screen_ok; result->reserved[4] = card_ok;
+  result->reserved[5] = r0b_fcm_visible_observed_d018;
+  result->reserved[6] = r0b_fcm_visible_observed_d031;
+  result->reserved[7] = r0b_fcm_visible_observed_d054;
+  result->reserved[8] = r0b_fcm_visible_observed_d060;
+  result->reserved[9] = r0b_fcm_visible_observed_d061;
+  result->reserved[10] = r0b_fcm_visible_observed_d062;
+  result->reserved[11] = r0b_fcm_visible_observed_d063;
   result->header.status = pass ? PASS : DEFERRED;
   finish_result();
   dump_result_block();
