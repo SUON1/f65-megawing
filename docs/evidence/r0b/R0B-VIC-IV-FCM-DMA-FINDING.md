@@ -4,7 +4,7 @@ Status: scoped technical source finding, not a production selection.
 
 ## Source identity
 
-- MEGA65 Team, [Chipset Reference PDF](https://files.mega65.org/files/m/mega65-chipset-reference_4hh2eE.pdf), accessed 2026-08-20.
+- MEGA65 Team, [Chipset Reference PDF v1.2](https://files.mega65.org/files/m/mega65-chipset-reference_cnFcKB.pdf), downloaded 2026-08-21; SHA-256 `59d7e865bb9782a53fb2f1d019d4d01c44decbad0d077ffd583461e984938270` retained locally as generated evidence.
 - Pinned LLVM-MOS SDK v23.1.0 header:
   `toolchain/runtime/llvm-mos/mos-platform/mega65/include/_vic4.h`.
 
@@ -12,12 +12,16 @@ Status: scoped technical source finding, not a production selection.
 
 The reference identifies FCM as an 8×8, 256-colour-per-character mode with
 64 data bytes per character; FCM normally pairs with 16-bit character numbers
-for more than 256 character identities. The relevant documented controls are
-the `CHR16`, `FCLRLO`, and `FCLRHI` bits of VIC-IV control register C (`$D054`).
+for more than 256 character identities. Its FCM/SEAM setup describes `CHR16`
+and `FCLRHI` in VIC-IV control register C (`$D054`). `FCLRLO` is intentionally
+not changed by the isolated restore probe.
 
-`src/platform/r0b/vic4_probe.c` is retained as source for a future isolated
-probe. It unlocks VIC-IV I/O, saves `$D054`, sets those three bits, reads them
-back, and restores the saved byte. It is not run by the owner-facing disk.
+`src/platform/r0b/fcm_restore_45gs02.s` implements the smallest separate
+probe. It does **not** unlock VIC-IV I/O: the reference specifically warns
+that `$D02F` is unsafe to write from C65 mode. It checks `$D018` C65 context,
+saves `$D054`, sets only `$05`, reads it back, and restores the exact saved
+byte. It does not access `$D031`, display pointers, palette, DMA, MAP, or IRQ.
+The separate disk is `F65-R0B-FCM-SAFE.d81`; Stage 2 remains free of `$D054`.
 
 ## DMA finding and boundary
 
@@ -54,9 +58,9 @@ restore text, and it is not an FCM pass.
 
 The Stage 2 owner disk does not access `$D054`; its safe gate makes no VIC-IV
 I/O and its build validator rejects a linked `$D054` access. It reports
-`R0B-FCM-SAFE-001 DEFERRED`. A future FCM probe must be smallest-first,
-demonstrate that the original text display is restored on physical hardware,
-and only then be considered for a visible FCM test.
+`R0B-FCM-SAFE-001 DEFERRED`. The isolated disk must demonstrate that text
+remains readable on physical hardware and return the on-screen `$1800-$185F`
+dump and identity. Only then can a separate visible-FCM test be considered.
 
 ## Explicitly not yet proven
 

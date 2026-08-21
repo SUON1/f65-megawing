@@ -2,7 +2,7 @@ SHELL := /bin/sh
 R0A := ./tools/build/r0a.sh
 R0B := ./tools/build/r0b.sh
 
-.PHONY: r0a-bootstrap r0a-generate r0a-host-test r0a-build r0a-xemu r0a-evidence r0a-verify r0a-clean r0b-bootstrap r0b-generate r0b-host-test r0b-build r0b-xemu r0b-evidence r0b-verify r0b-clean
+.PHONY: r0a-bootstrap r0a-generate r0a-host-test r0a-build r0a-xemu r0a-evidence r0a-verify r0a-clean r0b-bootstrap r0b-generate r0b-host-test r0b-build r0b-xemu r0b-evidence r0b-verify r0b-clean r0b-fcm-safe-build r0b-fcm-safe-xemu
 r0a-bootstrap: ; $(R0A) bootstrap
 r0a-generate: ; $(R0A) generate
 r0a-host-test: ; $(R0A) host-test
@@ -19,3 +19,5 @@ r0b-xemu: ; $(R0B) xemu
 r0b-evidence: ; $(R0B) evidence
 r0b-verify: ; $(R0B) verify
 r0b-clean: ; $(R0B) clean
+r0b-fcm-safe-build: ; $(R0B) fcm-safe-build
+r0b-fcm-safe-xemu: ; $(R0B) fcm-safe-xemu
