@@ -1,2 +1,2 @@
-10 load "f65-r0b-fcm-safe"
+10 load "f65-r0a-proof"
 20 run

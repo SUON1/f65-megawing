@@ -98,12 +98,13 @@ void r0b_fcm_safe_run(void) {
   text(0u, "R0-B ISOLATED FCM SAFE/RESTORE");
   text(1u, "NO D02F KEY; NO DMA; NO MAP; NO IRQ");
   text(2u, "TEXT RESTORE SENTINEL");
+  text(3u, "PHYSICAL EVIDENCE: PENDING");
 
   flags = r0b_fcm_restore_probe();
   text_ok = sentinel_unchanged();
   pass = (uint8_t)((flags & 0x07u) == 0x07u && text_ok != 0u);
 
-  text(5u, pass ? "R0B-FCM-SAFE-002 XEMU/TARGET PASS" : "R0B-FCM-SAFE-002 DEFERRED/FAIL");
+  text(5u, pass ? "R0B-FCM-SAFE-002 LOCAL TEST: PASS" : "R0B-FCM-SAFE-002 DEFERRED/FAIL");
   text(6u, (flags & 0x01u) ? "C65 CONTEXT: PASS" : "C65 CONTEXT: NOT OBSERVED");
   text(7u, (flags & 0x02u) ? "D054 LATCH READBACK: PASS" : "D054 LATCH READBACK: FAIL");
   text(8u, (flags & 0x04u) ? "D054 EXACT RESTORE: PASS" : "D054 EXACT RESTORE: FAIL");

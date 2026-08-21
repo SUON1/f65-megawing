@@ -19,6 +19,18 @@ Copy this exact disk image to the SD card without changing its contents:
 Record the value in `build/r0b/artifacts/F65-R0B-FCM-SAFE.d81.sha256` before
 testing.
 
+### Boot compatibility isolation
+
+The previous physical attempt stopped at `BOOT` with `MEGA65 ROM VERSION
+ERROR`, before this harness executed. This replacement disk deliberately uses
+the byte-identical 28-byte BASIC-65 launcher and filename alias
+`f65-r0a-proof` that the owner already proved on physical MEGA65 for R0-A.
+The alias is only a disk-loader compatibility control; its payload and the
+on-screen banner remain `R0B-FCM-SAFE-002`.
+
+Do not use the prior D81 hash. Confirm the newly generated hash before copying
+this replacement image.
+
 ## Run
 
 1. Mount the D81 as drive 8 on the MEGA65.
@@ -29,7 +41,8 @@ testing.
 ## A successful physical capture must show
 
 ```text
-R0B-FCM-SAFE-002 XEMU/TARGET PASS
+R0B-FCM-SAFE-002 LOCAL TEST: PASS
+PHYSICAL EVIDENCE: PENDING
 C65 CONTEXT: PASS
 D054 LATCH READBACK: PASS
 D054 EXACT RESTORE: PASS
@@ -45,9 +58,10 @@ PAL/NTSC, and display connection.
 
 ## Fail and stop conditions
 
-Stop and retain a photo if the display becomes unreadable, the machine resets,
-any status says `FAIL` or `DEFERRED/FAIL`, the result flags are not `$07`, or
-the sentinel fails. Do **not** retry an old build or a build that writes `$D02F`.
+Stop and retain a photo if `BOOT` again reports `MEGA65 ROM VERSION ERROR`, the
+display becomes unreadable, the machine resets, any status says `FAIL` or
+`DEFERRED/FAIL`, the result flags are not `$07`, or the sentinel fails. Do
+**not** retry an old build or a build that writes `$D02F`.
 
 A good physical result clears only the isolated restore admission test. It does
 not close R0-B or approve a hardware flip, visible FCM, physical input path,

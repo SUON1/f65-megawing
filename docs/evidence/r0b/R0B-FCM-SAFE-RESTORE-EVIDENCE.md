@@ -1,6 +1,6 @@
 # R0-B Isolated FCM Safe/Restore Evidence
 
-Status: **Xemu PASS; physical MEGA65 NOT RUN; R0-B gate remains open.**
+Status: **Xemu PASS; physical `BOOT` packaging attempt FAIL; R0-B gate remains open.**
 
 ## Exact source and artifact identity
 
@@ -12,6 +12,22 @@ Status: **Xemu PASS; physical MEGA65 NOT RUN; R0-B gate remains open.**
 - Xemu: commit `40dfef0d1d5f56be2469492715c12bdb32c75b67`, model 03, PAL, dummy audio backend.
 
 The generated artifact hashes are in `build/r0b/artifacts/F65-R0B-FCM-SAFE.*.sha256`.
+
+## Physical boot packaging result
+
+The owner-operated MEGA65 attempt on 2026-08-21 typed `BOOT` against the
+earlier `F65-R0B-FCM-SAFE.d81`. BASIC returned `MEGA65 ROM VERSION ERROR` and
+returned to `READY.` The status screen did not appear, so the binary did not
+execute and this is **not** FCM, D054, text-restore, or runtime evidence.
+
+The replacement artifact uses the exact 28-byte `AUTOBOOT.C65` sequence and
+the `f65-r0a-proof` disk filename alias from the physically passed R0-A
+launcher. Its payload remains the FCM-safe program and identifies itself on
+screen as `R0B-FCM-SAFE-002`. The replacement needs a new physical `BOOT`
+capture before any hardware conclusion can be made. Its screen says `LOCAL
+TEST: PASS` and `PHYSICAL EVIDENCE: PENDING` deliberately: the screen records
+the program's local assertions, while the owner capture supplies the separate
+physical evidence.
 
 ## What the isolated binary does
 

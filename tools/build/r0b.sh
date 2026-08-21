@@ -41,7 +41,7 @@ build_fcm_safe() {
   python3 "$root/tools/diagnostics/r0b_validate_fcm_safe_target.py" "$root"
   "$petcat" -w65 -o "$out/artifacts/AUTOBOOT-FCM.C65" -- "$root/src/r0b/autoboot_fcm_safe.bas"
   "$petcat" -65 "$out/artifacts/AUTOBOOT-FCM.C65" > "$out/reports/AUTOBOOT-FCM.C65.listing"
-  "$c1541" -format 'F65 R0-B FCM,65' d81 "$out/artifacts/F65-R0B-FCM-SAFE.d81" -write "$out/artifacts/AUTOBOOT-FCM.C65" autoboot.c65 -write "$out/artifacts/F65-R0B-FCM-SAFE.prg" f65-r0b-fcm-safe -list > "$out/reports/F65-R0B-FCM-SAFE.d81-create.txt" 2>&1
+  "$c1541" -format 'F65 R0-B FCM,65' d81 "$out/artifacts/F65-R0B-FCM-SAFE.d81" -write "$out/artifacts/AUTOBOOT-FCM.C65" autoboot.c65 -write "$out/artifacts/F65-R0B-FCM-SAFE.prg" f65-r0a-proof -list > "$out/reports/F65-R0B-FCM-SAFE.d81-create.txt" 2>&1
   "$c1541" "$out/artifacts/F65-R0B-FCM-SAFE.d81" -list > "$out/reports/F65-R0B-FCM-SAFE.d81-list.txt" 2>&1
   python3 "$root/tools/diagnostics/r0b_validate_fcm_safe_package.py" "$root"
   shasum -a 256 "$out/artifacts/F65-R0B-FCM-SAFE.prg" > "$out/artifacts/F65-R0B-FCM-SAFE.prg.sha256"

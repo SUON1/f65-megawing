@@ -18,7 +18,7 @@ if list(result[48:59]) != expected_status or list(result[59:70]) != expected_rea
     raise SystemExit(f"R0B-FCM-SAFE-XEMU-001 FAIL: status/reason {list(result[48:70])}")
 if result[84:86] != b"\x07\x01" or (sum(result[:83]) & 0xff) != result[83]:
     raise SystemExit(f"R0B-FCM-SAFE-XEMU-001 FAIL: flags/checksum {result[84:86].hex()}/{result[83]:02x}")
-markers = ("R0B-FCM-SAFE-002 XEMU/TARGET PASS", "D054 LATCH READBACK: PASS", "D054 EXACT RESTORE: PASS", "TEXT SENTINEL: PASS", "RESULT HEX $1800-$185F BELOW", "GATE OPEN; FCM FRAME/SWAP NOT ENABLED")
+markers = ("R0B-FCM-SAFE-002 LOCAL TEST: PASS", "PHYSICAL EVIDENCE: PENDING", "D054 LATCH READBACK: PASS", "D054 EXACT RESTORE: PASS", "TEXT SENTINEL: PASS", "RESULT HEX $1800-$185F BELOW", "GATE OPEN; FCM FRAME/SWAP NOT ENABLED")
 if any(marker not in screen for marker in markers):
     raise SystemExit("R0B-FCM-SAFE-XEMU-001 FAIL: missing isolated-probe screen marker")
 lock = json.loads((root / "toolchain/f65_toolchain.lock.json").read_text())
