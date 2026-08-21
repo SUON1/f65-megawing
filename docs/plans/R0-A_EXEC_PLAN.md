@@ -33,7 +33,7 @@ This is an evidence log and forward plan, not a record of private reasoning.
 - Pin an inspected local LLVM-MOS SDK archive and extracted binary identity in `toolchain/f65_toolchain.lock.json`.
 - Verify the MEGA65 frontend, CPU-selection mechanism, object format, compiler driver expansion, map/symbol/disassembly tools, and C/assembly interoperability. Unknown fields remain `UNVERIFIED`.
 
-Finding on 2026-08-20: LLVM-MOS v23.1.0 verifies the MEGA65 frontend and `-mcpu=mos45gs02` object flags/macros. Its default MEGA65 startup/link flow assigns compiler imaginary registers to `$0002–$008f`; retained disassembly confirms C uses that range. The governing ABI requires base page `$0200–$02FF`. The selected release's compatible 45GS02 base-page/startup mechanism has not been verified, so target conformance, D81, Xemu, and hardware stages are blocked rather than inferred.
+Finding on 2026-08-20: LLVM-MOS SDK v23.1.0 (`7e47e7d`) retains logical compiler ABI registers at `$0002–$0021`; the stock driver also requests 110 general LTO direct-page bytes. The user-authorized R0-A remedy retains those logical ABI symbols, adds a 45GS02 `B=$02` transition in `.init.011` after stock `.init.010`, disables general LTO direct-page allocation with `-mlto-zp=0`, and restores `B=$00` in `.fini.989` before stock `.fini.990`. Static map/disassembly validation is passing; Xemu and hardware runtime validation remain pending.
 
 ### 3. Generated contracts and diagnostics — pending
 
@@ -53,7 +53,7 @@ Any controlling document/status, compiler/SDK/runtime, linker/assembler, generat
 
 ## Current blockers
 
-- The required `$0200` 45GS02 base-page/startup path is not verified for the selected LLVM-MOS release. The default driver emits compiler imaginary-register accesses at `$0002–$008f`.
-- No verified D81 construction and auto-boot path exists, so the D81, Xemu, evidence, and hardware stages cannot start.
+- VICE 3.10 `c1541` now reproducibly formats and verifies an 80-track D81 containing a BASIC-65 `AUTOBOOT.C65` and the proof PRG. The D81 still requires an Xemu boot/run result.
+- A candidate `xmega65` binary is present and version-pinned, but the protected owner ROM, system-file configuration, headless invocation, result capture, and runtime behavior remain unverified. The B-register sentinel proof therefore still requires Xemu and physical-MEGA65 execution; static/container evidence is not a runtime PASS.
 - `DEC-002` and `DEC-003` are open; they do not block construction but prevent formal scope/platform closure.
 - Physical MEGA65 evidence requires the project owner after the reproducible D81 exists.

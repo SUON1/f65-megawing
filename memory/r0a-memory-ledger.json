@@ -1,5 +1,5 @@
 {
-  "schema_version": 1, "ledger_status": "candidate proof ledger", "physical_regions": [
+  "schema_version": 1, "ledger_status": "candidate proof ledger", "r0a_base_page": {"logical_abi_registers": "$0002-$0021", "physical_window_when_b_02": "$0202-$0221", "lto_direct_page_allocation": 0}, "physical_regions": [
     {"range": "$000000-$00ffff", "owner": "resident executable/base page/stack/vectors", "r0a_allocation": 8, "allocation": "Preliminary discovery-result header at $001800-$001807; this is not the final R0AResultBlock."},
     {"range": "$050000-$057fff", "owner": "resource staging and DMA lists", "r0a_allocation": 0, "allocation": "No allocation until a base-page-conforming target proof can allocate the final R0AResultBlock."},
     {"range": "$058000-$05ffff", "owner": "measured-limits reserve", "r0a_allocation": 0, "must_remain_untouched": true}
