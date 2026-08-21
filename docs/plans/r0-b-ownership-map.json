@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "task_id": "F65-R0-B",
+  "authorized_prefixes": ["AGENTS.md", "F65_OFFICIAL_RECORD.md", "README.md", "docs/agents/", "docs/plans/", "docs/testing/", "docs/evidence/r0b/", "docs/reports/", "tests/fixtures/r0b/", "tests/host/r0b/", "tests/target/r0b/", "tests/evidence/r0b/", "src/r0b/", "src/graphics/r0b/", "src/platform/r0b/", "src/core/r0b/", "src/input/r0b/", "src/audio/r0b/", "src/diagnostics/r0b/", "assets/r0b/", "tools/build/", "tools/diagnostics/", "tools/generators/", "tools/assets/", "tools/schemas/", "interfaces/", "memory/", "Makefile", ".gitignore", ".gitattributes"],
+  "prohibited_prefixes": ["src/flight/", "src/controls/", "src/environment/", "src/sensors/", "src/weapons/", "src/ai/", "src/contact/", "src/mission/", "src/resources/", "missions/", "spec/", "docs/evidence/r0a/", "src/r0a/"],
+  "forbidden_change_classes": ["production memory ownership", "reserve consumption", "100 Hz tick order", "public production ABI", "production gameplay", "production candidate selection"],
+  "allowed_state_owners": {"synthetic_presentation": "R0-B harness", "incomplete_complete_stores": "Graphics proof", "vic_iv_dma_submission": "Platform/Core proof service", "input_edges": "Input proof", "audio_priority": "Audio proof", "canonical_map_base_page": "existing MemoryAccessABI/CoreRuntime"}
+}
