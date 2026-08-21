@@ -14,6 +14,9 @@ if contract["upstream_r0a_commit"] != "1ab5b62928d0e725c8dcf48e8a17783a525503b6"
 full = next(item for item in contract["display_candidates"] if item["id"].endswith("320X200"))
 if full["character_data_bytes"] != 64000 or full["pointer_table_bytes"] * 2 != 4000:
     raise SystemExit("R0B-MEM-001 FAIL: FCM ownership accounting")
+resident = next(item for item in contract["records"] if item["name"] == "R0BResidentResult")
+if resident["size"] != 96:
+    raise SystemExit("R0B-EVID-001 FAIL: fixed resident result block size")
 ledger = json.loads((root / "memory/r0b-memory-ledger.json").read_text())
 if ledger["reserve"] != {"range": "$058000-$05FFFF", "allocation": 0, "must_remain_untouched": True}:
     raise SystemExit("R0B-MEM-001 FAIL: reserve ownership")

@@ -25,3 +25,14 @@ uint8_t r0b_input_fixture_validate(void) {
   consumed = (uint16_t)(consumed + accumulator);
   return (uint8_t)(consumed == R0B_INPUT_CORPUS_CONSUMED_EDGES);
 }
+
+/* Synthetic edge-to-binding fixture. It is deliberately not a CIA sample. */
+uint8_t r0b_input_edge_service(void) {
+  volatile uint8_t raw = 0u;
+  uint8_t previous = raw;
+  uint8_t pressed;
+  raw = 1u;
+  pressed = (uint8_t)(raw & (uint8_t)~previous);
+  raw = 0u;
+  return (uint8_t)(pressed == 1u && raw == 0u);
+}

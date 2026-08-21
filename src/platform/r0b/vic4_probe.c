@@ -1,21 +1,14 @@
 #include <stdint.h>
-#include <mega65.h>
+#include "r0b_interfaces.h"
 
 /*
- * Narrow target probe only.  It verifies that the documented FCM/CHR16 bits
- * latch through the VIC-IV register interface and restores the prior state.
- * It deliberately does not assert a visible FCM layout, swap, DMA, or IRQ.
+ * This is an admission gate, deliberately not a VIC-IV register latch. It
+ * performs no VIC-IV I/O: the previous state-changing control-C experiment is
+ * not safe enough to include in this resident evidence disk. The caller must
+ * report DEFERRED until an isolated physical restore proof exists.
  */
-uint8_t r0b_vic4_fcm_register_probe(void) {
-  uint8_t saved;
-  uint8_t observed;
-  const uint8_t fcm_bits = (uint8_t)(VIC4_CHR16_MASK | VIC4_FCLRLO_MASK | VIC4_FCLRHI_MASK);
-
-  VICIV.key = 0x47u;
-  VICIV.key = 0x53u;
-  saved = VICIV.ctrlc;
-  VICIV.ctrlc = (uint8_t)(saved | fcm_bits);
-  observed = VICIV.ctrlc;
-  VICIV.ctrlc = saved;
-  return (uint8_t)((observed & fcm_bits) == fcm_bits);
+uint8_t r0b_vic4_fcm_safe_gate(void) {
+  return (uint8_t)(R0B_DISPLAY_CANDIDATE_COUNT == 2u &&
+                   R0B_DISPLAY_CANDIDATE_FCM_320X200_WIDTH == 320u &&
+                   R0B_DISPLAY_CANDIDATE_FCM_320X200_HEIGHT == 200u);
 }

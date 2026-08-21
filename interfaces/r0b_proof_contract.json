@@ -33,6 +33,7 @@
     {"name":"R0BWorkResult","size":16,"owner":"Graphics/R0-B","rule":"work completion/failure record; incomplete state is never displayable"},
     {"name":"R0BInputTransition","size":8,"owner":"Input/R0-B","rule":"proof raw/edge fixture only"},
     {"name":"R0BAudioEvent","size":8,"owner":"Audio/R0-B","rule":"proof presentation priority/fallback record only"},
-    {"name":"R0BEvidenceHeader","size":48,"owner":"Diagnostics/R0-B","rule":"identity and result envelope; no private ROM data"}
+    {"name":"R0BEvidenceHeader","size":48,"owner":"Diagnostics/R0-B","rule":"pinned contract/toolchain/ABI identity envelope; no private ROM data"},
+    {"name":"R0BResidentResult","size":96,"owner":"Diagnostics/R0-B","rule":"fixed $1800 proof-only result block; status and reason arrays are not a production ABI"}
   ]
 }

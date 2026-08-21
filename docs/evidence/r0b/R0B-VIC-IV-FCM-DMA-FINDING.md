@@ -45,17 +45,18 @@ result is not DMA evidence.
 
 The first owner hardware execution of the D81 that invoked the `$D054`
 latch/read/restore sequence produced an audible SID tone but an unreadable
-normal text display. R0-A used the same `$0800` text-output routine on this
-machine successfully, so the state-changing `$D054` probe is the affected
-difference. The run is a hardware **FAIL** for `R0B-FCM-REG-001`, not a
-graphics result and not an FCM pass.
+normal text display. That disk also used ASCII bytes for the Commodore text
+screen; the later readable Xemu baseline established that the screen requires
+PETSCII conversion. Therefore the historical run cannot attribute the display
+failure solely to `$D054`. It remains a hardware **FAIL** for
+`R0B-FCM-REG-001`: the state-changing operation was not independently shown to
+restore text, and it is not an FCM pass.
 
-The replacement owner disk does not access `$D054`. It reports
-`R0B-FCM-REG-001 DEFERRED` and is limited to a readable display baseline,
-target deterministic input fixture, and SID tone observation. A future FCM
-probe must be smallest-first, demonstrate that the original text display is
-restored on physical hardware, and only then be considered for a visible FCM
-test.
+The Stage 2 owner disk does not access `$D054`; its safe gate makes no VIC-IV
+I/O and its build validator rejects a linked `$D054` access. It reports
+`R0B-FCM-SAFE-001 DEFERRED`. A future FCM probe must be smallest-first,
+demonstrate that the original text display is restored on physical hardware,
+and only then be considered for a visible FCM test.
 
 ## Explicitly not yet proven
 

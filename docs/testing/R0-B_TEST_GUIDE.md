@@ -1,8 +1,8 @@
 # R0-B Owner Test Guide — Current Partial Harness
 
-Status: targeted input-fixture/SID-configuration baseline check. This is not
-the eventual R0-B full graphics, swap, cockpit, input-latency, or audio
-acceptance run.
+Status: superseded by [R0-B Stage 2 Evidence Harness](R0-B_STAGE2_TEST_GUIDE.md).
+This earlier baseline guide is retained only as historical context and must not
+be used for a new owner test.
 
 ## Exact artifact identity
 

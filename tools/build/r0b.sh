@@ -20,7 +20,7 @@ host_test() { generate; "$java" -cp "$classes" f65.tools.R0BHostTools host-test 
 build() {
   host_test
   mkdir -p "$out/reports" "$out/artifacts" "$out/evidence"
-  "$cc" -mcpu=mos45gs02 -mlto-zp=0 -Os -Wall -Wextra -Wconversion -Werror -I"$root/interfaces/generated" "$root/src/r0b/main.c" "$root/src/platform/r0b/vic4_probe.c" "$root/src/input/r0b/input_fixture.c" "$root/src/audio/r0b/audio_fixture.c" "$root/src/platform/r0a_platform_45gs02.s" -Wl,-Map,"$out/reports/F65-R0B-PROOF.map" -o "$out/artifacts/F65-R0B-PROOF.prg"
+  "$cc" -mcpu=mos45gs02 -mlto-zp=0 -Os -Wall -Wextra -Wconversion -Werror -I"$root/interfaces/generated" "$root/src/r0b/main.c" "$root/src/diagnostics/r0b/proof_stage2.c" "$root/src/platform/r0b/vic4_probe.c" "$root/src/platform/r0b/timing.c" "$root/src/input/r0b/input_fixture.c" "$root/src/audio/r0b/audio_fixture.c" "$root/src/platform/r0a_platform_45gs02.s" -Wl,-Map,"$out/reports/F65-R0B-PROOF.map" -o "$out/artifacts/F65-R0B-PROOF.prg"
   "$nm" "$out/artifacts/F65-R0B-PROOF.prg.elf" > "$out/reports/F65-R0B-PROOF.symbols"
   "$objdump" -d --print-imm-hex "$out/artifacts/F65-R0B-PROOF.prg.elf" > "$out/reports/F65-R0B-PROOF.disassembly"
   python3 "$root/tools/diagnostics/r0b_validate_target.py" "$root"
@@ -38,7 +38,7 @@ xemu_run() {
   test -f "$out/artifacts/F65-R0B-PROOF.d81" || build
   rom_sha=$(shasum -a 256 "$F65_MEGA65_ROM" | awk '{print $1}')
   test "$rom_sha" = 'af3c447f791a2fdc48cb21e1bd3fab015e32641228d9d30d21259b9e878c6fa0' || { echo "R0-B Xemu blocked: unexpected ROM SHA-256: $rom_sha" >&2; exit 2; }
-  "$xemu" -headless -sleepless -fastboot -rom "$F65_MEGA65_ROM" -8 "$out/artifacts/F65-R0B-PROOF.d81" -autoload -dumpscreen "$out/reports/R0B-XEMU.screen.txt" -dumpmem "$out/reports/R0B-XEMU.memory.bin" &
+  "$xemu" -headless -sleepless -fastboot -rom "$F65_MEGA65_ROM" -8 "$out/artifacts/F65-R0B-PROOF.d81" -autoload -dumpscreen "$out/reports/R0B-XEMU.screen.txt" -dumpmem "$out/reports/R0B-XEMU.memory.bin" -screenshot "$out/reports/R0B-XEMU.png" &
   pid=$!; sleep "${F65_XEMU_RUN_SECONDS:-25}"; kill -TERM "$pid" 2>/dev/null || true; wait "$pid" || true
   python3 "$root/tools/diagnostics/r0b_validate_xemu.py" "$root"
 }
