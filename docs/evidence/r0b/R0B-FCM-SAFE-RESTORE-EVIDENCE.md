@@ -1,6 +1,6 @@
 # R0-B Isolated FCM Safe/Restore Evidence
 
-Status: **Xemu PASS; physical `BOOT` packaging attempt FAIL; R0-B gate remains open.**
+Status: **Xemu PASS; later physical MEGA65 runtime PASS observed; evidence identity incomplete; R0-B gate remains open.**
 
 ## Exact source and artifact identity
 
@@ -28,6 +28,30 @@ capture before any hardware conclusion can be made. Its screen says `LOCAL
 TEST: PASS` and `PHYSICAL EVIDENCE: PENDING` deliberately: the screen records
 the program's local assertions, while the owner capture supplies the separate
 physical evidence.
+
+## Physical runtime observation (2026-08-21)
+
+The owner subsequently returned a readable MEGA65 photograph of the
+replacement program after `BOOT`. It shows all local assertions as `PASS`:
+
+- `R0B-FCM-SAFE-002 LOCAL TEST: PASS`;
+- `C65 CONTEXT: PASS`;
+- `D054 LATCH READBACK: PASS`;
+- `D054 EXACT RESTORE: PASS`; and
+- `TEXT SENTINEL: PASS`.
+
+The on-screen result dump shows the expected header prefix `52 30 42 32 02
+00 01 03` (`R0B2`, schema 2, local pass, revision 3) and the probe/sentinel
+bytes at `$1854-$1855` as `07 01`. This clears the **isolated physical
+safe-restore runtime observation**: the documented `$D054` operation could be
+latched, read back, exactly restored, and followed by readable text on that
+machine.
+
+The owner did not yet provide the exact D81 SHA-256, MEGA65/core/system-file
+identity, video standard, or display connection. Therefore this is retained as
+an owner photograph with incomplete identity, not gate-closing physical
+evidence. It does not prove visible FCM, FCM pointer-table swap, palette
+behavior, DMA, input, or audio behavior.
 
 ## What the isolated binary does
 
@@ -57,9 +81,15 @@ physical input, or audio DMA behavior.
 
 The retained generated evidence is `build/r0b/reports/r0b-fcm-safe-xemu-evidence.json` and the matching screenshot, screen dump, and memory dump. This is emulator evidence only.
 
-## Physical clearing condition
+## Identity completion condition
 
-The physical MEGA65 owner must run the exact hashed D81 and return:
+To make the recorded physical observation fully reproducible, retain the
+matching D81 SHA-256 plus the MEGA65 model/core/system-file identity,
+PAL/NTSC, and display connection. The readable photograph and the on-screen
+result block are already returned. A future repeat is not required merely to
+obtain those identity details.
+
+Any future physical visible-FCM test must return:
 
 - one photograph showing all four `PASS` lines and the on-screen `$1800-$185F` dump;
 - the D81 SHA-256 from the sibling `.sha256` file;
