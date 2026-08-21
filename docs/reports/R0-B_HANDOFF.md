@@ -17,7 +17,7 @@ and has not passed owner hardware review.
 |---|---|---|---|---|
 | Two FCM accounting candidates | PASS | N/A | NOT RUN | candidate accounting only |
 | Semantic palette / grayout role map | PASS | screen marker | NOT RUN | no readability decision |
-| VIC-IV `$D054` FCM-related latch and restore | documented | PASS | AWAITING OWNER | no visible FCM conclusion |
+| VIC-IV `$D054` FCM-related latch and restore | prior Xemu-only result | target probe removed from owner disk | FAIL: normal text display became unreadable | deferred pending isolated physical restore proof |
 | Deterministic 10,000-case edge fixture | PASS | target fixture PASS | NOT RUN | no CIA/input-latency conclusion |
 | Presentation priority model / SID proxy configuration | PASS | target model PASS; dummy audio | AWAITING OWNER | no timing/PCM conclusion |
 

@@ -1,15 +1,15 @@
 # R0-B Owner Test Guide — Current Partial Harness
 
-Status: targeted register/input-fixture/SID-configuration check. This is not
+Status: targeted input-fixture/SID-configuration baseline check. This is not
 the eventual R0-B full graphics, swap, cockpit, input-latency, or audio
 acceptance run.
 
 ## Exact artifact identity
 
-- Target-source commit: `b76eccd68ec2dcdb9debae25c2aec2c84b55a48e`.
+- Target-source commit: `73c2dbee55afe2b754358021505c6520737e2105`.
 - D81: `build/r0b/artifacts/F65-R0B-PROOF.d81`.
-- D81 SHA-256: `5cd3c43e8c6c5618416871984c88540294c931aca84178c8136e97979d4a49d9`.
-- PRG SHA-256: `170c21627d055f625c25ac5191129c501e80045f0c7b6d5a3a450551f4628c81`.
+- D81 SHA-256: `e902fad80eb6e34945a799dda2444e8a3a7cab3984bb372d8fef22e1de60323b`.
+- PRG SHA-256: `31ee32fe7f5c03e1372ce8535cdb3590e4ac7d466b969f83a57b89ab5a8761d7`.
 - Evidence ID: `F65-R0B-EVIDENCE-SET` (partial fixture iteration).
 
 The disk uses PETSCII-compatible directory names: `AUTOBOOT.C65` and
@@ -26,18 +26,19 @@ or speakers should be connected if you choose to record that observation.
 
 ## Expected result screen
 
-All of the following must be visible and marked `PASS`:
+All of the following must be visible:
 
-- `R0B-FCM-REG-001 PASS`
+- `R0B-FCM-REG-001 DEFERRED`
 - `R0B-IN-001 FIXTURE PASS`
 - `R0B-AUD-003 MODEL PASS`
 - `R0-B TEST RUN COMPLETE`
 - `R0B-BLD-001 PASS`
 
 The screen must also state `FCM FRAME: DEFERRED`,
-`REASON: DMA/POINTER PROBE`, and `HARDWARE: NOT RUN`. Those lines are expected
-because this iteration does not claim a visible FCM frame, DMA, raster swap,
-hardware input path, or audio timing result.
+`REASON: D054 PROBE NOT SAFE`, and `HARDWARE: BASELINE ONLY`. Those lines are
+expected because this iteration does not access `$D054` and does not claim a
+visible FCM frame, DMA, raster swap, hardware input path, or audio timing
+result.
 
 ## Evidence to return
 
@@ -49,8 +50,9 @@ hardware input path, or audio timing result.
 
 ## Failure interpretation
 
-- `R0B-FCM-REG-001 FAIL`: VIC-IV unlock/latch/restore probe failed; do not infer
-  FCM support or alter display configuration.
+- `R0B-FCM-REG-001 DEFERRED`: expected. The original `$D054` probe caused an
+  unreadable physical text display and is excluded pending an isolated restore
+  proof; do not infer FCM support.
 - `R0B-IN-001 FIXTURE FAIL`: target deterministic accumulator disagreed with its
   generated host expectation; this is not a keyboard/joystick test.
 - `R0B-AUD-003 MODEL FAIL`: target priority model failed; it does not diagnose
