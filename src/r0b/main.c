@@ -2,6 +2,9 @@
 #include "r0b_interfaces.h"
 
 extern uint8_t r0b_vic4_fcm_register_probe(void);
+extern uint8_t r0b_input_fixture_validate(void);
+extern uint8_t r0b_audio_priority_fixture_validate(void);
+extern void r0b_sid_proxy_start(void);
 
 /* Proof-only resident result block. Its format is deliberately not a production ABI. */
 static volatile uint8_t *const screen = (volatile uint8_t *)0x0800;
@@ -28,10 +31,14 @@ static uint16_t filled_work_units(void) {
 
 int main(void) {
   uint8_t fcm_registers = r0b_vic4_fcm_register_probe();
-  uint8_t ok = (uint8_t)(contract_shape_ok() && filled_work_units() == 38u && fcm_registers == 1u);
+  uint8_t input_fixture = r0b_input_fixture_validate();
+  uint8_t audio_fixture = r0b_audio_priority_fixture_validate();
+  r0b_sid_proxy_start();
+  uint8_t ok = (uint8_t)(contract_shape_ok() && filled_work_units() == 38u && fcm_registers == 1u && input_fixture == 1u && audio_fixture == 1u);
   result[0] = 'R'; result[1] = '0'; result[2] = 'B'; result[3] = '1';
   result[4] = 1; result[5] = ok; result[6] = 2; result[7] = 15;
   result[8] = (uint8_t)filled_work_units(); result[9] = fcm_registers;
+  result[11] = input_fixture; result[12] = audio_fixture;
   result[10] = (uint8_t)(result[0] + result[1] + result[2] + result[3] + result[4] + result[5] + result[6] + result[7] + result[8]);
 
   text(0, "R0-B PROOF HARNESS");
@@ -42,8 +49,11 @@ int main(void) {
   text(200, fcm_registers ? "R0B-FCM-REG-001 PASS" : "R0B-FCM-REG-001 FAIL");
   text(240, "FCM FRAME: DEFERRED");
   text(280, "REASON: DMA/POINTER PROBE");
-  text(320, ok ? "R0-B TEST RUN COMPLETE" : "R0-B TEST RUN FAILED");
-  text(360, ok ? "R0B-BLD-001 PASS" : "R0B-BLD-001 FAIL");
-  text(400, "HARDWARE: NOT RUN");
+  text(320, input_fixture ? "R0B-IN-001 FIXTURE PASS" : "R0B-IN-001 FIXTURE FAIL");
+  text(360, audio_fixture ? "R0B-AUD-003 MODEL PASS" : "R0B-AUD-003 MODEL FAIL");
+  text(400, "SID CONFIGURED: NOT TIMED");
+  text(440, ok ? "R0-B TEST RUN COMPLETE" : "R0-B TEST RUN FAILED");
+  text(480, ok ? "R0B-BLD-001 PASS" : "R0B-BLD-001 FAIL");
+  text(520, "HARDWARE: NOT RUN");
   for (;;) { }
 }

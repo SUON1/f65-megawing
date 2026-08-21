@@ -6,6 +6,8 @@ typedef struct __attribute__((packed)) { uint8_t state,failure; uint16_t work_un
 typedef struct __attribute__((packed)) { uint16_t service; uint8_t raw,pressed,released,context; uint16_t sequence; } R0BInputTransition;
 typedef struct __attribute__((packed)) { uint8_t priority,kind,state,fallback; uint16_t service,sequence; } R0BAudioEvent;
 typedef struct __attribute__((packed)) { uint8_t magic[4], version,environment,status,reserved; uint8_t build_sha256[32]; uint32_t first_failure, samples; } R0BEvidenceHeader;
+#define R0B_INPUT_CORPUS_TRANSITIONS 10000u
+#define R0B_INPUT_CORPUS_CONSUMED_EDGES 2342u
 #define R0B_R0BDISPLAY_DESCRIPTOR_SIZE 58u
 #define R0B_R0BWORK_RESULT_SIZE 16u
 #define R0B_R0BINPUT_TRANSITION_SIZE 8u

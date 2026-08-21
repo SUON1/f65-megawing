@@ -20,7 +20,7 @@ host_test() { generate; "$java" -cp "$classes" f65.tools.R0BHostTools host-test 
 build() {
   host_test
   mkdir -p "$out/reports" "$out/artifacts" "$out/evidence"
-  "$cc" -mcpu=mos45gs02 -mlto-zp=0 -Os -Wall -Wextra -Wconversion -Werror -I"$root/interfaces/generated" "$root/src/r0b/main.c" "$root/src/platform/r0b/vic4_probe.c" "$root/src/platform/r0a_platform_45gs02.s" -Wl,-Map,"$out/reports/F65-R0B-PROOF.map" -o "$out/artifacts/F65-R0B-PROOF.prg"
+  "$cc" -mcpu=mos45gs02 -mlto-zp=0 -Os -Wall -Wextra -Wconversion -Werror -I"$root/interfaces/generated" "$root/src/r0b/main.c" "$root/src/platform/r0b/vic4_probe.c" "$root/src/input/r0b/input_fixture.c" "$root/src/audio/r0b/audio_fixture.c" "$root/src/platform/r0a_platform_45gs02.s" -Wl,-Map,"$out/reports/F65-R0B-PROOF.map" -o "$out/artifacts/F65-R0B-PROOF.prg"
   "$nm" "$out/artifacts/F65-R0B-PROOF.prg.elf" > "$out/reports/F65-R0B-PROOF.symbols"
   "$objdump" -d --print-imm-hex "$out/artifacts/F65-R0B-PROOF.prg.elf" > "$out/reports/F65-R0B-PROOF.disassembly"
   python3 "$root/tools/diagnostics/r0b_validate_target.py" "$root"

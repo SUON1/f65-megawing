@@ -22,8 +22,8 @@ production design decision.
 | B2 | Officially documented VIC-IV candidate layouts and FCM characterization | In progress | `R0B-FCM-REG-001` passed in Xemu: `$D054` FCM-related bits unlock, latch/read-back, and restore. Visible FCM, pointers, DMA, swap, and raster behavior remain unproved |
 | B3 | Complete-buffer renderer tiers, views, overflow behavior | Pending | Synthetic scene only; no gameplay |
 | B4 | Cockpit/HUD/MFD proxy, semantic palette and grayout validation | Pending | Technical art; human readability review remains open |
-| B5 | Input sample/edge/arbitration corpus and latency procedure | Pending | 10,000 host transitions; physical latency unresolved without calibrated capture |
-| B6 | Representative SID/optional PCM priority proof | Pending | No final content/format selection |
+| B5 | Input sample/edge/arbitration corpus and latency procedure | In progress | `R0B-IN-002` host oracle and target-side `R0B-IN-001` deterministic accumulator agree. CIA/keyboard/joystick sampling and calibrated physical latency remain unproved |
+| B6 | Representative SID/optional PCM priority proof | In progress | `R0B-AUD-003` host/target priority model passes and a SID proxy is configured. Service cadence, audible capture, preemption timing, and PCM/DMA remain unproved |
 | B7 | RRB/affine disposition or separately bounded candidates | Pending | Cannot replace bucket/painter primary path |
 | B8 | Integrated graphics/input/audio proof | Pending | Complete-store, range, reserve, and contention observations |
 | Xemu | Exact D81 boot/capture/metadata | In progress | `R0B-XEMU-001` passes for the local owned ROM/Xemu identity; Xemu is not physical hardware evidence |
