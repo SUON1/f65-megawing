@@ -1,2 +1,2 @@
-10 load "F65-R0A-PROOF"
+10 load "f65-r0a-proof"
 20 run

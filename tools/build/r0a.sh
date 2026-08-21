@@ -27,7 +27,7 @@ build() {
   python3 "$root/tools/diagnostics/r0a_validate_target.py" "$root"
   "$petcat" -w65 -o "$out/artifacts/AUTOBOOT.C65" -- "$root/src/r0a/autoboot.bas"
   "$petcat" -65 "$out/artifacts/AUTOBOOT.C65" > "$out/reports/AUTOBOOT.C65.listing"
-  "$c1541" -format 'F65 R0-A,65' d81 "$out/artifacts/F65-R0A-PROOF.d81" -write "$out/artifacts/AUTOBOOT.C65" AUTOBOOT.C65 -write "$out/artifacts/F65-R0A-PROOF.prg" F65-R0A-PROOF -list > "$out/reports/F65-R0A-PROOF.d81-create.txt" 2>&1
+  "$c1541" -format 'F65 R0-A,65' d81 "$out/artifacts/F65-R0A-PROOF.d81" -write "$out/artifacts/AUTOBOOT.C65" autoboot.c65 -write "$out/artifacts/F65-R0A-PROOF.prg" f65-r0a-proof -list > "$out/reports/F65-R0A-PROOF.d81-create.txt" 2>&1
   "$c1541" "$out/artifacts/F65-R0A-PROOF.d81" -list > "$out/reports/F65-R0A-PROOF.d81-list.txt" 2>&1
   python3 "$root/tools/diagnostics/r0a_validate_package.py" "$root"
   shasum -a 256 "$out/artifacts/F65-R0A-PROOF.prg" > "$out/artifacts/F65-R0A-PROOF.prg.sha256"

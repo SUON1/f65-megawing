@@ -15,9 +15,9 @@ if d81.stat().st_size != 819200:
     raise SystemExit(f"R0A-D81-001 FAIL: D81 byte size is {d81.stat().st_size}, expected 819200")
 if autoboot.read_bytes()[:2] != b"\x01\x20":
     raise SystemExit("R0A-D81-001 FAIL: AUTOBOOT.C65 does not have the C65 BASIC load address $2001")
-if '10 load "F65-R0A-PROOF"' not in autoboot_listing or '20 run' not in autoboot_listing:
+if '10 load "f65-r0a-proof"' not in autoboot_listing or '20 run' not in autoboot_listing:
     raise SystemExit("R0A-D81-001 FAIL: AUTOBOOT.C65 does not round-trip as the approved BASIC-65 launcher")
-for filename in ("AUTOBOOT.C65", "F65-R0A-PROOF"):
+for filename in ("autoboot.c65", "f65-r0a-proof"):
     if filename not in listing:
         raise SystemExit(f"R0A-D81-001 FAIL: D81 listing lacks {filename}")
 print("R0A-D81-001 PASS: 80-track D81 contains BASIC-65 AUTOBOOT.C65 and proof PRG")

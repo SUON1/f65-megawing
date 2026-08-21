@@ -8,7 +8,7 @@ This is an evidence log and forward plan, not a record of private reasoning.
 |---|---|
 | Base commit | `0f650e7fed72933a2ff9d5eaa9a9bd5a70e92975` |
 | Working branch | `codex/r0-a-development` |
-| Gate | R0-A; development GO, acceptance NOT PASSED |
+| Gate | R0-A; development GO, acceptance PASSED 2026-08-20 |
 | Task record | `docs/plans/r0-a-task-admission.json` |
 | Scope policy | `docs/plans/r0-a-ownership-map.json` |
 
@@ -23,27 +23,27 @@ This is an evidence log and forward plan, not a record of private reasoning.
 - Command results: JSON parsing, source hash checks, and `git diff --check` passed.
 - Commit: `5a97d63 chore(spec): synchronize approved R0 authority records`.
 
-### 1. Governance and host-foundation admission — in progress
+### 1. Governance and host-foundation admission — complete
 
 - Create the agent record, this plan, task-admission record, ownership/diff-scope map, stable acceptance registry, and module-status source.
 - Implement an independent Java-host oracle and deterministic fixtures after verifying a project-local JDK.
 
-### 2. Toolchain establishment — pending
+### 2. Toolchain establishment — complete
 
 - Pin an inspected local LLVM-MOS SDK archive and extracted binary identity in `toolchain/f65_toolchain.lock.json`.
 - Verify the MEGA65 frontend, CPU-selection mechanism, object format, compiler driver expansion, map/symbol/disassembly tools, and C/assembly interoperability. Unknown fields remain `UNVERIFIED`.
 
-Finding on 2026-08-20: LLVM-MOS SDK v23.1.0 (`7e47e7d`) retains logical compiler ABI registers at `$0002–$0021`; the stock driver also requests 110 general LTO direct-page bytes. The user-authorized R0-A remedy retains those logical ABI symbols, adds a 45GS02 `B=$02` transition in `.init.011` after stock `.init.010`, disables general LTO direct-page allocation with `-mlto-zp=0`, and restores `B=$00` in `.fini.989` before stock `.fini.990`. Static map/disassembly validation is passing; Xemu and hardware runtime validation remain pending.
+Finding on 2026-08-20: LLVM-MOS SDK v23.1.0 (`7e47e7d`) retains logical compiler ABI registers at `$0002–$0021`; the stock driver also requests 110 general LTO direct-page bytes. The user-authorized R0-A remedy retains those logical ABI symbols, adds a 45GS02 `B=$02` transition in `.init.011` after stock `.init.010`, disables general LTO direct-page allocation with `-mlto-zp=0`, and restores `B=$00` in `.fini.989` before stock `.fini.990`. Static map/disassembly, Xemu runtime, and owner-operated hardware runtime validation pass.
 
-### 3. Generated contracts and diagnostics — pending
+### 3. Generated contracts and diagnostics — complete
 
 - Implement canonical registry sources and generators for the R0-A subset, memory ledger, evidence schema, capacity skeleton, scope validation, status board, and golden vectors.
 
-### 4. Target proof and D81 — pending
+### 4. Target proof and D81 — complete
 
 - Implement the smallest compiled-C proof, only admitted platform wrappers, observable result record, reproducible D81 path, and Xemu capture harness.
 
-### 5. Evidence and handoff — pending
+### 5. Evidence and handoff — complete
 
 - Run clean host/build/Xemu reproduction; retain evidence and create the hardware guide, acceptance matrix, and handoff.
 
@@ -53,7 +53,6 @@ Any controlling document/status, compiler/SDK/runtime, linker/assembler, generat
 
 ## Current blockers
 
-- VICE 3.10 `c1541` reproducibly formats and verifies an 80-track D81 containing a BASIC-65 `AUTOBOOT.C65` and the proof PRG; the D81 has passed its Xemu boot/run result.
-- The version-pinned `xmega65` binary, initialized local SD image, and owner-supplied ROM execute the D81/autoload/capture runner. `R0A-XEMU-001` verifies the expected target result block and screen markers. The B-register sentinel proof still requires physical-MEGA65 execution; Xemu is not a runtime hardware PASS.
-- `DEC-002` and `DEC-003` are open; they do not block construction but prevent formal scope/platform closure.
-- Physical MEGA65 evidence requires the project owner after the reproducible D81 exists.
+- VICE 3.10 `c1541` reproducibly formats and verifies an 80-track D81 containing lower-byte PETSCII `autoboot.c65` and `f65-r0a-proof`; the corrected D81 passed in Xemu and physical MEGA65 execution.
+- `R0A-XEMU-001` verifies the expected target result block and screen markers. Owner-operated hardware execution captured `R0A-BP-001 PASS` and `R0A-PTR-001 PASS`.
+- `DEC-002` and `DEC-003` remain open; they do not invalidate the completed R0-A proof gate.
