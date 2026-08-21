@@ -1,7 +1,8 @@
 SHELL := /bin/sh
 R0A := ./tools/build/r0a.sh
+R0B := ./tools/build/r0b.sh
 
-.PHONY: r0a-bootstrap r0a-generate r0a-host-test r0a-build r0a-xemu r0a-evidence r0a-verify r0a-clean
+.PHONY: r0a-bootstrap r0a-generate r0a-host-test r0a-build r0a-xemu r0a-evidence r0a-verify r0a-clean r0b-bootstrap r0b-generate r0b-host-test r0b-build r0b-xemu r0b-evidence r0b-verify r0b-clean
 r0a-bootstrap: ; $(R0A) bootstrap
 r0a-generate: ; $(R0A) generate
 r0a-host-test: ; $(R0A) host-test
@@ -10,3 +11,11 @@ r0a-xemu: ; $(R0A) xemu
 r0a-evidence: ; $(R0A) evidence
 r0a-verify: ; $(R0A) verify
 r0a-clean: ; $(R0A) clean
+r0b-bootstrap: ; $(R0B) bootstrap
+r0b-generate: ; $(R0B) generate
+r0b-host-test: ; $(R0B) host-test
+r0b-build: ; $(R0B) build
+r0b-xemu: ; $(R0B) xemu
+r0b-evidence: ; $(R0B) evidence
+r0b-verify: ; $(R0B) verify
+r0b-clean: ; $(R0B) clean

@@ -18,15 +18,15 @@ production design decision.
 | Stage | Action | Status | Evidence / constraint |
 |---|---|---|---|
 | B0 | Branch, admission contract, ownership, registry, official-record log | Complete | This commit; R0-A physical base-page/pointer proof is retained unaltered |
-| B1 | Single-source candidate contracts, Java oracle, generated C/Java/assembly bindings, proxy fixtures | Pending | Deterministic scene and host vectors required |
-| B2 | Officially documented VIC-IV candidate layouts and FCM characterization | Pending | No register/mode assumption before source reference and target test |
+| B1 | Single-source candidate contracts, Java oracle, generated C/Java/assembly bindings, proxy fixtures | Complete | `R0B-MODE-001`, `R0B-FCM-001`, `R0B-PAL-001`, and `R0B-IN-002` pass as host-side accounting/oracle evidence; no target rendering claim |
+| B2 | Officially documented VIC-IV candidate layouts and FCM characterization | In progress | `R0B-FCM-REG-001` passed in Xemu: `$D054` FCM-related bits unlock, latch/read-back, and restore. Visible FCM, pointers, DMA, swap, and raster behavior remain unproved |
 | B3 | Complete-buffer renderer tiers, views, overflow behavior | Pending | Synthetic scene only; no gameplay |
 | B4 | Cockpit/HUD/MFD proxy, semantic palette and grayout validation | Pending | Technical art; human readability review remains open |
 | B5 | Input sample/edge/arbitration corpus and latency procedure | Pending | 10,000 host transitions; physical latency unresolved without calibrated capture |
 | B6 | Representative SID/optional PCM priority proof | Pending | No final content/format selection |
 | B7 | RRB/affine disposition or separately bounded candidates | Pending | Cannot replace bucket/painter primary path |
 | B8 | Integrated graphics/input/audio proof | Pending | Complete-store, range, reserve, and contention observations |
-| Xemu | Exact D81 boot/capture/metadata | Pending | Xemu is not physical hardware evidence |
+| Xemu | Exact D81 boot/capture/metadata | In progress | `R0B-XEMU-001` passes for the local owned ROM/Xemu identity; Xemu is not physical hardware evidence |
 | Hardware | Owner test guide and returned-exact-build evidence | Pending | Do not mark pass before owner review |
 | Handoff | Acceptance matrix, clean validation, commit, push | Pending | Implementation complete only when every listed deliverable exists |
 
