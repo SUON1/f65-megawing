@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "task_id": "F65-R0-C",
+  "milestone": "Phase 0 / R0-C",
+  "classification": "Non-gameplay proof infrastructure and candidate evidence only",
+  "authorization": ["AD-001 — APPROVED R0-A–F DEVELOPMENT AUTHORITY", "Read-First v1.0 — APPROVED FIRST-READ AUTHORITY", "2026-08-20 approval record — APPROVED ACTIVE"],
+  "requirements": ["GAME-003", "ENGINE-001", "ENGINE-003", "ENGINE-006", "ENGINE-007", "MEM-001", "MEM-002", "MEM-005", "RENDER-003", "TOOL-001", "TOOL-002", "TOOL-003", "TOOL-004", "TEST-003", "TEST-005", "TEST-006", "RF-FND-010", "RF-FND-017", "RF-FND-018", "MR-008", "MR-009", "CORR-STORE-001", "FND-CRT-008", "FND-MAJ-018", "FND-MAJ-022", "FND-MAJ-023", "GAP-008", "GAP-015", "GAP-022", "GAP-029", "RSK-103", "RSK-108", "RSK-110", "RSK-112", "REN-02", "ENG-CON-005"],
+  "open_human_decisions": {"DEC-012": "exact save medium and player-facing recovery UX; required before formal R0-C acceptance", "DEC-015": "independently bootable MVP D81 content boundary; not decided by R0-C"},
+  "interfaces": {"consumes": ["R0-A accepted proof identity", "R0-B accepted proof identity at 18cac27f1d0de9b50123ccfd4148ad40a3ecec4c", "canonical interface/platform registries"], "creates": "r0c-0.1.0-proof", "production_abi": "none"},
+  "upstream": {"r0b_commit": "18cac27f1d0de9b50123ccfd4148ad40a3ecec4c", "r0b_d81": "R0BFINAL.D81", "r0b_d81_sha256": "43fe855abac93b355b36fa509d83cd302920e87fe0a49e64287285f0a8e980f1", "r0b_handoff": "docs/reports/R0-B_HANDOFF.md", "r0b_evidence": "docs/evidence/r0b/R0B-STAGE2-EVIDENCE-MAP.md"},
+  "toolchain": {"lock": "toolchain/f65_toolchain.lock.json", "status": "TOOLCHAIN-VERIFICATION-REQUIRED", "target": "mos-mega65-clang -mcpu=mos45gs02 -mlto-zp=0"},
+  "memory": {"stack": "$0100-$01FF", "base_page": "$0200-$02FF", "display_control": "$01C000-$01CFFF", "display_a": "$020000-$02FFFF", "display_b": "$030000-$03FFFF", "presentation_assets": "$040000-$047FFF", "workspace": "$048000-$04FFFF", "staging": "$050000-$057FFF", "protected_reserve": "$058000-$05FFFF untouched"},
+  "owners": {"package_build": "Host package builder", "capacity_model": "Host mission/capacity compiler", "resource_residency": "R0-C ResourceManager proof", "storage_transactions": "R0-C Storage proof service", "target_presentation": "R0-C diagnostic harness", "authoritative_gameplay_simulation": "none"},
+  "cadence": {"tactical_disk": "prohibited", "attic_to_chip": "bounded explicit requests", "save": "outside live sortie only", "simulation_tick": "NOT_APPLICABLE_UNTIL_GATE: Phase 1"},
+  "provisional": ["R0-C-CANDIDATE tile dimensions", "R0-C-CANDIDATE LOD bins", "R0-C-CANDIDATE resource counts", "R0-C-CANDIDATE staging sizes", "R0-GATED load-time and DMA ceilings"],
+  "prohibited": ["gameplay", "flight", "aircraft systems", "radar", "weapons", "damage", "AI", "campaign", "Midnight Spear", "production mission/renderer/audio", "MEGA65.ROM", "R0-A/R0-B sources/evidence", "pool capacity changes", "tick-rate/order", "public production ABI", "memory ownership", "protected reserve"],
+  "exit_condition": "Implementation completion requires source, host/Xemu evidence, guide, matrix, handoff, clean commits, and remote verification. Gate passage additionally requires DEC-012, exact physical storage/save/media evidence, and human acceptance."
+}

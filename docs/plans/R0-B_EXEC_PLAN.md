@@ -1,7 +1,10 @@
 # R0-B Execution Plan and Evidence Log
 
-Status: **implementation in progress**. This is an action/evidence log, not a
-production design decision.
+Status: **closed — PASS** at `18cac27f1d0de9b50123ccfd4148ad40a3ecec4c`.
+This retained action/evidence log describes the history of the R0-B proof; the
+accepted closure record is `docs/reports/R0-B_HANDOFF.md` and its physical
+evidence is `docs/evidence/r0b/R0B-STAGE2-EVIDENCE-MAP.md`. This status update
+does not alter that evidence or create a production decision.
 
 ## Starting identity
 

@@ -42,23 +42,26 @@ Revision 1.4 is referenced as superseded and retained by Revision 1.4.1 but was 
 
 ## 3. Current engineering state
 
-The project is entering bounded R0-A proof implementation. Approved AD-001 authorizes R0-A–F proof development; no R0 gate has passed. Autonomous full-game production remains unauthorized. The repository does not authorize production flight, radar, weapons, tactical AI, campaign, audio, gameplay, or production-renderer code.
+R0-A and R0-B are closed bounded proof milestones; their accepted evidence is
+retained in their handoffs and evidence maps. The project is now performing
+bounded R0-C proof implementation under AD-001. This status correction does
+not pass R0-C or promote any candidate specification. Autonomous full-game
+production remains unauthorized. The repository does not authorize production
+flight, radar, weapons, tactical AI, campaign, audio, gameplay, or
+production-renderer code.
 
 Draft, proposed, `TBD`, `TARGET`, and `R0-GATED` material remains exactly that until the named human or measurement gate changes its status.
 
-## 4. Current authorized milestone: R0-A
+## 4. Current authorized milestone: R0-C
 
-R0-A is the smallest authorized engineering milestone. Its scope is limited to:
-
-- pinning authoritative reference, toolchain, hardware, core/bitstream, ROM, system-files, video-standard, and emulator identities;
-- reproducible host build and bootable D81 proof;
-- MemoryAccessABI and canonical mapping/base-page restoration proof;
-- required 45GS02 opcode, extended-addressing, and wrapper proof;
-- symbols, listings, and build/evidence identity;
-- timing, MAP, DMA, IRQ, and interrupt-safety instrumentation; and
-- initial non-shipping schemas, ledgers, generators, diagnostics, and fixtures required to make that proof reproducible.
-
-Proxy data may be used only when clearly non-shipping. R0-A contains no gameplay implementation.
+R0-C is the current bounded proof milestone. Its scope is limited to
+production-shaped host asset/mission tools; deterministic package and D81
+proof; conservative capacity witnesses; non-shipping resource residency and
+staging; non-tactical disk dependency proof; save-transaction fault
+infrastructure; and explicit ROM-reclaim/storage-handoff investigation.
+It contains no gameplay implementation and does not select a production
+renderer, resource layout, package version, save medium, or campaign disk
+boundary.
 
 ## 5. Hard gates
 
@@ -101,3 +104,4 @@ These later-phase gaps do not prohibit independent, bounded R0-A work unless an 
 | 2026-08-17 | Repository bootstrap 0.1 | Configured the private GitHub remote and published `main` | Initial bootstrap commit `7c9beb26a33e7a47c75893b595bc2e56c131aa8f`; this append-only publication entry is in the following project-control commit | User created the private repository and authorized publication; specification approval state is unchanged |
 | 2026-08-20 | R0 configuration synchronization | Added exact approved Read-First/AD-001/approval-record copies and candidate Architecture 1.5.1/Engine 0.2; updated control index without promoting candidate parents or passing R0 | Pending configuration-control commit | AD-001 authorizes development only; `DEC-002`, `DEC-003`, physical evidence, and human acceptance remain open |
 | 2026-08-20 | R0-A handoff / R0-B admission | R0-A focused physical base-page and pointer proof was owner-recorded as passed at `1ab5b62`; created bounded R0-B graphics/display/cockpit/palette/input/representative-audio proof admission on `codex/r0-b-development` | R0-B admission commit | R0-B development is authorized by AD-001; parent candidates remain unapproved; no R0-B physical evidence or production selection is implied |
+| 2026-08-21 | R0-B closure / R0-C admission | Recorded accepted R0-B physical composite evidence at `18cac27f1d0de9b50123ccfd4148ad40a3ecec4c` and opened bounded R0-C proof implementation on `codex/r0-c-development` | R0-C reconciliation commit | R0-B is closed PASS only for its admitted proof scope. R0-C remains development work; `DEC-012`, physical storage/media evidence, and human acceptance remain open. |
