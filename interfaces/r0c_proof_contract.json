@@ -1,0 +1,34 @@
+{
+  "identity": "r0c-0.1.0-proof",
+  "status": "R0-C-CANDIDATE",
+  "byteOrder": "little-endian",
+  "resourceHandle16": { "invalid": 65535, "size": 2 },
+  "records": {
+    "resourceDirectoryEntry": {
+      "size": 16,
+      "fields": [
+        ["handle", 0, "u16"], ["kind", 2, "u8"], ["residency", 3, "u8"],
+        ["encodedBytes", 4, "u16"], ["decodedBytes", 6, "u16"],
+        ["alignment", 8, "u16"], ["integrity", 10, "u32"], ["directoryFlags", 14, "u16"]
+      ]
+    },
+    "packageHeader": {
+      "size": 24,
+      "magic": "R0CP",
+      "fields": [
+        ["magic", 0, "u32"], ["major", 4, "u16"], ["minor", 6, "u16"],
+        ["totalBytes", 8, "u32"], ["sectionCount", 12, "u16"], ["flags", 14, "u16"],
+        ["directoryOffset", 16, "u32"], ["integrity", 20, "u32"]
+      ]
+    },
+    "packageSection": { "size": 16, "fields": [["kind",0,"u16"],["flags",2,"u16"],["offset",4,"u32"],["bytes",8,"u32"],["integrity",12,"u32"]] },
+    "saveGeneration": { "size": 32, "fields": [["magic",0,"u32"],["version",4,"u16"],["slot",6,"u8"],["generation",8,"u32"],["payloadBytes",12,"u16"],["integrity",16,"u32"],["commitMarker",20,"u32"]] },
+    "residentResult": { "size": 96, "address": "0x1800", "fields": [["magic",0,"u32"],["version",4,"u8"],["environment",5,"u8"],["passMask",6,"u16"],["deferredMask",8,"u16"],["firstFailure",10,"u8"],["stagingHighWater",12,"u16"],["packageIntegrity",16,"u32"],["buildIdentity",20,"u32"]] }
+  },
+  "invariants": [
+    "ResourceHandle16 invalid sentinel is 0xffff.",
+    "Resource directory records are exactly 16 bytes.",
+    "All target-visible numeric fields use explicit little-endian encoding.",
+    "These layouts are R0-C proof candidates and do not freeze a production ABI."
+  ]
+}
