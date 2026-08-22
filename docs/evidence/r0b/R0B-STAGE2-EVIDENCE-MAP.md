@@ -1,7 +1,9 @@
 # R0-B Stage 2 Evidence Map
 
 This map describes the scope of one resident proof harness. It is not an R0-B
-acceptance matrix and does not authorize production implementation.
+acceptance matrix and does not authorize production implementation. The final
+composite physical capture was completed on 2026-08-21; its bounded R0-B proof
+gate is therefore closed.
 
 | Required evidence | Harness method | Expected result |
 |---|---|---|
@@ -42,5 +44,30 @@ a production graphics, input, audio, or gameplay implementation.
 
 Current composite identity: `R0BFINAL.D81` (uppercase 8.3 SD-card filename).
 SHA-256: `43fe855abac93b355b36fa509d83cd302920e87fe0a49e64287285f0a8e980f1`.
-Its Xemu evidence is `R0B-FINAL-XEMU-001 PASS`; it does **not** close the
-physical R0-B gate.
+Its Xemu evidence is `R0B-FINAL-XEMU-001 PASS`.
+
+## Final physical capture — complete
+
+Owner capture on 2026-08-21 ran the exact `R0BFINAL.D81` artifact above on a
+physical MEGA65. The final screen reported `ENV: PHYSICAL MEGA65 DETECTED` and
+all nine required composite rows as PASS, including `INPUT ASCII EDGE+ACK /
+RASTER DELTA: PASS` after a real keypress. The `$1800` header was
+`52 30 42 32 02 02 01 05`, establishing the `R0B2` schema-2 physical PASS
+result for revision 5. The owner also observed the SID tone.
+
+PCM/DMA remains explicitly deferred because this bounded R0-B harness has no
+pinned DMA-audio start/stop wrapper. That is not a failed requirement: item 6
+accepts a timed SID proxy *or* DMA path, and the timed SID path passed on the
+physical run. No scope waiver is required.
+
+| Required R0-B evidence | Physical disposition |
+|---|---|
+| Safe FCM probe and restore | PASS |
+| Complete-buffer presentation and pointer restore | PASS |
+| Candidate palette behavior | PASS |
+| HUD/MFD composition | PASS |
+| Real input edge/ack and raster delta | PASS |
+| Representative timed audio service | PASS; tone observed |
+| Bounded renderer candidate | PASS |
+| Non-baseline hardware identity | PASS |
+| Pinned identity/result block | PASS |
