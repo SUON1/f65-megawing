@@ -4,6 +4,8 @@ Status: **R0-C implementation is not complete.** This handoff records the
 bounded candidate delivered so far and its explicit blockers. It must be updated
 after a complete implementation and final remote verification.
 
+Candidate source commit: `a81dc4d`.
+
 ## What was built
 
 - Canonical `r0c-0.1.0-proof` contract and generated C/Java constants.
@@ -40,6 +42,18 @@ Generated (ignored) artifacts are under `build/r0c/`:
 See `docs/evidence/r0c/R0C-EVIDENCE-MAP.md` and
 `docs/testing/R0-C_TEST_GUIDE.md`.
 
+Candidate identities from the deterministic build:
+
+- Package SHA-256: `9b535b022c97a7b9eb52552ac07f7776c677f23a3c604b75f9541d43c114f19f`
+- D81 SHA-256: `cd8a653eee2ba8d0233d500f50856ccaf46fc8efcf3555cfe7f73e5f3f2b0f56`
+- PRG SHA-256: `6c45829415e48e125a430672c60b5f371a255ed7d74ae79a059b325da0abd8e9`
+- Xemu result-block SHA-256:
+  `dc324cdd4f14501ad1551aad31b159ede272698e63b6e036d47577566fb7a378`
+
+The Xemu candidate run passed `R0C-ID-001`, `R0C-PKG-001`, `R0C-CAP-001`,
+`R0C-RES-001`, `R0C-STG-001` (Attic-model only), and `R0C-NODISK-001` (static
+guard only). It did not run a physical or target-storage transaction.
+
 ## Required next work
 
 1. Obtain owner approval for DEC-012 using `R0-C_DEC-012_DECISION_PACKET.md`.
@@ -50,3 +64,6 @@ See `docs/evidence/r0c/R0C-EVIDENCE-MAP.md` and
    media, including post-ROM-reclaim handoff/restore.
 5. Repeat host/Xemu evidence, then perform the exact physical procedure and seek
    human acceptance.
+
+See `docs/reports/R0-C_AUTHORITY_BLOCKERS.md` for the precise authority needed
+before those target paths can be implemented safely.

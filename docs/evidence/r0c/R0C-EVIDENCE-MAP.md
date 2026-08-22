@@ -17,3 +17,12 @@ Status: **implementation evidence in progress; this is not an R0-C closure recor
 Inherited R0-B physical platform evidence remains accepted at commit
 `18cac27f1d0de9b50123ccfd4148ad40a3ecec4c`; it is not substituted for any
 R0-C storage, package, or save evidence.
+
+Candidate package SHA-256:
+`9b535b022c97a7b9eb52552ac07f7776c677f23a3c604b75f9541d43c114f19f`.
+
+Candidate D81 SHA-256:
+`cd8a653eee2ba8d0233d500f50856ccaf46fc8efcf3555cfe7f73e5f3f2b0f56`.
+
+Authority/decision blocker detail is recorded in
+`docs/reports/R0-C_AUTHORITY_BLOCKERS.md`.
