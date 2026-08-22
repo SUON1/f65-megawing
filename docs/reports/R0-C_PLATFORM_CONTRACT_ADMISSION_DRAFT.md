@@ -1,15 +1,17 @@
 # R0-C Platform Contract Admission Draft
 
-Status: **PROPOSED — UNADMITTED — NO WRAPPER IMPLEMENTATION AUTHORIZED**
+Status: **SPLIT — `R0C-PLAT-ATTIC-001` ADMITTED FOR R0-C PROOF ONLY; `R0C-PLAT-ROM-001` DEFERRED — NO ROM WRAPPER AUTHORIZED**
 
 Date: 2026-08-21
 Milestone: Phase 0 / R0-C
 Scope: real Attic-to-chip staging and post-ROM-reclaim storage handoff only.
 
-This is a review packet, not an interface-registry change, a production ABI,
-or evidence that either operation works on Xemu or physical hardware. It is
-intentionally separate from `interfaces/f65_platform_abi.json5`: registering
-these operations before approval would falsely make a proposal authoritative.
+This is the review record for two separate platform decisions. The admitted
+Attic contract is registered in `interfaces/f65_platform_abi.json5` and noted
+in `memory/r0c-memory-ledger.json`; it remains a proof-only ABI and is not
+implemented or physically evidenced. The ROM contract is intentionally not
+registered as callable: registering it would falsely make an unsupported
+restore sequence authoritative.
 
 ## Authority and evidence reviewed
 
@@ -49,7 +51,7 @@ candidate, not an admitted R0-C backend or a production timing commitment.
   MAP offsets/EOM-complete state, base page `$0200`, resident vectors, and the
   documented IRQ state.
 
-## Proposed contract A — `R0C-PLAT-ATTIC-001`
+## Admitted contract A — `R0C-PLAT-ATTIC-001`
 
 ### Purpose and ownership
 
@@ -60,22 +62,19 @@ staging buffer. `ResourceManager` owns the residency state transition;
 platform service owns any hardware DMA start. Consumers receive a validated
 handle and chip destination only, never an Attic pointer.
 
-### Candidate interface shape (not a registered ABI)
+### Registered proof-only low-level ABI
 
 ```text
-R0cStageResult r0c_stage_attic_resource(
-    ResourceHandle16 handle,
-    FarPtr32 attic_source,
-    ChipStageRange destination,
-    uint16_t encoded_length,
-    uint16_t decoded_length,
-    uint16_t required_alignment,
-    Integrity expected_integrity);
+private uint8_t r0c_attic_stage_cpu_copy_private(void);
 ```
 
-The canonical schema, C layout, assembly symbol, calling convention, and
-clobber list remain **TBD until admission and a compiler-ABI check**. The
-prototype is only a review aid and must not be copied into a public registry.
+The C `ResourceManager` facade validates and owns any request record. It may
+not pass a multi-argument physical-pointer ABI into assembly. The registered
+private helper takes no arguments, returns a stage-result byte in `A`, clobbers
+only `A`, and preserves `X`, `Y`, `Z`, `Q`, `B`, `P`, and `SP`. `B=$02` and the
+canonical state are required at both entry and exit. The helper remains
+**ADMITTED_NOT_IMPLEMENTED** until a compiler-ABI test and wrapper evidence
+are added. It is not a public production ABI.
 
 ### Preconditions
 
@@ -97,9 +96,8 @@ prototype is only a review aid and must not be copied into a public registry.
 
 1. Validate all inputs before touching mapping or destination bytes.
 2. Enter only an admitted bounded platform access scope.
-3. Transfer source bytes to chip staging using the admitted backend. A CPU-copy
-   backend and a DMA backend are mutually exclusive candidates; neither is
-   selected by this draft.
+3. Transfer source bytes with the admitted first backend: a bounded CPU copy.
+   DMA is not selected, admitted, or measured by this contract.
 4. Validate destination integrity before changing the resource's active state.
 5. On success, publish only `CHIP_RESIDENT_OR_STAGED` through
    `ResourceManager`, update staging high-water, and retain handle identity.
@@ -110,8 +108,9 @@ prototype is only a review aid and must not be copied into a public registry.
 
 `OK`, `INVALID_HANDLE`, `DIRECTORY_RANGE`, `ATTIC_UNAVAILABLE`,
 `SOURCE_RANGE`, `DESTINATION_RANGE`, `ZERO_OR_OVERSIZE_LENGTH`, `ALIGNMENT`,
-`INTEGRITY`, `BACKEND_UNSUPPORTED`, `BUSY`, and `RESTORE_FAULT` are proposed
-proof result classes. Exact numeric values are not admitted here.
+`INTEGRITY`, `BACKEND_UNSUPPORTED`, `BUSY`, and `RESTORE_FAULT` are the
+admitted proof result classes. Their numeric encoding remains internal to the
+proof implementation and must be generated from a single canonical source.
 
 ### Measurements and required tests after admission
 
@@ -122,7 +121,7 @@ high bits, Attic and destination edge ranges, alignment, integrity mutation,
 repeatability, failed-stage rollback, and untouched reserve. Xemu may report
 emulation behavior; physical MEGA65 evidence remains required.
 
-## Proposed contract B — `R0C-PLAT-ROM-001`
+## Deferred contract B — `R0C-PLAT-ROM-001`
 
 ### Purpose and boundaries
 
@@ -191,20 +190,24 @@ The currently reviewed official materials do **not** provide all of these:
   on undocumented KERNAL/hypervisor behavior.
 
 Until evidence supplies these facts, `R0C-ROM-001` remains **DEFERRED** and no
-reclaim/restoration wrapper may be implemented.
+reclaim/restoration wrapper may be implemented. See
+`docs/reports/R0-C_ROM_RECLAIM_RESEARCH.md` for the current source-bound
+research record.
 
-## Admission checklist
+## Admission and implementation checklist
 
-Admission requires an explicit human/platform review accepting each contract
-independently, then a versioned addition to the platform ABI registry and an
-owned memory-ledger entry. The review must supply:
+The owner admitted contract A on 2026-08-21 with the bounded CPU-copy backend,
+the registry entry, and the memory-ledger note. Contract B remains unadmitted.
+Before any contract-A wrapper is written, the implementation review must prove:
 
 1. Official source links/pages/version hashes for all platform primitives.
 2. Supported physical core/ROM/system-files/storage matrix and no-Attic
    behavior.
 3. Exact canonical entry/exit state and C/assembly clobber contract.
-4. Backend choice or an explicit proof-only backend policy; no production DMA
-   ceiling, staging cadence, tile size, or renderer choice.
+4. The registered zero-argument helper ABI is respected by the generated C and
+   assembly; clobbers, saved `P`, `B=$02`, and canonical MAP exit are tested.
+   No production DMA ceiling, staging cadence, tile size, or renderer choice
+   is made.
 5. Target code and stack accounting plus a failure/recovery plan that does not
    risk owner media or protected memory.
 6. Host, Xemu, and physical test matrices with separate evidence classes.
@@ -215,5 +218,6 @@ owned memory-ledger entry. The review must supply:
 fixture. This draft does not choose a production medium, recovery UX, package
 format, disk split, DMA policy, or renderer. `DEC-015` remains open.
 
-**Current result:** research and planning are complete enough for admission
-review; neither platform contract is admitted, implemented, or passing.
+**Current result:** `R0C-PLAT-ATTIC-001` is admitted for the narrow proof only,
+but is not implemented or passing. `R0C-PLAT-ROM-001` is deferred and has no
+authorized wrapper. Neither decision is R0-C gate passage.

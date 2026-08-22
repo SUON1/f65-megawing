@@ -14,11 +14,12 @@ and requires `MemoryAccessABI` to own MAP/base-page changes. No approved
 target-side `MemoryAccessABI` or resource storage service is presently in the
 R0-C admitted source surface.
 
-Required resolution: admit or identify the authoritative existing wrapper for
-physical Attic mapping/copy, including its MAP, `$01`, base-page, IRQ, callback,
-and error-restoration contract. R0-C can then stage a package resource into the
-declared `$050000-$052FFF` candidate range and measure it without touching
-`$058000-$05FFFF`.
+Resolution status: `R0C-PLAT-ATTIC-001` was admitted on 2026-08-21 for a
+bounded CPU-copy proof only. The versioned ABI entry pins ownership, the
+`$050000-$052FFF` destination, no-Attic `ATTIC_UNAVAILABLE`, saved-P IRQ/MAP
+scope, `B=$02`, and preserved-register requirements. It authorizes no wrapper
+until those requirements are exercised by an implementation-specific
+compiler/assembly ABI test. Physical staging evidence remains absent.
 
 ## R0C-ROM-001 — reclaim/storage handoff and restoration
 
