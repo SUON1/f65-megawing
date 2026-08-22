@@ -1,5 +1,6 @@
 {
   "schema_version": "r0c-0.1.0-proof-candidate",
+  "r0c_attic_implementation": {"status":"IMPLEMENTED_PROOF_WRAPPER_XEMU_PENDING_PHYSICAL","source":"src/platform/r0c_attic_45gs02.s","backend":"BOUNDED_CPU_COPY_ONLY","physicalEvidence":"PENDING"},
   "status": "candidate registry; R0C-PLAT-ATTIC-001 admitted for R0-C proof only; R0C-PLAT-ROM-001 deferred",
   "canonical_entry_exit": {"map": "offsets cleared and EOM complete", "cpu_port_01": "0x35", "io_personality": "MEGA65", "base_page": {"physical_window": "0x0200-0x02ff", "r0a_llvm_mos": "logical ABI offsets 0x02-0x21 with 45GS02 B=0x02", "kernal_transition": "assembly thunk temporarily restores B=0x00"}, "stack": "0x0100-0x01ff", "vectors": "resident bank-0"},
   "public_registers": ["A", "X", "Y", "Z", "Q", "B", "P"],

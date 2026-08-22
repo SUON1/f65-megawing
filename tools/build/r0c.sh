@@ -13,7 +13,7 @@ generate() { need_tools; compile_host; host generate; }
 host_test() { generate; host host-test; python3 "$root/tools/diagnostics/r0c_validate_target.py" "$root"; }
 build() {
   host_test; mkdir -p "$out/artifacts" "$out/reports" "$out/evidence"
-  "$cc" -mcpu=mos45gs02 -mlto-zp=0 -Os -Wall -Wextra -Wconversion -Werror -I"$root/interfaces/generated" "$root/src/r0c/main.c" "$root/src/diagnostics/r0c/composite.c" "$root/src/platform/r0a_platform_45gs02.s" -Wl,-Map,"$out/reports/F65-R0C-PROOF.map" -o "$out/artifacts/F65-R0C-PROOF.prg"
+  "$cc" -mcpu=mos45gs02 -mlto-zp=0 -Os -Wall -Wextra -Wconversion -Werror -I"$root/interfaces/generated" "$root/src/r0c/main.c" "$root/src/diagnostics/r0c/composite.c" "$root/src/platform/r0a_platform_45gs02.s" "$root/src/platform/r0c_attic_45gs02.s" -Wl,-Map,"$out/reports/F65-R0C-PROOF.map" -o "$out/artifacts/F65-R0C-PROOF.prg"
   "$nm" "$out/artifacts/F65-R0C-PROOF.prg.elf" > "$out/reports/F65-R0C-PROOF.symbols"
   "$objdump" -d --print-imm-hex "$out/artifacts/F65-R0C-PROOF.prg.elf" > "$out/reports/F65-R0C-PROOF.disassembly"
   "$petcat" -w65 -o "$out/artifacts/AUTOBOOT.C65" -- "$root/src/r0c/autoboot.bas"
