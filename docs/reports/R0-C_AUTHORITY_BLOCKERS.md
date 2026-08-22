@@ -34,24 +34,22 @@ reviewed wrapper/contract for the supported transition and restoration path, or
 formally record that no supported path exists. The latter would leave
 R0C-ROM-001 deferred rather than passed.
 
-## R0C-SAVE-001 / R0C-MEDIA-001 — acceptance medium
+## R0C-SAVE-001 / R0C-MEDIA-001 — approved fixture medium; implementation pending
 
-`DEC-012` remains open. The candidate decision packet recommends a **separate
-sacrificial writable D81/image** for R0-C acceptance, but it makes no
-production selection. Without owner approval of the medium and recovery policy,
-the target may not claim write-protect, removal, full-media, changed-media, or
-interrupted-write proof.
+`DEC-012` was approved by the owner on 2026-08-21 for a **separate sacrificial
+writable D81/image** used only by the R0-C media-fault fixture. It is not a
+production save-medium, disk-boundary, or recovery-UX decision.
 
-Required resolution: owner approval or rejection of the documented candidate
-in `docs/reports/R0-C_DEC-012_DECISION_PACKET.md`. R0-C will then bind the
-selected adapter, use only sacrificial/recoverable media, and run the required
-two-generation fault matrix.
+Required resolution: implement the admitted adapter only after the narrow
+storage/platform contract is admitted; then use only sacrificial/recoverable
+media to run the required two-generation physical fault matrix. The approval
+does not convert the current host model into target or physical evidence.
 
 ## Consequence
 
-These three items prevent both `R0-C IMPLEMENTATION COMPLETE` and `R0-C GATE
-PASSED`. They do **not** invalidate the completed host and Xemu candidate
-evidence listed below.
+The two unadmitted platform paths and the unimplemented target media adapter
+prevent both `R0-C IMPLEMENTATION COMPLETE` and `R0-C GATE PASSED`. They do
+**not** invalidate the completed host and Xemu candidate evidence listed below.
 
 | Candidate evidence | Result | Identity |
 |---|---|---|
@@ -59,4 +57,3 @@ evidence listed below.
 | Xemu diagnostic candidate | XEMU PASS | result block SHA-256 `dc324cdd4f14501ad1551aad31b159ede272698e63b6e036d47577566fb7a378` |
 | Package | PASS | SHA-256 `9b535b022c97a7b9eb52552ac07f7776c677f23a3c604b75f9541d43c114f19f` |
 | D81 | PASS (package image build only) | SHA-256 `cd8a653eee2ba8d0233d500f50856ccaf46fc8efcf3555cfe7f73e5f3f2b0f56` |
-

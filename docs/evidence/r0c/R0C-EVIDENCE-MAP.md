@@ -11,8 +11,8 @@ Status: **implementation evidence in progress; this is not an R0-C closure recor
 | R0C-STG-001 | Deterministic CPU copy into owned proof buffer | PASS | PASS | Awaiting | **Attic-model only**; not a physical Attic RAM service proof |
 | R0C-NODISK-001 | No tactical disk function linked into target diagnostic | PASS | PASS | Awaiting | Static guard; not a loaded-package tactical run |
 | R0C-ROM-001 | Post-ROM-reclaim storage handoff | Deferred | Deferred | Awaiting | No admitted authoritative restoration/storage wrapper |
-| R0C-SAVE-001 | Two-generation transaction/fault model | PASS | Deferred | Awaiting | Host model passes; DEC-012 is open |
-| R0C-MEDIA-001 | Removal/change/write-protect/full-media faults | Deferred | Deferred | Awaiting | Requires DEC-012 and sacrificial physical medium |
+| R0C-SAVE-001 | Two-generation transaction/fault model | PASS | Deferred | Awaiting | Host model passes; DEC-012 approved for sacrificial fixture, but target adapter is not implemented |
+| R0C-MEDIA-001 | Removal/change/write-protect/full-media faults | Deferred | Deferred | Awaiting | Sacrificial D81 approved; requires admitted target adapter and physical fault evidence |
 
 Inherited R0-B physical platform evidence remains accepted at commit
 `18cac27f1d0de9b50123ccfd4148ad40a3ecec4c`; it is not substituted for any

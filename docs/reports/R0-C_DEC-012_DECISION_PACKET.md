@@ -1,6 +1,6 @@
 # DEC-012 — R0-C Save Medium and Recovery Policy
 
-Status: **OPEN — human approval required before R0-C formal acceptance**.
+Status: **APPROVED FOR R0-C FIXTURE ONLY — 2026-08-21**.
 
 | Candidate | Device/write protection | Recovery/testability | D81 impact and friction | R0-C recommendation |
 |---|---|---|---|---|
@@ -15,3 +15,15 @@ outside R0-C and is not decided here.
 
 Required approval text: identify one medium/configuration, confirm sacrificial
 media is acceptable, and approve recovery behavior after a failed/interrupted save.
+
+## Owner decision recorded 2026-08-21
+
+The owner approved a **separate sacrificial writable D81** for the R0-C
+media-fault fixture only. The admitted fault scope is absent, write-protected,
+full, corrupt, removed, and interrupted media, with two-generation retention
+and deterministic recovery results. The fixture must use recoverable test media
+and must not risk the project source media, the R0-C distribution D81, or any
+unrelated save.
+
+This approval does **not** select or freeze a production save medium, a disk
+split, or player-facing recovery UX. `DEC-015` remains outside R0-C.

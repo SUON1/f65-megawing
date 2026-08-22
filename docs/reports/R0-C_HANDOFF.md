@@ -25,8 +25,9 @@ The target buffer source is explicitly an **Attic-model**, not real Attic RAM.
 No `MemoryAccessABI`, MAP, DMA, or physical Attic access service was added.
 The package is not loaded through a target storage service. No post-ROM-reclaim
 storage restoration mechanism is asserted because the required official-platform
-evidence/wrapper has not been admitted. `DEC-012` is open; therefore no physical
-save-medium/media-fault claim is made.
+evidence/wrapper has not been admitted. `DEC-012` is approved only for a
+separate sacrificial R0-C fixture; the target adapter and physical
+save-medium/media-fault evidence are still absent.
 
 Consequently, this is neither `R0-C IMPLEMENTATION COMPLETE` nor `R0-C GATE
 PASSED`.
