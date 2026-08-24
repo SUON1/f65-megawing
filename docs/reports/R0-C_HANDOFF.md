@@ -93,3 +93,35 @@ by `tools/build/r0c.sh xemu`:
 XEMU result: `R0C-STG-001 PASS`, `R0C-ATTIC-001 PASS`; the request/result
 block is captured at `$1800-$185F`. Physical ABI/clobber measurement remains
 awaiting the owner’s MEGA65 run. This is not R0-C gate closure.
+
+## Sacrificial device-9 media fixture update (append-only)
+
+The authorized DEC-012 fixture is implemented as `src/r0c/media_fixture.bas`.
+It is a non-production BASIC/DOS proof fixture, not a target storage service or
+post-ROM-reclaim wrapper. Every fixture disk operation uses device 9; device 8
+is never probed. The transaction writes the inactive generation (`R0CG0` or
+`R0CG1`), rereads/verifies it, then writes `R0CSEL`. The `X` action deliberately
+pauses after generation verification and before selector I/O, and says when
+removal is safe.
+
+`src/r0c/autoboot.bas` now explicitly loads `R0C-FINAL` from device 9, fixing
+the former implicit device-8 fallback. Xemu mounts the generated D81 at 8 and 9
+only within the emulator for this boot smoke; the physical procedure uses only
+device 9. The D81 also contains `R0C-MEDIA`; its menu has host and Xemu smoke
+coverage, while physical writes/faults remain awaiting evidence.
+
+Current fixture identities are recorded in the evidence map and test guide.
+The new D81 SHA-256 is
+`d02e19674b4cebf494dcea8bc176f344142a4f7202a1fae852a9a5ea24d78c6f`.
+The proof PRG remains
+`285965bcfcfe36826f9f1f8bcf36ad488f3e0c2c6b42c3dfa6859232affcb6bd`.
+
+The owner has since reported physical direct-device-9 PASS screens for
+`R0C-ID-001`, `R0C-PKG-001`, `R0C-CAP-001`, `R0C-RES-001`, `R0C-STG-001`,
+`R0C-ATTIC-001`, and `R0C-NODISK-001`; the evidence map records the superseding
+status. `R0C-ROM-001` remains deferred.
+
+This work may support `R0-C IMPLEMENTATION COMPLETE` only after its complete
+commit set and origin verification are recorded. It does not pass R0-C:
+physical `R0C-SAVE-001`/`R0C-MEDIA-001` evidence remains required, and human
+acceptance is still open.
