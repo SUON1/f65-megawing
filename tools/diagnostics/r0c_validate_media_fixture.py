@@ -8,7 +8,7 @@ boot = (root / "src/r0c/autoboot.bas").read_text().lower()
 fixture = (root / "src/r0c/media_fixture.bas").read_text().lower()
 required_boot = ['load "r0c-final",9,1']
 required_fixture = [
-    "d=9", "r0cg0", "r0cg1", "r0csel", "r0c-end", "for n=1 to 512", "write/verify",
+    "d=9", "r0cg0", "r0cg1", "r0csel", "r0c-end", "for n=1 to 512", "write/verify", "get a$",
     "safe to remove device 9 now", "fill consumes device 9", "r0c-corrupt",
 ]
 missing = [item for item in required_boot if item not in boot]

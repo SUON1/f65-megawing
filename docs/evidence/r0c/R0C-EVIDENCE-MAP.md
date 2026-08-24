@@ -35,9 +35,9 @@ that proof. The R0-C proof PRG remains SHA-256
 ## Current reproducible fixture identity
 
 - D81: `build/r0c/artifacts/R0CFINAL.D81`
-  - SHA-256: `d02e19674b4cebf494dcea8bc176f344142a4f7202a1fae852a9a5ea24d78c6f`
+  - SHA-256: `d28a2d15429939db4f1b9aca2ecbc135f7dc9df45a5eef04dd25f46dba05e4ef`
 - Device-9 fixture: `R0C-MEDIA.C65`
-  - SHA-256: `75115f25e311bf73af7c6f79a97e03eabde2ac9822848c5ec94f4c26befee749`
+  - SHA-256: `0bdddae9363327dc286c5a7e18f5e0ed76e81ddeaacc90b9f48ce2a858fb37cb`
 - Package SHA-256: `9b535b022c97a7b9eb52552ac07f7776c677f23a3c604b75f9541d43c114f19f`
 
 `AUTOBOOT.C65` now uses only `LOAD "R0C-FINAL",9,1`; it has no implicit or

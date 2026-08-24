@@ -7,7 +7,7 @@ not choose a production medium, campaign disk split, or recovery UX.
 ## Exact artifact and device roles
 
 - Copy only `build/r0c/artifacts/R0CFINAL.D81` with SHA-256
-  `d02e19674b4cebf494dcea8bc176f344142a4f7202a1fae852a9a5ea24d78c6f`.
+  `d28a2d15429939db4f1b9aca2ecbc135f7dc9df45a5eef04dd25f46dba05e4ef`.
 - Device 8: owner's F0C-final SD. **Do not mount, read, write, swap, or fault
   test it.**
 - Device 9: one fresh, writable, recoverable copy of the D81 above. This is the
@@ -37,8 +37,8 @@ candidate before the selector write.
 
 | Screen state | Is removing device 9 safe? |
 |---|---|
-| `ACTION?` menu, before entering an action | Yes; no media I/O is active. |
-| `TYPE YES`, `TYPE FILL`, or a corruption target prompt | Yes; no media I/O is active. |
+| Menu showing `I=INITIALIZE ... Q=QUIT`, before entering an action | Yes; no media I/O is active. |
+| `PRESS Y`, `PRESS F`, or a corruption target prompt | Yes; no media I/O is active. |
 | `WRITE`, `VERIFY`, `SELECTOR`, or `FILL` action in progress | No. Do not remove it. |
 | `SAFE TO REMOVE DEVICE 9 NOW: NO MEDIA I/O IS ACTIVE.` | Yes; this is the controlled selector-interruption point. |
 | `MEDIA OPERATION FAILED ...` or a returned menu | Yes; no operation is in flight. |
@@ -50,12 +50,13 @@ is the injected fault; it is not represented as safe media removal.
 
 ## Baseline and normal two-generation transaction
 
-1. At `ACTION?`, mount the hash-verified sacrificial copy as device 9.
+1. At the menu, mount the hash-verified sacrificial copy as device 9.
    Removal safe: **yes**, until an action is entered.
-2. Load and run `R0C-MEDIA` from device 9. Choose `I`, then type `YES`.
-   Removal safe: **no** after `YES` until the program returns. Expected:
+2. Load and run `R0C-MEDIA` from device 9. Choose `I`, then press `Y` at the
+   confirmation line. Removal safe: **no** after `Y` until the program returns.
+   Expected:
    `INITIALIZE PASS: G0=1 AND G1=2 VERIFIED; SELECTOR=G1`.
-3. At the returned `ACTION?`, choose `W` twice, waiting for the menu after each
+3. At the returned menu, choose `W` twice, waiting for the menu after each
    write. Removal safe: **no** for each write. Expected on each: candidate
    write, `VERIFY PASS`, `SELECTOR PASS`, and `WRITE PASS`.
 4. At the menu, choose `R`. Removal safe: **no** while it reads; safe once it
@@ -67,12 +68,12 @@ is the injected fault; it is not represented as safe media removal.
 Run every case from an initialized fresh device-9 copy unless the case says to
 retain its immediately preceding state.
 
-1. **Absent — R0C-MEDIA-001.** At `ACTION?`, remove device 9. Removal safe:
+1. **Absent — R0C-MEDIA-001.** At the menu, remove device 9. Removal safe:
    **yes**. With it absent, choose `W`. Expected: `MEDIA OPERATION FAILED ON
    DEVICE 9 - NO PASS CLAIM.` Reinsert the same sacrificial medium before the
    next action; then choose `R` and photograph the retained prior generation.
 
-2. **Write-protected — R0C-MEDIA-001.** At `ACTION?`, enable write protection
+2. **Write-protected — R0C-MEDIA-001.** At the menu, enable write protection
    only on the sacrificial device-9 copy. Removal safe: **yes** while changing
    this state, because no I/O is active. Choose `W`; removal safe: **no** while
    it runs. Expected: a device-9 failure and no successful selector claim.
@@ -80,7 +81,8 @@ retain its immediately preceding state.
    retained generation.
 
 3. **Full — R0C-MEDIA-001.** Initialize a fresh device-9 copy, then choose
-   `F` and type `FILL`. Removal safe: **no** after `FILL`; allow the fixture to
+   `F` and press `F` at the confirmation line. Removal safe: **no** after the
+   second `F`; allow the fixture to
    stop on the drive-full failure. Once it returns, choose `W`. Expected: a
    device-9 failure and no successful selector claim. Photograph the failure;
    discard this consumed copy and use a new one for the next case.
@@ -99,7 +101,7 @@ retain its immediately preceding state.
 6. **Removed between verify and selector — R0C-MEDIA-001.** Initialize, then
    choose `X`. Do not remove media during its candidate write/verify. When it
    shows `SAFE TO REMOVE DEVICE 9 NOW: NO MEDIA I/O IS ACTIVE.`, removal safe:
-   **yes**. Remove device 9, type `COMMIT`, and record the expected failure.
+   **yes**. Remove device 9, press `C`, and record the expected failure.
    Reinsert the same medium, then choose `R`. Expected: the previously selected
    generation remains selected; the verified but unselected candidate is not a
    successful commit.
@@ -114,7 +116,7 @@ retain its immediately preceding state.
 
 8. **Power interruption after verified candidate / before selector —
    R0C-MEDIA-001.** Use the `X` action and stop power only at its explicit safe
-   removal message, before typing `COMMIT`. Removal safe: **yes** at that
+   removal message, before pressing `C`. Removal safe: **yes** at that
    message; power interruption is still the injected fault. Restore power,
    remount device 9, reload the fixture, and choose `R`. Expected: the prior
    selector/generation is retained.

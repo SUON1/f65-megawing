@@ -10,7 +10,7 @@ block = memory[0x1800:0x1860]
 if missing or len(block) != 96 or block[:4] != b"R0C1" or block[10] != 0:
     raise SystemExit("R0-C Xemu validation failed: missing=%s result=%s" % (missing, block[:16].hex()))
 media_text = re.sub(r"\{([^}])\}", r"\1", media_screen)
-media_required = ["TWO-GENERATION MEDIA FIXTURE", "DEVICE 9 ONLY", "DEVICE 8 IS NOT USED", "ACTION?"]
+media_required = ["TWO-GENERATION MEDIA FIXTURE", "DEVICE 9 ONLY", "DEVICE 8 IS NOT USED", "I=INITIALIZE"]
 media_missing = [x for x in media_required if x not in media_text]
 if media_missing:
     raise SystemExit("R0-C media-fixture Xemu validation failed: missing=%s" % media_missing)
