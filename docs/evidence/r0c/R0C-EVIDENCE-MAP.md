@@ -1,7 +1,8 @@
 # R0-C Evidence Map
 
-Status: **implementation evidence complete pending final commit/origin verification;
-this is not an R0-C closure record.** `R0CFINAL.D81` is a proof-artifact
+Status: **R0-C IMPLEMENTATION COMPLETE; this is not an R0-C closure record.**
+Commit `6164fbd383308bce3c631d2eebe64acae5593e75` is verified on the requested
+origin branch. `R0CFINAL.D81` is a proof-artifact
 filename only, never a gate-closure label.
 
 | Test ID | Proof | Host | Xemu | Physical | Evidence / limitation |

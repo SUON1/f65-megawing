@@ -121,7 +121,8 @@ The owner has since reported physical direct-device-9 PASS screens for
 `R0C-ATTIC-001`, and `R0C-NODISK-001`; the evidence map records the superseding
 status. `R0C-ROM-001` remains deferred.
 
-This work may support `R0-C IMPLEMENTATION COMPLETE` only after its complete
-commit set and origin verification are recorded. It does not pass R0-C:
+`R0-C IMPLEMENTATION COMPLETE` is now recorded: the authorized implementation,
+host/Xemu validation, guide, evidence, commit `6164fbd383308bce3c631d2eebe64acae5593e75`,
+and origin verification are complete. It does not pass R0-C:
 physical `R0C-SAVE-001`/`R0C-MEDIA-001` evidence remains required, and human
 acceptance is still open.
