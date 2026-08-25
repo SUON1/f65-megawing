@@ -1,9 +1,9 @@
 # R0-C Evidence Map
 
-Status: **R0-C IMPLEMENTATION COMPLETE; this is not an R0-C closure record.**
-The current implementation is verified on the requested origin branch.
-`ROCFINAL.D81` is a fixture-artifact
-filename only, never a gate-closure label.
+Status: **corrected fixture implementation validated locally; physical mount
+and media evidence pending. This is not an R0-C closure record.**
+`R0CMEDIA.D81` and `ROCFINAL.D81` are retired after observed Freezer `FF`
+mount failures. `F65-R0C-MEDIA.D81` is the sole current fixture candidate.
 
 | Test ID | Proof | Host | Xemu | Physical | Evidence / limitation |
 |---|---|---|---|---|---|
@@ -15,8 +15,8 @@ filename only, never a gate-closure label.
 | R0C-ATTIC-001 | ABI/range/rollback | PASS | PASS | PASS | Direct device-9 proof screen. |
 | R0C-NODISK-001 | No tactical disk function linked into target diagnostic | PASS | PASS | PASS | Static guard plus direct device-9 proof screen. |
 | R0C-ROM-001 | Post-ROM-reclaim storage handoff | Deferred | Deferred | Deferred | No officially documented reversible restore contract is admitted. |
-| R0C-SAVE-001 | Two-generation transaction/fault model and fixture | PASS | Fixture menu/boot PASS | Fixture menu PASS | Owner physically launched the readable device-9 fixture menu from the sacrificial `ROCFINAL.D81` carrier; no transaction pass is claimed. |
-| R0C-MEDIA-001 | Absent/write-protected/full/corrupt/removed/interrupted-media faults | Fixture surface PASS | Fixture menu PASS | Awaiting | Requires the exact sacrificial device-9 matrix in the test guide. |
+| R0C-SAVE-001 | Two-generation transaction/fault model and fixture | PASS | Fixture menu/boot PASS | Historical menu observation only | The historical carrier cannot be tied to the current candidate; no transaction pass is claimed. |
+| R0C-MEDIA-001 | Absent/write-protected/full/corrupt/removed/interrupted-media faults | Fixture surface PASS | Fixture menu PASS | Awaiting | Requires a physical mount of the corrected carrier, then the exact sacrificial device-9 matrix in the test guide. |
 
 ## Recorded physical proof observation
 
@@ -33,11 +33,16 @@ Device 8 is the owner's F0C-final SD and was neither mounted nor modified for
 that proof. The R0-C proof PRG remains SHA-256
 `285965bcfcfe36826f9f1f8bcf36ad488f3e0c2c6b42c3dfa6859232affcb6bd`.
 
-## Current reproducible fixture identity
+## Current corrected fixture identity
 
-- D81: `build/r0c/artifacts/ROCFINAL.D81`
-  - SHA-256: `8e306dddc31e38fe0e496e5fca67abafbc84ed6f4f827124dfff72e24fcc382b`
-  - Carrier directory: `AUTOBOOT`, `R0C-FINAL`, `R0C-MEDIA`, and `R0CPROOF`.
+- Mount control: `F65-R0CFINAL.D81`
+  - SHA-256: `ba72aa82387f7e65551e893a3274f1c7f26a813416652c4aeab73c6a8b7e7e38`
+  - The owner mounted this three-file control successfully. It must not be
+    modified and it does not contain `R0C-MEDIA`.
+- D81: `build/r0c/artifacts/F65-R0C-MEDIA.D81`
+  - SHA-256: `8826fc89706bcca0d9587f9bae80b5d12a8a1d35e3e0a92868c118e9ef204059`
+  - Carrier directory: `AUTOBOOT`, `R0C-FINAL`, `R0CPROOF`, then appended
+    `R0C-MEDIA`.
 - Device-9 fixture: `R0C-MEDIA.C65`
   - SHA-256: `91ce42ca7d831ff6eeebc75d60c2b2eb01939dd453e46b68433f34147e66f366`
 - Package SHA-256: `9b535b022c97a7b9eb52552ac07f7776c677f23a3c604b75f9541d43c114f19f`
@@ -55,21 +60,25 @@ The controlled interruption action pauses after verification and before the
 selector write. It is a DEC-012 sacrificial test fixture, not a production save
 medium, disk split, recovery UX, or post-ROM-reclaim service.
 
-## Physical carrier observation (2026-08-24)
+## Physical carrier observations (2026-08-24/25)
 
-The Freezer rejected the delivered `R0CMEDIA.D81` with `ERROR CODE FF` when it
-was selected for the external-1565 managed drive. That artifact is retired.
-The owner then configured the second managed drive as unit 9, mounted the
-existing sacrificial `ROCFINAL.D81` carrier, and physically launched the
-readable `R0-C TWO-GENERATION MEDIA FIXTURE` menu with
-`LOAD "R0C-MEDIA",9,1`. That carrier revealed a physical PETSCII-input defect:
-`I` was incorrectly reported as unknown. The replacement carrier above
-normalizes PETSCII/ASCII input before dispatch. The D81 is a virtual floppy:
-device-9 writes mutate the sacrificial D81's sectors, whose backing file resides
-on the SD card; this does not access device 8. No initialization or fault action
-is claimed yet.
+The Freezer rejected both delivered `R0CMEDIA.D81` and replacement
+`ROCFINAL.D81` with `ERROR CODE FF` when selected for the external-1565
+managed drive. Those artifacts are retired. The owner supplied
+`F65-R0CFINAL.D81`, which does mount but contains only `AUTOBOOT`, `R0C-FINAL`,
+and `R0CPROOF`; it therefore cannot supply the fixture program. Its
+`R0C-FINAL` and `R0CPROOF` bytes are the control for the correction above.
 
-`R0-C IMPLEMENTATION COMPLETE` is eligible only after the implementation,
-host/Xemu validation, guide, evidence, commits, and remote verification are all
-recorded. `R0-C GATE PASSED` additionally requires physical save/media evidence,
-a formally resolved ROM-reclaim condition, and human acceptance.
+The corrected carrier preserves that package/proof layout and appends
+`R0C-MEDIA` afterward. It also retains the explicit device-9 boot contract and
+the PETSCII/ASCII input normalization that fixes the observed `I` unknown-action
+defect. The D81 is a virtual floppy: device-9 writes mutate its sacrificial D81
+sectors, whose backing file resides on the SD card; this does not access device
+8. No physical mount, initialization, or fault action is claimed for the
+corrected carrier yet.
+
+`R0-C IMPLEMENTATION COMPLETE` is eligible only after the corrected
+implementation, host/Xemu validation, guide, evidence, commits, and remote
+verification are all recorded. `R0-C GATE PASSED` additionally requires
+physical save/media evidence, a formally resolved ROM-reclaim condition, and
+human acceptance.

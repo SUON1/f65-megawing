@@ -15,7 +15,7 @@ public final class R0CHostTools {
   private static final Map<String,Integer> CAP=Map.ofEntries(
     Map.entry("aircraft",9),Map.entry("guidedMissiles",16),Map.entry("gunProjectileGroups",24),Map.entry("chaffFlareEntities",48),Map.entry("dynamicMissionEntities",8),Map.entry("activeObjectives",8),Map.entry("presentationEffects",64),Map.entry("radarTruth",32),Map.entry("radarTracks",24),Map.entry("rioPriority",8));
   private R0CHostTools(){}
-  public static void main(String[] a)throws Exception{String op=a.length==0?"all":a[0]; if(op.equals("generate")||op.equals("all")||op.equals("host-test"))generate();if(op.equals("host-test")||op.equals("all"))hostTest();if(op.equals("verify")||op.equals("all"))verify();if(op.equals("d81-manifest"))d81(a.length>1?Paths.get(a[1]):OUT.resolve("ROCFINAL.D81"));}
+  public static void main(String[] a)throws Exception{String op=a.length==0?"all":a[0]; if(op.equals("generate")||op.equals("all")||op.equals("host-test"))generate();if(op.equals("host-test")||op.equals("all"))hostTest();if(op.equals("verify")||op.equals("all"))verify();if(op.equals("d81-manifest"))d81(a.length>1?Paths.get(a[1]):OUT.resolve("artifacts/F65-R0C-MEDIA.D81"));}
   private static void generate()throws Exception{
     mkdir("generated");mkdir("manifests");mkdir("reports");mkdir("evidence");mkdir("logs");
     String c=read("interfaces/r0c_proof_contract.json");if(!c.contains("65535")||!c.contains("\"size\": 16"))throw new IOException("contract invariant missing");

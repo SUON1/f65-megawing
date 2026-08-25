@@ -6,16 +6,18 @@ not choose a production medium, campaign disk split, or recovery UX.
 
 ## Exact artifact and device roles
 
-- Copy only `build/r0c/artifacts/ROCFINAL.D81` with SHA-256
-  `8e306dddc31e38fe0e496e5fca67abafbc84ed6f4f827124dfff72e24fcc382b`.
-  Its outer SD-card filename is uppercase 8.3 and must remain exactly
-  `ROCFINAL.D81`. The name is proof-artifact history only, never a closure
-  claim. Its directory must show `AUTOBOOT`, `R0C-FINAL`, `R0C-MEDIA`, and
-  `R0CPROOF`.
-- The prior `R0CMEDIA.D81` delivery was physically rejected by the Freezer with
-  `ERROR CODE FF`; it is retired and must not be used for this procedure.
-- The current physical carrier is the new, hash-verified sacrificial
-  `ROCFINAL.D81` D81 on unit 9. Device 9 is writable by design; the fixture
+- Copy only `build/r0c/artifacts/F65-R0C-MEDIA.D81` with SHA-256
+  `8826fc89706bcca0d9587f9bae80b5d12a8a1d35e3e0a92868c118e9ef204059`.
+  Its outer SD-card filename must remain exactly `F65-R0C-MEDIA.D81`. Its
+  directory shows `AUTOBOOT`, `R0C-FINAL`, `R0CPROOF`, and then the appended
+  `R0C-MEDIA` fixture.
+- `F65-R0CFINAL.D81` (SHA-256 `ba72aa82387f7e65551e893a3274f1c7f26a813416652c4aeab73c6a8b7e7e38`)
+  is the known mountable three-file control. Do not overwrite or modify it.
+- The prior `R0CMEDIA.D81` and `ROCFINAL.D81` deliveries were physically
+  rejected by the Freezer with `ERROR CODE FF`; both are retired and must not
+  be used for this procedure.
+- The corrected physical carrier is a fresh, hash-verified sacrificial
+  `F65-R0C-MEDIA.D81` on unit 9. Device 9 is writable by design; the fixture
   modifies only its D81-sector contents.
 - Device 8: owner's F0C-final SD. **Do not mount, read, write, swap, or fault
   test it.**
@@ -74,7 +76,7 @@ This precheck is non-destructive and must pass before any save or fault action.
 2. Read the lower-right second-managed-drive line. If it says `UNIT #11`, press
    `9` exactly once. Expected: the line changes to `UNIT #9`. If it does not,
    stop and photograph that screen; do not run a fixture command.
-3. Press `1`, select the hash-verified `ROCFINAL.D81` carrier, and press
+3. Press `1`, select the hash-verified `F65-R0C-MEDIA.D81` carrier, and press
    `RETURN`. **Do not remove media while the image browser is open or while it
    mounts.** The retired `R0CMEDIA.D81` is excluded after its observed `FF`
    mount rejection.
