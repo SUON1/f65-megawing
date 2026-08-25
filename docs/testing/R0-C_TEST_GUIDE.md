@@ -16,6 +16,13 @@ not choose a production medium, campaign disk split, or recovery UX.
   test it.**
 - Device 9: one fresh, writable, recoverable copy of the D81 above. This is the
   sole fixture medium.
+- The second managed drive in the MEGA65 Freezer can be assigned either unit 9
+  or unit 11. It **must display `UNIT #9`** before this fixture is loaded. If
+  it displays `UNIT #11`, press `9` once at the main Freezer screen to toggle
+  it to unit 9, then press `1` to select the D81 for that second managed drive.
+  A D81 mounted while this display says `UNIT #11` correctly produces `DEVICE
+  NOT PRESENT` for `LOAD ...,9,1`; that is a mount configuration error, not a
+  program result.
 - The media-only D81 boot file is explicitly device 9:
   `LOAD "R0C-MEDIA",9,1`. No automatic device detection exists. The separate
   proof artifact retains its own explicit `LOAD "R0C-FINAL",9,1` entry.
@@ -52,6 +59,22 @@ Before each action below, verify the screen is in the named safe state and that
 device 8 has not been selected. Never remove media to create a fault unless the
 step explicitly says it is safe. For a power-interruption case, power cycling
 is the injected fault; it is not represented as safe media removal.
+
+## Mandatory device-9 mount precheck
+
+This precheck is non-destructive and must pass before any save or fault action.
+
+1. Hold `RESTORE` for one second and release it to open the main Freezer menu.
+   **Do not remove any media.** No removal is needed for this step.
+2. Read the lower-right second-managed-drive line. If it says `UNIT #11`, press
+   `9` exactly once. Expected: the line changes to `UNIT #9`. If it does not,
+   stop and photograph that screen; do not run a fixture command.
+3. Press `1`, select the hash-verified `R0CMEDIA.D81`, and press `RETURN`.
+   **Do not remove media while the image browser is open or while it mounts.**
+   Expected directory: `AUTOBOOT` and `R0C-MEDIA` only.
+4. Press `F3` to resume BASIC, then run the explicit device-9 command shown
+   above. Once the fixture menu is visible and idle, removal is safe only for a
+   deliberately instructed fault case.
 
 ## Baseline and normal two-generation transaction
 
