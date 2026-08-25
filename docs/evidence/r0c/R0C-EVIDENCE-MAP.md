@@ -36,16 +36,18 @@ that proof. The R0-C proof PRG remains SHA-256
 ## Current reproducible fixture identity
 
 - D81: `build/r0c/artifacts/R0CMEDIA.D81`
-  - SHA-256: `fa2ebf7c96014f583efc3b4b3ef2d3946bb34b304f12188a0871a913102fff52`
+  - SHA-256: `70232dbdb9cc044611f306a256e046ff6c6fbd5fc98500673276f79c44352aef`
+  - Media-only directory: `AUTOBOOT` and `R0C-MEDIA` only; no proof PRG or
+    package is present.
 - Device-9 fixture: `R0C-MEDIA.C65`
   - SHA-256: `0bdddae9363327dc286c5a7e18f5e0ed76e81ddeaacc90b9f48ce2a858fb37cb`
 - Package SHA-256: `9b535b022c97a7b9eb52552ac07f7776c677f23a3c604b75f9541d43c114f19f`
 
-`AUTOBOOT.C65` uses only `LOAD "R0C-FINAL",9,1`; it has no implicit or
-device-8 fallback. The Xemu media test uses a separate launcher that issues
-`LOAD "R0C-MEDIA",9,1` against only the mounted device-9 D81, then captures
-the readable menu. It does not execute a write, model removal, or replace
-physical media evidence.
+The media-only D81's `AUTOBOOT.C65` uses only `LOAD "R0C-MEDIA",9,1`; it has
+no implicit or device-8 fallback. The separate proof boot entry uses only
+`LOAD "R0C-FINAL",9,1`. The Xemu media test mounts the media D81 at device 9
+only, starts its `AUTOBOOT`, and captures the readable menu. It does not
+execute a write, model removal, or replace physical media evidence.
 
 The fixture writes only `R0CG0`, `R0CG1`, and `R0CSEL` on device 9. It writes
 the inactive generation with 512 checked payload records, rereads/verifies it,

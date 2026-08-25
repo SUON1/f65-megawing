@@ -7,15 +7,18 @@ not choose a production medium, campaign disk split, or recovery UX.
 ## Exact artifact and device roles
 
 - Copy only `build/r0c/artifacts/R0CMEDIA.D81` with SHA-256
-  `fa2ebf7c96014f583efc3b4b3ef2d3946bb34b304f12188a0871a913102fff52`.
+  `70232dbdb9cc044611f306a256e046ff6c6fbd5fc98500673276f79c44352aef`.
   Its outer SD-card filename is uppercase 8.3 and must remain exactly
-  `R0CMEDIA.D81`. Do not select the superseded `R0CFINAL.D81` copy.
+  `R0CMEDIA.D81`. This is a media-only D81: its directory must show exactly
+  `AUTOBOOT` and `R0C-MEDIA`; it must not show `R0C-FINAL` or `R0CPROOF`.
+  Do not select the separate, superseded `R0CFINAL.D81` proof copy.
 - Device 8: owner's F0C-final SD. **Do not mount, read, write, swap, or fault
   test it.**
 - Device 9: one fresh, writable, recoverable copy of the D81 above. This is the
   sole fixture medium.
-- The boot file is explicitly device 9: `LOAD "R0C-FINAL",9,1`. No automatic
-  device detection exists.
+- The media-only D81 boot file is explicitly device 9:
+  `LOAD "R0C-MEDIA",9,1`. No automatic device detection exists. The separate
+  proof artifact retains its own explicit `LOAD "R0C-FINAL",9,1` entry.
 - The media program is explicitly device 9:
 
 ```basic
