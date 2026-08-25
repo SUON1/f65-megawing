@@ -15,7 +15,7 @@ filename only, never a gate-closure label.
 | R0C-ATTIC-001 | ABI/range/rollback | PASS | PASS | PASS | Direct device-9 proof screen. |
 | R0C-NODISK-001 | No tactical disk function linked into target diagnostic | PASS | PASS | PASS | Static guard plus direct device-9 proof screen. |
 | R0C-ROM-001 | Post-ROM-reclaim storage handoff | Deferred | Deferred | Deferred | No officially documented reversible restore contract is admitted. |
-| R0C-SAVE-001 | Two-generation transaction/fault model and fixture | PASS | Fixture menu/boot PASS | Awaiting | Host model and D81 fixture exist; no physical transaction pass is claimed. |
+| R0C-SAVE-001 | Two-generation transaction/fault model and fixture | PASS | Fixture menu/boot PASS | Fixture menu PASS | Owner physically launched the readable device-9 fixture menu from the sacrificial `ROCFINAL.D81` carrier; no transaction pass is claimed. |
 | R0C-MEDIA-001 | Absent/write-protected/full/corrupt/removed/interrupted-media faults | Fixture surface PASS | Fixture menu PASS | Awaiting | Requires the exact sacrificial device-9 matrix in the test guide. |
 
 ## Recorded physical proof observation
@@ -55,6 +55,17 @@ and only then writes `R0CSEL`.
 The controlled interruption action pauses after verification and before the
 selector write. It is a DEC-012 sacrificial test fixture, not a production save
 medium, disk split, recovery UX, or post-ROM-reclaim service.
+
+## Physical carrier observation (2026-08-24)
+
+The Freezer rejected the delivered `R0CMEDIA.D81` with `ERROR CODE FF` when it
+was selected for the external-1565 managed drive. That artifact is not used for
+physical evidence. The owner then configured the second managed drive as unit
+9, mounted the existing sacrificial `ROCFINAL.D81` carrier, and physically
+launched the readable `R0-C TWO-GENERATION MEDIA FIXTURE` menu with
+`LOAD "R0C-MEDIA",9,1`. The D81 is a virtual floppy: device-9 writes mutate
+the sacrificial D81's sectors, whose backing file resides on the SD card; this
+does not access device 8. No initialization or fault action is claimed yet.
 
 `R0-C IMPLEMENTATION COMPLETE` is eligible only after the implementation,
 host/Xemu validation, guide, evidence, commits, and remote verification are all
