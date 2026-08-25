@@ -2,7 +2,7 @@
 
 Status: **R0-C IMPLEMENTATION COMPLETE; this is not an R0-C closure record.**
 Commit `6164fbd383308bce3c631d2eebe64acae5593e75` is verified on the requested
-origin branch. `R0CFINAL.D81` is a proof-artifact
+origin branch. `R0CMEDIA.D81` is a fixture-artifact
 filename only, never a gate-closure label.
 
 | Test ID | Proof | Host | Xemu | Physical | Evidence / limitation |
@@ -35,17 +35,17 @@ that proof. The R0-C proof PRG remains SHA-256
 
 ## Current reproducible fixture identity
 
-- D81: `build/r0c/artifacts/R0CFINAL.D81`
-  - SHA-256: `d28a2d15429939db4f1b9aca2ecbc135f7dc9df45a5eef04dd25f46dba05e4ef`
+- D81: `build/r0c/artifacts/R0CMEDIA.D81`
+  - SHA-256: `fa2ebf7c96014f583efc3b4b3ef2d3946bb34b304f12188a0871a913102fff52`
 - Device-9 fixture: `R0C-MEDIA.C65`
   - SHA-256: `0bdddae9363327dc286c5a7e18f5e0ed76e81ddeaacc90b9f48ce2a858fb37cb`
 - Package SHA-256: `9b535b022c97a7b9eb52552ac07f7776c677f23a3c604b75f9541d43c114f19f`
 
-`AUTOBOOT.C65` now uses only `LOAD "R0C-FINAL",9,1`; it has no implicit or
-device-8 fallback. Xemu mounts the generated proof D81 at 8 and 9 only inside
-the emulator so that this explicit device-9 boot entry can run. The Xemu media
-result proves the compiled fixture menu loads; it does not execute a write,
-model removal, or replace physical media evidence.
+`AUTOBOOT.C65` uses only `LOAD "R0C-FINAL",9,1`; it has no implicit or
+device-8 fallback. The Xemu media test uses a separate launcher that issues
+`LOAD "R0C-MEDIA",9,1` against only the mounted device-9 D81, then captures
+the readable menu. It does not execute a write, model removal, or replace
+physical media evidence.
 
 The fixture writes only `R0CG0`, `R0CG1`, and `R0CSEL` on device 9. It writes
 the inactive generation with 512 checked payload records, rereads/verifies it,

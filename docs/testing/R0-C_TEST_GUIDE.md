@@ -6,8 +6,10 @@ not choose a production medium, campaign disk split, or recovery UX.
 
 ## Exact artifact and device roles
 
-- Copy only `build/r0c/artifacts/R0CFINAL.D81` with SHA-256
-  `d28a2d15429939db4f1b9aca2ecbc135f7dc9df45a5eef04dd25f46dba05e4ef`.
+- Copy only `build/r0c/artifacts/R0CMEDIA.D81` with SHA-256
+  `fa2ebf7c96014f583efc3b4b3ef2d3946bb34b304f12188a0871a913102fff52`.
+  Its outer SD-card filename is uppercase 8.3 and must remain exactly
+  `R0CMEDIA.D81`. Do not select the superseded `R0CFINAL.D81` copy.
 - Device 8: owner's F0C-final SD. **Do not mount, read, write, swap, or fault
   test it.**
 - Device 9: one fresh, writable, recoverable copy of the D81 above. This is the
