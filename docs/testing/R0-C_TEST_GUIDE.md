@@ -6,18 +6,17 @@ not choose a production medium, campaign disk split, or recovery UX.
 
 ## Exact artifact and device roles
 
-- The generated media-only `build/r0c/artifacts/R0CMEDIA.D81` with SHA-256
-  `70232dbdb9cc044611f306a256e046ff6c6fbd5fc98500673276f79c44352aef`.
+- Copy only `build/r0c/artifacts/ROCFINAL.D81` with SHA-256
+  `8e306dddc31e38fe0e496e5fca67abafbc84ed6f4f827124dfff72e24fcc382b`.
   Its outer SD-card filename is uppercase 8.3 and must remain exactly
-  `R0CMEDIA.D81`. This is a media-only D81: its directory must show exactly
-  `AUTOBOOT` and `R0C-MEDIA`; it must not show `R0C-FINAL` or `R0CPROOF`.
-- 2026-08-24 physical observation: this particular delivered copy is rejected
-  by the Freezer with `ERROR CODE FF`; do not retry it for physical evidence.
-  It remains a host/Xemu artifact, not an approved physical carrier.
-- The current physical carrier is the already-mounted, sacrificial
-  `ROCFINAL.D81` D81 on unit 9. Its name is proof-artifact history only, not a
-  status claim. Use it only because the owner has designated device 9
-  sacrificial and writable; the fixture will modify its D81-sector contents.
+  `ROCFINAL.D81`. The name is proof-artifact history only, never a closure
+  claim. Its directory must show `AUTOBOOT`, `R0C-FINAL`, `R0C-MEDIA`, and
+  `R0CPROOF`.
+- The prior `R0CMEDIA.D81` delivery was physically rejected by the Freezer with
+  `ERROR CODE FF`; it is retired and must not be used for this procedure.
+- The current physical carrier is the new, hash-verified sacrificial
+  `ROCFINAL.D81` D81 on unit 9. Device 9 is writable by design; the fixture
+  modifies only its D81-sector contents.
 - Device 8: owner's F0C-final SD. **Do not mount, read, write, swap, or fault
   test it.**
 - Device 9: one fresh, writable, recoverable copy of the D81 above. This is the
@@ -29,9 +28,9 @@ not choose a production medium, campaign disk split, or recovery UX.
   A D81 mounted while this display says `UNIT #11` correctly produces `DEVICE
   NOT PRESENT` for `LOAD ...,9,1`; that is a mount configuration error, not a
   program result.
-- The media-only D81 boot file is explicitly device 9:
-  `LOAD "R0C-MEDIA",9,1`. No automatic device detection exists. The separate
-  proof artifact retains its own explicit `LOAD "R0C-FINAL",9,1` entry.
+- The media fixture is explicitly device 9: `LOAD "R0C-MEDIA",9,1`. No
+  automatic device detection exists. `AUTOBOOT` retains its own explicit
+  `LOAD "R0C-FINAL",9,1` entry.
 - The media program is explicitly device 9:
 
 ```basic
@@ -75,10 +74,10 @@ This precheck is non-destructive and must pass before any save or fault action.
 2. Read the lower-right second-managed-drive line. If it says `UNIT #11`, press
    `9` exactly once. Expected: the line changes to `UNIT #9`. If it does not,
    stop and photograph that screen; do not run a fixture command.
-3. Press `1`, retain/select the already working `ROCFINAL.D81` carrier, and
-   press `RETURN`. **Do not remove media while the image browser is open or
-   while it mounts.** The generated `R0CMEDIA.D81` is excluded from this
-   physical procedure after its observed `FF` mount rejection.
+3. Press `1`, select the hash-verified `ROCFINAL.D81` carrier, and press
+   `RETURN`. **Do not remove media while the image browser is open or while it
+   mounts.** The retired `R0CMEDIA.D81` is excluded after its observed `FF`
+   mount rejection.
 4. Press `F3` to resume BASIC, then run the explicit device-9 command shown
    above. Once the fixture menu is visible and idle, removal is safe only for a
    deliberately instructed fault case.

@@ -5,18 +5,18 @@
 50 t$="SACRIFICIAL WRITABLE MEDIA ON DEVICE 9 ONLY":gosub 9600
 60 t$="DEVICE 8 IS NOT USED OR PROBED.":gosub 9600
 70 t$="I=INITIALIZE W=WRITE R=RECOVER C=CORRUPT F=FILL X=INTERRUPT Q=QUIT":gosub 9600
-80 get a$:if a$="" then goto 80
-90 if a$="I" then gosub 1000:goto 40
-100 if a$="W" then gosub 2000:goto 40
-110 if a$="R" then gosub 5000:goto 40
-120 if a$="C" then gosub 6000:goto 40
-130 if a$="F" then gosub 7000:goto 40
-140 if a$="X" then gosub 8000:goto 40
-150 if a$="Q" then end
-160 t$="UNKNOWN ACTION - PRESS A KEY":gosub 9600:get a$:goto 40
+80 gosub 9700
+90 if a=73 then gosub 1000:goto 40
+100 if a=87 then gosub 2000:goto 40
+110 if a=82 then gosub 5000:goto 40
+120 if a=67 then gosub 6000:goto 40
+130 if a=70 then gosub 7000:goto 40
+140 if a=88 then gosub 8000:goto 40
+150 if a=81 then end
+160 t$="UNKNOWN ACTION - PRESS A KEY":gosub 9600:gosub 9700:goto 40
 1000 rem initialize: retain two verified generations and select generation 2.
 1010 t$="INITIALIZE WILL ERASE ONLY R0C FIXTURE FILES ON DEVICE 9.":gosub 9600
-1020 t$="PRESS Y TO CONTINUE":gosub 9600:get a$:if a$<>"Y" then return
+1020 t$="PRESS Y TO CONTINUE":gosub 9600:gosub 9700:if a<>89 then return
 1030 gosub 9500:open 15,d,15,"S0:R0CG0":close 15:open 15,d,15,"S0:R0CG1":close 15:open 15,d,15,"S0:R0CSEL":close 15
 1040 ns=0:ng=1:gosub 3000:gosub 4000:if ok=0 then return
 1050 gosub 4500:if ok=0 then return
@@ -86,15 +86,15 @@
 5360 v1=g1:return
 6000 rem intentionally corrupt only fixture selector or one fixture generation.
 6010 t$="CORRUPT: S=SELECTOR, 0=GEN0, 1=GEN1 (DEVICE 9 ONLY)":gosub 9600
-6020 get a$:if a$="S" then f$="R0CSEL"
-6030 if a$="0" then f$="R0CG0"
-6040 if a$="1" then f$="R0CG1"
-6050 if a$<>"S" and a$<>"0" and a$<>"1" then return
+6020 gosub 9700:if a=83 then f$="R0CSEL"
+6030 if a=48 then f$="R0CG0"
+6040 if a=49 then f$="R0CG1"
+6050 if a<>83 and a<>48 and a<>49 then return
 6060 gosub 9500:open 2,d,2,"@0:"+f$+",S,W":print#2,"R0C-CORRUPT":close 2
 6070 t$="CORRUPT WRITE COMPLETE. RUN R TO OBSERVE DETERMINISTIC RECOVERY.":gosub 9600:return
 7000 rem fill only the sacrificial fixture image until the drive reports full.
 7010 t$="FILL CONSUMES DEVICE 9. USE A FRESH SACRIFICIAL COPY.":gosub 9600
-7020 t$="PRESS F TO CONTINUE":gosub 9600:get a$:if a$<>"F" then return
+7020 t$="PRESS F TO CONTINUE":gosub 9600:gosub 9700:if a<>70 then return
 7030 for n=1 to 4000:f$="R0CF"+str$(n):open 2,d,2,f$+",S,W":print#2,"FILL":close 2:next n
 7040 t$="FILL LIMIT REACHED WITHOUT A DISK-FULL ERROR":gosub 9600:return
 8000 rem interruption fixture: remove only while paused before selector commit.
@@ -102,7 +102,7 @@
 8020 ns=1-sg:ng=gg+1:gosub 3000:gosub 4000:if ok=0 then return
 8030 t$="CANDIDATE VERIFIED; PRIOR SELECTOR IS STILL COMMITTED.":gosub 9600
 8040 t$="SAFE TO REMOVE DEVICE 9 NOW: NO MEDIA I/O IS ACTIVE.":gosub 9600
-8050 t$="REMOVE MEDIA, THEN PRESS C":gosub 9600:get a$:if a$<>"C" then return
+8050 t$="REMOVE MEDIA, THEN PRESS C":gosub 9600:gosub 9700:if a<>67 then return
 8060 t$="ATTEMPTING SELECTOR COMMIT; REMOVED MEDIA MUST FAIL SAFELY.":gosub 9600
 8070 gosub 4500:return
 9000 rem any device-9 BASIC/DOS fault returns without a successful claim.
@@ -120,3 +120,8 @@
 9640 poke 2048+row*80+col,z:col=col+1
 9650 next k
 9660 row=row+1:return
+9700 rem normalize MEGA65 GET PETSCII/ASCII letter input to ASCII uppercase.
+9710 get a$:if a$="" then goto 9710
+9720 a=asc(a$):if a>=193 and a<=218 then a=a-128
+9730 if a>=97 and a<=122 then a=a-32
+9740 return

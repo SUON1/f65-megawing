@@ -1,8 +1,8 @@
 # R0-C Evidence Map
 
 Status: **R0-C IMPLEMENTATION COMPLETE; this is not an R0-C closure record.**
-Commit `623256a` is verified on the requested
-origin branch. `R0CMEDIA.D81` is a fixture-artifact
+The current implementation is verified on the requested origin branch.
+`ROCFINAL.D81` is a fixture-artifact
 filename only, never a gate-closure label.
 
 | Test ID | Proof | Host | Xemu | Physical | Evidence / limitation |
@@ -35,19 +35,18 @@ that proof. The R0-C proof PRG remains SHA-256
 
 ## Current reproducible fixture identity
 
-- D81: `build/r0c/artifacts/R0CMEDIA.D81`
-  - SHA-256: `70232dbdb9cc044611f306a256e046ff6c6fbd5fc98500673276f79c44352aef`
-  - Media-only directory: `AUTOBOOT` and `R0C-MEDIA` only; no proof PRG or
-    package is present.
+- D81: `build/r0c/artifacts/ROCFINAL.D81`
+  - SHA-256: `8e306dddc31e38fe0e496e5fca67abafbc84ed6f4f827124dfff72e24fcc382b`
+  - Carrier directory: `AUTOBOOT`, `R0C-FINAL`, `R0C-MEDIA`, and `R0CPROOF`.
 - Device-9 fixture: `R0C-MEDIA.C65`
-  - SHA-256: `0bdddae9363327dc286c5a7e18f5e0ed76e81ddeaacc90b9f48ce2a858fb37cb`
+  - SHA-256: `91ce42ca7d831ff6eeebc75d60c2b2eb01939dd453e46b68433f34147e66f366`
 - Package SHA-256: `9b535b022c97a7b9eb52552ac07f7776c677f23a3c604b75f9541d43c114f19f`
 
-The media-only D81's `AUTOBOOT.C65` uses only `LOAD "R0C-MEDIA",9,1`; it has
-no implicit or device-8 fallback. The separate proof boot entry uses only
-`LOAD "R0C-FINAL",9,1`. The Xemu media test mounts the media D81 at device 9
-only, starts its `AUTOBOOT`, and captures the readable menu. It does not
-execute a write, model removal, or replace physical media evidence.
+`AUTOBOOT.C65` uses only `LOAD "R0C-FINAL",9,1`; it has no implicit or
+device-8 fallback. The Xemu media test mounts this carrier at device 9 only,
+starts a separate explicit `LOAD "R0C-MEDIA",9,1` boot entry, and captures the
+readable menu. It does not execute a write, model removal, or replace physical
+media evidence.
 
 The fixture writes only `R0CG0`, `R0CG1`, and `R0CSEL` on device 9. It writes
 the inactive generation with 512 checked payload records, rereads/verifies it,
@@ -59,13 +58,16 @@ medium, disk split, recovery UX, or post-ROM-reclaim service.
 ## Physical carrier observation (2026-08-24)
 
 The Freezer rejected the delivered `R0CMEDIA.D81` with `ERROR CODE FF` when it
-was selected for the external-1565 managed drive. That artifact is not used for
-physical evidence. The owner then configured the second managed drive as unit
-9, mounted the existing sacrificial `ROCFINAL.D81` carrier, and physically
-launched the readable `R0-C TWO-GENERATION MEDIA FIXTURE` menu with
-`LOAD "R0C-MEDIA",9,1`. The D81 is a virtual floppy: device-9 writes mutate
-the sacrificial D81's sectors, whose backing file resides on the SD card; this
-does not access device 8. No initialization or fault action is claimed yet.
+was selected for the external-1565 managed drive. That artifact is retired.
+The owner then configured the second managed drive as unit 9, mounted the
+existing sacrificial `ROCFINAL.D81` carrier, and physically launched the
+readable `R0-C TWO-GENERATION MEDIA FIXTURE` menu with
+`LOAD "R0C-MEDIA",9,1`. That carrier revealed a physical PETSCII-input defect:
+`I` was incorrectly reported as unknown. The replacement carrier above
+normalizes PETSCII/ASCII input before dispatch. The D81 is a virtual floppy:
+device-9 writes mutate the sacrificial D81's sectors, whose backing file resides
+on the SD card; this does not access device 8. No initialization or fault action
+is claimed yet.
 
 `R0-C IMPLEMENTATION COMPLETE` is eligible only after the implementation,
 host/Xemu validation, guide, evidence, commits, and remote verification are all
