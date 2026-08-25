@@ -1,7 +1,7 @@
 # R0-C Evidence Map
 
 Status: **R0-C IMPLEMENTATION COMPLETE; this is not an R0-C closure record.**
-Commit `6164fbd383308bce3c631d2eebe64acae5593e75` is verified on the requested
+Commit `a1a9a26c97ff45bdea7a430fd34ffb8c0442577c` is verified on the requested
 origin branch. `R0CMEDIA.D81` is a fixture-artifact
 filename only, never a gate-closure label.
 
