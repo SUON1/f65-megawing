@@ -133,6 +133,7 @@ The owner has since reported physical direct-device-9 PASS screens for
 status. `R0C-ROM-001` remains deferred.
 
 `R0-C IMPLEMENTATION COMPLETE` is recorded for the authorized corrective
-implementation once this correction commit reaches and is verified on origin.
-It does not pass R0-C: physical `R0C-SAVE-001`/`R0C-MEDIA-001` evidence, a
-formally resolved ROM-reclaim condition, and human acceptance remain required.
+implementation: commit `a2306a1` passed host/Xemu validation and was verified
+on origin. It does not pass R0-C: physical `R0C-SAVE-001`/`R0C-MEDIA-001`
+evidence, a formally resolved ROM-reclaim condition, and human acceptance
+remain required.

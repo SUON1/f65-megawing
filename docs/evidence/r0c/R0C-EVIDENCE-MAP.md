@@ -1,7 +1,7 @@
 # R0-C Evidence Map
 
-Status: **corrected fixture implementation validated locally; physical mount
-and media evidence pending. This is not an R0-C closure record.**
+Status: **R0-C IMPLEMENTATION COMPLETE for the corrected fixture; physical
+mount and media evidence pending. This is not an R0-C closure record.**
 `R0CMEDIA.D81` and `ROCFINAL.D81` are retired after observed Freezer `FF`
 mount failures. `F65-R0C-MEDIA.D81` is the sole current fixture candidate.
 
