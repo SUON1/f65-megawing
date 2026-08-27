@@ -4,10 +4,17 @@ Status: **physical media/save evidence requested; not an R0-C closure guide.**
 `DEC-012` authorizes a sacrificial writable D81 only for this fixture. It does
 not choose a production medium, campaign disk split, or recovery UX.
 
+## Corrected fixture revision (2026-08-26)
+
+The current carrier is a repaired reissue. SHA-256:
+`e0d4600994cd7eb69870ea935974db0175868017e115222521965c7fc70d113`.
+
+This supersedes `8826fc89706bcca0d9587f9bae80b5d12a8a1d35e3e0a92868c118e9ef204059`; retire that carrier for further physical media testing. This revision accepts a blank sacrificial device-9 medium: initialization does not issue a scratch-file probe or DOS-status probe before creating `R0CG0`, `R0CG1`, and `R0CSEL`. Selector I/O is split into distinct BASIC statements. On missing/corrupt media it reports a controlled fixture failure/recovery result or returns to the menu; it must not reproduce the prior `?UNDEFINED STATEMENT ERROR IN 5110`. Device 8 remains untouched.
+
 ## Exact artifact and device roles
 
 - Copy only `build/r0c/artifacts/F65-R0C-MEDIA.D81` with SHA-256
-  `8826fc89706bcca0d9587f9bae80b5d12a8a1d35e3e0a92868c118e9ef204059`.
+`e0d4600994cd7eb69870ea935974db0175868017e115222521965c7fc70d1134`.
   Its outer SD-card filename must remain exactly `F65-R0C-MEDIA.D81`. Its
   directory shows `AUTOBOOT`, `R0C-FINAL`, `R0CPROOF`, and then the appended
   `R0C-MEDIA` fixture.

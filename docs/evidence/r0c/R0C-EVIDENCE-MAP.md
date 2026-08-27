@@ -40,7 +40,8 @@ that proof. The R0-C proof PRG remains SHA-256
   - The owner mounted this three-file control successfully. It must not be
     modified and it does not contain `R0C-MEDIA`.
 - D81: `build/r0c/artifacts/F65-R0C-MEDIA.D81`
-  - SHA-256: `8826fc89706bcca0d9587f9bae80b5d12a8a1d35e3e0a92868c118e9ef204059`
+  - SHA-256: `e0d4600994cd7eb69870ea935974db0175868017e115222521965c7fc70d113`
+- Historical prior fixture hash `8826fc89706bcca0d9587f9bae80b5d12a8a1d35e3e0a92868c118e9ef204059` is retired after the DOS 62 / line-5110 defects described below.
   - Carrier directory: `AUTOBOOT`, `R0C-FINAL`, `R0CPROOF`, then appended
     `R0C-MEDIA`.
 - Device-9 fixture: `R0C-MEDIA.C65`
