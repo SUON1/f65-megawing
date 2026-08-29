@@ -6,30 +6,27 @@ not choose a production medium, campaign disk split, or recovery UX.
 
 ## Corrected fixture revision (2026-08-26)
 
-The current carrier is a repaired reissue. SHA-256:
-`e0d4600994cd7eb69870ea935974db0175868017e115222521965c7fc70d113`.
+The current carrier is a fresh one-session rebuild. SHA-256:
+`e01eb41cff0158e7b609a365ecc72b78b3ce825ddca06a42a32f8954f4c7e8d0`.
 
-This supersedes `8826fc89706bcca0d9587f9bae80b5d12a8a1d35e3e0a92868c118e9ef204059`; retire that carrier for further physical media testing. This revision accepts a blank sacrificial device-9 medium: initialization does not issue a scratch-file probe or DOS-status probe before creating `R0CG0`, `R0CG1`, and `R0CSEL`. Selector I/O is split into distinct BASIC statements. On missing/corrupt media it reports a controlled fixture failure/recovery result or returns to the menu; it must not reproduce the prior `?UNDEFINED STATEMENT ERROR IN 5110`. Device 8 remains untouched.
+This supersedes `8826fc89706bcca0d9587f9bae80b5d12a8a1d35e3e0a92868c118e9ef204059`; retire that carrier for further physical media testing. This revision accepts a blank sacrificial device-9 medium: initialization does not issue a scratch-file probe or DOS-status probe before creating `R0CG0`, `R0CG1`, and `R0CSEL`. Selector I/O is split into distinct BASIC statements. On missing/corrupt media it reports a controlled fixture failure/recovery result or returns to the menu; it must not reproduce the prior `?UNDEFINED STATEMENT ERROR IN 5110`. The carrier at device 8 is never modified.
 
 ## Exact artifact and device roles
 
 - Copy only `build/r0c/artifacts/F65-R0C-MEDIA.D81` with SHA-256
-`e0d4600994cd7eb69870ea935974db0175868017e115222521965c7fc70d1134`.
+`e01eb41cff0158e7b609a365ecc72b78b3ce825ddca06a42a32f8954f4c7e8d0`.
   Its outer SD-card filename must remain exactly `F65-R0C-MEDIA.D81`. Its
-  directory shows `AUTOBOOT`, `R0C-FINAL`, `R0CPROOF`, and then the appended
-  `R0C-MEDIA` fixture.
+  directory shows `AUTOBOOT`, `R0C-FINAL`, `R0CPROOF`, and `R0C-MEDIA`, all
+  written during one fresh-format c1541 session.
 - `F65-R0CFINAL.D81` (SHA-256 `ba72aa82387f7e65551e893a3274f1c7f26a813416652c4aeab73c6a8b7e7e38`)
   is the known mountable three-file control. Do not overwrite or modify it.
 - The prior `R0CMEDIA.D81` and `ROCFINAL.D81` deliveries were physically
   rejected by the Freezer with `ERROR CODE FF`; both are retired and must not
   be used for this procedure.
-- The corrected physical carrier is a fresh, hash-verified sacrificial
-  `F65-R0C-MEDIA.D81` on unit 9. Device 9 is writable by design; the fixture
-  modifies only its D81-sector contents.
-- Device 8: owner's F0C-final SD. **Do not mount, read, write, swap, or fault
-  test it.**
-- Device 9: one fresh, writable, recoverable copy of the D81 above. This is the
-  sole fixture medium.
+- The corrected physical carrier is a fresh, hash-verified `F65-R0C-MEDIA.D81`
+  mounted on unit 8. Device 8 is the read-only proof carrier for this test.
+- Device 9: one separate fresh, writable, recoverable sacrificial D81. This is
+  the sole fixture medium and is the only medium modified by the BASIC test.
 - The second managed drive in the MEGA65 Freezer can be assigned either unit 9
   or unit 11. It **must display `UNIT #9`** before this fixture is loaded. If
   it displays `UNIT #11`, press `9` once at the main Freezer screen to toggle
@@ -37,13 +34,14 @@ This supersedes `8826fc89706bcca0d9587f9bae80b5d12a8a1d35e3e0a92868c118e9ef20405
   A D81 mounted while this display says `UNIT #11` correctly produces `DEVICE
   NOT PRESENT` for `LOAD ...,9,1`; that is a mount configuration error, not a
   program result.
-- The media fixture is explicitly device 9: `LOAD "R0C-MEDIA",9,1`. No
-  automatic device detection exists. `AUTOBOOT` retains its own explicit
-  `LOAD "R0C-FINAL",9,1` entry.
-- The media program is explicitly device 9:
+- The proof carrier is explicitly device 8: `LOAD "R0C-FINAL",8,1`. The media
+  harness is explicitly loaded from device 8 with `LOAD "R0C-MEDIA",8,1`,
+  then all fixture I/O is explicitly device 9. No automatic device detection
+  exists.
+- The media program is loaded from the proof carrier at device 8:
 
 ```basic
-LOAD "R0C-MEDIA",9,1
+LOAD "R0C-MEDIA",8,1
 RUN
 ```
 
@@ -69,10 +67,10 @@ candidate before the selector write.
 | `SAFE TO REMOVE DEVICE 9 NOW: NO MEDIA I/O IS ACTIVE.` | Yes; this is the controlled selector-interruption point. |
 | `MEDIA OPERATION FAILED ...` or a returned menu | Yes; no operation is in flight. |
 
-Before each action below, verify the screen is in the named safe state and that
-device 8 has not been selected. Never remove media to create a fault unless the
-step explicitly says it is safe. For a power-interruption case, power cycling
-is the injected fault; it is not represented as safe media removal.
+Before each action below, verify the screen is in the named safe state. Never
+remove media to create a fault unless the step explicitly says it is safe. For
+a power-interruption case, power cycling is the injected fault; it is not
+represented as safe media removal.
 
 ## Mandatory device-9 mount precheck
 
@@ -83,19 +81,20 @@ This precheck is non-destructive and must pass before any save or fault action.
 2. Read the lower-right second-managed-drive line. If it says `UNIT #11`, press
    `9` exactly once. Expected: the line changes to `UNIT #9`. If it does not,
    stop and photograph that screen; do not run a fixture command.
-3. Press `1`, select the hash-verified `F65-R0C-MEDIA.D81` carrier, and press
-   `RETURN`. **Do not remove media while the image browser is open or while it
-   mounts.** The retired `R0CMEDIA.D81` is excluded after its observed `FF`
-   mount rejection.
-4. Press `F3` to resume BASIC, then run the explicit device-9 command shown
-   above. Once the fixture menu is visible and idle, removal is safe only for a
-   deliberately instructed fault case.
+3. Press `1`, select the hash-verified `F65-R0C-MEDIA.D81` carrier for unit 8,
+   and press `RETURN`. **Do not remove media while the image browser is open
+   or while it mounts.** The retired `R0CMEDIA.D81` is excluded after its
+   observed `FF` mount rejection.
+4. Mount a separate fresh sacrificial D81 as unit 9. Press `F3` to resume
+   BASIC, then run the explicit device-8 command shown above. Once the fixture
+   menu is visible and idle, removal of device 9 is safe only for a deliberately
+   instructed fault case.
 
 ## Baseline and normal two-generation transaction
 
 1. At the menu, mount the hash-verified sacrificial copy as device 9.
    Removal safe: **yes**, until an action is entered.
-2. Load and run `R0C-MEDIA` from device 9. Choose `I`, then press `Y` at the
+2. With both devices mounted, load and run `R0C-MEDIA` from device 8. Choose `I`, then press `Y` at the
    confirmation line. Removal safe: **no** after `Y` until the program returns.
    Expected:
    `INITIALIZE PASS: G0=1 AND G1=2 VERIFIED; SELECTOR=G1`.

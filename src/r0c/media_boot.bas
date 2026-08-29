@@ -1,4 +1,4 @@
-10 rem device-9 boot entry for the sacrificial r0-c media fixture.
-20 rem this d81 contains no proof package and never falls back to device 8.
-30 load "r0c-media",9,1
+10 rem device-8 boot entry for the R0-C media proof harness.
+20 rem the harness is loaded from the selected carrier and probes device 9 only.
+30 load "r0c-media",8,1
 40 run

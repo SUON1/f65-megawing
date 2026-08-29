@@ -30,3 +30,7 @@ These instructions apply to every task in this repository.
 - Run all relevant validation before committing and list the exact commands and results in the handoff.
 - Update the memory map or append a decision-log entry whenever a shared memory, ABI, ownership, timing, IRQ, DMA, serialization, or lifecycle contract changes.
 - Include inspected files/contracts, changed paths, register/memory/timing impact, generated-artifact status, tests, evidence identity, and unresolved risks in every coding-task handoff.
+
+## Mandatory D81 loadability gate
+
+Before creating, modifying, copying, renaming, packaging, mounting, testing, or releasing any D81, read and obey the repository-root `00_D81_LOADABILITY_GATE.md`. A D81 must be freshly formatted and populated in one pinned c1541 construction session, then pass the gate's host structural/content checks before Xemu or physical testing. Error code FF at the MEGA65 chooser is a hard carrier failure: discard that image identity and rebuild fresh; never patch or append to the failed image.

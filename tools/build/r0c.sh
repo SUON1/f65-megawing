@@ -19,18 +19,16 @@ build() {
   "$petcat" -w65 -o "$out/artifacts/AUTOBOOT.C65" -- "$root/src/r0c/autoboot.bas"
   "$petcat" -w65 -o "$out/artifacts/R0C-MEDIA.C65" -- "$root/src/r0c/media_fixture.bas"
   "$petcat" -w65 -o "$out/artifacts/R0C-MEDIA-BOOT.C65" -- "$root/src/r0c/media_boot.bas"
-  # Build the known-physical-control layout first. The proof PRG and R0CPROOF
-  # package are byte-identical to the owner-mounted F65-R0CFINAL.D81 control.
-  # AUTOBOOT is intentionally rebuilt with the required explicit device-9
-  # entry, so this image is not falsely claimed byte-identical to that legacy
-  # control. Do not reorder these writes: R0CPROOF occupies the proven layout
-  # before the fixture is appended in a separate C1541 session.
+  # Every carrier is freshly formatted and populated in one c1541 invocation.
+  # Never copy a D81 and reopen it to append a file: that produced the physical
+  # chooser error FF. The selected proof carrier boots from device 8; the
+  # fixture program is present on the same carrier but writes only to device 9.
   "$c1541" -format 'F65 R0-C PROOF,65' d81 "$out/artifacts/F65-R0C-CONTROL.D81" -write "$out/artifacts/AUTOBOOT.C65" autoboot.c65 -write "$out/artifacts/F65-R0C-PROOF.prg" r0c-final -write "$out/R0CPROOF.PKG" r0cproof -list > "$out/reports/F65-R0C-CONTROL.D81-create.txt" 2>&1
   "$c1541" "$out/artifacts/F65-R0C-CONTROL.D81" -list > "$out/reports/F65-R0C-CONTROL.D81-list.txt" 2>&1
-  cp "$out/artifacts/F65-R0C-CONTROL.D81" "$out/artifacts/F65-R0C-MEDIA.D81"
-  "$c1541" -attach "$out/artifacts/F65-R0C-MEDIA.D81" -write "$out/artifacts/R0C-MEDIA.C65" r0c-media -list > "$out/reports/F65-R0C-MEDIA.D81-create.txt" 2>&1
+  "$c1541" -format 'F65 R0-C LOAD,65' d81 "$out/artifacts/F65-R0C-MEDIA.D81" -write "$out/artifacts/AUTOBOOT.C65" autoboot.c65 -write "$out/artifacts/F65-R0C-PROOF.prg" r0c-final -write "$out/R0CPROOF.PKG" r0cproof -write "$out/artifacts/R0C-MEDIA.C65" r0c-media -list > "$out/reports/F65-R0C-MEDIA.D81-create.txt" 2>&1
   "$c1541" "$out/artifacts/F65-R0C-MEDIA.D81" -list > "$out/reports/F65-R0C-MEDIA.D81-list.txt" 2>&1
   python3 "$root/tools/diagnostics/r0c_validate_media_fixture.py" "$root"
+  python3 "$root/tools/diagnostics/r0c_d81_loadability_gate.py" "$root" "$out/artifacts/F65-R0C-MEDIA.D81"
   host d81-manifest "$out/artifacts/F65-R0C-MEDIA.D81"
   shasum -a 256 "$out/artifacts/F65-R0C-PROOF.prg" > "$out/artifacts/F65-R0C-PROOF.prg.sha256"
   shasum -a 256 "$out/artifacts/F65-R0C-CONTROL.D81" > "$out/artifacts/F65-R0C-CONTROL.D81.sha256"
@@ -42,7 +40,7 @@ xemu_run() {
   test -f "$out/artifacts/F65-R0C-MEDIA.D81" || build
   "$xemu" -headless -sleepless -fastboot -rom "$F65_MEGA65_ROM" -prg "$out/artifacts/F65-R0C-PROOF.prg" -prgmode 65 -dumpscreen "$out/reports/R0C-XEMU.screen.txt" -dumpmem "$out/reports/R0C-XEMU.memory.bin" -screenshot "$out/reports/R0C-XEMU.png" &
   pid=$!; sleep "${F65_XEMU_RUN_SECONDS:-20}"; kill -TERM "$pid" 2>/dev/null || true; wait "$pid" || true
-  "$xemu" -headless -sleepless -fastboot -rom "$F65_MEGA65_ROM" -9 "$out/artifacts/F65-R0C-MEDIA.D81" -prg "$out/artifacts/R0C-MEDIA-BOOT.C65" -prgmode 65 -dumpscreen "$out/reports/R0C-MEDIA-XEMU.screen.txt" -screenshot "$out/reports/R0C-MEDIA-XEMU.png" &
+  "$xemu" -headless -sleepless -fastboot -rom "$F65_MEGA65_ROM" -8 "$out/artifacts/F65-R0C-MEDIA.D81" -prg "$out/artifacts/R0C-MEDIA-BOOT.C65" -prgmode 65 -dumpscreen "$out/reports/R0C-MEDIA-XEMU.screen.txt" -screenshot "$out/reports/R0C-MEDIA-XEMU.png" &
   pid=$!; sleep "${F65_XEMU_RUN_SECONDS:-20}"; kill -TERM "$pid" 2>/dev/null || true; wait "$pid" || true
   python3 "$root/tools/diagnostics/r0c_validate_xemu.py" "$root"
 }

@@ -82,3 +82,13 @@ Any failed criterion invalidates the image and triggers a fresh-format rebuild. 
 It concludes that the first build-system change to remove is the split-carrier second-session append. It does not conclude that the D81 filesystem is definitely corrupt, nor that the SD card is definitely at fault. The one-session fresh-format build, readback, Xemu mount, and physical chooser gate are the required evidence to separate those possibilities.
 
 Until that gate passes, the current media image remains a failed test artifact and no R0-C media result should be promoted to acceptance evidence.
+# Loadability correction checkpoint (2026-08-28)
+
+The failed copy-and-append carrier is retired. A fresh candidate was formatted
+and populated in one pinned `c1541` invocation, then passed raw D81 chain,
+filesystem listing, extraction, and source-byte comparison checks. The current
+candidate is `build/r0c/artifacts/F65-R0C-MEDIA.D81`, exactly 819200 bytes,
+SHA-256 `e01eb41cff0158e7b609a365ecc72b78b3ce825ddca06a42a32f8954f4c7e8d0`.
+It boots its proof program from device 8; its fixture performs writes only to
+the separate sacrificial device 9. Physical chooser verification is still
+awaiting the owner.
