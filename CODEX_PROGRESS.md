@@ -103,3 +103,9 @@ The implementation checkpoint is complete. The exact fresh carrier is `build/r0c
 - Owner reports the exact copied carrier loads without chooser `ERROR CODE FF`.
 - This closes the physical chooser/loadability observation for the carrier only; it does not close the media fault matrix or formal R0-C gate.
 - Next test: mount a separate sacrificial writable D81 on device 9, initialize both generations, then recover and photograph the result.
+
+### 2026-08-28 — physical fixture menu reached
+
+- Owner photos show the corrected carrier boots without `ERROR CODE FF` and the R0-C media fixture menu is visible.
+- Device roles are visibly correct: the harness is loaded from device 8 and states that only device 9 is probed.
+- Initialization is awaiting the confirmation key: the captured screen still says `PRESS Y TO CONTINUE`; no initialization PASS is claimed yet.
