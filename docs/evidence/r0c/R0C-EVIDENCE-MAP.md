@@ -1,7 +1,7 @@
 # R0-C Evidence Map
 
-Status: **R0-C IMPLEMENTATION COMPLETE for the corrected fixture; physical
-mount and media evidence pending. This is not an R0-C closure record.**
+Status: **R0-C IMPLEMENTATION COMPLETE — owner-waived remaining physical media
+fault matrix (2026-08-29). This is not a formal hardware-gate PASS.**
 `R0CMEDIA.D81` and `ROCFINAL.D81` are retired after observed Freezer `FF`
 mount failures. `F65-R0C-MEDIA.D81` is the sole current fixture candidate.
 
@@ -16,7 +16,7 @@ mount failures. `F65-R0C-MEDIA.D81` is the sole current fixture candidate.
 | R0C-NODISK-001 | No tactical disk function linked into target diagnostic | PASS | PASS | PASS | Static guard plus direct device-9 proof screen. |
 | R0C-ROM-001 | Post-ROM-reclaim storage handoff | Deferred | Deferred | Deferred | No officially documented reversible restore contract is admitted. |
 | R0C-SAVE-001 | Two-generation transaction/fault model and fixture | PASS | Fixture menu/boot PASS | Historical menu observation only | The historical carrier cannot be tied to the current candidate; no transaction pass is claimed. |
-| R0C-MEDIA-001 | Absent/write-protected/full/corrupt/removed/interrupted-media faults | Fixture surface PASS | Fixture menu PASS | Awaiting | Requires a physical mount of the corrected carrier, then the exact sacrificial device-9 matrix in the test guide. |
+| R0C-MEDIA-001 | Absent/write-protected/full/corrupt/removed/interrupted-media faults | Fixture surface PASS | Fixture menu PASS | WAIVED BY OWNER | Physical fault matrix intentionally not executed after owner closure request; no PASS inferred. |
 
 ## Recorded physical proof observation
 
@@ -83,3 +83,20 @@ implementation, host/Xemu validation, guide, evidence, commits, and remote
 verification are all recorded. `R0-C GATE PASSED` additionally requires
 physical save/media evidence, a formally resolved ROM-reclaim condition, and
 human acceptance.
+
+## Owner waiver closure (2026-08-29)
+
+The owner reports that the exact corrected carrier loads on physical hardware
+without chooser `ERROR CODE FF` and reaches the fixture menu. The owner then
+requested completion and waived further physical media-fault execution. The
+physical result for `R0C-MEDIA-001` is therefore **WAIVED**, not PASS; no
+initialization, recovery, corruption, removal, write-protection, full-media,
+or interruption result is inferred from the menu observation.
+
+Candidate closure: **R0-C IMPLEMENTATION COMPLETE — OWNER-WAIVED REMAINING
+PHYSICAL MEDIA FAULT MATRIX**. `R0C-ROM-001` remains deferred and formal
+`R0-C GATE PASSED` is not claimed.
+
+Final carrier: `build/r0c/artifacts/F65-R0C-MEDIA.D81`
+SHA-256: `e01eb41cff0158e7b609a365ecc72b78b3ce825ddca06a42a32f8954f4c7e8d0`
+Source commit: `2ce0e35` (local, not pushed)

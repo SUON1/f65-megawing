@@ -2,7 +2,7 @@
 
 ## Original objective
 
-Resume the existing F-65 R0-C work without restarting it, identify and correct the D81 carrier-loadability failure that produced MEGA65 chooser error code FF, and establish a durable repository-root loadability gate for every future branch and prompt. Build and validate a fresh D81 through the approved one-session construction path. Do not rework unrelated R0-C evidence or claim formal R0-C closure.
+Resume the existing F-65 R0-C work without restarting it, identify and correct the D81 carrier-loadability failure that produced MEGA65 chooser error code FF, and establish a durable repository-root loadability gate for every future branch and prompt. Build and validate a fresh D81 through the approved one-session construction path. Close the candidate by explicit owner waiver of further physical fault testing, without mislabeling that waiver as a formal hardware gate pass.
 
 ## Current status
 
@@ -13,6 +13,7 @@ Resume the existing F-65 R0-C work without restarting it, identify and correct t
 - Working tree was clean at resume.
 - The branch contains the prior D81 loadability audit. The root gate and corrected fresh-build validation are now complete in this continuation.
 - The physical chooser failure is treated as a hard carrier failure, not as a program/runtime failure.
+- Owner requested R0-C completion on 2026-08-29 and waived further media-fault execution after confirming the corrected carrier loads without `ERROR CODE FF` and reaches the fixture menu.
 
 ## Completed work
 
@@ -51,23 +52,23 @@ Resume the existing F-65 R0-C work without restarting it, identify and correct t
 - `tools/build/r0c.sh` currently creates the media image by copying an existing D81 and appending in a second `c1541` session.
 - The media bootstrap and host validators still describe the old device-9 boot arrangement instead of selecting the carrier at device 8 and probing the sacrificial fixture at device 9.
 - The current media validator expects the old mixed carrier/fixture directory layout.
-- Physical chooser verification must be performed by the owner after the new artifact is produced; no AI may claim that step.
+- Physical chooser verification was reported by the owner as successful; the remaining physical fault matrix is owner-waived and is not claimed as PASS.
 
 ## Remaining work checklist
 
-- [ ] Add the exact repository-root `00_D81_LOADABILITY_GATE.md` and wire its mandatory prompt header into `AGENTS.md`.
-- [ ] Correct `media_boot.bas` and its host assertions so the selected carrier boots from device 8 while the fixture probes device 9.
-- [ ] Replace the copy-and-append D81 build with one fresh-format, one-session construction of the physical-test carrier.
-- [ ] Update media/D81/Xemu validators and manifests to the corrected carrier identity and layout.
-- [ ] Add host structural/content extraction validation for geometry, BAM, directory chains, file chains, crosslinks, exact lengths, and source hashes.
+- [x] Add the exact repository-root `00_D81_LOADABILITY_GATE.md` and wire its mandatory prompt header into `AGENTS.md`.
+- [x] Correct `media_boot.bas` and its host assertions so the selected carrier boots from device 8 while the fixture probes device 9.
+- [x] Replace the copy-and-append D81 build with one fresh-format, one-session construction of the physical-test carrier.
+- [x] Update media/D81/Xemu validators and manifests to the corrected carrier identity and layout.
+- [x] Add host structural/content extraction validation for geometry, BAM, directory chains, file chains, crosslinks, exact lengths, and source hashes.
 - [x] Build the fresh artifact with the pinned toolchain and record its exact hash and identity.
 - [x] Run host/static validation and repeat the Xemu-capable load test with the owner ROM.
-- [ ] Append the resulting evidence and exact resume state here before stopping.
-- [ ] Provide the owner the exact new file path, hash, and physical chooser test instruction; do not push without new explicit authorization.
+- [x] Append the resulting evidence and exact resume state here before stopping.
+- [x] Provide the owner the exact new file path, hash, and physical chooser test instruction; do not push without new explicit authorization.
 
 ## Exact resume point
 
-The implementation checkpoint is complete. The exact fresh carrier is `build/r0c/artifacts/F65-R0C-MEDIA.D81`, SHA-256 `e01eb41cff0158e7b609a365ecc72b78b3ce825ddca06a42a32f8954f4c7e8d0`; package SHA-256 is `9b535b022c97a7b9eb52552ac07f7776c677f23a3c604b75f9541d43c114f19f`. Host/static and Xemu are PASS. The next action is owner physical chooser verification using the exact file and hash; do not claim R0-C gate passage.
+The R0-C candidate is complete by owner waiver. The exact fresh carrier is `build/r0c/artifacts/F65-R0C-MEDIA.D81`, SHA-256 `e01eb41cff0158e7b609a365ecc72b78b3ce825ddca06a42a32f8954f4c7e8d0`; package SHA-256 is `9b535b022c97a7b9eb52552ac07f7776c677f23a3c604b75f9541d43c114f19f`. Host/static and Xemu are PASS. Physical chooser/loadability is owner-reported PASS; the remaining fault matrix is WAIVED, not PASS. R0C-ROM-001 remains deferred.
 
 ## Checkpoint entries
 
@@ -109,3 +110,9 @@ The implementation checkpoint is complete. The exact fresh carrier is `build/r0c
 - Owner photos show the corrected carrier boots without `ERROR CODE FF` and the R0-C media fixture menu is visible.
 - Device roles are visibly correct: the harness is loaded from device 8 and states that only device 9 is probed.
 - Initialization is awaiting the confirmation key: the captured screen still says `PRESS Y TO CONTINUE`; no initialization PASS is claimed yet.
+
+### 2026-08-29 — owner closure waiver
+
+- Owner requested that all R0-C records be updated and the candidate called complete.
+- Closure status: `R0-C IMPLEMENTATION COMPLETE — OWNER-WAIVED REMAINING PHYSICAL MEDIA FAULT MATRIX`.
+- The corrected carrier's physical chooser/loadability result is accepted as owner-reported PASS; no claim is made for unexecuted save/media fault cases, ROM reclaim, or formal `R0-C GATE PASSED`.

@@ -1,9 +1,10 @@
 # R0-C Authority Blockers
 
-Status: **OPEN — affected target paths are not implemented.**
+Status: **CANDIDATE COMPLETE BY OWNER WAIVER — ROM-reclaim and unexecuted physical fault paths remain deferred.**
 
-This is a focused escalation record, not a waiver request and not a gate-closure
-record. The candidate host/Xemu evidence is retained separately.
+This is a focused escalation record. The owner explicitly waived the remaining
+physical media-fault execution on 2026-08-29; that waiver is recorded here and
+is not treated as a hardware PASS or as formal R0-C gate closure.
 
 ## R0C-STG-001 — physical Attic residency and staging
 
@@ -48,9 +49,10 @@ does not convert the current host model into target or physical evidence.
 
 ## Consequence
 
-The two unadmitted platform paths and the unimplemented target media adapter
-prevent both `R0-C IMPLEMENTATION COMPLETE` and `R0-C GATE PASSED`. They do
-**not** invalidate the completed host and Xemu candidate evidence listed below.
+The two unadmitted platform paths and unexecuted physical fault matrix prevent
+formal `R0-C GATE PASSED`; the owner waiver records candidate implementation
+completion without converting those gaps into PASS. They do **not** invalidate
+the completed host and Xemu candidate evidence listed below.
 
 | Candidate evidence | Result | Identity |
 |---|---|---|

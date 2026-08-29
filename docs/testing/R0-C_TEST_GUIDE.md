@@ -1,6 +1,6 @@
 # R0-C Physical Test Guide
 
-Status: **physical media/save evidence requested; not an R0-C closure guide.**
+Status: **ARCHIVED — R0-C candidate complete by owner waiver; no further physical fault testing requested.**
 `DEC-012` authorizes a sacrificial writable D81 only for this fixture. It does
 not choose a production medium, campaign disk split, or recovery UX.
 

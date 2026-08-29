@@ -219,5 +219,14 @@ fixture. This draft does not choose a production medium, recovery UX, package
 format, disk split, DMA policy, or renderer. `DEC-015` remains open.
 
 **Current result:** `R0C-PLAT-ATTIC-001` is admitted for the narrow proof only,
-but is not implemented or passing. `R0C-PLAT-ROM-001` is deferred and has no
-authorized wrapper. Neither decision is R0-C gate passage.
+is implemented for the bounded proof candidate and has host/Xemu PASS evidence;
+physical ABI evidence is owner-waived for this candidate. `R0C-PLAT-ROM-001`
+is deferred and has no authorized wrapper. Neither decision is R0-C gate
+passage.
+
+## Owner closure disposition (2026-08-29)
+
+The owner waived further R0-C physical fault execution and requested candidate
+completion. The admitted Attic proof remains bounded candidate infrastructure;
+the ROM-reclaim contract remains deferred. This disposition does not promote
+either candidate contract to a production ABI or declare formal gate passage.

@@ -6,6 +6,13 @@ This record admits bounded R0-C proof work under approved Read-First v1.0,
 AD-001, and the 2026-08-20 approval record. It does not promote Architecture
 1.5.1, Gameplay 0.2, or Engine 0.2, and it does not pass R0-C.
 
+## Closure status (2026-08-29)
+
+R0-C implementation is complete for the bounded candidate by explicit owner
+waiver of the remaining physical media-fault matrix. The corrected D81 loads
+without chooser `ERROR CODE FF` and reaches the fixture menu. This waiver does
+not pass the formal R0-C hardware gate; `R0C-PLAT-ROM-001` remains deferred.
+
 ## Owned proof work
 
 - Java host schemas, converters, package/D81/capacity/save validators.

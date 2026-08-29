@@ -1,6 +1,6 @@
 # R0-C D81 Loadability Audit and Recovery Plan
 
-**Status:** current `F65-R0C-MEDIA.D81` is not certified loadable on the physical MEGA65. A chooser-level `ERROR CODE FF` is a hard failure; no BASIC or R0-C result is valid until the carrier passes the load gate.
+**Status:** corrected `F65-R0C-MEDIA.D81` is owner-reported loadable on the physical MEGA65 without chooser `ERROR CODE FF`; remaining media-fault execution was waived by the owner on 2026-08-29.
 
 ## Symptom
 

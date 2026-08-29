@@ -58,3 +58,9 @@ This research does not select a production ROM strategy, storage medium,
 display-store implementation, DMA policy, or recovery UX. DEC-012 remains the
 narrow approval of a sacrificial writable D81 only for future R0-C media-fault
 evidence.
+
+## Owner closure disposition (2026-08-29)
+
+The owner waived further R0-C physical media testing and requested candidate
+completion. This does not resolve or pass `R0C-ROM-001`; post-ROM-reclaim
+storage handoff remains deferred for a later authorized gate.

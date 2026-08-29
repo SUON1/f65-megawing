@@ -9,7 +9,8 @@ owned request block, bounded CPU copy only, source `$08000000`, and destination
 Physical MEGA65 clobber/ABI evidence is still required. `R0C-PLAT-ROM-001`
 remains deferred; no ROM-reclaim wrapper was added.
 
-Status: **R0-C implementation is not complete.** This handoff records the
+Status: **R0-C IMPLEMENTATION COMPLETE — OWNER-WAIVED REMAINING PHYSICAL MEDIA
+FAULT MATRIX.** This handoff records the
 bounded candidate delivered so far and its explicit blockers. It must be updated
 after a complete implementation and final remote verification.
 
@@ -147,3 +148,18 @@ The last physical attempt exposed two fixture defects, not a disk-9 setup error:
 SHA-256:
 `e0d4600994cd7eb69870ea935974db0175868017e115222521965c7fc70d113`
 Xemu reaches the fixture menu (`R0C-MEDIA-XEMU.screen.txt`); it does not execute physical media transactions. The owner must rerun initialization and the DEC-012 matrix on a fresh copy. `R0C-MEDIA-001` remains awaiting physical evidence; `R0C-ROM-001` remains deferred.
+
+## Owner closure waiver (2026-08-29)
+
+The owner requested completion and waived further R0-C media/save fault
+testing. The corrected carrier was copied and reported loadable without chooser
+`ERROR CODE FF`; the fixture menu was reached from the device-8 carrier and
+states that only device 9 is probed. No explicit initialization/recovery PASS
+frame was retained, so those cases are recorded as **WAIVED**, not PASS.
+
+Final candidate status: **R0-C IMPLEMENTATION COMPLETE — OWNER-WAIVED
+REMAINING PHYSICAL MEDIA FAULT MATRIX**. `R0C-ROM-001` remains deferred, and
+this waiver does not declare formal `R0-C GATE PASSED`.
+
+Final local source commit: `2ce0e35` (ahead of origin; not pushed).
+Final D81 SHA-256: `e01eb41cff0158e7b609a365ecc72b78b3ce825ddca06a42a32f8954f4c7e8d0`.
