@@ -97,3 +97,9 @@ The implementation checkpoint is complete. The exact fresh carrier is `build/r0c
 - Working tree is clean and the branch is one commit ahead of origin; no push was performed.
 - Exact artifact for owner verification remains `build/r0c/artifacts/F65-R0C-MEDIA.D81` with SHA-256 `e01eb41cff0158e7b609a365ecc72b78b3ce825ddca06a42a32f8954f4c7e8d0`.
 - Stop point: owner must verify the hash after SD transfer and perform the physical chooser test. A physical result is not inferred from host/Xemu PASS.
+
+### 2026-08-28 — physical chooser result received
+
+- Owner reports the exact copied carrier loads without chooser `ERROR CODE FF`.
+- This closes the physical chooser/loadability observation for the carrier only; it does not close the media fault matrix or formal R0-C gate.
+- Next test: mount a separate sacrificial writable D81 on device 9, initialize both generations, then recover and photograph the result.
