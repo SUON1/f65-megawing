@@ -116,3 +116,9 @@ The R0-C candidate is complete by owner waiver. The exact fresh carrier is `buil
 - Owner requested that all R0-C records be updated and the candidate called complete.
 - Closure status: `R0-C IMPLEMENTATION COMPLETE — OWNER-WAIVED REMAINING PHYSICAL MEDIA FAULT MATRIX`.
 - The corrected carrier's physical chooser/loadability result is accepted as owner-reported PASS; no claim is made for unexecuted save/media fault cases, ROM reclaim, or formal `R0-C GATE PASSED`.
+
+### 2026-08-29 — R0-C records reconciled
+
+- Updated the official record, task admission, execution plan, agent record, handoff, evidence map, blockers, D81 audit, platform/ROM reports, and test guide.
+- Local closure commit: `f476a8b` (`docs(r0c): close candidate by owner waiver`).
+- Branch remains unpushed and clean after this checkpoint commit; no formal hardware-gate PASS is claimed.
