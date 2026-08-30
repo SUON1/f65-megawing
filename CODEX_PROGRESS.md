@@ -1,6 +1,160 @@
-# CODEX Progress
+# Codex Progress — F65 R0-D protected-workload calibration
 
 ## Original objective
+
+Implement the bounded R0-D protected-workload and calibration proof defined by
+the supplied human-reviewed F65 Main Concept v1.6. R0-D owns the reproducible
+historical 530,000-clock non-render workload and instrumentation foundation
+needed by R0-E and R0-F. This authorization excludes Xemu and hardware work.
+
+## Current status
+
+- Current phase: R0-D; production stage: CODING.
+- Authorization: Stage 1 is authorized. VS Code publication, Xemu, and
+  physical-MEGA65 work are not authorized.
+- Repository branch: `codex/r0-d-development`.
+- Local HEAD: `d02be340834563a5d76c03243f73d27cdca004e3`.
+- Remote verification: this commit is advertised by
+  `origin/codex/r0-c-development`; no R0-D remote branch is verified.
+- Working tree was clean at admission; R0-D implementation and its checkpoint
+  updates are pending local commit.
+- D81: no R0-D candidate exists. Any later candidate must pass the complete
+  fail-closed D81 gate and remains non-final before physical chooser evidence.
+- R0-C is complete by owner waiver of its remaining physical media-fault matrix.
+  R0-D implementation and Stage-1 host/build validation are complete; local
+  commit/review is in progress. Publication, Xemu, and hardware evidence remain
+  pending.
+- Blocker: the repository official record predates the supplied human-reviewed
+  v1.6 core documents. This task prompt explicitly adopts v1.6; the discrepancy
+  will be recorded without altering historical R0-C evidence.
+
+## Completed work
+
+- Verified the required repository, branch, baseline commit, clean status,
+  history, origin remote, and all required sentinel files.
+- Read root `AGENTS.md`, the prior checkpoint, official record, D81 gate, R0-C
+  handoff/plan/admission/ownership/evidence, toolchain lock, R0-C build path,
+  interfaces, memory ledger, and public platform ABI registry.
+- Recorded supplied current-document SHA-256 values:
+  - Main Concept v1.6:
+    `e7d8ed40ce630d82e707e2a9c7f29995fac6f4281849c2c7ef5261d420c2c425`
+  - Gameplay and Simulation Supplement v1:
+    `b675daa213c02e4b642fd8f8dd439c74f72808488c548a6af14fc8400487645a`
+  - 65Aero Runtime and Technical Supplement v1 candidate:
+    `bcb50a96ca6aadfd45637c48c4a80a10d8ce61b1e2461ba03448b4f06497d260`
+- Created the R0-D admission, ownership map, ExecPlan, agent record, counter
+  contract, memory ledger, test guide, evidence map, handoff, generated C/Java
+  bindings, host fixture, static validators, build script, and target diagnostic.
+- Implemented `R0D-PW-530K-001`: a deterministic 21-stage, 100 Hz historical
+  comparison fixture with exactly 530,000 declared protected-work clocks. It is
+  explicitly not a production timing budget or measured-limit selection.
+- Built target observability at `$1860-$18DF`; the target touches no protected
+  staging, audio, DMA-list, reserve, or measured-limits range.
+
+## Files changed
+
+- R0-D source, documentation, generated bindings, validation scripts, and build
+  tooling listed in `docs/plans/r0-d-ownership-map.json`: source-controlled;
+  pending local commit; not pushed; no further Stage-1 source changes expected.
+- `CODEX_PROGRESS.md`: durable R0-D checkpoint; pending local commit; not
+  pushed; further updates expected at publication/Xemu/hardware boundaries.
+
+## Decisions and architecture
+
+- The explicit R0-D task prompt and supplied v1.6 documents control this task.
+  The preserved R0-C record and older candidate corpus remain historical.
+- R0-D will add separate proof-only contracts, generated bindings, ledgers,
+  diagnostics, host evidence, target observability, and a fresh D81 path.
+- No change is authorized to CoreRuntime ownership, 100 Hz/21-stage order,
+  public production ABI, fixed capacities, MAP/base-page/stack rules,
+  MemoryAccessABI, protected reserves, or R0-C sources/evidence.
+- Existing relevant ranges are stack `$0100-$01ff`, base page `$0200-$02ff`,
+  R0-C result `$1800-$185f`, display `$020000-$03ffff`, workspace
+  `$048000-$04ffff`, staging `$050000-$052fff`, audio `$053000-$055fff`, DMA
+  lists `$056000-$056fff`, reserve `$057000-$057fff`, and untouched measured
+  limits reserve `$058000-$05ffff`. R0-D counters must not consume them.
+
+## Validation performed
+
+- Git root/branch/HEAD/status/diff/history/remote checks: PASS.
+- Required sentinel checks: PASS.
+- Baseline containment check: PASS for local R0-C/R0-D and
+  `origin/codex/r0-c-development`.
+- SHA-256 calculations for all three supplied current documents: PASS.
+- `sh tools/build/r0d.sh bootstrap`: PASS; pinned LLVM-MOS 24.0.0git / MOS
+  45GS02 target and Temurin 21.0.12 runtime available.
+- `sh tools/build/r0d.sh host-test`: PASS; all R0-D host fixture/counter tests
+  pass and emit `build/r0d/evidence/r0d-host-evidence.json`.
+- `make r0d-verify`: PASS; generated binding freshness and static target guard
+  pass.
+- `make r0d-build`: PASS; LLVM-MOS links the target and emits map, symbols,
+  disassembly, build-accounting report, and PRG SHA-256
+  `ad4827da70d6f4a571817df2268bb3ca4e88d11a0f8aacfc11441abca2fd1677`.
+- `git diff --check`: PASS.
+- No R0-D D81 is required or emitted in Stage 1. D81 host validation is not
+  applicable; Xemu and hardware remain unrun and unauthorized.
+
+## Known problems or unresolved issues
+
+- Implementation defects: none identified; R0-D has not started.
+- Tooling: pinned toolchain remains to be revalidated by the R0-D build.
+- Unverified behavior: all R0-D target timing and hardware behavior.
+- Authority discrepancy: repository status reflects predecessor candidates;
+  supplied human authorization adopts v1.6 for R0-D.
+- Missing evidence: R0-D D81 (not applicable in Stage 1), Xemu, and physical
+  evidence. The host/build evidence tier is complete.
+- Human decisions: R0-GATED/TARGET/TBD values remain unselected.
+- Later gates: VS Code publication, Xemu, and hardware testing.
+
+## Remaining work
+
+- [x] Verify repository, baseline, sentinels, R0-C evidence, and inputs.
+- [x] Read the D81 gate and record supplied-document hashes.
+- [x] Establish the R0-D admission checkpoint.
+- [x] Create R0-D task-admission, ExecPlan, ownership, agent, test, evidence,
+  and handoff records.
+- [x] Implement deterministic 530,000-clock workload and R0-D counters.
+- [x] Implement host/static/build validation and target observability.
+- [ ] Complete diff review, commit, and report Stage-1 results.
+- [ ] VS Code publication — blocked pending owner authorization.
+- [ ] Xemu — blocked pending explicit owner authorization.
+- [ ] Physical-MEGA65 — blocked pending separate owner authorization.
+
+## Exact resume point
+
+Review the complete R0-D diff, commit the Stage-1 work and updated checkpoint,
+verify the clean worktree, then stop for the VS Code publication authorization.
+Do not rerun R0-C, build/mount a D81, begin Xemu, or select an
+R0-GATED/TARGET/TBD value.
+
+## Checkpoint log
+
+2026-08-30T09:00:00-07:00 — stage: CODING; branch:
+`codex/r0-d-development`; local HEAD:
+`d02be340834563a5d76c03243f73d27cdca004e3`; remote verification: baseline is
+advertised by `origin/codex/r0-c-development`, no R0-D publication; completed:
+reconciled repository/sentinels/R0-C evidence, read the D81 gate, and recorded
+the supplied-document hashes; validation: Git and sentinel checks PASS;
+artifacts: no R0-D artifact; unresolved: v1.6 is not yet represented in the
+historical official record and all R0-D evidence is pending; next: create R0-D
+admission, plan, ownership, and proof contracts; authorization: Stage-1 coding
+only, no Xemu or hardware.
+
+2026-08-30T09:25:00-07:00 — stage: CODING; branch:
+`codex/r0-d-development`; local HEAD:
+`d02be340834563a5d76c03243f73d27cdca004e3`; remote verification: no R0-D
+publication; completed: R0-D proof-only contracts, generator, host fixture,
+target diagnostic, static/map accounting, and Stage-1 records; validation:
+bootstrap, host tests, verify, target build, map/symbol/disassembly review, and
+`git diff --check` PASS; artifacts: PRG SHA-256
+`ad4827da70d6f4a571817df2268bb3ca4e88d11a0f8aacfc11441abca2fd1677`, no
+D81; unresolved: Xemu/hardware evidence and actual protected-work timing are
+not claimed; next: review diff and commit Stage-1 work; authorization: Stage-1
+only, no publication, Xemu, or hardware.
+
+## Historical R0-C checkpoint (preserved)
+
+### Original objective
 
 Resume the existing F-65 R0-C work without restarting it, identify and correct the D81 carrier-loadability failure that produced MEGA65 chooser error code FF, and establish a durable repository-root loadability gate for every future branch and prompt. Build and validate a fresh D81 through the approved one-session construction path. Close the candidate by explicit owner waiver of further physical fault testing, without mislabeling that waiver as a formal hardware gate pass.
 

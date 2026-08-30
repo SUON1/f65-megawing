@@ -1,0 +1,11 @@
+{
+  "identity": "r0d-0.1.0-calibration-proof",
+  "status": "R0-D-CANDIDATE",
+  "byte_order": "little-endian",
+  "historical_fixture": {"id": "R0D-PW-530K-001", "declared_protected_clocks": 530000, "simulation_hz": 100, "stages": 21, "role": "historical comparison workload; not a production budget"},
+  "records": {
+    "counter_snapshot": {"size": 64, "owner": "R0-D Diagnostics", "fields": ["tick", "protected_clocks", "display_services", "world_generation", "source_snapshot", "displayed_world_age", "renderer_high_water", "audio_p0_p1_latency", "snapshot_lag", "dma_input_storage_ticks", "ai_owner_bytes", "reserve_bytes"]},
+    "target_result": {"address": "0x1860", "size": 128, "magic": "R0D1", "owner": "R0-D Diagnostics"}
+  },
+  "invariants": ["The tick is 100 Hz and consists of exactly 21 ordered stages.", "Stage 16 output is eligible no earlier than the following tick.", "Presentation counters are observational and do not feed authoritative state.", "The historical fixture does not select a measured or production limit.", "ReserveBytes must remain zero."]
+}

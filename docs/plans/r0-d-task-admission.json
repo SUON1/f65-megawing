@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "task_id": "F65-R0-D",
+  "milestone": "Phase 0 / R0-D",
+  "classification": "Protected-workload calibration and instrumentation proof only",
+  "authorization": ["R0-D Development Agent — Implementation Prompt v1.0", "F65 Main Concept v1.6 — human-reviewed", "F65 Gameplay and Simulation Supplement v1 — human-reviewed", "F65 65Aero Runtime v1 — approved candidate design"],
+  "input_documents": {
+    "main_concept_v1_6_sha256": "e7d8ed40ce630d82e707e2a9c7f29995fac6f4281849c2c7ef5261d420c2c425",
+    "gameplay_v1_sha256": "b675daa213c02e4b642fd8f8dd439c74f72808488c548a6af14fc8400487645a",
+    "runtime_v1_sha256": "bcb50a96ca6aadfd45637c48c4a80a10d8ce61b1e2461ba03448b4f06497d260"
+  },
+  "baseline": {"branch": "codex/r0-d-development", "commit": "d02be340834563a5d76c03243f73d27cdca004e3", "upstream_r0c_branch": "codex/r0-c-development"},
+  "interfaces": {"consumes": ["MemoryAccessABI", "canonical MAP/base-page/stack rules", "R0-C proof conventions"], "creates": "r0d-0.1.0-calibration-proof", "production_abi": "none"},
+  "memory": {"result_block": "$1860-$18DF", "protected_ranges": ["$0100-$01FF", "$0200-$02FF", "$020000-$03FFFF", "$050000-$05FFFF"], "reserve_use": "forbidden"},
+  "requirements": ["100 Hz authoritative model", "exact 21-stage order", "historical 530000-clock non-render fixture", "independent-clock rolling counters", "world/display-age counters", "renderer/audio/snapshot/DMA/input/storage/AI owner counters", "deterministic host evidence and target observability"],
+  "prohibited": ["renderer replacement", "production graphics selection", "flight", "aircraft systems", "radar", "tracks", "weapons", "production AI doctrine", "gameplay", "campaign", "R0-E harness", "R0-F closure", "measured-limit selection", "R0-C changes", "public production ABI changes", "protected reserve use", "Xemu", "hardware"],
+  "acceptance": {"host": ["R0D-FIX-001", "R0D-TICK-001", "R0D-CLK-001", "R0D-WORLD-001", "R0D-RENDER-001", "R0D-AUDIO-001", "R0D-SNAP-001", "R0D-IO-001", "R0D-AI-001", "R0D-MEM-001", "R0D-TARGET-STATIC-001"], "xemu": "not authorized", "hardware": "not authorized"}
+}

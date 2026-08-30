@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "task_id": "F65-R0-D",
+  "authorized_prefixes": ["docs/agents/R0-D_DEVELOPMENT_AGENT.md", "docs/plans/R0-D_EXEC_PLAN.md", "docs/plans/r0-d-*.json", "docs/testing/R0-D_TEST_GUIDE.md", "docs/reports/R0-D_HANDOFF.md", "docs/evidence/r0d/", "interfaces/r0d*", "interfaces/generated/r0d*", "memory/r0d-memory-ledger.json", "src/r0d/", "src/diagnostics/r0d/", "tests/fixtures/r0d/", "tools/build/r0d.sh", "tools/diagnostics/r0d_*", "tools/generators/src/main/java/f65/tools/R0DHostTools.java", "tools/generators/src/main/java/f65/tools/generated/R0DInterfaces.java", "Makefile", "CODEX_PROGRESS.md", "F65_OFFICIAL_RECORD.md"],
+  "prohibited_prefixes": ["spec/", "src/r0a/", "src/r0b/", "src/r0c/", "docs/evidence/r0a/", "docs/evidence/r0b/", "docs/evidence/r0c/"],
+  "forbidden_change_classes": ["CoreRuntime ownership", "100 Hz tick order", "public production ABI", "memory ownership", "pool capacity", "protected reserve", "measured limit", "gameplay", "later-phase implementation"],
+  "state_owners": {"fixture": "R0-D calibration harness", "counter_records": "R0-D diagnostics", "target_result": "R0-D diagnostics only", "memory_ledger": "R0-D proof ledger"}
+}
