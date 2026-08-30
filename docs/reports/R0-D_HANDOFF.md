@@ -1,6 +1,6 @@
 # R0-D Handoff
 
-Status: **CODING COMPLETE — READY FOR VS CODE PUSH AUTHORIZATION.**
+Status: **XEMU TESTING COMPLETE — READY FOR HARDWARE AUTHORIZATION.**
 
 R0-D adds a proof-only calibration harness around the historical
 530,000-clock protected non-render fixture. The fixture preserves the 100 Hz,
@@ -29,3 +29,11 @@ The required publication action, when separately authorized, is VS Code Source
 Control push/sync of `codex/r0-d-development` to `origin`, followed by remote
 verification of the final commit. Do not start Xemu after publication without
 an explicit Xemu authorization.
+
+Xemu result: PASS from two clean PRG boots using the pinned Xemu build and ROM
+SHA-256 `af3c447f791a2fdc48cb21e1bd3fab015e32641228d9d30d21259b9e878c6fa0`.
+Both boots produced result-block SHA-256
+`24f8e8dac28e79d9615bbae9fb58b716e92cf55b515e66483769721cf14587f7` and the
+same display identity. No D81 exists for R0-D, so physical chooser verification
+is not applicable. Physical timing remains unverified and requires separate
+authorization.

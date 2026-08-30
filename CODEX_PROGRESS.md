@@ -22,9 +22,8 @@ needed by R0-E and R0-F. This authorization excludes Xemu and hardware work.
   fail-closed D81 gate and remains non-final before physical chooser evidence.
 - R0-C is complete by owner waiver of its remaining physical media-fault matrix.
   R0-D implementation and Stage-1 host/build validation are complete and
-  locally committed and published. Xemu is authorized but blocked before first
-  boot because `F65_MEGA65_ROM` is unavailable; hardware evidence remains
-  pending.
+  locally committed and published. Xemu passed two clean boots; physical
+  hardware evidence remains pending and is not authorized.
 - Blocker: the repository official record predates the supplied human-reviewed
   v1.6 core documents. This task prompt explicitly adopts v1.6; the discrepancy
   will be recorded without altering historical R0-C evidence.
@@ -105,14 +104,15 @@ needed by R0-E and R0-F. This authorization excludes Xemu and hardware work.
 - `git diff --check`: PASS.
 - No R0-D D81 is required or emitted in Stage 1. D81 host validation is not
   applicable; no D81 is to be mounted for this PRG-based Xemu path.
-- Xemu preflight: BLOCKED. `F65_MEGA65_ROM` is unset or does not name a readable
-  owner ROM. No emulator was started and no Xemu result is claimed.
+- Xemu: PASS. The supplied 131,072-byte ROM matched SHA-256
+  `af3c447f791a2fdc48cb21e1bd3fab015e32641228d9d30d21259b9e878c6fa0`.
+  Two clean PRG boots produced matching screen and result-block hashes.
 
 ## Known problems or unresolved issues
 
 - Implementation defects: none identified; R0-D has not started.
 - Tooling: pinned toolchain remains to be revalidated by the R0-D build.
-- Unverified behavior: all R0-D Xemu timing/behavior and hardware behavior.
+- Unverified behavior: physical R0-D timing/behavior and all hardware behavior.
 - Authority discrepancy: repository status reflects predecessor candidates;
   supplied human authorization adopts v1.6 for R0-D.
 - Missing evidence: R0-D D81 (not applicable), Xemu, and physical evidence.
@@ -134,14 +134,15 @@ needed by R0-E and R0-F. This authorization excludes Xemu and hardware work.
 - [x] Complete diff review, commit, and report Stage-1 results.
 - [x] Publish the Stage-1 branch through VS Code and verify its GitHub commit.
 - [ ] Push this publication-checkpoint commit through VS Code.
-- [ ] Xemu — blocked: configure a readable `F65_MEGA65_ROM` owner-ROM path.
+- [x] Run two clean Xemu boots and capture deterministic evidence.
+- [ ] Publish the Xemu evidence commit through VS Code and verify it remotely.
 - [ ] Physical-MEGA65 — blocked pending separate owner authorization.
 
 ## Exact resume point
 
-Provide or configure a readable owner-ROM path in `F65_MEGA65_ROM`; then
-reverify the published branch and execute two clean PRG-based Xemu starts.
-Do not rerun R0-C, build/mount a D81, or begin physical testing.
+Commit and publish the Xemu evidence, verify the remote commit, then stop for
+separate physical-MEGA65 authorization. Do not build/mount a D81 or begin
+physical testing without that authorization.
 
 ## Checkpoint log
 
@@ -213,6 +214,17 @@ unchanged PRG SHA-256 `ad4827da70d6f4a571817df2268bb3ca4e88d11a0f8aacfc11441abca
 no D81; unresolved: `F65_MEGA65_ROM` is unavailable, so no emulator start or
 Xemu result exists; next: configure the owner-ROM path and run two clean boots;
 authorization: Xemu only, no physical testing.
+
+2026-08-30T10:35:00-07:00 — stage: XEMU TESTING; branch:
+`codex/r0-d-development`; source commit under test:
+`c5a12d936e07fa20e1ca43333042cb7a3fcaa57f`; completed: ROM identity verified,
+two clean PRG boots, screen/result-block validation, and determinism comparison;
+validation: PASS; artifacts: PRG SHA-256
+`ad4827da70d6f4a571817df2268bb3ca4e88d11a0f8aacfc11441abca2fd1677`,
+result-block SHA-256 `24f8e8dac28e79d9615bbae9fb58b716e92cf55b515e66483769721cf14587f7`,
+no D81; unresolved: Xemu evidence commit requires publication and physical
+hardware remains unauthorized; next: commit/publish Xemu evidence; authorization:
+Xemu complete, no physical testing.
 
 ## Historical R0-C checkpoint (preserved)
 
