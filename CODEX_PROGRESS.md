@@ -9,20 +9,21 @@ needed by R0-E and R0-F. This authorization excludes Xemu and hardware work.
 
 ## Current status
 
-- Current phase: R0-D; production stage: CODING.
-- Authorization: Stage 1 is authorized. VS Code publication, Xemu, and
-  physical-MEGA65 work are not authorized.
+- Current phase: R0-D; production stage: PUSH VIA VS CODE.
+- Authorization: Stage 1 is complete and the owner published through VS Code.
+  Xemu and physical-MEGA65 work are not authorized.
 - Repository branch: `codex/r0-d-development`.
-- Local HEAD at this reconciliation: `62ffb16efbf448bea72e894269061101d5ff1ab9`.
-- Remote verification: this commit is advertised by
-  `origin/codex/r0-c-development`; no R0-D remote branch is verified.
-- Working tree was clean after the Stage-1 documentation commit; this
-  reconciliation update is pending commit.
+- Local HEAD at publication verification: `5c2ff556968281092eb972e6c31e4492d9bdffda`.
+- Remote verification: `git ls-remote` returned this exact commit for
+  `origin/codex/r0-d-development`.
+- Working tree was clean at publication verification; this publication
+  checkpoint update is pending its local documentation commit and final push.
 - D81: no R0-D candidate exists. Any later candidate must pass the complete
   fail-closed D81 gate and remains non-final before physical chooser evidence.
 - R0-C is complete by owner waiver of its remaining physical media-fault matrix.
   R0-D implementation and Stage-1 host/build validation are complete and
-  locally committed. Publication, Xemu, and hardware evidence remain pending.
+  locally committed and published. The final publication checkpoint needs push;
+  Xemu and hardware evidence remain pending.
 - Blocker: the repository official record predates the supplied human-reviewed
   v1.6 core documents. This task prompt explicitly adopts v1.6; the discrepancy
   will be recorded without altering historical R0-C evidence.
@@ -52,16 +53,19 @@ needed by R0-E and R0-F. This authorization excludes Xemu and hardware work.
 - Committed the complete Stage-1 implementation as
   `2bcb54e046e9cdcd8f03b7daaa12141a474c6af0`
   (`feat(r0d): add protected workload calibration harness`).
+- Verified the VS Code publication with `git ls-remote --heads origin
+  refs/heads/codex/r0-d-development`, which returned
+  `5c2ff556968281092eb972e6c31e4492d9bdffda`.
 
 ## Files changed
 
 - R0-D source, documentation, generated bindings, validation scripts, and build
   tooling listed in `docs/plans/r0-d-ownership-map.json`: committed locally in
-  `2bcb54e` and `62ffb16`; not pushed; no further Stage-1 source changes
-  expected.
-- `CODEX_PROGRESS.md`: durable R0-D checkpoint committed through `62ffb16` and
-  pending this reconciliation commit; not pushed; further updates expected at
-  publication/Xemu/hardware boundaries.
+  `2bcb54e`, `62ffb16`, and `5c2ff55`; published through VS Code; no further
+  Stage-1 source changes expected.
+- `CODEX_PROGRESS.md`: durable R0-D checkpoint published through `5c2ff55` and
+  pending this publication checkpoint commit/final push; further updates are
+  expected at Xemu/hardware boundaries.
 
 ## Decisions and architecture
 
@@ -120,15 +124,16 @@ needed by R0-E and R0-F. This authorization excludes Xemu and hardware work.
 - [x] Implement deterministic 530,000-clock workload and R0-D counters.
 - [x] Implement host/static/build validation and target observability.
 - [x] Complete diff review, commit, and report Stage-1 results.
-- [ ] VS Code publication — awaiting separate owner authorization.
+- [x] Publish the Stage-1 branch through VS Code and verify its GitHub commit.
+- [ ] Push this publication-checkpoint commit through VS Code.
 - [ ] Xemu — blocked pending explicit owner authorization.
 - [ ] Physical-MEGA65 — blocked pending separate owner authorization.
 
 ## Exact resume point
 
-Commit this reconciliation checkpoint, verify the clean worktree and local
-HEAD, then stop at the VS Code publication authorization boundary. Do not rerun
-R0-C, build/mount a D81, begin Xemu, or select an R0-GATED/TARGET/TBD value.
+Commit and push this publication checkpoint through VS Code, verify its remote
+identity, then stop and await explicit Xemu authorization. Do not rerun R0-C,
+build/mount a D81, begin Xemu, or select an R0-GATED/TARGET/TBD value.
 
 ## Checkpoint log
 
@@ -178,6 +183,18 @@ no D81; discrepancy corrected: the prior checkpoint lagged the already-created
 Stage-1 documentation commit; next: commit this reconciliation and await
 explicit VS Code publication authorization; authorization: coding complete,
 publication/Xemu/hardware not authorized.
+
+2026-08-30T10:05:00-07:00 — stage: PUSH VIA VS CODE; branch:
+`codex/r0-d-development`; local HEAD:
+`5c2ff556968281092eb972e6c31e4492d9bdffda`; remote verification: PASS,
+`git ls-remote` returned that exact commit for
+`refs/heads/codex/r0-d-development`; completed: owner published Stage-1 work
+through VS Code and remote identity was verified; validation: clean worktree
+and remote branch match; artifacts: unchanged PRG SHA-256
+`ad4827da70d6f4a571817df2268bb3ca4e88d11a0f8aacfc11441abca2fd1677`, no
+D81; unresolved: this publication checkpoint needs commit/push, Xemu/hardware
+are unrun; next: commit/push this checkpoint and verify remote; authorization:
+publication checkpoint only, no Xemu or hardware.
 
 ## Historical R0-C checkpoint (preserved)
 
