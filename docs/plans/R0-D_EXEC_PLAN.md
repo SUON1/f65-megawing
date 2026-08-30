@@ -10,7 +10,7 @@ Status: **Stage 1 / CODING in progress.**
 | D3 | Host counters, rolling windows, evidence, and static checks | Complete |
 | D4 | Target diagnostic observability and map/symbol/listing review | Complete — host/build evidence only |
 | D5 | Fresh R0-D candidate packaging only if required by the validated target path | Not applicable — no R0-D D81 required for Stage 1 |
-| D6 | Stage-1 handoff and local commits | In progress |
+| D6 | Stage-1 handoff and local commits | Complete — `2bcb54e`; checkpoint commit pending |
 
 The fixture is a historical comparison workload, not a production budget and
 not a measured-limits selection. Xemu and hardware remain separate, closed

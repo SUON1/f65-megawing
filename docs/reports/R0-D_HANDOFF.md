@@ -1,6 +1,6 @@
 # R0-D Handoff
 
-Status: **Stage 1 implementation and host validation complete; local commit in progress.**
+Status: **CODING COMPLETE — READY FOR VS CODE PUSH AUTHORIZATION.**
 
 R0-D adds a proof-only calibration harness around the historical
 530,000-clock protected non-render fixture. The fixture preserves the 100 Hz,
@@ -23,3 +23,9 @@ SHA-256 `ad4827da70d6f4a571817df2268bb3ca4e88d11a0f8aacfc11441abca2fd1677`.
 The linked map reports 696 code bytes, 618 rodata bytes, zero data bytes, one
 BSS byte, stack symbol `$D000`, and zero reserve bytes. These are evidence
 observations, not measured-limit selections.
+
+Local implementation commit: `2bcb54e046e9cdcd8f03b7daaa12141a474c6af0`.
+The required publication action, when separately authorized, is VS Code Source
+Control push/sync of `codex/r0-d-development` to `origin`, followed by remote
+verification of the final commit. Do not start Xemu after publication without
+an explicit Xemu authorization.

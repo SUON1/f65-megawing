@@ -13,17 +13,16 @@ needed by R0-E and R0-F. This authorization excludes Xemu and hardware work.
 - Authorization: Stage 1 is authorized. VS Code publication, Xemu, and
   physical-MEGA65 work are not authorized.
 - Repository branch: `codex/r0-d-development`.
-- Local HEAD: `d02be340834563a5d76c03243f73d27cdca004e3`.
+- Local HEAD: `2bcb54e046e9cdcd8f03b7daaa12141a474c6af0`.
 - Remote verification: this commit is advertised by
   `origin/codex/r0-c-development`; no R0-D remote branch is verified.
-- Working tree was clean at admission; R0-D implementation and its checkpoint
-  updates are pending local commit.
+- Working tree was clean after the R0-D implementation commit; this final
+  post-commit checkpoint update is pending commit.
 - D81: no R0-D candidate exists. Any later candidate must pass the complete
   fail-closed D81 gate and remains non-final before physical chooser evidence.
 - R0-C is complete by owner waiver of its remaining physical media-fault matrix.
-  R0-D implementation and Stage-1 host/build validation are complete; local
-  commit/review is in progress. Publication, Xemu, and hardware evidence remain
-  pending.
+  R0-D implementation and Stage-1 host/build validation are complete and
+  locally committed. Publication, Xemu, and hardware evidence remain pending.
 - Blocker: the repository official record predates the supplied human-reviewed
   v1.6 core documents. This task prompt explicitly adopts v1.6; the discrepancy
   will be recorded without altering historical R0-C evidence.
@@ -50,6 +49,9 @@ needed by R0-E and R0-F. This authorization excludes Xemu and hardware work.
   explicitly not a production timing budget or measured-limit selection.
 - Built target observability at `$1860-$18DF`; the target touches no protected
   staging, audio, DMA-list, reserve, or measured-limits range.
+- Committed the complete Stage-1 implementation as
+  `2bcb54e046e9cdcd8f03b7daaa12141a474c6af0`
+  (`feat(r0d): add protected workload calibration harness`).
 
 ## Files changed
 
@@ -115,17 +117,16 @@ needed by R0-E and R0-F. This authorization excludes Xemu and hardware work.
   and handoff records.
 - [x] Implement deterministic 530,000-clock workload and R0-D counters.
 - [x] Implement host/static/build validation and target observability.
-- [ ] Complete diff review, commit, and report Stage-1 results.
-- [ ] VS Code publication — blocked pending owner authorization.
+- [x] Complete diff review, commit, and report Stage-1 results.
+- [ ] VS Code publication — awaiting separate owner authorization.
 - [ ] Xemu — blocked pending explicit owner authorization.
 - [ ] Physical-MEGA65 — blocked pending separate owner authorization.
 
 ## Exact resume point
 
-Review the complete R0-D diff, commit the Stage-1 work and updated checkpoint,
-verify the clean worktree, then stop for the VS Code publication authorization.
-Do not rerun R0-C, build/mount a D81, begin Xemu, or select an
-R0-GATED/TARGET/TBD value.
+Commit this post-commit checkpoint, verify the clean worktree and local HEAD,
+then stop at the VS Code publication authorization boundary. Do not rerun R0-C,
+build/mount a D81, begin Xemu, or select an R0-GATED/TARGET/TBD value.
 
 ## Checkpoint log
 
@@ -151,6 +152,18 @@ bootstrap, host tests, verify, target build, map/symbol/disassembly review, and
 D81; unresolved: Xemu/hardware evidence and actual protected-work timing are
 not claimed; next: review diff and commit Stage-1 work; authorization: Stage-1
 only, no publication, Xemu, or hardware.
+
+2026-08-30T09:35:00-07:00 — stage: CODING; branch:
+`codex/r0-d-development`; local HEAD:
+`2bcb54e046e9cdcd8f03b7daaa12141a474c6af0`; remote verification: no R0-D
+publication; completed: staged full diff review and committed Stage-1 R0-D
+implementation; validation: final host tests, generated-binding verify, static
+target validation, target build, map accounting, and diff check PASS; artifacts:
+PRG SHA-256 `ad4827da70d6f4a571817df2268bb3ca4e88d11a0f8aacfc11441abca2fd1677`,
+no D81; unresolved: this post-commit checkpoint requires commit, Xemu/hardware
+remain unrun, and actual hardware timing is unmeasured; next: commit checkpoint
+then await VS Code publication authorization; authorization: Stage-1 only, no
+publication, Xemu, or hardware.
 
 ## Historical R0-C checkpoint (preserved)
 
