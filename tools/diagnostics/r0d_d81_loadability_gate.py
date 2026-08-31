@@ -27,7 +27,7 @@ def petscii_name(entry):
 
 
 root = pathlib.Path(sys.argv[1]).resolve()
-candidate = pathlib.Path(sys.argv[2]).resolve() if len(sys.argv) == 3 else root / "build/r0d/artifacts/F65R0D.D81"
+candidate = pathlib.Path(sys.argv[2]).resolve() if len(sys.argv) == 3 else root / "build/r0d/artifacts/F65R0D2.D81"
 artifacts = root / "build/r0d/artifacts"
 reports = root / "build/r0d/reports"
 manifests = root / "build/r0d/manifests"
@@ -69,6 +69,10 @@ if header[:2] != bytes((40, 3)):
     fail("header does not identify directory 40/3")
 if sector(40, 1)[:2] != bytes((40, 2)) or sector(40, 2)[0] != 0:
     fail("BAM chain is not the expected closed 40/1 -> 40/2 layout")
+disk_label = bytes(value & 0x7f for value in header[4:20]).decode("ascii", "replace").rstrip("\xa0 ")
+disk_id = bytes(value & 0x7f for value in header[22:24]).decode("ascii", "replace").rstrip("\xa0 ")
+if disk_label != "F65 R0-D" or disk_id != "65":
+    fail("disk header profile mismatch label=%r id=%r" % (disk_label, disk_id))
 
 # A 1581 D81 records one free-block count followed by five 8-bit maps for each
 # 40-sector track. Tracks 1-40 are in 40/1 and tracks 41-80 are in 40/2.
@@ -178,8 +182,8 @@ release = {
     "D81_FILENAME": candidate.name,
     "D81_SHA256": candidate_sha,
     "D81_BYTES": IMAGE_BYTES,
-    "DISK_LABEL": "F65 R0-D 530K",
-    "DISK_ID": "D1",
+    "DISK_LABEL": disk_label,
+    "DISK_ID": disk_id,
     "ENTRY_FILENAME": "AUTOBOOT.C65 -> R0D-CALIB",
     "SOURCE_BRANCH": branch,
     "SOURCE_COMMIT": commit,
@@ -205,7 +209,7 @@ reports.mkdir(parents=True, exist_ok=True)
     "# R0-D D81 Loadability\n\n"
     "D81 state: `HOST_CONTENT_VERIFIED`\n\n"
     "- Candidate: `%s`\n- SHA-256: `%s`\n- Bytes: `819200`\n"
-    "- Disk: `F65 R0-D 530K`, ID `D1`\n- Entry: `AUTOBOOT.C65 -> R0D-CALIB`\n"
+    "- Disk: `F65 R0-D`, ID `65`\n- Entry: `AUTOBOOT.C65 -> R0D-CALIB`\n"
     "- Construction: fresh format and both payloads in one pinned `c1541` invocation.\n"
     "- Host structural verification: `PASS`\n- Host content extraction/hash verification: `PASS`\n"
     "- Xemu: `AWAITING REBUILD/PUBLICATION`\n- Physical chooser: `AWAITING HUMAN`\n" % (candidate.name, candidate_sha)

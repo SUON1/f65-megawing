@@ -1,7 +1,7 @@
 # R0-D Evidence Map
 
-Status: **D81 Xemu boot verification complete; awaiting SD-copy and physical
-chooser evidence.**
+Status: **D81 correction in coding.** `F65R0D.D81` is invalid after chooser
+`ERROR CODE FF`; replacement `F65R0D2.D81` is `HOST_CONTENT_VERIFIED` only.
 
 | Test ID | Host | Target build | Xemu | Physical | Scope |
 |---|---|---|---|---|---|
@@ -19,17 +19,12 @@ chooser evidence.**
 | R0D-D81-STRUCT-001 | PASS | `HOST_STRUCTURALLY_VERIFIED` | PASS | Awaiting physical chooser | raw geometry, BAM, directory, chain, and ownership validation |
 | R0D-D81-CONTENT-001 | PASS | `HOST_CONTENT_VERIFIED` | PASS | Awaiting physical chooser | c1541 extraction and payload SHA-256 validation |
 
-Candidate `F65R0D.D81` is 819,200 bytes, disk `F65 R0-D 530K` ID `D1`, and
-SHA-256 `a1d11bfb2b18a92618d55b5f3051a44d019adbdf2ba70b7c6715049567638d48`.
-It contains PETSCII-safe `AUTOBOOT.C65` and `R0D-CALIB`, created in one pinned
-`c1541` format/write session. Its state is **XEMU_BOOT_VERIFIED**; it is a
-candidate, not final or `TEST_ELIGIBLE`. Two clean D81 boots produced screen
-SHA-256 `cd424a2b51109d891a3c3388f0da114042462ddab43f543d912bcdff41e8bcf2`
-and result-block SHA-256
-`24f8e8dac28e79d9615bbae9fb58b716e92cf55b515e66483769721cf14587f7`.
-The failed D0 image SHA-256
-`9bac7a0bc28b14618524be487fcd1aeee55dd6f78cb0312d0879401c20a6457f` is
-invalid and must not be copied, mounted, or renamed.
+`F65R0D.D81` is **INVALID — DO NOT USE** after physical chooser `ERROR CODE
+FF`; its transfer hash was not captured. `F65R0D2.D81` is 819,200 bytes, disk
+`F65 R0-D` ID `65`, SHA-256
+`51dd4ad5a0fe402eccbac81b1ec0e44d12f5ab2294a9f01b1e7452711fa52643`, and is
+**HOST_CONTENT_VERIFIED**. It has distinct filename/header identity and must
+restart publication and Xemu gates. Do not copy or mount it yet.
 
 Xemu used the pinned `20260129235930` build and ROM SHA-256
 `af3c447f791a2fdc48cb21e1bd3fab015e32641228d9d30d21259b9e878c6fa0`.

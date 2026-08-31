@@ -19,10 +19,10 @@ build() {
   python3 "$root/tools/diagnostics/r0d_validate_build.py" "$root"
   "$petcat" -w65 -o "$out/artifacts/AUTOBOOT.C65" -- "$root/src/r0d/autoboot.bas"
   "$petcat" -65 "$out/artifacts/AUTOBOOT.C65" > "$out/reports/AUTOBOOT.C65.listing"
-  candidate="$out/artifacts/F65R0D.D81"
+  candidate="$out/artifacts/F65R0D2.D81"
   rm -f "$candidate" "$candidate.sha256"
-  "$c1541" -format 'F65 R0-D 530K,D1' d81 "$candidate" -write "$out/artifacts/AUTOBOOT.C65" autoboot.c65 -write "$out/artifacts/F65-R0D-CALIBRATION.prg" r0d-calib -list > "$out/reports/F65R0D.D81-create.txt" 2>&1
-  "$c1541" "$candidate" -list > "$out/reports/F65R0D.D81-list.txt" 2>&1
+  "$c1541" -format 'F65 R0-D,65' d81 "$candidate" -write "$out/artifacts/AUTOBOOT.C65" autoboot.c65 -write "$out/artifacts/F65-R0D-CALIBRATION.prg" r0d-calib -list > "$out/reports/F65R0D2.D81-create.txt" 2>&1
+  "$c1541" "$candidate" -list > "$out/reports/F65R0D2.D81-list.txt" 2>&1
   python3 "$root/tools/diagnostics/r0d_d81_loadability_gate.py" "$root" "$candidate"
   shasum -a 256 "$out/artifacts/F65-R0D-CALIBRATION.prg" > "$out/artifacts/F65-R0D-CALIBRATION.prg.sha256"
   shasum -a 256 "$candidate" > "$candidate.sha256"

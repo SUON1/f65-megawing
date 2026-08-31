@@ -1,7 +1,7 @@
 # R0-D D81 Release Record
 
 ```text
-D81_STATE: XEMU_BOOT_VERIFIED
+D81_STATE: INVALID — DO NOT USE
 D81_FILENAME: F65R0D.D81
 D81_SHA256: a1d11bfb2b18a92618d55b5f3051a44d019adbdf2ba70b7c6715049567638d48
 D81_BYTES: 819200
@@ -18,10 +18,11 @@ HOST_CONTENT_RESULT: PASS
 XEMU_RESULT: PASS — two clean D81 boots
 XEMU_EVIDENCE: build/r0d/reports/R0D-D81-XEMU-boot{1,2}.{log,screen.txt,memory.bin,png}; screen SHA-256 cd424a2b51109d891a3c3388f0da114042462ddab43f543d912bcdff41e8bcf2; result-block SHA-256 24f8e8dac28e79d9615bbae9fb58b716e92cf55b515e66483769721cf14587f7
 SD_COPY_SHA256: AWAITING HUMAN
-PHYSICAL_CHOOSER_RESULT: AWAITING HUMAN
-PHYSICAL_EVIDENCE: AWAITING HUMAN
+PHYSICAL_CHOOSER_RESULT: FAIL — ERROR CODE FF
+PHYSICAL_EVIDENCE: docs/evidence/r0d/physical/F65R0D-D81-CHOOSER-FF.jpg
 ```
 
-The candidate is not final or `TEST_ELIGIBLE`. The host must copy the exact,
-unrenamed `F65R0D.D81` and match the SD-copy hash before physical chooser
-verification. A chooser `ERROR CODE FF` invalidates this image identity.
+This identity is invalid. The replacement is `F65R0D2.D81`, SHA-256
+`51dd4ad5a0fe402eccbac81b1ec0e44d12f5ab2294a9f01b1e7452711fa52643`, state
+`HOST_CONTENT_VERIFIED` only; it must complete publication and replacement
+Xemu evidence before any physical transfer.

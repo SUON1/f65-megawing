@@ -11,27 +11,30 @@ admitted R0-D scope.
 
 ## Current status
 
-- Current phase: R0-D; production stage: PUSH VIA VS CODE (Xemu evidence publication).
-- Authorization: D81-specific Xemu testing was explicitly authorized and is
-  complete. Physical authorization remains in force after this Xemu evidence is
-  published and the SD-copy/physical chooser gates are satisfied.
+- Current phase: R0-D; production stage: CODING (physical chooser correction).
+- Authorization: the physical chooser failure returns the carrier internally
+  to Stage 1. Existing Xemu authorization resumes only after the replacement
+  has passed Stage 1 and Stage 2; no replacement physical attempt is authorized
+  until its ordered gates have completed.
 - Repository branch: `codex/r0-d-development`.
-- Local / last remotely verified commit:
-  `d5acdce4b9cb94b137002de32a00e8b65a5d9a1b`.
-- Remote verification: `git ls-remote` returned this exact commit for
-  `origin/codex/r0-d-development` after the owner’s VS Code push.
-- Working tree was clean at Xemu admission; Xemu evidence documentation is
-  pending its local commit and final VS Code sync.
-- D81: candidate `F65R0D.D81`, SHA-256
-  `a1d11bfb2b18a92618d55b5f3051a44d019adbdf2ba70b7c6715049567638d48`, and
-  is `XEMU_BOOT_VERIFIED`. It needs SD-copy verification and physical chooser
-  PASS before it can be `TEST_ELIGIBLE`.
+- Local / last remotely verified commit before this correction:
+  `33ce4342a73a90c7dc1c199bf89c714ce8d072f3`.
+- Remote verification: `git ls-remote` returned `33ce434` for
+  `origin/codex/r0-d-development` before the physical result.
+- Working tree was clean before preserving the returned physical failure and
+  beginning this correction.
+- D81: `F65R0D.D81`, SHA-256
+  `a1d11bfb2b18a92618d55b5f3051a44d019adbdf2ba70b7c6715049567638d48`, is
+  **INVALID — DO NOT USE** after physical chooser `ERROR CODE FF`. Its
+  SD-copy hash was not captured, so the failed transferred byte identity is
+  unknown. The replacement begins `UNVERIFIED` with a distinct filename.
 - R0-C is complete by owner waiver of its remaining physical media-fault matrix.
-  R0-D implementation, host validation, source publication, and two-clean-boot
-  Xemu evidence are complete. Physical hardware evidence is pending.
-- Current work: publish the D81-specific Xemu evidence, then execute the
-  owner-facing SD-copy and physical chooser procedure. The D81 uses the
-  retained R0-A/R0-C device-8 `AUTOBOOT.C65` convention.
+  R0-D direct-PRG and failed-D81 Xemu evidence are preserved but are invalid
+  for a replacement carrier. No physical R0-D program result exists.
+- Current work: preserve the failure, correct the D81 header-profile host gate,
+  and fresh-build a distinct carrier using the retained physical-accepted
+  R0-A/R0-C profile. The label/ID difference is a compatibility hypothesis,
+  not a proven root cause.
 
 ## Completed work
 
@@ -81,6 +84,9 @@ admitted R0-D scope.
   `tools/diagnostics/r0d_d81_loadability_gate.py`: new R0-D-owned D81 carrier,
   one-session builder, and independent structural/content validator; committed
   in `13ebdf9`; the D1 candidate was freshly regenerated from that commit.
+- `docs/evidence/r0d/physical/F65R0D-D81-CHOOSER-FF.jpg` and
+  `docs/evidence/r0d/R0D-D81-FAILURE-2026-08-30.md`: retained physical failure
+  evidence and its disposition; pending this correction commit.
 
 ## Decisions and architecture
 
@@ -122,17 +128,18 @@ admitted R0-D scope.
 
 ## Known problems or unresolved issues
 
-- Implementation defects: none identified.
+- Implementation defects: the R0-D D81 host gate omitted validation of the
+  physical-accepted disk header label/ID profile.
 - Tooling: no active host-tooling defect. Python bytecode compilation cannot
   use the macOS cache in this sandbox, so source syntax was checked in-memory.
 - Unverified behavior: physical R0-D timing/behavior and all hardware behavior.
 - Authority discrepancy: repository status reflects predecessor candidates;
   supplied human authorization adopts v1.6 for R0-D.
-- Missing evidence: SD-copy, physical chooser, physical display/result, and
-  hardware environment evidence.
+- Missing evidence: a replacement D81, its host/Xemu evidence, SD-copy hash,
+  physical chooser, physical display/result, and hardware environment evidence.
 - Human decisions: R0-GATED/TARGET/TBD values remain unselected.
-- Later gates: Xemu evidence publication, SD-copy verification, and physical
-  chooser/evidence review.
+- Later gates: replacement Stage-1 build, Stage-2 publication, replacement
+  Xemu evidence, SD-copy verification, and physical chooser/evidence review.
 
 ## Remaining work
 
@@ -156,16 +163,19 @@ admitted R0-D scope.
 - [x] Publish the D81 implementation and coding checkpoint through VS Code;
   remote `fa108a8` verified.
 - [ ] Publish this push-verification checkpoint through VS Code.
-- [x] Re-run two-clean-boot Xemu tests on the exact published D81.
-- [ ] Publish the D81 Xemu evidence through VS Code and verify it remotely.
-- [ ] Complete SD-copy and physical chooser verification before physical
-  functional evidence.
+- [x] Re-run two-clean-boot Xemu tests on the failed D81 identity.
+- [x] Preserve physical chooser `ERROR CODE FF` evidence and invalidate the
+  failed D81 identity.
+- [ ] Correct the header-profile gate and fresh-build a distinct D81 carrier.
+- [ ] Publish the replacement through VS Code, then re-run two-clean-boot Xemu.
+- [ ] Require SD-copy hash and physical chooser PASS before functional evidence.
 
 ## Exact resume point
 
-Commit and publish the D81 Xemu evidence, verify its remote commit, then follow
-`docs/testing/R0-D_TEST_GUIDE.md` for SD-copy and physical chooser evidence.
-Do not call the candidate `TEST_ELIGIBLE` before the returned chooser PASS.
+Run the corrected D81 builder to create `F65R0D2.D81` from a new fresh format;
+confirm raw header `F65 R0-D` / `65`, run the full host gate, and update all
+records with its identity. Do not mount/copy the replacement until it completes
+Stage 1 and Stage 2. Do not retry `F65R0D.D81`.
 
 ## Checkpoint log
 
@@ -382,6 +392,35 @@ screens, memory dumps, and screenshots at `build/r0d/reports/R0D-D81-XEMU-boot*`
 unresolved: evidence documentation must be committed/published, then SD-copy
 and physical chooser evidence are pending; next: commit/publish Xemu evidence;
 authorization: Xemu complete, physical authorization awaits the ordered gates.
+
+2026-08-30T19:35:00-07:00 — stage: HARDWARE TESTING failure / CODING return;
+branch: `codex/r0-d-development`; local/last remotely verified HEAD:
+`33ce4342a73a90c7dc1c199bf89c714ce8d072f3`; remote verification: PASS before
+physical selection; completed: preserved owner photo showing selected
+`F65R0D.D81` with chooser `ERROR CODE FF`; validation: physical chooser FAIL,
+no directory/program execution claim, and source D81 hash was
+`a1d11bfb2b18a92618d55b5f3051a44d019adbdf2ba70b7c6715049567638d48` but the
+SD-copy hash was not captured; artifacts: failure photo SHA-256
+`e5e2ba6b54490229e9e29c0afd01807820ac00fb3992a858d8989bfa1409bf09`, failed
+D81 identity INVALID — DO NOT USE; unresolved: construction versus transfer is
+not separable without copied-file hash, and the host gate omitted the accepted
+header profile assertion; next: correct the validator and fresh-build a unique
+replacement; authorization: return to Stage-1 correction, no reuse/mount of
+the failed identity.
+
+2026-08-30T19:45:00-07:00 — stage: CODING replacement D81 host gate; branch:
+`codex/r0-d-development`; local HEAD before replacement commit:
+`33ce4342a73a90c7dc1c199bf89c714ce8d072f3`; remote verification: unchanged
+at `33ce434`; completed: corrected the missing physical-profile header check,
+created distinct `F65R0D2.D81` through a fresh one-session format/write, and
+ran the complete host gate; validation: `make r0d-build r0d-verify` PASS, raw
+header label `F65 R0-D` / ID `65` PASS, structural/content extraction/hash PASS;
+artifacts: `F65R0D2.D81`, 819200 bytes, SHA-256
+`51dd4ad5a0fe402eccbac81b1ec0e44d12f5ab2294a9f01b1e7452711fa52643`, state
+`HOST_CONTENT_VERIFIED`; unresolved: this new identity needs commit, VS Code
+publication, and replacement Xemu gates; next: commit the failure record and
+replacement builder; authorization: Stage-1 correction only, no replacement
+mount/transfer/physical selection.
 
 ## Historical R0-C checkpoint (preserved)
 
