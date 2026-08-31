@@ -1,6 +1,6 @@
 # R0-D Handoff
 
-Status: **CODING COMPLETE — READY FOR VS CODE PUSH.**
+Status: **XEMU TESTING COMPLETE — READY FOR HARDWARE AUTHORIZATION.**
 
 R0-D adds a proof-only calibration harness around the historical
 530,000-clock protected non-render fixture. The fixture preserves the 100 Hz,
@@ -42,6 +42,11 @@ Historical direct-PRG Xemu result: PASS from two clean boots using the pinned Xe
 SHA-256 `af3c447f791a2fdc48cb21e1bd3fab015e32641228d9d30d21259b9e878c6fa0`.
 Both boots produced result-block SHA-256
 `24f8e8dac28e79d9615bbae9fb58b716e92cf55b515e66483769721cf14587f7` and the
-same display identity. That evidence does not verify the new D81. The D81 must
-be committed, published via VS Code, and Xemu-booted twice from clean starts
-before physical chooser testing. Physical timing remains unverified.
+same display identity. The D81 itself then passed two clean boots at the
+published `d5acdce` branch head: it mounted at drive 8, auto-booted, showed the
+stable R0-D identity, and reproduced screen SHA-256
+`cd424a2b51109d891a3c3388f0da114042462ddab43f543d912bcdff41e8bcf2` and
+result-block SHA-256
+`24f8e8dac28e79d9615bbae9fb58b716e92cf55b515e66483769721cf14587f7`.
+The artifact is `XEMU_BOOT_VERIFIED`, not `TEST_ELIGIBLE`; SD-copy and physical
+chooser evidence remain required. Physical timing remains unverified.

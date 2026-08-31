@@ -11,28 +11,27 @@ admitted R0-D scope.
 
 ## Current status
 
-- Current phase: R0-D; production stage: PUSH VIA VS CODE (publication record).
-- Authorization: Stage-1 D81 coding is complete and its source is published.
-  Existing Xemu authorization resumes after this publication checkpoint is
-  committed and published; physical authorization remains conditional on every
-  preceding D81 gate.
+- Current phase: R0-D; production stage: PUSH VIA VS CODE (Xemu evidence publication).
+- Authorization: D81-specific Xemu testing was explicitly authorized and is
+  complete. Physical authorization remains in force after this Xemu evidence is
+  published and the SD-copy/physical chooser gates are satisfied.
 - Repository branch: `codex/r0-d-development`.
 - Local / last remotely verified commit:
-  `fa108a819385b66ac4e77d8d39572bf3433b2005`.
+  `d5acdce4b9cb94b137002de32a00e8b65a5d9a1b`.
 - Remote verification: `git ls-remote` returned this exact commit for
   `origin/codex/r0-d-development` after the owner’s VS Code push.
-- Working tree was clean at remote verification; this publication checkpoint
-  update is pending its local commit and final VS Code sync.
+- Working tree was clean at Xemu admission; Xemu evidence documentation is
+  pending its local commit and final VS Code sync.
 - D81: candidate `F65R0D.D81`, SHA-256
   `a1d11bfb2b18a92618d55b5f3051a44d019adbdf2ba70b7c6715049567638d48`, and
-  is `HOST_CONTENT_VERIFIED`. It needs Stage-2 publication, two-clean-boot
-  Xemu PASS, and physical chooser PASS before it can be `TEST_ELIGIBLE`.
+  is `XEMU_BOOT_VERIFIED`. It needs SD-copy verification and physical chooser
+  PASS before it can be `TEST_ELIGIBLE`.
 - R0-C is complete by owner waiver of its remaining physical media-fault matrix.
   R0-D implementation, host validation, source publication, and two-clean-boot
   Xemu evidence are complete. Physical hardware evidence is pending.
-- Current work: record the verified publication, then resume D81-specific Xemu
-  testing. The D81 uses the retained R0-A/R0-C device-8 `AUTOBOOT.C65`
-  convention; no undocumented launcher behavior is introduced.
+- Current work: publish the D81-specific Xemu evidence, then execute the
+  owner-facing SD-copy and physical chooser procedure. The D81 uses the
+  retained R0-A/R0-C device-8 `AUTOBOOT.C65` convention.
 
 ## Completed work
 
@@ -129,11 +128,11 @@ admitted R0-D scope.
 - Unverified behavior: physical R0-D timing/behavior and all hardware behavior.
 - Authority discrepancy: repository status reflects predecessor candidates;
   supplied human authorization adopts v1.6 for R0-D.
-- Missing evidence: replacement Xemu, SD-copy,
-  physical chooser, physical display/result, and hardware environment evidence.
+- Missing evidence: SD-copy, physical chooser, physical display/result, and
+  hardware environment evidence.
 - Human decisions: R0-GATED/TARGET/TBD values remain unselected.
-- Later gates: Stage-2 VS Code publication, replacement Xemu evidence,
-  SD-copy verification, and physical chooser/evidence review.
+- Later gates: Xemu evidence publication, SD-copy verification, and physical
+  chooser/evidence review.
 
 ## Remaining work
 
@@ -157,15 +156,16 @@ admitted R0-D scope.
 - [x] Publish the D81 implementation and coding checkpoint through VS Code;
   remote `fa108a8` verified.
 - [ ] Publish this push-verification checkpoint through VS Code.
-- [ ] Re-run two-clean-boot Xemu tests on the exact published D81.
+- [x] Re-run two-clean-boot Xemu tests on the exact published D81.
+- [ ] Publish the D81 Xemu evidence through VS Code and verify it remotely.
 - [ ] Complete SD-copy and physical chooser verification before physical
   functional evidence.
 
 ## Exact resume point
 
-Commit and publish this push-verification checkpoint through VS Code, verify
-its remote commit, then re-run the host D81 gate and begin the already-authorized
-two-clean-boot Xemu D81 test. Do not copy the candidate to physical media yet.
+Commit and publish the D81 Xemu evidence, verify its remote commit, then follow
+`docs/testing/R0-D_TEST_GUIDE.md` for SD-copy and physical chooser evidence.
+Do not call the candidate `TEST_ELIGIBLE` before the returned chooser PASS.
 
 ## Checkpoint log
 
@@ -358,6 +358,30 @@ state `HOST_CONTENT_VERIFIED`; unresolved: this required publication checkpoint
 needs commit and final VS Code sync, then D81-specific Xemu is pending; next:
 commit/publish this checkpoint and reverify remote; authorization: source
 published, Xemu authorization retained but not yet exercised on the D81.
+
+2026-08-30T19:20:00-07:00 — stage: XEMU TESTING boot 1; branch:
+`codex/r0-d-development`; local/remote HEAD:
+`d5acdce4b9cb94b137002de32a00e8b65a5d9a1b`; remote verification: PASS;
+completed: reran the host structural/content D81 gate and booted the exact D81
+from a clean Xemu start at drive 8 with `-autoload`; validation: banner/result
+block PASS, D81 hash unchanged; artifacts: D81 SHA-256
+`a1d11bfb2b18a92618d55b5f3051a44d019adbdf2ba70b7c6715049567638d48`, screen
+SHA-256 `cd424a2b51109d891a3c3388f0da114042462ddab43f543d912bcdff41e8bcf2`,
+result-block SHA-256 `24f8e8dac28e79d9615bbae9fb58b716e92cf55b515e66483769721cf14587f7`;
+unresolved: second clean boot required; next: clean boot 2; authorization:
+Stage-3 Xemu only.
+
+2026-08-30T19:22:42-07:00 — stage: XEMU TESTING complete; branch:
+`codex/r0-d-development`; local/remote HEAD:
+`d5acdce4b9cb94b137002de32a00e8b65a5d9a1b`; remote verification: PASS;
+completed: second clean D81 boot, deterministic comparison, and post-mount D81
+hash verification; validation: both screen/result-block hashes and screenshot
+SHA-256 `a1217395a3d60788d4df449f02cec9642913f5d107122dad6504542131f200f8`
+match, D81 remains unchanged; artifacts: D81 state `XEMU_BOOT_VERIFIED`, logs,
+screens, memory dumps, and screenshots at `build/r0d/reports/R0D-D81-XEMU-boot*`;
+unresolved: evidence documentation must be committed/published, then SD-copy
+and physical chooser evidence are pending; next: commit/publish Xemu evidence;
+authorization: Xemu complete, physical authorization awaits the ordered gates.
 
 ## Historical R0-C checkpoint (preserved)
 
