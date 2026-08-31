@@ -11,19 +11,21 @@ admitted R0-D scope.
 
 ## Current status
 
-- Current phase: R0-D; production stage: **CODING — corrected-builder commit
-  preparation**. `F65R0D3.D81` exists and is host-content-verified only.
+- Current phase: R0-D; production stage: **CODING COMPLETE — READY FOR VS CODE
+  PUSH**. `F65R0D3.D81` is host-content-verified only.
 - Authorization: the owner explicitly authorized correction and a fresh R0-D
   build on 2026-08-31. This authorizes Stage-1 toolchain/build work only; VS
   Code publication, new-carrier Xemu, and physical testing remain sequential
   later gates.
 - Repository branch: `codex/r0-d-development`.
-- Local HEAD: `6fc09e0c5a613a0a4f0346e127e70ebb7028a0d2`.
+- Local implementation HEAD: `de0f7944b1185075a0864457a36722a939e17d70`
+  (`fix(r0d): enforce clean d81 construction`); this final checkpoint update
+  is pending its own local documentation commit.
 - Last remotely verified commit: `9c562303bdda4abfd8e460f0f3bd42a93f289cd5`.
 - Remote verification: `git ls-remote origin refs/heads/codex/r0-d-development`
   returned that exact commit.
-- Working tree: corrected builder, D3-facing records, and this checkpoint are
-  pending a local commit; generated output is ignored.
+- Working tree: clean immediately after the implementation commit; this durable
+  post-commit checkpoint is the only pending change.
 - D81: both R0-D carrier identities are **INVALID — DO NOT USE**:
   - `F65R0D.D81`, SHA-256
     `a1d11bfb2b18a92618d55b5f3051a44d019adbdf2ba70b7c6715049567638d48`;
@@ -47,9 +49,10 @@ admitted R0-D scope.
   advance an invalid construction chain.
 - Physical-MEGA65 status: two chooser `ERROR CODE FF` failures; no directory,
   boot, or program execution result is claimed.
-- Current blocker: no implementation blocker. The next hard boundary is
-  owner-operated VS Code publication; no D3 Xemu or physical action is
-  authorized before the new commit is published.
+- Current blocker: owner-operated VS Code publication. After the checkpoint
+  commit, the branch will be three implementation/documentation commits plus
+  this checkpoint ahead of origin; no D3 Xemu or physical action is authorized
+  before they are published and directly verified.
 
 ## Completed work
 
@@ -121,14 +124,14 @@ admitted R0-D scope.
   pending this documentation-only commit; no further edits are expected except
   to record the diagnostic control result.
 - `toolchain/vice-clean/bin/c1541`: repository-contained derived VICE 3.10
-  disk utility built with real-device/OpenCBM disabled; pending this commit;
+  disk utility built with real-device/OpenCBM disabled; committed in `de0f794`;
   no edits are expected unless its locked identity is deliberately replaced.
 - `toolchain/f65_toolchain.lock.json`: source-owned builder identity and source
-  provenance record; pending this commit; no further edits expected in later
+  provenance record; committed in `de0f794`; no further edits expected in later
   test stages.
 - `tools/build/r0d.sh`, `tools/diagnostics/r0d_d81_loadability_gate.py`, and
   R0-D plan/admission/handoff/test/evidence records: source-owned D3 builder,
-  clean-output gate, and evidence state; pending this commit; later edits only
+  clean-output gate, and evidence state; committed in `de0f794`; later edits only
   for D3 stage evidence.
 
 ## Decisions and architecture
@@ -253,18 +256,19 @@ admitted R0-D scope.
 - [x] Pin a VICE `c1541` built with real-device/OpenCBM support disabled and
   add output-fail-closed enforcement.
 - [x] Fresh-format/build `F65R0D3.D81` and complete host gates.
-- [ ] Commit the corrected builder, candidate records, and checkpoint — Codex.
+- [x] Commit corrected builder and candidate records in `de0f794`.
+- [ ] Commit this post-implementation checkpoint — Codex.
 - [ ] Publish through VS Code and verify the remote — owner/Codex.
 - [ ] Re-run new-carrier Xemu and then SD/physical gates — later authorization.
 
 ## Exact resume point
 
-Review the complete source diff, commit the corrected R0-D builder, lock,
-bootstrap helpers, D3-facing records, and checkpoint. Then stop at the Stage-2
-VS Code publication boundary. The owner must publish the new local commit on
-`codex/r0-d-development`; do not run D3 in Xemu, copy it to SD, or mount it on
-physical hardware before direct remote verification and explicit Xemu
-authorization.
+Commit this checkpoint, then stop at the Stage-2 VS Code publication boundary.
+The owner must publish `codex/r0-d-development` through VS Code Source Control
+and verify that the remote advances from `9c562303bdda4abfd8e460f0f3bd42a93f289cd5`
+to the final local checkpoint commit. Do not run D3 in Xemu, copy it to SD, or
+mount it on physical hardware before direct remote verification and explicit
+Xemu authorization.
 
 ## Checkpoint log
 
@@ -575,6 +579,19 @@ builder SHA-256 `73235289aca30a7e2e8067e521bf604743156cc1d7499c888a3894d6e46fcb3
 unresolved: D3 is `HOST_CONTENT_VERIFIED` only and needs local commit, VS Code
 publication, and later authorized Xemu/physical gates; next: final diff review
 and local commit; authorization: Stage-1 only, no publication/Xemu/physical.
+
+2026-08-31T10:31:21-07:00 — stage: CODING implementation commit; branch:
+`codex/r0-d-development`; local HEAD:
+`de0f7944b1185075a0864457a36722a939e17d70`; remote verification: `git
+ls-remote origin refs/heads/codex/r0-d-development` remains
+`9c562303bdda4abfd8e460f0f3bd42a93f289cd5`; completed: committed corrected
+builder, lock, validator, D3 documents, and evidence as
+`fix(r0d): enforce clean d81 construction`; validation: staged diff check
+PASS, clean status PASS, branch is three commits ahead of origin before this
+checkpoint update; artifacts: D3 and builder hashes unchanged from prior
+checkpoint; unresolved: publication, D3 Xemu, SD-copy, and physical chooser
+evidence; next: commit this checkpoint, then VS Code publication; authorization:
+Stage-1 complete, Stage-2 not yet authorized, no Xemu/physical.
 
 ## Historical R0-C checkpoint (preserved)
 
