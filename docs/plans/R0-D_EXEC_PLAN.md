@@ -1,6 +1,6 @@
 # R0-D Execution Plan
 
-Status: **Stage 1 / CODING — D81 carrier correction in progress.**
+Status: **CODING COMPLETE — READY FOR VS CODE PUSH.**
 
 | Step | Deliverable | Status |
 |---|---|---|
@@ -10,7 +10,7 @@ Status: **Stage 1 / CODING — D81 carrier correction in progress.**
 | D3 | Host counters, rolling windows, evidence, and static checks | Complete |
 | D4 | Target diagnostic observability and map/symbol/listing review | Complete — host/build evidence only |
 | D5 | Fresh R0-D D81 carrier, loadability validator, manifest, and host gate | Host complete — `F65R0D.D81` is `HOST_CONTENT_VERIFIED`; commit/publication and D81-specific Xemu remain |
-| D6 | Stage-1 handoff and local commits | In progress — D81 correction records pending local commit |
+| D6 | Stage-1 handoff and local commits | Complete — carrier source commit `13ebdf9`; final checkpoint commit pending |
 
 The fixture is a historical comparison workload, not a production budget and
 not a measured-limits selection. The carrier must be fresh-formatted and

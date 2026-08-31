@@ -11,19 +11,25 @@ admitted R0-D scope.
 
 ## Current status
 
-- Current phase: R0-D; production stage: CODING (D81 carrier correction).
+- Current phase: R0-D; production stage: CODING COMPLETE (D81 carrier correction).
 - Authorization: the owner explicitly authorized the R0-D D81 carrier. The
   prior Xemu authorization remains valid after the required Stage-1/Stage-2
   cycle; physical authorization remains valid only after the new D81 completes
   all preceding gates.
 - Repository branch: `codex/r0-d-development`.
-- Local HEAD / last remotely verified commit:
-  `30549f061dea55b7d78291f7a9f62bdda9386bd8`.
+- Local carrier-source commit: `13ebdf977a192ff65e1d34f450824a7b4eff5ef6`.
+- Last remotely verified commit: `30549f061dea55b7d78291f7a9f62bdda9386bd8`.
 - Remote verification: `git ls-remote` returned this exact commit for
   `origin/codex/r0-d-development` before physical admission.
-- Working tree was clean at physical admission.
+- Working tree is clean after carrier build; this final coding checkpoint is
+  pending its documentation commit.
 - D81: carrier design admitted; no R0-D D81 identity exists yet. The first
-  candidate begins `UNVERIFIED` and must reach host structural/content PASS,
+  Stage-2 publication, two-clean-boot Xemu PASS, and physical chooser PASS
+  before it can be `TEST_ELIGIBLE`.
+  candidate is `F65R0D.D81`, SHA-256
+  `a1d11bfb2b18a92618d55b5f3051a44d019adbdf2ba70b7c6715049567638d48`, and
+  is `HOST_CONTENT_VERIFIED`. It needs Stage-2 publication, two-clean-boot
+  Xemu PASS, and physical chooser PASS before it can be `TEST_ELIGIBLE`.
   Stage-2 publication, two-clean-boot Xemu PASS, and physical chooser PASS
   before it can be `TEST_ELIGIBLE`.
 - R0-C is complete by owner waiver of its remaining physical media-fault matrix.
@@ -80,8 +86,8 @@ admitted R0-D scope.
   preflight documentation commit; further edits expected after owner evidence.
 - `src/r0d/autoboot.bas`, `tools/build/r0d.sh`, and
   `tools/diagnostics/r0d_d81_loadability_gate.py`: new R0-D-owned D81 carrier,
-  one-session builder, and independent structural/content validator; source
-  files are pending implementation and a new candidate identity.
+  one-session builder, and independent structural/content validator; committed
+  in `13ebdf9`; the D1 candidate was freshly regenerated from that commit.
 
 ## Decisions and architecture
 
@@ -124,7 +130,8 @@ admitted R0-D scope.
 ## Known problems or unresolved issues
 
 - Implementation defects: none identified.
-- Tooling: the R0-D D81 builder/validator and release manifest are pending.
+- Tooling: no active host-tooling defect. Python bytecode compilation cannot
+  use the macOS cache in this sandbox, so source syntax was checked in-memory.
 - Unverified behavior: physical R0-D timing/behavior and all hardware behavior.
 - Authority discrepancy: repository status reflects predecessor candidates;
   supplied human authorization adopts v1.6 for R0-D.
@@ -149,21 +156,21 @@ admitted R0-D scope.
 - [x] Run two clean Xemu boots and capture deterministic evidence.
 - [x] Receive owner clarification that R0-D requires a D81 carrier containing
   the PRG; read the D81 gate before any carrier action.
-- [ ] Add fresh one-session D81 builder, independent structural/content checks,
+- [x] Add fresh one-session D81 builder, independent structural/content checks,
   and release manifest.
-- [ ] Build and host-verify the first R0-D D81 candidate.
-- [ ] Commit the D81 implementation and use VS Code to publish it.
+- [x] Build and host-verify the R0-D D81 candidate.
+- [x] Commit the D81 implementation locally (`13ebdf9`).
+- [ ] Use VS Code to publish the D81 implementation and final coding checkpoint.
 - [ ] Re-run two-clean-boot Xemu tests on the exact published D81.
 - [ ] Complete SD-copy and physical chooser verification before physical
   functional evidence.
 
 ## Exact resume point
 
-Implement the R0-D-owned D81 carrier using the existing validated device-8
-`AUTOBOOT.C65` convention: fresh-format only, write `AUTOBOOT.C65` and the
-R0-D PRG in one pinned `c1541` session, then run independent raw structural and
-extraction/hash validation. Do not mount/run the new D81 in Xemu until it is
-committed and published through VS Code.
+Commit this final coding checkpoint, then use VS Code Source Control to publish
+`codex/r0-d-development` through its final coding checkpoint. Verify the
+remote commit. Do not mount/run `F65R0D.D81` in Xemu until that publication is
+verified.
 
 ## Checkpoint log
 
@@ -327,6 +334,23 @@ extraction/hash checks; validation: `make r0d-build r0d-verify` PASS,
 source commit to stamp its builder identity, then published and revalidated in
 Xemu; next: review/commit the D81 source and documentation; authorization:
 Stage-1 coding only, no Xemu mount or physical copy.
+
+2026-08-30T18:10:00-07:00 — stage: CODING COMPLETE; branch:
+`codex/r0-d-development`; carrier source commit:
+`13ebdf977a192ff65e1d34f450824a7b4eff5ef6`; last remotely verified commit:
+`30549f061dea55b7d78291f7a9f62bdda9386bd8`; completed: committed the fresh
+one-session D81 builder, `AUTOBOOT.C65`, raw structural/content validator, and
+R0-D record changes, then rebuilt the exact committed carrier; validation:
+`make r0d-build r0d-verify` PASS, builder c1541 hash matched the lock, raw
+geometry/BAM/directory/file-chain/ownership PASS, and c1541 extraction/hash
+PASS; artifacts: `F65R0D.D81`, 819200 bytes, D1, SHA-256
+`a1d11bfb2b18a92618d55b5f3051a44d019adbdf2ba70b7c6715049567638d48`, state
+`HOST_CONTENT_VERIFIED`, payload `R0D-CALIB` SHA-256
+`ad4827da70d6f4a571817df2268bb3ca4e88d11a0f8aacfc11441abca2fd1677`;
+unresolved: publication, D81-specific Xemu, SD transfer, and physical chooser
+are unrun; next: commit this checkpoint and hand off for VS Code push;
+authorization: Coding complete, no D81 mount/Xemu/physical action until the
+source publication stage is verified.
 
 ## Historical R0-C checkpoint (preserved)
 
