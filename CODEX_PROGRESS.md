@@ -11,20 +11,19 @@ admitted R0-D scope.
 
 ## Current status
 
-- Current phase: R0-D; production stage: **DIAGNOSTIC HOLD after two physical
-  chooser carrier failures**. No third R0-D D81 may be created without a
-  specific, evidence-backed construction change.
-- Authorization: the D81 failures returned their carriers to Stage 1. Existing
-  Xemu and physical authorizations do not permit retrying either invalid image
-  or creating a speculative replacement. A non-destructive physical control of
-  the known-good R0-C carrier is the only next hardware action.
+- Current phase: R0-D; production stage: **CODING — corrected-builder commit
+  preparation**. `F65R0D3.D81` exists and is host-content-verified only.
+- Authorization: the owner explicitly authorized correction and a fresh R0-D
+  build on 2026-08-31. This authorizes Stage-1 toolchain/build work only; VS
+  Code publication, new-carrier Xemu, and physical testing remain sequential
+  later gates.
 - Repository branch: `codex/r0-d-development`.
-- Local HEAD: `819a3a52fece974283daa76d086ae1e0fedcec37`.
+- Local HEAD: `6fc09e0c5a613a0a4f0346e127e70ebb7028a0d2`.
 - Last remotely verified commit: `9c562303bdda4abfd8e460f0f3bd42a93f289cd5`.
 - Remote verification: `git ls-remote origin refs/heads/codex/r0-d-development`
   returned that exact commit.
-- Working tree: clean after local evidence commit `819a3a5`; branch is one
-  commit ahead of the remote. No source or D81 artifact is modified.
+- Working tree: corrected builder, D3-facing records, and this checkpoint are
+  pending a local commit; generated output is ignored.
 - D81: both R0-D carrier identities are **INVALID — DO NOT USE**:
   - `F65R0D.D81`, SHA-256
     `a1d11bfb2b18a92618d55b5f3051a44d019adbdf2ba70b7c6715049567638d48`;
@@ -38,18 +37,19 @@ admitted R0-D scope.
   physical chooser verification. No physical R0-D program result exists.
 - Implementation status: the admitted 530,000-clock proof source is complete;
   no source defect has been demonstrated by the two pre-program chooser failures.
-- Host-validation status: both carriers passed the raw structural/content gate;
-  D2 also passed the physical SD-copy hash check. These results are insufficient
-  for physical eligibility and do not override the chooser failures.
-- GitHub publication status: D2 source/Xemu evidence is published at `9c56230`;
-  local incident-record commit `819a3a5` awaits owner VS Code publication.
-- Xemu status: D2 passed two clean drive-8 boots; this evidence is superseded
-  for carrier eligibility by its physical chooser failure.
+- Host-validation status: D1/D2 raw filesystem checks and D2 transfer hash are
+  retained diagnostic observations, not admissible gate PASSes: each `c1541`
+  construction/listing log emitted `OPENCBM: opening dynamic library
+  libopencbm.dylib failed!`, which the D81 gate requires to fail closed.
+- GitHub publication status: remote remains `9c56230`; local incident-record
+  commits `819a3a5` and `6fc09e0` await revision before VS Code publication.
+- Xemu status: historical D1/D2 boot observations are retained but cannot
+  advance an invalid construction chain.
 - Physical-MEGA65 status: two chooser `ERROR CODE FF` failures; no directory,
   boot, or program execution result is claimed.
-- Current blocker: no construction difference has been found that distinguishes
-  D2 from the retained R0-A physical-pass layout. The next fact required is a
-  same-session, hash-verified R0-C physical control result.
+- Current blocker: no implementation blocker. The next hard boundary is
+  owner-operated VS Code publication; no D3 Xemu or physical action is
+  authorized before the new commit is published.
 
 ## Completed work
 
@@ -91,6 +91,10 @@ admitted R0-D scope.
   version, disk ID `65`, lower-byte PETSCII directory naming, directory start,
   and one-session pinned-`c1541` construction style. The header-profile change
   is therefore rejected as a proven explanation.
+- Built a separately pinned VICE 3.10 c1541 with `--disable-realdevice`, then
+  added zero-stderr and forbidden-diagnostic enforcement to R0-D construction,
+  listing, and extraction. `F65R0D3.D81` was fresh-formatted once and host
+  structural/content-verified.
 
 ## Files changed
 
@@ -116,6 +120,16 @@ admitted R0-D scope.
   `F65R0D2.D81` construction/listing logs: source-owned second-failure evidence;
   pending this documentation-only commit; no further edits are expected except
   to record the diagnostic control result.
+- `toolchain/vice-clean/bin/c1541`: repository-contained derived VICE 3.10
+  disk utility built with real-device/OpenCBM disabled; pending this commit;
+  no edits are expected unless its locked identity is deliberately replaced.
+- `toolchain/f65_toolchain.lock.json`: source-owned builder identity and source
+  provenance record; pending this commit; no further edits expected in later
+  test stages.
+- `tools/build/r0d.sh`, `tools/diagnostics/r0d_d81_loadability_gate.py`, and
+  R0-D plan/admission/handoff/test/evidence records: source-owned D3 builder,
+  clean-output gate, and evidence state; pending this commit; later edits only
+  for D3 stage evidence.
 
 ## Decisions and architecture
 
@@ -138,6 +152,14 @@ admitted R0-D scope.
   `e01eb41cff0158e7b609a365ecc72b78b3ce825ddca06a42a32f8954f4c7e8d0`, is
   the only authorized physical diagnostic control. It is already a known
   physical-pass identity; it must be re-hashed on the same SD card before use.
+- The corrected c1541 is recorded in a separate R0-D-only lock entry, leaving
+  the prior shared VICE identity untouched. Its VICE source SHA-256 is
+  `8e5bac18cbcb9f192380ad3ef881f8790f5b75c41d7b3da65d831985d864d6d1`;
+  configure records OpenCBM support as disabled.
+- D3 is a fresh new identity with label `F65 R0-D3`, ID `65`; it is neither a
+  copy, repair, append, rename, nor reuse of D1/D2. This build-path change does
+  not affect target source, 45GS02 registers/clobbers, CPU/physical memory,
+  MAP/base-page, DMA, timing, IRQ, or NMI behavior.
 
 ## Validation performed
 
@@ -167,23 +189,35 @@ admitted R0-D scope.
 - Read-only differential validation: `shasum -a 256` and pinned `c1541 -list`
   for R0-A, R0-C, D1, and D2; raw header/BAM/directory-sector inspection:
   completed. D2 shares the relevant R0-A physical-pass carrier profile.
+- Corrected builder smoke: `toolchain/vice-clean/bin/c1541 -version` returned
+  `c1541 (VICE 3.10)` with zero stderr bytes; SHA-256
+  `73235289aca30a7e2e8067e521bf604743156cc1d7499c888a3894d6e46fcb3c`
+  matches the new lock entry.
+- `sh -n tools/build/r0d.sh`, `python3 -m py_compile
+  tools/diagnostics/r0d_d81_loadability_gate.py`, `python3 -m json.tool
+  toolchain/f65_toolchain.lock.json`, and `git diff --check`: PASS.
+- `make r0d-build`: PASS. `F65R0D3.D81` construction/list output is clean;
+  raw D81 structural and content extraction/hash validation PASS. D3 is 819200
+  bytes, SHA-256 `107c6a356b932e9ade875c24539d75b1b0a0078122a6a3910f524570aafec5ef`.
+- `make r0d-verify`: PASS after the new carrier build. No D3 Xemu command,
+  SD copy, or physical mount was run.
 
 ## Known problems or unresolved issues
 
 - Implementation defects: none confirmed. The earlier missing header-profile
   assertion was corrected, but D2 still failed with the accepted profile.
+- Tooling correction: the former VICE c1541 OpenCBM probe was the gate
+  violation. It is no longer in the R0-D path; the corrected builder and every
+  D3 c1541 operation are diagnostic-clean.
 - Tooling: no active host-tooling defect. Python bytecode compilation cannot
   use the macOS cache in this sandbox, so source syntax was checked in-memory.
 - Unverified behavior: physical R0-D timing/behavior and all hardware behavior.
 - Authority discrepancy: repository status reflects predecessor candidates;
   supplied human authorization adopts v1.6 for R0-D.
-- Missing evidence: an exact same-card hash and physical chooser result for
-  the retained R0-C control; any specific construction difference necessary to
-  justify a new R0-D carrier; physical R0-D display/result and environment data.
+- Missing evidence: commit/publication, then Xemu/SD/physical evidence for D3.
 - Human decisions: R0-GATED/TARGET/TBD values remain unselected.
-- Later gates: only after the control produces a discriminating result and a
-  specific correction is admitted: fresh Stage 1, VS Code publication, fresh
-  Xemu evidence, SD-copy verification, and physical chooser review.
+- Later gates: VS Code publication, fresh Xemu evidence, SD-copy verification,
+  and physical chooser review for D3.
 
 ## Remaining work
 
@@ -214,24 +248,23 @@ admitted R0-D scope.
 - [x] Correct the header-profile gate and fresh-build a distinct D81 carrier.
 - [x] Publish D2, re-run two-clean-boot Xemu, and verify its SD-copy hash.
 - [x] Preserve the D2 physical chooser `ERROR CODE FF` and invalidate D2.
-- [ ] Publish the incident record commit `819a3a5` through VS Code and verify
-  the remote — owner/Codex.
-- [ ] Run the non-destructive R0-C control — owner: re-hash existing
-  `F65-R0C-MEDIA.D81` on the same SD card, require SHA-256
-  `e01eb41cff0158e7b609a365ecc72b78b3ce825ddca06a42a32f8954f4c7e8d0`, then
-  select it in the same chooser and photograph the result.
-- [ ] Diagnose a specific construction/environment difference from the control
-  result — owner/Codex; no new R0-D D81 before this item is complete.
+- [x] Identify the gate violation: every prior `c1541` construction emitted a
+  failed OpenCBM dynamic-library probe and therefore was not an admissible build.
+- [x] Pin a VICE `c1541` built with real-device/OpenCBM support disabled and
+  add output-fail-closed enforcement.
+- [x] Fresh-format/build `F65R0D3.D81` and complete host gates.
+- [ ] Commit the corrected builder, candidate records, and checkpoint — Codex.
+- [ ] Publish through VS Code and verify the remote — owner/Codex.
+- [ ] Re-run new-carrier Xemu and then SD/physical gates — later authorization.
 
 ## Exact resume point
 
-Do not build, copy, mount, rename, or retry an R0-D D81. The next concrete
-action is owner VS Code publication of local commit `819a3a5` on
-`codex/r0-d-development`, followed by remote verification. Only then run the
-owner-controlled, read-only R0-C control recorded above. Expected control input:
-a copied-file SHA-256 and a photo showing either successful mount/directory or
-`ERROR CODE FF`. Current authorization does not authorize a third R0-D carrier.
-Do not repeat prior host/Xemu work or either invalid R0-D artifact.
+Review the complete source diff, commit the corrected R0-D builder, lock,
+bootstrap helpers, D3-facing records, and checkpoint. Then stop at the Stage-2
+VS Code publication boundary. The owner must publish the new local commit on
+`codex/r0-d-development`; do not run D3 in Xemu, copy it to SD, or mount it on
+physical hardware before direct remote verification and explicit Xemu
+authorization.
 
 ## Checkpoint log
 
@@ -510,6 +543,38 @@ same invalid D2 and evidence hashes recorded above; unresolved: owner VS Code
 publication and the same-card R0-C diagnostic control; next: publish `819a3a5`
 through VS Code then directly verify remote; authorization: no third R0-D D81,
 no D81 retry, and no new Xemu run.
+
+2026-08-31T07:29:57-07:00 — stage: CODING correction admission; branch:
+`codex/r0-d-development`; local HEAD:
+`6fc09e0c5a613a0a4f0346e127e70ebb7028a0d2`; remote verification: origin
+remains `9c562303bdda4abfd8e460f0f3bd42a93f289cd5`; completed: reconciled the
+unpublished incident records against the D81 gate, inspected the pinned VICE
+binary/logs, and found that every prior construction emitted
+`OPENCBM: opening dynamic library libopencbm.dylib failed!`; validation: VICE
+official source configuration documents `--disable-realdevice` for disabling
+OpenCBM/real peripheral support; artifacts: D1/D2 remain invalid, no new D81
+created; unresolved: a separately pinned warning-free c1541 must be built and
+validated; next: obtain exact VICE 3.10 source, build c1541 with
+`--disable-realdevice`, verify its identity/output, then update the builder;
+authorization: owner-authorized Stage-1 correction only, no publication, Xemu,
+or physical action.
+
+2026-08-31T08:58:00-07:00 — stage: CODING corrected-builder/D3 host gate;
+branch: `codex/r0-d-development`; local HEAD remains
+`6fc09e0c5a613a0a4f0346e127e70ebb7028a0d2` pending the correction commit;
+remote verification: origin remains
+`9c562303bdda4abfd8e460f0f3bd42a93f289cd5`; completed: built and pinned the
+separate VICE 3.10 c1541 with `--disable-realdevice`, added zero-stderr and
+forbidden-diagnostic checks to the D81 construction/list/extraction path, and
+fresh-formatted `F65R0D3.D81` in one session; validation: shell/Python/JSON
+static checks, `make r0d-build`, `make r0d-verify`, raw D81 structural check,
+and payload extraction/hash checks PASS; artifacts: D3 819200 bytes SHA-256
+`107c6a356b932e9ade875c24539d75b1b0a0078122a6a3910f524570aafec5ef`, PRG
+SHA-256 `ad4827da70d6f4a571817df2268bb3ca4e88d11a0f8aacfc11441abca2fd1677`,
+builder SHA-256 `73235289aca30a7e2e8067e521bf604743156cc1d7499c888a3894d6e46fcb3c`;
+unresolved: D3 is `HOST_CONTENT_VERIFIED` only and needs local commit, VS Code
+publication, and later authorized Xemu/physical gates; next: final diff review
+and local commit; authorization: Stage-1 only, no publication/Xemu/physical.
 
 ## Historical R0-C checkpoint (preserved)
 

@@ -16,6 +16,19 @@
   "java": {"distribution": "Temurin", "version": "21.0.12+8", "archive": "OpenJDK21U-jdk_aarch64_mac_hotspot_21.0.12_8.tar.gz", "archive_sha256": "021d629349ebc12a409faa517b837ec80ceee8f58a5ac85c788ecad07ca6881c", "archive_url": "https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.12%2B8/OpenJDK21U-jdk_aarch64_mac_hotspot_21.0.12_8.tar.gz", "relative_home": "toolchain/runtime/jdk-full/jdk-21.0.12+8/Contents/Home"},
   "retained_assembler": {"name": "KickAssembler65CE02", "version": "5.25", "sha256": "5d8544280dae2d018c79151d8c7b877eca1fb994096e54ca380b26d0cd79f847", "selected_for_link": false, "interoperability": "UNVERIFIED; LLVM integrated assembler is used for the initial C/assembly probe"},
   "vice": {"version": "3.10", "distribution": "vice-arm64-gtk3-3.10.dmg", "archive_sha256": "61707eb7e5d299398332e7032e39b8d999e95191697e0d42ae53f9447fb420e4", "archive_url": "https://sourceforge.net/projects/vice-emu/files/releases/binaries/macosx/vice-arm64-gtk3-3.10.dmg/download", "c1541_relative_path": "toolchain/vice/VICE.app/Contents/Resources/bin/c1541", "c1541_sha256": "597907f1cad64d74f33f3631fb23a9d9b0e66445069333d4025e92f8f03b4e3c", "petcat_sha256": "a2d0416c3a9f0361792990f0fa2b55cd50e297363148898b9a8b4326597fb433", "role": "deterministic D81 format/write/list validation; not a MEGA65 runtime emulator"},
+  "r0d_d81_builder": {
+    "name": "VICE c1541 (headless disk utility)",
+    "version": "3.10",
+    "c1541_relative_path": "toolchain/vice-clean/bin/c1541",
+    "c1541_sha256": "73235289aca30a7e2e8067e521bf604743156cc1d7499c888a3894d6e46fcb3c",
+    "source_archive": "vice-3.10.tar.gz",
+    "source_archive_sha256": "8e5bac18cbcb9f192380ad3ef881f8790f5b75c41d7b3da65d831985d864d6d1",
+    "source_archive_url": "https://sourceforge.net/projects/vice-emu/files/releases/vice-3.10.tar.gz/download",
+    "required_configure_control": "--disable-realdevice",
+    "realdevice": "disabled; the VICE 3.10 configure output recorded OpenCBM support: no",
+    "smoke_test": "c1541 -version returns 'c1541 (VICE 3.10)' on stdout and zero stderr",
+    "role": "R0-D fresh D81 format/write/list/extract tool; all construction and validation output must be diagnostic-clean"
+  },
   "xemu": {"version": "20260129235930", "source_commit": "40dfef0d1d5f56be2469492715c12bdb32c75b67", "binary_sha256": "dd37baf7846b9696adcb662ffe5da040031b07214c66aef9a7f48cc30040b738", "host_architecture": "x86_64 on arm64 host; Rosetta dependency required", "configuration": "owner ROM and initialized local Xemu SD image verified; direct PRG and drive-8 D81 AUTOBOOT result block passed in Xemu"},
   "hardware": {"mega65_model": "UNVERIFIED", "core": "UNVERIFIED", "rom": "owner-provided candidate only; SHA-256 af3c447f791a2fdc48cb21e1bd3fab015e32641228d9d30d21259b9e878c6fa0", "system_files": "UNVERIFIED", "video_matrix": "UNVERIFIED"}
 }

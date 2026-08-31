@@ -27,11 +27,14 @@ def petscii_name(entry):
 
 
 root = pathlib.Path(sys.argv[1]).resolve()
-candidate = pathlib.Path(sys.argv[2]).resolve() if len(sys.argv) == 3 else root / "build/r0d/artifacts/F65R0D2.D81"
+candidate = pathlib.Path(sys.argv[2]).resolve() if len(sys.argv) == 3 else root / "build/r0d/artifacts/F65R0D3.D81"
 artifacts = root / "build/r0d/artifacts"
 reports = root / "build/r0d/reports"
 manifests = root / "build/r0d/manifests"
-c1541 = root / "toolchain/vice/VICE.app/Contents/Resources/bin/c1541"
+
+lock = json.loads((root / "toolchain/f65_toolchain.lock.json").read_text())
+builder_lock = lock["r0d_d81_builder"]
+c1541 = root / builder_lock["c1541_relative_path"]
 
 if not candidate.is_file():
     fail("candidate is absent")
@@ -40,8 +43,7 @@ if candidate.stat().st_size != IMAGE_BYTES:
 if not c1541.is_file():
     fail("pinned c1541 is absent")
 
-lock = json.loads((root / "toolchain/f65_toolchain.lock.json").read_text())
-expected_c1541_sha = lock["vice"]["c1541_sha256"]
+expected_c1541_sha = builder_lock["c1541_sha256"]
 actual_c1541_sha = sha256(c1541)
 if actual_c1541_sha != expected_c1541_sha:
     fail("pinned c1541 hash mismatch")
@@ -71,7 +73,7 @@ if sector(40, 1)[:2] != bytes((40, 2)) or sector(40, 2)[0] != 0:
     fail("BAM chain is not the expected closed 40/1 -> 40/2 layout")
 disk_label = bytes(value & 0x7f for value in header[4:20]).decode("ascii", "replace").rstrip("\xa0 ")
 disk_id = bytes(value & 0x7f for value in header[22:24]).decode("ascii", "replace").rstrip("\xa0 ")
-if disk_label != "F65 R0-D" or disk_id != "65":
+if disk_label != "F65 R0-D3" or disk_id != "65":
     fail("disk header profile mismatch label=%r id=%r" % (disk_label, disk_id))
 
 # A 1581 D81 records one free-block count followed by five 8-bit maps for each
@@ -155,9 +157,20 @@ if allocated != owned:
     extra = sorted(owned - allocated)[:4]
     fail("BAM/ownership mismatch missing=%r extra=%r" % (missing, extra))
 
-listing = subprocess.run([str(c1541), str(candidate), "-list"], capture_output=True, text=True)
-if listing.returncode != 0:
-    fail("pinned c1541 listing returned %d" % listing.returncode)
+def run_c1541_clean(arguments, purpose):
+    result = subprocess.run([str(c1541), *arguments], capture_output=True, text=True)
+    if result.returncode != 0:
+        fail("pinned c1541 %s returned %d" % (purpose, result.returncode))
+    if result.stderr:
+        fail("pinned c1541 %s emitted stderr: %r" % (purpose, result.stderr.strip()))
+    output = result.stdout.lower()
+    for marker in ("warning", "error", "failed", "fatal", "duplicate", "truncat", "allocation"):
+        if marker in output:
+            fail("pinned c1541 %s emitted forbidden diagnostic %r" % (purpose, marker))
+    return result
+
+
+listing = run_c1541_clean([str(candidate), "-list"], "listing")
 for petscii, source in expected:
     if not source.is_file():
         fail("source payload absent: " + str(source))
@@ -165,9 +178,9 @@ for petscii, source in expected:
         fail("raw chain payload mismatch for " + petscii)
     with tempfile.TemporaryDirectory(prefix="r0d-d81-") as temporary:
         extracted = pathlib.Path(temporary) / petscii
-        readback = subprocess.run([str(c1541), str(candidate), "-read", petscii, str(extracted)],
-                                  capture_output=True, text=True)
-        if readback.returncode != 0 or not extracted.is_file():
+        run_c1541_clean([str(candidate), "-read", petscii, str(extracted)],
+                         "extraction for " + petscii)
+        if not extracted.is_file():
             fail("c1541 extraction failed for " + petscii)
         if extracted.read_bytes() != source.read_bytes():
             fail("c1541 extraction/hash mismatch for " + petscii)
@@ -187,7 +200,7 @@ release = {
     "ENTRY_FILENAME": "AUTOBOOT.C65 -> R0D-CALIB",
     "SOURCE_BRANCH": branch,
     "SOURCE_COMMIT": commit,
-    "BUILDER_IDENTITY": {"path": str(c1541), "sha256": actual_c1541_sha, "version": lock["vice"]["version"]},
+    "BUILDER_IDENTITY": {"path": str(c1541), "sha256": actual_c1541_sha, "version": builder_lock["version"], "realdevice": "disabled"},
     "STRUCTURAL_VALIDATOR_IDENTITY": "tools/diagnostics/r0d_d81_loadability_gate.py",
     "HOST_STRUCTURAL_RESULT": "PASS",
     "HOST_CONTENT_RESULT": "PASS",
@@ -201,6 +214,7 @@ release = {
                  for petscii, source in expected],
     "construction": "fresh-format and both payload writes in one pinned c1541 invocation",
     "c1541Listing": listing.stdout,
+    "c1541Diagnostics": "PASS: zero stderr and no warning/error/failure markers",
 }
 manifests.mkdir(parents=True, exist_ok=True)
 reports.mkdir(parents=True, exist_ok=True)
@@ -209,7 +223,7 @@ reports.mkdir(parents=True, exist_ok=True)
     "# R0-D D81 Loadability\n\n"
     "D81 state: `HOST_CONTENT_VERIFIED`\n\n"
     "- Candidate: `%s`\n- SHA-256: `%s`\n- Bytes: `819200`\n"
-    "- Disk: `F65 R0-D`, ID `65`\n- Entry: `AUTOBOOT.C65 -> R0D-CALIB`\n"
+    "- Disk: `F65 R0-D3`, ID `65`\n- Entry: `AUTOBOOT.C65 -> R0D-CALIB`\n"
     "- Construction: fresh format and both payloads in one pinned `c1541` invocation.\n"
     "- Host structural verification: `PASS`\n- Host content extraction/hash verification: `PASS`\n"
     "- Xemu: `AWAITING REBUILD/PUBLICATION`\n- Physical chooser: `AWAITING HUMAN`\n" % (candidate.name, candidate_sha)

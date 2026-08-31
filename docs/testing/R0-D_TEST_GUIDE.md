@@ -11,37 +11,24 @@ the PRG. Its builder fresh-formats the image and writes all payloads in one
 pinned `c1541` session, then requires independent structural and content
 validation before it can be mounted.
 
-## Stage 4 — physical-MEGA65 procedure
+## Current D81 candidate and later gates
 
-Status: **STOP — both R0-D D81 identities are invalid after physical chooser
-`ERROR CODE FF`.** D2 completed publication, two-clean-boot Xemu, and an exact
-SD-copy hash check before its chooser failure. Do not copy, mount, rename, or
-retry either R0-D image.
+`F65R0D.D81` and `F65R0D2.D81` are **INVALID — DO NOT USE** after physical
+chooser `ERROR CODE FF`. Do not copy, mount, rename, or retry either image.
 
-`F65R0D.D81` and `F65R0D2.D81` are **INVALID — DO NOT USE**. There is no
-current R0-D physical candidate or functional test procedure.
+The corrected fresh candidate is `build/r0d/artifacts/F65R0D3.D81`, SHA-256
+`107c6a356b932e9ade875c24539d75b1b0a0078122a6a3910f524570aafec5ef`. It was
+formatted once as `F65 R0-D3`, ID `65`, with `AUTOBOOT.C65` and `R0D-CALIB`
+written in that same c1541 session. Structural and extraction/hash gates pass;
+its present state is `HOST_CONTENT_VERIFIED` only.
 
-## Required non-destructive diagnostic control
+Do not transfer or mount D3 yet. Stage 2 requires its source commit to be
+published through VS Code. Stage 3 then requires explicit Xemu authorization
+and two clean D3 boots. Only after published Xemu PASS may the physical guide be
+used: copy the unchanged filename, hash the SD copy, select it in the chooser,
+confirm a readable directory with no `ERROR CODE FF`, and capture the running
+identity. The artifact is not `TEST_ELIGIBLE` until that physical chooser gate
+passes.
 
-Do not construct or test another R0-D D81. On the same SD card and in the same
-chooser workflow, use the retained known-good `F65-R0C-MEDIA.D81` only after
-its copied-file hash is verified as
-`e01eb41cff0158e7b609a365ecc72b78b3ce825ddca06a42a32f8954f4c7e8d0`.
-
-1. Run `shasum -a 256 "/Volumes/MEGA65FDISK/F65-R0C-MEDIA.D81"`. If the file
-   is absent or the hash differs, stop and report that result; do not select it.
-2. In the same MEGA65 chooser/unit configuration that rejected D2, select that
-   exact existing R0-C image and photograph the result. Do not alter the image
-   or its directory.
-3. If it mounts, photograph its readable directory or R0-C identity. If it
-   displays `ERROR CODE FF`, photograph that failure. Do not run an R0-D
-   program in either outcome.
-
-A passing control isolates the failure to an as-yet-unidentified difference in
-the R0-D carrier; a failing control shifts diagnosis to the current chooser,
-unit/configuration, or SD environment. Either result is required before a new
-R0-D construction change can be admitted.
-
-No R0-D D81 is `XEMU_BOOT_VERIFIED`, `PHYSICAL_CHOOSER_VERIFIED`, or
-`TEST_ELIGIBLE` for continued use. The historical 530,000-clock fixture is not
-a production deadline or measured-limit selection.
+The historical 530,000-clock fixture is not a production deadline or
+measured-limit selection.
