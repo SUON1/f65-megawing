@@ -11,34 +11,28 @@ admitted R0-D scope.
 
 ## Current status
 
-- Current phase: R0-D; production stage: CODING COMPLETE (D81 carrier correction).
-- Authorization: the owner explicitly authorized the R0-D D81 carrier. The
-  prior Xemu authorization remains valid after the required Stage-1/Stage-2
-  cycle; physical authorization remains valid only after the new D81 completes
-  all preceding gates.
+- Current phase: R0-D; production stage: PUSH VIA VS CODE (publication record).
+- Authorization: Stage-1 D81 coding is complete and its source is published.
+  Existing Xemu authorization resumes after this publication checkpoint is
+  committed and published; physical authorization remains conditional on every
+  preceding D81 gate.
 - Repository branch: `codex/r0-d-development`.
-- Local carrier-source commit: `13ebdf977a192ff65e1d34f450824a7b4eff5ef6`.
-- Last remotely verified commit: `30549f061dea55b7d78291f7a9f62bdda9386bd8`.
+- Local / last remotely verified commit:
+  `fa108a819385b66ac4e77d8d39572bf3433b2005`.
 - Remote verification: `git ls-remote` returned this exact commit for
-  `origin/codex/r0-d-development` before physical admission.
-- Working tree is clean after carrier build; this final coding checkpoint is
-  pending its documentation commit.
-- D81: carrier design admitted; no R0-D D81 identity exists yet. The first
-  Stage-2 publication, two-clean-boot Xemu PASS, and physical chooser PASS
-  before it can be `TEST_ELIGIBLE`.
-  candidate is `F65R0D.D81`, SHA-256
+  `origin/codex/r0-d-development` after the owner’s VS Code push.
+- Working tree was clean at remote verification; this publication checkpoint
+  update is pending its local commit and final VS Code sync.
+- D81: candidate `F65R0D.D81`, SHA-256
   `a1d11bfb2b18a92618d55b5f3051a44d019adbdf2ba70b7c6715049567638d48`, and
   is `HOST_CONTENT_VERIFIED`. It needs Stage-2 publication, two-clean-boot
   Xemu PASS, and physical chooser PASS before it can be `TEST_ELIGIBLE`.
-  Stage-2 publication, two-clean-boot Xemu PASS, and physical chooser PASS
-  before it can be `TEST_ELIGIBLE`.
 - R0-C is complete by owner waiver of its remaining physical media-fault matrix.
   R0-D implementation, host validation, source publication, and two-clean-boot
   Xemu evidence are complete. Physical hardware evidence is pending.
-- Current work: replace the superseded direct-PRG delivery notes with a fresh
-  D81 builder/validator/manifest and then complete the ordered D81 gates. The
-  D81 uses the retained R0-A/R0-C device-8 `AUTOBOOT.C65` convention; no
-  undocumented launcher behavior is introduced.
+- Current work: record the verified publication, then resume D81-specific Xemu
+  testing. The D81 uses the retained R0-A/R0-C device-8 `AUTOBOOT.C65`
+  convention; no undocumented launcher behavior is introduced.
 
 ## Completed work
 
@@ -135,7 +129,7 @@ admitted R0-D scope.
 - Unverified behavior: physical R0-D timing/behavior and all hardware behavior.
 - Authority discrepancy: repository status reflects predecessor candidates;
   supplied human authorization adopts v1.6 for R0-D.
-- Missing evidence: D81 host structural/content, replacement Xemu, SD-copy,
+- Missing evidence: replacement Xemu, SD-copy,
   physical chooser, physical display/result, and hardware environment evidence.
 - Human decisions: R0-GATED/TARGET/TBD values remain unselected.
 - Later gates: Stage-2 VS Code publication, replacement Xemu evidence,
@@ -160,17 +154,18 @@ admitted R0-D scope.
   and release manifest.
 - [x] Build and host-verify the R0-D D81 candidate.
 - [x] Commit the D81 implementation locally (`13ebdf9`).
-- [ ] Use VS Code to publish the D81 implementation and final coding checkpoint.
+- [x] Publish the D81 implementation and coding checkpoint through VS Code;
+  remote `fa108a8` verified.
+- [ ] Publish this push-verification checkpoint through VS Code.
 - [ ] Re-run two-clean-boot Xemu tests on the exact published D81.
 - [ ] Complete SD-copy and physical chooser verification before physical
   functional evidence.
 
 ## Exact resume point
 
-Commit this final coding checkpoint, then use VS Code Source Control to publish
-`codex/r0-d-development` through its final coding checkpoint. Verify the
-remote commit. Do not mount/run `F65R0D.D81` in Xemu until that publication is
-verified.
+Commit and publish this push-verification checkpoint through VS Code, verify
+its remote commit, then re-run the host D81 gate and begin the already-authorized
+two-clean-boot Xemu D81 test. Do not copy the candidate to physical media yet.
 
 ## Checkpoint log
 
@@ -351,6 +346,18 @@ unresolved: publication, D81-specific Xemu, SD transfer, and physical chooser
 are unrun; next: commit this checkpoint and hand off for VS Code push;
 authorization: Coding complete, no D81 mount/Xemu/physical action until the
 source publication stage is verified.
+
+2026-08-30T18:15:00-07:00 — stage: PUSH VIA VS CODE verification; branch:
+`codex/r0-d-development`; local/remote HEAD:
+`fa108a819385b66ac4e77d8d39572bf3433b2005`; remote verification: PASS,
+`git ls-remote --heads origin refs/heads/codex/r0-d-development` returned the
+same commit; completed: owner confirmed the VS Code push, and branch/clean
+state plus exact D81 SHA-256 were reverified; validation: `F65R0D.D81`
+SHA-256 remains `a1d11bfb2b18a92618d55b5f3051a44d019adbdf2ba70b7c6715049567638d48`,
+state `HOST_CONTENT_VERIFIED`; unresolved: this required publication checkpoint
+needs commit and final VS Code sync, then D81-specific Xemu is pending; next:
+commit/publish this checkpoint and reverify remote; authorization: source
+published, Xemu authorization retained but not yet exercised on the D81.
 
 ## Historical R0-C checkpoint (preserved)
 
