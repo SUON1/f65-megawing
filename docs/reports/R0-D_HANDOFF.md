@@ -1,6 +1,6 @@
 # R0-D Handoff
 
-Status: **XEMU TESTING COMPLETE — READY FOR HARDWARE AUTHORIZATION.**
+Status: **HARDWARE TESTING AUTHORIZED — PHYSICAL PRE-FLIGHT BLOCKED.**
 
 R0-D adds a proof-only calibration harness around the historical
 530,000-clock protected non-render fixture. The fixture preserves the 100 Hz,
@@ -35,5 +35,8 @@ SHA-256 `af3c447f791a2fdc48cb21e1bd3fab015e32641228d9d30d21259b9e878c6fa0`.
 Both boots produced result-block SHA-256
 `24f8e8dac28e79d9615bbae9fb58b716e92cf55b515e66483769721cf14587f7` and the
 same display identity. No D81 exists for R0-D, so physical chooser verification
-is not applicable. Physical timing remains unverified and requires separate
-authorization.
+is not applicable. Physical testing is authorized, but the repository contains
+only D81 physical launch procedures. The owner must provide the already-proven
+method for launching a standalone PRG before R0-D execution can begin; no
+loader behavior is inferred and no D81 workaround is permitted. Physical timing
+remains unverified.

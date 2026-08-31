@@ -5,28 +5,29 @@
 Implement the bounded R0-D protected-workload and calibration proof defined by
 the supplied human-reviewed F65 Main Concept v1.6. R0-D owns the reproducible
 historical 530,000-clock non-render workload and instrumentation foundation
-needed by R0-E and R0-F. This authorization excludes Xemu and hardware work.
+needed by R0-E and R0-F. Stage-4 physical-MEGA65 testing is now authorized;
+the proof remains limited to the admitted R0-D scope.
 
 ## Current status
 
-- Current phase: R0-D; production stage: XEMU TESTING.
-- Authorization: Xemu testing is explicitly authorized. Physical-MEGA65 work
-  is not authorized.
+- Current phase: R0-D; production stage: HARDWARE TESTING (physical preflight).
+- Authorization: Xemu evidence is complete and published. Physical-MEGA65
+  testing is explicitly authorized; no physical result is yet claimed.
 - Repository branch: `codex/r0-d-development`.
-- Local HEAD at publication verification: `5c2ff556968281092eb972e6c31e4492d9bdffda`.
+- Local HEAD / last remotely verified commit:
+  `30549f061dea55b7d78291f7a9f62bdda9386bd8`.
 - Remote verification: `git ls-remote` returned this exact commit for
-  `origin/codex/r0-d-development`.
-- Working tree was clean at Xemu admission; this Xemu-blocker checkpoint update
-  is pending its local documentation commit.
-- D81: no R0-D candidate exists. Any later candidate must pass the complete
-  fail-closed D81 gate and remains non-final before physical chooser evidence.
+  `origin/codex/r0-d-development` before physical admission.
+- Working tree was clean at physical admission.
+- D81: NOT APPLICABLE. R0-D has a direct PRG artifact, not a D81; no D81 is
+  created, mounted, copied, renamed, packaged, or represented as verified.
 - R0-C is complete by owner waiver of its remaining physical media-fault matrix.
-  R0-D implementation and Stage-1 host/build validation are complete and
-  locally committed and published. Xemu passed two clean boots; physical
-  hardware evidence remains pending and is not authorized.
-- Blocker: the repository official record predates the supplied human-reviewed
-  v1.6 core documents. This task prompt explicitly adopts v1.6; the discrepancy
-  will be recorded without altering historical R0-C evidence.
+  R0-D implementation, host validation, source publication, and two-clean-boot
+  Xemu evidence are complete. Physical hardware evidence is pending.
+- Current blocker: no repository-approved, evidence-backed physical launch
+  procedure exists for a standalone R0-D `.prg`. The existing physical guides
+  are D81-only. Do not infer a MEGA65 loader command or behavior; await the
+  owner's already-proven PRG launch method before functional execution.
 
 ## Completed work
 
@@ -66,9 +67,12 @@ needed by R0-E and R0-F. This authorization excludes Xemu and hardware work.
   tooling listed in `docs/plans/r0-d-ownership-map.json`: committed locally in
   `2bcb54e`, `62ffb16`, and `5c2ff55`; published through VS Code; no further
   Stage-1 source changes expected.
-- `CODEX_PROGRESS.md`: durable R0-D checkpoint published through `5c2ff55` and
-  pending this publication checkpoint commit/final push; further updates are
-  expected at Xemu/hardware boundaries.
+- `CODEX_PROGRESS.md`: durable R0-D checkpoint and published Xemu evidence
+  record through `30549f`; this physical-preflight update is pending its local
+  documentation commit; further updates are expected after owner evidence.
+- `docs/testing/R0-D_TEST_GUIDE.md` and `docs/evidence/r0d/R0D-EVIDENCE-MAP.md`:
+  source-owned Stage-4 procedure/evidence-state records, pending this physical
+  preflight documentation commit; further edits expected after owner evidence.
 
 ## Decisions and architecture
 
@@ -110,17 +114,16 @@ needed by R0-E and R0-F. This authorization excludes Xemu and hardware work.
 
 ## Known problems or unresolved issues
 
-- Implementation defects: none identified; R0-D has not started.
-- Tooling: pinned toolchain remains to be revalidated by the R0-D build.
+- Implementation defects: none identified.
+- Tooling: direct-PRG physical loader process is not defined by the retained
+  repository evidence; it must be supplied as an already-proven owner method.
 - Unverified behavior: physical R0-D timing/behavior and all hardware behavior.
 - Authority discrepancy: repository status reflects predecessor candidates;
   supplied human authorization adopts v1.6 for R0-D.
-- Missing evidence: R0-D D81 (not applicable), Xemu, and physical evidence.
-  The host/build evidence tier is complete.
-- Xemu tooling blocker: the owner ROM path is not configured in
-  `F65_MEGA65_ROM`.
+- Missing evidence: physical display/result evidence and owner-reported
+  hardware environment identity. D81 evidence is not applicable.
 - Human decisions: R0-GATED/TARGET/TBD values remain unselected.
-- Later gates: VS Code publication, Xemu, and hardware testing.
+- Later gates: physical evidence review; no D81 gate is entered by this path.
 
 ## Remaining work
 
@@ -133,16 +136,21 @@ needed by R0-E and R0-F. This authorization excludes Xemu and hardware work.
 - [x] Implement host/static/build validation and target observability.
 - [x] Complete diff review, commit, and report Stage-1 results.
 - [x] Publish the Stage-1 branch through VS Code and verify its GitHub commit.
-- [ ] Push this publication-checkpoint commit through VS Code.
+- [x] Publish the Xemu evidence commit through VS Code and verify it remotely.
 - [x] Run two clean Xemu boots and capture deterministic evidence.
-- [ ] Publish the Xemu evidence commit through VS Code and verify it remotely.
-- [ ] Physical-MEGA65 — blocked pending separate owner authorization.
+- [x] Receive separate physical-MEGA65 authorization and reverify published
+  source/PRG identity.
+- [ ] Establish the owner-proven direct-PRG physical launch method — blocked:
+  repository evidence has only D81 launch instructions.
+- [ ] Capture physical display/result evidence using the exact PRG hash.
+- [ ] Review physical evidence and update the R0-D acceptance record.
 
 ## Exact resume point
 
-Commit and publish the Xemu evidence, verify the remote commit, then stop for
-separate physical-MEGA65 authorization. Do not build/mount a D81 or begin
-physical testing without that authorization.
+Obtain the owner's already-proven direct-PRG launch procedure (including the
+MEGA65 UI/tool used) for the exact published PRG. Do not invent a `LOAD` command
+or create a D81 as a workaround. Then give the owner the bounded capture
+procedure, match returned evidence to the PRG hash, and record the outcome.
 
 ## Checkpoint log
 
@@ -225,6 +233,31 @@ result-block SHA-256 `24f8e8dac28e79d9615bbae9fb58b716e92cf55b515e66483769721cf1
 no D81; unresolved: Xemu evidence commit requires publication and physical
 hardware remains unauthorized; next: commit/publish Xemu evidence; authorization:
 Xemu complete, no physical testing.
+
+2026-08-30T17:10:43-07:00 — stage: HARDWARE TESTING preflight; branch:
+`codex/r0-d-development`; local/last remotely verified HEAD:
+`30549f061dea55b7d78291f7a9f62bdda9386bd8`; remote verification: PASS before
+physical admission; completed: physical authorization received and the exact
+published PRG was re-hashed; validation: PRG SHA-256 remains
+`ad4827da70d6f4a571817df2268bb3ca4e88d11a0f8aacfc11441abca2fd1677`, no D81
+exists and no D81 operation occurred; artifacts: source evidence commit
+`30549f`, executable source commit `c5a12d9`, direct PRG only; unresolved: no
+approved physical launch procedure for a standalone PRG exists in the retained
+evidence; next: obtain the owner's already-proven direct-PRG launch method,
+then capture physical evidence; authorization: Stage-4 physical testing,
+bounded to R0-D and with no D81 workaround.
+
+2026-08-30T17:12:20-07:00 — stage: HARDWARE TESTING preflight guide; branch:
+`codex/r0-d-development`; local HEAD before this documentation commit:
+`30549f061dea55b7d78291f7a9f62bdda9386bd8`; remote verification: that commit
+remains the last verified published identity; completed: updated the R0-D test
+guide, evidence map, handoff, and durable checkpoint with the exact direct-PRG
+copy/hash/capture requirements; validation: `git diff --check` PASS and PRG
+SHA-256 recheck PASS (`ad4827da70d6f4a571817df2268bb3ca4e88d11a0f8aacfc11441abca2fd1677`);
+artifacts: no D81 and no D81 gate state entered; unresolved: the physical PRG
+launcher is still unspecified by controlled evidence; next: commit this guide,
+then await the owner-proven launch method and returned hardware capture;
+authorization: Stage-4 physical testing, no unverified loader behavior.
 
 ## Historical R0-C checkpoint (preserved)
 
