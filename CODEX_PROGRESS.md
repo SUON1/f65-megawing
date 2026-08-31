@@ -11,30 +11,43 @@ admitted R0-D scope.
 
 ## Current status
 
-- Current phase: R0-D; production stage: CODING (physical chooser correction).
-- Authorization: the physical chooser failure returns the carrier internally
-  to Stage 1. Existing Xemu authorization resumes only after the replacement
-  has passed Stage 1 and Stage 2; no replacement physical attempt is authorized
-  until its ordered gates have completed.
+- Current phase: R0-D; production stage: **DIAGNOSTIC HOLD after two physical
+  chooser carrier failures**. No third R0-D D81 may be created without a
+  specific, evidence-backed construction change.
+- Authorization: the D81 failures returned their carriers to Stage 1. Existing
+  Xemu and physical authorizations do not permit retrying either invalid image
+  or creating a speculative replacement. A non-destructive physical control of
+  the known-good R0-C carrier is the only next hardware action.
 - Repository branch: `codex/r0-d-development`.
-- Local / last remotely verified commit before this correction:
-  `33ce4342a73a90c7dc1c199bf89c714ce8d072f3`.
-- Remote verification: `git ls-remote` returned `33ce434` for
-  `origin/codex/r0-d-development` before the physical result.
-- Working tree was clean before preserving the returned physical failure and
-  beginning this correction.
-- D81: `F65R0D.D81`, SHA-256
-  `a1d11bfb2b18a92618d55b5f3051a44d019adbdf2ba70b7c6715049567638d48`, is
-  **INVALID — DO NOT USE** after physical chooser `ERROR CODE FF`. Its
-  SD-copy hash was not captured, so the failed transferred byte identity is
-  unknown. The replacement begins `UNVERIFIED` with a distinct filename.
+- Local / last remotely verified commit: `9c562303bdda4abfd8e460f0f3bd42a93f289cd5`.
+- Remote verification: `git ls-remote origin refs/heads/codex/r0-d-development`
+  returned that exact commit.
+- Working tree: physical failure photo and this checkpoint/evidence update are
+  pending a local documentation commit; no source or D81 artifact is modified.
+- D81: both R0-D carrier identities are **INVALID — DO NOT USE**:
+  - `F65R0D.D81`, SHA-256
+    `a1d11bfb2b18a92618d55b5f3051a44d019adbdf2ba70b7c6715049567638d48`;
+    physical chooser `ERROR CODE FF`; no SD-copy hash was captured.
+  - `F65R0D2.D81`, SHA-256
+    `51dd4ad5a0fe402eccbac81b1ec0e44d12f5ab2294a9f01b1e7452711fa52643`;
+    its copied SD-card byte hash matched exactly, then the physical chooser
+    displayed `ERROR CODE FF`.
 - R0-C is complete by owner waiver of its remaining physical media-fault matrix.
-  R0-D direct-PRG and failed-D81 Xemu evidence are preserved but are invalid
-  for a replacement carrier. No physical R0-D program result exists.
-- Current work: preserve the failure, correct the D81 header-profile host gate,
-  and fresh-build a distinct carrier using the retained physical-accepted
-  R0-A/R0-C profile. The label/ID difference is a compatibility hypothesis,
-  not a proven root cause.
+  R0-D direct-PRG and both D81 Xemu evidence are preserved but do not satisfy
+  physical chooser verification. No physical R0-D program result exists.
+- Implementation status: the admitted 530,000-clock proof source is complete;
+  no source defect has been demonstrated by the two pre-program chooser failures.
+- Host-validation status: both carriers passed the raw structural/content gate;
+  D2 also passed the physical SD-copy hash check. These results are insufficient
+  for physical eligibility and do not override the chooser failures.
+- GitHub publication status: D2 source/Xemu evidence is published at `9c56230`.
+- Xemu status: D2 passed two clean drive-8 boots; this evidence is superseded
+  for carrier eligibility by its physical chooser failure.
+- Physical-MEGA65 status: two chooser `ERROR CODE FF` failures; no directory,
+  boot, or program execution result is claimed.
+- Current blocker: no construction difference has been found that distinguishes
+  D2 from the retained R0-A physical-pass layout. The next fact required is a
+  same-session, hash-verified R0-C physical control result.
 
 ## Completed work
 
@@ -67,6 +80,15 @@ admitted R0-D scope.
 - Reverified the exact published `c5a12d9` branch/HEAD/clean state before Xemu
   admission. The pinned Xemu reports version `20260129235930` at source commit
   `40dfef0d1d5f56be2469492715c12bdb32c75b67`.
+- Preserved the second chooser-failure photo for `F65R0D2.D81`, SHA-256
+  `877916ff5e9d4f82ab4412f198ea7847e0476b45316223887ec2b2d54024029c`.
+  The owner verified the SD-card copy first: SHA-256
+  `51dd4ad5a0fe402eccbac81b1ec0e44d12f5ab2294a9f01b1e7452711fa52643`.
+- Compared D1/D2 against the retained physical-pass R0-A carrier and the
+  physical-pass R0-C carrier. D2 matches R0-A in 80-track D81 geometry, DOS
+  version, disk ID `65`, lower-byte PETSCII directory naming, directory start,
+  and one-session pinned-`c1541` construction style. The header-profile change
+  is therefore rejected as a proven explanation.
 
 ## Files changed
 
@@ -87,6 +109,11 @@ admitted R0-D scope.
 - `docs/evidence/r0d/physical/F65R0D-D81-CHOOSER-FF.jpg` and
   `docs/evidence/r0d/R0D-D81-FAILURE-2026-08-30.md`: retained physical failure
   evidence and its disposition; pending this correction commit.
+- `docs/evidence/r0d/physical/F65R0D2-D81-CHOOSER-FF.jpg`,
+  `docs/evidence/r0d/R0D-D81-REPLACEMENT-FAILURE-2026-08-30.md`, and retained
+  `F65R0D2.D81` construction/listing logs: source-owned second-failure evidence;
+  pending this documentation-only commit; no further edits are expected except
+  to record the diagnostic control result.
 
 ## Decisions and architecture
 
@@ -102,6 +129,13 @@ admitted R0-D scope.
   `$048000-$04ffff`, staging `$050000-$052fff`, audio `$053000-$055fff`, DMA
   lists `$056000-$056fff`, reserve `$057000-$057fff`, and untouched measured
   limits reserve `$058000-$05ffff`. R0-D counters must not consume them.
+- The D2 transfer-hash match and its chooser failure eliminate an SD-copy
+  mismatch and the D1 header-ID hypothesis as explanations. They do not prove
+  a particular MEGA65 chooser defect or a source/payload cause.
+- The preserved R0-C carrier `F65-R0C-MEDIA.D81`, SHA-256
+  `e01eb41cff0158e7b609a365ecc72b78b3ce825ddca06a42a32f8954f4c7e8d0`, is
+  the only authorized physical diagnostic control. It is already a known
+  physical-pass identity; it must be re-hashed on the same SD card before use.
 
 ## Validation performed
 
@@ -125,21 +159,29 @@ admitted R0-D scope.
 - Xemu: PASS. The supplied 131,072-byte ROM matched SHA-256
   `af3c447f791a2fdc48cb21e1bd3fab015e32641228d9d30d21259b9e878c6fa0`.
   Two clean PRG boots produced matching screen and result-block hashes.
+- D2 carrier: `make r0d-build r0d-verify`, raw structural/content validation,
+  and two clean D81 Xemu boots: PASS before physical transfer. SD-card copied
+  file hash: PASS and exact match. Physical chooser: FAIL — `ERROR CODE FF`.
+- Read-only differential validation: `shasum -a 256` and pinned `c1541 -list`
+  for R0-A, R0-C, D1, and D2; raw header/BAM/directory-sector inspection:
+  completed. D2 shares the relevant R0-A physical-pass carrier profile.
 
 ## Known problems or unresolved issues
 
-- Implementation defects: the R0-D D81 host gate omitted validation of the
-  physical-accepted disk header label/ID profile.
+- Implementation defects: none confirmed. The earlier missing header-profile
+  assertion was corrected, but D2 still failed with the accepted profile.
 - Tooling: no active host-tooling defect. Python bytecode compilation cannot
   use the macOS cache in this sandbox, so source syntax was checked in-memory.
 - Unverified behavior: physical R0-D timing/behavior and all hardware behavior.
 - Authority discrepancy: repository status reflects predecessor candidates;
   supplied human authorization adopts v1.6 for R0-D.
-- Missing evidence: a replacement D81, its host/Xemu evidence, SD-copy hash,
-  physical chooser, physical display/result, and hardware environment evidence.
+- Missing evidence: an exact same-card hash and physical chooser result for
+  the retained R0-C control; any specific construction difference necessary to
+  justify a new R0-D carrier; physical R0-D display/result and environment data.
 - Human decisions: R0-GATED/TARGET/TBD values remain unselected.
-- Later gates: replacement Stage-1 build, Stage-2 publication, replacement
-  Xemu evidence, SD-copy verification, and physical chooser/evidence review.
+- Later gates: only after the control produces a discriminating result and a
+  specific correction is admitted: fresh Stage 1, VS Code publication, fresh
+  Xemu evidence, SD-copy verification, and physical chooser review.
 
 ## Remaining work
 
@@ -162,20 +204,29 @@ admitted R0-D scope.
 - [x] Commit the D81 implementation locally (`13ebdf9`).
 - [x] Publish the D81 implementation and coding checkpoint through VS Code;
   remote `fa108a8` verified.
-- [ ] Publish this push-verification checkpoint through VS Code.
+- [x] Publish the D2 source/Xemu evidence through VS Code; remote `9c56230`
+  verified.
 - [x] Re-run two-clean-boot Xemu tests on the failed D81 identity.
 - [x] Preserve physical chooser `ERROR CODE FF` evidence and invalidate the
   failed D81 identity.
-- [ ] Correct the header-profile gate and fresh-build a distinct D81 carrier.
-- [ ] Publish the replacement through VS Code, then re-run two-clean-boot Xemu.
-- [ ] Require SD-copy hash and physical chooser PASS before functional evidence.
+- [x] Correct the header-profile gate and fresh-build a distinct D81 carrier.
+- [x] Publish D2, re-run two-clean-boot Xemu, and verify its SD-copy hash.
+- [x] Preserve the D2 physical chooser `ERROR CODE FF` and invalidate D2.
+- [ ] Run the non-destructive R0-C control — owner: re-hash existing
+  `F65-R0C-MEDIA.D81` on the same SD card, require SHA-256
+  `e01eb41cff0158e7b609a365ecc72b78b3ce825ddca06a42a32f8954f4c7e8d0`, then
+  select it in the same chooser and photograph the result.
+- [ ] Diagnose a specific construction/environment difference from the control
+  result — owner/Codex; no new R0-D D81 before this item is complete.
 
 ## Exact resume point
 
-Run the corrected D81 builder to create `F65R0D2.D81` from a new fresh format;
-confirm raw header `F65 R0-D` / `65`, run the full host gate, and update all
-records with its identity. Do not mount/copy the replacement until it completes
-Stage 1 and Stage 2. Do not retry `F65R0D.D81`.
+Do not build, copy, mount, rename, or retry an R0-D D81. The next concrete
+action is the owner-run, read-only R0-C control recorded above. Expected input:
+a copied-file SHA-256 and a photo showing either successful mount/directory or
+`ERROR CODE FF`. Current authorization permits this non-destructive diagnostic
+control only; it does not authorize a third R0-D carrier. Do not repeat prior
+host/Xemu work or either invalid R0-D artifact.
 
 ## Checkpoint log
 
@@ -421,6 +472,25 @@ artifacts: `F65R0D2.D81`, 819200 bytes, SHA-256
 publication, and replacement Xemu gates; next: commit the failure record and
 replacement builder; authorization: Stage-1 correction only, no replacement
 mount/transfer/physical selection.
+
+2026-08-30T20:20:51-07:00 — stage: HARDWARE TESTING failure / DIAGNOSTIC HOLD;
+branch: `codex/r0-d-development`; local/last remotely verified HEAD:
+`9c562303bdda4abfd8e460f0f3bd42a93f289cd5`; remote verification: PASS,
+`git ls-remote origin refs/heads/codex/r0-d-development` returned that exact
+commit; completed: preserved the owner photo for selected `F65R0D2.D81`,
+recorded the matching copied-file hash, and compared D1/D2 with the retained
+physical-pass R0-A and R0-C carrier layouts; validation: D2 host structural and
+content gates, two clean Xemu boots, and SD-copy SHA-256 match PASS; physical
+chooser FAIL — `ERROR CODE FF`; artifacts: D2 SHA-256
+`51dd4ad5a0fe402eccbac81b1ec0e44d12f5ab2294a9f01b1e7452711fa52643`, failure
+photo SHA-256 `877916ff5e9d4f82ab4412f198ea7847e0476b45316223887ec2b2d54024029c`,
+construction-log SHA-256 `1f24ced45cb44a51d8343dd28e45e6e56d7f738933857a68303db07c1361f029`,
+listing-log SHA-256 `08a861e53b093de2fa3ec527d1a9d0848e011cf9f82aacc3cb82b0471b6d44fe`;
+unresolved: no specific source/construction distinction remains, so no third
+carrier may be built; next: owner re-hashes the current-SD `F65-R0C-MEDIA.D81`
+against `e01eb41cff0158e7b609a365ecc72b78b3ce825ddca06a42a32f8954f4c7e8d0` and
+selects it in the same chooser; authorization: non-destructive physical control
+only, no R0-D D81 construction/copy/mount/retry.
 
 ## Historical R0-C checkpoint (preserved)
 

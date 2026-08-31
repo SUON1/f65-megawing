@@ -22,7 +22,8 @@ PHYSICAL_CHOOSER_RESULT: FAIL — ERROR CODE FF
 PHYSICAL_EVIDENCE: docs/evidence/r0d/physical/F65R0D-D81-CHOOSER-FF.jpg
 ```
 
-This identity is invalid. The replacement is `F65R0D2.D81`, SHA-256
-`51dd4ad5a0fe402eccbac81b1ec0e44d12f5ab2294a9f01b1e7452711fa52643`, state
-`HOST_CONTENT_VERIFIED` only; it must complete publication and replacement
-Xemu evidence before any physical transfer.
+This identity is invalid. Its replacement `F65R0D2.D81`, SHA-256
+`51dd4ad5a0fe402eccbac81b1ec0e44d12f5ab2294a9f01b1e7452711fa52643`, later
+completed publication, D81 Xemu evidence, and an exact SD-copy hash check but
+also failed the physical chooser with `ERROR CODE FF`. Both identities are
+permanently retired; see `R0D-D81-REPLACEMENT-FAILURE-2026-08-30.md`.

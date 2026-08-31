@@ -1,6 +1,7 @@
 # R0-D Execution Plan
 
-Status: **CODING — physical chooser carrier correction in progress.**
+Status: **DIAGNOSTIC HOLD — two R0-D D81 carriers failed physical chooser with
+`ERROR CODE FF`; no third carrier without a specific evidence-backed change.**
 
 | Step | Deliverable | Status |
 |---|---|---|
@@ -9,11 +10,13 @@ Status: **CODING — physical chooser carrier correction in progress.**
 | D2 | Deterministic 21-stage, 530,000-clock historical fixture | Complete |
 | D3 | Host counters, rolling windows, evidence, and static checks | Complete |
 | D4 | Target diagnostic observability and map/symbol/listing review | Complete — host/build evidence only |
-| D5 | Fresh R0-D D81 carrier, loadability validator, manifest, and host gate | Reopened — physical chooser `ERROR CODE FF` invalidated `F65R0D.D81`; fresh compatibility-profile carrier pending |
-| D6 | Stage-1 handoff and local commits | Reopened — replacement carrier requires complete Stage-1/Stage-2/Stage-3 progression |
+| D5 | Fresh R0-D D81 carrier, loadability validator, manifest, and host gate | Blocked — `F65R0D.D81` and `F65R0D2.D81` are invalid after physical chooser `ERROR CODE FF`; D2 SD-copy SHA-256 matched exactly |
+| D6 | Stage-1 handoff and local commits | Blocked — require a same-card, hash-verified physical control of `F65-R0C-MEDIA.D81` before admitting a specific carrier correction |
 
 The fixture is a historical comparison workload, not a production budget and
-not a measured-limits selection. The carrier must be fresh-formatted and
-populated once with `AUTOBOOT.C65` and the PRG, then pass the repository D81
-gate. The already received Xemu and hardware authorizations resume only after
-the corrected D81 is committed/published and reaches their preceding gates.
+not a measured-limits selection. Both failed R0-D carrier identities remain
+discarded; host/Xemu evidence cannot override their chooser failures. The only
+next physical action is a read-only control of the retained physical-pass
+`F65-R0C-MEDIA.D81` identity. A new R0-D image requires a fresh format, a new
+identity, and every D81 gate only after a concrete construction change is
+identified.
