@@ -19,11 +19,12 @@ admitted R0-D scope.
   or creating a speculative replacement. A non-destructive physical control of
   the known-good R0-C carrier is the only next hardware action.
 - Repository branch: `codex/r0-d-development`.
-- Local / last remotely verified commit: `9c562303bdda4abfd8e460f0f3bd42a93f289cd5`.
+- Local HEAD: `819a3a52fece974283daa76d086ae1e0fedcec37`.
+- Last remotely verified commit: `9c562303bdda4abfd8e460f0f3bd42a93f289cd5`.
 - Remote verification: `git ls-remote origin refs/heads/codex/r0-d-development`
   returned that exact commit.
-- Working tree: physical failure photo and this checkpoint/evidence update are
-  pending a local documentation commit; no source or D81 artifact is modified.
+- Working tree: clean after local evidence commit `819a3a5`; branch is one
+  commit ahead of the remote. No source or D81 artifact is modified.
 - D81: both R0-D carrier identities are **INVALID — DO NOT USE**:
   - `F65R0D.D81`, SHA-256
     `a1d11bfb2b18a92618d55b5f3051a44d019adbdf2ba70b7c6715049567638d48`;
@@ -40,7 +41,8 @@ admitted R0-D scope.
 - Host-validation status: both carriers passed the raw structural/content gate;
   D2 also passed the physical SD-copy hash check. These results are insufficient
   for physical eligibility and do not override the chooser failures.
-- GitHub publication status: D2 source/Xemu evidence is published at `9c56230`.
+- GitHub publication status: D2 source/Xemu evidence is published at `9c56230`;
+  local incident-record commit `819a3a5` awaits owner VS Code publication.
 - Xemu status: D2 passed two clean drive-8 boots; this evidence is superseded
   for carrier eligibility by its physical chooser failure.
 - Physical-MEGA65 status: two chooser `ERROR CODE FF` failures; no directory,
@@ -212,6 +214,8 @@ admitted R0-D scope.
 - [x] Correct the header-profile gate and fresh-build a distinct D81 carrier.
 - [x] Publish D2, re-run two-clean-boot Xemu, and verify its SD-copy hash.
 - [x] Preserve the D2 physical chooser `ERROR CODE FF` and invalidate D2.
+- [ ] Publish the incident record commit `819a3a5` through VS Code and verify
+  the remote — owner/Codex.
 - [ ] Run the non-destructive R0-C control — owner: re-hash existing
   `F65-R0C-MEDIA.D81` on the same SD card, require SHA-256
   `e01eb41cff0158e7b609a365ecc72b78b3ce825ddca06a42a32f8954f4c7e8d0`, then
@@ -222,11 +226,12 @@ admitted R0-D scope.
 ## Exact resume point
 
 Do not build, copy, mount, rename, or retry an R0-D D81. The next concrete
-action is the owner-run, read-only R0-C control recorded above. Expected input:
+action is owner VS Code publication of local commit `819a3a5` on
+`codex/r0-d-development`, followed by remote verification. Only then run the
+owner-controlled, read-only R0-C control recorded above. Expected control input:
 a copied-file SHA-256 and a photo showing either successful mount/directory or
-`ERROR CODE FF`. Current authorization permits this non-destructive diagnostic
-control only; it does not authorize a third R0-D carrier. Do not repeat prior
-host/Xemu work or either invalid R0-D artifact.
+`ERROR CODE FF`. Current authorization does not authorize a third R0-D carrier.
+Do not repeat prior host/Xemu work or either invalid R0-D artifact.
 
 ## Checkpoint log
 
@@ -491,6 +496,20 @@ carrier may be built; next: owner re-hashes the current-SD `F65-R0C-MEDIA.D81`
 against `e01eb41cff0158e7b609a365ecc72b78b3ce825ddca06a42a32f8954f4c7e8d0` and
 selects it in the same chooser; authorization: non-destructive physical control
 only, no R0-D D81 construction/copy/mount/retry.
+
+2026-08-30T20:30:00-07:00 — stage: CODING documentation checkpoint; branch:
+`codex/r0-d-development`; local HEAD:
+`819a3a52fece974283daa76d086ae1e0fedcec37`; remote verification: origin still
+at `9c562303bdda4abfd8e460f0f3bd42a93f289cd5`; completed: committed the second
+failure photo, construction/listing logs, release dispositions, test-guide
+stop, evidence map, task-admission/plan, handoff, and corrected durable record
+as `819a3a5` (`docs(r0d): preserve second chooser failure`); validation:
+`git diff --check`, task-admission JSON parse, evidence hashes, and byte-for-byte
+comparison of retained logs with their generated source all PASS; artifacts:
+same invalid D2 and evidence hashes recorded above; unresolved: owner VS Code
+publication and the same-card R0-C diagnostic control; next: publish `819a3a5`
+through VS Code then directly verify remote; authorization: no third R0-D D81,
+no D81 retry, and no new Xemu run.
 
 ## Historical R0-C checkpoint (preserved)
 
