@@ -20,12 +20,13 @@ admitted R0-D scope.
 - Repository branch: `codex/r0-d-development`.
 - Local implementation HEAD: `de0f7944b1185075a0864457a36722a939e17d70`
   (`fix(r0d): enforce clean d81 construction`); this final checkpoint update
-  is pending its own local documentation commit.
+  was committed as `8be1ccccec7f13a6c3a3550cb151675878a14370`; this
+  post-build checkpoint is pending its own local documentation commit.
 - Last remotely verified commit: `9c562303bdda4abfd8e460f0f3bd42a93f289cd5`.
 - Remote verification: `git ls-remote origin refs/heads/codex/r0-d-development`
   returned that exact commit.
-- Working tree: clean immediately after the implementation commit; this durable
-  post-commit checkpoint is the only pending change.
+- Working tree: clean after the final fresh host build from `8be1ccc`; this
+  durable post-build checkpoint is the only pending change.
 - D81: both R0-D carrier identities are **INVALID — DO NOT USE**:
   - `F65R0D.D81`, SHA-256
     `a1d11bfb2b18a92618d55b5f3051a44d019adbdf2ba70b7c6715049567638d48`;
@@ -257,7 +258,8 @@ admitted R0-D scope.
   add output-fail-closed enforcement.
 - [x] Fresh-format/build `F65R0D3.D81` and complete host gates.
 - [x] Commit corrected builder and candidate records in `de0f794`.
-- [ ] Commit this post-implementation checkpoint — Codex.
+- [x] Commit the post-implementation checkpoint in `8be1ccc`.
+- [ ] Commit this final post-build checkpoint — Codex.
 - [ ] Publish through VS Code and verify the remote — owner/Codex.
 - [ ] Re-run new-carrier Xemu and then SD/physical gates — later authorization.
 
@@ -592,6 +594,19 @@ checkpoint update; artifacts: D3 and builder hashes unchanged from prior
 checkpoint; unresolved: publication, D3 Xemu, SD-copy, and physical chooser
 evidence; next: commit this checkpoint, then VS Code publication; authorization:
 Stage-1 complete, Stage-2 not yet authorized, no Xemu/physical.
+
+2026-08-31T10:32:49-07:00 — stage: CODING final fresh host rebuild; branch:
+`codex/r0-d-development`; local HEAD:
+`8be1ccccec7f13a6c3a3550cb151675878a14370`; remote verification remains
+`9c562303bdda4abfd8e460f0f3bd42a93f289cd5`; completed: fresh-built the exact
+D3 candidate from committed source so its release record names `8be1ccc`;
+validation: `make r0d-build` and `make r0d-verify` PASS, D3 SHA-256 remains
+`107c6a356b932e9ade875c24539d75b1b0a0078122a6a3910f524570aafec5ef`, release
+state `HOST_CONTENT_VERIFIED`, and worktree clean before this checkpoint;
+artifacts: PRG and builder hashes unchanged; unresolved: final checkpoint
+commit, VS Code publication, then D3 Xemu/SD/physical gates; next: commit this
+checkpoint and stop for VS Code publication; authorization: Stage-1 complete,
+no Xemu/physical.
 
 ## Historical R0-C checkpoint (preserved)
 
