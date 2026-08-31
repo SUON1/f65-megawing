@@ -5,29 +5,34 @@
 Implement the bounded R0-D protected-workload and calibration proof defined by
 the supplied human-reviewed F65 Main Concept v1.6. R0-D owns the reproducible
 historical 530,000-clock non-render workload and instrumentation foundation
-needed by R0-E and R0-F. Stage-4 physical-MEGA65 testing is now authorized;
-the proof remains limited to the admitted R0-D scope.
+needed by R0-E and R0-F. The owner additionally clarified that this proof is
+delivered in a D81 containing the PRG. The proof remains limited to the
+admitted R0-D scope.
 
 ## Current status
 
-- Current phase: R0-D; production stage: HARDWARE TESTING (physical preflight).
-- Authorization: Xemu evidence is complete and published. Physical-MEGA65
-  testing is explicitly authorized; no physical result is yet claimed.
+- Current phase: R0-D; production stage: CODING (D81 carrier correction).
+- Authorization: the owner explicitly authorized the R0-D D81 carrier. The
+  prior Xemu authorization remains valid after the required Stage-1/Stage-2
+  cycle; physical authorization remains valid only after the new D81 completes
+  all preceding gates.
 - Repository branch: `codex/r0-d-development`.
 - Local HEAD / last remotely verified commit:
   `30549f061dea55b7d78291f7a9f62bdda9386bd8`.
 - Remote verification: `git ls-remote` returned this exact commit for
   `origin/codex/r0-d-development` before physical admission.
 - Working tree was clean at physical admission.
-- D81: NOT APPLICABLE. R0-D has a direct PRG artifact, not a D81; no D81 is
-  created, mounted, copied, renamed, packaged, or represented as verified.
+- D81: carrier design admitted; no R0-D D81 identity exists yet. The first
+  candidate begins `UNVERIFIED` and must reach host structural/content PASS,
+  Stage-2 publication, two-clean-boot Xemu PASS, and physical chooser PASS
+  before it can be `TEST_ELIGIBLE`.
 - R0-C is complete by owner waiver of its remaining physical media-fault matrix.
   R0-D implementation, host validation, source publication, and two-clean-boot
   Xemu evidence are complete. Physical hardware evidence is pending.
-- Current blocker: no repository-approved, evidence-backed physical launch
-  procedure exists for a standalone R0-D `.prg`. The existing physical guides
-  are D81-only. Do not infer a MEGA65 loader command or behavior; await the
-  owner's already-proven PRG launch method before functional execution.
+- Current work: replace the superseded direct-PRG delivery notes with a fresh
+  D81 builder/validator/manifest and then complete the ordered D81 gates. The
+  D81 uses the retained R0-A/R0-C device-8 `AUTOBOOT.C65` convention; no
+  undocumented launcher behavior is introduced.
 
 ## Completed work
 
@@ -73,6 +78,10 @@ the proof remains limited to the admitted R0-D scope.
 - `docs/testing/R0-D_TEST_GUIDE.md` and `docs/evidence/r0d/R0D-EVIDENCE-MAP.md`:
   source-owned Stage-4 procedure/evidence-state records, pending this physical
   preflight documentation commit; further edits expected after owner evidence.
+- `src/r0d/autoboot.bas`, `tools/build/r0d.sh`, and
+  `tools/diagnostics/r0d_d81_loadability_gate.py`: new R0-D-owned D81 carrier,
+  one-session builder, and independent structural/content validator; source
+  files are pending implementation and a new candidate identity.
 
 ## Decisions and architecture
 
@@ -115,15 +124,15 @@ the proof remains limited to the admitted R0-D scope.
 ## Known problems or unresolved issues
 
 - Implementation defects: none identified.
-- Tooling: direct-PRG physical loader process is not defined by the retained
-  repository evidence; it must be supplied as an already-proven owner method.
+- Tooling: the R0-D D81 builder/validator and release manifest are pending.
 - Unverified behavior: physical R0-D timing/behavior and all hardware behavior.
 - Authority discrepancy: repository status reflects predecessor candidates;
   supplied human authorization adopts v1.6 for R0-D.
-- Missing evidence: physical display/result evidence and owner-reported
-  hardware environment identity. D81 evidence is not applicable.
+- Missing evidence: D81 host structural/content, replacement Xemu, SD-copy,
+  physical chooser, physical display/result, and hardware environment evidence.
 - Human decisions: R0-GATED/TARGET/TBD values remain unselected.
-- Later gates: physical evidence review; no D81 gate is entered by this path.
+- Later gates: Stage-2 VS Code publication, replacement Xemu evidence,
+  SD-copy verification, and physical chooser/evidence review.
 
 ## Remaining work
 
@@ -138,19 +147,23 @@ the proof remains limited to the admitted R0-D scope.
 - [x] Publish the Stage-1 branch through VS Code and verify its GitHub commit.
 - [x] Publish the Xemu evidence commit through VS Code and verify it remotely.
 - [x] Run two clean Xemu boots and capture deterministic evidence.
-- [x] Receive separate physical-MEGA65 authorization and reverify published
-  source/PRG identity.
-- [ ] Establish the owner-proven direct-PRG physical launch method — blocked:
-  repository evidence has only D81 launch instructions.
-- [ ] Capture physical display/result evidence using the exact PRG hash.
-- [ ] Review physical evidence and update the R0-D acceptance record.
+- [x] Receive owner clarification that R0-D requires a D81 carrier containing
+  the PRG; read the D81 gate before any carrier action.
+- [ ] Add fresh one-session D81 builder, independent structural/content checks,
+  and release manifest.
+- [ ] Build and host-verify the first R0-D D81 candidate.
+- [ ] Commit the D81 implementation and use VS Code to publish it.
+- [ ] Re-run two-clean-boot Xemu tests on the exact published D81.
+- [ ] Complete SD-copy and physical chooser verification before physical
+  functional evidence.
 
 ## Exact resume point
 
-Obtain the owner's already-proven direct-PRG launch procedure (including the
-MEGA65 UI/tool used) for the exact published PRG. Do not invent a `LOAD` command
-or create a D81 as a workaround. Then give the owner the bounded capture
-procedure, match returned evidence to the PRG hash, and record the outcome.
+Implement the R0-D-owned D81 carrier using the existing validated device-8
+`AUTOBOOT.C65` convention: fresh-format only, write `AUTOBOOT.C65` and the
+R0-D PRG in one pinned `c1541` session, then run independent raw structural and
+extraction/hash validation. Do not mount/run the new D81 in Xemu until it is
+committed and published through VS Code.
 
 ## Checkpoint log
 
@@ -258,6 +271,62 @@ artifacts: no D81 and no D81 gate state entered; unresolved: the physical PRG
 launcher is still unspecified by controlled evidence; next: commit this guide,
 then await the owner-proven launch method and returned hardware capture;
 authorization: Stage-4 physical testing, no unverified loader behavior.
+
+2026-08-30T17:59:38-07:00 — stage: CODING (D81 carrier correction); branch:
+`codex/r0-d-development`; local HEAD:
+`b081e7c847f822c5d3e3e2bb254330172c7e795a`; last remotely verified commit:
+`30549f061dea55b7d78291f7a9f62bdda9386bd8`; completed: reconciled the owner
+clarification that R0-D is delivered as a D81 containing its PRG, re-read the
+mandatory D81 gate, and inspected the retained R0-A/R0-C `AUTOBOOT.C65` and
+one-session `c1541` conventions; validation: clean worktree and branch/remote
+identity verified, no R0-D D81 created or mounted; artifacts: prior direct PRG
+SHA-256 `ad4827da70d6f4a571817df2268bb3ca4e88d11a0f8aacfc11441abca2fd1677`,
+no candidate D81 yet; unresolved: fresh builder, structural/content validator,
+and D81 identity are pending; next: implement the R0-D-owned D81 path without
+copy/append; authorization: Stage-1 coding for the D81 correction, existing
+Xemu/physical authorization applies only after required preceding gates.
+
+2026-08-30T18:00:00-07:00 — stage: CODING D81 host-gate diagnosis; branch:
+`codex/r0-d-development`; local HEAD:
+`b081e7c847f822c5d3e3e2bb254330172c7e795a`; remote verification: last
+verified `30549f061dea55b7d78291f7a9f62bdda9386bd8`; completed: created the
+first fresh, one-session `F65R0D.D81` candidate and ran its host gate;
+validation: build/static checks PASS, but `R0D-D81-STRUCT-001` correctly FAILed
+on a validator directory-block-count parsing defect; failed artifact:
+`F65R0D.D81`, 819200 bytes, SHA-256
+`9bac7a0bc28b14618524be487fcd1aeee55dd6f78cb0312d0879401c20a6457f`, recorded
+in `build/r0d/reports/F65R0D.D81-create.txt` and `F65R0D.D81-list.txt`; no
+Xemu, SD transfer, chooser, or hardware test occurred; unresolved: validator
+offset correction requires a fresh rebuild, and the failed identity is invalid
+and must not be used; next: correct the validator and fresh-format a new
+candidate; authorization: Stage-1 D81 coding only.
+
+2026-08-30T18:05:00-07:00 — stage: CODING D81 host-gate diagnosis; branch:
+`codex/r0-d-development`; local HEAD:
+`b081e7c847f822c5d3e3e2bb254330172c7e795a`; remote verification: unchanged
+at `30549f061dea55b7d78291f7a9f62bdda9386bd8`; completed: retained the second
+host-gate failure evidence and identified the raw D81 BAM fact: track 40 has
+36 free sectors with only `40/0..3` allocated, so unused directory sectors are
+not permanently reserved; validation: prior candidate hash remains
+`9bac7a0bc28b14618524be487fcd1aeee55dd6f78cb0312d0879401c20a6457f` and is
+invalid — do not use; artifacts: controlled construction log retained; unresolved:
+correct the validator's system-sector model and ensure the new fresh image has
+a distinct disk ID/hash; next: fresh-format the D1 carrier and rerun all host
+gates; authorization: Stage-1 D81 coding only.
+
+2026-08-30T18:06:24-07:00 — stage: CODING D81 host verification; branch:
+`codex/r0-d-development`; local HEAD before the D81 implementation commit:
+`b081e7c847f822c5d3e3e2bb254330172c7e795a`; remote verification: last
+verified `30549f061dea55b7d78291f7a9f62bdda9386bd8`; completed: fresh-formatted
+the D1 carrier and wrote `AUTOBOOT.C65` plus `R0D-CALIB` in one pinned c1541
+session, then ran raw geometry/BAM/directory/chain/ownership checks and c1541
+extraction/hash checks; validation: `make r0d-build r0d-verify` PASS,
+`git diff --check` PASS; artifacts: `F65R0D.D81`, 819200 bytes, SHA-256
+`a1d11bfb2b18a92618d55b5f3051a44d019adbdf2ba70b7c6715049567638d48`, state
+`HOST_CONTENT_VERIFIED`; unresolved: this candidate must be rebuilt after the
+source commit to stamp its builder identity, then published and revalidated in
+Xemu; next: review/commit the D81 source and documentation; authorization:
+Stage-1 coding only, no Xemu mount or physical copy.
 
 ## Historical R0-C checkpoint (preserved)
 

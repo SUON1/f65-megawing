@@ -6,41 +6,46 @@ are `R0D-FIX-001`, `R0D-TICK-001`, `R0D-CLK-001`, `R0D-WORLD-001`,
 `R0D-RENDER-001`, `R0D-AUDIO-001`, `R0D-SNAP-001`, `R0D-IO-001`,
 `R0D-AI-001`, `R0D-MEM-001`, and `R0D-TARGET-STATIC-001`.
 
-No Xemu command may be run in Stage 1. No R0-D D81 is required for this stage;
-if later packaging creates one, it must be fresh-formatted and pass the full
-repository D81 gate before mounting.
+No Xemu command may be run in Stage 1. R0-D is delivered as a D81 containing
+the PRG. Its builder fresh-formats the image and writes all payloads in one
+pinned `c1541` session, then requires independent structural and content
+validation before it can be mounted.
 
 ## Stage 4 — physical-MEGA65 procedure
 
-Status: **AUTHORIZED; execution preflight blocked on the owner's already-proven
-direct-PRG launch procedure.** Existing repository physical guides launch D81
-carriers. R0-D has no D81, and this guide must not invent a MEGA65 loader
-command or create a D81 workaround.
+Status: **D81 HOST-CONTENT-VERIFIED; awaiting Stage-2 publication and
+D81-specific Xemu verification.** The earlier direct-PRG route is superseded.
 
-Use only `build/r0d/artifacts/F65-R0D-CALIBRATION.prg` with SHA-256
-`ad4827da70d6f4a571817df2268bb3ca4e88d11a0f8aacfc11441abca2fd1677`. The
-published evidence commit is `30549f061dea55b7d78291f7a9f62bdda9386bd8`; the
-executable was built and Xemu-tested from `c5a12d936e07fa20e1ca43333042cb7a3fcaa57f`.
+Use only `build/r0d/artifacts/F65R0D.D81`, 819,200 bytes, SHA-256
+`a1d11bfb2b18a92618d55b5f3051a44d019adbdf2ba70b7c6715049567638d48`. It has
+disk label `F65 R0-D 530K`, ID `D1`, and contains `AUTOBOOT.C65` plus
+`R0D-CALIB` (the PRG SHA-256 is
+`ad4827da70d6f4a571817df2268bb3ca4e88d11a0f8aacfc11441abca2fd1677`).
 
-1. On the host, confirm the PRG SHA-256 above. Copy that exact file to the SD
-   card without changing its contents; record the path and transfer method.
-2. Record the MEGA65 model/revision, FPGA core version, ROM identity, video
+1. Do not copy or mount this host-verified candidate until D81-specific Xemu
+   evidence is complete on the published source commit.
+2. On the host, confirm the D81 SHA-256 above. Copy that exact filename to the
+   SD card without changing its contents; record the path and transfer method.
+   If possible, remount the SD card on the host and require an identical hash.
+3. Record the MEGA65 model/revision, FPGA core version, ROM identity, video
    configuration, and SD-card identity. If the SD card can be mounted on the
-   host afterward, re-hash the copied PRG and require the same SHA-256.
-3. Provide the exact UI/tool/method that has already successfully launched a
-   standalone PRG on this machine. Do not proceed on an assumed BASIC command,
-   drive number, or launcher behavior.
-4. Launch the exact copied PRG using that owner-proven method. Photograph or
-   capture the complete result screen, including the title and all `R0D` lines.
-5. Return the image/video plus the launch method, hardware identity, observed
-   behavior, and copied-file hash. A blank screen, loader failure, or a screen
-   that lacks the R0-D title is evidence to preserve, not a PASS.
+   host afterward, re-hash the copied D81 and require the same SHA-256.
+4. Mount the exact D81 on MEGA65 drive 8 using the established disk-image
+   workflow. Confirm a readable directory and no chooser error. `ERROR CODE FF`
+   invalidates this D81 identity before program execution; preserve the photo,
+   stop, and do not patch or rename the image.
+5. At the BASIC prompt, type `BOOT`. `AUTOBOOT.C65` loads `R0D-CALIB` from
+   device 8. Photograph the complete result screen, including the title and all
+   `R0D` lines.
+6. Return the image/video plus mount result, hardware identity, copied-file
+   hash, and observed behavior. A mount/loader failure or a screen that lacks
+   the R0-D title is evidence to preserve, not a PASS.
 
 Expected display identity: `R0-D PROTECTED-WORKLOAD CALIBRATION CANDIDATE`.
 The hardware observation can confirm display and target behavior only; it does
 not turn the historical 530,000-clock comparison fixture into a production
 deadline or a measured-limit selection.
 
-D81 loadability state is **NOT APPLICABLE**: no D81 is generated, copied,
-mounted, or tested by R0-D. Consequently there is no chooser verification or
-`TEST_ELIGIBLE` D81 claim for this phase.
+D81 state is **HOST_CONTENT_VERIFIED** only. It must proceed, in order, through
+published D81-specific Xemu boot evidence, SD-copy hash verification, and
+physical chooser PASS before it can become `TEST_ELIGIBLE`.

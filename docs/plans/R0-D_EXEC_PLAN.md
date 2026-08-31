@@ -1,6 +1,6 @@
 # R0-D Execution Plan
 
-Status: **Stage 1 / CODING in progress.**
+Status: **Stage 1 / CODING — D81 carrier correction in progress.**
 
 | Step | Deliverable | Status |
 |---|---|---|
@@ -9,9 +9,11 @@ Status: **Stage 1 / CODING in progress.**
 | D2 | Deterministic 21-stage, 530,000-clock historical fixture | Complete |
 | D3 | Host counters, rolling windows, evidence, and static checks | Complete |
 | D4 | Target diagnostic observability and map/symbol/listing review | Complete — host/build evidence only |
-| D5 | Fresh R0-D candidate packaging only if required by the validated target path | Not applicable — no R0-D D81 required for Stage 1 |
-| D6 | Stage-1 handoff and local commits | Complete — `2bcb54e`; checkpoint commit pending |
+| D5 | Fresh R0-D D81 carrier, loadability validator, manifest, and host gate | Host complete — `F65R0D.D81` is `HOST_CONTENT_VERIFIED`; commit/publication and D81-specific Xemu remain |
+| D6 | Stage-1 handoff and local commits | In progress — D81 correction records pending local commit |
 
 The fixture is a historical comparison workload, not a production budget and
-not a measured-limits selection. Xemu and hardware remain separate, closed
-stages requiring explicit authorization.
+not a measured-limits selection. The carrier must be fresh-formatted and
+populated once with `AUTOBOOT.C65` and the PRG, then pass the repository D81
+gate. The already received Xemu and hardware authorizations resume only after
+the corrected D81 is committed/published and reaches their preceding gates.
