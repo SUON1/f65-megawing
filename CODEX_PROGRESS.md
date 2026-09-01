@@ -898,3 +898,15 @@ The R0-C candidate is complete by owner waiver. The exact fresh carrier is `buil
 - Exact resume point: publish this checkpoint commit, reverify it remotely,
   then stop pending `AUTHORIZE R0-E STAGE 3`. Do not run Xemu before that
   separate authorization.
+
+### 2026-08-31 — Stage 3 preflight returned to Stage 1
+
+- Preflight found that the published target presented fixed PASS text rather
+  than executing its bounded lag/shedding/one-over cases. No Xemu evidence was
+  claimed from that artifact.
+- Repaired the target diagnostic to execute the four deterministic proxy cases
+  and record their checksums/skipped-publication result in `$1900-$19FF`.
+- Rebuilt host/static/D81 gates successfully. This is a new carrier identity:
+  SHA-256 `9c7ca01caa259db7e9eb940f891cbebdec7a6e37fb2182c3c333a98c4cb68b69`.
+- Exact resume point: commit and republish this Stage 1 repair, then obtain a
+  fresh Stage 3 authorization before any Xemu execution.
