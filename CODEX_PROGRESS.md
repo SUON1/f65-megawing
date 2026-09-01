@@ -863,3 +863,21 @@ The R0-C candidate is complete by owner waiver. The exact fresh carrier is `buil
 - Updated the official record, task admission, execution plan, agent record, handoff, evidence map, blockers, D81 audit, platform/ROM reports, and test guide.
 - Local closure commit: `f476a8b` (`docs(r0c): close candidate by owner waiver`).
 - Branch remains unpushed and clean after this checkpoint commit; no formal hardware-gate PASS is claimed.
+
+### 2026-08-31 — R0-E Stage 1 checkpoint
+
+- Created `codex/r0-e-development` from required R0-D baseline
+  `de682be4aae3dd19de745802123a87bc83ac735c`.
+- Added the bounded R0-E admission, ownership record, generated proof contract,
+  deterministic host combined-load oracle, target diagnostic, static validator,
+  memory ledger, one-session D81 builder, and fail-closed D81 host gate.
+- `make r0e-bootstrap`, `make r0e-generate`, `make r0e-host-test`,
+  `make r0e-build`, `make r0e-verify`, and `git diff --check` pass.
+- Candidate `build/r0e/artifacts/F65R0E.D81` is
+  `HOST_CONTENT_VERIFIED`, SHA-256
+  `612a7bf0877132677e40ba75b15458cfa9160618b79200be300242ea222ee138`.
+  It is not Xemu-verified, physical-verified, final, or test-eligible.
+- DMA is recorded as `DMA_HARDWARE_PROBE_NOT_EXECUTED`; no new DMA, IRQ, MAP,
+  or assembly wrapper is claimed. The measured-limits reserve remains zero.
+- Exact resume point: commit Stage 1 local source only, then stop pending
+  `AUTHORIZE R0-E STAGE 2`. Do not publish or run Xemu before authorization.
