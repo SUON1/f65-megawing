@@ -12,20 +12,20 @@ admitted R0-D scope.
 ## Current status
 
 - Current phase: R0-D; production stage: **HARDWARE TESTING COMPLETE —
-  physical-evidence publication pending**. `F65R0D3.D81` is `TEST_ELIGIBLE`
-  for the admitted R0-D proof only.
+  physical evidence published; human phase acceptance pending**.
+  `F65R0D3.D81` is `TEST_ELIGIBLE` for the admitted R0-D proof only.
 - Authorization: the owner explicitly authorized Xemu testing and then
   physical MEGA65 testing on 2026-08-31. Both authorized test stages are now
   complete for D3; human phase acceptance remains separate.
 - Repository branch: `codex/r0-d-development`.
-- Local/last remotely verified HEAD: `dfd8bb16c65fb14d5e2cac3074819c2d796ddaf3`
-  (`test(r0d): record d3 xemu verification`). The physical-evidence records
-  and this checkpoint are pending one local commit and owner VS Code push.
+- Local/last remotely verified HEAD: `95e530c7acfa1b423b7d9814ad01b1b00988617e`
+  (`test(r0d): record d3 physical verification`). This publication-verification
+  checkpoint is pending one local documentation commit and owner VS Code push.
 - Remote verification: `git ls-remote origin refs/heads/codex/r0-d-development`
-  returned `dfd8bb16c65fb14d5e2cac3074819c2d796ddaf3` before the pending
-  physical-evidence commit.
-- Working tree: physical evidence and its records are intentionally pending
-  commit; no source or carrier bytes changed.
+  returned `95e530c7acfa1b423b7d9814ad01b1b00988617e`, matching the exact
+  owner-published physical-evidence commit.
+- Working tree: clean after publication verification; this checkpoint update is
+  the only pending documentation change.
 - D81: both R0-D carrier identities are **INVALID — DO NOT USE**:
   - `F65R0D.D81`, SHA-256
     `a1d11bfb2b18a92618d55b5f3051a44d019adbdf2ba70b7c6715049567638d48`;
@@ -46,16 +46,14 @@ admitted R0-D scope.
   retained diagnostic observations, not admissible gate PASSes: each `c1541`
   construction/listing log emitted `OPENCBM: opening dynamic library
   libopencbm.dylib failed!`, which the D81 gate requires to fail closed.
-- GitHub publication status: D3 source and Xemu evidence are verified at
-  `dfd8bb1`; physical records are pending a local commit and VS Code
-  publication.
+- GitHub publication status: D3 physical evidence is published and directly
+  verified at `95e530c` on `origin/codex/r0-d-development`.
 - Xemu status: D3 PASS from two clean drive-8 AUTOBOOT runs; stable screen and
   result block match exactly, and the post-run D81 host gate passes.
 - Physical-MEGA65 status: PASS for D3's required chooser/loadability and
   admitted calibration-screen observation. D1/D2 remain permanently invalid
   after chooser `ERROR CODE FF`.
-- Current blocker: commit and publish D3 physical evidence, verify the remote
-  commit, then obtain explicit human phase acceptance before closure.
+- Current blocker: explicit human R0-D phase acceptance before formal closure.
 
 ## Completed work
 
@@ -111,6 +109,8 @@ admitted R0-D scope.
 - Preserved physical chooser-directory and running-calibration photos. They
   show D3's readable directory and the complete admitted R0-D result screen,
   with no `ERROR CODE FF`.
+- Verified the owner published the physical-evidence commit to the intended
+  GitHub branch: `origin/codex/r0-d-development` resolves to `95e530c`.
 
 ## Files changed
 
@@ -154,8 +154,9 @@ admitted R0-D scope.
 - `docs/evidence/r0d/physical/F65R0D3-PHYSICAL-DIRECTORY.jpg`,
   `docs/evidence/r0d/physical/F65R0D3-PHYSICAL-CALIBRATION.jpg`, and
   `docs/evidence/r0d/R0D-D81-D3-PHYSICAL-RELEASE.md`: owner-supplied physical
-  evidence and source-owned release record; pending this physical-evidence
-  commit; no further edits expected unless the owner records phase acceptance.
+  evidence and source-owned release record; committed and published in
+  `95e530c`; no further edits expected unless the owner records phase
+  acceptance.
 
 ## Decisions and architecture
 
@@ -257,8 +258,8 @@ admitted R0-D scope.
   bounded R0-D fixture and observability screen were physically observed.
 - Authority discrepancy: repository status reflects predecessor candidates;
   supplied human authorization adopts v1.6 for R0-D.
-- Missing evidence: local commit and VS Code publication of returned physical
-  evidence; human phase acceptance if the owner wants R0-D formally closed.
+- Missing evidence: human phase acceptance if the owner wants R0-D formally
+  closed.
 - Human decisions: R0-GATED/TARGET/TBD values remain unselected.
 - Later gates: R0-E and R0-F remain separate future phases.
 - Xemu environment note: the headless SDL backend reports it cannot create an
@@ -311,17 +312,16 @@ admitted R0-D scope.
 - [x] Verify D3 SD-copy hash after `sync`.
 - [x] Obtain D3 physical chooser-directory and admitted calibration-screen
   evidence; promote exact D3 identity to `TEST_ELIGIBLE`.
-- [ ] Commit and publish D3 physical evidence — Codex/owner.
+- [x] Commit and publish D3 physical evidence; remote `95e530c` verified.
 - [ ] Record human R0-D phase acceptance — owner, if formal phase closure is
   requested.
 
 ## Exact resume point
 
-Run final documentation checks, commit D3 physical evidence and this
-checkpoint, and hand off the exact commit for the owner to push through VS
-Code. After confirmation, verify the remote identity. Do not rebuild, rename,
-or otherwise alter D3; it is already `TEST_ELIGIBLE` at its exact recorded
-hash. Do not call R0-D closed without explicit human phase acceptance.
+Await explicit human R0-D phase acceptance. Do not rebuild, rename, or
+otherwise alter D3; it is already `TEST_ELIGIBLE` at its exact recorded hash.
+If the owner accepts the phase, record acceptance, commit/publish the closure
+checkpoint through VS Code, and directly verify the final remote commit.
 
 ## Checkpoint log
 
@@ -708,6 +708,19 @@ be committed and owner-published, then only human phase acceptance remains for
 formal closure. Next: run document/diff validation, commit this evidence, and
 give the owner the VS Code Sync/Push handoff. Authorization: physical testing
 complete; no source or carrier change authorized or required.
+
+2026-08-31T19:42:00-07:00 — stage: PUSH VIA VS CODE verification; branch:
+`codex/r0-d-development`; local/remote HEAD:
+`95e530c7acfa1b423b7d9814ad01b1b00988617e`; remote verification: PASS,
+`git ls-remote origin refs/heads/codex/r0-d-development` returned that exact
+commit. Completed: owner published the D3 physical-evidence commit through VS
+Code; validation: local worktree clean and remote branch matches; artifacts:
+D3 remains `TEST_ELIGIBLE`, 819200 bytes, SHA-256
+`107c6a356b932e9ade875c24539d75b1b0a0078122a6a3910f524570aafec5ef`.
+Unresolved: only explicit human R0-D phase acceptance remains for formal
+closure. Next: commit/publish this publication-verification checkpoint, then
+await human acceptance; authorization: no source, D81, Xemu, or hardware work
+is authorized or required.
 
 ## Historical R0-C checkpoint (preserved)
 
