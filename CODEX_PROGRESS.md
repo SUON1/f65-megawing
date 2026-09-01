@@ -22,7 +22,7 @@ admitted R0-D scope.
   (`fix(r0d): enforce clean d81 construction`); this final checkpoint update
   was committed as `8be1ccccec7f13a6c3a3550cb151675878a14370`; this
   post-build checkpoint is pending its own local documentation commit.
-- Last remotely verified commit: `9c562303bdda4abfd8e460f0f3bd42a93f289cd5`.
+- Last remotely verified commit: `37628e5669214dd1dcb8671cea3d212d9337a314`.
 - Remote verification: `git ls-remote origin refs/heads/codex/r0-d-development`
   returned that exact commit.
 - Working tree: clean after the final fresh host build from `8be1ccc`; this
@@ -44,16 +44,16 @@ admitted R0-D scope.
   retained diagnostic observations, not admissible gate PASSes: each `c1541`
   construction/listing log emitted `OPENCBM: opening dynamic library
   libopencbm.dylib failed!`, which the D81 gate requires to fail closed.
-- GitHub publication status: remote remains `9c56230`; local incident-record
-  commits `819a3a5` and `6fc09e0` await revision before VS Code publication.
+- GitHub publication status: VS Code publication of the corrected source and
+  D3 records is directly verified at `37628e5`. This publication checkpoint is
+  pending its required local commit and final VS Code push.
 - Xemu status: historical D1/D2 boot observations are retained but cannot
   advance an invalid construction chain.
 - Physical-MEGA65 status: two chooser `ERROR CODE FF` failures; no directory,
   boot, or program execution result is claimed.
-- Current blocker: owner-operated VS Code publication. After the checkpoint
-  commit, the branch will be three implementation/documentation commits plus
-  this checkpoint ahead of origin; no D3 Xemu or physical action is authorized
-  before they are published and directly verified.
+- Current blocker: commit and publish this publication-verification checkpoint.
+  No D3 Xemu or physical action is authorized before that final remote check and
+  explicit Xemu authorization.
 
 ## Completed work
 
@@ -260,17 +260,17 @@ admitted R0-D scope.
 - [x] Commit corrected builder and candidate records in `de0f794`.
 - [x] Commit the post-implementation checkpoint in `8be1ccc`.
 - [ ] Commit this final post-build checkpoint — Codex.
-- [ ] Publish through VS Code and verify the remote — owner/Codex.
+- [x] Publish corrected source through VS Code; `37628e5` directly verified on
+  `origin/codex/r0-d-development`.
+- [ ] Commit and publish the publication-verification checkpoint — Codex/owner.
 - [ ] Re-run new-carrier Xemu and then SD/physical gates — later authorization.
 
 ## Exact resume point
 
-Commit this checkpoint, then stop at the Stage-2 VS Code publication boundary.
-The owner must publish `codex/r0-d-development` through VS Code Source Control
-and verify that the remote advances from `9c562303bdda4abfd8e460f0f3bd42a93f289cd5`
-to the final local checkpoint commit. Do not run D3 in Xemu, copy it to SD, or
-mount it on physical hardware before direct remote verification and explicit
-Xemu authorization.
+Commit this publication-verification checkpoint and push it through VS Code.
+Then directly verify the remote checkpoint commit and stop at the explicit Xemu
+authorization boundary. Do not run D3 in Xemu, copy it to SD, or mount it on
+physical hardware before that verification and authorization.
 
 ## Checkpoint log
 
@@ -607,6 +607,20 @@ artifacts: PRG and builder hashes unchanged; unresolved: final checkpoint
 commit, VS Code publication, then D3 Xemu/SD/physical gates; next: commit this
 checkpoint and stop for VS Code publication; authorization: Stage-1 complete,
 no Xemu/physical.
+
+2026-08-31T10:35:00-07:00 — stage: PUSH VIA VS CODE source verification;
+branch: `codex/r0-d-development`; local/remote HEAD:
+`37628e5669214dd1dcb8671cea3d212d9337a314`; remote verification: `git
+ls-remote origin refs/heads/codex/r0-d-development` returned that exact commit;
+completed: owner published the Stage-1 commit series through VS Code;
+validation: clean local status, D3 SHA-256
+`107c6a356b932e9ade875c24539d75b1b0a0078122a6a3910f524570aafec5ef`, D3
+state `HOST_CONTENT_VERIFIED`, and builder SHA-256
+`73235289aca30a7e2e8067e521bf604743156cc1d7499c888a3894d6e46fcb3c` all
+match retained evidence; artifacts: no D3 identity change; unresolved: this
+publication checkpoint must be committed/published, then Xemu is awaiting
+explicit authorization; next: commit/push checkpoint and reverify remote;
+authorization: Stage-2 checkpoint only, no Xemu/physical.
 
 ## Historical R0-C checkpoint (preserved)
 
