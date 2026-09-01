@@ -11,21 +11,21 @@ admitted R0-D scope.
 
 ## Current status
 
-- Current phase: R0-D; production stage: **XEMU TESTING COMPLETE — evidence
-  publication pending**. `F65R0D3.D81` is `XEMU_BOOT_VERIFIED` only.
-- Authorization: the owner explicitly authorized Xemu testing on 2026-08-31.
-  This permits autonomous D3 Xemu validation only. Physical MEGA65 testing
-  remains a separate authorization boundary.
+- Current phase: R0-D; production stage: **HARDWARE TESTING COMPLETE —
+  physical-evidence publication pending**. `F65R0D3.D81` is `TEST_ELIGIBLE`
+  for the admitted R0-D proof only.
+- Authorization: the owner explicitly authorized Xemu testing and then
+  physical MEGA65 testing on 2026-08-31. Both authorized test stages are now
+  complete for D3; human phase acceptance remains separate.
 - Repository branch: `codex/r0-d-development`.
-- Local implementation HEAD: `de0f7944b1185075a0864457a36722a939e17d70`
-  (`fix(r0d): enforce clean d81 construction`); this final checkpoint update
-  was committed as `8be1ccccec7f13a6c3a3550cb151675878a14370`; this
-  post-build checkpoint is pending its own local documentation commit.
-- Last remotely verified commit: `48b3647fea18cfd7cb80d4f4ab3f242b096c3b38`.
+- Local/last remotely verified HEAD: `dfd8bb16c65fb14d5e2cac3074819c2d796ddaf3`
+  (`test(r0d): record d3 xemu verification`). The physical-evidence records
+  and this checkpoint are pending one local commit and owner VS Code push.
 - Remote verification: `git ls-remote origin refs/heads/codex/r0-d-development`
-  returned that exact commit.
-- Working tree: clean after the final fresh host build from `8be1ccc`; this
-  durable post-build checkpoint is the only pending change.
+  returned `dfd8bb16c65fb14d5e2cac3074819c2d796ddaf3` before the pending
+  physical-evidence commit.
+- Working tree: physical evidence and its records are intentionally pending
+  commit; no source or carrier bytes changed.
 - D81: both R0-D carrier identities are **INVALID — DO NOT USE**:
   - `F65R0D.D81`, SHA-256
     `a1d11bfb2b18a92618d55b5f3051a44d019adbdf2ba70b7c6715049567638d48`;
@@ -34,24 +34,28 @@ admitted R0-D scope.
     `51dd4ad5a0fe402eccbac81b1ec0e44d12f5ab2294a9f01b1e7452711fa52643`;
     its copied SD-card byte hash matched exactly, then the physical chooser
     displayed `ERROR CODE FF`.
-- R0-C is complete by owner waiver of its remaining physical media-fault matrix.
-  R0-D direct-PRG and both D81 Xemu evidence are preserved but do not satisfy
-  physical chooser verification. No physical R0-D program result exists.
+- D3: `F65R0D3.D81`, SHA-256
+  `107c6a356b932e9ade875c24539d75b1b0a0078122a6a3910f524570aafec5ef`, was
+  copied to `/Volumes/MEGA65FDISK/F65R0D3.D81`; the owner's post-`sync`
+  SHA-256 matched exactly. The physical chooser displayed readable disk
+  `F65 R0-D3` with `AUTOBOOT.C65` and `R0D-CALIB`, and the physical calibration
+  screen reached every admitted PASS/observed marker. D3 is `TEST_ELIGIBLE`.
 - Implementation status: the admitted 530,000-clock proof source is complete;
   no source defect has been demonstrated by the two pre-program chooser failures.
 - Host-validation status: D1/D2 raw filesystem checks and D2 transfer hash are
   retained diagnostic observations, not admissible gate PASSes: each `c1541`
   construction/listing log emitted `OPENCBM: opening dynamic library
   libopencbm.dylib failed!`, which the D81 gate requires to fail closed.
-- GitHub publication status: corrected builder/D3 source and publication
-  checkpoint are verified at `48b3647`; Xemu evidence records are pending a
-  local commit and VS Code publication.
+- GitHub publication status: D3 source and Xemu evidence are verified at
+  `dfd8bb1`; physical records are pending a local commit and VS Code
+  publication.
 - Xemu status: D3 PASS from two clean drive-8 AUTOBOOT runs; stable screen and
   result block match exactly, and the post-run D81 host gate passes.
-- Physical-MEGA65 status: D1/D2 remain invalid after chooser `ERROR CODE FF`.
-  D3 has no physical chooser, directory, or program-execution evidence yet.
-- Current blocker: commit and publish D3 Xemu evidence, verify that remote
-  commit, then stop for separate physical-MEGA65 authorization.
+- Physical-MEGA65 status: PASS for D3's required chooser/loadability and
+  admitted calibration-screen observation. D1/D2 remain permanently invalid
+  after chooser `ERROR CODE FF`.
+- Current blocker: commit and publish D3 physical evidence, verify the remote
+  commit, then obtain explicit human phase acceptance before closure.
 
 ## Completed work
 
@@ -102,6 +106,11 @@ admitted R0-D scope.
   Both screen hashes are `cd424a2b51109d891a3c3388f0da114042462ddab43f543d912bcdff41e8bcf2`;
   both `$1860-$18DF` result-block hashes are
   `24f8e8dac28e79d9615bbae9fb58b716e92cf55b515e66483769721cf14587f7`.
+- Received the D3 SD-card transfer result after `sync`: SHA-256 at
+  `/Volumes/MEGA65FDISK/F65R0D3.D81` exactly matches the D3 release identity.
+- Preserved physical chooser-directory and running-calibration photos. They
+  show D3's readable directory and the complete admitted R0-D result screen,
+  with no `ERROR CODE FF`.
 
 ## Files changed
 
@@ -142,6 +151,11 @@ admitted R0-D scope.
   `docs/testing/R0-D_TEST_GUIDE.md`: source-owned D3 Xemu evidence and
   physical-stage guide; pending this Xemu-evidence commit; later edits expected
   only for returned physical evidence.
+- `docs/evidence/r0d/physical/F65R0D3-PHYSICAL-DIRECTORY.jpg`,
+  `docs/evidence/r0d/physical/F65R0D3-PHYSICAL-CALIBRATION.jpg`, and
+  `docs/evidence/r0d/R0D-D81-D3-PHYSICAL-RELEASE.md`: owner-supplied physical
+  evidence and source-owned release record; pending this physical-evidence
+  commit; no further edits expected unless the owner records phase acceptance.
 
 ## Decisions and architecture
 
@@ -172,6 +186,10 @@ admitted R0-D scope.
   copy, repair, append, rename, nor reuse of D1/D2. This build-path change does
   not affect target source, 45GS02 registers/clobbers, CPU/physical memory,
   MAP/base-page, DMA, timing, IRQ, or NMI behavior.
+- The D3 transfer hash, readable physical directory, and physical calibration
+  screen jointly complete the mandated loadability chain. This establishes
+  `TEST_ELIGIBLE` only for this exact D3 identity and admitted R0-D proof; it
+  neither selects production limits nor closes R0-E/R0-F.
 
 ## Validation performed
 
@@ -218,6 +236,13 @@ admitted R0-D scope.
 - Xemu boot 1 and boot 2: exact D3 drive-8 mount/AUTOBOOT, stable screen, exact
   result block, and D81 post-run hash PASS. The two screen and result-block
   hashes match; retained evidence is under `docs/evidence/r0d/xemu/`.
+- Physical D3 transfer: owner ran `sync` followed by `shasum -a 256` on
+  `/Volumes/MEGA65FDISK/F65R0D3.D81`; PASS, exact D3 hash
+  `107c6a356b932e9ade875c24539d75b1b0a0078122a6a3910f524570aafec5ef`.
+- Physical chooser/loadability: PASS. `F65 R0-D3`, `AUTOBOOT.C65`, and
+  `R0D-CALIB` are readable in the owner-supplied directory photo; no chooser
+  error appears. Physical admitted calibration screen: PASS, with the
+  530,000-clock fixture and every displayed R0-D check present.
 
 ## Known problems or unresolved issues
 
@@ -228,13 +253,14 @@ admitted R0-D scope.
   D3 c1541 operation are diagnostic-clean.
 - Tooling: no active host-tooling defect. Python bytecode compilation cannot
   use the macOS cache in this sandbox, so source syntax was checked in-memory.
-- Unverified behavior: physical R0-D timing/behavior and all hardware behavior.
+- Unverified behavior: no production timing/limit claim is made; only the
+  bounded R0-D fixture and observability screen were physically observed.
 - Authority discrepancy: repository status reflects predecessor candidates;
   supplied human authorization adopts v1.6 for R0-D.
-- Missing evidence: commit/publication, then Xemu/SD/physical evidence for D3.
+- Missing evidence: local commit and VS Code publication of returned physical
+  evidence; human phase acceptance if the owner wants R0-D formally closed.
 - Human decisions: R0-GATED/TARGET/TBD values remain unselected.
-- Later gates: VS Code publication, fresh Xemu evidence, SD-copy verification,
-  and physical chooser review for D3.
+- Later gates: R0-E and R0-F remain separate future phases.
 - Xemu environment note: the headless SDL backend reports it cannot create an
   accelerated renderer, then successfully uses software rendering. This is not
   a D81 error; screen, memory, screenshot, and mount evidence were captured.
@@ -275,21 +301,27 @@ admitted R0-D scope.
 - [x] Fresh-format/build `F65R0D3.D81` and complete host gates.
 - [x] Commit corrected builder and candidate records in `de0f794`.
 - [x] Commit the post-implementation checkpoint in `8be1ccc`.
-- [ ] Commit this final post-build checkpoint — Codex.
+- [x] Commit this final post-build checkpoint and publish it through VS Code.
 - [x] Publish corrected source through VS Code; `37628e5` directly verified on
   `origin/codex/r0-d-development`.
-- [ ] Commit and publish the publication-verification checkpoint — Codex/owner.
+- [x] Commit and publish the publication-verification and D3 Xemu evidence
+  checkpoints through VS Code; remote `dfd8bb1` verified.
 - [x] Run two clean D3 Xemu boots, validate determinism, and re-run host D81
   gates under explicit Xemu authorization.
-- [ ] Commit and publish D3 Xemu evidence — Codex/owner.
-- [ ] Physical chooser and functional testing — requires separate human
-  authorization after Xemu evidence publication.
+- [x] Verify D3 SD-copy hash after `sync`.
+- [x] Obtain D3 physical chooser-directory and admitted calibration-screen
+  evidence; promote exact D3 identity to `TEST_ELIGIBLE`.
+- [ ] Commit and publish D3 physical evidence — Codex/owner.
+- [ ] Record human R0-D phase acceptance — owner, if formal phase closure is
+  requested.
 
 ## Exact resume point
 
-Commit and publish the D3 Xemu evidence, then directly verify the final remote
-commit. Stop at the physical-MEGA65 authorization boundary. Do not copy D3 to
-SD or mount it on hardware until the owner explicitly authorizes Stage 4.
+Run final documentation checks, commit D3 physical evidence and this
+checkpoint, and hand off the exact commit for the owner to push through VS
+Code. After confirmation, verify the remote identity. Do not rebuild, rename,
+or otherwise alter D3; it is already `TEST_ELIGIBLE` at its exact recorded
+hash. Do not call R0-D closed without explicit human phase acceptance.
 
 ## Checkpoint log
 
@@ -658,6 +690,24 @@ screenshot SHA-256 `a1217395a3d60788d4df449f02cec9642913f5d107122dad6504542131f2
 unresolved: evidence commit/publication and all physical chooser/functional
 evidence; next: commit/publish Xemu records, verify remote, stop for physical
 authorization; authorization: Xemu complete, no physical authorization.
+
+2026-08-31T19:37:00-07:00 — stage: HARDWARE TESTING complete; branch:
+`codex/r0-d-development`; local/last remotely verified HEAD before the
+physical-evidence commit: `dfd8bb16c65fb14d5e2cac3074819c2d796ddaf3`; remote
+verification: PASS for that commit. Completed: owner copied D3 to
+`/Volumes/MEGA65FDISK/F65R0D3.D81`, ran `sync`, and returned the exact
+SHA-256; owner photos then show the readable `F65 R0-D3` directory containing
+`AUTOBOOT.C65` and `R0D-CALIB`, followed by the running R0-D calibration
+screen. Validation: transfer hash, physical chooser/loadability, and admitted
+physical fixture observation PASS; no `ERROR CODE FF`. Artifacts: D3 remains
+819200 bytes, SHA-256 `107c6a356b932e9ade875c24539d75b1b0a0078122a6a3910f524570aafec5ef`;
+directory-photo SHA-256 `569bb7b4bfce67529a7f3e0b652421f9b66df99eb295ab4376c2cb75e2955b91`;
+calibration-photo SHA-256 `80675aa04d16681c7de216322e6910745d437eac5e45197c9e3a38cdb472ade9`;
+D3 state is `TEST_ELIGIBLE`. Unresolved: physical-evidence documentation must
+be committed and owner-published, then only human phase acceptance remains for
+formal closure. Next: run document/diff validation, commit this evidence, and
+give the owner the VS Code Sync/Push handoff. Authorization: physical testing
+complete; no source or carrier change authorized or required.
 
 ## Historical R0-C checkpoint (preserved)
 

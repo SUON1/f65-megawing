@@ -1,6 +1,7 @@
 # R0-D Handoff
 
-Status: **XEMU TESTING COMPLETE — EVIDENCE PUBLICATION PENDING.**
+Status: **PHYSICAL D81 LOADABILITY AND CALIBRATION PASS — HUMAN PHASE
+ACCEPTANCE PENDING.**
 
 R0-D adds a proof-only calibration harness around the historical
 530,000-clock protected non-render fixture. The fixture preserves the 100 Hz,
@@ -43,6 +44,12 @@ result-block SHA-256 `24f8e8dac28e79d9615bbae9fb58b716e92cf55b515e66483769721cf1
 The post-Xemu host D81 gate passed again. D3 is now `XEMU_BOOT_VERIFIED`, not
 physical-chooser verified or test-eligible. See
 `docs/evidence/r0d/R0D-D81-D3-XEMU-RELEASE.md`.
+
+The owner supplied physical MEGA65 photos showing the `F65 R0-D3` directory
+with `AUTOBOOT.C65` and `R0D-CALIB`, followed by the calibration result screen.
+The returned SD-copy SHA-256 exactly matches D3. The artifact is therefore
+`TEST_ELIGIBLE`; the phase still awaits explicit human acceptance and does not
+close a later R0-E/R0-F or measured-limits gate.
 
 `F65R0D.D81` (SHA-256
 `a1d11bfb2b18a92618d55b5f3051a44d019adbdf2ba70b7c6715049567638d48`) and

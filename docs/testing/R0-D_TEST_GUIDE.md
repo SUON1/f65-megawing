@@ -43,5 +43,9 @@ Only the successful chooser-directory check promotes D3 to
 `PHYSICAL_CHOOSER_VERIFIED`. Only then may functional hardware testing begin;
 it is not `TEST_ELIGIBLE` beforehand.
 
+The owner returned the exact SD-copy SHA-256 and the physical directory plus
+calibration photos. D3 is `TEST_ELIGIBLE` for its admitted R0-D proof scope;
+that result does not replace R0-F or authorize later production phases.
+
 The historical 530,000-clock fixture is not a production deadline or
 measured-limit selection.
