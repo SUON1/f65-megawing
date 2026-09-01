@@ -889,3 +889,12 @@ The R0-C candidate is complete by owner waiver. The exact fresh carrier is `buil
   one-session carrier passed both host structural and host content gates.
 - Remaining state: source is ready for owner review only. Stage 2 publication
   requires the exact phrase `AUTHORIZE R0-E STAGE 2`.
+
+### 2026-08-31 — Stage 2 publication verified
+
+- VS Code Source Control published `codex/r0-e-development` without force push.
+- Remote verification confirmed `origin/codex/r0-e-development` initially
+  matched source commit `2867b1ab7dfd7e421678a4c47770e885176b74a2` exactly.
+- Exact resume point: publish this checkpoint commit, reverify it remotely,
+  then stop pending `AUTHORIZE R0-E STAGE 3`. Do not run Xemu before that
+  separate authorization.
