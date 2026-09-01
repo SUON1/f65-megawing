@@ -910,3 +910,16 @@ The R0-C candidate is complete by owner waiver. The exact fresh carrier is `buil
   SHA-256 `9c7ca01caa259db7e9eb940f891cbebdec7a6e37fb2182c3c333a98c4cb68b69`.
 - Exact resume point: commit and republish this Stage 1 repair, then obtain a
   fresh Stage 3 authorization before any Xemu execution.
+
+### 2026-09-01 — R0-E Stage 3 functional-proxy verification
+
+- Published source commit `ae2b0ae` was rechecked against origin before the
+  exact host-gated carrier was mounted in Xemu.
+- The pinned ROM and Xemu identities passed their recorded SHA-256 checks.
+  Two clean headless drive-8 AUTOBOOT runs passed and retained identical screen
+  SHA-256 `6df9b459ac895c7f787e5568a17aa75b8d6dc6e323cbedc3b728286cd9581e84`
+  and `$1900-$19FF` result-block SHA-256
+  `4bd6ed488108739cbab916035f557f1f7972ca3bd068fb082203a0e274cfadbf`.
+- The carrier remains `XEMU_BOOT_VERIFIED`, not physical-chooser verified or
+  test-eligible. Timing is `NOT_MEASURED`; DMA remains
+  `DMA_HARDWARE_PROBE_NOT_EXECUTED`.
