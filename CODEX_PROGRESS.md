@@ -11,21 +11,21 @@ admitted R0-D scope.
 
 ## Current status
 
-- Current phase: R0-D; production stage: **HARDWARE TESTING COMPLETE —
-  physical evidence published; human phase acceptance pending**.
-  `F65R0D3.D81` is `TEST_ELIGIBLE` for the admitted R0-D proof only.
-- Authorization: the owner explicitly authorized Xemu testing and then
-  physical MEGA65 testing on 2026-08-31. Both authorized test stages are now
-  complete for D3; human phase acceptance remains separate.
+- Current phase: R0-D **CLOSED — owner accepted 2026-08-31**; production
+  stages are complete. `F65R0D3.D81` is `TEST_ELIGIBLE` for the admitted R0-D
+  proof only.
+- Authorization: the owner explicitly authorized Xemu and physical MEGA65
+  testing, then explicitly closed R0-D on 2026-08-31.
 - Repository branch: `codex/r0-d-development`.
-- Local/last remotely verified HEAD: `95e530c7acfa1b423b7d9814ad01b1b00988617e`
-  (`test(r0d): record d3 physical verification`). This publication-verification
-  checkpoint is pending one local documentation commit and owner VS Code push.
+- Local/last remotely verified HEAD: `bdca608708c2b8d6a1ba0518e2a273a83ae4409b`
+  (`docs(r0d): record physical evidence publication`). R0-D closure and
+  R0-E lessons are pending one local documentation commit and owner VS Code
+  push.
 - Remote verification: `git ls-remote origin refs/heads/codex/r0-d-development`
-  returned `95e530c7acfa1b423b7d9814ad01b1b00988617e`, matching the exact
-  owner-published physical-evidence commit.
-- Working tree: clean after publication verification; this checkpoint update is
-  the only pending documentation change.
+  returned `bdca608708c2b8d6a1ba0518e2a273a83ae4409b`, matching the exact
+  owner-published publication-checkpoint commit.
+- Working tree: closure documentation and next-agent lessons are pending
+  commit; no source or carrier bytes changed.
 - D81: both R0-D carrier identities are **INVALID — DO NOT USE**:
   - `F65R0D.D81`, SHA-256
     `a1d11bfb2b18a92618d55b5f3051a44d019adbdf2ba70b7c6715049567638d48`;
@@ -53,7 +53,8 @@ admitted R0-D scope.
 - Physical-MEGA65 status: PASS for D3's required chooser/loadability and
   admitted calibration-screen observation. D1/D2 remain permanently invalid
   after chooser `ERROR CODE FF`.
-- Current blocker: explicit human R0-D phase acceptance before formal closure.
+- Current blocker: publish the R0-D closure checkpoint. A future R0-E D81 is
+  blocked until R0-E receives its own admitted payload/entry contract.
 
 ## Completed work
 
@@ -111,6 +112,8 @@ admitted R0-D scope.
   with no `ERROR CODE FF`.
 - Verified the owner published the physical-evidence commit to the intended
   GitHub branch: `origin/codex/r0-d-development` resolves to `95e530c`.
+- Recorded the owner's explicit R0-D closure acceptance and the D81 lessons
+  required before any future phase can create its own carrier.
 
 ## Files changed
 
@@ -157,6 +160,9 @@ admitted R0-D scope.
   evidence and source-owned release record; committed and published in
   `95e530c`; no further edits expected unless the owner records phase
   acceptance.
+- `docs/reports/R0-D_LESSONS_FOR_R0-E.md`: source-owned closure handoff that
+  records D81 process corrections and the next-agent admission checklist;
+  pending this closure commit; it deliberately creates no R0-E D81.
 
 ## Decisions and architecture
 
@@ -258,8 +264,7 @@ admitted R0-D scope.
   bounded R0-D fixture and observability screen were physically observed.
 - Authority discrepancy: repository status reflects predecessor candidates;
   supplied human authorization adopts v1.6 for R0-D.
-- Missing evidence: human phase acceptance if the owner wants R0-D formally
-  closed.
+- Missing evidence: publication of this closure checkpoint only.
 - Human decisions: R0-GATED/TARGET/TBD values remain unselected.
 - Later gates: R0-E and R0-F remain separate future phases.
 - Xemu environment note: the headless SDL backend reports it cannot create an
@@ -313,15 +318,14 @@ admitted R0-D scope.
 - [x] Obtain D3 physical chooser-directory and admitted calibration-screen
   evidence; promote exact D3 identity to `TEST_ELIGIBLE`.
 - [x] Commit and publish D3 physical evidence; remote `95e530c` verified.
-- [ ] Record human R0-D phase acceptance — owner, if formal phase closure is
-  requested.
+- [x] Record human R0-D phase acceptance — owner closed R0-D on 2026-08-31.
+- [ ] Commit and publish R0-D closure/lessons checkpoint — Codex/owner.
 
 ## Exact resume point
 
-Await explicit human R0-D phase acceptance. Do not rebuild, rename, or
-otherwise alter D3; it is already `TEST_ELIGIBLE` at its exact recorded hash.
-If the owner accepts the phase, record acceptance, commit/publish the closure
-checkpoint through VS Code, and directly verify the final remote commit.
+Commit/publish the R0-D closure and lessons checkpoint through VS Code, then
+directly verify the remote commit. Do not build an R0-E D81 until an R0-E task
+admission names its entry program, payload list, disk identity, and tests.
 
 ## Checkpoint log
 
@@ -721,6 +725,19 @@ Unresolved: only explicit human R0-D phase acceptance remains for formal
 closure. Next: commit/publish this publication-verification checkpoint, then
 await human acceptance; authorization: no source, D81, Xemu, or hardware work
 is authorized or required.
+
+2026-08-31T19:48:09-07:00 — stage: R0-D CLOSURE; branch:
+`codex/r0-d-development`; local/last remotely verified HEAD before this closure
+commit: `bdca608708c2b8d6a1ba0518e2a273a83ae4409b`; remote verification: PASS
+for that commit. Completed: owner explicitly closed R0-D; closure records and
+R0-E D81 lessons are being reconciled. Validation: D3 remains the only
+`TEST_ELIGIBLE` R0-D carrier, SHA-256
+`107c6a356b932e9ade875c24539d75b1b0a0078122a6a3910f524570aafec5ef`; no source
+or D81 bytes changed. Unresolved: closure documentation must be committed and
+published; an R0-E D81 cannot be created before R0-E admission supplies a
+payload/entry contract. Next: validate, commit, then hand off the closure
+commit for VS Code publication. Authorization: R0-D closed; documentation and
+handoff only, no R0-E implementation or D81 creation.
 
 ## Historical R0-C checkpoint (preserved)
 

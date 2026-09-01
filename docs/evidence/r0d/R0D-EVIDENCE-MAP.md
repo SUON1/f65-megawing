@@ -1,8 +1,8 @@
 # R0-D Evidence Map
 
-Status: **D3 `TEST_ELIGIBLE`.** D1/D2 remain invalid after chooser `ERROR CODE
-FF`. D3 passed its matching SD-copy hash, physical chooser directory, and
-physical calibration-screen gates.
+Status: **R0-D CLOSED — owner accepted 2026-08-31.** D3 is `TEST_ELIGIBLE`;
+D1/D2 remain invalid after chooser `ERROR CODE FF`. D3 passed its matching
+SD-copy hash, physical chooser directory, and physical calibration-screen gates.
 
 | Test ID | Host | Target build | Xemu | Physical | Scope |
 |---|---|---|---|---|---|
@@ -32,8 +32,8 @@ claimed for D1 or D2.
 fresh one-session D81 built with `toolchain/vice-clean/bin/c1541` SHA-256
 `73235289aca30a7e2e8067e521bf604743156cc1d7499c888a3894d6e46fcb3c`.
 Construction/listing/extraction all had zero stderr and no forbidden warning or
-error markers. Its Xemu evidence was published at `dfd8bb1`; the returned
-physical evidence is pending one local commit and owner VS Code publication.
+error markers. Its Xemu evidence was published at `dfd8bb1`; physical evidence
+was published at `95e530c` and its publication checkpoint at `bdca608`.
 
 Xemu used the pinned `20260129235930` build and ROM SHA-256
 `af3c447f791a2fdc48cb21e1bd3fab015e32641228d9d30d21259b9e878c6fa0`.

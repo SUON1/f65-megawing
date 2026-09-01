@@ -19,11 +19,12 @@ chooser `ERROR CODE FF`. Do not copy, mount, rename, or retry either image.
 The corrected fresh candidate is `build/r0d/artifacts/F65R0D3.D81`, SHA-256
 `107c6a356b932e9ade875c24539d75b1b0a0078122a6a3910f524570aafec5ef`. It was
 formatted once as `F65 R0-D3`, ID `65`, with `AUTOBOOT.C65` and `R0D-CALIB`
-written in that same c1541 session. Structural and extraction/hash gates pass;
-its present state is `HOST_CONTENT_VERIFIED` only.
+written in that same c1541 session. It passed the complete D81 gate and is
+`TEST_ELIGIBLE` for the admitted R0-D proof only.
 
-D3 is now `XEMU_BOOT_VERIFIED` from two clean drive-8 AUTOBOOT runs. Physical
-MEGA65 work still requires separate explicit authorization.
+D3 passed two clean drive-8 AUTOBOOT runs, exact SD-copy hashing, physical
+chooser-directory verification, and physical calibration-screen observation.
+The owner accepted R0-D on 2026-08-31.
 
 ## Stage 4 — physical-MEGA65 procedure
 

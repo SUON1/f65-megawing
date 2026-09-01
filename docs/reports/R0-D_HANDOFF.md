@@ -1,7 +1,6 @@
 # R0-D Handoff
 
-Status: **PHYSICAL D81 LOADABILITY AND CALIBRATION PASS — HUMAN PHASE
-ACCEPTANCE PENDING.**
+Status: **R0-D CLOSED — OWNER ACCEPTED 2026-08-31.**
 
 R0-D adds a proof-only calibration harness around the historical
 530,000-clock protected non-render fixture. The fixture preserves the 100 Hz,
@@ -32,23 +31,21 @@ The corrected carrier is `F65R0D3.D81`, SHA-256
 `107c6a356b932e9ade875c24539d75b1b0a0078122a6a3910f524570aafec5ef`, 819,200
 bytes, disk `F65 R0-D3`/ID `65`. It is a fresh format with both payloads written
 in one session and has passed host structural plus content extraction/hash
-validation. Its only admissible state is `HOST_CONTENT_VERIFIED`; commit,
-VS Code publication, explicit Xemu authorization, and physical chooser proof
-remain required.
+validation. Its complete release state is recorded in
+`docs/evidence/r0d/R0D-D81-D3-PHYSICAL-RELEASE.md`.
 
 After publication at `48b3647`, D3 completed two independent clean Xemu drive-8
 AUTOBOOT runs. Both mounted the unchanged D81, reached the stable calibration
 identity, and produced the same screen SHA-256
 `cd424a2b51109d891a3c3388f0da114042462ddab43f543d912bcdff41e8bcf2` plus
 result-block SHA-256 `24f8e8dac28e79d9615bbae9fb58b716e92cf55b515e66483769721cf14587f7`.
-The post-Xemu host D81 gate passed again. D3 is now `XEMU_BOOT_VERIFIED`, not
-physical-chooser verified or test-eligible. See
+The post-Xemu host D81 gate passed again. The exact Xemu evidence remains in
 `docs/evidence/r0d/R0D-D81-D3-XEMU-RELEASE.md`.
 
 The owner supplied physical MEGA65 photos showing the `F65 R0-D3` directory
 with `AUTOBOOT.C65` and `R0D-CALIB`, followed by the calibration result screen.
 The returned SD-copy SHA-256 exactly matches D3. The artifact is therefore
-`TEST_ELIGIBLE`; the phase still awaits explicit human acceptance and does not
+`TEST_ELIGIBLE`, and the owner accepted the admitted R0-D proof. This does not
 close a later R0-E/R0-F or measured-limits gate.
 
 `F65R0D.D81` (SHA-256
@@ -57,7 +54,8 @@ close a later R0-E/R0-F or measured-limits gate.
 `51dd4ad5a0fe402eccbac81b1ec0e44d12f5ab2294a9f01b1e7452711fa52643`) are
 **INVALID — DO NOT USE** after physical chooser `ERROR CODE FF`. D2's SD-card
 copy was independently re-hashed and matched exactly, so the transfer did not
-cause its failure. No physical R0-D program execution is claimed.
+cause its failure. No physical R0-D program execution is claimed for either
+failed carrier.
 
 Historical direct-PRG Xemu result: PASS from two clean boots using the pinned Xemu build and ROM
 SHA-256 `af3c447f791a2fdc48cb21e1bd3fab015e32641228d9d30d21259b9e878c6fa0`.
