@@ -923,3 +923,20 @@ The R0-C candidate is complete by owner waiver. The exact fresh carrier is `buil
 - The carrier remains `XEMU_BOOT_VERIFIED`, not physical-chooser verified or
   test-eligible. Timing is `NOT_MEASURED`; DMA remains
   `DMA_HARDWARE_PROBE_NOT_EXECUTED`.
+
+### 2026-09-01 — R0-F physical preflight and master-status reconciliation
+
+- Owner authorized the next R0-F physical chooser/measurement stage after the
+  published Stage 3 evidence. The required D81 state order was reread before
+  preflight.
+- No SD-card or MEGA65 media volume was attached at preflight: `/Volumes`
+  contained only the system and Time Machine entries. No copy, `sync`, hash,
+  chooser selection, physical photo, timing, DMA, IRQ, or hardware result was
+  attempted or claimed.
+- `F65_OFFICIAL_RECORD.md` and `docs/plans/R0-E_EXEC_PLAN.md` were reconciled
+  to the published source/evidence identities. They preserve the exact state:
+  `XEMU_BOOT_VERIFIED`, not `PHYSICAL_CHOOSER_VERIFIED` or `TEST_ELIGIBLE`.
+- Exact resume: attach the intended writable SD volume and MEGA65, copy the
+  unchanged `F65R0E.D81`, flush and hash it, then supply physical chooser and
+  entry-banner captures. A chooser error invalidates this carrier identity;
+  no later functional measurement may be claimed from it.

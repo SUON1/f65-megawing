@@ -42,30 +42,41 @@ Revision 1.4 is referenced as superseded and retained by Revision 1.4.1 but was 
 
 ## 3. Current engineering state
 
-R0-A and R0-B are closed bounded proof milestones; their accepted evidence is
-retained in their handoffs and evidence maps. The project is now performing
-bounded R0-C proof implementation under AD-001. This status correction does
-not pass R0-C or promote any candidate specification. Autonomous full-game
+R0-A and R0-B are closed bounded proof milestones and R0-D is closed for its
+accepted calibration-proof scope; their accepted evidence is retained in their
+handoffs and evidence maps. R0-C remains a bounded proof candidate completed
+under its recorded owner waiver, not a formal R0-C gate pass. R0-E has a
+published, host-gated and `XEMU_BOOT_VERIFIED` functional-proxy carrier. Its
+timing remains `NOT_MEASURED`, and its DMA hardware probe remains
+`DMA_HARDWARE_PROBE_NOT_EXECUTED`. R0-F physical chooser and hardware evidence
+is pending for that exact carrier. None of these facts passes R0-E, R0-F, a
+measured-limits gate, or any candidate specification. Autonomous full-game
 production remains unauthorized. The repository does not authorize production
 flight, radar, weapons, tactical AI, campaign, audio, gameplay, or
 production-renderer code.
 
 Draft, proposed, `TBD`, `TARGET`, and `R0-GATED` material remains exactly that until the named human or measurement gate changes its status.
 
-## 4. Current authorized milestone: R0-C
+## 4. Current authorized milestone: R0-F physical evidence for the R0-E carrier
 
-R0-C is the current bounded proof milestone. Its scope is limited to
-production-shaped host asset/mission tools; deterministic package and D81
-proof; conservative capacity witnesses; non-shipping resource residency and
-staging; non-tactical disk dependency proof; save-transaction fault
-infrastructure; and explicit ROM-reclaim/storage-handoff investigation.
-It contains no gameplay implementation and does not select a production
-renderer, resource layout, package version, save medium, or campaign disk
-boundary.
+R0-F is limited to the physical-MEGA65 evidence chain for the exact R0-E
+candidate `F65R0E.D81`, SHA-256
+`8cb76830489095a92a266c884e168efacfd6cb8e7d4db456300a3fbf67cc623b`, built
+from source commit `ae2b0aee2ded09622c67fcea97062b45fd6ce9ce`. It must record
+an unchanged SD-copy hash, physical chooser mount and readable directory,
+entry-banner capture, and only then any admitted hardware measurement or phase
+sweep. As of this reconciliation no physical chooser, timing, DMA, IRQ, or
+hardware-measurement result is claimed. R0-F does not select a renderer,
+display mode, queue capacity, DMA duration, cadence, memory layout, or
+measured limit.
 
 ## 5. Hard gates
 
 - R0 hardware measurement is mandatory; Xemu supports regression but cannot close hardware-sensitive behavior.
+- A D81 is not eligible for functional hardware testing until the exact
+  Xemu-verified bytes have an exact SD-copy hash and pass the physical chooser
+  gate without an error; a chooser `ERROR CODE FF` permanently invalidates that
+  carrier identity.
 - A measured-limits revision must freeze the hardware-dependent display, timing, memory, DMA, input, and audio values used downstream.
 - The Phase 1 integrated-engine harness is a hard gate: all core engines must run concurrently within the accepted limits with deterministic evidence.
 - Gameplay implementation may not merge before the applicable R0-F/measured-limits and Phase 1 gates specified by the governing documents.
@@ -108,3 +119,4 @@ These later-phase gaps do not prohibit independent, bounded R0-A work unless an 
 | 2026-08-21 | R0-C DEC-012 fixture authorization | Owner approved a separate sacrificial writable D81 solely for the R0-C media-fault fixture and two-generation recovery evidence | Pending focused R0-C contract-planning commit | This does not select a production save medium, disk split, or player-facing recovery UX. Target adapter, physical fault evidence, and human R0-C acceptance remain open. |
 | 2026-08-21 | R0-C Attic platform-contract admission | Owner admitted `R0C-PLAT-ATTIC-001` for bounded proof-only real Attic-to-chip CPU-copy staging; registered the private proof ABI and `$050000-$052FFF` destination ownership | Pending focused R0-C contract-admission commit | This does not admit DMA, production ResourceManager behavior, production staging cadence, tile policy, or renderer behavior. `R0C-PLAT-ROM-001` remains deferred; no ROM wrapper is authorized. |
 | 2026-08-29 | R0-C candidate completion by owner waiver | Corrected D81 carrier loads without chooser `ERROR CODE FF`; owner waived remaining physical media-fault execution and requested R0-C candidate completion | Local commits `1ef7369`, `cde5555`, `2ce0e35` | R0-C implementation is complete for the bounded proof candidate. This is not formal `R0-C GATE PASSED`; `R0C-ROM-001` remains deferred and unexecuted media faults are recorded as WAIVED. |
+| 2026-09-01 | R0-E functional-proxy evidence and R0-F handoff | Reworked the R0-E target proof so its result block reflects executed bounded cases, then passed two clean Xemu boots of the exact host-gated carrier and published the retained evidence | Source `ae2b0ae`; evidence record `e2e2b46` on `codex/r0-e-development` | The carrier is `XEMU_BOOT_VERIFIED` only. Timing is `NOT_MEASURED`; DMA hardware probe is not executed; physical chooser, SD-copy hash, physical measurements, human acceptance, and all measured-limit decisions remain open. |
