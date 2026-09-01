@@ -940,3 +940,22 @@ The R0-C candidate is complete by owner waiver. The exact fresh carrier is `buil
   unchanged `F65R0E.D81`, flush and hash it, then supply physical chooser and
   entry-banner captures. A chooser error invalidates this carrier identity;
   no later functional measurement may be claimed from it.
+
+### 2026-09-01 — R0-F physical carrier verification
+
+- The owner copied the exact `F65R0E.D81` to `/Volumes/MEGA65FDISK`, ran
+  `sync`, and supplied the copied-file SHA-256. Independent host readback
+  confirmed the exact expected SHA-256
+  `8cb76830489095a92a266c884e168efacfd6cb8e7d4db456300a3fbf67cc623b` and
+  819,200-byte length.
+- The retained chooser photo shows `F65R0E.D81` selected with readable entries
+  `AUTOBOOT.C65`, `R0E-PROOF`, and `R0E-EVID`; no chooser error is shown. The
+  retained banner photo shows the physical functional-proxy program displaying
+  its PASS rows.
+- The exact carrier is therefore `TEST_ELIGIBLE` for its bounded
+  functional-proxy scope. Timing remains `NOT_MEASURED`; DMA remains
+  `DMA_HARDWARE_PROBE_NOT_EXECUTED`; no IRQ, phase sweep, pinned platform
+  identity, or measured-limit claim is made.
+- Next technical requirement: admit and implement physical timing/DMA/IRQ
+  instrumentation before attempting a measurement sweep. The published
+  physical evidence record is `docs/evidence/r0e/R0E-D81-PHYSICAL-RELEASE.md`.
