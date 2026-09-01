@@ -11,18 +11,17 @@ admitted R0-D scope.
 
 ## Current status
 
-- Current phase: R0-D; production stage: **CODING COMPLETE — READY FOR VS CODE
-  PUSH**. `F65R0D3.D81` is host-content-verified only.
-- Authorization: the owner explicitly authorized correction and a fresh R0-D
-  build on 2026-08-31. This authorizes Stage-1 toolchain/build work only; VS
-  Code publication, new-carrier Xemu, and physical testing remain sequential
-  later gates.
+- Current phase: R0-D; production stage: **XEMU TESTING COMPLETE — evidence
+  publication pending**. `F65R0D3.D81` is `XEMU_BOOT_VERIFIED` only.
+- Authorization: the owner explicitly authorized Xemu testing on 2026-08-31.
+  This permits autonomous D3 Xemu validation only. Physical MEGA65 testing
+  remains a separate authorization boundary.
 - Repository branch: `codex/r0-d-development`.
 - Local implementation HEAD: `de0f7944b1185075a0864457a36722a939e17d70`
   (`fix(r0d): enforce clean d81 construction`); this final checkpoint update
   was committed as `8be1ccccec7f13a6c3a3550cb151675878a14370`; this
   post-build checkpoint is pending its own local documentation commit.
-- Last remotely verified commit: `37628e5669214dd1dcb8671cea3d212d9337a314`.
+- Last remotely verified commit: `48b3647fea18cfd7cb80d4f4ab3f242b096c3b38`.
 - Remote verification: `git ls-remote origin refs/heads/codex/r0-d-development`
   returned that exact commit.
 - Working tree: clean after the final fresh host build from `8be1ccc`; this
@@ -44,16 +43,15 @@ admitted R0-D scope.
   retained diagnostic observations, not admissible gate PASSes: each `c1541`
   construction/listing log emitted `OPENCBM: opening dynamic library
   libopencbm.dylib failed!`, which the D81 gate requires to fail closed.
-- GitHub publication status: VS Code publication of the corrected source and
-  D3 records is directly verified at `37628e5`. This publication checkpoint is
-  pending its required local commit and final VS Code push.
-- Xemu status: historical D1/D2 boot observations are retained but cannot
-  advance an invalid construction chain.
-- Physical-MEGA65 status: two chooser `ERROR CODE FF` failures; no directory,
-  boot, or program execution result is claimed.
-- Current blocker: commit and publish this publication-verification checkpoint.
-  No D3 Xemu or physical action is authorized before that final remote check and
-  explicit Xemu authorization.
+- GitHub publication status: corrected builder/D3 source and publication
+  checkpoint are verified at `48b3647`; Xemu evidence records are pending a
+  local commit and VS Code publication.
+- Xemu status: D3 PASS from two clean drive-8 AUTOBOOT runs; stable screen and
+  result block match exactly, and the post-run D81 host gate passes.
+- Physical-MEGA65 status: D1/D2 remain invalid after chooser `ERROR CODE FF`.
+  D3 has no physical chooser, directory, or program-execution evidence yet.
+- Current blocker: commit and publish D3 Xemu evidence, verify that remote
+  commit, then stop for separate physical-MEGA65 authorization.
 
 ## Completed work
 
@@ -99,6 +97,11 @@ admitted R0-D scope.
   added zero-stderr and forbidden-diagnostic enforcement to R0-D construction,
   listing, and extraction. `F65R0D3.D81` was fresh-formatted once and host
   structural/content-verified.
+- Reverified the published D3/ROM/builder identities before Xemu. D3 mounted at
+  drive 8 and auto-booted successfully from two independent clean Xemu starts.
+  Both screen hashes are `cd424a2b51109d891a3c3388f0da114042462ddab43f543d912bcdff41e8bcf2`;
+  both `$1860-$18DF` result-block hashes are
+  `24f8e8dac28e79d9615bbae9fb58b716e92cf55b515e66483769721cf14587f7`.
 
 ## Files changed
 
@@ -134,6 +137,11 @@ admitted R0-D scope.
   R0-D plan/admission/handoff/test/evidence records: source-owned D3 builder,
   clean-output gate, and evidence state; committed in `de0f794`; later edits only
   for D3 stage evidence.
+- `docs/evidence/r0d/xemu/`, `docs/evidence/r0d/R0D-D81-D3-XEMU-RELEASE.md`,
+  `docs/evidence/r0d/R0D-EVIDENCE-MAP.md`, `docs/reports/R0-D_HANDOFF.md`, and
+  `docs/testing/R0-D_TEST_GUIDE.md`: source-owned D3 Xemu evidence and
+  physical-stage guide; pending this Xemu-evidence commit; later edits expected
+  only for returned physical evidence.
 
 ## Decisions and architecture
 
@@ -205,6 +213,11 @@ admitted R0-D scope.
   bytes, SHA-256 `107c6a356b932e9ade875c24539d75b1b0a0078122a6a3910f524570aafec5ef`.
 - `make r0d-verify`: PASS after the new carrier build. No D3 Xemu command,
   SD copy, or physical mount was run.
+- Xemu preflight: branch/HEAD/clean status/remote identity, D3 SHA-256, ROM
+  SHA-256, and host structural/content gate PASS.
+- Xemu boot 1 and boot 2: exact D3 drive-8 mount/AUTOBOOT, stable screen, exact
+  result block, and D81 post-run hash PASS. The two screen and result-block
+  hashes match; retained evidence is under `docs/evidence/r0d/xemu/`.
 
 ## Known problems or unresolved issues
 
@@ -222,6 +235,9 @@ admitted R0-D scope.
 - Human decisions: R0-GATED/TARGET/TBD values remain unselected.
 - Later gates: VS Code publication, fresh Xemu evidence, SD-copy verification,
   and physical chooser review for D3.
+- Xemu environment note: the headless SDL backend reports it cannot create an
+  accelerated renderer, then successfully uses software rendering. This is not
+  a D81 error; screen, memory, screenshot, and mount evidence were captured.
 
 ## Remaining work
 
@@ -263,14 +279,17 @@ admitted R0-D scope.
 - [x] Publish corrected source through VS Code; `37628e5` directly verified on
   `origin/codex/r0-d-development`.
 - [ ] Commit and publish the publication-verification checkpoint — Codex/owner.
-- [ ] Re-run new-carrier Xemu and then SD/physical gates — later authorization.
+- [x] Run two clean D3 Xemu boots, validate determinism, and re-run host D81
+  gates under explicit Xemu authorization.
+- [ ] Commit and publish D3 Xemu evidence — Codex/owner.
+- [ ] Physical chooser and functional testing — requires separate human
+  authorization after Xemu evidence publication.
 
 ## Exact resume point
 
-Commit this publication-verification checkpoint and push it through VS Code.
-Then directly verify the remote checkpoint commit and stop at the explicit Xemu
-authorization boundary. Do not run D3 in Xemu, copy it to SD, or mount it on
-physical hardware before that verification and authorization.
+Commit and publish the D3 Xemu evidence, then directly verify the final remote
+commit. Stop at the physical-MEGA65 authorization boundary. Do not copy D3 to
+SD or mount it on hardware until the owner explicitly authorizes Stage 4.
 
 ## Checkpoint log
 
@@ -621,6 +640,24 @@ match retained evidence; artifacts: no D3 identity change; unresolved: this
 publication checkpoint must be committed/published, then Xemu is awaiting
 explicit authorization; next: commit/push checkpoint and reverify remote;
 authorization: Stage-2 checkpoint only, no Xemu/physical.
+
+2026-08-31T17:49:04-07:00 — stage: XEMU TESTING complete locally; branch:
+`codex/r0-d-development`; local/remote pre-evidence HEAD:
+`48b3647fea18cfd7cb80d4f4ab3f242b096c3b38`; remote verification: PASS before
+the authorized run; completed: revalidated D3/ROM/tool identities and host
+gates, then ran two clean headless/sleepless/fastboot Xemu starts with D3 at
+drive 8 and AUTOBOOT; validation: both boots mounted D3, reached all stable
+screen markers, matched the exact expected `$1860-$18DF` result bytes, and
+matched screen SHA-256 `cd424a2b51109d891a3c3388f0da114042462ddab43f543d912bcdff41e8bcf2`
+plus result-block SHA-256
+`24f8e8dac28e79d9615bbae9fb58b716e92cf55b515e66483769721cf14587f7`; post-run
+D81 host structural/content verification PASS and D3 hash unchanged;
+artifacts: Xemu evidence JSON SHA-256
+`8299ea244c09e219044c945e015dd855c647628908ac4b734fc7eaccdb398b8a`, boot-1
+screenshot SHA-256 `a1217395a3d60788d4df449f02cec9642913f5d107122dad6504542131f200f8`;
+unresolved: evidence commit/publication and all physical chooser/functional
+evidence; next: commit/publish Xemu records, verify remote, stop for physical
+authorization; authorization: Xemu complete, no physical authorization.
 
 ## Historical R0-C checkpoint (preserved)
 

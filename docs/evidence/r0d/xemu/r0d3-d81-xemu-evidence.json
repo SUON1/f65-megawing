@@ -1,0 +1,40 @@
+{
+  "identity": "r0d-0.1.0-calibration-proof",
+  "class": "XEMU_D81",
+  "result": "PASS",
+  "publishedCommit": "48b3647fea18cfd7cb80d4f4ab3f242b096c3b38",
+  "d81Filename": "F65R0D3.D81",
+  "d81Sha256": "107c6a356b932e9ade875c24539d75b1b0a0078122a6a3910f524570aafec5ef",
+  "romSha256": "af3c447f791a2fdc48cb21e1bd3fab015e32641228d9d30d21259b9e878c6fa0",
+  "xemu": {
+    "version": "20260129235930",
+    "sourceCommit": "40dfef0d1d5f56be2469492715c12bdb32c75b67",
+    "mode": "headless, sleepless, fastboot, drive 8, autoload"
+  },
+  "tests": [
+    "R0D-D81-XEMU-BOOT-001",
+    "R0D-D81-XEMU-RESULT-001",
+    "R0D-D81-XEMU-DET-001"
+  ],
+  "boots": [
+    {
+      "boot": 1,
+      "screenSha256": "cd424a2b51109d891a3c3388f0da114042462ddab43f543d912bcdff41e8bcf2",
+      "resultBlockSha256": "24f8e8dac28e79d9615bbae9fb58b716e92cf55b515e66483769721cf14587f7",
+      "screenPath": "build/r0d/reports/R0D3-D81-XEMU-boot1.screen.txt",
+      "memoryPath": "build/r0d/reports/R0D3-D81-XEMU-boot1.memory.bin",
+      "logPath": "build/r0d/reports/R0D3-D81-XEMU-boot1.log",
+      "screenshotPath": "build/r0d/reports/R0D3-D81-XEMU-boot1.png"
+    },
+    {
+      "boot": 2,
+      "screenSha256": "cd424a2b51109d891a3c3388f0da114042462ddab43f543d912bcdff41e8bcf2",
+      "resultBlockSha256": "24f8e8dac28e79d9615bbae9fb58b716e92cf55b515e66483769721cf14587f7",
+      "screenPath": "build/r0d/reports/R0D3-D81-XEMU-boot2.screen.txt",
+      "memoryPath": "build/r0d/reports/R0D3-D81-XEMU-boot2.memory.bin",
+      "logPath": "build/r0d/reports/R0D3-D81-XEMU-boot2.log",
+      "screenshotPath": "build/r0d/reports/R0D3-D81-XEMU-boot2.png"
+    }
+  ],
+  "physicalChooser": "NOT_EXECUTED; Xemu cannot substitute physical chooser verification"
+}

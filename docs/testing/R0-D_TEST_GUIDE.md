@@ -22,13 +22,26 @@ formatted once as `F65 R0-D3`, ID `65`, with `AUTOBOOT.C65` and `R0D-CALIB`
 written in that same c1541 session. Structural and extraction/hash gates pass;
 its present state is `HOST_CONTENT_VERIFIED` only.
 
-Do not transfer or mount D3 yet. Stage 2 requires its source commit to be
-published through VS Code. Stage 3 then requires explicit Xemu authorization
-and two clean D3 boots. Only after published Xemu PASS may the physical guide be
-used: copy the unchanged filename, hash the SD copy, select it in the chooser,
-confirm a readable directory with no `ERROR CODE FF`, and capture the running
-identity. The artifact is not `TEST_ELIGIBLE` until that physical chooser gate
-passes.
+D3 is now `XEMU_BOOT_VERIFIED` from two clean drive-8 AUTOBOOT runs. Physical
+MEGA65 work still requires separate explicit authorization.
+
+## Stage 4 — physical-MEGA65 procedure
+
+Use only `F65R0D3.D81`, unchanged, SHA-256
+`107c6a356b932e9ade875c24539d75b1b0a0078122a6a3910f524570aafec5ef`.
+
+1. Copy it to the MEGA65 SD volume under the exact same filename, flush writes,
+   and hash the copied file. Stop if its hash differs.
+2. In the MEGA65 chooser, select exactly `F65R0D3.D81`. A chooser `ERROR CODE
+   FF` permanently invalidates this D3 identity; photograph it and do not try
+   to repair, rename, or reuse the image.
+3. On chooser success, photograph the readable directory showing `AUTOBOOT.C65`
+   and `R0D-CALIB`, then load the entry and capture the calibration screen.
+4. Confirm the screen begins `R0-D PROTECTED-WORKLOAD CALIBRATION CANDIDATE`.
+
+Only the successful chooser-directory check promotes D3 to
+`PHYSICAL_CHOOSER_VERIFIED`. Only then may functional hardware testing begin;
+it is not `TEST_ELIGIBLE` beforehand.
 
 The historical 530,000-clock fixture is not a production deadline or
 measured-limit selection.

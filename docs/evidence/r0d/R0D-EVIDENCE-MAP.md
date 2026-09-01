@@ -1,24 +1,24 @@
 # R0-D Evidence Map
 
-Status: **D3 host gate PASS.** `F65R0D.D81` and `F65R0D2.D81` remain invalid
-after chooser `ERROR CODE FF`. D3 corrects their builder’s OpenCBM diagnostic
-defect and is `HOST_CONTENT_VERIFIED` only.
+Status: **D3 Xemu gate PASS.** `F65R0D.D81` and `F65R0D2.D81` remain invalid
+after chooser `ERROR CODE FF`. D3 is `XEMU_BOOT_VERIFIED`; physical chooser
+verification is the next gate.
 
 | Test ID | Host | Target build | Xemu | Physical | Scope |
 |---|---|---|---|---|---|
-| R0D-FIX-001 | PASS | fixture identity only | Historical D2 only — invalid | Awaiting D3 | 530,000-clock historical comparison fixture |
-| R0D-TICK-001 | PASS | static/observable | Historical D2 only — invalid | Awaiting D3 | 100 Hz, 21-stage and stage-16 next-tick contract |
-| R0D-CLK-001 | PASS | result block | Historical D2 only — invalid | Awaiting D3 | protected/rolling-clock counters |
-| R0D-WORLD-001 | PASS | result block | Historical D2 only — invalid | Awaiting D3 | generation/source/world-age counters |
-| R0D-RENDER-001 | PASS | result block | Historical D2 only — invalid | Awaiting D3 | non-render pool/DMA high-water counters |
-| R0D-AUDIO-001 | PASS | result block | Historical D2 only — invalid | Awaiting D3 | service, channel and P0/P1 counters |
-| R0D-SNAP-001 | PASS | result block | Historical D2 only — invalid | Awaiting D3 | extraction/publication/lag/drop/ownership |
-| R0D-IO-001 | PASS | result block | Historical D2 only — invalid | Awaiting D3 | DMA/input/storage timing counters |
-| R0D-AI-001 | PASS | result block | Historical D2 only — invalid | Awaiting D3 | stage-16 owner/held-intent/causality hooks |
-| R0D-MEM-001 | PASS | PASS | Historical D2 only — invalid | Awaiting D3 | reserve remains zero; map accounting is retained |
-| R0D-TARGET-STATIC-001 | PASS | PASS | Historical D2 only — invalid | Awaiting D3 | forbidden-range/operation static guard |
-| R0D-D81-STRUCT-001 | PASS — D3 | `HOST_STRUCTURALLY_VERIFIED` | Awaiting D3 publication/authorization | Awaiting D3 | raw geometry, BAM, directory, chain, and ownership validation |
-| R0D-D81-CONTENT-001 | PASS — D3 | `HOST_CONTENT_VERIFIED` | Awaiting D3 publication/authorization | Awaiting D3 | c1541 extraction and payload SHA-256 validation |
+| R0D-FIX-001 | PASS | fixture identity only | PASS — D3 two clean boots | Awaiting chooser | 530,000-clock historical comparison fixture |
+| R0D-TICK-001 | PASS | static/observable | PASS — D3 two clean boots | Awaiting chooser | 100 Hz, 21-stage and stage-16 next-tick contract |
+| R0D-CLK-001 | PASS | result block | PASS — D3 two clean boots | Awaiting chooser | protected/rolling-clock counters |
+| R0D-WORLD-001 | PASS | result block | PASS — D3 two clean boots | Awaiting chooser | generation/source/world-age counters |
+| R0D-RENDER-001 | PASS | result block | PASS — D3 two clean boots | Awaiting chooser | non-render pool/DMA high-water counters |
+| R0D-AUDIO-001 | PASS | result block | PASS — D3 two clean boots | Awaiting chooser | service, channel and P0/P1 counters |
+| R0D-SNAP-001 | PASS | result block | PASS — D3 two clean boots | Awaiting chooser | extraction/publication/lag/drop/ownership |
+| R0D-IO-001 | PASS | result block | PASS — D3 two clean boots | Awaiting chooser | DMA/input/storage timing counters |
+| R0D-AI-001 | PASS | result block | PASS — D3 two clean boots | Awaiting chooser | stage-16 owner/held-intent/causality hooks |
+| R0D-MEM-001 | PASS | PASS | PASS — D3 two clean boots | Awaiting chooser | reserve remains zero; map accounting is retained |
+| R0D-TARGET-STATIC-001 | PASS | PASS | PASS — D3 two clean boots | Awaiting chooser | forbidden-range/operation static guard |
+| R0D-D81-STRUCT-001 | PASS — D3 | `HOST_STRUCTURALLY_VERIFIED` | PASS — D3 post-run recheck | Awaiting chooser | raw geometry, BAM, directory, chain, and ownership validation |
+| R0D-D81-CONTENT-001 | PASS — D3 | `HOST_CONTENT_VERIFIED` | PASS — D3 post-run recheck | Awaiting chooser | c1541 extraction and payload SHA-256 validation |
 
 `F65R0D.D81` is **INVALID — DO NOT USE** after physical chooser `ERROR CODE
 FF`; its transfer hash was not captured. `F65R0D2.D81` is also **INVALID — DO

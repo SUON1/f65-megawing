@@ -1,6 +1,6 @@
 # R0-D Handoff
 
-Status: **STAGE-1 D81 BUILDER CORRECTION COMPLETE — AWAITING VS CODE PUSH.**
+Status: **XEMU TESTING COMPLETE — EVIDENCE PUBLICATION PENDING.**
 
 R0-D adds a proof-only calibration harness around the historical
 530,000-clock protected non-render fixture. The fixture preserves the 100 Hz,
@@ -34,6 +34,15 @@ in one session and has passed host structural plus content extraction/hash
 validation. Its only admissible state is `HOST_CONTENT_VERIFIED`; commit,
 VS Code publication, explicit Xemu authorization, and physical chooser proof
 remain required.
+
+After publication at `48b3647`, D3 completed two independent clean Xemu drive-8
+AUTOBOOT runs. Both mounted the unchanged D81, reached the stable calibration
+identity, and produced the same screen SHA-256
+`cd424a2b51109d891a3c3388f0da114042462ddab43f543d912bcdff41e8bcf2` plus
+result-block SHA-256 `24f8e8dac28e79d9615bbae9fb58b716e92cf55b515e66483769721cf14587f7`.
+The post-Xemu host D81 gate passed again. D3 is now `XEMU_BOOT_VERIFIED`, not
+physical-chooser verified or test-eligible. See
+`docs/evidence/r0d/R0D-D81-D3-XEMU-RELEASE.md`.
 
 `F65R0D.D81` (SHA-256
 `a1d11bfb2b18a92618d55b5f3051a44d019adbdf2ba70b7c6715049567638d48`) and
