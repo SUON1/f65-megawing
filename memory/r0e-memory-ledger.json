@@ -1,0 +1,8 @@
+{
+  "identity":"r0e-0.1.0-combined-load-proof",
+  "status":"candidate ledger; no measured-limit selection",
+  "allocations":[{"range":"0x001900-0x0019ff","owner":"R0-E diagnostic target result","bytes":256},{"range":"0x018000-0x0180bf","owner":"R0-E proof snapshot candidate records","bytes":192,"candidateOnly":true},{"range":"0x01c000-0x01c03f","owner":"R0-E proof display descriptor","bytes":64,"candidateOnly":true}],
+  "protected":[{"range":"0x050000-0x057fff","r0eUse":"forbidden; no DMA/staging/audio allocation"},{"range":"0x058000-0x05ffff","owner":"measured-limits reserve","r0eUse":"forbidden","bytes":0}],
+  "target_code_data_stack":"reported from linked map; observations only",
+  "reserveBytes":0
+}

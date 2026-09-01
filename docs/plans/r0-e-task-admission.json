@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "task_id": "F65-R0-E",
+  "authorization": "AD-001, R0-E row",
+  "classification": "Bounded R0-E proof candidate",
+  "proof_question": "Whether the identified R0-B/C/D candidate inputs can run concurrently under independent clocks in Xemu with deterministic protected services and measurable headroom",
+  "requirements": ["PERF-001","PERF-002","PERF-003","PERF-004","MEM-001","MEM-004","MEM-005","AUDIO-001","AUDIO-002","AUDIO-003","RENDER-001","RENDER-002","RENDER-003","RENDER-004","TEST-003","TEST-005","MR-005","MR-006","MR-007","MR-010"],
+  "engine_sections": [2,3,4,5,8,11,12,"17.2",18,19],
+  "upstream_identities": {"r0a":{"commit":"1ab5b62","status":"closed bounded proof"},"r0b":{"commit":"18cac27","status":"closed bounded proof"},"r0c":{"commit":"d02be34","status":"candidate-complete by owner waiver; revalidate input identity"},"r0d":{"commit":"de682be","status":"closed admitted proof"}},
+  "target_language":"LLVM-MOS C primary; no new low-level wrapper admitted",
+  "mutable_owner":"R0-E proof harness only; never CoreRuntime or module-private production state",
+  "simulation":"exactly 100 Hz proof timeline with frozen 21-step order; presentation/services independently phased",
+  "presentation":"candidate only; never authoritative; incomplete world buffers never display",
+  "reserve_policy":"$058000-$05FFFF untouched; every R0-E allocation explicitly charged",
+  "storage_policy":"no tactical storage operation during active simulation; bounded packaging/load checks only",
+  "production_values":"NOT_APPLICABLE_UNTIL_GATE: measured-limits revision",
+  "hardware_closure":"NOT_APPLICABLE_UNTIL_GATE: R0-F — R0-E is Xemu evidence only",
+  "carrier":{"host_filename":"F65R0E.D81","disk_label":"F65 R0-E","disk_id":"65","petscii_filenames":["autoboot.c65","r0e-proof","r0e-evid"],"payloads":["AUTOBOOT.C65","F65-R0E-PROOF.prg","R0E-EVID.txt"],"entry_file":"AUTOBOOT.C65 -> R0E-PROOF","release_record":"build/r0e/manifests/r0e-d81-release.json","validators":["tools/diagnostics/r0e_validate_target.py","tools/diagnostics/r0e_d81_loadability_gate.py"],"stable_identity":"R0-E COMBINED-LOAD PROOF CANDIDATE / RESULT $1900-$19FF"},
+  "d81_state":"UNVERIFIED",
+  "configuration_discrepancy":"F65_OFFICIAL_RECORD.md retains stale current-R0-C wording; R0-E uses the actual R0-D baseline without rewriting authority text."
+}

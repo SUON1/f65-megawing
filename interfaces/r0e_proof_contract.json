@@ -1,0 +1,13 @@
+{
+  "identity": "r0e-0.1.0-combined-load-proof",
+  "status": "R0-E-CANDIDATE-STAGE-1",
+  "simulation_hz": 100,
+  "tick_stages": 21,
+  "historical_input": {"id": "R0D-PW-530K-001", "clocks": 530000, "meaning": "comparison workload only; not a production budget"},
+  "combined_profile": {"aircraft":9,"guidedMissiles":16,"gunGroups":24,"decoys":48,"missionEntities":8,"objectives":8,"presentationEffects":64,"radarTrackProxy":10},
+  "snapshot": {"states":["FREE","PUBLISHING","READY","READING"],"recordBytes":64,"candidateBuffers":3,"rules":["simulation alone publishes","presentation alone acquires/releases","no READY or READING mutation by simulation","no FREE means skip publication without a simulation stall"]},
+  "shedding_ladder": ["optional presentation effects","distant-object impostors","distant terrain detail","optional shading/decorative faces","filled -> reduced-filled -> validated wireframe","retain previous complete world buffer and reduce world cadence"],
+  "services": {"input":"edge accumulation; every legal corpus edge preserved","audio":"priority-0 service observed under maximum proxy presentation load","dma":"DMA_HARDWARE_PROBE_NOT_EXECUTED","storage":"inactive during active proof timeline"},
+  "records": {"targetResult": {"address":"0x1900","bytes":256,"owner":"R0-E diagnostics only"}, "snapshotProofRecord":{"bytes":64,"owner":"R0-E proof handoff only"}},
+  "d81": {"filename":"F65R0E.D81","label":"F65 R0-E","id":"65","entries":["autoboot.c65","r0e-proof","r0e-evid"],"entry":"AUTOBOOT.C65 -> R0E-PROOF"}
+}
