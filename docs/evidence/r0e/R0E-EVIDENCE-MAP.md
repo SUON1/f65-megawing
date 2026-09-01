@@ -1,6 +1,6 @@
 # R0-E Evidence Map
 
-Status: **Stage 1 source/host validation complete; Xemu is not authorized or executed.**
+Status: **Functional-proxy rework is awaiting a source-identified rebuild. Xemu evidence is not yet valid for this source revision.**
 
 | Test ID | Host | Target static | Xemu | Physical | Scope |
 |---|---|---|---|---|---|
@@ -15,11 +15,14 @@ Status: **Stage 1 source/host validation complete; Xemu is not authorized or exe
 | R0E-D81-STRUCT-001 | PASS | PASS | not applicable | R0-F chooser | 819,200-byte geometry, BAM, chain, ownership validation |
 | R0E-D81-CONTENT-001 | PASS | PASS | recheck required after Stage 3 | R0-F chooser | pinned extraction and payload hashes |
 
-Stage 1 candidate: `F65R0E.D81`, SHA-256
-`612a7bf0877132677e40ba75b15458cfa9160618b79200be300242ea222ee138`, disk
-`F65 R0-E`/ID `65`, entry `AUTOBOOT.C65 -> R0E-PROOF`. Its state is
-`HOST_CONTENT_VERIFIED`, not Xemu-verified, final, physical-verified, or test-eligible.
+The next candidate must be fresh-built only after the reworked source has a
+local commit. Its result block records five target cases (normal, forced lag,
+shedding, one-over, and input/audio pressure), complete snapshot ownership,
+and an explicit `TIMING: NOT_MEASURED` status. A structurally valid carrier
+whose release record names another source commit is invalid for evidence use.
 
 The host oracle exercised 1,000 proof ticks per case. Forced lag produced 798
 deterministic skipped publications with unchanged checksum `393387319`; this
-is host-proxy evidence, not a measured platform limit. No Xemu command has run.
+is host-proxy evidence, not a measured platform limit. The future `xemu` build
+target performs two clean boots and validates the target result block, but it
+does not convert functional proxy output into a timing or hardware claim.
