@@ -8,7 +8,7 @@ Status: **Stage 1 in progress — Xemu, publication, and physical execution are 
 | E1 | Generated proof contract, host independent-clock oracle, ledger | Complete |
 | E2 | Target diagnostic, static validation, map/accounting | Complete |
 | E3 | Fresh D81 construction and host structural/content gate | Complete |
-| E4 | Local commits and Stage 1 stop | In progress |
+| E4 | Local commits and Stage 1 stop | Complete — awaiting owner authorization |
 | E5 | VS Code publication after `AUTHORIZE R0-E STAGE 2` | Blocked by owner authorization |
 | E6 | Xemu matrix/evidence after `AUTHORIZE R0-E STAGE 3` | Blocked by owner authorization |
 | E7 | R0-F hardware handoff only after published Xemu evidence | Blocked by E6 |

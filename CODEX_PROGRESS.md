@@ -881,3 +881,11 @@ The R0-C candidate is complete by owner waiver. The exact fresh carrier is `buil
   or assembly wrapper is claimed. The measured-limits reserve remains zero.
 - Exact resume point: commit Stage 1 local source only, then stop pending
   `AUTHORIZE R0-E STAGE 2`. Do not publish or run Xemu before authorization.
+
+### 2026-08-31 — Stage 1 source ready
+
+- Local commits: `0f2b86d` and `e8077c7`.
+- All required Stage 1 commands passed with no Xemu invocation. The fresh,
+  one-session carrier passed both host structural and host content gates.
+- Remaining state: source is ready for owner review only. Stage 2 publication
+  requires the exact phrase `AUTHORIZE R0-E STAGE 2`.
