@@ -3,7 +3,7 @@
 Stage 1 runs host and target-static validation only. The source must be
 committed and published under the stage-control procedure before `xemu` is run.
 
-The raster-observation candidate carrier is `F65R0E2.D81`, label `F65 R0-E2`, ID `E2`, with `AUTOBOOT.C65 -> R0E-PROOF`. `F65R0E.D81` remains historical functional-proxy evidence only. Before any later Xemu run, compare the published source commit, D81 SHA-256, payload hashes, c1541 identity, Xemu identity, and ROM identity. Run normal, forced lag, shedding, one-over queue/pool/effect, input pressure, priority-0 audio pressure, storage-inactive, and any admitted DMA/IRQ cases. DMA is currently `DMA_HARDWARE_PROBE_NOT_EXECUTED`.
+The raster-observation candidate carrier is `F65R0E3.D81`, label `F65 R0-E3`, ID `65`, with `AUTOBOOT.C65 -> R0E-PROOF`. `F65R0E2.D81` is invalid after a physical chooser `ERROR CODE FF`; do not copy, rename, or retest it. `F65R0E.D81` remains historical functional-proxy evidence only. Before any later Xemu run, compare the published source commit, D81 SHA-256, payload hashes, c1541 identity, Xemu identity, and ROM identity. Run normal, forced lag, shedding, one-over queue/pool/effect, input pressure, priority-0 audio pressure, storage-inactive, and any admitted DMA/IRQ cases. DMA is currently `DMA_HARDWARE_PROBE_NOT_EXECUTED`.
 
 `tools/build/r0e.sh xemu` requires the owner ROM, runs two clean Xemu boots of
 the exact host-gated D81, and validates screen plus `$1900-$19FF` result data.

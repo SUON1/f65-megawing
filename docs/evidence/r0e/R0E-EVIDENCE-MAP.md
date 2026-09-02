@@ -1,9 +1,10 @@
 # R0-E Evidence Map
 
 Status: **The historical carrier is `TEST_ELIGIBLE` for its bounded physical
-functional-proxy scope. The new read-only raster-observation source is not yet
-a carrier and has no physical evidence. R0-F timing/measurement remains
-required.**
+functional-proxy scope. The R0-E2 raster-observation carrier failed the
+physical chooser with `ERROR CODE FF` and is invalid. R0-E3 is a fresh,
+unbuilt replacement using the physically proven numeric disk-ID convention.
+R0-F timing/measurement remains required.**
 
 | Test ID | Host | Target static | Xemu | Physical | Scope |
 |---|---|---|---|---|---|
@@ -12,12 +13,12 @@ required.**
 | R0E-RENDER-001 | PASS | contract/static | PASS — functional proxy | PASS — banner proxy | exact presentation-only shedding ladder |
 | R0E-INPUT-001 | PASS | contract/static | PASS — target pressure proxy | PASS — banner proxy | scripted proxy edge pressure; no latency measurement |
 | R0E-AUDIO-001 | PASS | contract/static | PASS — target pressure proxy | PASS — banner proxy | priority-0 service proxy; no latency measurement |
-| R0E-RASTER-001 | aggregation oracle pending local validation | static scope guard pending local validation | pending rebuilt D81/Xemu | pending rebuilt D81/physical chain | 16 requested raster-low-byte phase bins/case; 33-tick window; raw modulo-256 line delta only |
+| R0E-RASTER-001 | PASS | PASS | PASS — R0-E2 only | blocked — R0-E2 carrier rejected | 16 requested raster-low-byte phase bins/case; 33-tick window; raw modulo-256 line delta only |
 | R0E-FAULT-001 | PASS | contract/static | PASS — functional proxy | PASS — banner proxy | deterministic queue/pool/effect one-over fixture |
 | R0E-DMA-001 | `DMA_HARDWARE_PROBE_NOT_EXECUTED` | PASS | `DMA_HARDWARE_PROBE_NOT_EXECUTED` | R0-F if admitted | no fabricated DMA result |
 | R0E-STORAGE-001 | PASS | PASS | PASS — no storage service invoked | PASS — banner proxy | storage inactive during active proof timeline |
-| R0E-D81-STRUCT-001 | PASS | PASS | not applicable | PASS — exact SD hash and chooser | 819,200-byte geometry, BAM, chain, ownership validation |
-| R0E-D81-CONTENT-001 | PASS | PASS | unchanged SHA-256 verified | PASS — readable chooser directory | pinned extraction and payload hashes |
+| R0E-D81-STRUCT-001 | PASS — R0-E2 | PASS | not applicable | FAIL — `ERROR CODE FF` | 819,200-byte geometry, BAM, chain, ownership validation did not establish physical chooser compatibility |
+| R0E-D81-CONTENT-001 | PASS — R0-E2 | PASS | unchanged SHA-256 verified | FAIL — no readable chooser directory | pinned extraction and payload hashes did not establish physical chooser compatibility |
 
 `F65R0E.D81` has SHA-256
 `8cb76830489095a92a266c884e168efacfd6cb8e7d4db456300a3fbf67cc623b`, source

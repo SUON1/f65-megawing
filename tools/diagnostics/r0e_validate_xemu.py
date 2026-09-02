@@ -68,7 +68,7 @@ evidence = {
     "class": "XEMU_FUNCTIONAL_PROXY_WITH_RASTER_OBSERVATION",
     "result": "PASS",
     "sourceCommit": commit,
-    "d81Sha256": sha(artifacts / "F65R0E2.D81"),
+    "d81Sha256": sha(artifacts / "F65R0E3.D81"),
     "tests": ["R0E-TICK-001", "R0E-SNAP-001", "R0E-RENDER-001", "R0E-FAULT-001", "R0E-INPUT-AUDIO-001", "R0E-RASTER-001", "R0E-STORAGE-001"],
     "dma": "DMA_HARDWARE_PROBE_NOT_EXECUTED",
     "timing": {"status": "RASTER_LINE_DELTA_MODULO_256_OBSERVED", "unit": "raster-line low-byte delta modulo 256", "sampleCountPerCase": 16, "phaseBins": 16, "windowTicks": 33, "resultOrdering": "raw-byte numeric rank only; not elapsed-time p50/p95/worst after possible wrap", "reason": "Xemu verifies the target-side read-only observation record; it is not CPU-cycle, latency, DMA, IRQ, physical-MEGA65, or measured-limit evidence"},
