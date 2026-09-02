@@ -1,7 +1,9 @@
 # R0-E Evidence Map
 
-Status: **The exact carrier is `TEST_ELIGIBLE` for its bounded physical
-functional-proxy scope. R0-F timing/measurement evidence remains required.**
+Status: **The historical carrier is `TEST_ELIGIBLE` for its bounded physical
+functional-proxy scope. The new read-only raster-observation source is not yet
+a carrier and has no physical evidence. R0-F timing/measurement remains
+required.**
 
 | Test ID | Host | Target static | Xemu | Physical | Scope |
 |---|---|---|---|---|---|
@@ -10,6 +12,7 @@ functional-proxy scope. R0-F timing/measurement evidence remains required.**
 | R0E-RENDER-001 | PASS | contract/static | PASS — functional proxy | PASS — banner proxy | exact presentation-only shedding ladder |
 | R0E-INPUT-001 | PASS | contract/static | PASS — target pressure proxy | PASS — banner proxy | scripted proxy edge pressure; no latency measurement |
 | R0E-AUDIO-001 | PASS | contract/static | PASS — target pressure proxy | PASS — banner proxy | priority-0 service proxy; no latency measurement |
+| R0E-RASTER-001 | aggregation oracle pending local validation | static scope guard pending local validation | pending rebuilt D81/Xemu | pending rebuilt D81/physical chain | 16 requested raster-low-byte phase bins/case; 33-tick window; raw modulo-256 line delta only |
 | R0E-FAULT-001 | PASS | contract/static | PASS — functional proxy | PASS — banner proxy | deterministic queue/pool/effect one-over fixture |
 | R0E-DMA-001 | `DMA_HARDWARE_PROBE_NOT_EXECUTED` | PASS | `DMA_HARDWARE_PROBE_NOT_EXECUTED` | R0-F if admitted | no fabricated DMA result |
 | R0E-STORAGE-001 | PASS | PASS | PASS — no storage service invoked | PASS — banner proxy | storage inactive during active proof timeline |
@@ -27,8 +30,15 @@ Retained captures and machine-readable evidence are under `xemu/`.
 
 The host oracle exercised 1,000 proof ticks per case. Forced lag produced 798
 deterministic skipped publications with unchanged checksum `393387319`; this
-is host-proxy evidence, not a measured platform limit. The exact SD copy hash,
+is host-proxy evidence, not a measured platform limit. The historical exact SD copy hash,
 physical chooser directory, and running banner prove carrier loadability and
 the displayed functional proxy on the MEGA65. They do not create a timing,
 DMA, IRQ, phase-sweep, pinned-platform, or measured-limit claim; see
 `R0E-D81-PHYSICAL-RELEASE.md`.
+
+The in-progress successor observes only a read-only VIC-II-compatible raster
+low-byte delta through the LLVM-MOS header. Its q50/q95/maximum fields rank raw
+bytes only and are not elapsed-time p50/p95/worst results. It is not a
+CPU-cycle, latency, DMA, IRQ, physical-MEGA65, or measured-limit result. A rebuilt D81 has no
+standing from the historical carrier and must pass the complete fail-closed D81
+chain again.

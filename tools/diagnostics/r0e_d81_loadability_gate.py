@@ -15,7 +15,7 @@ def name(x): return bytes(v&127 for v in x[3:19]).decode("ascii","replace").rstr
 h=sec(40,0)
 if h[:2]!=bytes((40,3)): fail("header directory link")
 label=bytes(v&127 for v in h[4:20]).decode("ascii","replace").rstrip(" \xa0"); ident=bytes(v&127 for v in h[22:24]).decode("ascii","replace").rstrip(" \xa0")
-if (label,ident)!=("F65 R0-E","65"): fail("disk label/ID mismatch")
+if (label,ident)!=("F65 R0-E2","E2"): fail("disk label/ID mismatch")
 free=set()
 for t in range(1,81):
  block=sec(40,1 if t<=40 else 2); off=16+((t-1)%40)*6; bits=block[off+1:off+6]; avail={(t,s) for s in range(40) if bits[s//8]&(1<<(s%8))}
