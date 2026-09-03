@@ -38,6 +38,30 @@ program runs. The remaining necessary discriminator is the exact E4 SD-copy
 hash and allocation record, followed by a one-variable reconstruction of the
 known-good control construction path.
 
+## Reconstruction results
+
+The retained control was extracted and freshly reconstructed with the pinned
+`c1541`, the exact `F65 R0-E,65` format string, and the original write order.
+The reconstructed image has the exact physical-pass SHA-256
+`8cb76830489095a92a266c884e168efacfd6cb8e7d4db456300a3fbf67cc623b` and is
+byte-for-byte identical to `F65R0E.D81`. The historical construction procedure
+is therefore deterministic and preserved.
+
+The first one-variable local image has also been built:
+
+```text
+F65R0E-PRG-DELTA.D81
+SHA-256: ca85f73ffba93ea290078a60b372406dc6ab58eddacdf0765f7589cea039c40f
+format/label/ID: F65 R0-E / 65 — unchanged from physical-pass control
+AUTOBOOT.C65: unchanged from physical-pass control
+R0E-EVID.txt: unchanged payload from physical-pass control
+R0E-PROOF.prg: only changed input; 5,258 bytes / 21 D81 blocks
+```
+
+The larger PRG necessarily moves the unchanged evidence file from track 39,
+sector 17 to track 39, sector 22. Its structural comparison passes; it has not
+been presented to Xemu, copied to an SD card, or physically chooser-tested.
+
 ## Permanent control
 
 `tools/diagnostics/d81_foundation_compare.py` is the retained, read-only

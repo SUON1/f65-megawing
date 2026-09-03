@@ -20,10 +20,13 @@ replace the SD-copy or physical-chooser gates in `00_D81_LOADABILITY_GATE.md`.
 3. Reconstruct the physical-pass control using its recorded builder, command,
    payloads, label, ID, and write order. It must pass every host/Xemu/physical
    gate before any R0-E payload change is introduced.
-4. Introduce one difference at a time and retain the comparison report for each:
+4. The reconstruction must reproduce the control hash byte-for-byte. A different
+   result is a construction-path failure, even when its D81 parser result is
+   otherwise valid.
+5. Introduce one difference at a time and retain the comparison report for each:
    payload bytes, evidence file, disk label/ID, directory entry order, builder,
    and delivery method are separate changes.
-5. Require two fresh physical chooser passes from the qualified construction
+6. Require two fresh physical chooser passes from the qualified construction
    route before another R0 feature carrier is admitted.
 
 No D81 is called mountable based only on this comparator. The physical chooser
