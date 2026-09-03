@@ -34,8 +34,11 @@ R0-E4 carrier images before another carrier is constructed.
 
 These are forensic observations, not a claim that a PRG payload itself can
 cause the chooser to execute it. `ERROR CODE FF` still occurs before the entry
-program runs. The remaining necessary discriminator is the exact E4 SD-copy
-hash and allocation record, followed by a one-variable reconstruction of the
+program runs. On 2026-09-03, the mounted SD copy at
+`/Volumes/MEGA65FDISK/F65R0E4.D81` was read-only hashed and exactly matched
+the failed E4 source SHA-256. A wrong, stale, or truncated SD-copy file is
+therefore excluded for E4. Its allocation record is still pending a privileged
+raw FAT32 inspection, followed by the one-variable reconstruction of the
 known-good control construction path.
 
 ## Reconstruction results
