@@ -12,9 +12,9 @@ xemu="$root/toolchain/xemu/xmega65"
 out="$root/build/r0e"
 classes="$out/host-classes"
 
-need_host(){ test -x "$java" && test -x "$javac"; }
-need_target(){ test -x "$cc" && test -x "$objdump" && test -x "$nm"; }
-need_d81(){ test -x "$c1541" && test -x "$petcat"; }
+need_host(){ test -x "$java" && test -x "$javac" || { echo 'R0-E build blocked: pinned Java runtime/compiler are absent from toolchain/runtime.' >&2; exit 2; }; }
+need_target(){ test -x "$cc" && test -x "$objdump" && test -x "$nm" || { echo 'R0-E build blocked: pinned LLVM-MOS target tools are absent from toolchain/runtime.' >&2; exit 2; }; }
+need_d81(){ test -x "$c1541" && test -x "$petcat" || { echo 'R0-E build blocked: pinned VICE c1541/petcat tools are absent.' >&2; exit 2; }; }
 hostc(){ mkdir -p "$classes"; "$javac" -d "$classes" "$root/tools/generators/src/main/java/f65/tools/R0EHostTools.java"; }
 host(){ "$java" -Df65.root="$root" -cp "$classes" f65.tools.R0EHostTools "$@"; }
 generate(){ need_host; hostc; host generate; }
