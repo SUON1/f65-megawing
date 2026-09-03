@@ -17,7 +17,9 @@ This supersedes `8826fc89706bcca0d9587f9bae80b5d12a8a1d35e3e0a92868c118e9ef20405
 `e01eb41cff0158e7b609a365ecc72b78b3ce825ddca06a42a32f8954f4c7e8d0`.
   Its outer SD-card filename must remain exactly `F65-R0C-MEDIA.D81`. Its
   directory shows `AUTOBOOT`, `R0C-FINAL`, `R0CPROOF`, and `R0C-MEDIA`, all
-  written during one fresh-format c1541 session.
+  written during one fresh-format c1541 session. Any future direct-card copy
+  must use `tools/diagnostics/d81_sd_transfer.sh` and record both its matching
+  hash and exactly one FAT32 physical extent before chooser testing.
 - `F65-R0CFINAL.D81` (SHA-256 `ba72aa82387f7e65551e893a3274f1c7f26a813416652c4aeab73c6a8b7e7e38`)
   is the known mountable three-file control. Do not overwrite or modify it.
 - The prior `R0CMEDIA.D81` and `ROCFINAL.D81` deliveries were physically

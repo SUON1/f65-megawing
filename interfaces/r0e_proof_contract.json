@@ -20,5 +20,5 @@
     "limitations":["not CPU cycles","not an input or audio latency result","a zero or nonzero modulo value cannot exclude a 256-line wrap","raw-byte q50/q95/maximum are not elapsed-time p50/p95/worst claims","Xemu observation is not physical-MEGA65 evidence","no DMA or IRQ measurement is performed"]
   },
   "records": {"targetResult": {"address":"0x1900","bytes":256,"owner":"R0-E diagnostics only"}, "snapshotProofRecord":{"bytes":64,"owner":"R0-E proof handoff only"}},
-  "d81": {"filename":"F65R0E3.D81","label":"F65 R0-E3","id":"65","entries":["autoboot.c65","r0e-proof","r0e-evid"],"entry":"AUTOBOOT.C65 -> R0E-PROOF","predecessor":"F65R0E.D81 is historical functional-proxy evidence only; F65R0E2.D81 is invalid after a physical chooser ERROR CODE FF and must not be reused"}
+  "d81": {"status":"BLOCKED_NO_CURRENT_CARRIER","filename":null,"label":null,"id":null,"entries":["autoboot.c65","r0e-proof","r0e-evid"],"entry":"AUTOBOOT.C65 -> R0E-PROOF","predecessor":"F65R0E.D81 is historical functional-proxy evidence only; it passed the same-card one-extent control; F65R0E2.D81 and F65R0E3.D81 are invalid after physical chooser ERROR CODE FF and must not be reused","blocker":"R0-E4 is not assigned; any authorized new carrier must pass the corrected source/copy-hash, one-extent, post-rename, and safe-eject gate"}
 }
