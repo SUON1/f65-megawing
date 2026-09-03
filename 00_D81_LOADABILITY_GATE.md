@@ -53,6 +53,7 @@ A matching hash of the SD-card copy is necessary but not sufficient. The MEGA65 
 11. **One contiguous SD extent is mandatory.** The copied D81 must occupy exactly one physical extent on the FAT32 data partition. Logical file size and SHA-256 do not prove this.
 12. **No plain-copy release procedure.** A bare `cp`, Finder copy, or equivalent followed only by `sync` and `shasum` is not an admissible transfer gate. Use the repository transfer helper or another recorded process that stages, hashes, verifies one extent, renames without rewriting, re-verifies, and safely ejects.
 13. **Do not churn identities while the SD layout is unknown.** Repeatedly adding replacement D81 files to a fragmented card can repeat or worsen the condition. After a matching-hash chooser `FF`, inspect the failed SD file's extent map before building another D81.
+14. **Compare before rebuilding.** After any second chooser `FF` in a carrier family, freeze new carrier identities and run `tools/diagnostics/d81_foundation_compare.py` against a retained physical-pass control and every failed image. Record the raw D81 component differences before changing builder, payload, label/ID, directory order, or transfer method again.
 
 ## Required construction procedure
 
