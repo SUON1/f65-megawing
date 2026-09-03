@@ -6,8 +6,8 @@ the physical chooser with `ERROR CODE FF` and are invalid. R0-E3 disproved the
 disk-ID hypothesis. The release gate omitted mandatory SD FAT32 contiguity;
 R0-E3 was measured at five extents. The retained successful R0-E carrier
 measured at one extent on the same card, clearing card-wide and hardware
-causes. R0-E4 is unassigned and may proceed only through the corrected
-per-artifact transfer gate.
+causes. `F65R0E4.D81` is admitted as a new candidate and may proceed only
+through the corrected per-artifact transfer gate.
 R0-F timing/measurement remains required.**
 
 | Test ID | Host | Target static | Xemu | Physical | Scope |
