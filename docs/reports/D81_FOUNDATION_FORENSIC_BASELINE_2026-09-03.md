@@ -13,7 +13,7 @@ R0-E4 carrier images before another carrier is constructed.
 | Control | `F65R0E.D81` | `8cb76830489095a92a266c884e168efacfd6cb8e7d4db456300a3fbf67cc623b` | PASS |
 | Failed | `F65R0E2.D81` | `e1955eff6f474a77e1b1c889b16bf38a3443db9a0213e78b44bdb605b89337de` | chooser `FF` |
 | Failed | `F65R0E3.D81` | `7f1e9c79476a6dd3e55d94e1bc9a7ab624e4448cf8c6531946a730d24350d445` | chooser `FF` |
-| Failed | `F65R0E4.D81` | `a92c61800e44c0e84892cf3d38c5b0c701700b1055bf3882b11148680ec231ef` | chooser `FF` |
+| Failed | `F65R0E4.D81` | `a92c61800e44c0e84892cf3d38c5b0c701700b1055bf3882b11148680ec231ef` | chooser `FF`; SD copy was 15 extents |
 
 ## Measured facts
 
@@ -37,9 +37,11 @@ cause the chooser to execute it. `ERROR CODE FF` still occurs before the entry
 program runs. On 2026-09-03, the mounted SD copy at
 `/Volumes/MEGA65FDISK/F65R0E4.D81` was read-only hashed and exactly matched
 the failed E4 source SHA-256. A wrong, stale, or truncated SD-copy file is
-therefore excluded for E4. Its allocation record is still pending a privileged
-raw FAT32 inspection, followed by the one-variable reconstruction of the
-known-good control construction path.
+therefore excluded for E4. The user-run raw FAT32 audit then measured 15
+physical extents. That makes E4 a delivery-qualification failure as well as a
+chooser failure, so E4 cannot discriminate any compilation or D81-content
+hypothesis. The one-variable reconstruction of the known-good control
+construction path remains the next discriminator.
 
 ## Reconstruction results
 
