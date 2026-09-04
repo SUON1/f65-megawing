@@ -61,3 +61,50 @@ D81_STATE: HOST_CONTENT_VERIFIED; AWAITING XEMU/SD/PHYSICAL GATES
 The filename is new because prior E2/E3/E4 tested copies are retired. The D81
 bytes reproduce the already recorded R0-E one-variable PRG-delta candidate;
 only the host filename changes to match the new MEGA65-created slot.
+
+## Physical SD transfer result — 2026-09-04
+
+`F65R0EF.D81` was rejected before testing because the raw FAT32 audit measured
+13 extents. Its bytes matched the candidate, but it had been delivered through
+a file-replacement path rather than the required untouched-slot transaction.
+That tested copy is retired.
+
+The replacement identity `F65R0EG.D81` was freshly constructed in one pinned
+`c1541` session with the same deterministic D81 bytes, then delivered through
+the MEGA65-native slot procedure. The owner created the empty slot with
+`NEW D81 DD IMAGE` and ran the guarded slot-fill helper. Recorded results:
+
+```text
+D81_STATE: AWAITING_PHYSICAL_CHOOSER_VERIFICATION
+D81_FILENAME: F65R0EG.D81
+D81_SHA256: ca85f73ffba93ea290078a60b372406dc6ab58eddacdf0765f7589cea039c40f
+D81_BYTES: 819200
+DISK_LABEL: F65 R0-E
+DISK_ID: 65
+ENTRY_FILENAME: AUTOBOOT.C65
+SOURCE_BRANCH: codex/r0-e-development
+SOURCE_COMMIT: 702700f
+BUILDER_IDENTITY: toolchain/vice-clean/bin/c1541
+BUILDER_SHA256: 73235289aca30a7e2e8067e521bf604743156cc1d7499c888a3894d6e46fcb3c
+HOST_STRUCTURAL_RESULT: PASS
+HOST_CONTENT_RESULT: PASS
+XEMU_RESULT: NOT RUN FOR THIS EXACT FILENAME
+XEMU_EVIDENCE: NONE; exact artifact physical chooser test remains gated
+SD_COPY_SHA256: ca85f73ffba93ea290078a60b372406dc6ab58eddacdf0765f7589cea039c40f
+SD_FILESYSTEM: MS-DOS FAT32
+SD_DEVICE_IDENTIFIER: disk4s1
+SD_TRANSFER_METHOD: MEGA65-created contiguous slot; guarded dd conv=notrunc fill
+SD_CONTIGUITY_RESULT: PASS
+SD_EXTENT_COUNT: 1
+SD_EXTENT_EVIDENCE: logical 0, bytes 819200, device offset 103182336
+SD_ALLOCATION_PRESERVED: PASS; same device offset before and after fill
+SD_SAFE_EJECT_RESULT: PASS
+PHYSICAL_CHOOSER_RESULT: AWAITING HUMAN
+```
+
+The pre-fill slot hash was
+`1e743a99b1806271413e8a49951683b3edb8ff8b35ee8e0f8b6753ebccdb5b01`.
+Both the pre-fill and post-fill raw FAT32 audits reported one 819,200-byte
+extent at device offset `103182336`. The final hash matched the host candidate,
+and `diskutil` successfully ejected `/Volumes/MEGA65FDISK`. This is direct
+evidence that the in-place fill preserved the Freezer-created allocation.
