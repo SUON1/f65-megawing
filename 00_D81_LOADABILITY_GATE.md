@@ -133,7 +133,7 @@ If Xemu cannot exercise the physical chooser path, record that limitation. Do no
 - Independently inspect the staging file's physical allocation and require exactly one contiguous extent covering all 819,200 logical bytes. `shasum`, `stat`, `c1541`, and Xemu cannot establish this.
 - Rename the verified staging file to the exact documented final filename within the same directory, without rewriting its bytes. Recheck both SHA-256 and physical extent count after the rename.
 - Flush writes and use the operating system's safe-eject operation. Record successful ejection.
-- Prefer MEGA65 Ethernet file transfer when available; official MEGA65 guidance states that it does not create fragmented files. For direct card access, use `tools/diagnostics/d81_sd_transfer.sh` or an equivalently evidenced procedure.
+- Prefer MEGA65 Ethernet file transfer when available; official MEGA65 guidance states that it does not create fragmented files. For direct card access, invoke the fail-closed helper as `sudo tools/diagnostics/d81_sd_transfer.sh SOURCE.D81 /Volumes/MEGA65FDISK SHA256`. It refuses to write without the raw FAT32-audit privilege, stages under an auditable FAT 8.3 temporary name, verifies the hash and exactly one extent before and after rename, and removes only its own temporary staging file if a gate fails.
 - If one contiguous extent cannot be proven, set `SD_CONTIGUITY_RESULT: NOT VERIFIED` and stop. Do not present the image to the physical chooser.
 - Do not use Finder or another tool to modify the D81 contents after verification.
 
