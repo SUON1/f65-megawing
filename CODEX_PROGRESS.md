@@ -1,5 +1,30 @@
 # Codex Progress — F65 R0-D protected-workload calibration
 
+## R0-F admission update — 2026-09-04
+
+- Active branch: `codex/r0-f-development`, rooted directly at the closed R0-E
+  commit `97ead74605217df365e17eeb8d38a1d391372688`.
+- R0-F authorization: approved `AD-001` bounded physical-MEGA65 measurement,
+  capture, diagnosis, and phase-sweep evidence only. R0-F is not passed.
+- R0-E input: owner-accepted bounded Rev3 functional-proxy/raster-observation
+  closure at source `2559e18`; carrier `F65R0EG.D81`, SHA-256
+  `ca85f73ffba93ea290078a60b372406dc6ab58eddacdf0765f7589cea039c40f`.
+  The Rev3 carrier did not receive a fresh Xemu run and that gate is not
+  inherited.
+- Completed this update: created R0-F-owned admission, ownership, execution
+  plan, test guide, evidence map, interface/ledger impact, and stage-control
+  records. They explicitly record no target register/clobber, memory,
+  MAP/base-page, DMA, timing/deadline, IRQ/NMI, ABI, ledger, or reserve change.
+- R0-F D81 state: `UNVERIFIED`; no filename, payload set, candidate image,
+  Xemu result, SD transfer, physical chooser result, platform identity, or
+  physical measurement exists.
+- DMA/IRQ state: `DMA_HARDWARE_PROBE_NOT_EXECUTED` and
+  `IRQ_MEASUREMENT_NOT_EXECUTED` pending separately admitted wrappers.
+- Next safe step: define and validate the R0-F measurement contract and any
+  required platform-wrapper admission before target implementation. Physical
+  work remains blocked pending owner ROM access, administrator authentication,
+  SD-card movement, MEGA65 operation, platform identity, and capture.
+
 ## Original objective
 
 Implement the bounded R0-D protected-workload and calibration proof defined by

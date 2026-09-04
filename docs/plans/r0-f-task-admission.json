@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "task_id": "F65-R0-F",
+  "milestone": "Phase 0 / R0-F",
+  "authorization": "AD-001, R0-F row; active approval record 2026-08-20",
+  "classification": "Bounded physical-MEGA65 measurement, capture, diagnosis, and phase-sweep evidence",
+  "proof_question": "Whether a freshly rebuilt, fully gated R0-F carrier corresponding to the owner-accepted R0-E configuration can produce attributable physical timing, DMA/IRQ (only if separately admitted), input/audio, snapshot, high-water, shedding, reserve, and storage-inactivity observations on a pinned MEGA65 platform.",
+  "baseline": {
+    "branch": "codex/r0-f-development",
+    "parent_commit": "97ead74605217df365e17eeb8d38a1d391372688",
+    "r0e_source_commit": "2559e18",
+    "r0e_closure": "OWNER_ACCEPTED_BOUNDED_R0E_CLOSURE",
+    "r0e_carrier": "F65R0EG.D81",
+    "r0e_carrier_sha256": "ca85f73ffba93ea290078a60b372406dc6ab58eddacdf0765f7589cea039c40f",
+    "r0e_result": "R0E1 REV3, result block $1900-$19FF"
+  },
+  "upstream_status": {
+    "r0e_accepted_scope": "bounded combined-load functional proxy and read-only raster observation",
+    "r0e_preserved_non_claims": ["CPU cycles", "input latency", "audio latency", "elapsed-time p50/p95/worst", "physical limit", "DMA hardware probe", "IRQ measurement", "pinned platform identity"],
+    "r0e_xemu_for_rev3": "NOT RERUN; cannot be inherited by R0-F"
+  },
+  "authorized": [
+    "R0-F-owned admission, ownership, execution-plan, test-guide, evidence-map, interface/ledger-impact, and stage-control records",
+    "fresh D81 construction from R0-F source payloads only after the records and host implementation are ready",
+    "host structural/content verification, then two clean Xemu boots of the exact R0-F D81",
+    "physical identity capture, MEGA65-native-slot transfer, chooser verification, and bounded physical observations",
+    "separately justified DMA or IRQ instrumentation only after its wrapper contract documents registers, ownership, save/restore, clobbers, failure behavior, and validation"
+  ],
+  "prohibited": [
+    "reuse, copy, append to, rename, or retest F65R0EG.D81 or any retired carrier",
+    "inherit or fabricate an Xemu, DMA, IRQ, latency, elapsed-time, limit, or platform-identity result",
+    "freeze measured limits, select production values, open Phase 1, or implement gameplay",
+    "modify preserved specifications, CoreRuntime, public ABI, memory ownership, 100 Hz tick order, pool capacity, or reserve",
+    "physical chooser testing before the exact R0-F D81 passes every preceding D81 state"
+  ],
+  "carrier": {
+    "state": "UNVERIFIED — no R0-F filename, payload set, D81, or release record assigned",
+    "construction": "Fresh format and all payload writes in one pinned toolchain/vice-clean/bin/c1541 session; source payloads only.",
+    "delivery": "Fresh unique uppercase 8.3 MEGA65-created root slot followed only by sudo tools/diagnostics/d81_sd_fill_mega65_slot.sh SOURCE.D81 /Volumes/MEGA65FDISK EXPECTED_SHA256.",
+    "required_states": ["UNVERIFIED", "HOST_STRUCTURALLY_VERIFIED", "HOST_CONTENT_VERIFIED", "XEMU_BOOT_VERIFIED", "SD_COPY_VERIFIED", "SD_CONTIGUITY_VERIFIED", "PHYSICAL_CHOOSER_VERIFIED", "TEST_ELIGIBLE"]
+  },
+  "platform_identity": {
+    "status": "AWAITING_PHYSICAL_CAPTURE",
+    "required": ["MEGA65 model, revision, serial or board identity where available", "core version and hash", "ROM version and hash", "HYPPO version and hash", "Freezer/SD Essentials version and hash", "video standard, selected mode, and output configuration", "clock setting", "storage device/media identity and FAT32 volume identity", "input devices and measurement-capture tooling identity"]
+  },
+  "measurement": {
+    "status": "NOT_IMPLEMENTED",
+    "requirements": ["units and result encoding", "calibration and wrap handling", "sample counts and phase-bin coverage", "independent 100 Hz simulation/display phase sweep", "rolling-window/deadline evidence", "input/audio latency evidence", "snapshot and high-water evidence", "deterministic faults/shedding", "reserve proof", "storage inactivity/behavior"],
+    "threshold_policy": "Only approved-source thresholds may be evaluated. All other R0-F outputs are observations for human measured-limits review."
+  },
+  "platform_wrapper": {
+    "dma": "DMA_HARDWARE_PROBE_NOT_EXECUTED until separately admitted and executed",
+    "irq": "IRQ_MEASUREMENT_NOT_EXECUTED until separately admitted and executed",
+    "registers_clobbers": "NOT_APPLICABLE — no R0-F target wrapper exists",
+    "map_base_page": "NOT_APPLICABLE — no R0-F target wrapper exists",
+    "memory": "NOT_APPLICABLE — no R0-F allocation exists",
+    "nmi": "NOT_APPLICABLE — no gameplay NMI source is enabled"
+  },
+  "revalidation_triggers": ["source payload", "toolchain", "builder", "disk metadata", "filename", "Xemu configuration", "SD transfer method", "platform wrapper", "physical platform identity"],
+  "exit": "R0-F cannot be called passed until complete physical evidence is reviewed and explicitly accepted by the owner."
+}

@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "task_id": "F65-R0-F",
+  "authorized_prefixes": ["CODEX_PROGRESS.md", "docs/agents/R0-F_START_PROMPT.md", "docs/plans/R0-F_EXEC_PLAN.md", "docs/plans/r0-f-*.json", "docs/testing/R0-F_TEST_GUIDE.md", "docs/evidence/r0f/", "docs/reports/R0-F_*", "interfaces/r0f_proof_contract.json", "interfaces/generated/r0f*", "memory/r0f-memory-ledger.json", "src/r0f/", "src/diagnostics/r0f/", "src/platform/r0f/", "tools/build/r0f.sh", "tools/diagnostics/r0f_*", "tools/generators/src/main/java/f65/tools/R0F*", "Makefile"],
+  "prohibited_prefixes": ["spec/", "src/r0a/", "src/r0b/", "src/r0c/", "src/r0d/", "src/r0e/", "docs/evidence/r0a/", "docs/evidence/r0b/", "docs/evidence/r0c/", "docs/evidence/r0d/", "docs/evidence/r0e/"],
+  "forbidden_change_classes": ["CoreRuntime ownership", "public ABI", "memory ownership", "pool capacities", "100 Hz tick order", "measured-limits reserve", "production renderer", "gameplay", "measured-limit selection"],
+  "state_owners": {
+    "r0e_inputs": "read-only retained evidence",
+    "r0f_admission_and_evidence": "R0-F proof control only",
+    "r0f_target_result": "unassigned; may be created only by an admitted R0-F diagnostics implementation",
+    "carrier": "unassigned; may be created only by a fresh R0-F build",
+    "physical_platform_identity": "owner-captured physical evidence"
+  },
+  "current_impact": {
+    "registers_clobbers": "NOT_APPLICABLE",
+    "cpu_visible_memory": "NOT_APPLICABLE",
+    "physical_memory": "NOT_APPLICABLE",
+    "map_base_page": "NOT_APPLICABLE",
+    "dma": "DMA_HARDWARE_PROBE_NOT_EXECUTED",
+    "timing_deadlines": "No implementation change; evidence planning only",
+    "irq_nmi": "IRQ_MEASUREMENT_NOT_EXECUTED; NMI not enabled",
+    "interfaces": "No interface change",
+    "ledger": "No allocation or reserve use"
+  }
+}
