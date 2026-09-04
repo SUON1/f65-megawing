@@ -61,12 +61,12 @@ mkdir -p "$report_dir"
 /bin/cp -X "$source_image" "$staging"
 staging_created=1
 sync
-python3 "$root/tools/diagnostics/d81_sd_contiguity.py" "$staging" --expected-sha256 "$expected_sha" --json "$report_dir/$filename.staging.json"
+python3 "$root/tools/diagnostics/d81_sd_contiguity.py" "$staging" --expected-sha256 "$expected_sha" --fat32-root-only --json "$report_dir/$filename.staging.json"
 mv -n "$staging" "$target"
 staging_created=0
 final_created=1
 sync
-python3 "$root/tools/diagnostics/d81_sd_contiguity.py" "$target" --expected-sha256 "$expected_sha" --json "$report_dir/$filename.final.json"
+python3 "$root/tools/diagnostics/d81_sd_contiguity.py" "$target" --expected-sha256 "$expected_sha" --fat32-root-only --json "$report_dir/$filename.final.json"
 /usr/sbin/diskutil eject "$sd_mount"
 final_created=0
 

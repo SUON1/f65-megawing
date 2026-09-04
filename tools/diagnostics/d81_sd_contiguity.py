@@ -93,7 +93,7 @@ def physical_extents(path):
     return merge_adjacent(extents)
 
 
-def fat32_extents(info, filename, file_size):
+def fat32_extents(info, filename, file_size, root_only=False):
     """Read the FAT32 cluster chain from the block device when macOS will not map it."""
     device = str(info.get("DeviceNode", ""))
     if not device.startswith("/dev/disk"):
@@ -171,7 +171,7 @@ def fat32_extents(info, filename, file_size):
                     if entry[:11] == wanted_short and not (attributes & 0x10):
                         first_cluster = struct.unpack_from("<H", entry, 26)[0] | (struct.unpack_from("<H", entry, 20)[0] << 16)
                         return first_cluster, struct.unpack_from("<I", entry, 28)[0]
-                    if attributes & 0x10 and entry[:1] != b".":
+                    if not root_only and attributes & 0x10 and entry[:1] != b".":
                         child = struct.unpack_from("<H", entry, 26)[0] | (struct.unpack_from("<H", entry, 20)[0] << 16)
                         found = find_in_directory(child, visited)
                         if found:
@@ -227,6 +227,11 @@ def main():
     parser.add_argument("copied_d81", nargs="?", type=pathlib.Path)
     parser.add_argument("--expected-sha256")
     parser.add_argument("--json", type=pathlib.Path)
+    parser.add_argument(
+        "--fat32-root-only",
+        action="store_true",
+        help="require the raw FAT32 fallback to resolve the 8.3 name in the volume root",
+    )
     parser.add_argument("--self-test", action="store_true")
     args = parser.parse_args()
     if args.self_test:
@@ -250,7 +255,9 @@ def main():
     except SystemExit as error:
         if "F_LOG2PHYS_EXT is unavailable" not in str(error):
             raise
-        extents = fat32_extents(info, image.name, image.stat().st_size)
+        extents = fat32_extents(
+            info, image.name, image.stat().st_size, root_only=args.fat32_root_only
+        )
         inspector = "raw FAT32 cluster-chain audit via tools/diagnostics/d81_sd_contiguity.py"
     report = {
         "D81_STATE": "SD_CONTIGUITY_VERIFIED" if len(extents) == 1 else "INVALID_FOR_MEGA65_FREEZER_MOUNT",

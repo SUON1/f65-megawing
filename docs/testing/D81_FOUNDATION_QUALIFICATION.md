@@ -31,3 +31,33 @@ replace the SD-copy or physical-chooser gates in `00_D81_LOADABILITY_GATE.md`.
 
 No D81 is called mountable based only on this comparator. The physical chooser
 is the final authority for mountability.
+
+## Existing system-card delivery
+
+A blank or reformatted card is not required and must not be proposed as the
+normal remedy: the MEGA65 system card contains required parent files. If a
+normal direct copy fails the single-extent gate and Ethernet is unavailable,
+create a fresh uniquely named slot at the SD root with the MEGA65 Freezer's
+`NEW D81 DD IMAGE` command. The official Freezer allocates the 819,200-byte D81
+as a contiguous FAT32 file.
+
+After safely powering down and moving the card to macOS, fill that exact slot
+without truncation:
+
+```sh
+sudo tools/diagnostics/d81_sd_fill_mega65_slot.sh \
+  build/r0e/artifacts/F65R0EF.D81 \
+  /Volumes/MEGA65FDISK \
+  ca85f73ffba93ea290078a60b372406dc6ab58eddacdf0765f7589cea039c40f
+```
+
+The helper fails before writing unless the untouched slot already has the
+right name, size, root location, and one physical extent. It backs up the slot,
+replaces exactly 819,200 bytes in place, rechecks the candidate hash and the
+same one-extent allocation, and safely ejects. A failure after writing starts
+triggers an in-place rollback. No other SD file is changed.
+
+In current official Freezer source, error `0x8B` has the explicit text
+`IMAGE FRAGMENTED`. A displayed `ERROR CODE FF` remains a chooser/attach-stage
+failure, but `FF` alone does not identify fragmentation; record the copied hash,
+extent result, and platform identities before drawing a cause conclusion.

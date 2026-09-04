@@ -4,7 +4,7 @@
 
 This is a fail-closed release contract. A D81 is not testable, releasable, or “final” merely because it was built, is 819,200 bytes, appears in a file chooser, or can be listed by `c1541`.
 
-The purpose of this gate is to prevent an unverified or structurally damaged D81 from reaching the owner. A MEGA65 freeze-menu or file-chooser `ERROR CODE FF` is a **carrier-image failure**, occurring before the contained program runs. It invalidates the D81 and all test claims based on it.
+The purpose of this gate is to prevent an unverified or structurally damaged D81 from reaching the owner. A MEGA65 freeze-menu or file-chooser `ERROR CODE FF` is a **chooser/attach-stage carrier failure**, occurring before the contained program runs. It invalidates the tested copy and all test claims based on it, but the code alone does not identify the failing carrier layer. In current official Freezer source, `0x8B` maps to `IMAGE FRAGMENTED`; `0xFF` falls through the generic error display (with an older commented description of `NO SUCH TRAP / EOF`). Diagnose `FF` using the exact copied hash, FAT32 extent map, and platform identities instead of equating the code itself with fragmentation.
 
 ## Prompt Header — copy this block verbatim
 
@@ -26,7 +26,7 @@ UNVERIFIED
 
 Never build a new test carrier by copying an existing D81 and reopening the copy in a second c1541 session to append files. Fresh-format the image and populate all files in one pinned-tool construction session.
 
-ERROR CODE FF at the MEGA65 chooser is a hard carrier failure. Retire that image identity and diagnose D81 construction, SD physical allocation, safe ejection, and platform identity before assigning a replacement. Do not patch, append to, rename, or re-test the failed image and do not blame the program inside it.
+ERROR CODE FF at the MEGA65 chooser is a hard chooser/attach-stage failure. Retire that tested copy and diagnose D81 construction, exact copied bytes, SD physical allocation, safe ejection, and platform identity before assigning a replacement. Do not patch, append to, rename, or re-test the failed copy and do not blame the program inside it.
 
 A matching hash of the SD-card copy is necessary but not sufficient. The MEGA65 Freezer requires a disk-image file to occupy one contiguous FAT32 extent. A fragmented file can hash perfectly and still fail to mount with ERROR CODE FF. Do not submit a copied image to the physical chooser until an independent extent check reports exactly one extent.
 ```
@@ -43,7 +43,7 @@ A matching hash of the SD-card copy is necessary but not sufficient. The MEGA65 
    append another file
    ```
 
-4. **Never repair a failed image in place.** A chooser failure, mount failure, BAM error, directory error, chain error, extraction mismatch, or hash mismatch permanently invalidates that artifact identity.
+4. **Never repair a failed image in place.** A chooser failure, mount failure, BAM error, directory error, chain error, extraction mismatch, or hash mismatch permanently invalidates that tested copy. The sanctioned MEGA65-native slot procedure below is not a repair: it fills a newly created, never-tested empty slot with a separately fresh-built and host-verified candidate of the same authorized filename.
 5. **PETSCII-safe disk names.** Use short, explicit, unique on-disk filenames compatible with the target filesystem. Host filenames and PETSCII/on-disk filenames must be recorded separately.
 6. **No casual renaming.** The filename verified in Xemu must be the filename copied to the SD card and selected on hardware. If a rename is unavoidable, the renamed copy becomes a new artifact and must repeat all gates.
 7. **Exact artifact identity.** Every released image must have a recorded byte length and SHA-256. Instructions, manifests, screenshots, and evidence must identify that exact hash.
@@ -51,7 +51,7 @@ A matching hash of the SD-card copy is necessary but not sufficient. The MEGA65 
 9. **Fail closed.** Missing tools, missing verification, ambiguous output, or an unavailable environment produces `NOT VERIFIED`, never PASS.
 10. **Never call an unverified artifact “FINAL.”** Use `CANDIDATE` until it reaches `TEST_ELIGIBLE`.
 11. **One contiguous SD extent is mandatory.** The copied D81 must occupy exactly one physical extent on the FAT32 data partition. Logical file size and SHA-256 do not prove this.
-12. **No plain-copy release procedure.** A bare `cp`, Finder copy, or equivalent followed only by `sync` and `shasum` is not an admissible transfer gate. Use the repository transfer helper or another recorded process that stages, hashes, verifies one extent, renames without rewriting, re-verifies, and safely ejects.
+12. **No plain-copy release procedure.** A bare `cp`, Finder copy, or equivalent followed only by `sync` and `shasum` is not an admissible transfer gate. Use the repository transfer helper or the sanctioned MEGA65-native slot-fill procedure. Either route must prove the exact hash and one extent before physical testing, then safely eject.
 13. **Do not churn identities while the SD layout is unknown.** Repeatedly adding replacement D81 files to a fragmented card can repeat or worsen the condition. After a matching-hash chooser `FF`, inspect the failed SD file's extent map before building another D81.
 14. **Compare before rebuilding.** After any second chooser `FF` in a carrier family, freeze new carrier identities and run `tools/diagnostics/d81_foundation_compare.py` against a retained physical-pass control and every failed image. Record the raw D81 component differences before changing builder, payload, label/ID, directory order, or transfer method again.
 
@@ -134,6 +134,8 @@ If Xemu cannot exercise the physical chooser path, record that limitation. Do no
 - Rename the verified staging file to the exact documented final filename within the same directory, without rewriting its bytes. Recheck both SHA-256 and physical extent count after the rename.
 - Flush writes and use the operating system's safe-eject operation. Record successful ejection.
 - Prefer MEGA65 Ethernet file transfer when available; official MEGA65 guidance states that it does not create fragmented files. For direct card access, invoke the fail-closed helper as `sudo tools/diagnostics/d81_sd_transfer.sh SOURCE.D81 /Volumes/MEGA65FDISK SHA256`. It refuses to write without the raw FAT32-audit privilege, stages under an auditable FAT 8.3 temporary name, verifies the hash and exactly one extent before and after rename, and removes only its own temporary staging file if a gate fails.
+- **Existing system-card / no-Ethernet workflow:** when an ordinary host copy cannot obtain one extent, use the Freezer's `NEW D81 DD IMAGE` command to create a new, unique, root-level slot whose uppercase 8.3 filename exactly matches the host candidate. Current official Freezer source calls `fat32_create_contiguous_file()` for exactly 819,200 bytes and then formats the D81. Power down safely, move the card to the Mac, and invoke `sudo tools/diagnostics/d81_sd_fill_mega65_slot.sh SOURCE.D81 /Volumes/MEGA65FDISK SHA256`. The helper must prove the untouched slot is exactly one FAT32 extent, retain a verified host-side backup, overwrite exactly 819,200 bytes with `dd conv=notrunc`, prove the candidate hash and the unchanged one-extent allocation, and safely eject. It restores the original slot bytes if a post-write gate fails. This procedure does not require or permit an empty system card and does not modify any parent/system file.
+- Never create the slot using Finder or a normal host copy. Never rename the host candidate or the MEGA65 slot to make them match. A slot must be fresh, uniquely named, exactly 819,200 bytes, at the FAT32 root, and not previously chooser-tested.
 - If one contiguous extent cannot be proven, set `SD_CONTIGUITY_RESULT: NOT VERIFIED` and stop. Do not present the image to the physical chooser.
 - Do not use Finder or another tool to modify the D81 contents after verification.
 
@@ -208,7 +210,7 @@ If any gate fails:
 2. Preserve its filename, SHA-256, build log, and failure evidence for diagnosis.
 3. Mark the artifact `INVALID — DO NOT USE` in the evidence record.
 4. Identify whether the failure occurred during construction, verification, SD byte transfer, SD physical allocation, safe ejection, chooser mounting, or program execution.
-5. For chooser `ERROR CODE FF`, classify the failure as carrier/mount failure unless evidence proves otherwise; the contained BASIC/C/PRG program has not run yet.
+5. For chooser `ERROR CODE FF`, classify the failure as chooser/attach-stage carrier failure unless evidence proves otherwise; the contained BASIC/C/PRG program has not run yet. Do not report `FF` itself as proof of fragmentation: current official Freezer source uses `0x8B` for `IMAGE FRAGMENTED`.
 6. If the SD hash matched, remount the card read-only or without modifying the failed file and inspect its physical extent map. A multi-extent result diagnoses an SD allocation/fragmentation failure; do not blame or rebuild the D81 payload.
 7. If the failed SD file was one contiguous extent, run a retained known-good same-card chooser control and record the MEGA65 core, HYPPO, Freezer/SD Essentials, and ROM identities before changing the D81 builder.
 8. Correct the proven failing layer. Do not issue another D81 merely because the prior identity failed.
@@ -239,8 +241,8 @@ This policy was created after a physical MEGA65 chooser reported `ERROR CODE FF`
 
 The initial corrective action addressed internal D81 construction: fresh-format every candidate, populate it once, independently validate its filesystem, extract and hash every payload, and boot the exact artifact in Xemu. Later R0-D and R0-E incidents proved that those checks plus a matching SD-copy hash can still yield chooser `ERROR CODE FF`.
 
-The missing layer was FAT32 physical allocation. Official MEGA65 documentation states that fragmented disk-image files cannot be mounted because the mounting mechanism requires a pointer to one contiguous SD-card region. Therefore every direct-to-card release must also prove a single physical extent and safe ejection. See the MEGA65 Freezer repository's “Copying to the SD Card” warning and the MEGA65 Welcome Guide section “A note about file fragmentation.”
+The missing layer was FAT32 physical allocation. Official MEGA65 documentation states that fragmented disk-image files cannot be mounted because the mounting mechanism requires a pointer to one contiguous SD-card region. Therefore every direct-to-card release must also prove a single physical extent and safe ejection. The official Freezer source additionally provides the system-card-safe recovery mechanism: `NEW D81 DD IMAGE` calls `fat32_create_contiguous_file()` before formatting the image. See the MEGA65 Freezer repository's `makedisk.c`, `fdisk_fat32.c`, and “Copying to the SD Card” warning, plus the MEGA65 Welcome Guide section “A note about file fragmentation.”
 
 ## Final rule
 
-**No verified chain, no D81 release. No single-extent SD proof, no physical chooser test. No physical chooser mount, no hardware test claim. `ERROR CODE FF` means retire the artifact identity and diagnose the failing layer before creating any replacement.**
+**No verified chain, no D81 release. No single-extent SD proof, no physical chooser test. No physical chooser mount, no hardware test claim. `ERROR CODE FF` means retire the tested copy and diagnose the failing layer before creating any replacement; it does not, by itself, mean fragmentation.**
