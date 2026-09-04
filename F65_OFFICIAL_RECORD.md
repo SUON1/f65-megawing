@@ -45,33 +45,30 @@ Revision 1.4 is referenced as superseded and retained by Revision 1.4.1 but was 
 R0-A and R0-B are closed bounded proof milestones and R0-D is closed for its
 accepted calibration-proof scope; their accepted evidence is retained in their
 handoffs and evidence maps. R0-C remains a bounded proof candidate completed
-under its recorded owner waiver, not a formal R0-C gate pass. R0-E has a
-published, host-gated and `XEMU_BOOT_VERIFIED` functional-proxy carrier. Its
-timing remains `NOT_MEASURED`, and its DMA hardware probe remains
-`DMA_HARDWARE_PROBE_NOT_EXECUTED`. The exact R0-E carrier has completed its
-SD-copy, physical chooser, and functional-banner evidence and is
-`TEST_ELIGIBLE` for that limited scope. R0-F timing and measurement evidence
-remains pending. None of these facts passes R0-E, R0-F, a
-measured-limits gate, or any candidate specification. Autonomous full-game
-production remains unauthorized. The repository does not authorize production
-flight, radar, weapons, tactical AI, campaign, audio, gameplay, or
-production-renderer code.
+under its recorded owner waiver, not a formal R0-C gate pass. R0-E is closed
+for its owner-accepted bounded combined-load functional-proxy and read-only
+raster-observation scope: `F65R0EG.D81` was delivered through a verified
+one-extent MEGA65-native slot, mounted, and loaded its physical Rev3 result
+screen. Its DMA hardware probe remains `DMA_HARDWARE_PROBE_NOT_EXECUTED`; its
+raster values are raw modulo-256 line deltas, not CPU-cycle, latency, or
+physical-limit measurements. R0-F timing/DMA/IRQ measurement and platform
+identity remain pending. None of these facts passes R0-F, a measured-limits
+gate, or any candidate specification. Autonomous full-game production remains
+unauthorized. The repository does not authorize production flight, radar,
+weapons, tactical AI, campaign, audio, gameplay, or production-renderer code.
 
 Draft, proposed, `TBD`, `TARGET`, and `R0-GATED` material remains exactly that until the named human or measurement gate changes its status.
 
-## 4. Current authorized milestone: R0-F physical evidence for the R0-E carrier
+## 4. Current authorized milestone: R0-F physical measurement evidence
 
-R0-F is limited to physical-MEGA65 evidence for the exact R0-E
-candidate `F65R0E.D81`, SHA-256
-`8cb76830489095a92a266c884e168efacfd6cb8e7d4db456300a3fbf67cc623b`, built
-from source commit `ae2b0aee2ded09622c67fcea97062b45fd6ce9ce`. It must record
-an unchanged SD-copy hash, physical chooser mount and readable directory,
-entry-banner capture. Those carrier steps now pass for this exact D81. Any
-hardware measurement or phase sweep remains separately gated: the current
-program records no timing, DMA, or IRQ measurement and no pinned physical
-platform identity. R0-F does not select a renderer,
-display mode, queue capacity, DMA duration, cadence, memory layout, or
-measured limit.
+R0-F is limited to separately admitted physical-MEGA65 timing, DMA, IRQ, and
+platform-identity evidence corresponding to the closed bounded R0-E
+configuration. The R0-E carrier-delivery issue is resolved: future D81 images
+must use a fresh MEGA65-created `NEW D81 DD IMAGE` root slot and the guarded
+in-place-fill procedure recorded in
+`docs/reports/D81_MEGA65_NATIVE_SLOT_DELIVERY_2026-09-03.md`. R0-F does not
+select a renderer, display mode, queue capacity, DMA duration, cadence, memory
+layout, or measured limit.
 
 ## 5. Hard gates
 
@@ -124,3 +121,4 @@ These later-phase gaps do not prohibit independent, bounded R0-A work unless an 
 | 2026-08-29 | R0-C candidate completion by owner waiver | Corrected D81 carrier loads without chooser `ERROR CODE FF`; owner waived remaining physical media-fault execution and requested R0-C candidate completion | Local commits `1ef7369`, `cde5555`, `2ce0e35` | R0-C implementation is complete for the bounded proof candidate. This is not formal `R0-C GATE PASSED`; `R0C-ROM-001` remains deferred and unexecuted media faults are recorded as WAIVED. |
 | 2026-09-01 | R0-E functional-proxy evidence and R0-F handoff | Reworked the R0-E target proof so its result block reflects executed bounded cases, then passed two clean Xemu boots of the exact host-gated carrier and published the retained evidence | Source `ae2b0ae`; evidence record `e2e2b46` on `codex/r0-e-development` | The carrier is `XEMU_BOOT_VERIFIED` only. Timing is `NOT_MEASURED`; DMA hardware probe is not executed; physical chooser, SD-copy hash, physical measurements, human acceptance, and all measured-limit decisions remain open. |
 | 2026-09-01 | R0-E physical carrier verification | Exact SD-copy hash matched; MEGA65 chooser showed the readable `F65R0E.D81` directory and loaded its physical functional-proxy banner | Physical evidence record pending publication | The D81 is `TEST_ELIGIBLE` only for the bounded functional-proxy scope. Timing, DMA, IRQ, phase-sweep, platform-identity, R0-E/R0-F closure, and measured-limit decisions remain open. |
+| 2026-09-04 | R0-E bounded proof closure and D81 delivery correction | `F65R0EG.D81` passed pre/post raw FAT32 one-extent audits, safe eject, physical chooser, and Rev3 runtime capture; recorded the MEGA65-native slot procedure for later carriers | `702700f`, `2559e18`, and the R0-E closure reconciliation commit on `codex/r0-e-development` | Owner accepted closure of the bounded R0-E functional-proxy/raster-observation scope only. R0-F measurement/platform work, measured limits, and production authorization remain open. |

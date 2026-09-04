@@ -108,3 +108,32 @@ Both the pre-fill and post-fill raw FAT32 audits reported one 819,200-byte
 extent at device offset `103182336`. The final hash matched the host candidate,
 and `diskutil` successfully ejected `/Volumes/MEGA65FDISK`. This is direct
 evidence that the in-place fill preserved the Freezer-created allocation.
+
+## Physical chooser and runtime result — 2026-09-04
+
+The owner mounted and loaded `F65R0EG.D81` successfully on the intended
+MEGA65. The physical photo retained at
+`docs/evidence/r0e/physical/F65R0EG-PHYSICAL-RUNTIME-2026-09-04.jpg`
+(SHA-256 `ab813983ba1b8e4a01446648d922590c115fde0ef31f9aa5ebc5f2a87ce81087`)
+shows the Rev3 R0-E result screen. It is the physical confirmation that the
+MEGA65-created-slot delivery route succeeds where normal host file replacement
+produced fragmented, unmountable D81 files.
+
+### Standard delivery recipe for R0-F and later proof carriers
+
+1. Fresh-format the candidate and write every payload in one pinned `c1541`
+   session; never copy-and-append a D81.
+2. Run structural and extraction/hash validation on the completed host D81.
+3. On the MEGA65 system card, use `NEW D81 DD IMAGE` to create a *new unique*
+   uppercase 8.3 root slot matching the candidate filename.
+4. Return the card to macOS without Finder-copying or replacing that slot.
+5. Run `sudo tools/diagnostics/d81_sd_fill_mega65_slot.sh SOURCE.D81
+   /Volumes/MEGA65FDISK SHA256`.
+6. Proceed only when its pre-fill and post-fill raw FAT32 audits both report
+   one extent, the final hash matches, and safe eject reports PASS.
+
+The helper is deliberately fail-closed: it backs up the new Freezer-created
+slot, writes exactly 819,200 bytes with `conv=notrunc`, and restores the slot
+if any post-write validation fails. It never modifies the system-card parent
+files. `F65R0EF.D81` is retained only as a failed 13-extent delivery identity;
+do not reuse it.

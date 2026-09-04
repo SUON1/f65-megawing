@@ -1,8 +1,8 @@
 # R0-E Execution Plan
 
-Status: **Stages 1–3 are complete and published for the historical functional
-proxy carrier. A bounded read-only raster observation is now in implementation;
-it remains insufficient for R0-E/R0-F closure or a measured limit.**
+Status: **R0-E is closed for the owner-accepted bounded combined-load
+functional-proxy and read-only physical raster-observation scope. It remains
+insufficient for R0-F closure or any measured limit.**
 
 | Step | Deliverable | Status |
 |---|---|---|
@@ -13,16 +13,16 @@ it remains insufficient for R0-E/R0-F closure or a measured limit.**
 | E4 | Local commits and Stage 1 stop | Complete |
 | E5 | VS Code publication after `AUTHORIZE R0-E STAGE 2` | Complete — published source `ae2b0ae` |
 | E6 | Xemu matrix/evidence after `AUTHORIZE R0-E STAGE 3` | Complete — two clean boots; published evidence `e2e2b46` |
-| E7 | R0-F SD copy, physical chooser, and banner capture | Complete — exact hash, readable chooser directory, and physical banner retained |
-| E8a | R0-E read-only raster phase observation | In progress — 16 low-byte phase bins/case, 33-tick windows, raw modulo-256 line deltas; no DMA/IRQ/MAP or limit claim |
-| E8b | R0-F physical timing/DMA/IRQ measurement and full phase sweep | Still blocked — requires rebuilt carrier, complete D81 chain, pinned platform identity, and separately admitted DMA/IRQ instrumentation |
+| E7 | R0-E SD delivery, physical chooser, and Rev3 banner capture | Complete — exact hash, one contiguous extent, safe eject, successful chooser mount, and physical runtime capture retained |
+| E8a | R0-E read-only raster phase observation | Complete — physical Rev3 capture: 16 bins/case, 33-tick windows, normal raw q50/q95/max bytes 020/020/020; no DMA/IRQ/MAP or limit claim |
+| E8b | R0-F physical timing/DMA/IRQ measurement and full phase sweep | Deferred to R0-F — requires a pinned platform identity and separately admitted DMA/IRQ instrumentation |
 
 Candidate limits remain observations only. R0-E does not select a renderer, display mode, snapshot byte count, queue capacity, DMA duration, cadence, or memory layout.
 
-The existing carrier is `TEST_ELIGIBLE` for the bounded functional-proxy scope
-after its exact SD hash, chooser directory, and banner capture. Its source
-identity remains historical: it did not contain the raster observation. Any
-new measurement D81 is a new candidate and must begin at `UNVERIFIED`.
-Read-only raster values do not measure CPU cycles, latency, DMA, IRQ, or a
-limit. A real timing/DMA/IRQ phase sweep requires separately admitted target
-instrumentation and a pinned physical platform identity.
+`F65R0EG.D81` completed a one-extent MEGA65-native-slot transfer, chooser
+mount, and physical Rev3 runtime capture. The exact Rev3 carrier was not rerun
+through Xemu in this worktree, so the closure is owner-accepted bounded proof
+closure rather than an invented full D81 state-machine pass. Read-only raster
+values do not measure CPU cycles, latency, DMA, IRQ, or a limit. A real
+timing/DMA/IRQ phase sweep requires separately admitted target instrumentation
+and a pinned physical platform identity.
