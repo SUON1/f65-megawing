@@ -52,6 +52,15 @@ The reconstructed image has the exact physical-pass SHA-256
 byte-for-byte identical to `F65R0E.D81`. The historical construction procedure
 is therefore deterministic and preserved.
 
+The repaired direct-SD transfer helper was then used with that exact control.
+It verified the staging copy hash, detected five FAT32 extents, stopped before
+the final filename or MEGA65 test, and removed its temporary file. This proves
+the helper fails closed and that the current direct-copy allocation path did
+not produce a contiguous 819,200-byte control copy. It does not establish
+whether another allocation strategy could find a contiguous run, alter the
+byte-identical reconstruction finding, or attribute the failure to
+compilation.
+
 The first one-variable local image has also been built:
 
 ```text
