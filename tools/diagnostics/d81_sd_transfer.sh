@@ -31,12 +31,16 @@ stage_stem=$(printf '%s' "$stem" | cut -c 1-7)
 staging="$sd_mount/S${stage_stem}.TMP"
 report_dir="$root/build/d81-sd-transfer"
 staging_created=0
+final_created=0
 
 cleanup() {
   cleanup_exit=$?
   trap - EXIT HUP INT TERM
   if test "$cleanup_exit" -ne 0 && test "$staging_created" -eq 1 && test -e "$staging"; then
     rm -f -- "$staging"
+  fi
+  if test "$cleanup_exit" -ne 0 && test "$final_created" -eq 1 && test -e "$target"; then
+    rm -f -- "$target"
   fi
   exit "$cleanup_exit"
 }
@@ -60,8 +64,10 @@ sync
 python3 "$root/tools/diagnostics/d81_sd_contiguity.py" "$staging" --expected-sha256 "$expected_sha" --json "$report_dir/$filename.staging.json"
 mv -n "$staging" "$target"
 staging_created=0
+final_created=1
 sync
 python3 "$root/tools/diagnostics/d81_sd_contiguity.py" "$target" --expected-sha256 "$expected_sha" --json "$report_dir/$filename.final.json"
 /usr/sbin/diskutil eject "$sd_mount"
+final_created=0
 
 printf '%s\n' "D81 SD TRANSFER PASS" "filename=$filename" "sha256=$expected_sha" "extent_count=1" "safe_eject=PASS"
