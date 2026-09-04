@@ -20,14 +20,16 @@ D81.
    PETSCII directory names, byte length, payload hashes, whole-image hash,
    source commit, builder hash, and evidence must describe the same image.
 6. A physical chooser `ERROR CODE FF` is a carrier failure. Preserve the
-   failed identity and evidence, correct the generator, then fresh-build a
-   distinct image. Do not patch, append, rename, or re-test that image.
+   failed identity and evidence, but diagnose the failing layer before issuing
+   another D81. Matching logical bytes do not rule out fragmented FAT32
+   allocation of the SD-card file.
 7. Publish the source/evidence commit before Xemu; publish the Xemu evidence
    before physical testing. Reverify the remote commit before entering every
    later stage.
-8. Require the SD-card copied-file hash after `sync`, then a readable chooser
-   directory before interpreting a program result. Capture both the directory
-   and the stable program identity.
+8. Require the SD-card copied-file hash, exactly one independently verified
+   FAT32 physical extent, and successful safe eject, then a readable chooser
+   directory before interpreting a program result. Capture the extent record,
+   directory, and stable program identity.
 
 ## R0-E admission checklist
 
@@ -52,8 +54,10 @@ The next agent should begin with the root D81 gate, then implement a
 phase-owned non-interactive build that calls the locked `c1541` once to format
 and write all phase-owned files. It must run the phase-owned structural and
 content validators before requesting Xemu authorization. After Xemu passes,
-the owner copies the unchanged file under the same filename, runs `sync`, and
-returns `shasum -a 256` output before chooser testing.
+the owner transfers the unchanged file under the same filename with
+`tools/diagnostics/d81_sd_transfer.sh`. The transfer must produce a matching
+SHA-256, one physical extent, and a successful safe eject before chooser
+testing. The earlier `sync` plus `shasum` procedure is insufficient.
 
 ## R0-D reference identity
 

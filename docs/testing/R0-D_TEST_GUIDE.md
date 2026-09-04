@@ -31,8 +31,10 @@ The owner accepted R0-D on 2026-08-31.
 Use only `F65R0D3.D81`, unchanged, SHA-256
 `107c6a356b932e9ade875c24539d75b1b0a0078122a6a3910f524570aafec5ef`.
 
-1. Copy it to the MEGA65 SD volume under the exact same filename, flush writes,
-   and hash the copied file. Stop if its hash differs.
+1. For any future revalidation, transfer it with
+   `tools/diagnostics/d81_sd_transfer.sh`. Require the exact same filename,
+   matching hash, exactly one FAT32 physical extent, and successful safe eject.
+   A plain copy plus hash is not sufficient for the MEGA65 Freezer.
 2. In the MEGA65 chooser, select exactly `F65R0D3.D81`. A chooser `ERROR CODE
    FF` permanently invalidates this D3 identity; photograph it and do not try
    to repair, rename, or reuse the image.

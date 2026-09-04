@@ -863,3 +863,99 @@ The R0-C candidate is complete by owner waiver. The exact fresh carrier is `buil
 - Updated the official record, task admission, execution plan, agent record, handoff, evidence map, blockers, D81 audit, platform/ROM reports, and test guide.
 - Local closure commit: `f476a8b` (`docs(r0c): close candidate by owner waiver`).
 - Branch remains unpushed and clean after this checkpoint commit; no formal hardware-gate PASS is claimed.
+
+### 2026-08-31 — R0-E Stage 1 checkpoint
+
+- Created `codex/r0-e-development` from required R0-D baseline
+  `de682be4aae3dd19de745802123a87bc83ac735c`.
+- Added the bounded R0-E admission, ownership record, generated proof contract,
+  deterministic host combined-load oracle, target diagnostic, static validator,
+  memory ledger, one-session D81 builder, and fail-closed D81 host gate.
+- `make r0e-bootstrap`, `make r0e-generate`, `make r0e-host-test`,
+  `make r0e-build`, `make r0e-verify`, and `git diff --check` pass.
+- Candidate `build/r0e/artifacts/F65R0E.D81` is
+  `HOST_CONTENT_VERIFIED`, SHA-256
+  `612a7bf0877132677e40ba75b15458cfa9160618b79200be300242ea222ee138`.
+  It is not Xemu-verified, physical-verified, final, or test-eligible.
+- DMA is recorded as `DMA_HARDWARE_PROBE_NOT_EXECUTED`; no new DMA, IRQ, MAP,
+  or assembly wrapper is claimed. The measured-limits reserve remains zero.
+- Exact resume point: commit Stage 1 local source only, then stop pending
+  `AUTHORIZE R0-E STAGE 2`. Do not publish or run Xemu before authorization.
+
+### 2026-08-31 — Stage 1 source ready
+
+- Local commits: `0f2b86d` and `e8077c7`.
+- All required Stage 1 commands passed with no Xemu invocation. The fresh,
+  one-session carrier passed both host structural and host content gates.
+- Remaining state: source is ready for owner review only. Stage 2 publication
+  requires the exact phrase `AUTHORIZE R0-E STAGE 2`.
+
+### 2026-08-31 — Stage 2 publication verified
+
+- VS Code Source Control published `codex/r0-e-development` without force push.
+- Remote verification confirmed `origin/codex/r0-e-development` initially
+  matched source commit `2867b1ab7dfd7e421678a4c47770e885176b74a2` exactly.
+- Exact resume point: publish this checkpoint commit, reverify it remotely,
+  then stop pending `AUTHORIZE R0-E STAGE 3`. Do not run Xemu before that
+  separate authorization.
+
+### 2026-08-31 — Stage 3 preflight returned to Stage 1
+
+- Preflight found that the published target presented fixed PASS text rather
+  than executing its bounded lag/shedding/one-over cases. No Xemu evidence was
+  claimed from that artifact.
+- Repaired the target diagnostic to execute the four deterministic proxy cases
+  and record their checksums/skipped-publication result in `$1900-$19FF`.
+- Rebuilt host/static/D81 gates successfully. This is a new carrier identity:
+  SHA-256 `9c7ca01caa259db7e9eb940f891cbebdec7a6e37fb2182c3c333a98c4cb68b69`.
+- Exact resume point: commit and republish this Stage 1 repair, then obtain a
+  fresh Stage 3 authorization before any Xemu execution.
+
+### 2026-09-01 — R0-E Stage 3 functional-proxy verification
+
+- Published source commit `ae2b0ae` was rechecked against origin before the
+  exact host-gated carrier was mounted in Xemu.
+- The pinned ROM and Xemu identities passed their recorded SHA-256 checks.
+  Two clean headless drive-8 AUTOBOOT runs passed and retained identical screen
+  SHA-256 `6df9b459ac895c7f787e5568a17aa75b8d6dc6e323cbedc3b728286cd9581e84`
+  and `$1900-$19FF` result-block SHA-256
+  `4bd6ed488108739cbab916035f557f1f7972ca3bd068fb082203a0e274cfadbf`.
+- The carrier remains `XEMU_BOOT_VERIFIED`, not physical-chooser verified or
+  test-eligible. Timing is `NOT_MEASURED`; DMA remains
+  `DMA_HARDWARE_PROBE_NOT_EXECUTED`.
+
+### 2026-09-01 — R0-F physical preflight and master-status reconciliation
+
+- Owner authorized the next R0-F physical chooser/measurement stage after the
+  published Stage 3 evidence. The required D81 state order was reread before
+  preflight.
+- No SD-card or MEGA65 media volume was attached at preflight: `/Volumes`
+  contained only the system and Time Machine entries. No copy, `sync`, hash,
+  chooser selection, physical photo, timing, DMA, IRQ, or hardware result was
+  attempted or claimed.
+- `F65_OFFICIAL_RECORD.md` and `docs/plans/R0-E_EXEC_PLAN.md` were reconciled
+  to the published source/evidence identities. They preserve the exact state:
+  `XEMU_BOOT_VERIFIED`, not `PHYSICAL_CHOOSER_VERIFIED` or `TEST_ELIGIBLE`.
+- Exact resume: attach the intended writable SD volume and MEGA65, copy the
+  unchanged `F65R0E.D81`, flush and hash it, then supply physical chooser and
+  entry-banner captures. A chooser error invalidates this carrier identity;
+  no later functional measurement may be claimed from it.
+
+### 2026-09-01 — R0-F physical carrier verification
+
+- The owner copied the exact `F65R0E.D81` to `/Volumes/MEGA65FDISK`, ran
+  `sync`, and supplied the copied-file SHA-256. Independent host readback
+  confirmed the exact expected SHA-256
+  `8cb76830489095a92a266c884e168efacfd6cb8e7d4db456300a3fbf67cc623b` and
+  819,200-byte length.
+- The retained chooser photo shows `F65R0E.D81` selected with readable entries
+  `AUTOBOOT.C65`, `R0E-PROOF`, and `R0E-EVID`; no chooser error is shown. The
+  retained banner photo shows the physical functional-proxy program displaying
+  its PASS rows.
+- The exact carrier is therefore `TEST_ELIGIBLE` for its bounded
+  functional-proxy scope. Timing remains `NOT_MEASURED`; DMA remains
+  `DMA_HARDWARE_PROBE_NOT_EXECUTED`; no IRQ, phase sweep, pinned platform
+  identity, or measured-limit claim is made.
+- Next technical requirement: admit and implement physical timing/DMA/IRQ
+  instrumentation before attempting a measurement sweep. The published
+  physical evidence record is `docs/evidence/r0e/R0E-D81-PHYSICAL-RELEASE.md`.

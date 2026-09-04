@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "task_id": "F65-R0-E",
+  "authorized_prefixes": ["CODEX_PROGRESS.md", "docs/agents/R0-E_DEVELOPMENT_AGENT.md", "docs/plans/R0-E_EXEC_PLAN.md", "docs/plans/r0-e-*.json", "docs/testing/R0-E_TEST_GUIDE.md", "docs/evidence/r0e/", "interfaces/r0e_proof_contract.json", "interfaces/generated/r0e*", "memory/r0e-memory-ledger.json", "src/r0e/", "src/diagnostics/r0e/", "src/platform/r0e/", "tools/build/r0e.sh", "tools/diagnostics/r0e_*", "tools/generators/src/main/java/f65/tools/R0E*", "Makefile"],
+  "prohibited_prefixes": ["spec/", "src/r0a/", "src/r0b/", "src/r0c/", "src/r0d/", "docs/evidence/r0a/", "docs/evidence/r0b/", "docs/evidence/r0c/", "docs/evidence/r0d/"],
+  "forbidden_change_classes": ["CoreRuntime", "public ABI", "memory ownership", "pool capacities", "100 Hz tick order", "reserve", "production renderer", "gameplay"],
+  "state_owners": {"authoritative_proxy": "R0-E host oracle", "snapshot_records": "R0-E proof handoff", "target_result": "R0-E diagnostics", "carrier": "R0-E build only"}
+}
