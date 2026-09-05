@@ -1,0 +1,10 @@
+{
+  "result": "PASS",
+  "tier": "native C with simulated raster, NOT Xemu",
+  "cases": 5,
+  "phaseSamples": 80,
+  "timeoutInjection": "PASS",
+  "failureRejection": "PASS",
+  "sanitizers": "address,undefined",
+  "javaOracle": "NOT RUN; pinned JDK unavailable"
+}

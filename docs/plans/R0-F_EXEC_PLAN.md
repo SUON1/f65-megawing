@@ -1,7 +1,11 @@
 # R0-F Execution Plan
 
-Status: **ADMITTED — documentation and host-side preparation only. R0-F is not
-passed, no R0-F carrier exists, and no physical measurement is claimed.**
+Status: **First bounded functional/raster slice implemented; F65R0F1.D81 is
+HOST_CONTENT_VERIFIED. Xemu blocked; R0-F is not passed.**
+
+The owner-directed first test build passed native C sanitizer tests and LLVM-MOS
+compilation on 2026-09-05. The full measurement obligations below remain pending.
+This proxy is not real scheduling, latency, calibration or high-water evidence.
 
 ## Scope and invariant inputs
 
@@ -22,11 +26,11 @@ fresh Xemu run; R0-F cannot inherit that missing gate.
 
 | Step | Deliverable | Status / exit condition |
 |---|---|---|
-| F0 | Admission, ownership, stage control, test guide, evidence map, interface/ledger impact | Complete when these R0-F-owned records are reviewed for consistency; no target impact yet. |
-| F1 | R0-F measurement contract and host oracle | Pending. Define mechanism, units, calibration, wrap handling, samples, bins, rolling windows, result encoding, and only approved thresholds. |
-| F2 | Target diagnostics and any separately admitted platform wrapper | Pending. Before code, record every register/clobber, CPU/physical range, MAP/base-page state, DMA behavior, deadline effect, IRQ/NMI behavior, failure path, and exact validation. |
-| F3 | R0-F ledger/interface impact and static/host validation | Pending. No uncharged allocation or reserve use; no public-contract change. |
-| F4 | Fresh R0-F D81 construction and host gates | Pending. Assign a never-used uppercase 8.3 name, fresh-format once, write all payloads in one pinned c1541 session, then pass structural/content validation. |
+| F0 | Admission, ownership, stage control, test guide, evidence map, interface/ledger impact | Updated for the owner-directed bounded test-code build. |
+| F1 | R0-F measurement contract and host oracle | Private proxy encoding implemented. Full measurement contract and Java oracle pending. |
+| F2 | Target diagnostics and any separately admitted platform wrapper | Functional proxy and read-only raster helper implemented; no DMA/IRQ wrapper. |
+| F3 | R0-F ledger/interface impact and static/host validation | Native tests, compile/link and accounting pass; dynamic high-water unmeasured. |
+| F4 | Fresh R0-F D81 construction and host gates | F65R0F1.D81 host structural/content PASS; exact identity in handoff. |
 | F5 | Exact-artifact Xemu gate | Pending. Two clean boots with pinned Xemu/ROM identity, captured screen/result block/hashes. Stop at `NOT VERIFIED` if unavailable. |
 | F6 | SD byte and contiguity gates | Pending owner/admin/card action. On a fresh MEGA65 `NEW D81 DD IMAGE` root slot, use only `d81_sd_fill_mega65_slot.sh`; prove exact hash, one extent before/after at the same device offset/length, and safe eject. |
 | F7 | Physical chooser, platform identity, and measurement sweep | Pending MEGA65 operation/capture. Record platform identity before interpreting results; chooser pass precedes runtime testing. |
@@ -48,27 +52,25 @@ and executed wrapper exists, the exact non-claims are
 
 ## Current technical impact
 
-No R0-F target code exists. Therefore all target-register/clobber, CPU-visible
-memory, physical-memory, MAP/base-page, DMA, timing/deadline, IRQ, and NMI
-effects are **NOT_APPLICABLE**. No interface, ledger allocation, or reserve use
-is proposed. A subsequent F2 change must replace each of these with concrete,
-validated facts before implementation.
+See `docs/reports/R0-F_INTERFACE_LEDGER_IMPACT.md`,
+`memory/r0f-memory-ledger.json`, and `interfaces/r0f_proof_contract.json`.
+No production ABI, pool or reserve change.
 
 ## Required validation commands
 
-The commands below are planned commands, not completed results:
+Implemented commands (physical command remains gated and was not run):
 
 ```sh
 git diff --check
-python3 tools/diagnostics/r0f_validate_target.py . --source-only
-./tools/build/r0f.sh host-test
-./tools/build/r0f.sh build
-python3 tools/diagnostics/r0f_d81_loadability_gate.py . build/r0f/artifacts/NAME.D81
-./tools/build/r0f.sh xemu
+sh tools/build/r0f.sh host-test
+sh tools/build/r0f.sh build
+sh tools/build/r0f.sh package
+python3 tools/diagnostics/r0f_d81_loadability_gate.py . build/r0f/F65R0F1.D81
+sh tools/build/r0f.sh xemu
 sudo tools/diagnostics/d81_sd_fill_mega65_slot.sh SOURCE.D81 /Volumes/MEGA65FDISK EXPECTED_SHA256
 ```
 
-The `r0f_*` commands do not exist at admission time and must not be represented
-as runnable until their fail-closed implementations are added. The final
+`package` refuses an existing carrier filename. Never delete or rename it to
+bypass that guard. The final
 physical command requires administrator authentication, an owner-created slot,
 and physical SD-card movement; it is intentionally not run autonomously.

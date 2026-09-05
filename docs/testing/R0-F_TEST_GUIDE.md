@@ -63,5 +63,16 @@ wrapper is separately admitted and executed, report
 
 ## Current test state
 
-No R0-F diagnostic, D81, Xemu result, SD transfer, physical chooser result, or
-physical measurement has been executed. All planned commands are `NOT VERIFIED`.
+The first bounded proxy is implemented. Run `sh tools/build/r0f.sh host-test`
+for native C sanitizer checks, including five functional cases and phase-timeout
+injection; `build` compiles the target and emits map/symbols/disassembly.
+`package` fresh-builds the uniquely assigned F65R0F1.D81 and automatically runs
+independent structural plus extracted-content checks. It refuses an existing
+filename; do not delete an image to bypass that refusal. `xemu` requires the
+pinned emulator, owner ROM (`F65_MEGA65_ROM`), and initialized emulator SD image
+(`F65_MEGA65_SD_IMAGE`), and runs two fresh processes with disposable SD copies.
+
+Native checks, target build and D81 host gates passed on 2026-09-05. Xemu
+preflight is blocked by missing emulator/owner ROM. Do not transfer to SD yet.
+The full physical measurement program remains pending. Exact evidence and
+limitations: `docs/reports/R0-F_BUILD_HANDOFF.md`.

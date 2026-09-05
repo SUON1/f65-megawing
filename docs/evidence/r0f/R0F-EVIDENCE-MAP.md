@@ -1,13 +1,18 @@
 # R0-F Evidence Map
 
-Status: **ADMITTED — NO R0-F EXECUTION OR PHYSICAL EVIDENCE YET.**
+Status: **BOUNDED PROXY HOST BUILD/TEST COMPLETE; NO XEMU OR PHYSICAL EVIDENCE.**
+
+2026-09-05: first source rebuild, native sanitizer tests and phase-timeout
+injection passed. Result `R0F1 REV1`; no real 100Hz or elapsed-time claim.
+Retained host reports are under `docs/evidence/r0f/host/`; handoff is
+`docs/reports/R0-F_BUILD_HANDOFF.md`.
 
 | Evidence ID | Required evidence | Current state | Non-claim / blocker |
 |---|---|---|---|
 | R0F-IDENTITY-001 | Complete pinned MEGA65/core/ROM/HYPPO/Freezer/video/clock/storage/input/capture identity | `AWAITING_PHYSICAL_CAPTURE` | No platform identity may be inferred from R0-E. |
 | R0F-CONFIG-001 | Exact R0-E source/configuration reconstruction identity | `PLANNED` | R0-E source `2559e18`; Rev3 carrier is evidence only, never a template. |
-| R0F-D81-STRUCT-001 | Fresh one-session R0-F D81 structural validation | `NOT VERIFIED` | No filename or carrier exists. |
-| R0F-D81-CONTENT-001 | Source/extracted payload hashes | `NOT VERIFIED` | No payload set exists. |
+| R0F-D81-STRUCT-001 | Fresh one-session R0-F D81 structural validation | `PASS` | F65R0F1.D81; host gate only. |
+| R0F-D81-CONTENT-001 | Source/extracted payload hashes | `PASS` | AUTOBOOT.C65, R0F-PROOF, R0F-EVID; exact hashes in host release record. |
 | R0F-XEMU-001 | Two clean boots of exact R0-F filename/hash with pinned Xemu/ROM | `NOT VERIFIED` | R0-E Rev3 Xemu result cannot be inherited. |
 | R0F-SD-001 | Exact SD-copy hash and safe eject | `NOT VERIFIED` | Requires owner/admin/card action. |
 | R0F-SD-CONTIG-001 | One raw FAT32 extent before/after slot fill, same offset/length | `NOT VERIFIED` | Hash alone is insufficient. |

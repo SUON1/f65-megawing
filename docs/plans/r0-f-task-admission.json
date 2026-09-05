@@ -16,7 +16,16 @@
   },
   "upstream_status": {
     "r0e_accepted_scope": "bounded combined-load functional proxy and read-only raster observation",
-    "r0e_preserved_non_claims": ["CPU cycles", "input latency", "audio latency", "elapsed-time p50/p95/worst", "physical limit", "DMA hardware probe", "IRQ measurement", "pinned platform identity"],
+    "r0e_preserved_non_claims": [
+      "CPU cycles",
+      "input latency",
+      "audio latency",
+      "elapsed-time p50/p95/worst",
+      "physical limit",
+      "DMA hardware probe",
+      "IRQ measurement",
+      "pinned platform identity"
+    ],
     "r0e_xemu_for_rev3": "NOT RERUN; cannot be inherited by R0-F"
   },
   "authorized": [
@@ -34,28 +43,68 @@
     "physical chooser testing before the exact R0-F D81 passes every preceding D81 state"
   ],
   "carrier": {
-    "state": "UNVERIFIED — no R0-F filename, payload set, D81, or release record assigned",
+    "state": "HOST_CONTENT_VERIFIED — F65R0F1.D81; Xemu/SD/physical NOT VERIFIED",
     "construction": "Fresh format and all payload writes in one pinned toolchain/vice-clean/bin/c1541 session; source payloads only.",
     "delivery": "Fresh unique uppercase 8.3 MEGA65-created root slot followed only by sudo tools/diagnostics/d81_sd_fill_mega65_slot.sh SOURCE.D81 /Volumes/MEGA65FDISK EXPECTED_SHA256.",
-    "required_states": ["UNVERIFIED", "HOST_STRUCTURALLY_VERIFIED", "HOST_CONTENT_VERIFIED", "XEMU_BOOT_VERIFIED", "SD_COPY_VERIFIED", "SD_CONTIGUITY_VERIFIED", "PHYSICAL_CHOOSER_VERIFIED", "TEST_ELIGIBLE"]
+    "required_states": [
+      "UNVERIFIED",
+      "HOST_STRUCTURALLY_VERIFIED",
+      "HOST_CONTENT_VERIFIED",
+      "XEMU_BOOT_VERIFIED",
+      "SD_COPY_VERIFIED",
+      "SD_CONTIGUITY_VERIFIED",
+      "PHYSICAL_CHOOSER_VERIFIED",
+      "TEST_ELIGIBLE"
+    ]
   },
   "platform_identity": {
     "status": "AWAITING_PHYSICAL_CAPTURE",
-    "required": ["MEGA65 model, revision, serial or board identity where available", "core version and hash", "ROM version and hash", "HYPPO version and hash", "Freezer/SD Essentials version and hash", "video standard, selected mode, and output configuration", "clock setting", "storage device/media identity and FAT32 volume identity", "input devices and measurement-capture tooling identity"]
+    "required": [
+      "MEGA65 model, revision, serial or board identity where available",
+      "core version and hash",
+      "ROM version and hash",
+      "HYPPO version and hash",
+      "Freezer/SD Essentials version and hash",
+      "video standard, selected mode, and output configuration",
+      "clock setting",
+      "storage device/media identity and FAT32 volume identity",
+      "input devices and measurement-capture tooling identity"
+    ]
   },
   "measurement": {
-    "status": "NOT_IMPLEMENTED",
-    "requirements": ["units and result encoding", "calibration and wrap handling", "sample counts and phase-bin coverage", "independent 100 Hz simulation/display phase sweep", "rolling-window/deadline evidence", "input/audio latency evidence", "snapshot and high-water evidence", "deterministic faults/shedding", "reserve proof", "storage inactivity/behavior"],
+    "status": "BOUNDED_FUNCTIONAL_RASTER_SLICE_IMPLEMENTED; full measurement matrix pending",
+    "requirements": [
+      "units and result encoding",
+      "calibration and wrap handling",
+      "sample counts and phase-bin coverage",
+      "independent 100 Hz simulation/display phase sweep",
+      "rolling-window/deadline evidence",
+      "input/audio latency evidence",
+      "snapshot and high-water evidence",
+      "deterministic faults/shedding",
+      "reserve proof",
+      "storage inactivity/behavior"
+    ],
     "threshold_policy": "Only approved-source thresholds may be evaluated. All other R0-F outputs are observations for human measured-limits review."
   },
   "platform_wrapper": {
     "dma": "DMA_HARDWARE_PROBE_NOT_EXECUTED until separately admitted and executed",
     "irq": "IRQ_MEASUREMENT_NOT_EXECUTED until separately admitted and executed",
-    "registers_clobbers": "NOT_APPLICABLE — no R0-F target wrapper exists",
-    "map_base_page": "NOT_APPLICABLE — no R0-F target wrapper exists",
-    "memory": "NOT_APPLICABLE — no R0-F allocation exists",
+    "registers_clobbers": "Pinned LLVM-MOS C ABI; A/X/Y/Z/P and compiler pseudo-registers; inherited startup B=02/fini B=00",
+    "map_base_page": "ROM-hosted context inherited; no new MAP/EOM/base-page wrapper",
+    "memory": "Standalone result 1900-19ff; screen 0800-0fcf; linked BSS 192 bytes; memory/r0f-memory-ledger.json",
     "nmi": "NOT_APPLICABLE — no gameplay NMI source is enabled"
   },
-  "revalidation_triggers": ["source payload", "toolchain", "builder", "disk metadata", "filename", "Xemu configuration", "SD transfer method", "platform wrapper", "physical platform identity"],
+  "revalidation_triggers": [
+    "source payload",
+    "toolchain",
+    "builder",
+    "disk metadata",
+    "filename",
+    "Xemu configuration",
+    "SD transfer method",
+    "platform wrapper",
+    "physical platform identity"
+  ],
   "exit": "R0-F cannot be called passed until complete physical evidence is reviewed and explicitly accepted by the owner."
 }

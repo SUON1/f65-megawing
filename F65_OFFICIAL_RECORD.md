@@ -42,6 +42,13 @@ Revision 1.4 is referenced as superseded and retained by Revision 1.4.1 but was 
 
 ## 3. Current engineering state
 
+R0-F update (2026-09-05): the owner-directed first bounded functional/raster
+test slice is implemented and compiled with pinned LLVM-MOS. Native C tests
+and fresh F65R0F1.D81 host structural/content gates passed. Xemu is blocked by
+missing pinned emulator/owner ROM; SD and physical testing have not begun.
+See `docs/reports/R0-F_BUILD_HANDOFF.md`. This does not complete the full
+R0-F measurement contract or change any approved limits or production authority.
+
 R0-A and R0-B are closed bounded proof milestones and R0-D is closed for its
 accepted calibration-proof scope; their accepted evidence is retained in their
 handoffs and evidence maps. R0-C remains a bounded proof candidate completed

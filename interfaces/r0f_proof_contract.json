@@ -1,0 +1,26 @@
+{
+  "identity": "R0F1-REV1-functional-raster-proxy",
+  "status": "BOUNDED_PROOF_NOT_MEASURED_LIMITS",
+  "constants": {
+    "RESULT_ADDRESS": 6400, "RESULT_BYTES": 256,
+    "SNAPSHOT_BYTES": 64, "SIMULATION_HZ": 100, "STAGE_COUNT": 21,
+    "TIMING_SAMPLE_COUNT": 16, "TIMING_PHASE_BINS": 16,
+    "TIMING_WINDOW_TICKS": 33, "TIMING_RESULT_OFFSET": 144,
+    "TIMING_CASE_OFFSET": 160, "TIMING_CASE_BYTES": 16,
+    "VALID_MASK_OFFSET": 240
+  },
+  "encoding": {
+    "0:7": "ASCII R0F1, revision 1, model Hz, stages, functional status 127=pass",
+    "40:59": "five little-endian u32 functional checksums",
+    "64:143": "five 16-byte functional records inherited from R0-E; last two bytes reserved zero",
+    "144:159": "RT observation header; +7 acquisition status 127=complete, not timing pass",
+    "160:239": "five cases x 16 modulo-256 raster deltas in requested phase order (phase index x 16)",
+    "240:249": "five little-endian u16 validity masks; bit index matches sample index",
+    "250:254": "reserved zero",
+    "255": "sum of bytes 0..254 modulo 256"
+  },
+  "limitations": ["Unpaced 21-stage functional model, not real 100Hz scheduling", "Synthetic input/audio and fault counters, not hardware service or overflow proof", "Phase acquisition is bounded to 65535 reads; sampled start can lag requested phase", "Modulo-256 wraps unresolved; no elapsed-time ordering, cycles or latency", "Synchronous snapshot proxy, not concurrency proof", "DMA and IRQ measurement not executed", "Physical platform identity requires external capture"],
+  "abi": "LLVM-MOS pinned C ABI; private raster helper reads D012 only; inherited R0-A startup sets B=02 and fini B=00; no new assembly",
+  "canonical_state": "ROM-hosted standalone proof; no claim that stock ROM MAP/IRQ context satisfies production canonical MemoryAccessABI",
+  "storage": "No storage call after program entry"
+}

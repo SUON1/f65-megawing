@@ -1,5 +1,15 @@
 # Codex Progress — F65 R0-D protected-workload calibration
 
+## R0-F first test build — 2026-09-05
+
+- Implemented `R0F1 REV1` standalone functional/raster proxy in LLVM-MOS C.
+- Native sanitizer tests and target compile/link/map/symbols/disassembly PASS.
+- Fresh F65R0F1.D81: HOST_CONTENT_VERIFIED, SHA-256
+  `9b539a14f08d671195ef71e54bbacb3eacd5258634f7a29396bf00a068cddd89`.
+- Xemu preflight blocked: pinned emulator and owner ROM missing. No SD transfer.
+- Full physical timing/latency/high-water/DMA/IRQ/identity obligations pending.
+- Current evidence and next action: `docs/reports/R0-F_BUILD_HANDOFF.md`.
+
 ## R0-F admission update — 2026-09-04
 
 - Active branch: `codex/r0-f-development`, rooted directly at the closed R0-E
