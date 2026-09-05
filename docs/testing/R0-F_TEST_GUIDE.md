@@ -72,7 +72,8 @@ filename; do not delete an image to bypass that refusal. `xemu` requires the
 pinned emulator, owner ROM (`F65_MEGA65_ROM`), and initialized emulator SD image
 (`F65_MEGA65_SD_IMAGE`), and runs two fresh processes with disposable SD copies.
 
-Native checks, target build and D81 host gates passed on 2026-09-05. Xemu
-preflight is blocked by missing emulator/owner ROM. Do not transfer to SD yet.
+Native checks, target build and D81 host gates passed on 2026-09-05. Two clean Xemu boots subsequently passed using the owner's located runtime.
+The exact carrier may proceed to the gated native-slot SD transfer workflow;
+no plain copy and no physical testing before the remaining gates.
 The full physical measurement program remains pending. Exact evidence and
 limitations: `docs/reports/R0-F_BUILD_HANDOFF.md`.

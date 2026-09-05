@@ -2,6 +2,11 @@
 
 ## Current implementation — 2026-09-05
 
+Verification update: the owner supplied the missing runtime location. Two clean
+Xemu boots now pass; retained evidence is under `docs/evidence/r0f/xemu/`.
+No code, register, memory, MAP, DMA, IRQ/NMI or timing impact changed. The
+initial missing-tool disposition below is historical and resolved.
+
 The owner requested the first bounded test-code build. `R0F1 REV1` is a
 standalone C rebuild of the accepted R0-E functional proxy, not the complete
 R0-F measurement program. Its private contract is

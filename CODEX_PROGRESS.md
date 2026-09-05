@@ -1,5 +1,13 @@
 # Codex Progress — F65 R0-D protected-workload calibration
 
+## R0-F Xemu gate update — 2026-09-05
+
+- Owner-supplied other checkout contained the exact pinned ROM and Xemu binary.
+- Two clean boots of unchanged `F65R0F1.D81` passed: `XEMU_BOOT_VERIFIED`.
+- Screenshots and 256-byte result blocks matched; both screenshots inspected.
+- Evidence: `docs/evidence/r0f/xemu/R0F-XEMU-VERIFICATION.md`.
+- No target changes, SD transfer or physical test. Push approval remains pending.
+
 ## R0-F first test build — 2026-09-05
 
 - Implemented `R0F1 REV1` standalone functional/raster proxy in LLVM-MOS C.

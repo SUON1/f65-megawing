@@ -1,6 +1,6 @@
 # R0-F Evidence Map
 
-Status: **BOUNDED PROXY HOST BUILD/TEST COMPLETE; NO XEMU OR PHYSICAL EVIDENCE.**
+Status: **BOUNDED PROXY HOST AND TWO-CLEAN-BOOT XEMU CHECKS PASS; PHYSICAL PENDING.**
 
 2026-09-05: first source rebuild, native sanitizer tests and phase-timeout
 injection passed. Result `R0F1 REV1`; no real 100Hz or elapsed-time claim.
@@ -13,7 +13,7 @@ Retained host reports are under `docs/evidence/r0f/host/`; handoff is
 | R0F-CONFIG-001 | Exact R0-E source/configuration reconstruction identity | `PLANNED` | R0-E source `2559e18`; Rev3 carrier is evidence only, never a template. |
 | R0F-D81-STRUCT-001 | Fresh one-session R0-F D81 structural validation | `PASS` | F65R0F1.D81; host gate only. |
 | R0F-D81-CONTENT-001 | Source/extracted payload hashes | `PASS` | AUTOBOOT.C65, R0F-PROOF, R0F-EVID; exact hashes in host release record. |
-| R0F-XEMU-001 | Two clean boots of exact R0-F filename/hash with pinned Xemu/ROM | `NOT VERIFIED` | R0-E Rev3 Xemu result cannot be inherited. |
+| R0F-XEMU-001 | Two clean boots of exact R0-F filename/hash with pinned Xemu/ROM | `PASS` | Fresh R0-F evidence in xemu/evidence.json; no inherited R0-E gate. |
 | R0F-SD-001 | Exact SD-copy hash and safe eject | `NOT VERIFIED` | Requires owner/admin/card action. |
 | R0F-SD-CONTIG-001 | One raw FAT32 extent before/after slot fill, same offset/length | `NOT VERIFIED` | Hash alone is insufficient. |
 | R0F-CHOOSER-001 | Physical chooser directory and stable identity banner | `AWAITING HUMAN` | Must follow every prior D81 state. |

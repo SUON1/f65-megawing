@@ -1,6 +1,7 @@
 # R0-F first bounded test build — 2026-09-05
 
-Implemented and compiled, but **not Xemu-verified or ready for SD transfer**.
+Implemented and compiled; **two clean Xemu boots now pass**. The exact candidate
+may proceed to gated native-slot SD transfer, not directly to hardware testing.
 This is the owner-requested first functional/raster proxy slice, not completion
 of the physical R0-F measurement program.
 
@@ -8,7 +9,7 @@ of the physical R0-F measurement program.
 
 - Filename: `build/r0f/F65R0F1.D81` (819,200 bytes).
 - SHA-256: `9b539a14f08d671195ef71e54bbacb3eacd5258634f7a29396bf00a068cddd89`.
-- State: `HOST_CONTENT_VERIFIED`; label `F65 R0-F1`, ID `65`.
+- Current state: `XEMU_BOOT_VERIFIED`; label `F65 R0-F1`, ID `65`.
 - Entry: `AUTOBOOT.C65` loads `R0F-PROOF` from device 8.
 - Target PRG: 4,694 bytes; SHA-256
   `510c2bfc8686f86b5fd934edd0b9863c0a176951a2871eaa0f990c8e0cec106e`.
@@ -71,9 +72,16 @@ MAP, IRQ or NMI operation was added.
 
 Native C/Python regression tooling is supplementary. The full Java R0-F oracle
 is not implemented/run; pinned JDK is absent. No host test substitutes for Xemu
-or hardware. The two-boot runner is implemented but remains unexecuted.
+or hardware. The two-boot runner subsequently executed successfully; see the update below.
 
 ## Next required input and unresolved obligations
+
+**Update:** the owner supplied the other checkout location. Its ROM and Xemu
+matched the lock, and prior logs located the initialized emulator SD image.
+The previously blocked command then passed both clean boots. Evidence:
+`docs/evidence/r0f/xemu/R0F-XEMU-VERIFICATION.md`. The location request below is
+historical and resolved. Next is the gated physical-card native-slot workflow;
+all physical measurement obligations remain pending.
 
 Provide the location of the owner MEGA65 ROM matching the toolchain lock and,
 if already installed, the pinned Xemu binary and initialized emulator SD image.

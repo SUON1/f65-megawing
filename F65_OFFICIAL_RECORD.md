@@ -44,8 +44,8 @@ Revision 1.4 is referenced as superseded and retained by Revision 1.4.1 but was 
 
 R0-F update (2026-09-05): the owner-directed first bounded functional/raster
 test slice is implemented and compiled with pinned LLVM-MOS. Native C tests
-and fresh F65R0F1.D81 host structural/content gates passed. Xemu is blocked by
-missing pinned emulator/owner ROM; SD and physical testing have not begun.
+and fresh F65R0F1.D81 host structural/content gates passed. Two clean Xemu boots of the exact carrier passed after locating the pinned
+runtime in the owner's other checkout; SD and physical testing have not begun.
 See `docs/reports/R0-F_BUILD_HANDOFF.md`. This does not complete the full
 R0-F measurement contract or change any approved limits or production authority.
 

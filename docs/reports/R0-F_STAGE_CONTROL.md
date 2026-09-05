@@ -2,12 +2,12 @@
 
 ## Current stage
 
-`BOUNDED FUNCTIONAL/RASTER SLICE: HOST_CONTENT_VERIFIED; XEMU BLOCKED`
+`BOUNDED FUNCTIONAL/RASTER SLICE: XEMU_BOOT_VERIFIED; SD/PHYSICAL PENDING`
 
 R0-F development is authorized by AD-001, but R0-F acceptance is not. On
 2026-09-05 the owner-directed first test slice compiled, passed native functional
-and timeout tests, and produced host-verified F65R0F1.D81. Xemu preflight reports
-the pinned emulator and owner ROM missing. No SD, chooser, physical-runtime,
+and timeout tests, and produced host-verified F65R0F1.D81. The owner subsequently supplied the other checkout location; its pinned ROM
+and emulator enabled two clean Xemu boots, which both passed. No SD, chooser, physical-runtime,
 DMA, IRQ, latency or platform-identity result is complete. The full F1
 measurement contract (real scheduling, calibration, latency and high-water)
 remains incomplete; this narrower proxy does not pass that stage wholesale.

@@ -1,7 +1,7 @@
 # R0-F Execution Plan
 
 Status: **First bounded functional/raster slice implemented; F65R0F1.D81 is
-HOST_CONTENT_VERIFIED. Xemu blocked; R0-F is not passed.**
+XEMU_BOOT_VERIFIED. SD/physical pending; R0-F is not passed.**
 
 The owner-directed first test build passed native C sanitizer tests and LLVM-MOS
 compilation on 2026-09-05. The full measurement obligations below remain pending.
@@ -31,7 +31,7 @@ fresh Xemu run; R0-F cannot inherit that missing gate.
 | F2 | Target diagnostics and any separately admitted platform wrapper | Functional proxy and read-only raster helper implemented; no DMA/IRQ wrapper. |
 | F3 | R0-F ledger/interface impact and static/host validation | Native tests, compile/link and accounting pass; dynamic high-water unmeasured. |
 | F4 | Fresh R0-F D81 construction and host gates | F65R0F1.D81 host structural/content PASS; exact identity in handoff. |
-| F5 | Exact-artifact Xemu gate | Pending. Two clean boots with pinned Xemu/ROM identity, captured screen/result block/hashes. Stop at `NOT VERIFIED` if unavailable. |
+| F5 | Exact-artifact Xemu gate | PASS: two clean boots; pinned identities, matching result blocks and inspected screenshots retained under docs/evidence/r0f/xemu/. |
 | F6 | SD byte and contiguity gates | Pending owner/admin/card action. On a fresh MEGA65 `NEW D81 DD IMAGE` root slot, use only `d81_sd_fill_mega65_slot.sh`; prove exact hash, one extent before/after at the same device offset/length, and safe eject. |
 | F7 | Physical chooser, platform identity, and measurement sweep | Pending MEGA65 operation/capture. Record platform identity before interpreting results; chooser pass precedes runtime testing. |
 | F8 | Evidence review and owner acceptance | Pending. Report observations without freezing limits; only explicit owner acceptance may close R0-F. |

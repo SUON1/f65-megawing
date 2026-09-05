@@ -8,7 +8,7 @@
   "D81_BYTES": 819200,
   "D81_FILENAME": "F65R0F1.D81",
   "D81_SHA256": "9b539a14f08d671195ef71e54bbacb3eacd5258634f7a29396bf00a068cddd89",
-  "D81_STATE": "HOST_CONTENT_VERIFIED",
+  "D81_STATE": "XEMU_BOOT_VERIFIED",
   "DISK_ID": "65",
   "DISK_LABEL": "F65 R0-F1",
   "ENTRY_FILENAME": "AUTOBOOT.C65 -> R0F-PROOF",
@@ -30,8 +30,8 @@
     "path": "tools/diagnostics/r0f_d81_loadability_gate.py",
     "sha256": "22b2bdaa999606b08608355f5869f7a8dbf12773074410a724e2709b410f3e1b"
   },
-  "XEMU_EVIDENCE": null,
-  "XEMU_RESULT": "AWAITING_STAGE_3",
+  "XEMU_EVIDENCE": "docs/evidence/r0f/xemu/evidence.json",
+  "XEMU_RESULT": "PASS",
   "c1541Listing": "D81 disk image recognised: /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/F65R0F1.D81, 80 tracks.\nUnit 8 drive 0: D81 disk image attached: /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/F65R0F1.D81.\n0 \"F65 R0-F1       \" 65 3d\n1    \"autoboot.c65\"     prg \n19   \"r0f-proof\"        prg \n7    \"r0f-evid\"         prg \n3133 blocks free.\nUnit 8 drive 0: D81 disk image detached: /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/F65R0F1.D81.\n",
   "construction": "fresh format plus all payload writes in one pinned c1541 invocation",
   "payloads": [

@@ -43,7 +43,7 @@
     "physical chooser testing before the exact R0-F D81 passes every preceding D81 state"
   ],
   "carrier": {
-    "state": "HOST_CONTENT_VERIFIED — F65R0F1.D81; Xemu/SD/physical NOT VERIFIED",
+    "state": "XEMU_BOOT_VERIFIED — F65R0F1.D81; SD/physical NOT VERIFIED",
     "construction": "Fresh format and all payload writes in one pinned toolchain/vice-clean/bin/c1541 session; source payloads only.",
     "delivery": "Fresh unique uppercase 8.3 MEGA65-created root slot followed only by sudo tools/diagnostics/d81_sd_fill_mega65_slot.sh SOURCE.D81 /Volumes/MEGA65FDISK EXPECTED_SHA256.",
     "required_states": [
