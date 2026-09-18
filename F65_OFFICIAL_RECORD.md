@@ -42,10 +42,107 @@ Revision 1.4 is referenced as superseded and retained by Revision 1.4.1 but was 
 
 ## 3. Current engineering state
 
+R0-F platform development (2026-09-17): the owner approved the additive
+proof-platform work and required Xemu before native-blank SD delivery.
+PF-001 now implements reset-only canonical entry, a resident raster IRQ with
+register canaries, bounded real DMA copy and actual PCM playhead/stop probes.
+Host/target checks pass; normal-speed Xemu observed those primitives passing.
+Current exact evidence and limitations: `docs/reports/R0-F_PLATFORM_HANDOFF.md`.
+**The full combined calibration/workload carrier is not built or delivered.**
+The reversible ROM-reclaim contract, calibrated workload, complete service
+integration and full measurement matrix remain open. No SD write/eject, D81
+packaging, physical run, gate acceptance, commit or push in this increment.
+F65BLK01 was read-only observed at 688128 bytes (ineligible); F65BLK02 at
+819200 bytes (size only, not yet content/extent verified). Both are untouched.
+
+R0-F combined-build request (2026-09-17): host clock-source preflight code is
+built and tested; **the combined target is not built**. The pinned source-model
+comparison of F5 raw data does not supply independent calibration or SI units.
+Existing admission prohibits public-ABI changes, while combined IRQ/DMA/PCM
+and canonical startup contracts are missing or explicitly unverified/deferred.
+`docs/reports/R0-F_COMBINED_PLATFORM_ADMISSION.md` records the bounded
+cross-interface review required before target integration. No target, D81,
+SD, or existing evidence bytes changed in this increment. No new Xemu or
+physical run; the full-closure direction and all unpassed gates are unchanged.
+
+R0-F5 physical intake (2026-09-17): owner supplied the summary and all 22
+one-based capture pages. Originals, visual summary and matching pre/post SD
+hash/one-extent records are retained in
+`docs/evidence/r0f/capture/physical/REVIEW.md`. Acquisition-complete and
+inherited functional PASS are observed. Subsequent image-only transcription
+with recorded visual corrections passed all 22 page CRCs, full CRC 8D78FBC0,
+and the unchanged Java validators (2640 samples, 80 spans, 198 corruptions
+rejected). The physical raw-count capture is validated, not calibrated time.
+Subsequent owner Terminal output confirms matching SD bytes, one unchanged
+extent and successful safe eject for F5. No R0-F acceptance or release-state
+promotion.
+
+R0-F capture implementation (2026-09-17): RC-1 screen transport is built as
+F65R0F5.D81. Host/static and independent Java capture checks passed; the fresh
+carrier passed structural/content gates and two clean exact-image Xemu boots
+with inspected screenshots. Handoff: `docs/reports/R0-F_CAPTURE_HANDOFF.md`.
+This adds a post-acquisition read-only viewer/importer, not calibrated timing
+or the full combined workload. No SD/hardware test is requested yet. F4/F2
+remain unchanged. Full R0-F and measured limits remain open.
+
+R0 full-closure direction (2026-09-17): the owner selected option 1, completing
+the full R0 proof program on the current design. The archive option was not
+selected. `docs/plans/R0_FULL_CLOSURE_WORK_PLAN.md` tracks clock/capture,
+protected-workload and combined-harness reconciliation, implementation, Xemu,
+and corresponding hardware acceptance. This resolves the direction question
+below, not a gate or a hardware-wrapper contract. The displayed core prefix
+has been resolved to an official source commit; installed binary provenance
+and calibration remain open. No new target/carrier build in this kickoff.
+
+R0-F evidence review (2026-09-17): owner photographs now show F65R0F4
+acquisition complete, inherited functional PASS, all requested phase masks,
+and platform display identities (R6, ARTIX B5C770C6, ROM V920413, NTSC).
+Original photos and raw-count transcription are retained under
+`docs/evidence/r0f/cia-timing/physical/`. Physical raw-data reduction, exact F4
+SD delivery chain and calibrated timing remain unverified. The host release
+manifest remains XEMU_BOOT_VERIFIED; it is not retroactively promoted.
+`docs/reports/R0-F_CLOSEOUT_REVIEW.md` identifies a scope gap: the accepted
+R0-E bounded proxy and its F4 timing do not satisfy the full combined-service
+R0-E/F requirements under AD-001. Owner direction is needed on continuing that
+full proof program versus archiving this bounded experiment with gates open.
+No scope waiver, gate acceptance, new build, SD operation, commit or push was
+performed by this documentary review. Historical updates below describe the
+evidence available at their respective handoff times.
+
+R0-F CIA-count measurement build (2026-09-17): the new reset-only diagnostic
+times 2,640 inherited fixture ticks in 80 phase-started cohorts, retains raw
+durations/lateness and frame cross-checks, and has independent Java validation.
+Fresh F65R0F4.D81 passed host structural/content checks and two clean Xemu boots,
+with Java-validated raw captures and visually inspected screenshots. Current emulator and
+release results are in `docs/reports/R0-F_CIA_TIMING_HANDOFF.md`. Units remain
+raw CIA counts, not calibrated time; physical evidence and full R0-F acceptance
+remain open. Private wrapper/state decision: `R0-F_CIA_TIMING_CONTRACT.md`.
+No production ABI, memory ownership, reserve, DMA or interrupt-service change.
+
+R0-F startup correction (2026-09-17): the proof-specific link now excludes the
+unused SDK character-set initializer that caused `R0F-STATIC-STARTUP-001`.
+F65R0F2.D81 passed bounded host/static, D81 structural/content checks, and two
+fresh pinned Xemu boots. Both screenshots and result blocks were verified.
+The owner subsequently supplied matching SD hash/extent records and a physical
+photo showing F65R0F2 startup-fix identity, functional PASS and 80 valid samples.
+The owner reported Finder crashed during eject; safe eject is NOT VERIFIED,
+not PASS. Full R0-F
+measurements and acceptance remain open. See `docs/reports/R0-F_STARTUP_FIX_HANDOFF.md`.
+
+R0-F Step 3 audit (2026-09-16): native host validation and compile/link pass;
+static acceptance is BLOCKED by `R0F-STATIC-STARTUP-001`. Linked startup calls
+KERNAL $FFD2 after setting B=$02 without the separately required thunk. The
+private ledger now accounts for 107 bytes of existing compiler static-stack
+storage. The target PRG is unchanged. Prior Step 2 completion wording was
+corrected: the bounded proxy contract does not complete the calibrated R0-F
+measurement contract. See `docs/reports/R0-F_STEP3_AUDIT.md`.
+
 R0-F update (2026-09-05): the owner-directed first bounded functional/raster
 test slice is implemented and compiled with pinned LLVM-MOS. Native C tests
-and fresh F65R0F1.D81 host structural/content gates passed. Two clean Xemu boots of the exact carrier passed after locating the pinned
-runtime in the owner's other checkout; SD and physical testing have not begun.
+and fresh F65R0F1.D81 host structural/content gates passed. Two clean Xemu boots
+of the exact carrier passed after locating the pinned runtime in the owner's other
+checkout; SD-native transfer hash/extent/safe-eject passed and owner-reported
+hardware chooser/runtime was observed on MEGA65.
 See `docs/reports/R0-F_BUILD_HANDOFF.md`. This does not complete the full
 R0-F measurement contract or change any approved limits or production authority.
 
@@ -67,6 +164,12 @@ weapons, tactical AI, campaign, audio, gameplay, or production-renderer code.
 Draft, proposed, `TBD`, `TARGET`, and `R0-GATED` material remains exactly that until the named human or measurement gate changes its status.
 
 ## 4. Current authorized milestone: R0-F physical measurement evidence
+
+The owner selected full closure on the current design. Reconcile the current
+bounded admission with the full combined-harness requirements under AD-001;
+track execution in `docs/plans/R0_FULL_CLOSURE_WORK_PLAN.md`. Existing bounded
+evidence remains valid only for its stated scope. No gate is passed by the
+choice to finish the program.
 
 R0-F is limited to separately admitted physical-MEGA65 timing, DMA, IRQ, and
 platform-identity evidence corresponding to the closed bounded R0-E
@@ -129,3 +232,13 @@ These later-phase gaps do not prohibit independent, bounded R0-A work unless an 
 | 2026-09-01 | R0-E functional-proxy evidence and R0-F handoff | Reworked the R0-E target proof so its result block reflects executed bounded cases, then passed two clean Xemu boots of the exact host-gated carrier and published the retained evidence | Source `ae2b0ae`; evidence record `e2e2b46` on `codex/r0-e-development` | The carrier is `XEMU_BOOT_VERIFIED` only. Timing is `NOT_MEASURED`; DMA hardware probe is not executed; physical chooser, SD-copy hash, physical measurements, human acceptance, and all measured-limit decisions remain open. |
 | 2026-09-01 | R0-E physical carrier verification | Exact SD-copy hash matched; MEGA65 chooser showed the readable `F65R0E.D81` directory and loaded its physical functional-proxy banner | Physical evidence record pending publication | The D81 is `TEST_ELIGIBLE` only for the bounded functional-proxy scope. Timing, DMA, IRQ, phase-sweep, platform-identity, R0-E/R0-F closure, and measured-limit decisions remain open. |
 | 2026-09-04 | R0-E bounded proof closure and D81 delivery correction | `F65R0EG.D81` passed pre/post raw FAT32 one-extent audits, safe eject, physical chooser, and Rev3 runtime capture; recorded the MEGA65-native slot procedure for later carriers | `702700f`, `2559e18`, and the R0-E closure reconciliation commit on `codex/r0-e-development` | Owner accepted closure of the bounded R0-E functional-proxy/raster-observation scope only. R0-F measurement/platform work, measured limits, and production authorization remain open. |
+| 2026-09-12 | R0-F physical/SD evidence lock-in | Working-tree report-only updates; no commit yet | SD copy was hash-verified and contiguous with a single extent/safe eject; owner-reported physical runtime banner evidence captured in `docs/evidence/r0f/physical/R0F-PHYSICAL-RUNTIME-2026-09-12.md`. R0-F measured-limits items remain open. |
+| 2026-09-16 | R0-F Step 3 static/host audit | Strengthened result validation, accounted for 107-byte compiler static stack, corrected proxy-contract claims, and recorded startup B/KERNAL conflict | Working tree on `744920d`; no commit or push | Owner requested Step 3 execution. Host/build PASS does not pass the blocked static gate, approve a new platform wrapper, close R0-F, or freeze limits. |
+| 2026-09-17 | R0-F bounded startup fix | Excluded unused SDK ROM initializer, added static rejection checks/build banner, fresh-built F65R0F2.D81, passed host gates and two clean Xemu boots | Working tree on `744920d`; exact hashes retained; no commit or push | Owner requested continuation. SD/physical retest, full measurements, owner acceptance and measured-limits approval remain pending. |
+| 2026-09-17 | R0-F2 physical runtime evidence | Retained hashed owner photo and pre/post SD extent records; new build banner, functional PASS and all 80 samples valid observed | Working tree; no commit or push | Observation only. Safe-eject confirmation, full measurement obligations, owner gate acceptance and measured limits remain open. |
+| 2026-09-17 | R0-F private CIA-count diagnostic | Added reset-only CIA1 timer ownership, generated REV2 encoding, retained raw phase-started tick/cohort measurements and independent Java reduction; F3 withheld after serial-mode guard review, fresh F4 built | Working tree on `744920d`; source hashes in build accounting; no commit or push | Owner requested build under AD-001. No SI calibration, physical result, public ABI change, measured-limit selection, or R0-F acceptance implied. |
+| 2026-09-17 | R0-F4 physical evidence and closeout review | Retained four original hashed photos, transcribed physical raw-count summaries and displayed platform identities; documented full-scope versus bounded-proxy evidence gap | Working tree; documentation/evidence only; no commit or push | User requested continuation of evidence review. Physical observation does not establish exact SD bytes, calibration, complete combined load, a waiver, or full R0-F acceptance. Owner scope direction remains open. |
+| 2026-09-17 | Full R0 closure direction selected | Owner replied `1` to select full proof-program completion on the current design; added dependency-ordered work plan and initial source audit | Working tree; documentation only; no commit or push | Direction question resolved. No gate pass, parent approval, measured-limit selection, unspecified wrapper admission, Phase 1 or gameplay authorization. |
+| 2026-09-17 | RC-1 raw-capture viewer implementation | Built F5 post-acquisition screen transport and Java importer; host/static, fresh D81 and two exact-image Xemu boots passed; source-traced video-derived CIA clock enable | Working tree; exact inputs in F5 accounting; no commit or push | Owner requested Build it. Capture slice only: no calibrated units, full combined workload, SD/physical proof or gate acceptance. |
+| 2026-09-17 | R0-F proof-platform approval and qualification | Owner approved additive platform-contract development; PF-001 adds canonical-entry/IRQ/DMA/PCM development PRG and fail-closed host/Java/Xemu tests | Working tree on `744920d`; exact inputs in PF-001 accounting; no commit or push | Approval is recorded in task admission. Primitive qualification does not pass the full combined harness, admit deferred reversible ROM reclaim, calibrate SI/cycles, or authorize physical delivery without the exact-D81 gates. |
+| 2026-09-18 | R0-F CF001 combined experiment | Implemented reset-only ROM backup/reclaim/byte-verified recovery, nominal clock/work calibration, populated synthetic workload, snapshots, renderer, matrix input, SID/PCM, DMA and IRQ; host/Java checks and two NTSC plus two PAL boots of exact F65BLK02 candidate pass | Working tree on `744920d`; D81 SHA-256 `b13853a7ddaf3bf26dfcaceb7e4466ab2d58702b96bfcbe9ae62c7db56ed3d82`; retained CF001 evidence; no commit or push | Owner requested ROM/calibration/integration/Xemu and F65BLK02 preparation. SD remains untouched pending owner sudo command and raw FAT32/eject gates. Reset-only recovery does not admit production ROM/storage return; physical calibration, full parent workload/latency/window requirements, measured limits and R0-F acceptance remain open. |

@@ -1,0 +1,4 @@
+Observed: stage=04 fault=0C B=02 SPH=01 port=35 D030=44 IRQ=26 DMA=255 PCM=0
+Exception in thread "main" java.lang.IllegalArgumentException: target fault/stage
+	at f65.tools.R0FPlatformOracle.require(R0FPlatformOracle.java:16)
+	at f65.tools.R0FPlatformOracle.main(R0FPlatformOracle.java:27)

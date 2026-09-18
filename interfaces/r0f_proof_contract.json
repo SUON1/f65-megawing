@@ -1,6 +1,24 @@
 {
-  "identity": "R0F1-REV1-functional-raster-proxy",
+  "identity": "R0F1-REV1-functional-raster-proxy-startup-fix",
   "status": "BOUNDED_PROOF_NOT_MEASURED_LIMITS",
+  "capture_viewer": {
+    "contract": "docs/reports/R0-F_CAPTURE_CONTRACT.md",
+    "constants": {"CAPTURE_PAGE_BYTES":512,"CAPTURE_ROW_BYTES":32,"CAPTURE_ROWS":16,"CAPTURE_TOTAL_BYTES":11136,"CAPTURE_PAGES":22},
+    "status": "POST_ACQUISITION_READ_ONLY_SCREEN_TRANSPORT_NOT_HARDWARE_VERIFIED",
+    "keyboard": "D610 read/ack only after timers stopped; no gameplay input service",
+    "storage": "none; screen transport only"
+  },
+  "cia_timing": {
+    "identity": "R0F1-REV2-CIA-count-phase-sweep",
+    "contract": "docs/reports/R0-F_CIA_TIMING_CONTRACT.md",
+    "status": "PRIVATE_RESET_ONLY_DIAGNOSTIC_NOT_PHYSICAL_QUALIFIED",
+    "constants": {"PERIOD_COUNTS":10000,"CALIBRATION_FRAMES":16,"SWEEP_PHASES":16,"SWEEP_TICKS":33,"SWEEP_CASES":5,"SWEEP_SAMPLES":528,"RAW_CAPTURE_BYTES":10880,"POLL_LIMIT":65535},
+    "units": "raw CIA counts; SI calibration and physical identity pending",
+    "writes": ["CIA1 DC04-DC07 latches", "CIA1 DC0E-DC0F control"],
+    "exit": "timers stopped; nonreturning; reset required; no inherited timer-state restoration",
+    "dma": "NOT EXECUTED",
+    "irq": "masked throughout standalone run; no IRQ measurement or service claim"
+  },
   "constants": {
     "RESULT_ADDRESS": 6400, "RESULT_BYTES": 256,
     "SNAPSHOT_BYTES": 64, "SIMULATION_HZ": 100, "STAGE_COUNT": 21,
@@ -9,9 +27,124 @@
     "TIMING_CASE_OFFSET": 160, "TIMING_CASE_BYTES": 16,
     "VALID_MASK_OFFSET": 240
   },
+  "measurement_protocol": {
+    "status": "BOUNDED_PROXY_DOCUMENTED_FULL_MEASUREMENT_CONTRACT_PENDING",
+    "clock": {
+      "nominal_model_hz": 100,
+      "stages": 21,
+      "notes": "unpaced functional iterations; no measured or scheduled 100 Hz clock"
+    },
+    "calibration": {
+      "status": "NOT_PERFORMED",
+      "conversion": "none; raw low-byte differences cannot establish elapsed time",
+      "full_measurement_gate": "Requires an admitted timebase, calibrated units, wrap resolution, independent simulation/display clocks and attributed physical platform evidence. These are not supplied by this proxy."
+    },
+    "acquisition": {
+      "sample_count_per_case": 16,
+      "phase_bins": 16,
+      "phase_stride": 16,
+      "window_ticks": 33,
+      "pre_window_reset": true,
+      "phase_wait_api": "r0f_raster_wait_low_phase",
+      "phase_wait_timeout_reads": 65535,
+      "phase_wait_failure_rule": "validity bit clear when requested raster low-byte is not observed before timeout"
+    },
+    "sample_units": {
+      "raster_register": "$D012 low byte only",
+      "unit": "delta = (end - start) mod 256",
+      "interpretation": "raw modulo-256 sample bytes only; no cycle-time conversion or wrap-unwrapping",
+      "ordering": "case-major payload; sample index 0..15 requests low-byte value index*16 within each case; cross-case execution order is unspecified by the C expression"
+    },
+    "wrap_handling": {
+      "mode": "uint8_t wrap",
+      "start_can_lag": true,
+      "delta_wraps": "legal and retained",
+      "percentiles": "do not represent elapsed-time percentile/worst timing values"
+    },
+    "result_encoding": {
+      "header": "0:3 ASCII R0F1; 4 revision; 5 nominal model Hz; 6 stages; 7 functional status",
+      "case_records": "40:59 five little-endian checksums",
+      "functional_records": "64:143 five 16-byte copied-logic counters",
+      "timing_header": "144:159 RT header + acquisition status byte 151",
+      "timing_payload": "160:239 five cases x 16 raw sample bytes",
+      "timing_masks": "240:249 five u16 validity masks",
+      "reserved": "250:254"
+    },
+    "failure_behavior": {
+      "acquisition_failure": "on timeout, clear that sample's validity bit and keep timing status byte 151 at 0",
+      "case_failures": "functional case counters remain deterministic; acquisition pass byte expresses timing completeness only",
+      "false_pass_rejection": "host validator rejects altered fixed fields even after recomputing a valid checksum; separately rejects checksum corruption and wrong lengths"
+    },
+    "platform_architecture_review": {
+      "status": "SOURCE_AND_STATIC_REVIEW_ONLY_NOT_OWNER_ACCEPTANCE",
+      "reviewed_files": [
+        "src/platform/r0f/raster_observation.c",
+        "src/diagnostics/r0f/composite.c",
+        "src/r0f/main.c"
+      ],
+      "wrapper_type": "read-only raster instrumentation helper",
+      "linked_startup_review": {
+        "status": "FIX_IMPLEMENTED_REQUIRES_FRESH_XEMU_AND_PHYSICAL_EVIDENCE",
+        "observation": "Retained PRG startup executes SEI and writes $00/$01/$D030; establishes B=$02 at $2025-$2027; .init.250 calls KERNAL $FFD2 at $2035 before main, with no B=$00 thunk in that path.",
+        "authority": "docs/decisions/R0-A-45GS02-B-REGISTER-INTEGRATION.md requires a separately proved B-save/B=$00/B-restore thunk for KERNAL calls.",
+        "disposition": "R0-F-only startup.ld excludes the pinned SDK char-conv .init.250 initializer because this proof writes screen codes directly and uses no SDK text I/O. Audit rejects linked direct ROM calls/jumps. No ROM wrapper is added; stock startup/base-page sequence is retained. New carrier F65R0F2.D81 requires fresh evidence."
+      },
+      "platform_register_access": {
+        "register": "$D012",
+        "source": "LLVM-MOS MEGA65 VIC-II-compatible rasterline accessor in mega65.h",
+        "units": "low-byte only",
+        "writes": [],
+        "reads": ["rasterline low byte"]
+      },
+      "timing_behavior": {
+        "wait_path": "r0f_raster_wait_low_phase",
+        "max_attempts_per_sample": 65535,
+        "failure_path": "validity bit clear; status byte 151 becomes 0",
+        "determinism": "bounded loop bound is deterministic; match start phase can drift under contention, so sampling is phase-targeted only"
+      },
+      "architecture_contract_alignment": [
+        "no MAP/IRQ/NMI registration in this helper",
+        "no DMA service calls",
+        "no kernel calls, callbacks, scheduler yields, or storage calls",
+        "no handwritten assembly added for this helper",
+        "startup establishes B=$02 after stock ROM startup; fini would restore B=$00, but main does not return",
+        "ROM-hosted MAP/IRQ state is inherited and is not a production canonical MemoryAccessABI proof"
+      ],
+      "register_clobber_scope": "Ordinary compiled C under the pinned LLVM-MOS ABI, not preserve-all; generated instructions and compiler pseudo-register use require build-specific inspection. No new Q preservation contract or handwritten wrapper is admitted.",
+      "memory_ownership": {
+        "scope": "whole standalone proof; the raster helper itself only reads D012 and uses compiler temporaries/stack",
+        "writes": [
+          "result block $1900-$19FF",
+          "screen lines $0800-$0FCF",
+          "192-byte snapshot BSS; current address in generated map",
+          "107-byte compiler static stack .noinit; current address in generated map",
+          "compiler base page $0200-$02FF and stack usage; dynamic high-water unknown",
+          "stock startup writes $00/$01/$D030 before main; unnecessary SDK ROM initializer excluded"
+        ],
+        "reads": [
+          "$D012",
+          "working globals for snapshot/counter state"
+        ],
+        "prohibited": [
+          "D81 filesystem",
+          "protected $058000-$05FFFF",
+          "DMA lists",
+          "IRQ vector tables"
+        ]
+      },
+      "failure_classification": {
+        "acquisition_not_observed": "does not alter functional counters; timing-only pass bit is lowered",
+        "hardware_identity_missing": "diagnostic observations remain attributable only to their recorded evidence tier; full hardware measurement acceptance is blocked"
+      }
+    }
+  },
   "encoding": {
     "0:7": "ASCII R0F1, revision 1, model Hz, stages, functional status 127=pass",
+    "8:27": "five little-endian u32 profile labels: 9, 16, 24, 48, 64; metadata, not actual entity execution",
+    "28:32": "snapshot count 3, record bytes 64, proxy marker 1, reserved 0, case count 5",
+    "33:39": "reserved zero",
     "40:59": "five little-endian u32 functional checksums",
+    "60:63": "reserved zero",
     "64:143": "five 16-byte functional records inherited from R0-E; last two bytes reserved zero",
     "144:159": "RT observation header; +7 acquisition status 127=complete, not timing pass",
     "160:239": "five cases x 16 modulo-256 raster deltas in requested phase order (phase index x 16)",

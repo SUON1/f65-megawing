@@ -1,0 +1,92 @@
+{
+  "status": "PHYSICAL_CAPTURE_TRANSPORT_AND_INDEPENDENT_RAW_REDUCTION_PASS",
+  "units": "RAW_CIA_COUNTS_NOT_CALIBRATED_TIME",
+  "captureBytes": 11136,
+  "captureSha256": "042b8155e16591864c6de5b5855fc28427b789b40b90b0c23623d2540815d700",
+  "streamCrc32": "8D78FBC0",
+  "pageCrcCount": 22,
+  "samples": 2640,
+  "cohortSpans": 80,
+  "cases": [
+    {
+      "case": "NORMAL",
+      "samples": 528,
+      "p50": 52,
+      "p95": 52,
+      "maximum": 53,
+      "maximumLateness": 0,
+      "misses": 0,
+      "phaseMaskHex": "FFFF",
+      "maximumSpan33": 320063
+    },
+    {
+      "case": "LAG",
+      "samples": 528,
+      "p50": 58,
+      "p95": 62,
+      "maximum": 63,
+      "maximumLateness": 0,
+      "misses": 0,
+      "phaseMaskHex": "FFFF",
+      "maximumSpan33": 320071
+    },
+    {
+      "case": "SHED",
+      "samples": 528,
+      "p50": 57,
+      "p95": 69,
+      "maximum": 72,
+      "maximumLateness": 0,
+      "misses": 0,
+      "phaseMaskHex": "FFFF",
+      "maximumSpan33": 320083
+    },
+    {
+      "case": "FAULT",
+      "samples": 528,
+      "p50": 52,
+      "p95": 53,
+      "maximum": 53,
+      "maximumLateness": 0,
+      "misses": 0,
+      "phaseMaskHex": "FFFF",
+      "maximumSpan33": 320064
+    },
+    {
+      "case": "PRESS",
+      "samples": 528,
+      "p50": 52,
+      "p95": 52,
+      "maximum": 55,
+      "maximumLateness": 0,
+      "misses": 0,
+      "phaseMaskHex": "FFFF",
+      "maximumSpan33": 320063
+    }
+  ],
+  "frameCountsBefore": 265103,
+  "frameCountsAfter": 265097,
+  "summaryCorruptionsRejected": 35,
+  "fixedFieldCorruptionsRejected": 163,
+  "validators": [
+    {
+      "path": "tools/generators/src/main/java/f65/tools/R0FCapturePages.java",
+      "sha256": "cb9388360364295bfeda3d1e139a45aaed5644febcd2eeed4bf99ce02bae3abb"
+    },
+    {
+      "path": "tools/generators/src/main/java/f65/tools/R0FTimingOracle.java",
+      "sha256": "cedacef611d8ea20356b4d131add3a945d05846e965f2c2ef2ca0ea58c882199"
+    }
+  ],
+  "evidence": [
+    "physical-capture.java.txt",
+    "physical-timing.java.txt",
+    "transcription/transcription-manifest.json",
+    "TRANSFER-TERMINAL.txt"
+  ],
+  "sdHashExtentEject": "PASS",
+  "fullR0FAcceptance": "NOT_GRANTED",
+  "calibration": "NOT_PERFORMED",
+  "fullCombinedServices": "NOT_IMPLEMENTED",
+  "source": "Owner photos; image-only transcription and explicitly recorded visual corrections. No emulator bytes or expected measurement values substituted."
+}

@@ -1,0 +1,45 @@
+{
+  "status": "BLOCKED",
+  "scope": "bounded proxy static/host review only; not full R0-F acceptance",
+  "hostResult": {
+    "result": "PASS",
+    "tier": "native C with simulated raster, NOT Xemu",
+    "cases": 5,
+    "phaseSamples": 80,
+    "timeoutInjection": "PASS",
+    "failureRejection": "PASS",
+    "sanitizers": "address,undefined",
+    "rejectedMutations": 358,
+    "rawSampleEndpoints": "0 and 255 accepted; no timing threshold",
+    "javaOracle": "NOT RUN; pinned JDK unavailable"
+  },
+  "ledgerReconciliation": "PASS",
+  "findings": [
+    {
+      "id": "R0F-STATIC-STARTUP-001",
+      "status": "BLOCKED",
+      "callAddress": "0x2035",
+      "target": "0xffd2",
+      "reason": "ROM call after B=$02 entry; separate B-save/B=$00/B-restore thunk admission and proof required",
+      "authority": "docs/decisions/R0-A-45GS02-B-REGISTER-INTEGRATION.md"
+    }
+  ],
+  "prgMatchesRetainedBuild": true,
+  "retainedXemuResultRevalidation": "PASS; two stored result blocks, not fresh boots",
+  "artifacts": {
+    "build-accounting.json": "35b5eaed28efe2e3f69ad472b5afa707e04c34ca80f03fcd4ad7f4c2a982bae1",
+    "host-test.json": "4b1cb26fdd939f8432bc7cdee0b60fa45cefbbe2f6adf0850f20ca62c8d1f492",
+    "F65-R0F-PROOF.prg": "510c2bfc8686f86b5fd934edd0b9863c0a176951a2871eaa0f990c8e0cec106e",
+    "F65-R0F-PROOF.map": "bb0a14bdf6d838a0adcce9f529ee88c6a0fb6d2181aac8f907ea4d5a82f9466a",
+    "F65-R0F-PROOF.symbols": "ffa721812f2784924c1e34463a8808195be2593e169defdf5a35001105050f0c",
+    "F65-R0F-PROOF.disassembly": "c74f92f12e6d8b9299da9cc20d3c4cfaedd7867211f38abf6006118ab13596be"
+  },
+  "limits": [
+    "No complete calibrated measurement contract",
+    "Java oracle not implemented/run",
+    "Dynamic stack high-water not measured",
+    "Physical platform identity incomplete",
+    "No fresh Xemu or physical run",
+    "No D81 operation"
+  ]
+}

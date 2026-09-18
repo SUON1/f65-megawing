@@ -1,5 +1,56 @@
 # R0-F Test Guide
 
+## Current combined experiment: CF001 / F65BLK02
+
+Use `docs/reports/R0-F_COMBINED_HANDOFF.md` for the exact hash, actual gate state,
+one-command guarded delivery and hardware checklist. The card has not been
+written merely because the local D81 exists. CF001 combines reset-only ROM
+recovery, nominal-clock comparison calibration, synthetic workload, rendering,
+real DMA/IRQ/PCM/matrix edges and raw capture. Full R0-F acceptance remains open.
+The combined release manifest is authoritative; previous instructions below
+apply only to their historical variants.
+
+Hardware sequence after verified fill/eject: mount F65BLK02, load R0F-PROOF,
+RUN, tap/release A three times during the colored display, note audio, capture
+summary and raw pages 01–0E, then reset. Do not press RESTORE while acquiring.
+See the full handoff for fault/identity checks and instructions if chooser FF
+appears. There are no runtime disk writes.
+
+## Previous development test: PF001 (not for SD delivery)
+
+The owner selected full R0 closure and approved additive platform development.
+The earlier bounded-proxy procedure below is retained for its existing carriers;
+it is not the full combined workload or a scope waiver.
+
+```sh
+python3 tools/diagnostics/r0f_platform_build.py build
+python3 tools/diagnostics/r0f_platform_build.py xemu
+```
+
+These commands qualify the standalone platform development PRG: native
+ASan/UBSan checks, pinned target build/static checks, then two normal-speed
+direct-PRG Xemu boots and independent Java result validation. Do not add
+`-sleepless`: the pinned Xemu advances PCM in its real-time SDL audio callback.
+This is not exact-D81 loadability, physical audio evidence or calibrated timing.
+Handoff and remaining integration dependencies: `docs/reports/R0-F_PLATFORM_HANDOFF.md`.
+No physical test is requested for this primitive-only PRG.
+
+For the eventual full combined carrier, use the existing native **F65BLK02.D81**
+destination only after verifying blank contents, correct size and one physical
+extent. The read-only observation of F65BLK01 was 688128 bytes, not a valid
+819200-byte D81; do not overwrite or repair it. Fresh-format/populate the local
+F65BLK02.D81 in one pinned c1541 session and test that exact filename/hash in
+Xemu before in-place SD delivery. The native blank is a destination slot, never
+a local construction template. Both blanks remain untouched.
+
+CF001 delivery now independently verifies the exact untouched blank; the fill
+helper compares pre/post device and extent objects before eject and rolls back
+on a mismatch. Matching hashes, exactly one
+extent and successful safe eject are still mandatory. The root D81 gate
+supersedes any historical procedure below.
+
+## Retained bounded-carrier scope
+
 R0-F is a bounded physical-MEGA65 evidence phase corresponding to the accepted
 R0-E functional-proxy configuration. It is not production gameplay, a
 measured-limits decision, or Phase 1 authorization.
@@ -63,6 +114,34 @@ wrapper is separately admitted and executed, report
 
 ## Current test state
 
+Current measurement build: **F65R0F4.D81** in `build/r0f/cia-timing-safe/`.
+Use `F65_R0F_VARIANT=cia-timing sh tools/build/r0f.sh ACTION`, where ACTION is
+`host-test`, `build`, `audit`, `package`, or `xemu`. Package refuses an existing
+identity. See `docs/reports/R0-F_CIA_TIMING_HANDOFF.md` for actual run results and
+the exact hash; the F1/F2 instructions below are historical.
+
+This diagnostic takes exclusive CIA1 timer ownership and requires RESET after
+completion. Do not press RESTORE/Freezer during acquisition. It stops timers
+on completion/fault; does not return to BASIC. An acquisition-complete screen
+does not mean deadlines passed or R0-F is accepted. All displayed measurements
+are hexadecimal raw CIA counts. Capture the entire final screen and machine
+identity; do not interpret counts as microseconds. No SD transfer was performed
+for this build. Resolve the previously reported Finder/eject failure before
+the next physical transfer; F2 safe eject is NOT VERIFIED.
+
+Current successor (2026-09-17): F65R0F2.D81 under `build/r0f/startup-fix/`
+has passed bounded static/host gates and two fresh Xemu boots after the startup
+fix. See `docs/reports/R0-F_STARTUP_FIX_HANDOFF.md` for exact hash, command,
+environment-retry record, and pending native-slot SD/hardware procedure. The
+older Step 3 failure and F65R0F1 results below are retained as history.
+
+Step 3 review (2026-09-16): run `sh tools/build/r0f.sh audit` for current native,
+compile/link, ledger and startup checks. Expected current result is exit 2:
+`R0F-STATIC-STARTUP-001`. Resolve the startup B/KERNAL contract conflict before
+advancing to packaging. The existing carrier's prior two-boot Xemu, SD transfer,
+and owner-reported hardware loading remain recorded observations; this audit
+does not request another SD transfer. See `docs/reports/R0-F_STEP3_AUDIT.md`.
+
 The first bounded proxy is implemented. Run `sh tools/build/r0f.sh host-test`
 for native C sanitizer checks, including five functional cases and phase-timeout
 injection; `build` compiles the target and emits map/symbols/disassembly.
@@ -73,7 +152,8 @@ pinned emulator, owner ROM (`F65_MEGA65_ROM`), and initialized emulator SD image
 (`F65_MEGA65_SD_IMAGE`), and runs two fresh processes with disposable SD copies.
 
 Native checks, target build and D81 host gates passed on 2026-09-05. Two clean Xemu boots subsequently passed using the owner's located runtime.
-The exact carrier may proceed to the gated native-slot SD transfer workflow;
-no plain copy and no physical testing before the remaining gates.
+That exact carrier subsequently passed the native-slot SD transfer workflow and
+was owner-reported loaded on hardware. Step 3's startup finding blocks further
+advancement; earlier loading is not complete platform-ABI verification.
 The full physical measurement program remains pending. Exact evidence and
 limitations: `docs/reports/R0-F_BUILD_HANDOFF.md`.

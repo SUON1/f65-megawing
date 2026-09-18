@@ -1,7 +1,36 @@
 # R0-F Execution Plan
 
-Status: **First bounded functional/raster slice implemented; F65R0F1.D81 is
-XEMU_BOOT_VERIFIED. SD/physical pending; R0-F is not passed.**
+2026-09-18 current increment: CF001 combined experiment implemented. See
+`docs/reports/R0-F_COMBINED_HANDOFF.md` for actual build/Xemu/delivery state and
+remaining full-program requirements. Historical successor descriptions below
+are not the current candidate identity. Full R0-F remains open.
+
+RC-1 update: F65R0F5 read-only raw-capture viewer/importer built and host/Xemu
+tested; see `docs/reports/R0-F_CAPTURE_HANDOFF.md`. RC-1 calibration and RC-2
+combined admission remain open. No physical card action requested now.
+
+Owner selected full closure on the current design by reply `1` on 2026-09-17.
+Direction is resolved; current work packages and initial source audit:
+`docs/plans/R0_FULL_CLOSURE_WORK_PLAN.md`. The original bounded admission and
+historical stages below remain evidence of prior scope, not full acceptance.
+
+Status: **F65R0F4 physical completion observed; full R0-F is not passed.**
+Current closeout review: `docs/reports/R0-F_CLOSEOUT_REVIEW.md`. Four original
+owner photos and transcribed results are retained under
+`docs/evidence/r0f/cia-timing/physical/`. Displayed platform identity is now
+partially known; full pinning, calibrated timing, physical raw validation and
+the F4 SD delivery chain remain open. Owner direction is now selected; the
+combined-harness contracts must be reconciled before target implementation.
+
+Current handoff: `docs/reports/R0-F_CIA_TIMING_HANDOFF.md`. It adds 2,640 raw
+timed fixture records, nominal-count release deadlines, 80 phase-started cohorts,
+frame-count cross-checks, and independent Java checks. SI calibration, full
+sliding-window/phase coverage, actual input/audio/IRQ/DMA and complete physical identity
+remain open. The F1/F2 tables below are historical, not the new release record.
+
+2026-09-17 previous handoff: `docs/reports/R0-F_STARTUP_FIX_HANDOFF.md`.
+The table below retains the original F65R0F1 stage history; its startup blocker
+is corrected in F65R0F2. F65R0F1's hardware observation does not transfer to F65R0F2.
 
 The owner-directed first test build passed native C sanitizer tests and LLVM-MOS
 compilation on 2026-09-05. The full measurement obligations below remain pending.
@@ -27,13 +56,13 @@ fresh Xemu run; R0-F cannot inherit that missing gate.
 | Step | Deliverable | Status / exit condition |
 |---|---|---|
 | F0 | Admission, ownership, stage control, test guide, evidence map, interface/ledger impact | Updated for the owner-directed bounded test-code build. |
-| F1 | R0-F measurement contract and host oracle | Private proxy encoding implemented. Full measurement contract and Java oracle pending. |
-| F2 | Target diagnostics and any separately admitted platform wrapper | Functional proxy and read-only raster helper implemented; no DMA/IRQ wrapper. |
-| F3 | R0-F ledger/interface impact and static/host validation | Native tests, compile/link and accounting pass; dynamic high-water unmeasured. |
+| F1 | R0-F measurement contract and host oracle | Bounded proxy encoding documented; full calibrated measurement contract and Java oracle incomplete. Prior Step 2 completion wording corrected. |
+| F2 | Target diagnostics and any separately admitted platform wrapper | Functional proxy and read-only raster helper implemented; startup ROM call needs platform resolution (`R0F-STATIC-STARTUP-001`); no DMA/IRQ wrapper admitted. |
+| F3 | R0-F ledger/interface impact and static/host validation | Executed 2026-09-16: native tests and compile/link PASS; 107-byte compiler static stack now accounted. Audit BLOCKED by startup ABI conflict. See `docs/reports/R0-F_STEP3_AUDIT.md`. |
 | F4 | Fresh R0-F D81 construction and host gates | F65R0F1.D81 host structural/content PASS; exact identity in handoff. |
 | F5 | Exact-artifact Xemu gate | PASS: two clean boots; pinned identities, matching result blocks and inspected screenshots retained under docs/evidence/r0f/xemu/. |
-| F6 | SD byte and contiguity gates | Pending owner/admin/card action. On a fresh MEGA65 `NEW D81 DD IMAGE` root slot, use only `d81_sd_fill_mega65_slot.sh`; prove exact hash, one extent before/after at the same device offset/length, and safe eject. |
-| F7 | Physical chooser, platform identity, and measurement sweep | Pending MEGA65 operation/capture. Record platform identity before interpreting results; chooser pass precedes runtime testing. |
+| F6 | SD byte and contiguity gates | Prior F65R0F1 transfer PASS: exact hash, one pre/post extent at offset 104755200, length 819200, safe eject. No new transfer in Step 3. |
+| F7 | Physical chooser, platform identity, and measurement sweep | Owner-reported F65R0F1 load/runtime observed. Full platform identity and measurement sweep remain pending. |
 | F8 | Evidence review and owner acceptance | Pending. Report observations without freezing limits; only explicit owner acceptance may close R0-F. |
 
 ## Measurement obligations
@@ -64,6 +93,7 @@ Implemented commands (physical command remains gated and was not run):
 git diff --check
 sh tools/build/r0f.sh host-test
 sh tools/build/r0f.sh build
+sh tools/build/r0f.sh audit
 sh tools/build/r0f.sh package
 python3 tools/diagnostics/r0f_d81_loadability_gate.py . build/r0f/F65R0F1.D81
 sh tools/build/r0f.sh xemu
@@ -74,3 +104,10 @@ sudo tools/diagnostics/d81_sd_fill_mega65_slot.sh SOURCE.D81 /Volumes/MEGA65FDIS
 bypass that guard. The final
 physical command requires administrator authentication, an owner-created slot,
 and physical SD-card movement; it is intentionally not run autonomously.
+
+`audit` rebuilds the target, reconciles the private ledger, checks linked startup,
+and revalidates retained Xemu result bytes without operating on a D81. It now
+passes for the bounded startup fix. Current outputs are in
+`build/r0f/startup-fix/`; `package` assigns only F65R0F2.D81 and refuses to
+overwrite it. Full measurement-contract gates remain open; this follow-up is
+the owner-directed correction/retest of the bounded proxy only.

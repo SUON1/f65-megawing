@@ -1,0 +1,27 @@
+{
+  "command": [
+    "/Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/vice-clean/bin/c1541",
+    "-format",
+    "F65 CF001,65",
+    "d81",
+    "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/combined/construction-replay/F65BLK02.D81",
+    "-write",
+    "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/combined/AUTOBOOT.C65",
+    "autoboot.c65",
+    "-write",
+    "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/combined/F65-R0F-PROOF.prg",
+    "r0f-proof",
+    "-write",
+    "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/combined/R0F-EVID.txt",
+    "r0f-evid",
+    "-list"
+  ],
+  "exit": 0,
+  "stdoutSha256": "33337f78a29407fbc1fb1f25183295922b3fe67e3f18d58ea1525488617b7580",
+  "stderrBytes": 0,
+  "d81Sha256": "b13853a7ddaf3bf26dfcaceb7e4466ab2d58702b96bfcbe9ae62c7db56ed3d82",
+  "matchOriginal": "BYTE_FOR_BYTE",
+  "originalMutated": false,
+  "construction": "fresh format plus all three writes in one session",
+  "diagnosis": "PETSCII format-output byte is not UTF-8; binary capture plus latin-1 lossless reporting"
+}

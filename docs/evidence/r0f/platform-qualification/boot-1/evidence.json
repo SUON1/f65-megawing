@@ -1,0 +1,28 @@
+{
+  "directory": "build/r0f/platform-qualification/xemu-1-1789712149385273000",
+  "command": [
+    "/Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/xemu/xmega65",
+    "-skipconfigfile",
+    "-headless",
+    "-fastboot",
+    "-videostd",
+    "1",
+    "-rom",
+    "/Users/slice/Documents/Codex/f65-megawing/MEGA65.ROM",
+    "-sdimg",
+    "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/platform-qualification/xemu-1-1789712149385273000/disposable-sd.img",
+    "-defd81fromsd",
+    "-prg",
+    "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/platform-qualification/R0F-PLATFORM.prg",
+    "-dumpscreen",
+    "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/platform-qualification/xemu-1-1789712149385273000/screen.txt",
+    "-dumpmem",
+    "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/platform-qualification/xemu-1-1789712149385273000/memory.bin",
+    "-screenshot",
+    "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/platform-qualification/xemu-1-1789712149385273000/screen.png"
+  ],
+  "resultSha256": "ba8763dbe6635c6acb78403af2dbeafa1dadf6c7110cbe05325a1457ab9d2aa4",
+  "screenshotSha256": "4ac06bddaf049edf85d2df87d69b9dc4e59deaa92b1f18e0ce523f5d5b15acea",
+  "resultHex": "52504631017f0002013544002f00ff0040000000050101804000000000000000c0410000c0410000c1410000c0410000c0410000c0410000c1410000c0410000c0410000c1410000c0410000c0410000c0410000c1410000c0410000c0410000c1410000c0410000c0410000c0410000c1410000c0410000c0410000c0410000c1410000c0410000c0410000c0410000c1410000c0410000c0410000c1410000a55ac33c02b0800001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000082d020cf",
+  "oracleExit": 0
+}

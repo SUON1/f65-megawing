@@ -1,0 +1,7 @@
+[
+  {"photo":2,"row":0,"column":10,"from":"0","to":"6","reason":"Original glyph has an upper-left vertical stem, open upper-right and closed lower bowl; reads 6 in displayed 52304631, not 0. Reviewed enlarged pixel crop."},
+  {"photo":15,"row":2,"column":5,"from":"2","to":"3","reason":"Original leftmost payload glyph reads 3; upper and lower right-hand bowls are visible in the enlarged original, not the diagonal and bottom bar of 2."},
+  {"photo":23,"row":7,"column":22,"from":"0","to":"9","reason":"Enlarged original glyph has a closed upper bowl with a right-hand descender and lower tail; reads 9 in 49E20400, not 0."},
+  {"photo":5,"row":2,"column":62,"from":"7","to":"3","reason":"Using fitted line-boundary candidate: original row 0640 visibly ends 3300000033000000; the last nonzero glyph has two right-hand bowls, not a 7. Reviewed enlarged original full row."},
+  {"photo":22,"row":0,"replacement":"2800:3400000034000000330000003400000034000000340000003400000034000000","reason":"Automatic first-row segmentation crosses glyph boundaries; entire row transcribed visually from enlarged original pixels, including printed address. No CRC-guided correction."}
+]

@@ -1,0 +1,46 @@
+{
+  "status": "PASS_BOUNDED_STATIC_ONLY",
+  "scope": "bounded proxy static/host review only; not full R0-F acceptance",
+  "hostResult": {
+    "result": "PASS",
+    "tier": "native C with simulated raster, NOT Xemu",
+    "cases": 5,
+    "phaseSamples": 80,
+    "timeoutInjection": "PASS",
+    "failureRejection": "PASS",
+    "sanitizers": "address,undefined",
+    "rejectedMutations": 358,
+    "rawSampleEndpoints": "0 and 255 accepted; no timing threshold",
+    "romTransferScanner": "PASS: ROM call/tail call rejected; local call/read allowed",
+    "javaOracle": "NOT RUN; pinned JDK unavailable"
+  },
+  "ledgerReconciliation": "PASS",
+  "findings": [],
+  "prgMatchesRetainedBuild": false,
+  "retainedXemuResultRevalidation": "PASS; two stored result blocks, not fresh boots",
+  "artifacts": {
+    "build-accounting.json": "c1b575337dc4b2fcf9f1f4fac1bb251743e4d183984f59a6f20e87c4664f417f",
+    "host-test.json": "49ca54d11c4d2a8254ecd996bd0aefcc416db53f83f12eac534926c03016588f",
+    "F65-R0F-PROOF.prg": "6e52b70b77b259363f8bdb8d0d410526864406eedf999ad9e526b7324a310256",
+    "F65-R0F-PROOF.map": "12bf3228d2b4b2f4c82854f76202bdf8ed3b66c2849deabab41cd85c8efbec83",
+    "F65-R0F-PROOF.symbols": "d10b2b489a3483eea0d3810cd687a3e266c502ae58d3d90af56025da8296d9cd",
+    "F65-R0F-PROOF.disassembly": "c28f2f75110bba24133beefa98479d6af1d6037dbff758f9540ed0e7f7492858"
+  },
+  "limits": [
+    "No complete SI-calibrated measurement contract",
+    "Dynamic stack high-water not measured",
+    "Physical platform identity incomplete",
+    "This audit performs no fresh Xemu or physical run",
+    "No D81 operation"
+  ],
+  "timingHostResult": {
+    "result": "PASS",
+    "samples": 2640,
+    "faultCasesRejected": 6,
+    "wrap": "mock starts at FFFF0000; unsigned 32-bit rollover exercised",
+    "java": "PASS: 2640 raw samples, 80 cohort spans, functional oracle; 35 summary corruptions rejected",
+    "wrapper": "PASS: CIA visibility/serial guards, write ownership, cascade/byte/32-bit wraps, unstable-read bound, stop",
+    "deadlineInjection": "16 misses per case observed; never relabeled deadline PASS",
+    "units": "mock counts, not target or physical timing"
+  }
+}

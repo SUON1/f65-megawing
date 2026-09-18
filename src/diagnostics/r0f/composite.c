@@ -104,6 +104,21 @@ static void proof_tick(proof_metrics *m, uint8_t flags, uint16_t tick) {
   if ((flags & R0F_CASE_SHEDDING) && (tick % 11u) == 0u) m->shedding_mask |= (uint8_t)(1u << ((tick / 11u) % 6u));
   if ((flags & R0F_CASE_ONE_OVER) && tick == 33u) ++m->faults;
 }
+#ifdef R0F_CIA_TIMING
+static proof_metrics timed_metrics;
+void r0f_fixture_reset(void) { reset_snapshots(); timed_metrics = proof_begin(); }
+uint8_t r0f_fixture_tick(uint8_t flags, uint16_t tick) {
+  uint8_t slot, ready = 0u;
+  proof_tick(&timed_metrics, flags, tick);
+#ifdef R0F_HOST_TEST
+  extern void r0f_host_work_hook(uint16_t tick);
+  r0f_host_work_hook(tick);
+#endif
+  for (slot = 0u; slot != R0F_SNAPSHOT_COUNT; ++slot)
+    if (snapshot_records[slot][0] == R0F_STATE_READY) ++ready;
+  return ready;
+}
+#endif
 /* Functional target proxy with a separately recorded raw raster observation. */
 static proof_metrics proof_case(uint8_t flags) {
   proof_metrics m = proof_begin();
@@ -181,4 +196,5 @@ void r0f_run(void) {
   line(9u, "16 BINS/CASE, 33-TICK WINDOW; $1900-$19FF R0F1 REV1");
   line(10u, "IRQ: NOT MEASURED. NO REAL INPUT/AUDIO LATENCY.");
   line(11u, "NOT CPU CYCLES OR A PHYSICAL-LIMIT PASS.");
+  line(12u, "BUILD: F65R0F2 STARTUP FIX");
 }

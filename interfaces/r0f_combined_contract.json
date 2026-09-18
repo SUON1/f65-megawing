@@ -1,0 +1,56 @@
+{
+  "id": "R0F-CF001",
+  "status": "OWNER_AUTHORIZED_EXPERIMENT_NOT_ACCEPTED",
+  "decision": "docs/reports/R0-F_COMBINED_CONTRACT.md",
+  "constants": {
+    "RESULT": 6400, "RESULT_BYTES": 1792, "CASES": 5, "PHASES": 16,
+    "TICKS": 33, "SAMPLES": 2640, "RECORD": 256, "RECORD_BYTES": 16,
+    "ROM": 131072, "ROM_BYTES": 131072, "BACKUP": 134217728,
+    "SNAPSHOTS": 94208, "DISPLAY_META": 114688,
+    "HUD": 262144, "COLOR": 267911168,
+    "STAGING": 327680, "AUDIO": 339968, "DMA_LIST": 352256,
+    "RESERVE": 360448, "RESERVE_BYTES": 32768,
+    "CPU_HZ": 40500000, "COMPARISON_CYCLES": 530000,
+    "ENTITIES": 123, "EFFECTS": 64, "SNAPSHOT_COUNT": 3,
+    "SNAPSHOT_BYTES": 64, "QUEUE_CAPACITY": 64, "MAX_COPY": 255, "MAX_DMA": 4096
+  },
+  "result": {
+    "encoding": "little endian; CRC32 at 1788 over preceding bytes; raw u16 durations separately linked",
+    "magic": "RCF1",
+    "offsets": {
+      "version": 4, "stage": 5, "fault": 6, "reference": 7,
+      "video": 8, "speed": 9, "base_page": 10, "cpu_port": 11,
+      "rom_state": 12, "nmi": 13, "features": 14, "trap_flags": 15,
+      "rom_crc": 16, "restore_crc": 20, "reserve_before": 24, "reserve_after": 28,
+      "cia_per_frame": 32, "cycles_per_frame": 36, "period_q16": 40,
+      "clock_overhead": 44, "frame_spread": 48, "kernel_iterations": 52,
+      "kernel_counts": 56, "kernel_cycles": 60, "kernel_error": 64,
+      "duration_address": 68, "duration_bytes": 70, "duration_crc": 72,
+      "irq_count": 76, "dma_jobs": 78, "dma_max": 80, "input_samples": 84,
+      "input_edges": 88, "injected_edges": 92, "audio_services": 96,
+      "pcm_progress": 100, "preemptions": 104, "rendered": 108,
+      "swaps": 112, "skipped": 116, "snapshot_high": 120,
+      "queue_high": 121, "controlled_faults": 122, "storage_rejects": 124,
+      "hardware_stack": 126, "software_stack": 128, "service_gap": 132,
+      "after_cia_frame": 136, "clock_drift": 140, "last_checksum": 144,
+      "tier_mask": 148, "restore_matches": 152, "model": 156,
+      "core_id": 160, "total_ticks": 164, "active_slots": 168,
+      "calibration_samples": 172, "consumed_edges": 1668, "injected_consumed": 1672,
+      "phase_swaps": 1676, "crc32": 1788
+    }
+  },
+  "reference_classes": {"1": "PINNED_XEMU_MODEL_NOT_HARDWARE", "2": "HARDWARE_COUNTER_RATIO_NOMINAL_40_5MHZ_NOT_TRACEABLE_SI"},
+  "memory": [
+    {"start":6048,"bytes":347,"owner":"snapshot records, comparison work state and matrix scratch; NOLOAD"},
+    {"start":94208,"bytes":192,"owner":"three candidate snapshot mirror records"},
+    {"start":114688,"bytes":4000,"owner":"two 40x25 CHR16 display matrices"},
+    {"start":131072,"bytes":131072,"owner":"reclaimed display A/B, restored before completion"},
+    {"start":262144,"bytes":2560,"owner":"protected synthetic cockpit/HUD cards"},
+    {"start":267911168,"bytes":2000,"owner":"FCM color attributes, reset-only display ownership"},
+    {"start":327680,"bytes":8192,"owner":"immutable clear source and disjoint DMA verification destination"},
+    {"start":339968,"bytes":255,"owner":"synthetic PCM immutable sample"},
+    {"start":352256,"bytes":17,"owner":"single immutable synchronous DMA list"},
+    {"start":134217728,"bytes":131072,"owner":"immutable ROM recovery resource"}
+  ],
+  "non_claims": ["production ROM-hosted storage return", "traceable SI accuracy", "external input/acoustic latency", "production display selection", "R0-F acceptance"]
+}

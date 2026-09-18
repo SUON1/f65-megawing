@@ -1,0 +1,10 @@
+{
+  "result": "PASS",
+  "samples": 2640,
+  "faultCasesRejected": 6,
+  "wrap": "mock starts at FFFF0000; unsigned 32-bit rollover exercised",
+  "java": "PASS: 2640 raw samples, 80 cohort spans, functional oracle; 35 summary corruptions rejected",
+  "wrapper": "PASS: CIA visibility/serial guards, write ownership, cascade/byte/32-bit wraps, unstable-read bound, stop",
+  "deadlineInjection": "16 misses per case observed; never relabeled deadline PASS",
+  "units": "mock counts, not target or physical timing"
+}

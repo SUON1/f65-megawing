@@ -1,15 +1,27 @@
 # R0-F first bounded test build — 2026-09-05
 
-Implemented and compiled; **two clean Xemu boots now pass**. The exact candidate
-may proceed to gated native-slot SD transfer, not directly to hardware testing.
-This is the owner-requested first functional/raster proxy slice, not completion
-of the physical R0-F measurement program.
+**2026-09-17 successor:** F65R0F2.D81 corrects the startup ROM-call finding and
+passes bounded static/host checks plus two clean Xemu boots. Its SD/physical
+retest remains pending. Current instructions and hashes are in
+`R0-F_STARTUP_FIX_HANDOFF.md`; the F65R0F1 history below is preserved.
+
+**2026-09-16 review update:** Step 3 host tests and compile/link pass; static
+acceptance is BLOCKED by a startup KERNAL call after B=$02 without the required
+thunk. The PRG remains byte-identical. Accounting now includes the existing
+107-byte compiler static stack in `.noinit`. See `R0-F_STEP3_AUDIT.md` for the
+current disposition; the earlier build and delivery evidence below is historical.
+
+Implemented and compiled; **two clean Xemu boots now pass** and the exact candidate
+has passed guarded MEGA65-native SD transfer and owner-reported hardware loading.
+This is the owner-requested first functional/raster proxy slice, not completion of
+the measured-limits R0-F program.
 
 ## Exact candidate
 
 - Filename: `build/r0f/F65R0F1.D81` (819,200 bytes).
 - SHA-256: `9b539a14f08d671195ef71e54bbacb3eacd5258634f7a29396bf00a068cddd89`.
-- Current state: `XEMU_BOOT_VERIFIED`; label `F65 R0-F1`, ID `65`.
+- Current state: `XEMU_BOOT_VERIFIED`; SD transfer and chooser runtime observed.
+  Label `F65 R0-F1`, ID `65`.
 - Entry: `AUTOBOOT.C65` loads `R0F-PROOF` from device 8.
 - Target PRG: 4,694 bytes; SHA-256
   `510c2bfc8686f86b5fd934edd0b9863c0a176951a2871eaa0f990c8e0cec106e`.
@@ -62,6 +74,7 @@ MAP, IRQ or NMI operation was added.
 
 | Command | Result |
 |---|---|
+| `sudo tools/diagnostics/d81_sd_fill_mega65_slot.sh build/r0f/F65R0F1.D81 /Volumes/MEGA65FDISK <sha256>` (owner run, exact hash used) | PASS: hash/match verified, one contiguous FAT32 extent, safe eject |
 | `sh tools/build/r0f.sh host-test` | PASS: native C, address/undefined sanitizers; five cases; 80 non-monotonic/wrapping mock samples; injected acquisition timeout; rejection of forged functional PASS |
 | `sh tools/build/r0f.sh build` | PASS: pinned LLVM-MOS compile/link and map bounds; symbols/disassembly emitted |
 | `sh tools/build/r0f.sh package` | PASS: source build, pinned tokenizer, one-session fresh construction, automatic host gates |
@@ -80,17 +93,16 @@ or hardware. The two-boot runner subsequently executed successfully; see the upd
 matched the lock, and prior logs located the initialized emulator SD image.
 The previously blocked command then passed both clean boots. Evidence:
 `docs/evidence/r0f/xemu/R0F-XEMU-VERIFICATION.md`. The location request below is
-historical and resolved. Next is the gated physical-card native-slot workflow;
-all physical measurement obligations remain pending.
+historical and resolved. Next are still-required physical measurements and
+owner acceptance for measured-limits work.
 
-Provide the location of the owner MEGA65 ROM matching the toolchain lock and,
-if already installed, the pinned Xemu binary and initialized emulator SD image.
-Use `F65_MEGA65_ROM` and `F65_MEGA65_SD_IMAGE` for emulator inputs. Do not supply
-the physical SD card yet. The runner uses disposable emulator-SD copies.
-
-After two exact-image Xemu boots pass, use only the previously agreed MEGA65
-native contiguous-slot workflow, with raw FAT32 one-extent/hash/safe-eject gates.
-No physical chooser or runtime test has occurred. Full platform identity,
+Full platform identity,
 independent scheduling/phase sweep, calibration, rolling deadlines, actual
 input/audio latency, high-water and separately admitted DMA/IRQ work remain
-pending. R0-F, measured limits and Phase 1 remain unopened/unpassed.
+pending. R0-F measured limits and Phase 1 remain unopened/unpassed.
+
+Hardware runtime evidence is now retained in
+`docs/evidence/r0f/physical/R0F-PHYSICAL-RUNTIME-2026-09-12.md`. SD physical
+transfer JSONs are retained in:
+`build/d81-sd-transfer/F65R0F1.D81.slot-pre.json`,
+`build/d81-sd-transfer/F65R0F1.D81.slot-post.json`.

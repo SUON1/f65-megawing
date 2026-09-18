@@ -1,0 +1,65 @@
+{
+  "identity": "R0F1-REV1-functional-raster-proxy-startup-fix",
+  "sourceCommit": "744920dd76d008fbc0ccce82e006cc0b647f477e",
+  "sourceState": "working-tree; source hashes identify exact inputs",
+  "inputs": {
+    "interfaces/r0f_proof_contract.json": "364d07294dc8ab74927ec4c43fdc5660d4eb4f3ffbb2ff55001309e57393add5",
+    "interfaces/generated/r0f_interfaces.h": "b99e643f5735809e5461e4b81f103da5f93d5fc333579bf36dfa7fff6490df61",
+    "memory/r0f-memory-ledger.json": "9d1bfe6d6b5f6287a334f4908e807b67edfe969f3a41c453fd7fd4fe84c923e7",
+    "tools/diagnostics/r0f_build.py": "c237379576d70e92b9ab57db52b49e6c0a62385821692f54a840c08e99192f27",
+    "tools/diagnostics/r0f_host_test.c": "7bbe762892aa2c695c6165acb4c192206f99c676f374836a586f540345ce6b9a",
+    "toolchain/f65_toolchain.lock.json": "0de4864a0665f04cab26f67bdd533697d8006460142dcb7e8e5ce0ecb72d742b",
+    "src/r0f/main.c": "0011644993d115607316ab24d155661e96a9fda08a104936e6a577d4d61e1559",
+    "src/diagnostics/r0f/composite.c": "7d2ac04a48b66417382de8590f33635dc1b1b387844cb8e4f4bd01f8369610b5",
+    "src/platform/r0f/raster_observation.c": "54c61382af910eed97132775ba4170f89c3d9bb3907f93c7db96a6368086198d",
+    "src/platform/r0f/startup.ld": "96d85939b28b4b24d0e251164b2abe9c5e950096482334517cbc4e57fcb6b60f",
+    "src/platform/r0a_platform_45gs02.s": "a0c9504763c44eb10cc7f38dcb77f2961beabd3ac506c5cc78a26a33552b97ca"
+  },
+  "compilerSha256": "cc557ae99a68ed36e098062b0f5376a878e94ac187b87446c8e603e4fb45a906",
+  "prgSha256": "c1ff8943fd1c24857d1ddba7f6fb2c9919d61e5ab489b003f8a20d5ed31a02a1",
+  "prgBytes": 4729,
+  "sections": {
+    ".basic_header": {
+      "address": 8193,
+      "bytes": 22
+    },
+    ".text": {
+      "address": 8215,
+      "bytes": 4127
+    },
+    ".rodata": {
+      "address": 12342,
+      "bytes": 578
+    },
+    ".data": {
+      "address": 12920,
+      "bytes": 0
+    },
+    ".bss": {
+      "address": 12920,
+      "bytes": 192
+    },
+    ".noinit": {
+      "address": 13112,
+      "bytes": 107
+    },
+    ".zp.data": {
+      "address": 34,
+      "bytes": 0
+    },
+    ".zp.bss": {
+      "address": 34,
+      "bytes": 0
+    }
+  },
+  "stackTop": 53248,
+  "stackHighWater": "NOT MEASURED",
+  "linkedResidentBytes": 5026,
+  "compilerStaticStackBytes": 107,
+  "reserveBytes": 0,
+  "dma": "NOT EXECUTED",
+  "irq": "NOT MEASURED",
+  "xemu": "NOT VERIFIED",
+  "physical": "NOT VERIFIED",
+  "d81": "NOT CREATED"
+}

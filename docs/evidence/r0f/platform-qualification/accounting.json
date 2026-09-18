@@ -1,0 +1,146 @@
+{
+  "identity": "PF001-DEVELOPMENT-ONLY",
+  "sourceCommit": "744920dd76d008fbc0ccce82e006cc0b647f477e",
+  "sourceState": "dirty working tree, per-input hashes authoritative",
+  "sections": {
+    ".basic_header": {
+      "start": 8193,
+      "bytes": 22
+    },
+    ".text": {
+      "start": 8215,
+      "bytes": 4510
+    },
+    ".rodata": {
+      "start": 12725,
+      "bytes": 453
+    },
+    ".data": {
+      "start": 13178,
+      "bytes": 0
+    },
+    ".bss": {
+      "start": 13178,
+      "bytes": 554
+    },
+    ".noinit": {
+      "start": 13732,
+      "bytes": 15
+    },
+    ".zp.data": {
+      "start": 34,
+      "bytes": 0
+    },
+    ".zp.bss": {
+      "start": 34,
+      "bytes": 0
+    }
+  },
+  "prgSha256": "aab353cc713ebe41f242dcec7477aed46619aec79a61929a510aab19dbbe7749",
+  "prgBytes": 4987,
+  "inputs": {
+    "src/diagnostics/r0f/platform_qualification.c": "a721fffcb0070aaf3886ea501863647a8b9637999c46da249b10f861525b6450",
+    "src/diagnostics/r0f/platform_model.c": "ad87ce974a37937274341d040e51112609638b4c54e1013492cf919af718b8db",
+    "src/platform/r0f/qualification_45gs02.s": "cfa319cef2826f72a04176ff5a8642911bfc92ca5659df6ddf61262bb02be89e",
+    "src/platform/r0a_platform_45gs02.s": "a0c9504763c44eb10cc7f38dcb77f2961beabd3ac506c5cc78a26a33552b97ca",
+    "interfaces/r0f_platform_contract.json": "787d58238cbe7acb716cde9bd712c36e45264004bf57ca1fc445d055255f1862",
+    "interfaces/generated/r0f_platform.h": "e9067d9be6ddf5d78ad4a771e18f3199cb6e7256912bc6bbf29dfec923874363",
+    "interfaces/f65_platform_abi.json5": "6f8755a3781a036e5b0780a57e31405ad1cdfed32f04505e2be1a5e501a8afd2",
+    "memory/r0f-memory-ledger.json": "9680b528fcfa735869175faa0f4868df1a93a80f28647bfabb59ffcd58bf6857",
+    "docs/plans/r0-f-task-admission.json": "c9be1becbb5447f9f46b119e3acc2b507aef3d68f097127bb2140421ddb51987",
+    "docs/plans/r0-f-ownership-map.json": "38e418240fbc1c0b9b4e1a645f77391fd3fdb22863615ce40bfafefec2975fc8",
+    "docs/reports/R0-F_PLATFORM_QUALIFICATION_CONTRACT.md": "7156d4909ee15f04f00adfb0cb078b35f749ba0ad4f09daa860859de705a1efd",
+    "src/platform/r0f/startup.ld": "96d85939b28b4b24d0e251164b2abe9c5e950096482334517cbc4e57fcb6b60f",
+    "tools/diagnostics/r0f_platform_host_test.c": "f07caf89ac62db13fe439877b3f1f3e86601463b41635b096f73eaa1297aa386",
+    "tools/diagnostics/r0f_platform_build.py": "451c0c7140422b9a9fa63a5649f3debf33f29771a3549fbc6ecd2a3ac52dfc30",
+    "tools/generators/src/main/java/f65/tools/R0FPlatformOracle.java": "69d7694a4fd5a34653d1c737eee3d4d6a09f7cb34ce57f8516acd974eb1c6ceb"
+  },
+  "stackTop": 53248,
+  "dynamicHighWater": "NOT MEASURED",
+  "reserveBytes": 0,
+  "references": {
+    "cia6526.vhdl": "ec717a6e3872a7cf55494b0cacd2af7cba70b36f074bcf3576037ae3520c49a8",
+    "iomap.txt": "2e887ca56fc7e3a8b199fe1013ebfb53420c40b2b8c7c08c81ef37a53c1ff588",
+    "mega65r6.vhdl": "123caccc6558a01910e812c1b6e5c1bd84d7ce52125614bea6c73fd073570d35",
+    "xemu-tree.json": "fc53a050251e43e287e52dc23b28eb6a975e27e51661437d305270ca77d4dce9",
+    "pixel_driver.vhdl": "35f13b42b2fba280efd309d0fa0e436c694f4b60e12d28ee2c7926e432d706cb",
+    "mem.asm": "beb42432e3d4e96ea2de98938a20a1e0201ea592e9530f982198c2940253e575",
+    "clocking.vhdl": "08a20eaadb67e9a6b8fbb8f1ee36fe8b598c7864671282209126a34544d61763",
+    "xemu-audio65.c": "238b49a594c9521c9223e05a0ae0cef11568d2a8f8db566ea220e23cdbd64221",
+    "gs4510.vhdl": "d44ae3906e1b0a826ca8e511c73ef1f50223b7de507a3ed349082fdefe58034e",
+    "tree.json": "7fdf9c50637457828ea46efad161f7cdbc53844634877ba212db4470d4000e7a",
+    "frame_generator.vhdl": "26f984a97adeeff0b95716c185418db8f6bfcd1cb0c22dd16f1b138abde035c4"
+  },
+  "javaVersion": "openjdk version \"21.0.12\" 2026-07-21 LTS\nOpenJDK Runtime Environment Temurin-21.0.12+8 (build 21.0.12+8-LTS)\nOpenJDK 64-Bit Server VM Temurin-21.0.12+8 (build 21.0.12+8-LTS, mixed mode, sharing)\n",
+  "javaSha256": "34b9c157bedcebafc6033b8beaa72c2ff14e2b697e33f45aa959a8373d6581a0",
+  "javacSha256": "ee7be919e8bc4f364a1de24c245eea5ff8bb8f5560c8eb182ad3e89007adb152",
+  "compilerSha256": "cc557ae99a68ed36e098062b0f5376a878e94ac187b87446c8e603e4fb45a906",
+  "commands": [
+    [
+      "/usr/bin/clang",
+      "-std=c11",
+      "-Wall",
+      "-Wextra",
+      "-Wconversion",
+      "-Werror",
+      "-fsanitize=address,undefined",
+      "-Iinterfaces/generated",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/src/diagnostics/r0f/platform_model.c",
+      "tools/diagnostics/r0f_platform_host_test.c",
+      "-o",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/platform-qualification/host-test"
+    ],
+    [
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/platform-qualification/host-test"
+    ],
+    [
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/runtime/llvm-mos/bin/mos-mega65-clang",
+      "-mcpu=mos45gs02",
+      "-mlto-zp=0",
+      "-Os",
+      "-Wall",
+      "-Wextra",
+      "-Wconversion",
+      "-Werror",
+      "-Iinterfaces/generated",
+      "src/diagnostics/r0f/platform_qualification.c",
+      "src/diagnostics/r0f/platform_model.c",
+      "src/platform/r0f/qualification_45gs02.s",
+      "src/platform/r0a_platform_45gs02.s",
+      "-Wl,-T,src/platform/r0f/startup.ld",
+      "-Wl,-Map,/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/platform-qualification/R0F-PLATFORM.map",
+      "-o",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/platform-qualification/R0F-PLATFORM.prg"
+    ],
+    [
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/runtime/llvm-mos/bin/llvm-nm",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/platform-qualification/R0F-PLATFORM.prg.elf"
+    ],
+    [
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/runtime/llvm-mos/bin/llvm-objdump",
+      "-d",
+      "--print-imm-hex",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/platform-qualification/R0F-PLATFORM.prg.elf"
+    ],
+    [
+      "/Users/slice/Documents/Codex/f65-megawing/toolchain/runtime/jdk-full/jdk-21.0.12+8/Contents/Home/bin/java",
+      "-version"
+    ],
+    [
+      "/Users/slice/Documents/Codex/f65-megawing/toolchain/runtime/jdk-full/jdk-21.0.12+8/Contents/Home/bin/javac",
+      "-Xlint:all",
+      "-Werror",
+      "-d",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/platform-qualification/classes",
+      "tools/generators/src/main/java/f65/tools/R0FPlatformOracle.java"
+    ],
+    [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ]
+  ],
+  "xemu": "NOT RUN",
+  "physical": "NOT RUN",
+  "combinedReady": false
+}
