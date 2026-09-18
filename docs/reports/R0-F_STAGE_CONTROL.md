@@ -2,6 +2,29 @@
 
 ## Current stage
 
+2026-09-18 scope consolidation: the original bounded functional-proxy
+objectives have retained CF001 evidence across host, Xemu, SD and physical
+tiers. The definitive per-objective status and non-promotions are in
+`R0-F_ORIGINAL_OBJECTIVES_STATUS.md`. This does **not** close F8 or R0-F:
+the later no-restart combined integration, exact resulting carrier, remaining
+parent coverage and explicit owner acceptance remain open.
+
+2026-09-18 next development: owner selected same-run resume, explicitly
+excluding restart/reload. RH001 standalone returning-handoff development now
+passes host/build and clean NTSC/PAL Xemu runs, with the same model continuing
+at tick 34 after verified LOAD/SAVE/reload and context restoration. Full
+combined-workload integration and physical acceptance remain open;
+see `../decisions/R0-F-RH001-NO-RESTART-HANDOFF.md`. CF001 remains immutable
+evidence of the earlier reset-only experiment, not evidence of this new path.
+No new hardware carrier or SD action is authorized by an emulator-only PASS.
+
+2026-09-18 CF001 retest: fourteen physical capture pages now pass both CRCs
+and the independent Java oracle (2640 samples, 80 windows). Four real input
+edges detected / four consumed. The transcription/reduction gap is closed.
+Phase-3 verification review:
+`../evidence/r0f/combined/physical/2026-09-18-retest/corrected/REVIEW.md`.
+This does not pass F7→F8's complete attributed matrix or owner acceptance.
+
 Combined successor: **CF001 COMBINED EXPERIMENT IMPLEMENTED; FULL R0-F OPEN**.
 Private contract: `R0-F_COMBINED_CONTRACT.md`. Reset-only ROM backup/reclaim/
 restore, nominal counter-ratio calibration, concurrent synthetic workload,

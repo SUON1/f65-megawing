@@ -42,6 +42,29 @@ Revision 1.4 is referenced as superseded and retained by Revision 1.4.1 but was 
 
 ## 3. Current engineering state
 
+R0-F CF001 physical retest verification (2026-09-18): corrected photographic
+transcription passes both CRC32 checks (`32B8A599` result / `105995A3` raw).
+The unchanged, freshly compiled Java oracle passes all 2640 samples and 80
+windows and rejects 30 resealed corruptions. Four real keyboard edges were
+detected and four consumed, consistent with the owner's A-key exercise.
+ROM restoration and reserve CRC agreement validate within the CF001 contract.
+Current full-verification review and exact evidence:
+`docs/evidence/r0f/combined/physical/2026-09-18-retest/corrected/REVIEW.md`.
+The earlier failed OCR intake is preserved, not a hardware failure. Full R0-F
+parent coverage and acceptance remain open; no new hardware run is requested
+to address this now-resolved transcription gap.
+
+R0-F CF001 physical intake (2026-09-18): the combined experiment is built and
+committed in `82df3db`; the owner supplied colored-display, intermediate-text,
+and completed-summary photos and reported audible sound. The summary shows
+fault 00, nominal hardware reference 02, ROM restored 02, and 2640 ticks.
+SD matching hash, unchanged single extent and safe eject are now recorded.
+Real key edges are zero; input exercise needs clarification. The 14 raw pages
+and independent physical reduction remain outstanding. See
+`docs/evidence/r0f/combined/physical/2026-09-18/REVIEW.md`.
+Full R0-F remains open. Earlier dated entries below describe their original
+increments, not the current build/delivery state.
+
 R0-F platform development (2026-09-17): the owner approved the additive
 proof-platform work and required Xemu before native-blank SD delivery.
 PF-001 now implements reset-only canonical entry, a resident raster IRQ with
@@ -242,3 +265,5 @@ These later-phase gaps do not prohibit independent, bounded R0-A work unless an 
 | 2026-09-17 | RC-1 raw-capture viewer implementation | Built F5 post-acquisition screen transport and Java importer; host/static, fresh D81 and two exact-image Xemu boots passed; source-traced video-derived CIA clock enable | Working tree; exact inputs in F5 accounting; no commit or push | Owner requested Build it. Capture slice only: no calibrated units, full combined workload, SD/physical proof or gate acceptance. |
 | 2026-09-17 | R0-F proof-platform approval and qualification | Owner approved additive platform-contract development; PF-001 adds canonical-entry/IRQ/DMA/PCM development PRG and fail-closed host/Java/Xemu tests | Working tree on `744920d`; exact inputs in PF-001 accounting; no commit or push | Approval is recorded in task admission. Primitive qualification does not pass the full combined harness, admit deferred reversible ROM reclaim, calibrate SI/cycles, or authorize physical delivery without the exact-D81 gates. |
 | 2026-09-18 | R0-F CF001 combined experiment | Implemented reset-only ROM backup/reclaim/byte-verified recovery, nominal clock/work calibration, populated synthetic workload, snapshots, renderer, matrix input, SID/PCM, DMA and IRQ; host/Java checks and two NTSC plus two PAL boots of exact F65BLK02 candidate pass | Working tree on `744920d`; D81 SHA-256 `b13853a7ddaf3bf26dfcaceb7e4466ab2d58702b96bfcbe9ae62c7db56ed3d82`; retained CF001 evidence; no commit or push | Owner requested ROM/calibration/integration/Xemu and F65BLK02 preparation. SD remains untouched pending owner sudo command and raw FAT32/eject gates. Reset-only recovery does not admit production ROM/storage return; physical calibration, full parent workload/latency/window requirements, measured limits and R0-F acceptance remain open. |
+| 2026-09-18 | RH001 no-restart lifecycle development | Implemented opaque KERNAL/application context swapping, native ROM mapping, verified LOAD/SAVE/reload and continuation of the same C model; 16,842,752 host checks, build/static, NTSC/PAL Xemu and independent Java checks pass | Working tree on `82df3db`; PRG SHA-256 `b856ad29b0ac06939083dd54140136d438037ce41c3f49f00163d6b2c52efcc9`; source/evidence in `docs/evidence/r0f/resume/2026-09-18/`; no commit or push | Owner explicitly required resume without restart/reload and authorized continued development. Private standalone proof only: no production ABI/ownership changes, full combined-workload closure, hardware release, physical acceptance or measured-limit selection. |
+| 2026-09-18 | R0-F original-objective scope consolidation | Recorded the completed bounded CF001 functional-proxy objectives across compiled target, ROM recovery, timing/workload, combined services, D81/Xemu and retained physical evidence; separated later RH001 no-restart work | `docs/reports/R0-F_ORIGINAL_OBJECTIVES_STATUS.md`; exact CF001 identity and immutable original manifest retained; commit/push follows this record | This is not an R0-F acceptance declaration. Integrated no-restart combined execution, corresponding exact-carrier evidence, remaining parent coverage and explicit owner acceptance remain open. |

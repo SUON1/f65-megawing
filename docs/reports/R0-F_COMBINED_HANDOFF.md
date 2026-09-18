@@ -2,6 +2,31 @@
 
 2026-09-18. **COMBINED EXPERIMENT BUILT; FULL R0-F NOT COMPLETE.**
 
+Current objective disposition: `R0-F_ORIGINAL_OBJECTIVES_STATUS.md` records
+the completed bounded CF001 proof objectives, its immutable candidate identity
+and the later no-restart integration gap. The physical evidence folder holds
+the post-manifest SD/runtime/capture records; do not rewrite the original
+pre-physical release manifest to make its historical state appear current.
+
+Subsequent physical retest verification: corrected photo transcription passes
+result CRC32 `32B8A599` and raw CRC32 `105995A3`. The freshly compiled,
+unchanged Java oracle validates 2640 samples, 80 windows and 30 resealed
+negative cases. Four real key edges were detected and four consumed; the
+owner confirms A exercise. ROM/reserve checks pass, with zero acquisition
+faults. Current phase-3 verification and remaining parent-scope gaps:
+`docs/evidence/r0f/combined/physical/2026-09-18-retest/corrected/REVIEW.md`.
+The earlier requests below for missing pages/input exercise are satisfied
+by this retest. Do not repeat the SD fill or ask for another transcription run.
+
+Physical update, later on 2026-09-18: SD fill completed with matching candidate
+hash, one unchanged extent and successful OS eject. Owner photos show CF001
+acquisition complete, fault 00, reference 02, restored ROM 02 and 2640 ticks;
+the owner reports audible sound. Real key edges are zero. Raw pages 01–0E
+and independent hardware reduction remain pending. Evidence:
+`docs/evidence/r0f/combined/physical/2026-09-18/REVIEW.md`.
+The pre-SD delivery statements and one-time fill command below are historical:
+**do not repeat the fill for this run**. Capture the current raw pages first.
+
 This is actual integrated C/45GS02 code, not the earlier PF001 primitive-only
 PRG. It adds reset-only ROM backup/reclaim/recovery, nominal clock-ratio and
 measured comparison-work calibration, a populated synthetic 21-stage fixture,

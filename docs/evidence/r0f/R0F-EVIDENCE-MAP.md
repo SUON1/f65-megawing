@@ -1,5 +1,32 @@
 # R0-F Evidence Map
 
+Current scope consolidation: `docs/reports/R0-F_ORIGINAL_OBJECTIVES_STATUS.md`
+records which original bounded objectives have evidence, the immutable CF001
+carrier identity, and the separate remaining no-restart integration obligation.
+It does not promote full R0-F acceptance.
+
+Current lifecycle development (2026-09-18): **RH001 same-run ROM/storage
+handoff**, host/build and clean NTSC/PAL Xemu PASS. Original application state
+continues at tick 34 after ROM restoration and verified LOAD/SAVE/reload;
+no restart or application reload. Each Java run rejects 68 corruptions.
+Evidence: `resume/2026-09-18/`; handoff: `docs/reports/R0-F_RESUME_HANDOFF.md`.
+This is standalone proof, not full combined-workload resumption or physical
+acceptance. No new SD/hardware carrier was issued. CF001 records below retain
+their original scope and identity.
+
+CF001 retest verification (2026-09-18): all fourteen pages reconstructed;
+result/raw CRC32 `32B8A599` / `105995A3` PASS. Fresh independent Java validates
+2640 samples, 80 windows and 30 rejected resealed corruptions. Real keyboard
+edges: 4 detected / 4 consumed. Zero faults; ROM/reserve checks pass.
+Current review: `combined/physical/2026-09-18-retest/corrected/REVIEW.md`.
+The failed first-pass OCR remains immutable history. No full R0-F acceptance.
+
+CF001 physical update (2026-09-18): SD hash/single-extent/eject records PASS;
+hardware summary reports zero faults, restored ROM and 2640 ticks. Owner
+reports audible sound. Raw pages and independent reduction are pending;
+real key edges are zero and input exercise needs clarification. Original
+photos and records: `combined/physical/2026-09-18/REVIEW.md`. No R0-F acceptance.
+
 Current development: **CF001 combined experiment**. Contract and current
 artifact/test/delivery state: `docs/reports/R0-F_COMBINED_HANDOFF.md` and
 `build/r0f/combined/`. This combines actual ROM reclaim/recovery, clock-ratio

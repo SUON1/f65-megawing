@@ -1,0 +1,118 @@
+[
+  {
+    "name": "javac",
+    "command": [
+      "/Users/slice/Documents/Codex/f65-megawing/toolchain/runtime/jdk-full/jdk-21.0.12+8/Contents/Home/bin/javac",
+      "-Xlint:all",
+      "-Werror",
+      "-d",
+      "/tmp/r0f-corrected.3qt691/fresh-classes",
+      "tools/generators/src/main/java/f65/tools/R0FCombinedOracle.java"
+    ],
+    "cwd": "/Users/slice/Documents/ChatGPT/F65 Megawing",
+    "exit": 0
+  },
+  {
+    "name": "java-model",
+    "command": [
+      "/Users/slice/Documents/Codex/f65-megawing/toolchain/runtime/jdk-full/jdk-21.0.12+8/Contents/Home/bin/java",
+      "-cp",
+      "/tmp/r0f-corrected.3qt691/fresh-classes",
+      "f65.tools.R0FCombinedOracle",
+      "--model"
+    ],
+    "cwd": "/Users/slice/Documents/ChatGPT/F65 Megawing",
+    "exit": 0
+  },
+  {
+    "name": "java-pages",
+    "command": [
+      "/Users/slice/Documents/Codex/f65-megawing/toolchain/runtime/jdk-full/jdk-21.0.12+8/Contents/Home/bin/java",
+      "-cp",
+      "/tmp/r0f-corrected.3qt691/fresh-classes",
+      "f65.tools.R0FCombinedOracle",
+      "--pages",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/docs/evidence/r0f/combined/physical/2026-09-18-retest/corrected/transcripts/page-01.txt",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/docs/evidence/r0f/combined/physical/2026-09-18-retest/corrected/transcripts/page-02.txt",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/docs/evidence/r0f/combined/physical/2026-09-18-retest/corrected/transcripts/page-03.txt",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/docs/evidence/r0f/combined/physical/2026-09-18-retest/corrected/transcripts/page-04.txt",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/docs/evidence/r0f/combined/physical/2026-09-18-retest/corrected/transcripts/page-05.txt",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/docs/evidence/r0f/combined/physical/2026-09-18-retest/corrected/transcripts/page-06.txt",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/docs/evidence/r0f/combined/physical/2026-09-18-retest/corrected/transcripts/page-07.txt",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/docs/evidence/r0f/combined/physical/2026-09-18-retest/corrected/transcripts/page-08.txt",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/docs/evidence/r0f/combined/physical/2026-09-18-retest/corrected/transcripts/page-09.txt",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/docs/evidence/r0f/combined/physical/2026-09-18-retest/corrected/transcripts/page-0A.txt",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/docs/evidence/r0f/combined/physical/2026-09-18-retest/corrected/transcripts/page-0B.txt",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/docs/evidence/r0f/combined/physical/2026-09-18-retest/corrected/transcripts/page-0C.txt",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/docs/evidence/r0f/combined/physical/2026-09-18-retest/corrected/transcripts/page-0D.txt",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/docs/evidence/r0f/combined/physical/2026-09-18-retest/corrected/transcripts/page-0E.txt"
+    ],
+    "cwd": "/Users/slice/Documents/ChatGPT/F65 Megawing",
+    "exit": 0
+  },
+  {
+    "name": "java-binary",
+    "command": [
+      "/Users/slice/Documents/Codex/f65-megawing/toolchain/runtime/jdk-full/jdk-21.0.12+8/Contents/Home/bin/java",
+      "-cp",
+      "/tmp/r0f-corrected.3qt691/fresh-classes",
+      "f65.tools.R0FCombinedOracle",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/docs/evidence/r0f/combined/physical/2026-09-18-retest/corrected/result.bin",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/docs/evidence/r0f/combined/physical/2026-09-18-retest/corrected/durations.bin"
+    ],
+    "cwd": "/Users/slice/Documents/ChatGPT/F65 Megawing",
+    "exit": 0
+  },
+  {
+    "name": "host-compile",
+    "command": [
+      "/usr/bin/clang",
+      "-std=c11",
+      "-Wall",
+      "-Wextra",
+      "-Wconversion",
+      "-Werror",
+      "-fsanitize=address,undefined",
+      "-Iinterfaces/generated",
+      "-Isrc/diagnostics/r0f",
+      "src/diagnostics/r0f/combined_model.c",
+      "tools/diagnostics/r0f_combined_host_test.c",
+      "-o",
+      "/tmp/r0f-corrected.3qt691/host-test"
+    ],
+    "cwd": "/Users/slice/Documents/ChatGPT/F65 Megawing",
+    "exit": 0
+  },
+  {
+    "name": "host-test",
+    "command": [
+      "/tmp/r0f-corrected.3qt691/host-test"
+    ],
+    "cwd": "/Users/slice/Documents/ChatGPT/F65 Megawing",
+    "exit": 0
+  },
+  {
+    "name": "retained-pre-sd-sha",
+    "command": [
+      "/usr/bin/shasum",
+      "-a",
+      "256",
+      "-c",
+      "SHA256SUMS"
+    ],
+    "cwd": "/Users/slice/Documents/ChatGPT/F65 Megawing/docs/evidence/r0f/combined",
+    "exit": 0
+  },
+  {
+    "name": "retained-intake-sha",
+    "command": [
+      "/usr/bin/shasum",
+      "-a",
+      "256",
+      "-c",
+      "SHA256SUMS"
+    ],
+    "cwd": "/Users/slice/Documents/ChatGPT/F65 Megawing/docs/evidence/r0f/combined/physical/2026-09-18-retest",
+    "exit": 0
+  }
+]

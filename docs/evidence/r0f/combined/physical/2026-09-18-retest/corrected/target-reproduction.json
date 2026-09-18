@@ -1,0 +1,29 @@
+{
+  "command": [
+    "/Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/runtime/llvm-mos/bin/mos-mega65-clang",
+    "-mcpu=mos45gs02",
+    "-mlto-zp=0",
+    "-Oz",
+    "-fno-inline-functions",
+    "-Wall",
+    "-Wextra",
+    "-Wconversion",
+    "-Werror",
+    "-Iinterfaces/generated",
+    "-Isrc/diagnostics/r0f",
+    "src/diagnostics/r0f/combined.c",
+    "src/diagnostics/r0f/combined_model.c",
+    "src/diagnostics/r0f/combined_platform.c",
+    "src/platform/r0f/combined_45gs02.s",
+    "src/platform/r0f/qualification_45gs02.s",
+    "src/platform/r0a_platform_45gs02.s",
+    "-Wl,-T,src/platform/r0f/startup.ld",
+    "-Wl,-T,src/platform/r0f/combined.ld",
+    "-Wl,-Map,/tmp/r0f-corrected.3qt691/target/R0F-COMBINED.map",
+    "-o",
+    "/tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg"
+  ],
+  "exit": 0,
+  "prgSha256": "163579294c45994c647a02efc190c94e53d4df7149ae234d44357ec97ac08530",
+  "matchesCandidate": true
+}

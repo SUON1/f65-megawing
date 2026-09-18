@@ -2,6 +2,37 @@
 
 Status: **OWNER SELECTED FULL CLOSURE ON THE CURRENT DESIGN; WORK IN PROGRESS.**
 
+Scope consolidation (2026-09-18): original bounded functional-proxy objectives
+are catalogued with their evidence and retained non-claims in
+`../reports/R0-F_ORIGINAL_OBJECTIVES_STATUS.md`. That evidence does not waive
+the integrated no-restart lifecycle, full-parent coverage, exact-carrier or
+owner-acceptance work packages below.
+
+2026-09-18 lifecycle decision: the owner requires **resume without restarting
+or reloading the application** and instructed development to continue. Do not
+reopen the restart-versus-resume choice. RH001 now passes a returning
+KERNAL/storage boundary with retained C state in NTSC and PAL Xemu, separately from the verified
+CF001 artifact. Contract and exact validation status:
+`docs/decisions/R0-F-RH001-NO-RESTART-HANDOFF.md` and
+`docs/reports/R0-F_RESUME_HANDOFF.md`. Host checks cover 16,842,752 cases;
+each final Java run rejects 68 corruptions. The full combined harness
+and physical acceptance remain open; this is not a replacement hardware run.
+
+Earlier full-closeout implementation review (2026-09-18): the ROM/storage-return
+contract remains unresolved. Pinned restart source was checked, but a restart
+was not substituted for a returning storage transition. No new target or
+hardware carrier was issued. See
+`docs/reports/R0-F_FULL_CLOSEOUT_BLOCKER_2026-09-18.md` for the exact boundary,
+source findings and required disposition; full-program development approval
+is already granted and is not being requested again.
+
+2026-09-18 CF001 physical update: SD hash/one-extent/eject evidence is retained.
+The A-key retest's fourteen photographed pages now pass result/raw CRC32
+`32B8A599` / `105995A3` and independent Java reduction of 2640 samples/80
+windows. Real edges are 4 detected / 4 consumed. Transcription is closed;
+full parent scope and acceptance are not. Current phase-3 verification:
+`docs/evidence/r0f/combined/physical/2026-09-18-retest/corrected/REVIEW.md`.
+
 Implementation update: F65R0F5 supplies a post-acquisition raw screen transport
 and independent Java importer, with host/static and two exact-D81 Xemu boots
 passing. See `docs/reports/R0-F_CAPTURE_HANDOFF.md`. RC-1 calibration is still
@@ -42,7 +73,7 @@ hardware wrapper. Do not ask the owner to choose this direction again.
 | RC-2: protected workload and combined fixture admission | Reconcile R0-B/C/D/E proof identities, owners, memory/stack/cycle budgets and missing contracts against the full parents. Define exact combined fixture, real services, synthetic assets, fault cases and provisional assumptions. Calibrate protected work rather than relabel loop iterations as cycles. | CF001 private contract and reset-only ROM recovery implemented; measured nominal comparison calibration exists. Production storage return, physical uncertainty and full parent fixture remain open. |
 | RC-3: implementation and independent host proof | Implement admitted C proof services and measured platform wrappers; generated records/ledgers; Java reference reduction; normal, boundary, overflow, wrap, starvation, shedding and fault tests. Preserve public ABI, owners and reserves. | CF001 integrates populated synthetic workload, snapshots, renderer, IRQ/DMA/PCM/matrix services; native sanitizers and independent Java checks pass. Full parent renderer/input/latency coverage remains open. |
 | RC-4: corresponding combined Xemu evidence | Target compile/link, maps/symbols/disassembly, static ownership/ABI checks, host oracles and exact fresh D81 gates; two clean Xemu boots plus required combined phase/window/fault coverage and machine-readable captures. | CF001 compile/link/accounting, host D81 gates, two exact-D81 NTSC and two PAL boots, 2640-sample checks and original-PNG review PASS. This is combined experimental evidence, not all parent phase/window/limit requirements. |
-| RC-5: physical matrix and acceptance | Verified SD delivery, chooser/runtime identity, calibrated phase/window captures and raw reduction for the corresponding configuration; input/audio/DMA/IRQ, snapshot/memory/high-water, storage and reserve evidence; owner review of all requirements. | CF001 F65BLK02 candidate and hardware checklist prepared. Exact native blank inspected; SD not written, raw-device sudo password required. Physical chooser/run/raw reduction and acceptance remain pending. |
+| RC-5: physical matrix and acceptance | Verified SD delivery, chooser/runtime identity, calibrated phase/window captures and raw reduction for the corresponding configuration; input/audio/DMA/IRQ, snapshot/memory/high-water, storage and reserve evidence; owner review of all requirements. | CF001 SD hash/extent/eject recorded; physical runtime and A exercise observed; both capture CRCs and independent 2640-sample/80-window reduction PASS. Full physical configuration/latency/window matrix, traceable uncertainty, production storage transition and human acceptance remain open. Formal release-state promotion is not inferred from this reduction. |
 
 Measured-limits approval follows accepted R0 evidence as a separate action.
 No completion date or number of hardware runs is promised before the fixture

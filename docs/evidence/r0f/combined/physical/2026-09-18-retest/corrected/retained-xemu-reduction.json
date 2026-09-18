@@ -1,0 +1,119 @@
+[
+  {
+    "resultFile": "docs/evidence/r0f/combined/xemu-d81-0-1789743938411669000/result.bin",
+    "command": [
+      "/Users/slice/Documents/Codex/f65-megawing/toolchain/runtime/jdk-full/jdk-21.0.12+8/Contents/Home/bin/java",
+      "-cp",
+      "/tmp/r0f-corrected.3qt691/fresh-classes",
+      "f65.tools.R0FCombinedOracle",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/docs/evidence/r0f/combined/xemu-d81-0-1789743938411669000/result.bin",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/docs/evidence/r0f/combined/xemu-d81-0-1789743938411669000/durations.bin"
+    ],
+    "exit": 0,
+    "stdout": "CF001 acquisition/oracle PASS: 2640 samples, 80 windows, golden D9EEAB81, 30 resealed mutations rejected.\nReference=XEMU MODEL ONLY; no traceable SI/external latency/R0-F acceptance.\nNORMAL: 128 swaps / 5.270289 nominal s = 24.287 Hz; max tick=4641 CIA; max late=2145 CIA\nLAG: 16 swaps / 5.280913 nominal s = 3.030 Hz; max tick=4640 CIA; max late=1414 CIA\nTIERS: 128 swaps / 5.270224 nominal s = 24.287 Hz; max tick=4641 CIA; max late=2081 CIA\nFAULT: 128 swaps / 5.270513 nominal s = 24.286 Hz; max tick=4641 CIA; max late=2197 CIA\nPRESSURE: 128 swaps / 5.269809 nominal s = 24.289 Hz; max tick=4641 CIA; max late=2112 CIA\nOverhead=0 CIA; calibration=525042 nominal CPU clocks, residual=4958; DMA max=289 CIA; service gap=23905 CIA; stacks hardware/software=58/73 bytes\n"
+  },
+  {
+    "resultFile": "docs/evidence/r0f/combined/xemu-d81-0-1789744018557668000/result.bin",
+    "command": [
+      "/Users/slice/Documents/Codex/f65-megawing/toolchain/runtime/jdk-full/jdk-21.0.12+8/Contents/Home/bin/java",
+      "-cp",
+      "/tmp/r0f-corrected.3qt691/fresh-classes",
+      "f65.tools.R0FCombinedOracle",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/docs/evidence/r0f/combined/xemu-d81-0-1789744018557668000/result.bin",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/docs/evidence/r0f/combined/xemu-d81-0-1789744018557668000/durations.bin"
+    ],
+    "exit": 0,
+    "stdout": "CF001 acquisition/oracle PASS: 2640 samples, 80 windows, golden D9EEAB81, 30 resealed mutations rejected.\nReference=XEMU MODEL ONLY; no traceable SI/external latency/R0-F acceptance.\nNORMAL: 128 swaps / 5.270193 nominal s = 24.288 Hz; max tick=4641 CIA; max late=2145 CIA\nLAG: 16 swaps / 5.282193 nominal s = 3.029 Hz; max tick=4641 CIA; max late=1418 CIA\nTIERS: 128 swaps / 5.270224 nominal s = 24.287 Hz; max tick=4641 CIA; max late=2113 CIA\nFAULT: 128 swaps / 5.270353 nominal s = 24.287 Hz; max tick=4641 CIA; max late=2112 CIA\nPRESSURE: 128 swaps / 5.269937 nominal s = 24.289 Hz; max tick=4641 CIA; max late=2112 CIA\nOverhead=0 CIA; calibration=525042 nominal CPU clocks, residual=4958; DMA max=289 CIA; service gap=23904 CIA; stacks hardware/software=58/73 bytes\n"
+  },
+  {
+    "resultFile": "docs/evidence/r0f/combined/xemu-d81-1-1789743777991699000/result.bin",
+    "command": [
+      "/Users/slice/Documents/Codex/f65-megawing/toolchain/runtime/jdk-full/jdk-21.0.12+8/Contents/Home/bin/java",
+      "-cp",
+      "/tmp/r0f-corrected.3qt691/fresh-classes",
+      "f65.tools.R0FCombinedOracle",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/docs/evidence/r0f/combined/xemu-d81-1-1789743777991699000/result.bin",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/docs/evidence/r0f/combined/xemu-d81-1-1789743777991699000/durations.bin"
+    ],
+    "exit": 0,
+    "stdout": "CF001 acquisition/oracle PASS: 2640 samples, 80 windows, golden D9EEAB81, 30 resealed mutations rejected.\nReference=XEMU MODEL ONLY; no traceable SI/external latency/R0-F acceptance.\nNORMAL: 144 swaps / 5.269471 nominal s = 27.327 Hz; max tick=4673 CIA; max late=2164 CIA\nLAG: 16 swaps / 5.284820 nominal s = 3.028 Hz; max tick=4673 CIA; max late=1577 CIA\nTIERS: 144 swaps / 5.269472 nominal s = 27.327 Hz; max tick=4673 CIA; max late=2196 CIA\nFAULT: 144 swaps / 5.269661 nominal s = 27.326 Hz; max tick=4800 CIA; max late=2196 CIA\nPRESSURE: 144 swaps / 5.269662 nominal s = 27.326 Hz; max tick=4673 CIA; max late=2164 CIA\nOverhead=0 CIA; calibration=530887 nominal CPU clocks, residual=887; DMA max=288 CIA; service gap=21152 CIA; stacks hardware/software=58/73 bytes\n"
+  },
+  {
+    "resultFile": "docs/evidence/r0f/combined/xemu-d81-1-1789743858209832000/result.bin",
+    "command": [
+      "/Users/slice/Documents/Codex/f65-megawing/toolchain/runtime/jdk-full/jdk-21.0.12+8/Contents/Home/bin/java",
+      "-cp",
+      "/tmp/r0f-corrected.3qt691/fresh-classes",
+      "f65.tools.R0FCombinedOracle",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/docs/evidence/r0f/combined/xemu-d81-1-1789743858209832000/result.bin",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/docs/evidence/r0f/combined/xemu-d81-1-1789743858209832000/durations.bin"
+    ],
+    "exit": 0,
+    "stdout": "CF001 acquisition/oracle PASS: 2640 samples, 80 windows, golden D9EEAB81, 30 resealed mutations rejected.\nReference=XEMU MODEL ONLY; no traceable SI/external latency/R0-F acceptance.\nNORMAL: 144 swaps / 5.269407 nominal s = 27.328 Hz; max tick=4673 CIA; max late=2164 CIA\nLAG: 16 swaps / 5.284820 nominal s = 3.028 Hz; max tick=4673 CIA; max late=1576 CIA\nTIERS: 144 swaps / 5.269853 nominal s = 27.325 Hz; max tick=4673 CIA; max late=2239 CIA\nFAULT: 144 swaps / 5.269566 nominal s = 27.327 Hz; max tick=4768 CIA; max late=2164 CIA\nPRESSURE: 144 swaps / 5.269630 nominal s = 27.326 Hz; max tick=4673 CIA; max late=2182 CIA\nOverhead=0 CIA; calibration=530887 nominal CPU clocks, residual=887; DMA max=289 CIA; service gap=21152 CIA; stacks hardware/software=58/73 bytes\n"
+  },
+  {
+    "resultFile": "docs/evidence/r0f/combined/xemu-d81-1-1789744642554252000/result.bin",
+    "command": [
+      "/Users/slice/Documents/Codex/f65-megawing/toolchain/runtime/jdk-full/jdk-21.0.12+8/Contents/Home/bin/java",
+      "-cp",
+      "/tmp/r0f-corrected.3qt691/fresh-classes",
+      "f65.tools.R0FCombinedOracle",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/docs/evidence/r0f/combined/xemu-d81-1-1789744642554252000/result.bin",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/docs/evidence/r0f/combined/xemu-d81-1-1789744642554252000/durations.bin"
+    ],
+    "exit": 0,
+    "stdout": "CF001 acquisition/oracle PASS: 2640 samples, 80 windows, golden D9EEAB81, 30 resealed mutations rejected.\nReference=XEMU MODEL ONLY; no traceable SI/external latency/R0-F acceptance.\nNORMAL: 144 swaps / 5.269439 nominal s = 27.327 Hz; max tick=4673 CIA; max late=2164 CIA\nLAG: 16 swaps / 5.284820 nominal s = 3.028 Hz; max tick=4673 CIA; max late=1577 CIA\nTIERS: 144 swaps / 5.269567 nominal s = 27.327 Hz; max tick=4673 CIA; max late=2182 CIA\nFAULT: 144 swaps / 5.269502 nominal s = 27.327 Hz; max tick=4800 CIA; max late=2150 CIA\nPRESSURE: 144 swaps / 5.269662 nominal s = 27.326 Hz; max tick=4673 CIA; max late=2196 CIA\nOverhead=0 CIA; calibration=530887 nominal CPU clocks, residual=887; DMA max=289 CIA; service gap=21152 CIA; stacks hardware/software=58/73 bytes\n"
+  },
+  {
+    "resultFile": "docs/evidence/r0f/combined/xemu-d81-1-1789744880280424000/result.bin",
+    "command": [
+      "/Users/slice/Documents/Codex/f65-megawing/toolchain/runtime/jdk-full/jdk-21.0.12+8/Contents/Home/bin/java",
+      "-cp",
+      "/tmp/r0f-corrected.3qt691/fresh-classes",
+      "f65.tools.R0FCombinedOracle",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/docs/evidence/r0f/combined/xemu-d81-1-1789744880280424000/result.bin",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/docs/evidence/r0f/combined/xemu-d81-1-1789744880280424000/durations.bin"
+    ],
+    "exit": 0,
+    "stdout": "CF001 acquisition/oracle PASS: 2640 samples, 80 windows, golden D9EEAB81, 30 resealed mutations rejected.\nReference=XEMU MODEL ONLY; no traceable SI/external latency/R0-F acceptance.\nNORMAL: 144 swaps / 5.269471 nominal s = 27.327 Hz; max tick=4673 CIA; max late=2182 CIA\nLAG: 16 swaps / 5.285424 nominal s = 3.027 Hz; max tick=4673 CIA; max late=1609 CIA\nTIERS: 144 swaps / 5.269440 nominal s = 27.327 Hz; max tick=4673 CIA; max late=2182 CIA\nFAULT: 144 swaps / 5.270011 nominal s = 27.324 Hz; max tick=4800 CIA; max late=2164 CIA\nPRESSURE: 144 swaps / 5.269599 nominal s = 27.327 Hz; max tick=4673 CIA; max late=2168 CIA\nOverhead=0 CIA; calibration=530887 nominal CPU clocks, residual=887; DMA max=289 CIA; service gap=21152 CIA; stacks hardware/software=58/73 bytes\n"
+  },
+  {
+    "resultFile": "docs/evidence/r0f/combined/xemu-d81-1-1789745014153785000/result.bin",
+    "command": [
+      "/Users/slice/Documents/Codex/f65-megawing/toolchain/runtime/jdk-full/jdk-21.0.12+8/Contents/Home/bin/java",
+      "-cp",
+      "/tmp/r0f-corrected.3qt691/fresh-classes",
+      "f65.tools.R0FCombinedOracle",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/docs/evidence/r0f/combined/xemu-d81-1-1789745014153785000/result.bin",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/docs/evidence/r0f/combined/xemu-d81-1-1789745014153785000/durations.bin"
+    ],
+    "exit": 0,
+    "stdout": "CF001 acquisition/oracle PASS: 2640 samples, 80 windows, golden D9EEAB81, 30 resealed mutations rejected.\nReference=XEMU MODEL ONLY; no traceable SI/external latency/R0-F acceptance.\nNORMAL: 144 swaps / 5.269439 nominal s = 27.327 Hz; max tick=4673 CIA; max late=2169 CIA\nLAG: 16 swaps / 5.284947 nominal s = 3.027 Hz; max tick=4673 CIA; max late=1577 CIA\nTIERS: 144 swaps / 5.269567 nominal s = 27.327 Hz; max tick=4673 CIA; max late=2196 CIA\nFAULT: 144 swaps / 5.269598 nominal s = 27.327 Hz; max tick=4800 CIA; max late=2164 CIA\nPRESSURE: 144 swaps / 5.269694 nominal s = 27.326 Hz; max tick=4673 CIA; max late=2196 CIA\nOverhead=0 CIA; calibration=530887 nominal CPU clocks, residual=887; DMA max=289 CIA; service gap=21152 CIA; stacks hardware/software=58/73 bytes\n"
+  },
+  {
+    "resultFile": "docs/evidence/r0f/combined/xemu-dev-0-1789743504879377000/result.bin",
+    "command": [
+      "/Users/slice/Documents/Codex/f65-megawing/toolchain/runtime/jdk-full/jdk-21.0.12+8/Contents/Home/bin/java",
+      "-cp",
+      "/tmp/r0f-corrected.3qt691/fresh-classes",
+      "f65.tools.R0FCombinedOracle",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/docs/evidence/r0f/combined/xemu-dev-0-1789743504879377000/result.bin",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/docs/evidence/r0f/combined/xemu-dev-0-1789743504879377000/durations.bin"
+    ],
+    "exit": 0,
+    "stdout": "CF001 acquisition/oracle PASS: 2640 samples, 80 windows, golden D9EEAB81, 30 resealed mutations rejected.\nReference=XEMU MODEL ONLY; no traceable SI/external latency/R0-F acceptance.\nNORMAL: 128 swaps / 5.269808 nominal s = 24.289 Hz; max tick=4641 CIA; max late=2081 CIA\nLAG: 16 swaps / 5.281329 nominal s = 3.030 Hz; max tick=4640 CIA; max late=1381 CIA\nTIERS: 128 swaps / 5.270353 nominal s = 24.287 Hz; max tick=4673 CIA; max late=2145 CIA\nFAULT: 128 swaps / 5.269968 nominal s = 24.289 Hz; max tick=4672 CIA; max late=2081 CIA\nPRESSURE: 128 swaps / 5.270513 nominal s = 24.286 Hz; max tick=4640 CIA; max late=2229 CIA\nOverhead=0 CIA; calibration=525001 nominal CPU clocks, residual=4999; DMA max=288 CIA; service gap=23937 CIA; stacks hardware/software=58/73 bytes\n"
+  },
+  {
+    "resultFile": "docs/evidence/r0f/combined/xemu-dev-1-1789743406528532000/result.bin",
+    "command": [
+      "/Users/slice/Documents/Codex/f65-megawing/toolchain/runtime/jdk-full/jdk-21.0.12+8/Contents/Home/bin/java",
+      "-cp",
+      "/tmp/r0f-corrected.3qt691/fresh-classes",
+      "f65.tools.R0FCombinedOracle",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/docs/evidence/r0f/combined/xemu-dev-1-1789743406528532000/result.bin",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/docs/evidence/r0f/combined/xemu-dev-1-1789743406528532000/durations.bin"
+    ],
+    "exit": 0,
+    "stdout": "CF001 acquisition/oracle PASS: 2640 samples, 80 windows, golden D9EEAB81, 30 resealed mutations rejected.\nReference=XEMU MODEL ONLY; no traceable SI/external latency/R0-F acceptance.\nNORMAL: 144 swaps / 5.269471 nominal s = 27.327 Hz; max tick=4673 CIA; max late=2164 CIA\nLAG: 16 swaps / 5.284501 nominal s = 3.028 Hz; max tick=4673 CIA; max late=1587 CIA\nTIERS: 144 swaps / 5.269187 nominal s = 27.329 Hz; max tick=4673 CIA; max late=2196 CIA\nFAULT: 144 swaps / 5.269567 nominal s = 27.327 Hz; max tick=4800 CIA; max late=2196 CIA\nPRESSURE: 144 swaps / 5.269663 nominal s = 27.326 Hz; max tick=4673 CIA; max late=2196 CIA\nOverhead=0 CIA; calibration=530887 nominal CPU clocks, residual=887; DMA max=289 CIA; service gap=21152 CIA; stacks hardware/software=58/73 bytes\n"
+  }
+]
