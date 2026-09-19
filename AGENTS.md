@@ -2,35 +2,41 @@
 
 These instructions apply to every task in this repository.
 
-## Before changing code or contracts
+## Before changing anything
 
-1. Read `F65_OFFICIAL_RECORD.md` first.
-2. Read the frozen architecture source under `spec/architecture/` completely, including its memory map and MemoryAccessABI requirements.
-3. Read the current files under `memory/`, the calling conventions and public contracts under `interfaces/`, and every relevant subsystem specification/document before editing. If an expected contract does not yet exist, state that explicitly; do not invent it.
-4. Before the first edit, state which files, requirements, interfaces, memory-map entries, and contracts were inspected.
-5. Identify the affected 45GS02 registers and clobbers, CPU-visible and physical memory ranges, MAP/base-page state, DMA behavior, timing/deadline effects, IRQ/NMI behavior, and validation commands. Mark non-applicable items explicitly.
+1. Read [CURRENT_STATE.md](CURRENT_STATE.md) and [WORK_IN_PROGRESS.md](WORK_IN_PROGRESS.md).
+2. Read [the development workflow](docs/DEVELOPMENT_WORKFLOW.md).
+3. Inspect the applicable governing design documents, interfaces, memory ledgers, implementation, and validation tooling.
+4. For C work, read [the C readability standard](docs/CODE_STYLE_C.md).
+5. Before any D81-related task, read and obey [00_D81_LOADABILITY_GATE.md](00_D81_LOADABILITY_GATE.md).
 
-## Authority and scope
+State the inspected authority and contracts before the first edit. Identify affected registers/clobbers, CPU-visible and physical memory, MAP/base-page, DMA, timing/deadline, and IRQ/NMI effects; mark non-applicable items explicitly.
 
-- Read the approved Read-First supplement and current approval record before applying candidate Architecture 1.5.1, Gameplay 0.2, or Engine 0.2. `AD-001` authorizes bounded R0 proof development; it does not pass a gate or approve a candidate parent document.
-- C compiled with LLVM-MOS is the primary target language. Handwritten 45GS02 is limited to documented platform wrappers, interrupt/startup paths, or a measured and admitted compiler gap. Target changes must compile/link, generate maps/symbols/listings or disassembly, and have Xemu plus physical-evidence obligations recorded.
+## Scope and authority discipline
 
-- Never treat Draft, Proposed, `TBD`, `TARGET`, `R0-GATED`, recommendation, or planning-assumption text as approved shipping behavior.
-- Never modify architecture, CoreRuntime, public ABI, memory ownership, tick order, pool capacities, reserves, or another module's private state merely to simplify implementation.
-- Never modify preserved source specifications unless the user explicitly tasks that source-document change.
-- Prefer generated machine-readable contracts and constants over duplicated handwritten layouts.
-- Stop and report a material contradiction or undocumented hardware dependency instead of choosing an interpretation.
-- Never invent unverified MEGA65/45GS02/VIC-IV/DMAgic behavior. Mark uncertainty, consult the pinned official project references, and require measured evidence where specified.
-- Keep gameplay and production-engine implementation outside R0-A until the governing gates open.
+- Follow the approved Build Intent; do not casually expand scope.
+- Do not delete, rewrite, or mass-restyle uncertain legacy material, proof source, or retained evidence without explicit approval.
+- Do not silently resolve design contradictions. Record the conflict, identify the owner, and stop when implementation would choose an outcome.
+- Do not promote drafts, `TBD`, `TARGET`, `R0-GATED`, measured values, or planning assumptions by implementation convenience.
+- Preserve subsystem ownership and generated-contract authority. Do not duplicate generated public layouts by hand.
+- Navigation documents summarize state; they do not replace governing design documents, generated interfaces, or measured evidence.
 
-## Verification and handoff
+## C and low-level work
 
-- Assemble the affected target and run the applicable host, Xemu, and physical-target tests after changes. If a required tier is unavailable, report that fact and do not claim it passed.
-- R0-A source must expose observable proof results and machine-readable evidence, preserve canonical MAP/base-page/IRQ state on every public exit, and account for C runtime, wrappers, code, data, stack, DMA, and reserve use in the generated ledgers.
-- Run all relevant validation before committing and list the exact commands and results in the handoff.
-- Update the memory map or append a decision-log entry whenever a shared memory, ABI, ownership, timing, IRQ, DMA, serialization, or lifecycle contract changes.
-- Include inspected files/contracts, changed paths, register/memory/timing impact, generated-artifact status, tests, evidence identity, and unresolved risks in every coding-task handoff.
+LLVM-MOS C is the primary target implementation language. Use handwritten 45GS02 assembly only for justified platform-critical or measured work, behind the applicable narrow contract.
 
-## Mandatory D81 loadability gate
+Generated and public interfaces govern layouts. Respect hardware ownership boundaries and understand register, memory, MAP/base-page, DMA, IRQ, and restoration effects before changing low-level code. C formatting and readability requirements are in [docs/CODE_STYLE_C.md](docs/CODE_STYLE_C.md), not duplicated here.
 
-Before creating, modifying, copying, renaming, packaging, mounting, testing, or releasing any D81, read and obey the repository-root `00_D81_LOADABILITY_GATE.md`. A D81 must be freshly formatted and populated in one pinned c1541 construction session, then pass the gate's host structural/content checks before Xemu. A direct SD-card copy must additionally have a matching hash, exactly one independently verified FAT32 physical extent, and a successful safe eject before physical chooser testing; `cp`/`sync`/`shasum` alone is forbidden. Error code FF at the MEGA65 chooser is a hard carrier failure: retire that identity and diagnose D81 structure, SD allocation, and platform identity before issuing a replacement; never patch or append to the failed image. After a second chooser FF in one carrier family, freeze new carrier identities and compare every failed image to a retained physical-pass control with `tools/diagnostics/d81_foundation_compare.py` before altering any construction or delivery variable.
+## Validation and handoff
+
+Run validation appropriate to the task and report exact commands and results. Compile/link, host, Xemu, and physical evidence each establish only their own tier; Xemu never substitutes for physical MEGA65 evidence where physical proof is required.
+
+Record changed paths, contract and hardware impact, generated-artifact status, evidence identity, tests run or not run, unresolved risks, and the recommended next action.
+
+## Git
+
+Use focused branches and review before merge. Do not routinely force-push or rewrite history for cosmetic cleanup. Keep commits focused and handoffs clear.
+
+## Historical and evidence material
+
+Preserve retained R0 proof source and evidence. Existing evidence-bearing code is not a repository-wide style-migration target merely because a newer C style guide exists.
