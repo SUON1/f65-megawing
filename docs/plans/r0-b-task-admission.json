@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "task_id": "F65-R0-B",
+  "milestone": "Phase 0 / R0-B",
+  "classification": "non-gameplay proof and candidate measurement only",
+  "authorization": {
+    "basis": "AD-001",
+    "r0a_status": "PASS: owner-recorded focused physical base-page and pointer proof at 1ab5b62",
+    "parent_status": "Architecture 1.5.1, Gameplay 0.2, and Engine 0.2 remain candidates",
+    "production_selection": "NOT AUTHORIZED"
+  },
+  "requirements": ["GAME-005", "INPUT-001", "INPUT-002", "INPUT-003", "INPUT-004", "RENDER-001", "RENDER-002", "RENDER-003", "RENDER-004", "ENGINE-001", "ENGINE-003", "ENGINE-004", "ENGINE-006", "PERF-002", "PERF-003", "PERF-004", "PERF-005", "MEM-001", "MEM-005", "AUDIO-001", "AUDIO-002", "AUDIO-003", "TOOL-001", "TOOL-003", "TOOL-004", "TEST-003", "TEST-005", "RF-FND-006", "RF-FND-008", "RF-FND-011", "RF-FND-018", "MR-006", "MR-007", "MR-018", "REN-01", "AUD-01", "IN-01"],
+  "decisions": ["AD-001", "CORR-TIME-001", "CORR-INPUT-001", "CORR-AUDIO-001", "CORR-IFACE-001", "CORR-PLAT-001:C-adapted", "CORR-MEM-001", "CORR-TEST-001"],
+  "open_human_decisions": ["DEC-005", "DEC-011", "DEC-013", "DEC-014"],
+  "interfaces": {
+    "consumes": "r0a-0.1.0-candidate at exact upstream identity",
+    "creates": "r0b-0.1.0-proof",
+    "scope": ["candidate display descriptor", "palette role record", "proxy scene", "work-unit/result", "input transition", "audio priority", "evidence record"],
+    "production_abi": "none frozen"
+  },
+  "upstream": {
+    "commit": "1ab5b62928d0e725c8dcf48e8a17783a525503b6",
+    "r0a_d81_sha256": "40d95171389e3825793216ed54176084a87bad5bac630b942955c8b90668b3b4",
+    "r0a_prg_sha256": "c7360a2dd978181d63ce6fcd5c39eecd55001e12f106a5d9f84f937c8d49af08",
+    "toolchain_lock_sha256": "fc56c2017da8d4adf9daed17efed05dc93ea14ae6dbbbbeaa3125e530a68fa5f",
+    "platform_abi_sha256": "ca3c2c95e1c3e7f553557b7a2a22e1a2143874ceec1e13c91e502ca0faddfccc",
+    "interface_registry_sha256": "b26941225ea6ff5827d915b0678d20827809b7829e9e32bbc5ed45bd031538f7"
+  },
+  "toolchain": {"frontend": "mos-mega65-clang", "expected_release": "LLVM-MOS SDK v23.1.0", "cpu": "-mcpu=mos45gs02", "lto_zero_page": "-mlto-zp=0", "status": "revalidate at build"},
+  "memory": {"cpu_visible": ["$0100-$01FF stack", "$0200-$02FF base page", "$8000-$BFFF temporary MAP scope"], "physical": {"display_control": "$01C000-$01CFFF", "display_store_a": "$020000-$02FFFF", "display_store_b": "$030000-$03FFFF", "proof_assets": "$040000-$047FFF", "workspace": "$048000-$04FFFF", "staging": "$050000-$057FFF", "reserve": "$058000-$05FFFF untouched"}},
+  "mutable_state_owners": {"synthetic_presentation": "R0-B harness", "display_stores": "Graphics proof", "vic_iv_and_dma": "Platform/Core proof service", "input": "Input proof", "audio": "Audio proof", "authoritative_simulation": "none"},
+  "cadence": {"simulation": "none; preserve 100 Hz architecture", "display": "measured PAL/NTSC service only", "input": "every display service or verified higher-rate source", "audio": "actual verified service/interrupt mechanism", "presentation": "complete buffers only"},
+  "hardware_status": {"vic_iv": "UNVERIFIED_UNTIL_DOCUMENTED_AND_TESTED", "dmagic": "UNVERIFIED_UNTIL_DOCUMENTED_AND_TESTED", "sid_audio": "UNVERIFIED_UNTIL_DOCUMENTED_AND_TESTED", "cia_input": "UNVERIFIED_UNTIL_DOCUMENTED_AND_TESTED", "raster_irq": "UNVERIFIED_UNTIL_DOCUMENTED_AND_TESTED", "r0a_map_dma_irq_q_stack_identity": "retain R0-A scoped status; do not promote"},
+  "packages": ["F65-R0B-PROOF-D81", "F65-R0B-EVIDENCE-SET", "R0B-PROXY-SCENE-001", "R0B-PALETTE-CANDIDATE-001", "R0B-INPUT-PROFILE-001", "R0B-AUDIO-FIXTURE-001", "R0B-DISPLAY-CANDIDATE-*", "R0B-RENDER-TIER-*"],
+  "prohibited": ["production renderer", "production display/control/audio/palette selection", "gameplay", "flight", "radar detection/tracking/fire control", "aircraft systems", "weapons", "AI", "mission/campaign", "R0-A rewrite", "preserved specs", "reserve use"],
+  "revalidation_triggers": ["authority hash/status", "upstream identity", "toolchain/compiler/flags/linker/runtime", "base page/platform wrapper", "mode/layout/fixture/palette/asset/input/audio/DMA", "ROM/core/system/video/Xemu identity", "evidence instrumentation", "R0-C proxy replacement"],
+  "exit_condition": "Implementation complete only after source, generated contracts, host tests, exact D81, Xemu evidence, hardware guide, reports, clean committed pushed branch, and remote verification. Evidence passed requires returned owner physical results from the exact build."
+}

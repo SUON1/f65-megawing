@@ -1,0 +1,57 @@
+{
+  "BUILDER_IDENTITY": {
+    "path": "/Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/vice-clean/bin/c1541",
+    "realdevice": "disabled",
+    "sha256": "73235289aca30a7e2e8067e521bf604743156cc1d7499c888a3894d6e46fcb3c",
+    "version": "3.10"
+  },
+  "D81_BYTES": 819200,
+  "D81_FILENAME": "F65R0F1.D81",
+  "D81_SHA256": "9b539a14f08d671195ef71e54bbacb3eacd5258634f7a29396bf00a068cddd89",
+  "D81_STATE": "XEMU_BOOT_VERIFIED",
+  "DISK_ID": "65",
+  "DISK_LABEL": "F65 R0-F1",
+  "ENTRY_FILENAME": "AUTOBOOT.C65 -> R0F-PROOF",
+  "HOST_CONTENT_RESULT": "PASS",
+  "HOST_STRUCTURAL_RESULT": "PASS",
+  "PHYSICAL_CHOOSER_RESULT": "AWAITING_HUMAN",
+  "PHYSICAL_EVIDENCE": null,
+  "SD_CONTIGUITY_RESULT": "AWAITING_AUTHORIZED_TRANSFER",
+  "SD_COPY_SHA256": null,
+  "SD_EXTENT_COUNT": null,
+  "SD_EXTENT_EVIDENCE": null,
+  "SD_FILESYSTEM": null,
+  "SD_SAFE_EJECT_RESULT": "NOT VERIFIED",
+  "SD_TRANSFER_METHOD": null,
+  "SOURCE_BRANCH": "codex/r0-f-development",
+  "SOURCE_COMMIT": "b5b54bd0af18f899c78857fd2f69ba7b969fe856",
+  "SOURCE_STATE": "working tree; exact input hashes in R0F-EVID.txt",
+  "STRUCTURAL_VALIDATOR_IDENTITY": {
+    "path": "tools/diagnostics/r0f_d81_loadability_gate.py",
+    "sha256": "22b2bdaa999606b08608355f5869f7a8dbf12773074410a724e2709b410f3e1b"
+  },
+  "XEMU_EVIDENCE": "docs/evidence/r0f/xemu/evidence.json",
+  "XEMU_RESULT": "PASS",
+  "c1541Listing": "D81 disk image recognised: /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/F65R0F1.D81, 80 tracks.\nUnit 8 drive 0: D81 disk image attached: /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/F65R0F1.D81.\n0 \"F65 R0-F1       \" 65 3d\n1    \"autoboot.c65\"     prg \n19   \"r0f-proof\"        prg \n7    \"r0f-evid\"         prg \n3133 blocks free.\nUnit 8 drive 0: D81 disk image detached: /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/F65R0F1.D81.\n",
+  "construction": "fresh format plus all payload writes in one pinned c1541 invocation",
+  "payloads": [
+    {
+      "bytes": 69,
+      "hostFilename": "AUTOBOOT.C65",
+      "petsciiFilename": "autoboot.c65",
+      "sha256": "255315f072865f673ee2f5266434d5d249363cee02d36555d6150f42792d9b7b"
+    },
+    {
+      "bytes": 4694,
+      "hostFilename": "F65-R0F-PROOF.prg",
+      "petsciiFilename": "r0f-proof",
+      "sha256": "510c2bfc8686f86b5fd934edd0b9863c0a176951a2871eaa0f990c8e0cec106e"
+    },
+    {
+      "bytes": 1525,
+      "hostFilename": "R0F-EVID.txt",
+      "petsciiFilename": "r0f-evid",
+      "sha256": "764dce49bec8edf4257f571c254da85ca26715e0bc2e5118aa4399b289f1bab1"
+    }
+  ]
+}

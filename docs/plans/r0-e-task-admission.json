@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "task_id": "F65-R0-E",
+  "authorization": "AD-001, R0-E row",
+  "classification": "Bounded R0-E proof candidate",
+  "proof_question": "Whether the identified R0-B/C/D candidate inputs can run concurrently under independent clocks in Xemu with deterministic protected services and measurable headroom",
+  "requirements": ["PERF-001","PERF-002","PERF-003","PERF-004","MEM-001","MEM-004","MEM-005","AUDIO-001","AUDIO-002","AUDIO-003","RENDER-001","RENDER-002","RENDER-003","RENDER-004","TEST-003","TEST-005","MR-005","MR-006","MR-007","MR-010"],
+  "engine_sections": [2,3,4,5,8,11,12,"17.2",18,19],
+  "upstream_identities": {"r0a":{"commit":"1ab5b62","status":"closed bounded proof"},"r0b":{"commit":"18cac27","status":"closed bounded proof"},"r0c":{"commit":"d02be34","status":"candidate-complete by owner waiver; revalidate input identity"},"r0d":{"commit":"de682be","status":"closed admitted proof"}},
+  "target_language":"LLVM-MOS C primary; R0-E-local read-only VIC-II-compatible raster observation only; no low-level assembly, MAP, DMA, or IRQ wrapper admitted",
+  "mutable_owner":"R0-E proof harness only; never CoreRuntime or module-private production state",
+  "simulation":"exactly 100 Hz proof timeline with frozen 21-step order; presentation/services independently phased",
+  "presentation":"candidate only; never authoritative; incomplete world buffers never display",
+  "reserve_policy":"$058000-$05FFFF untouched; every R0-E allocation explicitly charged",
+  "storage_policy":"no tactical storage operation during active simulation; bounded packaging/load checks only",
+  "production_values":"NOT_APPLICABLE_UNTIL_GATE: measured-limits revision",
+  "timing_observation":{"status":"R0E_LOCAL_READ_ONLY_RASTER_OBSERVATION","register":"VIC-II-compatible raster low byte ($D012) through the LLVM-MOS MEGA65 header","writes":"none","clobbers":"ordinary private C helper only; no declared cross-language ABI","unit":"raster-low-byte delta modulo 256","resultOrdering":"raw-byte numeric rank only; not elapsed-time p50/p95/worst after possible wrap","notClaims":["CPU cycles","input/audio latency","elapsed-time p50/p95/worst","DMA/IRQ timing","physical limit","platform identity"]},
+  "hardware_closure":"NOT_APPLICABLE_UNTIL_GATE: R0-F — R0-E is Xemu evidence only; a rebuilt carrier must repeat the D81 chain before physical observation",
+  "carrier":{"host_filename":"NONE — D81 FOUNDATION QUALIFICATION","disk_label":"NOT ASSIGNED","disk_id":"NOT ASSIGNED","predecessor":"F65R0E.D81 is retained historical functional-proxy evidence only and the physical-pass control; F65R0E2.D81, F65R0E3.D81, and F65R0E4.D81 are invalid after physical chooser ERROR CODE FF","petscii_filenames":["autoboot.c65","r0e-proof","r0e-evid"],"payloads":["AUTOBOOT.C65","F65-R0E-PROOF.prg","R0E-EVID.txt"],"entry_file":"AUTOBOOT.C65 -> R0E-PROOF","release_record":"build/r0e/manifests/r0e-d81-release.json","validators":["tools/diagnostics/r0e_validate_target.py","tools/diagnostics/r0e_d81_loadability_gate.py","tools/diagnostics/d81_foundation_compare.py","tools/diagnostics/d81_sd_contiguity.py"],"stable_identity":"R0-E COMBINED-LOAD RASTER-OBSERVATION CANDIDATE / RESULT $1900-$19FF","blocker":"complete deterministic control reconstruction, exact-image Xemu validation, one-variable payload comparison, SD-copy integrity/contiguity capture, and two fresh physical chooser passes; do not issue another R0-E carrier"},
+  "d81_state":"PHYSICAL_RUNTIME_VERIFIED_OWNER_ACCEPTED; NOT_TEST_ELIGIBLE_WITHOUT_EXACT_XEMU_RERUN",
+  "closure_reconciliation":{"status":"OWNER_ACCEPTED_BOUNDED_R0E_CLOSURE","scope":"physical Rev3 combined-load functional proxy and read-only raster observation","carrier":"F65R0EG.D81","sha256":"ca85f73ffba93ea290078a60b372406dc6ab58eddacdf0765f7589cea039c40f","physicalResult":"PASS; 16 bins/case, 33 ticks, normal raw q50/q95/max bytes 020/020/020","deliveryMethod":"MEGA65 NEW D81 DD IMAGE contiguous root slot followed by guarded in-place fill; never Finder/host replacement","remaining":"R0-F separately admits timing/DMA/IRQ measurement and pinned platform identity","evidence":"docs/evidence/r0e/R0E5-D81-PHYSICAL-RUNTIME-2026-09-04.md","supersedes":"the prior D81-foundation blocker and unverified-carrier state only; all production and measured-limit prohibitions remain"},
+  "configuration_discrepancy":"The historical admission fields preserve their original pre-closure state; closure_reconciliation is the authoritative status update. This does not alter candidate-specification approval or R0-F measurement gates."
+}

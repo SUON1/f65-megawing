@@ -1,83 +1,137 @@
 {
-  "schema_version": 1,
-  "manifest_date": "2026-08-17",
+  "schema_version": 2,
+  "manifest_date": "2026-08-20",
   "project": "F-65 Megawing",
-  "authority_note": "This manifest records declared document states. Inclusion does not approve a draft, proposal, TBD, TARGET, R0-GATED value, recommendation, or planning assumption.",
+  "authority_note": "This manifest records exact document identities, statuses, and approved effects. Inclusion never approves a candidate, passes a gate, freezes a measured value, or authorizes production gameplay.",
+  "authority_order": [
+    "F-65_Technical_Alignment_and_Read_First_Supplement_v1.0.md",
+    "F-65_Architecture_Decision_AD-001_R0_Program_Development_Authorization.md",
+    "F-65_Specification_Approval_Record_2026-08-20_R0_Development.md",
+    "F-65 Megawing Revision 1.5.1 — Architecture Invariants.md",
+    "F65_Gameplay_and_Simulation_Requirements_Supplement_Draft_0.2.md",
+    "F-65 Engine Runtime and Toolchain Design Supplement Draft 0.2.md",
+    "F-65 Megawing Revision 1.4.1.md",
+    "MEGA65_Flight_Simulation_3D_Graphics_White_Paper.pdf"
+  ],
+  "approval_effect": {
+    "r0_development": "GO for bounded R0-A–F proof development",
+    "r0_gate_status": "NOT PASSED",
+    "parent_candidate_status": "Architecture 1.5.1, Gameplay 0.2, and Engine 0.2 retain their candidate status",
+    "human_decisions_open": ["DEC-002", "DEC-003"],
+    "prohibited": ["Phase 1", "production gameplay", "measured-limit selection", "physical-evidence waiver"]
+  },
   "documents": [
     {
-      "filename": "F-65 Megawing Revision 1.4.1.md",
-      "relative_path": "spec/architecture/F-65 Megawing Revision 1.4.1.md",
-      "title": "F-65 Megawing Revision 1.4.1 — Architecture Invariants and Documentation Update",
-      "version": "1.4.1",
-      "declared_status": "Frozen architecture baseline",
-      "sha256": "c54f77c817b8263f8d03de3ed442c115ff06b0b622c1f14be122df8963079922",
-      "authority_role": "Architecture authority",
-      "authority_state": "authoritative_with_unresolved_predecessor_corpus",
-      "currently_authoritative": true,
+      "filename": "F-65_Technical_Alignment_and_Read_First_Supplement_v1.0.md",
+      "relative_path": "spec/alignment/F-65_Technical_Alignment_and_Read_First_Supplement_v1.0.md",
+      "version": "1.0",
+      "declared_status": "APPROVED — FIRST-READ AUTHORITY",
+      "sha256": "f957b97e146fc4d35d094072eee52d2cc91185f76c7cef232efe898ce7628cc7",
+      "approved_draft_sha256": "2eb72648e7e04644dd09115895020f358e7173994fb42df78209850193956b3f",
+      "authority_role": "approved orientation, configuration control, and escalation authority",
       "present": true,
-      "parent_document": null,
-      "supersedes": "Revision 1.4",
-      "notes": "Revision 1.4 is referenced as superseded and completely retained, but was not supplied."
+      "approval_effect": "first-read authority only; does not promote parent candidates"
+    },
+    {
+      "filename": "F-65_Architecture_Decision_AD-001_R0_Program_Development_Authorization.md",
+      "relative_path": "docs/decisions/F-65_Architecture_Decision_AD-001_R0_Program_Development_Authorization.md",
+      "version": "1.0",
+      "declared_status": "APPROVED — R0-A–F DEVELOPMENT AUTHORITY",
+      "sha256": "ce3cb019082081bb7908146de0cc689a74abca517bf32520f5bd9fdf30e375dd",
+      "approved_draft_sha256": "a93726389cc4b7d0cf2b0c4e87e21237e165f377a542bcadafc564f1896f8385",
+      "authority_role": "development authorization",
+      "present": true,
+      "approval_effect": "GO for bounded R0 proof development; not gate passage or parent approval"
+    },
+    {
+      "filename": "F-65_Specification_Approval_Record_2026-08-20_R0_Development.md",
+      "relative_path": "docs/approvals/F-65_Specification_Approval_Record_2026-08-20_R0_Development.md",
+      "version": "1.0",
+      "declared_status": "APPROVED — ACTIVE",
+      "sha256": "9fc23bb8555bbd2b84c8f925e909bc5245448ee87db9fb1fb596e8e67c288d8e",
+      "authority_role": "human approval record",
+      "present": true,
+      "approval_effect": "records the exact approval scope, exclusions, and publication identities"
+    },
+    {
+      "filename": "F-65 Megawing Revision 1.5.1 — Architecture Invariants.md",
+      "relative_path": "spec/architecture/F-65 Megawing Revision 1.5.1 — Architecture Invariants.md",
+      "version": "1.5.1",
+      "declared_status": "Architecture-freeze candidate",
+      "sha256": "46ba078cb397d257de6aeee66cff510c5e3243bca97767db1738d86d9ebd1fec",
+      "authority_role": "highest current architecture candidate for bounded proof work",
+      "present": true,
+      "approval_effect": "candidate only; Revision 1.4.1 remains the last frozen baseline"
     },
     {
       "filename": "F65_Gameplay_and_Simulation_Requirements_Supplement_Draft_0.2.md",
       "relative_path": "spec/gameplay/F65_Gameplay_and_Simulation_Requirements_Supplement_Draft_0.2.md",
-      "title": "F-65 Megawing — Gameplay and Simulation Requirements Supplement",
       "version": "Draft 0.2",
       "declared_status": "Freeze candidate",
       "sha256": "5db0344f8e7fd66143874310c3794a64391d4767229a90f5caee5e5e287d84e4",
-      "authority_role": "Candidate player-facing requirements subordinate to Architecture",
-      "authority_state": "freeze_candidate",
-      "currently_authoritative": false,
+      "authority_role": "candidate gameplay companion",
       "present": true,
-      "parent_document": "F-65 Megawing Revision 1.4.1",
-      "supersedes": "Gameplay and Simulation Supplement Draft 0.1",
-      "notes": "The document states that it becomes binding only once approved; no such approval is recorded by this bootstrap."
+      "approval_effect": "not approved; only the R0-A capacity-analysis fixture is used and remains non-shipping"
+    },
+    {
+      "filename": "F-65 Engine Runtime and Toolchain Design Supplement Draft 0.2.md",
+      "relative_path": "spec/engine/F-65 Engine Runtime and Toolchain Design Supplement Draft 0.2.md",
+      "version": "Draft 0.2",
+      "declared_status": "Architecture-review candidate",
+      "sha256": "dfd4bf0b557b4dae6382de502db42e4b2d269ceaf44bd67440bb6d047341454a",
+      "authority_role": "candidate implementation contract subordinate to architecture",
+      "present": true,
+      "approval_effect": "candidate guidance for bounded R0-A work; not independently binding"
+    },
+    {
+      "filename": "F-65 Megawing Revision 1.4.1.md",
+      "relative_path": "spec/architecture/F-65 Megawing Revision 1.4.1.md",
+      "version": "1.4.1",
+      "declared_status": "Frozen architecture baseline",
+      "sha256": "c54f77c817b8263f8d03de3ed442c115ff06b0b622c1f14be122df8963079922",
+      "authority_role": "last frozen architecture baseline",
+      "present": true,
+      "approval_effect": "retained baseline context and frozen fallback"
     },
     {
       "filename": "F65_Engine_Runtime_and_Toolchain_Design_Supplement_Draft_0.1.md",
       "relative_path": "spec/engine/F65_Engine_Runtime_and_Toolchain_Design_Supplement_Draft_0.1.md",
-      "title": "F-65 Megawing — Engine, Runtime, and Toolchain Design Supplement",
       "version": "Draft 0.1",
-      "declared_status": "Architecture-review candidate",
+      "declared_status": "Historical architecture-review candidate",
       "sha256": "63f0d2e136507485296bd3424e83e9db796b2bf612d81f3fe5ac2744297d27aa",
-      "authority_role": "Candidate implementation contracts subordinate to Architecture and Gameplay",
-      "authority_state": "architecture_review_candidate",
-      "currently_authoritative": false,
+      "authority_role": "preserved provenance",
       "present": true,
-      "parent_document": "F-65 Megawing Revision 1.4.1 and Gameplay Supplement Draft 0.2",
-      "supersedes": null,
-      "notes": "No approval is recorded by this bootstrap."
+      "approval_effect": "historical only"
     },
     {
       "filename": "F-65_Technical_Alignment_and_Corrections_Supplement_v0.2.md",
       "relative_path": "spec/alignment/F-65_Technical_Alignment_and_Corrections_Supplement_v0.2.md",
-      "title": "F-65 Technical Alignment and Corrections Supplement",
       "version": "0.2",
-      "declared_status": "DRAFT — REQUIRES HUMAN REVIEW",
+      "declared_status": "Historical/superseded draft",
       "sha256": "fd8188f3787d902466a3d07b13c46e88f9afe32d7d5839945c4bc33143e0249b",
-      "authority_role": "Draft review, correction, traceability, and orientation layer",
-      "authority_state": "draft_proposals_not_approved",
-      "currently_authoritative": false,
+      "authority_role": "preserved audit provenance",
       "present": true,
-      "parent_document": "Review of Architecture 1.4.1, Gameplay 0.2, and Engine 0.1",
-      "supersedes": "Technical Alignment and Corrections Supplement v0.1",
-      "notes": "Proposed corrections and decisions have no release effect until the required human approvals are recorded."
+      "approval_effect": "historical only; Read-First v1.0 is the current operating alignment"
+    },
+    {
+      "filename": "MEGA65_Flight_Simulation_3D_Graphics_White_Paper.pdf",
+      "relative_path": null,
+      "version": "1.0",
+      "declared_status": "Supporting technical reference",
+      "sha256": "7e3f775dc5624a543ea8cccbad786be7940ca48b7603b98dd94b5c5e6de64491",
+      "authority_role": "supporting research only",
+      "present": false,
+      "approval_effect": "not an R0-A dependency and no substitute is created"
     },
     {
       "filename": null,
       "relative_path": null,
-      "title": "F-65 Megawing Revision 1.4",
       "version": "1.4",
       "declared_status": "Referenced predecessor corpus; not supplied",
       "sha256": null,
-      "authority_role": "Predecessor stated by Revision 1.4.1 to be superseded and retained",
-      "authority_state": "unresolved_missing",
-      "currently_authoritative": false,
+      "authority_role": "historical predecessor",
       "present": false,
-      "parent_document": null,
-      "supersedes": null,
-      "notes": "The exact filename, bytes, contents, and hash are unknown. They are not inferred or invented."
+      "approval_effect": "unknown bytes and hash are not inferred"
     }
   ]
 }

@@ -1,0 +1,39 @@
+{
+  "schema_version": "r0b-0.1.0-proof",
+  "classification": "candidate measurement only; no production selection",
+  "upstream_r0a_commit": "1ab5b62928d0e725c8dcf48e8a17783a525503b6",
+  "official_source": "MEGA65 Chipset Reference, Full-Colour Text Mode (FCM), current downloaded-reference identity is retained in R0-B evidence before target register access",
+  "display_candidates": [
+    {"id":"R0B-DISPLAY-CANDIDATE-FCM-320X200","mode":"VIC-IV FCM","width":320,"height":200,"cells_x":40,"cells_y":25,"cell_data_bytes":64,"character_data_bytes":64000,"pointer_table_bytes":2000,"store_count":2,"store_a":131072,"store_b":196608,"pointer_a":114688,"pointer_b":116736,"status":"candidate; setup and raster swap require target proof"},
+    {"id":"R0B-DISPLAY-CANDIDATE-FCM-160X200","mode":"VIC-IV FCM","width":160,"height":200,"cells_x":20,"cells_y":25,"cell_data_bytes":64,"character_data_bytes":32000,"pointer_table_bytes":1000,"store_count":2,"store_a":131072,"store_b":196608,"pointer_a":114688,"pointer_b":115688,"status":"candidate; setup and raster swap require target proof"}
+  ],
+  "palette_roles": [
+    {"name":"BACKGROUND","first":0,"last":0,"grayout_first":0,"grayout_last":0},
+    {"name":"NEUTRAL","first":1,"last":15,"grayout_first":1,"grayout_last":15},
+    {"name":"HUD_GREEN","first":16,"last":23,"grayout_first":1,"grayout_last":15},
+    {"name":"FRIENDLY_GREEN","first":24,"last":31,"grayout_first":1,"grayout_last":15},
+    {"name":"UNRESOLVED_YELLOW","first":32,"last":39,"grayout_first":1,"grayout_last":15},
+    {"name":"HOSTILE_RED","first":40,"last":47,"grayout_first":1,"grayout_last":15},
+    {"name":"CAUTION","first":48,"last":55,"grayout_first":1,"grayout_last":15},
+    {"name":"FAILURE","first":56,"last":63,"grayout_first":1,"grayout_last":15},
+    {"name":"SKY_OCEAN_TERRAIN","first":64,"last":127,"grayout_first":1,"grayout_last":15},
+    {"name":"COCKPIT","first":128,"last":159,"grayout_first":1,"grayout_last":15},
+    {"name":"WORLD","first":160,"last":191,"grayout_first":1,"grayout_last":15},
+    {"name":"EFFECT","first":192,"last":223,"grayout_first":1,"grayout_last":15},
+    {"name":"RADAR_SYSTEMS","first":224,"last":239,"grayout_first":1,"grayout_last":15},
+    {"name":"ESSENTIAL_STANDBY","first":240,"last":247,"grayout_first":1,"grayout_last":15},
+    {"name":"RESERVED_DEBUG","first":248,"last":255,"grayout_first":1,"grayout_last":15}
+  ],
+  "proxy_scene": {"id":"R0B-PROXY-SCENE-001","label":"NON-SHIPPING TECHNICAL PROXY","seed":65066,"objects":4,"vertices":16,"faces":8,"stable_recipe":"integer-only fixed geometry plus deterministic sky/ocean/horizon bands"},
+  "render_tiers": ["R0B-RENDER-TIER-FILLED","R0B-RENDER-TIER-REDUCED","R0B-RENDER-TIER-WIREFRAME","R0B-RENDER-TIER-IMPOSTOR"],
+  "input_fixture": {"id":"R0B-INPUT-PROFILE-001","transitions":10000,"seed":65067,"parameters":"proof-only deterministic dwell/repeat/ambiguity/shaping"},
+  "audio_fixture": {"id":"R0B-AUDIO-FIXTURE-001","priorities":[0,1,2],"priority_zero":"warning; next verified service opportunity","pcm":"NOT_APPLICABLE_UNTIL_GATE: verified DMA audio path — no PCM behavior assumed"},
+  "records": [
+    {"name":"R0BDisplayDescriptor","size":58,"owner":"Graphics/R0-B","rule":"packed candidate descriptor; physical fields are identifiers, not C pointers"},
+    {"name":"R0BWorkResult","size":16,"owner":"Graphics/R0-B","rule":"work completion/failure record; incomplete state is never displayable"},
+    {"name":"R0BInputTransition","size":8,"owner":"Input/R0-B","rule":"proof raw/edge fixture only"},
+    {"name":"R0BAudioEvent","size":8,"owner":"Audio/R0-B","rule":"proof presentation priority/fallback record only"},
+    {"name":"R0BEvidenceHeader","size":48,"owner":"Diagnostics/R0-B","rule":"pinned contract/toolchain/ABI identity envelope; no private ROM data"},
+    {"name":"R0BResidentResult","size":96,"owner":"Diagnostics/R0-B","rule":"fixed $1800 proof-only result block; status and reason arrays are not a production ABI"}
+  ]
+}

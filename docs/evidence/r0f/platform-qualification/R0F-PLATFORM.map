@@ -1,0 +1,150 @@
+     VMA      LMA     Size Align Out     In      Symbol
+       0        0        0     1 __basic_zp_start = 0x0002
+       0        0        0     1 __basic_zp_end = 0x0090
+       0        0        0     1 __rc0 = __basic_zp_start
+       0        0        0     1 __rc1 = __rc0 + 1
+       0        0        0     1 PROVIDE(__rc2 = __rc1 + 1)
+       0        0        0     1 __rc3 = __rc2 + 1
+       0        0        0     1 PROVIDE(__rc4 = __rc3 + 1)
+       0        0        0     1 __rc5 = __rc4 + 1
+       0        0        0     1 PROVIDE(__rc6 = __rc5 + 1)
+       0        0        0     1 __rc7 = __rc6 + 1
+       0        0        0     1 PROVIDE(__rc8 = __rc7 + 1)
+       0        0        0     1 __rc9 = __rc8 + 1
+       0        0        0     1 PROVIDE(__rc10 = __rc9 + 1)
+       0        0        0     1 __rc11 = __rc10 + 1
+       0        0        0     1 PROVIDE(__rc12 = __rc11 + 1)
+       0        0        0     1 __rc13 = __rc12 + 1
+       0        0        0     1 PROVIDE(__rc14 = __rc13 + 1)
+       0        0        0     1 __rc15 = __rc14 + 1
+       0        0        0     1 PROVIDE(__rc16 = __rc15 + 1)
+       0        0        0     1 __rc17 = __rc16 + 1
+       0        0        0     1 PROVIDE(__rc18 = __rc17 + 1)
+       0        0        0     1 __rc19 = __rc18 + 1
+       0        0        0     1 PROVIDE(__rc20 = __rc19 + 1)
+       0        0        0     1 __rc21 = __rc20 + 1
+       0        0        0     1 PROVIDE(__rc22 = __rc21 + 1)
+       0        0        0     1 __rc23 = __rc22 + 1
+       0        0        0     1 PROVIDE(__rc24 = __rc23 + 1)
+       0        0        0     1 __rc25 = __rc24 + 1
+       0        0        0     1 PROVIDE(__rc26 = __rc25 + 1)
+       0        0        0     1 __rc27 = __rc26 + 1
+       0        0        0     1 PROVIDE(__rc28 = __rc27 + 1)
+       0        0        0     1 __rc29 = __rc28 + 1
+       0        0        0     1 PROVIDE(__rc30 = __rc29 + 1)
+       0        0        0     1 __rc31 = __rc30 + 1
+       0        0        0     1 __basic_zp_size = __basic_zp_end - __basic_zp_start
+    2001     2001       16     1 .basic_header
+    2001     2001       16     1         /Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/basic-header.o:(.basic_header)
+    2015     2015        0     1                 next_line
+      22       22        0     1 .zp.data
+      22       22        0     1         __zp_data_start = .
+      22       22        0     1 __zp_data_load_start = LOADADDR(.zp.data)
+      22       22        0     1 __zp_data_size = SIZEOF(.zp.data)
+      22       22        0     1 .zp.bss
+      22       22        0     1         __zp_bss_start = .
+      22       22        0     1 __zp_bss_size = SIZEOF(.zp.bss)
+    2017     2017     119e     1 .text
+    2017     2017        0     1         _init = .
+    2017     2017        0     1         _start = .
+    2017     2017        e     1         /Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/unmap-basic.o:(.init.010)
+    2025     2025        3     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/r0a_platform_45gs02-f5432a.o:(.init.011)
+    2025     2025        0     1                 f65_basepage_enter
+    2028     2028        8     1         /Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(init-stack.S.obj):(.init.100)
+    2028     2028        0     1                 __do_init_stack
+    2030     2030        3     1         /Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(zero-bss.c.obj):(.init.200)
+    2030     2030        0     1                 __do_zero_bss
+    2033     2033        3     1         /Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/common/lib/crt0.o:(.call_main)
+    2036     2036        3     1         /Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(exit-custom.S.obj):(.after_main)
+    2036     2036        0     1                 __after_main
+    2039     2039        0     1         _fini = .
+    2039     2039        3     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/r0a_platform_45gs02-f5432a.o:(.fini.989)
+    2039     2039        0     1                 f65_basepage_leave
+    203c     203c        a     1         /Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/unmap-basic.o:(.fini.990)
+    2046     2046        1     1         /Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/common/lib/crt0.o:(.fini_rts)
+    2047     2047      148     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/qualification_45gs02-dab928.o:(.text.r0f_pf)
+    2047     2047        0     1                 r0f_pf_enter
+    20af     20af        0     1                 r0f_pf_start_irq
+    20c6     20c6        0     1                 r0f_pf_stop_irq
+    20d2     20d2        0     1                 r0f_pf_irq
+    20fe     20fe        0     1                 r0f_pf_nmi
+    2106     2106        0     1                 r0f_pf_flat_copy
+    2143     2143        0     1                 r0f_pf_register_probe
+    218f     218f       13     1         /Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(zero-bss.c.obj):(.text.__zero_bss)
+    218f     218f       13     1                 __zero_bss
+    21a2     21a2      ac8     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/platform-qualification/R0F-PLATFORM.prg.lto.o:(.text.main)
+    21a2     21a2      ac8     1                 main
+    2c6a     2c6a       92     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/platform-qualification/R0F-PLATFORM.prg.lto.o:(.text.clock_now)
+    2c6a     2c6a       92     1                 clock_now
+    2cfc     2cfc      199     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/platform-qualification/R0F-PLATFORM.prg.lto.o:(.text.frame_sample)
+    2cfc     2cfc      199     1                 frame_sample
+    2e95     2e95      259     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/platform-qualification/R0F-PLATFORM.prg.lto.o:(.text.flat_copy)
+    2e95     2e95      259     1                 flat_copy
+    30ee     30ee       50     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/platform-qualification/R0F-PLATFORM.prg.lto.o:(.text.frame_wait)
+    30ee     30ee       50     1                 frame_wait
+    313e     313e       3f     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/platform-qualification/R0F-PLATFORM.prg.lto.o:(.text.r0f_pf_dma_encode)
+    313e     313e       3f     1                 r0f_pf_dma_encode
+    317d     317d        5     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/platform-qualification/R0F-PLATFORM.prg.lto.o:(.text.exit)
+    317d     317d        5     1                 exit
+    3182     3182       17     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/platform-qualification/R0F-PLATFORM.prg.lto.o:(.text.__lshrsi3)
+    3182     3182       17     1                 __lshrsi3
+    3199     3199       1c     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/platform-qualification/R0F-PLATFORM.prg.lto.o:(.text.__memset)
+    3199     3199       1c     1                 __memset
+    31b5     31b5        0     1         __init_array_start = .
+    31b5     31b5        0     1         __init_array_end = .
+    31b5     31b5        0     1         __fini_array_start = .
+    31b5     31b5        0     1         __fini_array_end = .
+    31b5     31b5      1c5     1 .rodata
+    31b5     31b5      1c5     1         <internal>:(.rodata.str1.1)
+    337a     337a        0     1 .data
+    337a     337a        0     1         __data_start = .
+    337a     337a        0     1         __data_end = .
+    337a     337a        0     1 __data_load_start = LOADADDR(.data)
+    337a     337a        0     1 __data_size = SIZEOF(.data)
+    337a     337a      22a     1 .bss
+    337a     337a        0     1         __bss_start = .
+    337a     337a        1     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/platform-qualification/R0F-PLATFORM.prg.lto.o:(.bss.r0f_pf_stack_high)
+    337a     337a        1     1                 r0f_pf_stack_high
+    337b     337b        1     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/platform-qualification/R0F-PLATFORM.prg.lto.o:(.bss.r0f_pf_cpu_port)
+    337b     337b        1     1                 r0f_pf_cpu_port
+    337c     337c        1     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/platform-qualification/R0F-PLATFORM.prg.lto.o:(.bss.fault)
+    337c     337c        1     1                 fault
+    337d     337d        7     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/platform-qualification/R0F-PLATFORM.prg.lto.o:(.bss.r0f_pf_probe_regs)
+    337d     337d        7     1                 r0f_pf_probe_regs
+    3384     3384        1     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/platform-qualification/R0F-PLATFORM.prg.lto.o:(.bss.r0f_pf_nmi_seen)
+    3384     3384        1     1                 r0f_pf_nmi_seen
+    3385     3385        1     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/platform-qualification/R0F-PLATFORM.prg.lto.o:(.bss.r0f_pf_irq_seq)
+    3385     3385        1     1                 r0f_pf_irq_seq
+    3386     3386        1     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/platform-qualification/R0F-PLATFORM.prg.lto.o:(.bss.r0f_pf_irq_seen)
+    3386     3386        1     1                 r0f_pf_irq_seen
+    3387     3387        2     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/platform-qualification/R0F-PLATFORM.prg.lto.o:(.bss.r0f_pf_irq_count)
+    3387     3387        2     1                 r0f_pf_irq_count
+    3389     3389        2     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/platform-qualification/R0F-PLATFORM.prg.lto.o:(.bss.r0f_pf_probe_timeout)
+    3389     3389        2     1                 r0f_pf_probe_timeout
+    338b     338b        9     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/platform-qualification/R0F-PLATFORM.prg.lto.o:(.bss.r0f_pf_copy_request)
+    338b     338b        9     1                 r0f_pf_copy_request
+    3394     3394        1     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/platform-qualification/R0F-PLATFORM.prg.lto.o:(.bss.r0f_pf_copy_ok)
+    3394     3394        1     1                 r0f_pf_copy_ok
+    3395     3395       ff     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/platform-qualification/R0F-PLATFORM.prg.lto.o:(.bss.buffer)
+    3395     3395       ff     1                 buffer
+    3494     3494       ff     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/platform-qualification/R0F-PLATFORM.prg.lto.o:(.bss.returned)
+    3494     3494       ff     1                 returned
+    3593     3593       11     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/platform-qualification/R0F-PLATFORM.prg.lto.o:(.bss.list)
+    3593     3593       11     1                 list
+    35a4     35a4        0     1         __bss_end = .
+    35a4     35a4        0     1 __bss_size = SIZEOF(.bss)
+    35a4     35a4        f     1 .noinit
+    35a4     35a4        f     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/platform-qualification/R0F-PLATFORM.prg.lto.o:(.noinit..Lstatic_stack)
+    35b3     35b3        0     1         __heap_start = ALIGN(., 2)
+    35b3     35b3        0     1 __stack = 0xd000
+       0        0       cc     1 .comment
+       0        0       cc     1         <internal>:(.comment)
+       0        0       1e     1 .llvm_sympart
+       0        0        f     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/platform-qualification/R0F-PLATFORM.prg.lto.o:(.llvm_sympart)
+       f        f        f     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/platform-qualification/R0F-PLATFORM.prg.lto.o:(.llvm_sympart)
+       0        0      b80     4 .symtab
+       0        0      b80     4         <internal>:(.symtab)
+       0        0       72     1 .shstrtab
+       0        0       72     1         <internal>:(.shstrtab)
+       0        0      6c7     1 .strtab
+       0        0      6c7     1         <internal>:(.strtab)

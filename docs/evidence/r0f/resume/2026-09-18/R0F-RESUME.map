@@ -1,0 +1,299 @@
+     VMA      LMA     Size Align Out     In      Symbol
+       0        0        0     1 __basic_zp_start = 0x0002
+       0        0        0     1 __basic_zp_end = 0x0090
+       0        0        0     1 __rc0 = __basic_zp_start
+       0        0        0     1 __rc1 = __rc0 + 1
+       0        0        0     1 PROVIDE(__rc2 = __rc1 + 1)
+       0        0        0     1 __rc3 = __rc2 + 1
+       0        0        0     1 PROVIDE(__rc4 = __rc3 + 1)
+       0        0        0     1 __rc5 = __rc4 + 1
+       0        0        0     1 PROVIDE(__rc6 = __rc5 + 1)
+       0        0        0     1 __rc7 = __rc6 + 1
+       0        0        0     1 PROVIDE(__rc8 = __rc7 + 1)
+       0        0        0     1 __rc9 = __rc8 + 1
+       0        0        0     1 PROVIDE(__rc10 = __rc9 + 1)
+       0        0        0     1 __rc11 = __rc10 + 1
+       0        0        0     1 PROVIDE(__rc12 = __rc11 + 1)
+       0        0        0     1 __rc13 = __rc12 + 1
+       0        0        0     1 PROVIDE(__rc14 = __rc13 + 1)
+       0        0        0     1 __rc15 = __rc14 + 1
+       0        0        0     1 PROVIDE(__rc16 = __rc15 + 1)
+       0        0        0     1 __rc17 = __rc16 + 1
+       0        0        0     1 PROVIDE(__rc18 = __rc17 + 1)
+       0        0        0     1 __rc19 = __rc18 + 1
+       0        0        0     1 PROVIDE(__rc20 = __rc19 + 1)
+       0        0        0     1 __rc21 = __rc20 + 1
+       0        0        0     1 PROVIDE(__rc22 = __rc21 + 1)
+       0        0        0     1 __rc23 = __rc22 + 1
+       0        0        0     1 PROVIDE(__rc24 = __rc23 + 1)
+       0        0        0     1 __rc25 = __rc24 + 1
+       0        0        0     1 PROVIDE(__rc26 = __rc25 + 1)
+       0        0        0     1 __rc27 = __rc26 + 1
+       0        0        0     1 PROVIDE(__rc28 = __rc27 + 1)
+       0        0        0     1 __rc29 = __rc28 + 1
+       0        0        0     1 PROVIDE(__rc30 = __rc29 + 1)
+       0        0        0     1 __rc31 = __rc30 + 1
+       0        0        0     1 __basic_zp_size = __basic_zp_end - __basic_zp_start
+    2001     2001       16     1 .basic_header
+    2001     2001       16     1         /Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/basic-header.o:(.basic_header)
+    2015     2015        0     1                 next_line
+      22       22        0     1 .zp.data
+      22       22        0     1         __zp_data_start = .
+      22       22        0     1 __zp_data_load_start = LOADADDR(.zp.data)
+      22       22        0     1 __zp_data_size = SIZEOF(.zp.data)
+      22       22        0     1 .zp.bss
+      22       22        0     1         __zp_bss_start = .
+      22       22        0     1 __zp_bss_size = SIZEOF(.zp.bss)
+    2017     2017     2ef7     1 .text
+    2017     2017        0     1         _init = .
+    2017     2017        0     1         _start = .
+    2017     2017       8f     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/resume_45gs02-14c39d.o:(.init.005)
+    2017     2017        0     1                 r0fr_kernel_snapshot
+    20a6     20a6        e     1         /Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/unmap-basic.o:(.init.010)
+    20b4     20b4        3     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/r0a_platform_45gs02-acf469.o:(.init.011)
+    20b4     20b4        0     1                 f65_basepage_enter
+    20b7     20b7        8     1         /Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(init-stack.S.obj):(.init.100)
+    20b7     20b7        0     1                 __do_init_stack
+    20bf     20bf        3     1         /Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(zero-bss.c.obj):(.init.200)
+    20bf     20bf        0     1                 __do_zero_bss
+    20c2     20c2        3     1         /Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/common/lib/crt0.o:(.call_main)
+    20c5     20c5        3     1         /Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(exit-custom.S.obj):(.after_main)
+    20c5     20c5        0     1                 __after_main
+    20c8     20c8        0     1         _fini = .
+    20c8     20c8        3     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/r0a_platform_45gs02-acf469.o:(.fini.989)
+    20c8     20c8        0     1                 f65_basepage_leave
+    20cb     20cb        a     1         /Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/unmap-basic.o:(.fini.990)
+    20d5     20d5        1     1         /Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/common/lib/crt0.o:(.fini_rts)
+    20d6     20d6      71f     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/resume_45gs02-14c39d.o:(.text.r0fr)
+    20d6     20d6        0     1                 r0fr_storage
+    27e9     27e9        0     1                 r0fr_storage_end
+    27f5     27f5       b4     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/combined_45gs02-67e0e8.o:(.text.r0fc_platform)
+    27f5     27f5        0     1                 r0fc_rom_toggle
+    2818     2818        0     1                 r0fc_stack_seed
+    285f     285f        0     1                 r0fc_stack_measure
+    28a9     28a9      148     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/qualification_45gs02-097c57.o:(.text.r0f_pf)
+    28a9     28a9        0     1                 r0f_pf_enter
+    2911     2911        0     1                 r0f_pf_start_irq
+    2928     2928        0     1                 r0f_pf_stop_irq
+    2934     2934        0     1                 r0f_pf_irq
+    2960     2960        0     1                 r0f_pf_nmi
+    2968     2968        0     1                 r0f_pf_flat_copy
+    29a5     29a5        0     1                 r0f_pf_register_probe
+    29f1     29f1       30     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/r0a_platform_45gs02-acf469.o:(.text)
+    29f1     29f1        0     1                 r0a_abi_echo_u8
+    29f2     29f2        0     1                 r0a_basepage_read
+    29f4     29f4        0     1                 r0a_basepage_sentinel_seed
+    29f8     29f8        0     1                 .seed
+    2a06     2a06        0     1                 r0a_basepage_sentinel_unchanged
+    2a0a     2a0a        0     1                 .check
+    2a1c     2a1c        0     1                 .changed
+    2a21     2a21       13     1         /Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(zero-bss.c.obj):(.text.__zero_bss)
+    2a21     2a21       13     1                 __zero_bss
+    2a34     2a34      9ee     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.text.main)
+    2a34     2a34      9ee     1                 main
+    3422     3422       76     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.text.dos_swap)
+    3422     3422       76     1                 dos_swap
+    3498     3498      1c6     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.text.dos_pattern_crc)
+    3498     3498      1c6     1                 dos_pattern_crc
+    365e     365e       bd     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.text.low_copy)
+    365e     365e       bd     1                 low_copy
+    371b     371b      1d0     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.text.dos_copy)
+    371b     371b      1d0     1                 dos_copy
+    38eb     38eb       10     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.text.r0fr_transition)
+    38eb     38eb       10     1                 r0fr_transition
+    38fb     38fb       12     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.text.r0fr_storage_allowed)
+    38fb     38fb       12     1                 r0fr_storage_allowed
+    390d     390d       42     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.text.r0fc_hash)
+    390d     390d       42     1                 r0fc_hash
+    394f     394f       cd     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.text.r0fc_reset)
+    394f     394f       cd     1                 r0fc_reset
+    3a1c     3a1c       25     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.text.r0fc_event)
+    3a1c     3a1c       25     1                 r0fc_event
+    3a41     3a41      4e0     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.text.r0fc_tick)
+    3a41     3a41      4e0     1                 r0fc_tick
+    3f21     3f21      15a     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.text.r0fc_range)
+    3f21     3f21      15a     1                 r0fc_range
+    407b     407b       ba     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.text.inside)
+    407b     407b       ba     1                 inside
+    4135     4135       1e     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.text.cfput16)
+    4135     4135       1e     1                 cfput16
+    4153     4153       2a     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.text.cfput32)
+    4153     4153       2a     1                 cfput32
+    417d     417d       2c     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.text.cfget32)
+    417d     417d       2c     1                 cfget32
+    41a9     41a9       5f     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.text.cfcrc)
+    41a9     41a9       5f     1                 cfcrc
+    4208     4208       54     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.text.crc_byte)
+    4208     4208       54     1                 crc_byte
+    425c     425c       1a     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.text.cffinal_screen)
+    425c     425c       1a     1                 cffinal_screen
+    4276     4276       b0     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.text.cfline)
+    4276     4276       b0     1                 cfline
+    4326     4326       35     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.text.screen_byte)
+    4326     4326       35     1                 screen_byte
+    435b     435b      1cf     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.text.cfcopy)
+    435b     435b      1cf     1                 cfcopy
+    452a     452a       be     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.text.cfhex)
+    452a     452a       be     1                 cfhex
+    45e8     45e8      1c5     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.text.cfphysical_crc)
+    45e8     45e8      1c5     1                 cfphysical_crc
+    47ad     47ad       7a     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.text.cfentry)
+    47ad     47ad       7a     1                 cfentry
+    4827     4827      254     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.text.cfrom_begin)
+    4827     4827      254     1                 cfrom_begin
+    4a7b     4a7b      2c4     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.text.cfrom_restore)
+    4a7b     4a7b      2c4     1                 cfrom_restore
+    4d3f     4d3f       16     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.text.cfaudio_stop)
+    4d3f     4d3f       16     1                 cfaudio_stop
+    4d55     4d55       7f     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.text.cfexit)
+    4d55     4d55       7f     1                 cfexit
+    4dd4     4dd4        5     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.text.exit)
+    4dd4     4dd4        5     1                 exit
+    4dd9     4dd9       1c     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.text.__memset)
+    4dd9     4dd9       1c     1                 __memset
+    4df5     4df5       17     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.text.__lshrsi3)
+    4df5     4df5       17     1                 __lshrsi3
+    4e0c     4e0c       bd     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.text.__udivhi3)
+    4e0c     4e0c       bd     1                 __udivhi3
+    4ec9     4ec9       45     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.text.__umodqi3)
+    4ec9     4ec9       45     1                 __umodqi3
+    4f0e     4f0e        0     1         __init_array_start = .
+    4f0e     4f0e        0     1         __init_array_end = .
+    4f0e     4f0e        0     1         __fini_array_start = .
+    4f0e     4f0e        0     1         __fini_array_end = .
+    4f0e     4f0e      190     1 .rodata
+    4f0e     4f0e       1c     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.rodata.r0fc_tick)
+    4f2a     4f2a      13c     1         <internal>:(.rodata.str1.1)
+    5066     5066       38     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.rodata.r0fc_range.ranges)
+    5066     5066       38     1                 r0fc_range.ranges
+    509e     509e        0     1 .data
+    509e     509e        0     1         __data_start = .
+    509e     509e        0     1         __data_end = .
+    509e     509e        0     1 __data_load_start = LOADADDR(.data)
+    509e     509e        0     1 __data_size = SIZEOF(.data)
+    509e     509e      98f     1 .bss
+    509e     509e        0     1         __bss_start = .
+    509e     509e      201     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/resume_45gs02-14c39d.o:(.bss.r0fr_bp)
+    509e     509e        0     1                 r0fr_bp
+    519e     519e        0     1                 r0fr_app_stack
+    529e     529e        0     1                 r0fr_app_sp
+    529f     529f        4     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.bss.reserve)
+    529f     529f        4     1                 reserve
+    52a3     52a3      3d1     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.bss.model)
+    52a3     52a3      3d1     1                 model
+    5674     5674        4     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.bss.dos_before)
+    5674     5674        4     1                 dos_before
+    5678     5678        1     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.bss.state)
+    5678     5678        1     1                 state
+    5679     5679        1     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.bss.r0fr_denied)
+    5679     5679        1     1                 r0fr_denied
+    567a     567a        1     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.bss.r0fr_phase)
+    567a     567a        1     1                 r0fr_phase
+    567b     567b        1     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.bss.r0fr_returned)
+    567b     567b        1     1                 r0fr_returned
+    567c     567c       ff     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.bss.block)
+    567c     567c       ff     1                 block
+    577b     577b        4     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.bss.reclaimed_crc)
+    577b     577b        4     1                 reclaimed_crc
+    577f     577f        4     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.bss.before)
+    577f     577f        4     1                 before
+    5783     5783        4     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.bss.rom)
+    5783     5783        4     1                 rom
+    5787     5787        4     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.bss.restore)
+    5787     5787        4     1                 restore
+    578b     578b       20     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.bss.r0fr_payload)
+    578b     578b       20     1                 r0fr_payload
+    57ab     57ab        4     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.bss.low_before)
+    57ab     57ab        4     1                 low_before
+    57af     57af        1     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.bss.r0fr_permit)
+    57af     57af        1     1                 r0fr_permit
+    57b0     57b0        2     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.bss.calls)
+    57b0     57b0        2     1                 calls
+    57b2     57b2        4     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.bss.dos_after)
+    57b2     57b2        4     1                 dos_after
+    57b6     57b6        4     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.bss.low_after)
+    57b6     57b6        4     1                 low_after
+    57ba     57ba        4     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.bss.after)
+    57ba     57ba        4     1                 after
+    57be     57be        1     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.bss.r0fr_error)
+    57be     57be        1     1                 r0fr_error
+    57bf     57bf        1     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.bss.r0fr_input)
+    57bf     57bf        1     1                 r0fr_input
+    57c0     57c0        1     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.bss.r0fr_output)
+    57c0     57c0        1     1                 r0fr_output
+    57c1     57c1        1     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.bss.r0fr_input_end)
+    57c1     57c1        1     1                 r0fr_input_end
+    57c2     57c2        1     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.bss.r0fr_output_end)
+    57c2     57c2        1     1                 r0fr_output_end
+    57c3     57c3       20     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.bss.r0fr_read)
+    57c3     57c3       20     1                 r0fr_read
+    57e3     57e3       20     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.bss.r0fr_token)
+    57e3     57e3       20     1                 r0fr_token
+    5803     5803        4     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.bss.r0fr_end)
+    5803     5803        4     1                 r0fr_end
+    5807     5807        1     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.bss.final_screen)
+    5807     5807        1     1                 final_screen
+    5808     5808        1     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.bss.cfreclaimed)
+    5808     5808        1     1                 cfreclaimed
+    5809     5809        1     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.bss.backup_valid)
+    5809     5809        1     1                 backup_valid
+    580a     580a        1     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.bss.cffault)
+    580a     580a        1     1                 cffault
+    580b     580b        9     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.bss.r0f_pf_copy_request)
+    580b     580b        9     1                 r0f_pf_copy_request
+    5814     5814       ff     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.bss.block.21)
+    5814     5814       ff     1                 block.21
+    5913     5913        1     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.bss.r0f_pf_cpu_port)
+    5913     5913        1     1                 r0f_pf_cpu_port
+    5914     5914        1     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.bss.r0f_pf_stack_high)
+    5914     5914        1     1                 r0f_pf_stack_high
+    5915     5915       ff     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.bss.cfworkspace)
+    5915     5915       ff     1                 cfworkspace
+    5a14     5a14        1     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.bss.features_open)
+    5a14     5a14        1     1                 features_open
+    5a15     5a15        1     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.bss.r0fc_trap_flags)
+    5a15     5a15        1     1                 r0fc_trap_flags
+    5a16     5a16        1     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.bss.r0fc_trap_base)
+    5a16     5a16        1     1                 r0fc_trap_base
+    5a17     5a17        1     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.bss.r0f_pf_nmi_seen)
+    5a17     5a17        1     1                 r0f_pf_nmi_seen
+    5a18     5a18        2     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.bss.r0f_pf_irq_count)
+    5a18     5a18        2     1                 r0f_pf_irq_count
+    5a1a     5a1a        1     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.bss.r0fc_hardware_low)
+    5a1a     5a1a        1     1                 r0fc_hardware_low
+    5a1b     5a1b        2     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.bss.r0fc_software_low)
+    5a1b     5a1b        2     1                 r0fc_software_low
+    5a1d     5a1d        1     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.bss.r0f_pf_irq_seq)
+    5a1d     5a1d        1     1                 r0f_pf_irq_seq
+    5a1e     5a1e        1     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.bss.r0f_pf_irq_seen)
+    5a1e     5a1e        1     1                 r0f_pf_irq_seen
+    5a1f     5a1f        7     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.bss.r0f_pf_probe_regs)
+    5a1f     5a1f        7     1                 r0f_pf_probe_regs
+    5a26     5a26        1     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.bss.r0f_pf_copy_ok)
+    5a26     5a26        1     1                 r0f_pf_copy_ok
+    5a27     5a27        2     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.bss.r0f_pf_probe_timeout)
+    5a27     5a27        2     1                 r0f_pf_probe_timeout
+    5a29     5a29        1     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.bss.r0fc_features)
+    5a29     5a29        1     1                 r0fc_features
+    5a2a     5a2a        1     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.bss.r0fc_hardware_seed)
+    5a2a     5a2a        1     1                 r0fc_hardware_seed
+    5a2b     5a2b        2     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.bss.r0fc_software_seed)
+    5a2b     5a2b        2     1                 r0fc_software_seed
+    5a2d     5a2d        0     1         __bss_end = .
+    5a2d     5a2d        0     1 __bss_size = SIZEOF(.bss)
+    5a2d     5a2d     1606     1 .noinit
+    5a2d     5a2d     1600     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/resume_45gs02-14c39d.o:(.noinit.r0fr_kernel)
+    5a2d     5a2d        0     1                 r0fr_kernel
+    702d     702d        6     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.noinit..Lstatic_stack)
+    7033     7033        0     1         __heap_start = ALIGN(., 2)
+    7033     7033        0     1 __stack = 0xd000
+       0        0       cc     1 .comment
+       0        0       cc     1         <internal>:(.comment)
+       0        0        f     1 .llvm_sympart
+       0        0        f     1         /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.lto.o:(.llvm_sympart)
+       0        0     10b0     4 .symtab
+       0        0     10b0     4         <internal>:(.symtab)
+       0        0       72     1 .shstrtab
+       0        0       72     1         <internal>:(.shstrtab)
+       0        0      ab9     1 .strtab
+       0        0      ab9     1         <internal>:(.strtab)

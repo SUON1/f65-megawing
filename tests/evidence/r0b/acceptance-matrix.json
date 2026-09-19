@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "milestone": "R0-B",
+  "status": "IMPLEMENTATION_IN_PROGRESS",
+  "rows": [
+    {"test_id":"R0B-FCM-001","host":"PASS","xemu":"ACCOUNTING_ONLY","hardware":"NOT_RUN","review":"NONE","status":"CANDIDATE_ONLY"},
+    {"test_id":"R0B-FCM-REG-001","host":"DOCUMENTED","xemu":"PASS","hardware":"AWAITING_OWNER","review":"NONE","status":"PARTIAL"},
+    {"test_id":"R0B-PAL-001","host":"PASS","xemu":"MARKER_ONLY","hardware":"NOT_RUN","review":"READABILITY_PENDING","status":"PARTIAL"},
+    {"test_id":"R0B-IN-001","host":"GENERATED_EXPECTATION","xemu":"PASS","hardware":"NOT_RUN","review":"NONE","status":"FIXTURE_ONLY"},
+    {"test_id":"R0B-IN-002","host":"PASS","xemu":"FIXTURE_MARKER","hardware":"NOT_RUN","review":"NONE","status":"PARTIAL"},
+    {"test_id":"R0B-AUD-003","host":"PASS","xemu":"MODEL_PASS_DUMMY_AUDIO","hardware":"AWAITING_OWNER","review":"AUDIO_PENDING","status":"PARTIAL"},
+    {"test_id":"R0B-AUD-004","host":"NOT_APPLICABLE_UNTIL_GATE","xemu":"NOT_RUN","hardware":"NOT_RUN","review":"NONE","status":"DEFERRED"}
+  ]
+}

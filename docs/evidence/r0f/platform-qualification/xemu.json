@@ -1,0 +1,65 @@
+{
+  "boots": [
+    {
+      "directory": "build/r0f/platform-qualification/xemu-1-1789712149385273000",
+      "command": [
+        "/Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/xemu/xmega65",
+        "-skipconfigfile",
+        "-headless",
+        "-fastboot",
+        "-videostd",
+        "1",
+        "-rom",
+        "/Users/slice/Documents/Codex/f65-megawing/MEGA65.ROM",
+        "-sdimg",
+        "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/platform-qualification/xemu-1-1789712149385273000/disposable-sd.img",
+        "-defd81fromsd",
+        "-prg",
+        "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/platform-qualification/R0F-PLATFORM.prg",
+        "-dumpscreen",
+        "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/platform-qualification/xemu-1-1789712149385273000/screen.txt",
+        "-dumpmem",
+        "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/platform-qualification/xemu-1-1789712149385273000/memory.bin",
+        "-screenshot",
+        "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/platform-qualification/xemu-1-1789712149385273000/screen.png"
+      ],
+      "resultSha256": "ba8763dbe6635c6acb78403af2dbeafa1dadf6c7110cbe05325a1457ab9d2aa4",
+      "screenshotSha256": "4ac06bddaf049edf85d2df87d69b9dc4e59deaa92b1f18e0ce523f5d5b15acea",
+      "resultHex": "52504631017f0002013544002f00ff0040000000050101804000000000000000c0410000c0410000c1410000c0410000c0410000c0410000c1410000c0410000c0410000c1410000c0410000c0410000c0410000c1410000c0410000c0410000c1410000c0410000c0410000c0410000c1410000c0410000c0410000c0410000c1410000c0410000c0410000c0410000c1410000c0410000c0410000c1410000a55ac33c02b0800001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000082d020cf",
+      "oracleExit": 0
+    },
+    {
+      "directory": "build/r0f/platform-qualification/xemu-2-1789712184556714000",
+      "command": [
+        "/Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/xemu/xmega65",
+        "-skipconfigfile",
+        "-headless",
+        "-fastboot",
+        "-videostd",
+        "1",
+        "-rom",
+        "/Users/slice/Documents/Codex/f65-megawing/MEGA65.ROM",
+        "-sdimg",
+        "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/platform-qualification/xemu-2-1789712184556714000/disposable-sd.img",
+        "-defd81fromsd",
+        "-prg",
+        "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/platform-qualification/R0F-PLATFORM.prg",
+        "-dumpscreen",
+        "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/platform-qualification/xemu-2-1789712184556714000/screen.txt",
+        "-dumpmem",
+        "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/platform-qualification/xemu-2-1789712184556714000/memory.bin",
+        "-screenshot",
+        "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/platform-qualification/xemu-2-1789712184556714000/screen.png"
+      ],
+      "resultSha256": "ba8763dbe6635c6acb78403af2dbeafa1dadf6c7110cbe05325a1457ab9d2aa4",
+      "screenshotSha256": "4ac06bddaf049edf85d2df87d69b9dc4e59deaa92b1f18e0ce523f5d5b15acea",
+      "resultHex": "52504631017f0002013544002f00ff0040000000050101804000000000000000c0410000c0410000c1410000c0410000c0410000c0410000c1410000c0410000c0410000c1410000c0410000c0410000c0410000c1410000c0410000c0410000c1410000c0410000c0410000c0410000c1410000c0410000c0410000c0410000c1410000c0410000c0410000c0410000c1410000c0410000c0410000c1410000a55ac33c02b0800001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000082d020cf",
+      "oracleExit": 0
+    }
+  ],
+  "prgSha256": "aab353cc713ebe41f242dcec7477aed46619aec79a61929a510aab19dbbe7749",
+  "emulatorSha256": "dd37baf7846b9696adcb662ffe5da040031b07214c66aef9a7f48cc30040b738",
+  "romSha256": "af3c447f791a2fdc48cb21e1bd3fab015e32641228d9d30d21259b9e878c6fa0",
+  "fullCombined": false,
+  "tier": "direct PRG regression, not exact-D81 loadability or physical proof"
+}

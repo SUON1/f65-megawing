@@ -1,0 +1,56 @@
+{
+  "status": "PASS_BOUNDED_STATIC_ONLY",
+  "scope": "bounded proxy static/host review only; not full R0-F acceptance",
+  "hostResult": {
+    "result": "PASS",
+    "tier": "native C with simulated raster, NOT Xemu",
+    "cases": 5,
+    "phaseSamples": 80,
+    "timeoutInjection": "PASS",
+    "failureRejection": "PASS",
+    "sanitizers": "address,undefined",
+    "rejectedMutations": 358,
+    "rawSampleEndpoints": "0 and 255 accepted; no timing threshold",
+    "romTransferScanner": "PASS: ROM call/tail call rejected; local call/read allowed",
+    "javaOracle": "NOT RUN; pinned JDK unavailable"
+  },
+  "ledgerReconciliation": "PASS",
+  "findings": [],
+  "prgMatchesRetainedBuild": false,
+  "retainedXemuResultRevalidation": "PASS; two stored result blocks, not fresh boots",
+  "artifacts": {
+    "build-accounting.json": "68f02b9cd5365293659a0f399ea2c2d45dc99ddd3f6fdef8ae23ed0ae658c9db",
+    "host-test.json": "49ca54d11c4d2a8254ecd996bd0aefcc416db53f83f12eac534926c03016588f",
+    "F65-R0F-PROOF.prg": "e68527b6db89882a49fbb4b7fb1b48f5f54fedd62cd98fc3176bce5340517c2d",
+    "F65-R0F-PROOF.map": "8d5220977aad4b1b12ee20c57344e96b6570dd85a2d8b3b6c890f47d6865f3bb",
+    "F65-R0F-PROOF.symbols": "907f3f2ad8c5bec23d8fb6f0dbe1ec9c91bc4068b76a6674fea339b92c0cb137",
+    "F65-R0F-PROOF.disassembly": "ab08388c0878862fbda78ba39027836f4cc46c36eadb252ffd96f89e75f0cdfb"
+  },
+  "limits": [
+    "No complete SI-calibrated measurement contract",
+    "Dynamic stack high-water not measured",
+    "Physical platform identity incomplete",
+    "This audit performs no fresh Xemu or physical run",
+    "No D81 operation"
+  ],
+  "timingHostResult": {
+    "result": "PASS",
+    "samples": 2640,
+    "faultCasesRejected": 6,
+    "wrap": "mock starts at FFFF0000; unsigned 32-bit rollover exercised",
+    "java": "PASS: 2640 raw samples, 80 cohort spans, functional oracle; 35 summary and 163 fixed-field corruptions rejected",
+    "wrapper": "PASS: CIA visibility/serial guards, write ownership, cascade/byte/32-bit wraps, unstable-read bound, stop",
+    "deadlineInjection": "16 misses per case observed; never relabeled deadline PASS",
+    "units": "mock counts, not target or physical timing"
+  },
+  "captureHostResult": {
+    "result": "PASS",
+    "tier": "native ASan/UBSan and independent Java, not hardware",
+    "pages": 22,
+    "bytes": 11136,
+    "captureSha256": "e429c925b83a715450d266abfe460916a5811b8c1920b4092cbaec770472e11f",
+    "pagesSha256": "847f1a3cce1de2c68ecd66673a4fd02ff623bd02e9e68201f68b52b7780a6bea",
+    "controls": "N/space/P/clamps/S/C/lowercase/unknown; D610 read/ack; source immutable",
+    "oracle": "PASS: capture transport and raw timing reduction; physical provenance still required\nPASS: 22 C-rendered pages, exact 11136-byte round trip, independent timing reduction; 14 malformed sets rejected"
+  }
+}

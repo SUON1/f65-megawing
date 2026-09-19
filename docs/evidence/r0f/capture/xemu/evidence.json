@@ -1,0 +1,63 @@
+{
+  "result": "PASS",
+  "runnerSha256": "c9c450f0f945923ada05202dda9e750a6c03194e570cc7510c014af10226bd9e",
+  "d81Sha256": "67183150719f1bbba01b862532c5996953e1d6c10cc38e1f9352b281895cc627",
+  "emulatorSha256": "dd37baf7846b9696adcb662ffe5da040031b07214c66aef9a7f48cc30040b738",
+  "romSha256": "af3c447f791a2fdc48cb21e1bd3fab015e32641228d9d30d21259b9e878c6fa0",
+  "sdInputSha256": "e10b8ef4a05cfbe690186471489ec23eb57ecceb5933beb38df85e7448dafb39",
+  "boots": [
+    {
+      "label": "boot1",
+      "arguments": [
+        "/Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/xemu/xmega65",
+        "-headless",
+        "-sleepless",
+        "-fastboot",
+        "-rom",
+        "/Users/slice/Documents/Codex/f65-megawing/MEGA65.ROM",
+        "-sdimg",
+        "/var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/r0f-xemu-iz86awjm/sd.img",
+        "-8",
+        "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/capture/F65R0F5.D81",
+        "-autoload",
+        "-dumpscreen",
+        "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/capture/xemu/boot1.screen.txt",
+        "-dumpmem",
+        "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/capture/xemu/boot1.memory.bin",
+        "-screenshot",
+        "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/capture/xemu/boot1.png"
+      ],
+      "screenSha256": "3a05272711d64efec35803eae2be1b4d0a7a2cc804f61d9da50026e2377285aa",
+      "memorySha256": "c8669b6ae41a6e05ebccec9f0b90be3d3cc4c1ee0da4fb14c2aa988ffb31355a",
+      "screenshotSha256": "9e3fcec7f5d8c4a79668303a655caad3ec83d33a0c865b9a3138336b52591fb5",
+      "resultHex": "523046310264157f0900000010000000180000003000000040000000034001000500000000000000379d7217379d7217379d7217379d7217379d7217000000000001e803e8030000e803e803000000000101e803ca001e03e803e803000000000201e803e8030000e803e8033f0000000301e803e8030000e803e803000100000401e803e8030000d007d00700000000435401102105107f05e004001000004020002000400000000000ffff26e2040040004000400000000000ffff46e2040020004000400000000000ffff45e2040020002000400000000000ffff45e2040020002000200000000000ffff25e2040005e00400102700006251802a00030096"
+    },
+    {
+      "label": "boot2",
+      "arguments": [
+        "/Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/xemu/xmega65",
+        "-headless",
+        "-sleepless",
+        "-fastboot",
+        "-rom",
+        "/Users/slice/Documents/Codex/f65-megawing/MEGA65.ROM",
+        "-sdimg",
+        "/var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/r0f-xemu-9celgeif/sd.img",
+        "-8",
+        "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/capture/F65R0F5.D81",
+        "-autoload",
+        "-dumpscreen",
+        "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/capture/xemu/boot2.screen.txt",
+        "-dumpmem",
+        "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/capture/xemu/boot2.memory.bin",
+        "-screenshot",
+        "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/capture/xemu/boot2.png"
+      ],
+      "screenSha256": "3a05272711d64efec35803eae2be1b4d0a7a2cc804f61d9da50026e2377285aa",
+      "memorySha256": "413e1c0ea590293c8805e4ba2241f5765f6bf8b4e323187623f02935553cee4c",
+      "screenshotSha256": "9e3fcec7f5d8c4a79668303a655caad3ec83d33a0c865b9a3138336b52591fb5",
+      "resultHex": "523046310264157f0900000010000000180000003000000040000000034001000500000000000000379d7217379d7217379d7217379d7217379d7217000000000001e803e8030000e803e803000000000101e803ca001e03e803e803000000000201e803e8030000e803e8033f0000000301e803e8030000e803e803000100000401e803e8030000d007d00700000000435401102105107f05e004001000004020002000400000000000ffff26e2040040004000400000000000ffff46e2040020004000400000000000ffff45e2040020002000400000000000ffff45e2040020002000200000000000ffff25e2040005e00400102700006251802a00030096"
+    }
+  ],
+  "limitations": "No physical chooser, physical timing, IRQ, DMA, latency, or measured-limit evidence"
+}

@@ -1,0 +1,165 @@
+ERROR: Cannot create accelerated SDL renderer: Couldn't find matching render driver
+INFO: Created non-accelerated driver. NOTE: it will severly affect the performance!
+**** The Evolving MEGA65 emulator from LGB ****
+This software is part of the Xemu project: https://github.com/lgblgblgb/xemu
+CREATED: runner@sat12-jr322-76ef5122-759f-4553-9975-b327823f2278-72FF733DF69E.local on Darwin 24.6.0 at Thu Jan 29 23:41:19 UTC 2026
+CREATED: clang Apple LLVM 17.0.0 (clang-1700.0.13.5) 64LE for osx
+VERSION: https://github.com/lgblgblgb/xemu master 40dfef0d1d5f56be2469492715c12bdb32c75b67 20260129235930 official-build
+EMULATE: MEGA65 (mega65): xmega65 (../../build/bin/xmega65.native) for mega65 on osx (native) using cc
+LICENSE: Copyright (C)2016-2026 Gábor Lénárt (aka LGB) lgb@lgb.hu http://lgb.hu/
+LICENSE: This software is a GNU/GPL version 2 (or later) software.
+LICENSE: <http://gnu.org/licenses/gpl.html>
+LICENSE: This is free software; you are free to change and redistribute it.
+LICENSE: There is NO WARRANTY, to the extent permitted by law.
+
+FILE: file @mega65-default.cfg opened as /Users/slice/Library/Application Support/xemu-lgb/mega65/mega65-default.cfg with base mode-set as fd=3
+FILE: 344 bytes loaded from file: /Users/slice/Library/Application Support/xemu-lgb/mega65/mega65-default.cfg
+CFG: Default config file @mega65-default.cfg has been used
+CFG: CLI parsing is done without error.
+FILE: file @mega65-template.cfg.TMP opened as /Users/slice/Library/Application Support/xemu-lgb/mega65/mega65-template.cfg.TMP with base mode-set as fd=3
+FILE: 9081 bytes saved into file: @mega65-template.cfg.TMP
+FILE: renaming file: /Users/slice/Library/Application Support/xemu-lgb/mega65/mega65-template.cfg.TMP -> /Users/slice/Library/Application Support/xemu-lgb/mega65/mega65-template.cfg
+XEMU: emulated MEGA65 model ID: $03
+INSTALLER: not activated.
+Logging is disabled at compile-time.
+Logging into file: not enabled.
+XEMU: setting up environment variable: SDL_VIDEODRIVER=dummy
+XEMU: setting up environment variable: SDL_AUDIODRIVER=dummy
+SDL: no SDL subsystem initialization has been done yet, do it!
+SDL version: (https://github.com/libsdl-org/SDL.git@25f9ed87ff6947d9576fc9d79dee0784e638ac58) compiled with 2.0.16, used with 2.0.16 on platform Mac OS X
+SDL system info: 64 bits LE, 18 cores, l1_line=64, RAM=49152Mbytes, max_alignment=16, CPU features: 3DNow=0 AVX=0 AVX2=0 AltiVec=0 MMX=1 RDTSC=1 SSE=1 SSE2=1 SSE3=1 SSE41=1 SSE42=1
+SDL drivers: video = dummy (1024x768), audio = dummy
+TIMING: sleep = nanosleep, query = SDL_GetPerformanceCounter
+SDL preferences directory: /Users/slice/Library/Application Support/xemu-lgb/mega65/
+SDL: opening window at (536805376,536805376) with size of (705,576)
+SDL window native pixel format: SDL_PIXELFORMAT_RGB888
+SDL renderer driver #0: "metal"
+SDL renderer driver #1: "opengl"
+SDL renderer driver #2: "opengles2"
+SDL renderer driver #3: "software"
+SDL renderer used: "software" max_tex=0x0 tex_formats=8 (ARGB8888 ABGR8888 RGBA8888 BGRA8888 RGB888 BGR888 RGB565 RGB555)
+SDL: creating main texture 800 x 625
+
+GUI: forcing "none" because of headless mode
+GUI: using "none" (Not using GUI - the null GUI :))
+FILE: file @keymap-default.cfg opened as /Users/slice/Library/Application Support/xemu-lgb/mega65/keymap-default.cfg with base mode-set as fd=3
+HID: 97 key bindings has been added as the default built-in configuration
+FILE: @keymap.cfg cannot be open, tried path(s):  /Users/slice/Library/Application Support/xemu-lgb/mega65/keymap.cfg
+HID: cannot open keymap user config file (maybe does not exist), ignoring: @keymap.cfg
+MEM: memory decoder initialized, 384K fast, 8192K attic, 32K colour, 8K font RAM
+FILE: file @i2c.bin opened as /Users/slice/Library/Application Support/xemu-lgb/mega65/i2c.bin with base mode-set as fd=3
+FILE: 4096 bytes loaded from file: /Users/slice/Library/Application Support/xemu-lgb/mega65/i2c.bin
+MEMCONTENT: "extfreezer" (Freezer) was not requested, using the built-in ($607C bytes) [b8601942ea6bdd7d7b519daca9c30dc214192832].
+MEMCONTENT: "extinitrom" (Initial boot-ROM) was not requested, using the built-in ($20000 bytes) [bbdfca752a6e7b81fbbf70c5555444d82fad8af7].
+MEMCONTENT: "extonboard" (On-boarding utility) was not requested, using the built-in ($3071 bytes) [0a567fc9ee619057d9331d032ba4b2886c6b0e34].
+MEMCONTENT: "extflashutil" (MEGA-flash utility) was not requested, using the built-in ($27 bytes) [af0ac0ad99f6fe9110e86d7cd3faf0d7c28405c1].
+MEMCONTENT: "extbanner" (MEGA65 banner) was not requested, using the built-in ($5300 bytes) [0b2550f9f11eeb6df61312fb6c52601df3ba0fed].
+MEMCONTENT: "extchrwom" (Character-WOM) was not requested, using the built-in ($1000 bytes) [466e399a5e994b52f6cef6019b32b9f6b504cd14].
+MEMCONTENT: "extcramutils" (Utils in CRAM) was not requested, using the built-in ($8000 bytes) [22f43dce36ca00db04d334e9d38eb78f5a77a2af].
+MEMCONTENT: "hickup" (Hyppo-Hickup) was not requested, using the built-in ($4000 bytes) [c30056db4e3ef8265520269cb1dc3c9cba9e26f8].
+HYPERVISOR: disabling debug ability: no external hickup is loaded, built-in one does not have debug info
+D81: initial subsystem reset
+SDCARD: configuring F011 FDC (#0) with have_disk=0, can_write=1, image_size=0, d81_access="D81"(M:0,A=$00,B=$00)
+SDCARD: configuring F011 FDC (#1) with have_disk=0, can_write=1, image_size=0, d81_access="D81"(M:0,A=$00,B=$00)
+FILE: file /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/r0f-xemu-iz86awjm/sd.img opened as /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/r0f-xemu-iz86awjm/sd.img with base mode-set as fd=3
+SDCARD: image is not compressed
+SDCARD: card init done, size=4096 Mbytes (R/W), virtsd_mode=image-file, default_D81_from_sd=0
+SDCARD: external mount pool is #8388608...8399487 (card size: 8388608)
+SDCARD: check Xemu signature (@block 2): disk=3 this_xemu=3
+HW_ERRATA: 255 -> 0 (wanted: 0, xemu-max: 2) [RESET]
+VIC: errata level is set 0: d016_delta=2, char_attr_buggy=1
+VIC4: writing $D030 in VIC2 I/O mode with data $00 @ PC=$0000 (hypervisor mode: 0)
+VIC4: setting PAL mode (by emulator initalization)
+DMA: initializing DMA engine for chip revision 1 (initially, may be modified later!), modulo_support=DISABLED.
+SPEED: fast clock is set to 40.50MHz.
+CPU[65CE02]: RESET, PC=FCE2, BCD_behaviour=NMOS-6502
+UARTMON: disabled, no name is specified to bind to.
+HDOS: initialization with do_virt=0 and virtroot="<NULL>"
+HDOS: reset
+HDOS: virtualization is DISABLED, root = "/Users/slice/Library/Application Support/xemu-lgb/mega65/hdos/"
+HYPERVISOR: HYPPO version "HEAD,20250618.10,aaf4542~" (built-in) starting with TRAP reset (#$40)
+TIMING: enabling temporary sleepless mode: already sleepless
+HDOS: system-start-begin notification received.
+HDOS: reset
+HYPERVISOR: setting video standard change (PAL/NTSC) banning
+SPEED: in_hypervisor=1 force_fast=0 c128_fast=0, c65_fast=0 m65_fast=0
+OSK: ready, 800x600 pixel texture
+OSK: v-keyboard dimension: 160x5, 77 keys, map scaling = 5.000000, key height = 48px
+AUDIO: emu-setup [reset-mixer] event; emu-volume = 100%, mono-downmix = off, output-reg-shift = $00
+AUDIO: reset for 4 SIDs (1000000 cycles per sec) and 1 OPL3 chip for 44100Hz sampling rate.
+AUDIO: clearing audio related registers.
+AUDIO: initialized (#2), 44100 Hz, 2 channels, 1024 buffer sample size.
+MEM: UNHANDLED memory policy: 0
+UMON: not enabled
+INJECT: registering 'READY.' event: Command
+INJECT: READY. has been invalidated 0 times (40x25@$0)
+FILE: file /Users/slice/Documents/Codex/f65-megawing/MEGA65.ROM opened as /Users/slice/Documents/Codex/f65-megawing/MEGA65.ROM with base mode-set as fd=4
+FILE: 131072 bytes loaded from file: /Users/slice/Documents/Codex/f65-megawing/MEGA65.ROM
+ROM: custom ROM load was OK, setting custom ROM
+AUDIO: start mixing.
+VIC4: switching video standard from <UNDEF> to PAL (1MHz line cycle count is 32.000000, frame time is 20000usec, max raster is 624, visible area height is 576)
+ETH: reset-begin established, PC=$A4AE
+ETH: reset-end established, PC=$A4B3
+ETH: warning, CPU wants to move over the current ethernet RX buffer! PC=$A4B6
+VIC4: warning: I/O mode KEY $D02F register wanted to be written (with $47) in hypervisor mode! PC=$FB44
+VIC4: warning: I/O mode KEY $D02F register wanted to be written (with $53) in hypervisor mode! PC=$FB49
+VIC4: warning: I/O mode KEY $D02F register wanted to be written (with $C0) in hypervisor mode! PC=$EDC1
+VIC4: warning: I/O mode KEY $D02F register wanted to be written (with $47) in hypervisor mode! PC=$0816
+VIC4: warning: I/O mode KEY $D02F register wanted to be written (with $53) in hypervisor mode! PC=$081B
+AUDIO: callback switches to working mode.
+ETH: MAC address modification (byte #5) from $65 to $57 at PC=$84EB
+ETH: MAC address modification (byte #4) from $65 to $06 at PC=$84EB
+ETH: MAC address modification (byte #3) from $65 to $E9 at PC=$84EB
+ETH: MAC address modification (byte #2) from $53 to $4F at PC=$84EB
+ETH: MAC address modification (byte #1) from $47 to $E9 at PC=$84EB
+ETH: MAC address modification (byte #0) from $02 to $FE at PC=$84EB
+MEGA65: ROM protection has been turned ON.
+HYPERVISOR: first return after RESET, start of processing workarounds.
+ROM: using external pre-loaded ROM
+ROM: force ROM re-apply policy, PC change: $E4B8 -> $E4B8
+ROM: SHA1 checksum is 4214ba4615a6ad852ddfc48b51a1d0ceca34a622
+ROM: Closed-ROMs detected with version 920413
+DMA: default DMA chip revision change 1 -> 1 based on ROM version (920413 Closed-ROMs)
+VIC4: setting PAL mode (in hypervisor.c, requested as boot/reset default)
+HDOS: system-start-end notification recevied.
+SDCARD: MOUNT: default SD-internal image for unit #0 is at sector #11552 (D81)
+SDCARD: MOUNT: default SD-internal image for unit #1 could not be determined
+SDCARD: MOUNT: sdcard_external_mount(0, "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/capture/F65R0F5.D81", "Mount failure on CLI/CFG requested drive-8");
+SDCARD: MOUNT: external mount #0 from file /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/capture/F65R0F5.D81 (R/W)
+FILE: file /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/capture/F65R0F5.D81 opened as /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/capture/F65R0F5.D81 with base mode-set as fd=4
+D81: fd 4 has been attached to #0 with 0 offset, read_only = 0, autoclose = 1, size = 819200
+SDCARD: configuring F011 FDC (#0) with have_disk=1, can_write=1, image_size=819200, d81_access="D81"(M:0,A=$00,B=$03)
+TIMING: disabling temporary sleepless mode: constant sleepless
+AUDIO: emu-setup [reset-mixer] event; emu-volume = 100%, mono-downmix = off, output-reg-shift = $00
+HYPERVISOR: first return after RESET, end of processing workarounds.
+HYPERVISOR: clearing video standard change (PAL/NTSC) banning
+INJECT: hit 'READY.' trigger, injecting command at offset 0
+INJECT: pressing key RETURN
+FDC: warning: SWAP bit emulation is experimental! There will be no further warnings on this.
+INJECT: releasing key #1
+SDL: no auto-resizing was needed (same size)
+D81: previous file descriptor (4) closed because of auto-close policy
+SDCARD: configuring F011 FDC (#0) with have_disk=0, can_write=1, image_size=0, d81_access="D81"(M:0,A=$00,B=$00)
+SDCARD: configuring F011 FDC (#1) with have_disk=0, can_write=1, image_size=0, d81_access="D81"(M:0,A=$00,B=$00)
+XEMU: shutdown callback is running
+XEMU: handling pending screenshot request
+VIC4: forced open frame
+FILE: file /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/capture/xemu/boot1.png.TMP opened as /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/capture/xemu/boot1.png.TMP with base mode-set as fd=3
+FILE: 5921 bytes saved into file: /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/capture/xemu/boot1.png.TMP
+FILE: renaming file: /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/capture/xemu/boot1.png.TMP -> /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/capture/xemu/boot1.png
+SCREENSHOT: (800x625 -> 800x625) successfully saved as /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/capture/xemu/boot1.png
+OSD: boot1.png
+VIC4: 624 forced scanline updates to reach end of frame
+ETH: shutting down: handler thread seems hasn't been even running (not enabled?)
+MEM: Dumping memory into file (384K): /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/capture/xemu/boot1.memory.bin
+FILE: file /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/capture/xemu/boot1.memory.bin.TMP opened as /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/capture/xemu/boot1.memory.bin.TMP with base mode-set as fd=3
+FILE: 393216 bytes saved into file: /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/capture/xemu/boot1.memory.bin.TMP
+FILE: renaming file: /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/capture/xemu/boot1.memory.bin.TMP -> /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/capture/xemu/boot1.memory.bin
+FILE: file /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/capture/xemu/boot1.screen.txt.TMP opened as /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/capture/xemu/boot1.screen.txt.TMP with base mode-set as fd=3
+FILE: 1506 bytes saved into file: /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/capture/xemu/boot1.screen.txt.TMP
+FILE: renaming file: /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/capture/xemu/boot1.screen.txt.TMP -> /Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/capture/xemu/boot1.screen.txt
+SERIALTCP: not running, nothing to shut down
+CPU: Execution ended at PC=$39DE (linear=$00039DE)
+
+TIMING: Xemu CPU usage: avg=9.02%, min=6%, max=19% (20309 counts), uptime=00:40
+XEMU: good by(T)e.

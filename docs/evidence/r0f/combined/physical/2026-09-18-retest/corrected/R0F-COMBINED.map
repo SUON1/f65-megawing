@@ -1,0 +1,360 @@
+     VMA      LMA     Size Align Out     In      Symbol
+       0        0        0     1 
+       0        0        0     1 
+       0        0        0     1 
+       0        0        0     1 __basic_zp_start = 0x0002
+       0        0        0     1 __basic_zp_end = 0x0090
+       0        0        0     1 __rc0 = __basic_zp_start
+       0        0        0     1 __rc1 = __rc0 + 1
+       0        0        0     1 PROVIDE(__rc2 = __rc1 + 1)
+       0        0        0     1 __rc3 = __rc2 + 1
+       0        0        0     1 PROVIDE(__rc4 = __rc3 + 1)
+       0        0        0     1 __rc5 = __rc4 + 1
+       0        0        0     1 PROVIDE(__rc6 = __rc5 + 1)
+       0        0        0     1 __rc7 = __rc6 + 1
+       0        0        0     1 PROVIDE(__rc8 = __rc7 + 1)
+       0        0        0     1 __rc9 = __rc8 + 1
+       0        0        0     1 PROVIDE(__rc10 = __rc9 + 1)
+       0        0        0     1 __rc11 = __rc10 + 1
+       0        0        0     1 PROVIDE(__rc12 = __rc11 + 1)
+       0        0        0     1 __rc13 = __rc12 + 1
+       0        0        0     1 PROVIDE(__rc14 = __rc13 + 1)
+       0        0        0     1 __rc15 = __rc14 + 1
+       0        0        0     1 PROVIDE(__rc16 = __rc15 + 1)
+       0        0        0     1 __rc17 = __rc16 + 1
+       0        0        0     1 PROVIDE(__rc18 = __rc17 + 1)
+       0        0        0     1 __rc19 = __rc18 + 1
+       0        0        0     1 PROVIDE(__rc20 = __rc19 + 1)
+       0        0        0     1 __rc21 = __rc20 + 1
+       0        0        0     1 PROVIDE(__rc22 = __rc21 + 1)
+       0        0        0     1 __rc23 = __rc22 + 1
+       0        0        0     1 PROVIDE(__rc24 = __rc23 + 1)
+       0        0        0     1 __rc25 = __rc24 + 1
+       0        0        0     1 PROVIDE(__rc26 = __rc25 + 1)
+       0        0        0     1 __rc27 = __rc26 + 1
+       0        0        0     1 PROVIDE(__rc28 = __rc27 + 1)
+       0        0        0     1 __rc29 = __rc28 + 1
+       0        0        0     1 PROVIDE(__rc30 = __rc29 + 1)
+       0        0        0     1 __rc31 = __rc30 + 1
+       0        0        0     1 __basic_zp_size = __basic_zp_end - __basic_zp_start
+    2001     2001       16     1 .basic_header
+    2001     2001       16     1         /Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/basic-header.o:(.basic_header)
+    2015     2015        0     1                 next_line
+      22       22        0     1 .zp.data
+      22       22        0     1         __zp_data_start = .
+      22       22        0     1 __zp_data_load_start = LOADADDR(.zp.data)
+      22       22        0     1 __zp_data_size = SIZEOF(.zp.data)
+      22       22        0     1 .zp.bss
+      22       22        0     1         __zp_bss_start = .
+      22       22        0     1 __zp_bss_size = SIZEOF(.zp.bss)
+    2017     2017     5586     1 .text
+    2017     2017        0     1         _init = .
+    2017     2017        0     1         _start = .
+    2017     2017        e     1         /Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/unmap-basic.o:(.init.010)
+    2025     2025        3     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/r0a_platform_45gs02-381bef.o:(.init.011)
+    2025     2025        0     1                 f65_basepage_enter
+    2028     2028        8     1         /Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(init-stack.S.obj):(.init.100)
+    2028     2028        0     1                 __do_init_stack
+    2030     2030        3     1         /Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(zero-bss.c.obj):(.init.200)
+    2030     2030        0     1                 __do_zero_bss
+    2033     2033        3     1         /Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/common/lib/crt0.o:(.call_main)
+    2036     2036        3     1         /Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(exit-custom.S.obj):(.after_main)
+    2036     2036        0     1                 __after_main
+    2039     2039        0     1         _fini = .
+    2039     2039        3     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/r0a_platform_45gs02-381bef.o:(.fini.989)
+    2039     2039        0     1                 f65_basepage_leave
+    203c     203c        a     1         /Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/unmap-basic.o:(.fini.990)
+    2046     2046        1     1         /Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/common/lib/crt0.o:(.fini_rts)
+    2047     2047       b4     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/combined_45gs02-b5d1de.o:(.text.r0fc_platform)
+    2047     2047        0     1                 r0fc_rom_toggle
+    206a     206a        0     1                 r0fc_stack_seed
+    20b1     20b1        0     1                 r0fc_stack_measure
+    20fb     20fb      148     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/qualification_45gs02-dda18f.o:(.text.r0f_pf)
+    20fb     20fb        0     1                 r0f_pf_enter
+    2163     2163        0     1                 r0f_pf_start_irq
+    217a     217a        0     1                 r0f_pf_stop_irq
+    2186     2186        0     1                 r0f_pf_irq
+    21b2     21b2        0     1                 r0f_pf_nmi
+    21ba     21ba        0     1                 r0f_pf_flat_copy
+    21f7     21f7        0     1                 r0f_pf_register_probe
+    2243     2243       13     1         /Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(zero-bss.c.obj):(.text.__zero_bss)
+    2243     2243       13     1                 __zero_bss
+    2256     2256      56c     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.main)
+    2256     2256      56c     1                 main
+    27c2     27c2      427     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.kernel_calibrate)
+    27c2     27c2      427     1                 kernel_calibrate
+    2be9     2be9      467     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.display_begin)
+    2be9     2be9      467     1                 display_begin
+    3050     3050      8e2     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.sweep)
+    3050     3050      8e2     1                 sweep
+    3932     3932      175     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.display_restore)
+    3932     3932      175     1                 display_restore
+    3aa7     3aa7      64d     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.render_quantum)
+    3aa7     3aa7      64d     1                 render_quantum
+    40f4     40f4       a8     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.kernel)
+    40f4     40f4       a8     1                 kernel
+    419c     419c       35     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.hud)
+    419c     419c       35     1                 hud
+    41d1     41d1      27b     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.record_phase)
+    41d1     41d1      27b     1                 record_phase
+    444c     444c        1     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.le16)
+    444c     444c        1     1                 le16
+    444d     444d      162     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.metadata)
+    444d     444d      162     1                 metadata
+    45af     45af       2e     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.r0fc_edge_sample)
+    45af     45af       2e     1                 r0fc_edge_sample
+    45dd     45dd       12     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.bits)
+    45dd     45dd       12     1                 bits
+    45ef     45ef       52     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.r0fc_edge_consume)
+    45ef     45ef       52     1                 r0fc_edge_consume
+    4641     4641      2ca     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.cfratio)
+    4641     4641      2ca     1                 cfratio
+    490b     490b       42     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.r0fc_hash)
+    490b     490b       42     1                 r0fc_hash
+    494d     494d       cd     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.r0fc_reset)
+    494d     494d       cd     1                 r0fc_reset
+    4a1a     4a1a       30     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.r0fc_event)
+    4a1a     4a1a       30     1                 r0fc_event
+    4a4a     4a4a      4de     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.r0fc_tick)
+    4a4a     4a4a      4de     1                 r0fc_tick
+    4f28     4f28       45     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.r0fc_snap_reset)
+    4f28     4f28       45     1                 r0fc_snap_reset
+    4f6d     4f6d      180     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.r0fc_publish)
+    4f6d     4f6d      180     1                 r0fc_publish
+    50ed     50ed       99     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.r0fc_acquire)
+    50ed     50ed       99     1                 r0fc_acquire
+    5186     5186       10     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.r0fc_release)
+    5186     5186       10     1                 r0fc_release
+    5196     5196      15a     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.r0fc_range)
+    5196     5196      15a     1                 r0fc_range
+    52f0     52f0       ba     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.inside)
+    52f0     52f0       ba     1                 inside
+    53aa     53aa      177     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.r0fc_dma_encode)
+    53aa     53aa      177     1                 r0fc_dma_encode
+    5521     5521       1e     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.cfput16)
+    5521     5521       1e     1                 cfput16
+    553f     553f       2a     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.cfput32)
+    553f     553f       2a     1                 cfput32
+    5569     5569       2c     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.cfget32)
+    5569     5569       2c     1                 cfget32
+    5595     5595       6a     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.cfadd)
+    5595     5595       6a     1                 cfadd
+    55ff     55ff       5f     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.cfcrc)
+    55ff     55ff       5f     1                 cfcrc
+    565e     565e       54     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.crc_byte)
+    565e     565e       54     1                 crc_byte
+    56b2     56b2       1a     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.cffinal_screen)
+    56b2     56b2       1a     1                 cffinal_screen
+    56cc     56cc       b0     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.cfline)
+    56cc     56cc       b0     1                 cfline
+    577c     577c       3c     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.screen_byte)
+    577c     577c       3c     1                 screen_byte
+    57b8     57b8      1cf     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.cfcopy)
+    57b8     57b8      1cf     1                 cfcopy
+    5987     5987       ec     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.cfhex)
+    5987     5987       ec     1                 cfhex
+    5a73     5a73       54     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.cfscreen)
+    5a73     5a73       54     1                 cfscreen
+    5ac7     5ac7      1c5     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.cfphysical_crc)
+    5ac7     5ac7      1c5     1                 cfphysical_crc
+    5c8c     5c8c       7a     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.cfentry)
+    5c8c     5c8c       7a     1                 cfentry
+    5d06     5d06      254     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.cfrom_begin)
+    5d06     5d06      254     1                 cfrom_begin
+    5f5a     5f5a      2b4     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.cfrom_restore)
+    5f5a     5f5a      2b4     1                 cfrom_restore
+    620e     620e       33     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.cfclock_begin)
+    620e     620e       33     1                 cfclock_begin
+    6241     6241       8e     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.cfnow)
+    6241     6241       8e     1                 cfnow
+    62cf     62cf       a3     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.cfframe_wait)
+    62cf     62cf       a3     1                 cfframe_wait
+    6372     6372       a1     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.cfinput)
+    6372     6372       a1     1                 cfinput
+    6413     6413      17d     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.cfaudio_service)
+    6413     6413      17d     1                 cfaudio_service
+    6590     6590       35     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.cfcycles)
+    6590     6590       35     1                 cfcycles
+    65c5     65c5      662     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.cfcalibrate)
+    65c5     65c5      662     1                 cfcalibrate
+    6c27     6c27      14d     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.cfdma)
+    6c27     6c27      14d     1                 cfdma
+    6d74     6d74       19     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.cfaudio_stop)
+    6d74     6d74       19     1                 cfaudio_stop
+    6d8d     6d8d       b7     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.cfaudio_begin)
+    6d8d     6d8d       b7     1                 cfaudio_begin
+    6e44     6e44       ab     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.cfinput_tick)
+    6e44     6e44       ab     1                 cfinput_tick
+    6eef     6eef       7f     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.cfexit)
+    6eef     6eef       7f     1                 cfexit
+    6f6e     6f6e        5     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.exit)
+    6f6e     6f6e        5     1                 exit
+    6f73     6f73        b     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.__ashlqi3)
+    6f73     6f73        b     1                 __ashlqi3
+    6f7e     6f7e       17     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.__lshrsi3)
+    6f7e     6f7e       17     1                 __lshrsi3
+    6f95     6f95       bd     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.__udivhi3)
+    6f95     6f95       bd     1                 __udivhi3
+    7052     7052      168     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.__udivsi3)
+    7052     7052      168     1                 __udivsi3
+    71ba     71ba       45     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.__umodqi3)
+    71ba     71ba       45     1                 __umodqi3
+    71ff     71ff       d8     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.__udivmodhi4)
+    71ff     71ff       d8     1                 __udivmodhi4
+    72d7     72d7       7f     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.__divhi3)
+    72d7     72d7       7f     1                 __divhi3
+    7356     7356      1b2     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.__udivmodsi4)
+    7356     7356      1b2     1                 __udivmodsi4
+    7508     7508       1c     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.__memset)
+    7508     7508       1c     1                 __memset
+    7524     7524       79     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.text.__mulsi3)
+    7524     7524       79     1                 __mulsi3
+    759d     759d        0     1         __init_array_start = .
+    759d     759d        0     1         __init_array_end = .
+    759d     759d        0     1         __fini_array_start = .
+    759d     759d        0     1         __fini_array_end = .
+    759d     759d      307     1 .rodata
+    759d     759d        1     1         /Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/common/lib/libcrt.a(const.S.obj):(.rodata)
+    759d     759d        0     1                 __set_v
+    759e     759e       1c     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.rodata.r0fc_tick)
+    75ba     75ba      294     1         <internal>:(.rodata.str1.1)
+    784e     784e       1e     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.rodata.display_regs)
+    784e     784e       1e     1                 display_regs
+    786c     786c       38     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.rodata.r0fc_range.ranges)
+    786c     786c       38     1                 r0fc_range.ranges
+    78a4     78a4        0     1 .data
+    78a4     78a4        0     1         __data_start = .
+    78a4     78a4        0     1         __data_end = .
+    78a4     78a4        0     1 __data_load_start = LOADADDR(.data)
+    78a4     78a4        0     1 __data_size = SIZEOF(.data)
+    78a4     78a4      6a5     1 .bss
+    78a4     78a4        0     1         __bss_start = .
+    78a4     78a4      3d1     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.bss.model)
+    78a4     78a4      3d1     1                 model
+    7c75     7c75        2     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.bss.kernel_n)
+    7c75     7c75        2     1                 kernel_n
+    7c77     7c77        f     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.bss.display_saved)
+    7c77     7c77        f     1                 display_saved
+    7c86     7c86        1     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.bss.render_stage)
+    7c86     7c86        1     1                 render_stage
+    7c87     7c87        1     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.bss.ready)
+    7c87     7c87        1     1                 ready
+    7c88     7c88        1     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.bss.front)
+    7c88     7c88        1     1                 front
+    7c89     7c89        1     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.bss.frame)
+    7c89     7c89        1     1                 frame
+    7c8a     7c8a        1     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.bss.tier)
+    7c8a     7c8a        1     1                 tier
+    7c8b     7c8b        4     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.bss.bound_hash)
+    7c8b     7c8b        4     1                 bound_hash
+    7c8f     7c8f        1     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.bss.bound_tier)
+    7c8f     7c8f        1     1                 bound_tier
+    7c90     7c90        2     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.bss.clear_at)
+    7c90     7c90        2     1                 clear_at
+    7c92     7c92        1     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.bss.object)
+    7c92     7c92        1     1                 object
+    7c93     7c93        9     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.bss.depth_order)
+    7c93     7c93        9     1                 depth_order
+    7c9c     7c9c        2     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.bss.render_x)
+    7c9c     7c9c        2     1                 render_x
+    7c9e     7c9e        2     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.bss.render_y)
+    7c9e     7c9e        2     1                 render_y
+    7ca0     7ca0       42     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.bss.sorted)
+    7ca0     7ca0       42     1                 sorted
+    7ce2     7ce2        1     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.bss.final_screen)
+    7ce2     7ce2        1     1                 final_screen
+    7ce3     7ce3        1     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.bss.cfreclaimed)
+    7ce3     7ce3        1     1                 cfreclaimed
+    7ce4     7ce4        1     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.bss.backup_valid)
+    7ce4     7ce4        1     1                 backup_valid
+    7ce5     7ce5        1     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.bss.cffault)
+    7ce5     7ce5        1     1                 cffault
+    7ce6     7ce6        9     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.bss.r0f_pf_copy_request)
+    7ce6     7ce6        9     1                 r0f_pf_copy_request
+    7cef     7cef       ff     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.bss.block)
+    7cef     7cef       ff     1                 block
+    7dee     7dee        1     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.bss.r0f_pf_cpu_port)
+    7dee     7dee        1     1                 r0f_pf_cpu_port
+    7def     7def        1     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.bss.r0f_pf_stack_high)
+    7def     7def        1     1                 r0f_pf_stack_high
+    7df0     7df0       ff     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.bss.cfworkspace)
+    7df0     7df0       ff     1                 cfworkspace
+    7eef     7eef        1     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.bss.features_open)
+    7eef     7eef        1     1                 features_open
+    7ef0     7ef0        1     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.bss.r0fc_trap_flags)
+    7ef0     7ef0        1     1                 r0fc_trap_flags
+    7ef1     7ef1        1     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.bss.r0fc_trap_base)
+    7ef1     7ef1        1     1                 r0fc_trap_base
+    7ef2     7ef2        4     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.bss.cfcycles_frame)
+    7ef2     7ef2        4     1                 cfcycles_frame
+    7ef6     7ef6        4     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.bss.cfcia_frame)
+    7ef6     7ef6        4     1                 cfcia_frame
+    7efa     7efa        1     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.bss.r0f_pf_nmi_seen)
+    7efa     7efa        1     1                 r0f_pf_nmi_seen
+    7efb     7efb        4     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.bss.cfperiod)
+    7efb     7efb        4     1                 cfperiod
+    7eff     7eff       11     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.bss.list)
+    7eff     7eff       11     1                 list
+    7f10     7f10        1     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.bss.pcm_on)
+    7f10     7f10        1     1                 pcm_on
+    7f11     7f11        1     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.bss.pcm_last)
+    7f11     7f11        1     1                 pcm_last
+    7f12     7f12        4     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.bss.service_last)
+    7f12     7f12        4     1                 service_last
+    7f16     7f16        1     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.bss.audio_frame)
+    7f16     7f16        1     1                 audio_frame
+    7f17     7f17        1     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.bss.keys_valid)
+    7f17     7f17        1     1                 keys_valid
+    7f18     7f18        1     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.bss.input_frame)
+    7f18     7f18        1     1                 input_frame
+    7f19     7f19       18     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.bss.keys)
+    7f19     7f19       18     1                 keys
+    7f31     7f31        3     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.bss.scripted)
+    7f31     7f31        3     1                 scripted
+    7f34     7f34        2     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.bss.r0f_pf_irq_count)
+    7f34     7f34        2     1                 r0f_pf_irq_count
+    7f36     7f36        1     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.bss.r0fc_hardware_low)
+    7f36     7f36        1     1                 r0fc_hardware_low
+    7f37     7f37        2     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.bss.r0fc_software_low)
+    7f37     7f37        2     1                 r0fc_software_low
+    7f39     7f39        1     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.bss.r0f_pf_irq_seq)
+    7f39     7f39        1     1                 r0f_pf_irq_seq
+    7f3a     7f3a        1     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.bss.r0f_pf_irq_seen)
+    7f3a     7f3a        1     1                 r0f_pf_irq_seen
+    7f3b     7f3b        7     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.bss.r0f_pf_probe_regs)
+    7f3b     7f3b        7     1                 r0f_pf_probe_regs
+    7f42     7f42        1     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.bss.r0f_pf_copy_ok)
+    7f42     7f42        1     1                 r0f_pf_copy_ok
+    7f43     7f43        2     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.bss.r0f_pf_probe_timeout)
+    7f43     7f43        2     1                 r0f_pf_probe_timeout
+    7f45     7f45        1     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.bss.r0fc_features)
+    7f45     7f45        1     1                 r0fc_features
+    7f46     7f46        1     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.bss.r0fc_hardware_seed)
+    7f46     7f46        1     1                 r0fc_hardware_seed
+    7f47     7f47        2     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.bss.r0fc_software_seed)
+    7f47     7f47        2     1                 r0fc_software_seed
+    7f49     7f49        0     1         __bss_end = .
+    7f49     7f49        0     1 __bss_size = SIZEOF(.bss)
+    7f49     7f49       28     1 .noinit
+    7f49     7f49       28     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.noinit..Lstatic_stack)
+    7f71     7f71        0     1         __heap_start = ALIGN(., 2)
+     300      300     14a0     1 .r0fc_capture
+     300      300     14a0     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.r0fc_capture)
+     300      300     14a0     1                 durations
+    17a0     17a0      15b     1 .r0fc_hot
+    17a0     17a0      15b     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.r0fc_hot)
+    17a0     17a0       40     1                 work
+    17e0     17e0       50     1                 matrix
+    1830     1830       cb     1                 snapshots
+    18fb     18fb        0     1 __stack = 0xd000
+       0        0       cc     1 .comment
+       0        0       cc     1         <internal>:(.comment)
+       0        0       1e     1 .llvm_sympart
+       0        0        f     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.llvm_sympart)
+       f        f        f     1         /tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.lto.o:(.llvm_sympart)
+       0        0     1210     4 .symtab
+       0        0     1210     4         <internal>:(.symtab)
+       0        0       8a     1 .shstrtab
+       0        0       8a     1         <internal>:(.shstrtab)
+       0        0      b45     1 .strtab
+       0        0      b45     1         <internal>:(.strtab)

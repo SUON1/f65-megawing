@@ -1,0 +1,1 @@
+package f65.tools.generated; public final class R0CInterfaces { private R0CInterfaces(){} public static final int HANDLE_INVALID=0xffff, RESOURCE_DIRECTORY_ENTRY_BYTES=16, RESULT_ADDRESS=0x1800, RESULT_BYTES=96; }

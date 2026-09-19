@@ -1,0 +1,24 @@
+{
+  "identity": "r0e-0.1.0-combined-load-proof",
+  "status": "R0-E-CANDIDATE-STAGE-1",
+  "simulation_hz": 100,
+  "tick_stages": 21,
+  "historical_input": {"id": "R0D-PW-530K-001", "clocks": 530000, "meaning": "comparison workload only; not a production budget"},
+  "combined_profile": {"aircraft":9,"guidedMissiles":16,"gunGroups":24,"decoys":48,"missionEntities":8,"objectives":8,"presentationEffects":64,"radarTrackProxy":10},
+  "snapshot": {"states":["FREE","PUBLISHING","READY","READING"],"recordBytes":64,"candidateBuffers":3,"rules":["simulation alone publishes","presentation alone acquires/releases","no READY or READING mutation by simulation","no FREE means skip publication without a simulation stall"]},
+  "shedding_ladder": ["optional presentation effects","distant-object impostors","distant terrain detail","optional shading/decorative faces","filled -> reduced-filled -> validated wireframe","retain previous complete world buffer and reduce world cadence"],
+  "services": {"input":"edge accumulation; every legal corpus edge preserved","audio":"priority-0 service observed under maximum proxy presentation load","dma":"DMA_HARDWARE_PROBE_NOT_EXECUTED","storage":"inactive during active proof timeline"},
+  "timing": {
+    "status":"RASTER_LINE_DELTA_MODULO_256_OBSERVED",
+    "instrument":"R0-E-local, read-only VIC-II-compatible raster low-byte observation",
+    "register":"$D012 read only through the LLVM-MOS MEGA65 header",
+    "sampleCountPerCase":16,
+    "phaseBins":16,
+    "windowTicks":33,
+    "unit":"elapsed raster-line low-byte delta modulo 256",
+    "resultEncoding":{"caseBytes":"byte 4 raw-q50, byte 5 raw-q95, byte 6 raw-maximum, byte 7 raw-minimum","ordering":"numeric ordering of raw modulo bytes only; it is not an elapsed-time percentile or worst-case ordering when a wrap may occur"},
+    "limitations":["not CPU cycles","not an input or audio latency result","a zero or nonzero modulo value cannot exclude a 256-line wrap","raw-byte q50/q95/maximum are not elapsed-time p50/p95/worst claims","Xemu observation is not physical-MEGA65 evidence","no DMA or IRQ measurement is performed"]
+  },
+  "records": {"targetResult": {"address":"0x1900","bytes":256,"owner":"R0-E diagnostics only"}, "snapshotProofRecord":{"bytes":64,"owner":"R0-E proof handoff only"}},
+  "d81": {"status":"D81_FOUNDATION_QUALIFICATION_IN_PROGRESS_NO_CURRENT_CARRIER","filename":null,"label":null,"id":null,"entries":["autoboot.c65","r0e-proof","r0e-evid"],"entry":"AUTOBOOT.C65 -> R0E-PROOF","predecessor":"F65R0E.D81 is the retained physical-pass functional-proxy control; F65R0E2.D81, F65R0E3.D81, and F65R0E4.D81 are invalid after physical chooser ERROR CODE FF and must not be reused","blocker":"complete deterministic control reconstruction, exact-image Xemu gate, one-variable payload test, SD-copy integrity/contiguity record, and two fresh physical chooser passes before assigning a new R0-E carrier"}
+}

@@ -1,0 +1,32 @@
+{
+  "boots": {
+    "boot1": {
+      "memorySha256": "801b4366f4a4734dd190d3b7d6afe0f7994a01aa9f36cd63e39fbae6f459d9ab",
+      "resultBlockSha256": "4bd6ed488108739cbab916035f557f1f7972ca3bd068fb082203a0e274cfadbf",
+      "screenSha256": "6df9b459ac895c7f787e5568a17aa75b8d6dc6e323cbedc3b728286cd9581e84"
+    },
+    "boot2": {
+      "memorySha256": "a23d2a9130d629980dcd2f6216af2121477ddeaee328e9647bea94a17b6ecf82",
+      "resultBlockSha256": "4bd6ed488108739cbab916035f557f1f7972ca3bd068fb082203a0e274cfadbf",
+      "screenSha256": "6df9b459ac895c7f787e5568a17aa75b8d6dc6e323cbedc3b728286cd9581e84"
+    }
+  },
+  "class": "XEMU_FUNCTIONAL_PROXY",
+  "d81Sha256": "8cb76830489095a92a266c884e168efacfd6cb8e7d4db456300a3fbf67cc623b",
+  "dma": "DMA_HARDWARE_PROBE_NOT_EXECUTED",
+  "identity": "r0e-0.1.0-combined-load-proof",
+  "result": "PASS",
+  "sourceCommit": "ae2b0aee2ded09622c67fcea97062b45fd6ce9ce",
+  "tests": [
+    "R0E-TICK-001",
+    "R0E-SNAP-001",
+    "R0E-RENDER-001",
+    "R0E-FAULT-001",
+    "R0E-INPUT-AUDIO-001",
+    "R0E-STORAGE-001"
+  ],
+  "timing": {
+    "reason": "no admitted target/Xemu cycle counter; this validates functional proxy output only",
+    "status": "NOT_MEASURED"
+  }
+}

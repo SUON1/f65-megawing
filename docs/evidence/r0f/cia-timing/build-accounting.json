@@ -1,0 +1,72 @@
+{
+  "identity": "R0F1-REV2-CIA-count-phase-sweep",
+  "sourceCommit": "744920dd76d008fbc0ccce82e006cc0b647f477e",
+  "sourceState": "working-tree; source hashes identify exact inputs",
+  "inputs": {
+    "interfaces/r0f_proof_contract.json": "ce92898547e4c1ee6cd82d15ad05875cf8b9b42dc65cccffd4d1d818d1c512ca",
+    "interfaces/generated/r0f_interfaces.h": "fd0b0d35bf2274f87b77f05879c38db6b65dacd9b4f95302d00775ef967f3c09",
+    "memory/r0f-memory-ledger.json": "2648fd59a97c3b9bdddb4022ac28655401657eba72d2a368050a6d65a64594e8",
+    "tools/diagnostics/r0f_build.py": "6b94750d8ff6dc191e61c553e7d46880ca6f0300253d9d4b2647dd17ba4a8c3a",
+    "tools/diagnostics/r0f_host_test.c": "7bbe762892aa2c695c6165acb4c192206f99c676f374836a586f540345ce6b9a",
+    "toolchain/f65_toolchain.lock.json": "0de4864a0665f04cab26f67bdd533697d8006460142dcb7e8e5ce0ecb72d742b",
+    "src/r0f/main.c": "d791924a7ce078e6a9d03a4fc72c390b10476fd876a877d49fdcbaa338249e2d",
+    "src/diagnostics/r0f/composite.c": "88ca1b4b8df6a425025c92930702d1bc67fa4af50645efe11f06e596ebd62346",
+    "src/platform/r0f/raster_observation.c": "54c61382af910eed97132775ba4170f89c3d9bb3907f93c7db96a6368086198d",
+    "src/platform/r0f/startup.ld": "96d85939b28b4b24d0e251164b2abe9c5e950096482334517cbc4e57fcb6b60f",
+    "src/platform/r0a_platform_45gs02.s": "a0c9504763c44eb10cc7f38dcb77f2961beabd3ac506c5cc78a26a33552b97ca",
+    "src/diagnostics/r0f/timing_sweep.c": "cf983177622a16c8a0f6c0dfa1a84abca07c27d1ca1532cdb40652ee9dd1fe85",
+    "src/platform/r0f/cia_clock.c": "c35ce8db87d2c8f7ed2f28ba3ca3af95ba7ce9c57503c113c408cea40a8061b6",
+    "tools/diagnostics/r0f_timing_host_test.c": "30ffb8f42ed31a4eeea353f2924fc55d7b1247593bfc20c788f8fb4331521217",
+    "tools/diagnostics/r0f_clock_host_test.c": "b0f0b3f03c5f0f976d4a8d8444c58a46138205adccbfc27076c48fb4acfa09ad",
+    "tools/generators/src/main/java/f65/tools/R0FTimingOracle.java": "b47eb1ef28fb20a061f8b53306063e3322c42448669fbd842a43058e02621e5f",
+    "docs/reports/R0-F_CIA_TIMING_CONTRACT.md": "ef8c846246d7932175a93d63c0336f094c836125444fc92e45624721e75821f9"
+  },
+  "compilerSha256": "cc557ae99a68ed36e098062b0f5376a878e94ac187b87446c8e603e4fb45a906",
+  "prgSha256": "6e52b70b77b259363f8bdb8d0d410526864406eedf999ad9e526b7324a310256",
+  "prgBytes": 10561,
+  "sections": {
+    ".basic_header": {
+      "address": 8193,
+      "bytes": 22
+    },
+    ".text": {
+      "address": 8215,
+      "bytes": 9345
+    },
+    ".rodata": {
+      "address": 17560,
+      "bytes": 1192
+    },
+    ".data": {
+      "address": 18752,
+      "bytes": 0
+    },
+    ".bss": {
+      "address": 18752,
+      "bytes": 12152
+    },
+    ".noinit": {
+      "address": 30904,
+      "bytes": 158
+    },
+    ".zp.data": {
+      "address": 34,
+      "bytes": 0
+    },
+    ".zp.bss": {
+      "address": 34,
+      "bytes": 0
+    }
+  },
+  "stackTop": 53248,
+  "stackHighWater": "NOT MEASURED",
+  "linkedResidentBytes": 22869,
+  "compilerStaticStackBytes": 158,
+  "reserveBytes": 0,
+  "dma": "NOT EXECUTED",
+  "irq": "NOT MEASURED",
+  "xemu": "NOT VERIFIED",
+  "physical": "NOT VERIFIED",
+  "d81": "NOT CREATED",
+  "timing": "CIA counts; not calibrated SI or physical timing; reset-only timer ownership"
+}

@@ -1,0 +1,10 @@
+{
+  "result": "PASS",
+  "tier": "native ASan/UBSan and independent Java, not hardware",
+  "pages": 22,
+  "bytes": 11136,
+  "captureSha256": "e429c925b83a715450d266abfe460916a5811b8c1920b4092cbaec770472e11f",
+  "pagesSha256": "847f1a3cce1de2c68ecd66673a4fd02ff623bd02e9e68201f68b52b7780a6bea",
+  "controls": "N/space/P/clamps/S/C/lowercase/unknown; D610 read/ack; source immutable",
+  "oracle": "PASS: capture transport and raw timing reduction; physical provenance still required\nPASS: 22 C-rendered pages, exact 11136-byte round trip, independent timing reduction; 14 malformed sets rejected"
+}

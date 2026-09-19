@@ -1,0 +1,77 @@
+{
+  "identity": "R0F5-REV2-raw-count-screen-capture",
+  "sourceCommit": "744920dd76d008fbc0ccce82e006cc0b647f477e",
+  "sourceState": "working-tree; source hashes identify exact inputs",
+  "inputs": {
+    "interfaces/r0f_proof_contract.json": "772883b946fb8cb5a8a311bd054d584ea1eb0b2d4f721a786ccbeba5b4f0b085",
+    "interfaces/generated/r0f_interfaces.h": "a1c0c55cf73e0aae634e2c4267496f700f90959d5529b25ac5a02652337bc995",
+    "memory/r0f-memory-ledger.json": "6b05b33defda5002531ab0c8b102be834328fc606a9c0f791c4ec6ec5004a435",
+    "tools/diagnostics/r0f_build.py": "c9c450f0f945923ada05202dda9e750a6c03194e570cc7510c014af10226bd9e",
+    "tools/diagnostics/r0f_host_test.c": "7bbe762892aa2c695c6165acb4c192206f99c676f374836a586f540345ce6b9a",
+    "toolchain/f65_toolchain.lock.json": "0de4864a0665f04cab26f67bdd533697d8006460142dcb7e8e5ce0ecb72d742b",
+    "src/r0f/main.c": "43d827c11b89a3a50d5e0784f77ffcdb86e706260a96f44886da965ce838e320",
+    "src/diagnostics/r0f/composite.c": "88ca1b4b8df6a425025c92930702d1bc67fa4af50645efe11f06e596ebd62346",
+    "src/platform/r0f/raster_observation.c": "54c61382af910eed97132775ba4170f89c3d9bb3907f93c7db96a6368086198d",
+    "src/platform/r0f/startup.ld": "96d85939b28b4b24d0e251164b2abe9c5e950096482334517cbc4e57fcb6b60f",
+    "src/platform/r0a_platform_45gs02.s": "a0c9504763c44eb10cc7f38dcb77f2961beabd3ac506c5cc78a26a33552b97ca",
+    "src/diagnostics/r0f/timing_sweep.c": "0c4240ab837296a8067411b7804125e9ffd65e31ac68ab4d0ffa5184da2980a1",
+    "src/platform/r0f/cia_clock.c": "c35ce8db87d2c8f7ed2f28ba3ca3af95ba7ce9c57503c113c408cea40a8061b6",
+    "tools/diagnostics/r0f_timing_host_test.c": "30ffb8f42ed31a4eeea353f2924fc55d7b1247593bfc20c788f8fb4331521217",
+    "tools/diagnostics/r0f_clock_host_test.c": "b0f0b3f03c5f0f976d4a8d8444c58a46138205adccbfc27076c48fb4acfa09ad",
+    "tools/generators/src/main/java/f65/tools/R0FTimingOracle.java": "cedacef611d8ea20356b4d131add3a945d05846e965f2c2ef2ca0ea58c882199",
+    "docs/reports/R0-F_CIA_TIMING_CONTRACT.md": "ef8c846246d7932175a93d63c0336f094c836125444fc92e45624721e75821f9",
+    "src/diagnostics/r0f/capture_view.c": "e2e9a1999b37e9ee3514eae25622ade3fe1d0eb51f9ac9887aebf11a30bfd94f",
+    "src/platform/r0f/capture_key.c": "cbedb42fc2942f6863a4152ce546e10a373378f02d292ee44e1a12c669f0445b",
+    "tools/diagnostics/r0f_capture_host_test.c": "87d4d330cfbdaf5c8ad8a53e4d66159fececde28091f25de21f7f7056e764258",
+    "tools/generators/src/main/java/f65/tools/R0FCapturePages.java": "cb9388360364295bfeda3d1e139a45aaed5644febcd2eeed4bf99ce02bae3abb",
+    "docs/reports/R0-F_CAPTURE_CONTRACT.md": "85e15812da337ecceaf31fde6453bac2b3056bba2b40684422e29b3893ba47c2"
+  },
+  "compilerSha256": "cc557ae99a68ed36e098062b0f5376a878e94ac187b87446c8e603e4fb45a906",
+  "prgSha256": "e68527b6db89882a49fbb4b7fb1b48f5f54fedd62cd98fc3176bce5340517c2d",
+  "prgBytes": 12641,
+  "sections": {
+    ".basic_header": {
+      "address": 8193,
+      "bytes": 22
+    },
+    ".text": {
+      "address": 8215,
+      "bytes": 10955
+    },
+    ".rodata": {
+      "address": 19170,
+      "bytes": 1662
+    },
+    ".data": {
+      "address": 20832,
+      "bytes": 0
+    },
+    ".bss": {
+      "address": 20832,
+      "bytes": 12157
+    },
+    ".noinit": {
+      "address": 32989,
+      "bytes": 115
+    },
+    ".zp.data": {
+      "address": 34,
+      "bytes": 0
+    },
+    ".zp.bss": {
+      "address": 34,
+      "bytes": 0
+    }
+  },
+  "stackTop": 53248,
+  "stackHighWater": "NOT MEASURED",
+  "linkedResidentBytes": 24911,
+  "compilerStaticStackBytes": 115,
+  "reserveBytes": 0,
+  "dma": "NOT EXECUTED",
+  "irq": "NOT MEASURED",
+  "xemu": "NOT VERIFIED",
+  "physical": "NOT VERIFIED",
+  "d81": "NOT CREATED",
+  "timing": "CIA counts; not calibrated SI or physical timing; reset-only timer ownership"
+}

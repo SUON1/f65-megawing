@@ -1,0 +1,42 @@
+{
+  "identity": "R0F1-REV1-functional-raster-proxy",
+  "sourceCommit": "b5b54bd0af18f899c78857fd2f69ba7b969fe856",
+  "sourceState": "working-tree; source hashes identify exact inputs",
+  "inputs": {
+    "interfaces/r0f_proof_contract.json": "55389dca463bb57e90b721bc2073f696ebf9c12cb4caf2ba622735f45be37948",
+    "interfaces/generated/r0f_interfaces.h": "b99e643f5735809e5461e4b81f103da5f93d5fc333579bf36dfa7fff6490df61",
+    "src/r0f/main.c": "0011644993d115607316ab24d155661e96a9fda08a104936e6a577d4d61e1559",
+    "src/diagnostics/r0f/composite.c": "d6753da4dc0033dcc3f13a12765f26c090b0a3662ab3afc52edc1f14a2b4938e",
+    "src/platform/r0f/raster_observation.c": "54c61382af910eed97132775ba4170f89c3d9bb3907f93c7db96a6368086198d",
+    "src/platform/r0a_platform_45gs02.s": "a0c9504763c44eb10cc7f38dcb77f2961beabd3ac506c5cc78a26a33552b97ca"
+  },
+  "compilerSha256": "cc557ae99a68ed36e098062b0f5376a878e94ac187b87446c8e603e4fb45a906",
+  "prgSha256": "510c2bfc8686f86b5fd934edd0b9863c0a176951a2871eaa0f990c8e0cec106e",
+  "prgBytes": 4694,
+  "sections": {
+    ".text": {
+      "address": 8215,
+      "bytes": 4119
+    },
+    ".rodata": {
+      "address": 12334,
+      "bytes": 551
+    },
+    ".data": {
+      "address": 12885,
+      "bytes": 0
+    },
+    ".bss": {
+      "address": 12885,
+      "bytes": 192
+    }
+  },
+  "stackTop": 53248,
+  "stackHighWater": "NOT MEASURED",
+  "reserveBytes": 0,
+  "dma": "NOT EXECUTED",
+  "irq": "NOT MEASURED",
+  "xemu": "NOT VERIFIED",
+  "physical": "NOT VERIFIED",
+  "d81": "NOT CREATED"
+}

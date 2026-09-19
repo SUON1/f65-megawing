@@ -1,0 +1,60 @@
+{
+  "result": "PASS",
+  "generatedHeader": "EXACT_MATCH",
+  "buildCheckSourceSha256": "9fdff49421d2504beb5322106fdeb6bc5b04cef92cdfd8d3d9bfa522d594c63d",
+  "executedStaticCheckSha256": "885fcbae37b3b61dfabb0d5fab6c349c7037a66ea60d80f30d6558d2bbd2133b",
+  "sections": {
+    ".basic_header": {
+      "start": 8193,
+      "bytes": 22
+    },
+    ".text": {
+      "start": 8215,
+      "bytes": 21894
+    },
+    ".rodata": {
+      "start": 30109,
+      "bytes": 775
+    },
+    ".data": {
+      "start": 30884,
+      "bytes": 0
+    },
+    ".bss": {
+      "start": 30884,
+      "bytes": 1701
+    },
+    ".noinit": {
+      "start": 32585,
+      "bytes": 40
+    },
+    ".zp.data": {
+      "start": 34,
+      "bytes": 0
+    },
+    ".zp.bss": {
+      "start": 34,
+      "bytes": 0
+    },
+    ".r0fc_capture": {
+      "start": 768,
+      "bytes": 5280
+    },
+    ".r0fc_hot": {
+      "start": 6048,
+      "bytes": 347
+    }
+  },
+  "commands": [
+    [
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/runtime/llvm-mos/bin/llvm-nm",
+      "/tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.elf"
+    ],
+    [
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/runtime/llvm-mos/bin/llvm-objdump",
+      "-d",
+      "--print-imm-hex",
+      "/tmp/r0f-corrected.3qt691/target/R0F-COMBINED.prg.elf"
+    ]
+  ]
+}

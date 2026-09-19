@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "task_id": "F65-R0-F",
+  "authorized_prefixes": [
+    "CODEX_PROGRESS.md",
+    "docs/agents/R0-F_START_PROMPT.md",
+    "docs/plans/R0-F_EXEC_PLAN.md",
+    "docs/plans/r0-f-*.json",
+    "docs/testing/R0-F_TEST_GUIDE.md",
+    "docs/evidence/r0f/",
+    "docs/reports/R0-F_*",
+    "interfaces/r0f_proof_contract.json",
+    "interfaces/r0f_platform_contract.json",
+    "interfaces/r0f_combined_contract.json",
+    "interfaces/f65_platform_abi.json5",
+    "interfaces/generated/r0f*",
+    "memory/r0f-memory-ledger.json",
+    "src/r0f/",
+    "src/diagnostics/r0f/",
+    "src/platform/r0f/",
+    "tools/build/r0f.sh",
+    "tools/diagnostics/r0f_*",
+    "tools/diagnostics/d81_sd_contiguity.py",
+    "tools/diagnostics/d81_sd_fill_mega65_slot.sh",
+    "tools/generators/src/main/java/f65/tools/R0F*",
+    "Makefile"
+  ],
+  "prohibited_prefixes": [
+    "spec/",
+    "src/r0a/",
+    "src/r0b/",
+    "src/r0c/",
+    "src/r0d/",
+    "src/r0e/",
+    "docs/evidence/r0a/",
+    "docs/evidence/r0b/",
+    "docs/evidence/r0c/",
+    "docs/evidence/r0d/",
+    "docs/evidence/r0e/"
+  ],
+  "forbidden_change_classes": [
+    "CoreRuntime ownership",
+    "production public ABI; additive R0-F proof-platform contracts require recorded owner approval",
+    "memory ownership",
+    "pool capacities",
+    "100 Hz tick order",
+    "measured-limits reserve",
+    "production renderer",
+    "gameplay",
+    "measured-limit selection"
+  ],
+  "state_owners": {
+    "r0e_inputs": "read-only retained evidence",
+    "r0f_admission_and_evidence": "R0-F proof control only",
+    "r0f_target_result": "R0-F standalone diagnostic result 1900-19ff; never co-resident with R0-E",
+    "carrier": "F65R0F5.D81 capture candidate; R0-F_CAPTURE_HANDOFF.md and release manifest authoritative; earlier carriers retained unchanged",
+    "physical_platform_identity": "owner-captured physical evidence"
+  },
+  "path_constraints": {
+    "interfaces/f65_platform_abi.json5": "Additive R0-F proof registry entry only; existing R0-C deferrals and production ABI unchanged"
+  },
+  "combined_impact": {
+    "variant": "CF001 reset-only combined experiment; not co-resident with earlier variants",
+    "contract": "docs/reports/R0-F_COMBINED_CONTRACT.md",
+    "ledger": "memory/r0f-memory-ledger.json combined_experiment_variant",
+    "carrier": "F65BLK02.D81 only after host, exact-Xemu and guarded native-slot gates",
+    "delivery_tool_change": "Require removable media and exact unchanged pre/post device/extent identity; CF001 wrapper rejects nonblank or previously delivered slot",
+    "non_claim": "No production ABI, ownership, pool, reserve, gameplay or acceptance change"
+  },
+  "retained_pf001_impact": {
+    "variant": "PF001 development PRG, not co-resident with F5 or production",
+    "registers_clobbers": "Pinned C ABI; PF001 entry A/X/Y/Z/P with canonical B=02; leaf IRQ preserves A/X/Y/Z/Q/B/P/SP; flat helper returns A and preserves X/Y/Z/B/P/SP",
+    "cpu_visible_memory": "Result 1900-19ff; screen 0800-0fcf; linked 2001-7fff; rc0-31 physical 0202-0221; private scratch 0222-0229; vectors FFFA/B and FFFE/F; inherited page-1 hardware stack; software stack top D000",
+    "physical_memory": "255-byte source 050000, destination 050100 and PCM sample 053000; 17-byte immutable DMA list 056000; no ROM-store or reserve access",
+    "map_base_page": "Reset-only canonical takeover: clear MAP offsets/MB selectors and EOM; port 01=35 with temporary B=00; restore B=02 before C",
+    "dma": "One validated 255-byte COPY, hardware blocks CPU; byte-for-byte verification; no hardware timeout or bound claimed",
+    "timing_deadlines": "Raw CIA cascade observations with near-reload rejection; no SI conversion, calibrated 100Hz or protected workload",
+    "irq_nmi": "Resident raster IRQ, bounded register canary; CIA masks/audio IRQ disabled; NMI sets sticky interference flag; no latency acceptance",
+    "interfaces": "Additive generated RPF1/PF001 private platform contract; no production or R0-C contract promotion",
+    "ledger": "memory/r0f-memory-ledger.json platform_qualification_variant; reserve use zero; dynamic high-water not measured"
+  },
+  "retained_f5_impact": {
+    "registers_clobbers": "Pinned C ABI; inherited startup B handling",
+    "cpu_visible_memory": "Result 1900-19ff; screen 0800-0fcf; linked C data/stacks",
+    "physical_memory": "Inherited low-memory context; protected 050000-05ffff untouched",
+    "map_base_page": "No new mapping/base-page behavior",
+    "dma": "DMA_HARDWARE_PROBE_NOT_EXECUTED",
+    "timing_deadlines": "Private CIA1 reset-only raw-count timer; 10000-count releases independent of display after initial phase; not calibrated 100Hz, not production scheduler",
+    "irq_nmi": "Stock SEI retained throughout; no vector/ICR/CIA2 changes; no IRQ/NMI latency measurement",
+    "interfaces": "Private generated R0F1 REV2 timing proof; REV1 baseline retained",
+    "ledger": "memory/r0f-memory-ledger.json; reserve use zero"
+  }
+}

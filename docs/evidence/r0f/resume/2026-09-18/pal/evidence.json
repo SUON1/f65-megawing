@@ -1,0 +1,283 @@
+{
+  "identity": "RH001",
+  "video": "0",
+  "tier": "XEMU_DISPOSABLE_STORAGE_FIXTURE",
+  "resultSha256": "b225afd14699b111807105a71979f58295a6a460b2bb4a7da008b6cb4381fd4b",
+  "prgSha256": "b856ad29b0ac06939083dd54140136d438037ce41c3f49f00163d6b2c52efcc9",
+  "initialD81Sha256": "6dc1806280459ae45a1bda9df33cd89cb76e5b408bf542c19d904dece7581092",
+  "postTransactionD81Sha256": "724ee452b9019167f35c8647ce071b14078e09b417f6f50c93113b8eaf9fb3d7",
+  "postTransactionStructureAndContent": "PASS",
+  "oracle": "PASS",
+  "extractedSaveSha256": "8e6eea97b1cc2bc58f8d52870fca90206f09e84f596c0e75db86376f27b2a4a4",
+  "extractedSavePath": "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/xemu-0-1789768137122746000/extracted-1789768217318852000/rhstate",
+  "screenshotSha256": "bb216206f7efeae940de003a106eaa98b3eb235ea88c32097488dd67dc27d975",
+  "source": {
+    "identity": "RH001-DEVELOPMENT-ONLY",
+    "prgSha256": "b856ad29b0ac06939083dd54140136d438037ce41c3f49f00163d6b2c52efcc9",
+    "inputs": {
+      "src/diagnostics/r0f/resume.c": "01fc23b780c9458d46f7c92461f27b2dd5231e3360d4c3de2e28edf65ef3e100",
+      "src/diagnostics/r0f/resume_model.c": "d7cec00c819fd4dbf2174bf0ac68ecd31e39c361c21d2a2949f5f0aef2b39666",
+      "src/diagnostics/r0f/combined_model.c": "46de21d13fca8939cf25742d6920eeaa54ae5ffd5821bc6eaf57d39c3f4b4903",
+      "src/diagnostics/r0f/combined_platform.c": "0ac29a00b10b5928a9ad65fe3cdd33711c0ad8e8c0eea88d953fa18bdf84f3ea",
+      "src/platform/r0f/resume_45gs02.s": "48a3698daa3e7011df13e7be5747c8bcbb3b8c8a3cab6750bb4f7fc5ac614da0",
+      "src/platform/r0f/combined_45gs02.s": "f57927e7b4177adb68a72c3f98d4d76b96257c3940c4bd96f9799effa7fbae11",
+      "src/platform/r0f/qualification_45gs02.s": "cfa319cef2826f72a04176ff5a8642911bfc92ca5659df6ddf61262bb02be89e",
+      "src/platform/r0a_platform_45gs02.s": "a0c9504763c44eb10cc7f38dcb77f2961beabd3ac506c5cc78a26a33552b97ca",
+      "interfaces/r0f_resume_contract.json": "b70173e936a8ac70d9ec85493a910f738f0bf181ec4c4def3a406beadc8b3b87",
+      "interfaces/generated/r0f_resume.h": "55ba5146aa0c008590f18eab49c1cdb42b0e42dd67015963bbf85034ced57805",
+      "src/diagnostics/r0f/resume_model.h": "a9b80f303261868e41420612edf06ebb8800dc60abb36bda7478b73c53366458",
+      "src/diagnostics/r0f/combined_model.h": "0931d1e42914903d61d073be597910575a941171c6592b45d4a81649123113df",
+      "src/diagnostics/r0f/combined_platform.h": "4d83f75144d74dca6d9442daee528d59e97672d50b8aa41d9f810d4a27436736",
+      "interfaces/r0f_combined_contract.json": "c9f78e5baa820b977253155e2bd0aefac840de97d89f1bd0a63310849ef08b69",
+      "interfaces/generated/r0f_combined.h": "a728d596e43163e28d1de7d2e17ee366b6df4970be8924bff9f64ca2e4a0d4f2",
+      "src/platform/r0f/startup.ld": "96d85939b28b4b24d0e251164b2abe9c5e950096482334517cbc4e57fcb6b60f",
+      "tools/diagnostics/r0f_resume_build.py": "3a1cd04093e967134eafef55cf613b984b86d8c6aed4aee387415c07ce770084",
+      "tools/diagnostics/r0f_resume_host_test.c": "a2d677646b7a58e58a4bd5e535e7279ca6d7fd311638a082779209e7f8e08071",
+      "tools/generators/src/main/java/f65/tools/R0FResumeOracle.java": "745d278a68f004d56dcc08a96e2c04e18e3ca1a7b04b514375fc4b411ca4a1ac",
+      "tools/diagnostics/d81_foundation_compare.py": "c58c46d8cd857bbb695a3fb3f22f3f7b52feda2d1bcd53343464d5ad7e0d5012",
+      "docs/decisions/R0-F-RH001-NO-RESTART-HANDOFF.md": "163f78333065c57ec8269580cab6f518ad0b7898a89a1b9c742342efac27d853",
+      "memory/r0f-resume-memory-ledger.json": "e6f3308b653a8fdcba1a7bdd8f38d7056e832b63b6dda8843787c88f8bf048f4",
+      "00_D81_LOADABILITY_GATE.md": "df2be08740df941a2a1202b69ffe44360b4ea663bebaa224fa4880087b98c396"
+    },
+    "sections": {
+      ".basic_header": {
+        "start": 8193,
+        "bytes": 22
+      },
+      ".text": {
+        "start": 8215,
+        "bytes": 12023
+      },
+      ".rodata": {
+        "start": 20238,
+        "bytes": 400
+      },
+      ".data": {
+        "start": 20638,
+        "bytes": 0
+      },
+      ".bss": {
+        "start": 20638,
+        "bytes": 2447
+      },
+      ".noinit": {
+        "start": 23085,
+        "bytes": 5638
+      },
+      ".zp.data": {
+        "start": 34,
+        "bytes": 0
+      },
+      ".zp.bss": {
+        "start": 34,
+        "bytes": 0
+      }
+    },
+    "commands": [
+      [
+        "/usr/bin/clang",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Wconversion",
+        "-Werror",
+        "-fsanitize=address,undefined",
+        "-Iinterfaces/generated",
+        "-Isrc/diagnostics/r0f",
+        "src/diagnostics/r0f/resume_model.c",
+        "tools/diagnostics/r0f_resume_host_test.c",
+        "-o",
+        "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/host-test"
+      ],
+      [
+        "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/host-test"
+      ],
+      [
+        "/Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/runtime/llvm-mos/bin/mos-mega65-clang",
+        "-mcpu=mos45gs02",
+        "-mlto-zp=0",
+        "-Oz",
+        "-fno-inline-functions",
+        "-Wall",
+        "-Wextra",
+        "-Wconversion",
+        "-Werror",
+        "-Iinterfaces/generated",
+        "-Isrc/diagnostics/r0f",
+        "src/diagnostics/r0f/resume.c",
+        "src/diagnostics/r0f/resume_model.c",
+        "src/diagnostics/r0f/combined_model.c",
+        "src/diagnostics/r0f/combined_platform.c",
+        "src/platform/r0f/resume_45gs02.s",
+        "src/platform/r0f/combined_45gs02.s",
+        "src/platform/r0f/qualification_45gs02.s",
+        "src/platform/r0a_platform_45gs02.s",
+        "-Wl,-T,src/platform/r0f/startup.ld",
+        "-Wl,-Map,/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.map",
+        "-o",
+        "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg"
+      ],
+      [
+        "/Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/runtime/llvm-mos/bin/llvm-nm",
+        "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.elf"
+      ],
+      [
+        "/Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/runtime/llvm-mos/bin/llvm-objdump",
+        "-d",
+        "--print-imm-hex",
+        "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg.elf"
+      ],
+      [
+        "/Users/slice/Documents/Codex/f65-megawing/toolchain/runtime/jdk-full/jdk-21.0.12+8/Contents/Home/bin/javac",
+        "-Xlint:all",
+        "-Werror",
+        "-d",
+        "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/classes",
+        "tools/generators/src/main/java/f65/tools/R0FResumeOracle.java"
+      ],
+      [
+        "/Users/slice/Documents/Codex/f65-megawing/toolchain/runtime/jdk-full/jdk-21.0.12+8/Contents/Home/bin/java",
+        "-cp",
+        "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/classes",
+        "f65.tools.R0FResumeOracle",
+        "--model"
+      ],
+      [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ]
+    ],
+    "sourceCommit": "82df3dbffdfc562c496a8fffe768434d169d7698",
+    "sourceState": "dirty tree; per-input hashes authoritative",
+    "reserveBytes": 0,
+    "physical": "NOT RUN",
+    "fullAcceptance": false
+  },
+  "commands": [
+    [
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/vice/VICE.app/Contents/Resources/bin/petcat",
+      "-w65",
+      "-o",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/xemu-0-1789768137122746000/AUTOBOOT.C65",
+      "--",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/xemu-0-1789768137122746000/autoboot.bas"
+    ],
+    [
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/vice-clean/bin/c1541",
+      "-format",
+      "RH001 XEMU,65",
+      "d81",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/xemu-0-1789768137122746000/RH001IO.D81",
+      "-write",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/xemu-0-1789768137122746000/AUTOBOOT.C65",
+      "autoboot.c65",
+      "-write",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/R0F-RESUME.prg",
+      "rh001",
+      "-write",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/xemu-0-1789768137122746000/TOKEN.prg",
+      "token",
+      "-list"
+    ],
+    [
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/vice-clean/bin/c1541",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/xemu-0-1789768137122746000/RH001IO.D81",
+      "-read",
+      "autoboot.c65",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/xemu-0-1789768137122746000/extracted-1789768137136268000/autoboot.c65"
+    ],
+    [
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/vice-clean/bin/c1541",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/xemu-0-1789768137122746000/RH001IO.D81",
+      "-read",
+      "rh001",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/xemu-0-1789768137122746000/extracted-1789768137136268000/rh001"
+    ],
+    [
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/vice-clean/bin/c1541",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/xemu-0-1789768137122746000/RH001IO.D81",
+      "-read",
+      "token",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/xemu-0-1789768137122746000/extracted-1789768137136268000/token"
+    ],
+    [
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/vice-clean/bin/c1541",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/xemu-0-1789768137122746000/RH001IO.D81",
+      "-list"
+    ],
+    [
+      "/bin/cp",
+      "-c",
+      "/Users/slice/Library/Application Support/xemu-lgb/mega65/mega65.img",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/xemu-0-1789768137122746000/disposable-sd.img"
+    ],
+    [
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/vice-clean/bin/c1541",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/xemu-0-1789768137122746000/RH001IO.D81",
+      "-read",
+      "autoboot.c65",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/xemu-0-1789768137122746000/extracted-1789768217318852000/autoboot.c65"
+    ],
+    [
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/vice-clean/bin/c1541",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/xemu-0-1789768137122746000/RH001IO.D81",
+      "-read",
+      "rh001",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/xemu-0-1789768137122746000/extracted-1789768217318852000/rh001"
+    ],
+    [
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/vice-clean/bin/c1541",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/xemu-0-1789768137122746000/RH001IO.D81",
+      "-read",
+      "token",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/xemu-0-1789768137122746000/extracted-1789768217318852000/token"
+    ],
+    [
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/vice-clean/bin/c1541",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/xemu-0-1789768137122746000/RH001IO.D81",
+      "-read",
+      "rhstate",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/xemu-0-1789768137122746000/extracted-1789768217318852000/rhstate"
+    ],
+    [
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/vice-clean/bin/c1541",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/xemu-0-1789768137122746000/RH001IO.D81",
+      "-list"
+    ],
+    [
+      "/Users/slice/Documents/Codex/f65-megawing/toolchain/runtime/jdk-full/jdk-21.0.12+8/Contents/Home/bin/java",
+      "-cp",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/classes",
+      "f65.tools.R0FResumeOracle",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/xemu-0-1789768137122746000/result.bin",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/xemu-0-1789768137122746000/extracted-1789768217318852000/rhstate"
+    ],
+    [
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/toolchain/xemu/xmega65",
+      "-skipconfigfile",
+      "-headless",
+      "-fastboot",
+      "-videostd",
+      "0",
+      "-fastclock",
+      "40.5",
+      "-rom",
+      "/Users/slice/Documents/Codex/f65-megawing/MEGA65.ROM",
+      "-sdimg",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/xemu-0-1789768137122746000/disposable-sd.img",
+      "-8",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/xemu-0-1789768137122746000/RH001IO.D81",
+      "-autoload",
+      "-dumpscreen",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/xemu-0-1789768137122746000/screen.txt",
+      "-dumpmem",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/xemu-0-1789768137122746000/memory.bin",
+      "-screenshot",
+      "/Users/slice/Documents/ChatGPT/F65 Megawing/build/r0f/resume/xemu-0-1789768137122746000/screen.png"
+    ]
+  ],
+  "fullAcceptance": false,
+  "physical": "NOT RUN",
+  "hardwareRelease": false
+}

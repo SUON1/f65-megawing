@@ -12,6 +12,9 @@ These instructions apply to every task in this repository.
 
 ## Authority and scope
 
+- Read the approved Read-First supplement and current approval record before applying candidate Architecture 1.5.1, Gameplay 0.2, or Engine 0.2. `AD-001` authorizes bounded R0 proof development; it does not pass a gate or approve a candidate parent document.
+- C compiled with LLVM-MOS is the primary target language. Handwritten 45GS02 is limited to documented platform wrappers, interrupt/startup paths, or a measured and admitted compiler gap. Target changes must compile/link, generate maps/symbols/listings or disassembly, and have Xemu plus physical-evidence obligations recorded.
+
 - Never treat Draft, Proposed, `TBD`, `TARGET`, `R0-GATED`, recommendation, or planning-assumption text as approved shipping behavior.
 - Never modify architecture, CoreRuntime, public ABI, memory ownership, tick order, pool capacities, reserves, or another module's private state merely to simplify implementation.
 - Never modify preserved source specifications unless the user explicitly tasks that source-document change.
@@ -23,6 +26,11 @@ These instructions apply to every task in this repository.
 ## Verification and handoff
 
 - Assemble the affected target and run the applicable host, Xemu, and physical-target tests after changes. If a required tier is unavailable, report that fact and do not claim it passed.
+- R0-A source must expose observable proof results and machine-readable evidence, preserve canonical MAP/base-page/IRQ state on every public exit, and account for C runtime, wrappers, code, data, stack, DMA, and reserve use in the generated ledgers.
 - Run all relevant validation before committing and list the exact commands and results in the handoff.
 - Update the memory map or append a decision-log entry whenever a shared memory, ABI, ownership, timing, IRQ, DMA, serialization, or lifecycle contract changes.
 - Include inspected files/contracts, changed paths, register/memory/timing impact, generated-artifact status, tests, evidence identity, and unresolved risks in every coding-task handoff.
+
+## Mandatory D81 loadability gate
+
+Before creating, modifying, copying, renaming, packaging, mounting, testing, or releasing any D81, read and obey the repository-root `00_D81_LOADABILITY_GATE.md`. A D81 must be freshly formatted and populated in one pinned c1541 construction session, then pass the gate's host structural/content checks before Xemu. A direct SD-card copy must additionally have a matching hash, exactly one independently verified FAT32 physical extent, and a successful safe eject before physical chooser testing; `cp`/`sync`/`shasum` alone is forbidden. Error code FF at the MEGA65 chooser is a hard carrier failure: retire that identity and diagnose D81 structure, SD allocation, and platform identity before issuing a replacement; never patch or append to the failed image. After a second chooser FF in one carrier family, freeze new carrier identities and compare every failed image to a retained physical-pass control with `tools/diagnostics/d81_foundation_compare.py` before altering any construction or delivery variable.

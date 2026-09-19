@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "task_id": "F65-R0-C",
+  "authorized_prefixes": ["docs/agents/R0-C_DEVELOPMENT_AGENT.md", "docs/plans/R0-C_EXEC_PLAN.md", "docs/plans/r0-c-*.json", "docs/testing/R0-C_*.md", "docs/reports/R0-C_HANDOFF.md", "docs/evidence/r0c/", "interfaces/r0c*", "interfaces/generated/r0c*", "memory/r0c-memory-ledger.json", "missions/fixtures/r0c/", "assets/fixtures/r0c/", "src/r0c/", "src/resources/r0c/", "src/platform/r0c/", "src/diagnostics/r0c/", "tests/fixtures/r0c/", "tests/host/r0c/", "tests/target/r0c/", "tools/assets/", "tools/mission/", "tools/build/", "tools/diagnostics/", "tools/generators/", "tools/schemas/", "Makefile", "README.md", "F65_OFFICIAL_RECORD.md"],
+  "prohibited_prefixes": ["spec/", "src/flight/", "src/controls/", "src/environment/", "src/sensors/", "src/weapons/", "src/ai/", "src/contact/", "src/mission/", "docs/evidence/r0a/", "docs/evidence/r0b/", "src/r0a/", "src/r0b/"],
+  "forbidden_change_classes": ["production memory ownership", "protected reserve consumption", "100 Hz tick order", "public production ABI", "gameplay", "production candidate selection"],
+  "state_owners": {"package_build": "host package builder", "capacity": "host capacity compiler", "residency": "R0-C ResourceManager proof", "storage": "R0-C storage proof", "presentation": "R0-C diagnostic harness"}
+}

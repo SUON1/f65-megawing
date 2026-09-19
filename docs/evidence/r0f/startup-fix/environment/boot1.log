@@ -1,0 +1,6 @@
+ERROR: Cannot save config template
+Cannot create file: @mega65-template.cfg.TMP
+Operation not permitted
+2026-09-17 08:08:49.598 xmega65[4685:108092] Failure on line 688 in function id scheduleApplicationNotification(LSNotificationCode, NSWorkspaceNotificationCenter *): noErr == _LSModifyNotification(notificationID, 1, &code, 0, NULL, NULL, NULL)
+2026-09-17 08:08:49.863 xmega65[4685:108138] Connection Invalid error for service com.apple.hiservices-xpcservice.
+2026-09-17 08:08:49.863 xmega65[4685:108092] Error received in message reply handler: Connection invalid
