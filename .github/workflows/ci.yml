@@ -1,0 +1,163 @@
+name: Static hygiene
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+concurrency:
+  group: hygiene-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+# Evidence boundary: this workflow establishes DOCUMENTATION / STATIC CI only.
+# It does not establish host-oracle, target, generated-contract, Xemu, D81,
+# SD-transfer, physical-MEGA65, human-acceptance, R0-F, or measured-limit evidence.
+jobs:
+  hygiene:
+    name: hygiene
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Changed-range whitespace
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          PR_BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          PR_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          PUSH_BEFORE_SHA: ${{ github.event.before }}
+          PUSH_AFTER_SHA: ${{ github.event.after }}
+        run: |
+          set -euo pipefail
+
+          if [[ "$EVENT_NAME" == "pull_request" ]]; then
+            git cat-file -e "${PR_BASE_SHA}^{commit}"
+            git cat-file -e "${PR_HEAD_SHA}^{commit}"
+            git diff --check "${PR_BASE_SHA}...${PR_HEAD_SHA}"
+          elif [[ "$EVENT_NAME" == "push" ]]; then
+            git cat-file -e "${PUSH_AFTER_SHA}^{commit}"
+
+            if [[ -z "$PUSH_BEFORE_SHA" || "$PUSH_BEFORE_SHA" =~ ^0+$ ]]; then
+              empty_tree="$(git hash-object -t tree /dev/null)"
+              git diff --check "$empty_tree" "$PUSH_AFTER_SHA"
+            else
+              git cat-file -e "${PUSH_BEFORE_SHA}^{commit}"
+              git diff --check "$PUSH_BEFORE_SHA" "$PUSH_AFTER_SHA"
+            fi
+          else
+            echo "Unsupported event: $EVENT_NAME" >&2
+            exit 1
+          fi
+
+      - name: Tracked artifact guard
+        run: |
+          python3 - <<'PY'
+          from pathlib import PurePosixPath
+          import subprocess
+
+          blocked_prefixes = (
+              "toolchain/runtime/",
+              "toolchain/downloads/",
+              "toolchain/vice/",
+              "toolchain/xemu/",
+          )
+          blocked_suffixes = (".rom", ".d81", ".xemu-state")
+          allowed_media = {
+              # Retained R0-F evidence predating this guard; do not broaden.
+              "docs/evidence/r0f/combined/F65BLK02.D81",
+          }
+
+          output = subprocess.check_output(
+              ["git", "ls-files", "-z"],
+              text=False,
+          )
+          tracked = [
+              path.decode("utf-8", errors="surrogateescape")
+              for path in output.split(b"\0")
+              if path
+          ]
+
+          rejected = []
+          for path in tracked:
+              if path.startswith(blocked_prefixes):
+                  rejected.append(path)
+                  continue
+
+              name = PurePosixPath(path).name
+              if (
+                  path not in allowed_media
+                  and (
+                      name == "MEGA65.ROM"
+                      or name.lower().endswith(blocked_suffixes)
+                  )
+              ):
+                  rejected.append(path)
+
+          if rejected:
+              print("Forbidden private/local/generated tracked artifacts:")
+              for path in rejected:
+                  print(f"  {path}")
+              raise SystemExit(1)
+          PY
+
+      - name: JSON syntax
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          import subprocess
+
+          output = subprocess.check_output(
+              ["git", "ls-files", "-z", "--", "*.json"],
+              text=False,
+          )
+          paths = [
+              path.decode("utf-8", errors="surrogateescape")
+              for path in output.split(b"\0")
+              if path
+          ]
+
+          for path in paths:
+              with Path(path).open("r", encoding="utf-8") as source:
+                  json.load(source)
+          PY
+
+      - name: Python syntax
+        run: |
+          python3 - <<'PY'
+          import ast
+          import subprocess
+          import tokenize
+
+          output = subprocess.check_output(
+              ["git", "ls-files", "-z", "--", "*.py"],
+              text=False,
+          )
+          paths = [
+              path.decode("utf-8", errors="surrogateescape")
+              for path in output.split(b"\0")
+              if path
+          ]
+
+          for path in paths:
+              with tokenize.open(path) as source:
+                  ast.parse(source.read(), filename=path)
+          PY
+
+      - name: Shell syntax
+        run: |
+          set -euo pipefail
+
+          while IFS= read -r -d '' path; do
+            sh -n "$path"
+          done < <(git ls-files -z -- '*.sh')

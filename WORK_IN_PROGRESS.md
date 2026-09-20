@@ -14,7 +14,6 @@ Completed work leaves this file. Durable project changes belong in
 ## Current status
 
 - **Status:** `NONE`
-- No substantive implementation or repository-reorganization task is currently active.
-- Phase 6B development-control installation is complete.
-- R0-F remains preserved and is the next durable technical sequence identified by [CURRENT_STATE.md](CURRENT_STATE.md), but this documentation closeout does not activate it.
-- Begin a new task only after an approved Build Intent and appropriate task branch are established.
+- No substantive task is currently active.
+- Begin a new task only after an approved Build Intent and focused branch are
+  established.
