@@ -12,33 +12,28 @@ This file is the primary status and configuration index for the project. It does
 | Host tooling and reference models | Java |
 | Repository | `f65-megawing` |
 | Branch | `main` |
-| GitHub remote | `https://github.com/SUON1/f65-megawing.git` (private) |
+| GitHub remote | `https://github.com/SUON1/f65-megawing.git` (public) |
 
-## 2. Specification authority
+## 2. Current specification authority
 
-The exact machine-readable record is [`spec/manifests/spec-corpus.json`](spec/manifests/spec-corpus.json).
+The exact machine-readable record is [`spec/manifests/spec-corpus.json`](spec/manifests/spec-corpus.json). It separates the current design family from candidate, provenance, supporting-reference, and project-control records.
 
-| Exact filename | Version | Declared status | SHA-256 | Authority and current state | Repository location |
-|---|---|---|---|---|---|
-| `F-65_Technical_Alignment_and_Read_First_Supplement_v1.0.md` | 1.0 | APPROVED — FIRST-READ AUTHORITY | `f957b97e146fc4d35d094072eee52d2cc91185f76c7cef232efe898ce7628cc7` | Approved orientation and configuration control; does not approve parent candidates | `spec/alignment/F-65_Technical_Alignment_and_Read_First_Supplement_v1.0.md` |
-| `F-65_Architecture_Decision_AD-001_R0_Program_Development_Authorization.md` | 1.0 | APPROVED — R0-A–F DEVELOPMENT AUTHORITY | `ce3cb019082081bb7908146de0cc689a74abca517bf32520f5bd9fdf30e375dd` | Development authorization only; it does not pass any R0 gate | `docs/decisions/F-65_Architecture_Decision_AD-001_R0_Program_Development_Authorization.md` |
-| `F-65_Specification_Approval_Record_2026-08-20_R0_Development.md` | 1.0 | APPROVED — ACTIVE | `9fc23bb8555bbd2b84c8f925e909bc5245448ee87db9fb1fb596e8e67c288d8e` | Records the human approval scope and exclusions for Read-First v1.0 and AD-001 | `docs/approvals/F-65_Specification_Approval_Record_2026-08-20_R0_Development.md` |
-| `F-65 Megawing Revision 1.5.1 — Architecture Invariants.md` | 1.5.1 | Architecture-freeze candidate | `46ba078cb397d257de6aeee66cff510c5e3243bca97767db1738d86d9ebd1fec` | Highest current architecture candidate; Revision 1.4.1 remains the last frozen baseline | `spec/architecture/F-65 Megawing Revision 1.5.1 — Architecture Invariants.md` |
-| `F-65 Megawing Revision 1.4.1.md` | 1.4.1 | Frozen architecture baseline | `c54f77c817b8263f8d03de3ed442c115ff06b0b622c1f14be122df8963079922` | Last frozen architecture baseline retained for context and preserved contracts | `spec/architecture/F-65 Megawing Revision 1.4.1.md` |
-| `F65_Gameplay_and_Simulation_Requirements_Supplement_Draft_0.2.md` | Draft 0.2 | Freeze candidate | `5db0344f8e7fd66143874310c3794a64391d4767229a90f5caee5e5e287d84e4` | Candidate player-facing requirements; not an approved production baseline | `spec/gameplay/F65_Gameplay_and_Simulation_Requirements_Supplement_Draft_0.2.md` |
-| `F-65 Engine Runtime and Toolchain Design Supplement Draft 0.2.md` | Draft 0.2 | Architecture-review candidate | `dfd4bf0b557b4dae6382de502db42e4b2d269ceaf44bd67440bb6d047341454a` | Candidate implementation contract subordinate to Architecture and Gameplay; not approved | `spec/engine/F-65 Engine Runtime and Toolchain Design Supplement Draft 0.2.md` |
-| `F65_Engine_Runtime_and_Toolchain_Design_Supplement_Draft_0.1.md` | Draft 0.1 | Historical architecture-review candidate | `63f0d2e136507485296bd3424e83e9db796b2bf612d81f3fe5ac2744297d27aa` | Preserved historical provenance; superseded as the current candidate by Engine 0.2 | `spec/engine/F65_Engine_Runtime_and_Toolchain_Design_Supplement_Draft_0.1.md` |
-| `F-65_Technical_Alignment_and_Corrections_Supplement_v0.2.md` | 0.2 | Historical/superseded draft | `fd8188f3787d902466a3d07b13c46e88f9afe32d7d5839945c4bc33143e0249b` | Preserved historical orientation/audit; Read-First v1.0 is the current approved operating alignment | `spec/alignment/F-65_Technical_Alignment_and_Corrections_Supplement_v0.2.md` |
+| Current order | Document | Status | Repository location |
+|---|---|---|---|
+| 1 | F65 Main Concept v1.6 | FINAL - HUMAN-REVIEWED; active master product and architecture authority | `spec/core/F65_Main_Concept_v1.6_FINAL_HUMAN_REVIEWED.md` |
+| 2 | F65 Gameplay and Simulation Supplement v1 | FINAL - HUMAN-REVIEWED; active player-facing authority | `spec/core/F65_Gameplay_and_Simulation_Supplement_v1_FINAL_HUMAN_REVIEWED.md` |
+| 3 | F65 65Aero Engine Runtime and Technical Supplement v1 | APPROVED CANDIDATE DESIGN - NOT FINAL; generated freeze-package closure remains required | `spec/core/F65_65Aero_Engine_Runtime_and_Technical_Supplement_v1_HUMAN_APPROVED_CANDIDATE_DESIGN.pdf` |
+| 4 | Flight Physics and Simulation Engineering White Paper v3.3 | FROZEN current detailed physics baseline; retained exactly as supplied, with modernization and re-rendering deferred | `spec/subsystems/MEGA65_Flight_Simulation_Physics_6DOF_Atmosphere_White_Paper.pdf` |
+| 5 | Graphics Engineering White Paper v2.1 | Current detailed graphics baseline; retained exactly as supplied | `spec/subsystems/F-65_Megawing_Graphics_White_Paper_v2.1.pdf` |
+| 6 | Audio, Sound Effects and Music Engineering White Paper v1.0 | FINAL - HUMAN-REVIEWED detailed audio baseline | `spec/subsystems/F-65_Megawing_Audio_Sound_Effects_and_Music_Engineering_White_Paper_v1.0_FINAL.pdf` |
+| 7 | Radar, Sensors and Track Engineering White Paper v1.0 | Current publication artifact for the human-reviewed SensorAndTrackEngine Phase-3 v1.0 baseline | `spec/subsystems/F-65_Megawing_SensorAndTrackEngine_Engineering_Model_Phase-3_v1.0.pdf` |
+| 8 | AI Behavior and Decision Architecture White Paper v1.0 | Human-reviewed detailed AI engineering baseline | `spec/subsystems/F-65_Megawing_AI_Behavior_and_Decision_Architecture_White_Paper_v1.0.pdf` |
 
-Current precedence is:
+Main Concept v1.6 controls product and architecture. Gameplay v1 controls player-visible behavior within Main Concept. Runtime v1 controls implementation architecture only within those controlling documents and remains a candidate, not FINAL. The white papers provide detailed subsystem engineering depth and do not independently override the core set.
 
-1. Approved Read-First v1.0 governs orientation and configuration control.
-2. Approved AD-001 governs whether bounded R0 proof work may be developed now.
-3. Architecture 1.5.1 remains the highest architecture candidate; Revision 1.4.1 remains the last frozen baseline.
-4. Gameplay 0.2 remains a freeze candidate and Engine 0.2 remains an architecture-review candidate; neither is silently approved.
-5. Engine 0.1 and Alignment 0.2 remain preserved historical provenance.
+Read-First / Technical Alignment, Architecture 1.5.1 and earlier, Gameplay Draft 0.2, and Engine Runtime Drafts 0.2 and 0.1 remain preserved provenance at their existing paths. They are not current authority. Existing R0 approvals, decisions, evidence, handoffs, and historical change-log entries retain their original historical meaning.
 
-Revision 1.4 is referenced as superseded and retained by Revision 1.4.1 but was not supplied. Its filename, contents, and hash are unknown. Nothing in this repository resolves or reconstructs it.
+The current GitHub repository visibility is public. The historical bootstrap entry below records the earlier private-repository state and is retained as history; repository-visibility control remains a separate deliberate housekeeping concern.
 
 ## 3. Current engineering state
 

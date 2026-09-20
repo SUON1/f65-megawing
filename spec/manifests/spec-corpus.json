@@ -1,137 +1,249 @@
 {
-  "schema_version": 2,
-  "manifest_date": "2026-08-20",
+  "schema_version": 3,
+  "manifest_date": "2026-09-19",
   "project": "F-65 Megawing",
-  "authority_note": "This manifest records exact document identities, statuses, and approved effects. Inclusion never approves a candidate, passes a gate, freezes a measured value, or authorizes production gameplay.",
-  "authority_order": [
-    "F-65_Technical_Alignment_and_Read_First_Supplement_v1.0.md",
-    "F-65_Architecture_Decision_AD-001_R0_Program_Development_Authorization.md",
-    "F-65_Specification_Approval_Record_2026-08-20_R0_Development.md",
-    "F-65 Megawing Revision 1.5.1 — Architecture Invariants.md",
-    "F65_Gameplay_and_Simulation_Requirements_Supplement_Draft_0.2.md",
-    "F-65 Engine Runtime and Toolchain Design Supplement Draft 0.2.md",
-    "F-65 Megawing Revision 1.4.1.md",
-    "MEGA65_Flight_Simulation_3D_Graphics_White_Paper.pdf"
+  "authority_note": "This manifest records exact document identities, lifecycle classifications, statuses, and authority roles. Inclusion never approves a candidate, passes a gate, freezes a measured value, or authorizes production gameplay.",
+  "lifecycle_classes": [
+    "ACTIVE",
+    "CANDIDATE",
+    "PROVENANCE",
+    "SUPPORTING_REFERENCE",
+    "PROJECT_CONTROL"
   ],
-  "approval_effect": {
-    "r0_development": "GO for bounded R0-A–F proof development",
-    "r0_gate_status": "NOT PASSED",
-    "parent_candidate_status": "Architecture 1.5.1, Gameplay 0.2, and Engine 0.2 retain their candidate status",
-    "human_decisions_open": ["DEC-002", "DEC-003"],
-    "prohibited": ["Phase 1", "production gameplay", "measured-limit selection", "physical-evidence waiver"]
-  },
+  "current_authority_order": [
+    "main-concept-v1.6",
+    "gameplay-v1",
+    "runtime-v1-candidate",
+    "physics-v3.3",
+    "graphics-v2.1",
+    "audio-v1.0",
+    "radar-sensors-track-v1.0",
+    "ai-behavior-decision-v1.0"
+  ],
   "documents": [
     {
+      "document_key": "main-concept-v1.6",
+      "filename": "F65_Main_Concept_v1.6_FINAL_HUMAN_REVIEWED.md",
+      "relative_path": "spec/core/F65_Main_Concept_v1.6_FINAL_HUMAN_REVIEWED.md",
+      "version": "1.6",
+      "declared_status": "FINAL - HUMAN-REVIEWED",
+      "lifecycle_classification": "ACTIVE",
+      "sha256": "e7d8ed40ce630d82e707e2a9c7f29995fac6f4281849c2c7ef5261d420c2c425",
+      "authority_role": "active master product and architecture authority",
+      "present": true
+    },
+    {
+      "document_key": "gameplay-v1",
+      "filename": "F65_Gameplay_and_Simulation_Supplement_v1_FINAL_HUMAN_REVIEWED.md",
+      "relative_path": "spec/core/F65_Gameplay_and_Simulation_Supplement_v1_FINAL_HUMAN_REVIEWED.md",
+      "version": "1.0",
+      "declared_status": "FINAL - HUMAN-REVIEWED",
+      "lifecycle_classification": "ACTIVE",
+      "sha256": "b675daa213c02e4b642fd8f8dd439c74f72808488c548a6af14fc8400487645a",
+      "authority_role": "active player-facing authority subordinate to Main Concept v1.6",
+      "present": true
+    },
+    {
+      "document_key": "runtime-v1-candidate",
+      "filename": "F65_65Aero_Engine_Runtime_and_Technical_Supplement_v1_HUMAN_APPROVED_CANDIDATE_DESIGN.pdf",
+      "relative_path": "spec/core/F65_65Aero_Engine_Runtime_and_Technical_Supplement_v1_HUMAN_APPROVED_CANDIDATE_DESIGN.pdf",
+      "version": "1.0",
+      "declared_status": "APPROVED CANDIDATE DESIGN - NOT FINAL",
+      "lifecycle_classification": "CANDIDATE",
+      "sha256": "bcb50a96ca6aadfd45637c48c4a80a10d8ce61b1e2461ba03448b4f06497d260",
+      "authority_role": "current core implementation-architecture candidate subordinate to Main Concept v1.6 and Gameplay v1",
+      "present": true,
+      "closure_required": "Generated interface, ABI, memory-ledger, test, and evidence freeze-package closure is required before FINAL status."
+    },
+    {
+      "document_key": "physics-v3.3",
+      "filename": "MEGA65_Flight_Simulation_Physics_6DOF_Atmosphere_White_Paper.pdf",
+      "relative_path": "spec/subsystems/MEGA65_Flight_Simulation_Physics_6DOF_Atmosphere_White_Paper.pdf",
+      "version": "3.3",
+      "declared_status": "FROZEN - Phase 1 consumes interface shapes; Phase 2 implements this model",
+      "lifecycle_classification": "ACTIVE",
+      "sha256": "2da11ee4f6d0a2c8b5e45ddde896161b94b68ed1e5e8d19bad2c37a0d4bdb9b5",
+      "authority_role": "current detailed flight physics and simulation engineering baseline",
+      "present": true,
+      "preservation_note": "Retained exactly as supplied. Modernization or re-rendering is deferred until after repository reorganization and the new development system are complete."
+    },
+    {
+      "document_key": "graphics-v2.1",
+      "filename": "F-65_Megawing_Graphics_White_Paper_v2.1.pdf",
+      "relative_path": "spec/subsystems/F-65_Megawing_Graphics_White_Paper_v2.1.pdf",
+      "version": "2.1",
+      "declared_status": "Architecture-review candidate under F65-GAD-001",
+      "lifecycle_classification": "ACTIVE",
+      "sha256": "b94b3db857b0b7536aad23dcdc4918625fc7da27584df6886da58391b75fdb51",
+      "authority_role": "current detailed graphics engineering baseline subordinate to the core specification set",
+      "present": true,
+      "preservation_note": "Retained exactly as supplied; legacy parent references remain historical document content."
+    },
+    {
+      "document_key": "audio-v1.0",
+      "filename": "F-65_Megawing_Audio_Sound_Effects_and_Music_Engineering_White_Paper_v1.0_FINAL.pdf",
+      "relative_path": "spec/subsystems/F-65_Megawing_Audio_Sound_Effects_and_Music_Engineering_White_Paper_v1.0_FINAL.pdf",
+      "version": "1.0",
+      "declared_status": "FINAL - HUMAN-REVIEWED v1.0",
+      "lifecycle_classification": "ACTIVE",
+      "sha256": "2ae025b36bdbd92b5a0ac51bcead40baeec96d23765e1519fa5d672915be35ff",
+      "authority_role": "current detailed audio engineering baseline subordinate to the core specification set",
+      "present": true
+    },
+    {
+      "document_key": "radar-sensors-track-v1.0",
+      "filename": "F-65_Megawing_SensorAndTrackEngine_Engineering_Model_Phase-3_v1.0.pdf",
+      "relative_path": "spec/subsystems/F-65_Megawing_SensorAndTrackEngine_Engineering_Model_Phase-3_v1.0.pdf",
+      "version": "1.0",
+      "declared_status": "Human-reviewed engineering baseline / approved rewrite input",
+      "lifecycle_classification": "ACTIVE",
+      "sha256": "cd9369116018b81d622360d7868e534c6e31afc98fc6378e0ed8d7450d617b25",
+      "authority_role": "current publication artifact for the Radar, Sensors and Track Engineering White Paper v1.0 baseline subordinate to the core specification set",
+      "present": true,
+      "preservation_note": "Retained exactly as supplied; legacy parent references remain historical document content."
+    },
+    {
+      "document_key": "ai-behavior-decision-v1.0",
+      "filename": "F-65_Megawing_AI_Behavior_and_Decision_Architecture_White_Paper_v1.0.pdf",
+      "relative_path": "spec/subsystems/F-65_Megawing_AI_Behavior_and_Decision_Architecture_White_Paper_v1.0.pdf",
+      "version": "1.0",
+      "declared_status": "Human-Reviewed Engineering Baseline",
+      "lifecycle_classification": "ACTIVE",
+      "sha256": "d11877582c44aed5088354e871bc7825d4dd46fb406e55dbecf84d7a01a85d20",
+      "authority_role": "current detailed AI behavior and decision engineering baseline subordinate to the core specification set",
+      "present": true
+    },
+    {
+      "document_key": "product-story-paper",
+      "filename": "F65_Megawing_Product_Story_Paper.docx",
+      "relative_path": "spec/reference/F65_Megawing_Product_Story_Paper.docx",
+      "version": null,
+      "declared_status": "Supporting reference",
+      "lifecycle_classification": "SUPPORTING_REFERENCE",
+      "sha256": "e15aa27f2e77e2a6c21eec450c10fff570174510bbfe1777f6d1b75a62ca9511",
+      "authority_role": "product-origin framing reference; not an independent design authority",
+      "present": true
+    },
+    {
+      "document_key": "read-first-v1.0",
       "filename": "F-65_Technical_Alignment_and_Read_First_Supplement_v1.0.md",
       "relative_path": "spec/alignment/F-65_Technical_Alignment_and_Read_First_Supplement_v1.0.md",
       "version": "1.0",
-      "declared_status": "APPROVED — FIRST-READ AUTHORITY",
+      "declared_status": "APPROVED - FIRST-READ AUTHORITY",
+      "lifecycle_classification": "PROVENANCE",
       "sha256": "f957b97e146fc4d35d094072eee52d2cc91185f76c7cef232efe898ce7628cc7",
-      "approved_draft_sha256": "2eb72648e7e04644dd09115895020f358e7173994fb42df78209850193956b3f",
-      "authority_role": "approved orientation, configuration control, and escalation authority",
-      "present": true,
-      "approval_effect": "first-read authority only; does not promote parent candidates"
+      "authority_role": "retained historical orientation and configuration-control provenance",
+      "present": true
     },
     {
-      "filename": "F-65_Architecture_Decision_AD-001_R0_Program_Development_Authorization.md",
-      "relative_path": "docs/decisions/F-65_Architecture_Decision_AD-001_R0_Program_Development_Authorization.md",
-      "version": "1.0",
-      "declared_status": "APPROVED — R0-A–F DEVELOPMENT AUTHORITY",
-      "sha256": "ce3cb019082081bb7908146de0cc689a74abca517bf32520f5bd9fdf30e375dd",
-      "approved_draft_sha256": "a93726389cc4b7d0cf2b0c4e87e21237e165f377a542bcadafc564f1896f8385",
-      "authority_role": "development authorization",
-      "present": true,
-      "approval_effect": "GO for bounded R0 proof development; not gate passage or parent approval"
-    },
-    {
-      "filename": "F-65_Specification_Approval_Record_2026-08-20_R0_Development.md",
-      "relative_path": "docs/approvals/F-65_Specification_Approval_Record_2026-08-20_R0_Development.md",
-      "version": "1.0",
-      "declared_status": "APPROVED — ACTIVE",
-      "sha256": "9fc23bb8555bbd2b84c8f925e909bc5245448ee87db9fb1fb596e8e67c288d8e",
-      "authority_role": "human approval record",
-      "present": true,
-      "approval_effect": "records the exact approval scope, exclusions, and publication identities"
-    },
-    {
+      "document_key": "architecture-v1.5.1",
       "filename": "F-65 Megawing Revision 1.5.1 — Architecture Invariants.md",
       "relative_path": "spec/architecture/F-65 Megawing Revision 1.5.1 — Architecture Invariants.md",
       "version": "1.5.1",
       "declared_status": "Architecture-freeze candidate",
+      "lifecycle_classification": "PROVENANCE",
       "sha256": "46ba078cb397d257de6aeee66cff510c5e3243bca97767db1738d86d9ebd1fec",
-      "authority_role": "highest current architecture candidate for bounded proof work",
-      "present": true,
-      "approval_effect": "candidate only; Revision 1.4.1 remains the last frozen baseline"
+      "authority_role": "retained historical architecture provenance",
+      "present": true
     },
     {
-      "filename": "F65_Gameplay_and_Simulation_Requirements_Supplement_Draft_0.2.md",
-      "relative_path": "spec/gameplay/F65_Gameplay_and_Simulation_Requirements_Supplement_Draft_0.2.md",
-      "version": "Draft 0.2",
-      "declared_status": "Freeze candidate",
-      "sha256": "5db0344f8e7fd66143874310c3794a64391d4767229a90f5caee5e5e287d84e4",
-      "authority_role": "candidate gameplay companion",
-      "present": true,
-      "approval_effect": "not approved; only the R0-A capacity-analysis fixture is used and remains non-shipping"
-    },
-    {
-      "filename": "F-65 Engine Runtime and Toolchain Design Supplement Draft 0.2.md",
-      "relative_path": "spec/engine/F-65 Engine Runtime and Toolchain Design Supplement Draft 0.2.md",
-      "version": "Draft 0.2",
-      "declared_status": "Architecture-review candidate",
-      "sha256": "dfd4bf0b557b4dae6382de502db42e4b2d269ceaf44bd67440bb6d047341454a",
-      "authority_role": "candidate implementation contract subordinate to architecture",
-      "present": true,
-      "approval_effect": "candidate guidance for bounded R0-A work; not independently binding"
-    },
-    {
+      "document_key": "architecture-v1.4.1",
       "filename": "F-65 Megawing Revision 1.4.1.md",
       "relative_path": "spec/architecture/F-65 Megawing Revision 1.4.1.md",
       "version": "1.4.1",
       "declared_status": "Frozen architecture baseline",
+      "lifecycle_classification": "PROVENANCE",
       "sha256": "c54f77c817b8263f8d03de3ed442c115ff06b0b622c1f14be122df8963079922",
-      "authority_role": "last frozen architecture baseline",
-      "present": true,
-      "approval_effect": "retained baseline context and frozen fallback"
+      "authority_role": "retained historical architecture provenance",
+      "present": true
     },
     {
+      "document_key": "gameplay-draft-v0.2",
+      "filename": "F65_Gameplay_and_Simulation_Requirements_Supplement_Draft_0.2.md",
+      "relative_path": "spec/gameplay/F65_Gameplay_and_Simulation_Requirements_Supplement_Draft_0.2.md",
+      "version": "Draft 0.2",
+      "declared_status": "Freeze candidate",
+      "lifecycle_classification": "PROVENANCE",
+      "sha256": "5db0344f8e7fd66143874310c3794a64391d4767229a90f5caee5e5e287d84e4",
+      "authority_role": "retained historical gameplay provenance",
+      "present": true
+    },
+    {
+      "document_key": "runtime-draft-v0.2",
+      "filename": "F-65 Engine Runtime and Toolchain Design Supplement Draft 0.2.md",
+      "relative_path": "spec/engine/F-65 Engine Runtime and Toolchain Design Supplement Draft 0.2.md",
+      "version": "Draft 0.2",
+      "declared_status": "Architecture-review candidate",
+      "lifecycle_classification": "PROVENANCE",
+      "sha256": "dfd4bf0b557b4dae6382de502db42e4b2d269ceaf44bd67440bb6d047341454a",
+      "authority_role": "retained historical runtime provenance",
+      "present": true
+    },
+    {
+      "document_key": "runtime-draft-v0.1",
       "filename": "F65_Engine_Runtime_and_Toolchain_Design_Supplement_Draft_0.1.md",
       "relative_path": "spec/engine/F65_Engine_Runtime_and_Toolchain_Design_Supplement_Draft_0.1.md",
       "version": "Draft 0.1",
       "declared_status": "Historical architecture-review candidate",
+      "lifecycle_classification": "PROVENANCE",
       "sha256": "63f0d2e136507485296bd3424e83e9db796b2bf612d81f3fe5ac2744297d27aa",
-      "authority_role": "preserved provenance",
-      "present": true,
-      "approval_effect": "historical only"
+      "authority_role": "retained historical runtime provenance",
+      "present": true
     },
     {
+      "document_key": "alignment-corrections-v0.2",
       "filename": "F-65_Technical_Alignment_and_Corrections_Supplement_v0.2.md",
       "relative_path": "spec/alignment/F-65_Technical_Alignment_and_Corrections_Supplement_v0.2.md",
       "version": "0.2",
       "declared_status": "Historical/superseded draft",
+      "lifecycle_classification": "PROVENANCE",
       "sha256": "fd8188f3787d902466a3d07b13c46e88f9afe32d7d5839945c4bc33143e0249b",
-      "authority_role": "preserved audit provenance",
-      "present": true,
-      "approval_effect": "historical only; Read-First v1.0 is the current operating alignment"
+      "authority_role": "retained historical orientation and audit provenance",
+      "present": true
     },
     {
+      "document_key": "ad-001",
+      "filename": "F-65_Architecture_Decision_AD-001_R0_Program_Development_Authorization.md",
+      "relative_path": "docs/decisions/F-65_Architecture_Decision_AD-001_R0_Program_Development_Authorization.md",
+      "version": "1.0",
+      "declared_status": "APPROVED - R0-A-F DEVELOPMENT AUTHORITY",
+      "lifecycle_classification": "PROJECT_CONTROL",
+      "sha256": "ce3cb019082081bb7908146de0cc689a74abca517bf32520f5bd9fdf30e375dd",
+      "authority_role": "historical bounded R0 development authorization; not a current design-family entry",
+      "present": true
+    },
+    {
+      "document_key": "r0-development-approval-record-2026-08-20",
+      "filename": "F-65_Specification_Approval_Record_2026-08-20_R0_Development.md",
+      "relative_path": "docs/approvals/F-65_Specification_Approval_Record_2026-08-20_R0_Development.md",
+      "version": "1.0",
+      "declared_status": "APPROVED - ACTIVE",
+      "lifecycle_classification": "PROJECT_CONTROL",
+      "sha256": "9fc23bb8555bbd2b84c8f925e909bc5245448ee87db9fb1fb596e8e67c288d8e",
+      "authority_role": "historical human approval record; not a current design-family entry",
+      "present": true
+    },
+    {
+      "document_key": "legacy-graphics-reference-v1.0",
       "filename": "MEGA65_Flight_Simulation_3D_Graphics_White_Paper.pdf",
       "relative_path": null,
       "version": "1.0",
       "declared_status": "Supporting technical reference",
+      "lifecycle_classification": "SUPPORTING_REFERENCE",
       "sha256": "7e3f775dc5624a543ea8cccbad786be7940ca48b7603b98dd94b5c5e6de64491",
-      "authority_role": "supporting research only",
-      "present": false,
-      "approval_effect": "not an R0-A dependency and no substitute is created"
+      "authority_role": "retained absent supporting-reference identity; not a current design-family entry",
+      "present": false
     },
     {
+      "document_key": "architecture-v1.4-unknown",
       "filename": null,
       "relative_path": null,
       "version": "1.4",
       "declared_status": "Referenced predecessor corpus; not supplied",
+      "lifecycle_classification": "PROVENANCE",
       "sha256": null,
-      "authority_role": "historical predecessor",
-      "present": false,
-      "approval_effect": "unknown bytes and hash are not inferred"
+      "authority_role": "retained absent historical predecessor identity",
+      "present": false
     }
   ]
 }

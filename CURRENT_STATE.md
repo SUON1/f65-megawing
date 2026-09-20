@@ -13,14 +13,14 @@ The intended human-reviewed design hierarchy is:
 
 1. F65 Main Concept v1.6 — master product and architecture authority.
 2. F65 Gameplay and Simulation Supplement v1 — player-facing requirements authority.
-3. F65 65Aero Engine Runtime and Technical Supplement v1 — pending coordinated rewrite; not yet an approved active repository document.
+3. F65 65Aero Engine Runtime and Technical Supplement v1 — `APPROVED CANDIDATE DESIGN - NOT FINAL`; the current implementation-architecture companion. Generated interface, ABI, memory-ledger, test, and evidence freeze closure remains required before FINAL status.
 4. Flight Physics and Simulation Engineering White Paper v3.3.
 5. Graphics Engineering White Paper v2.1.
 6. Audio, Sound Effects and Music Engineering White Paper v1.0.
 7. Radar / Sensors / Track Engineering White Paper v1.0.
 8. AI Behavior and Decision Architecture White Paper v1.0.
 
-This checkout does not yet contain that v1.6/v1 family. The current `spec/` tree retains the earlier Read-First, Architecture 1.5.1, and Draft 0.2 family as provenance. The old Read-First / Technical Alignment family is retired as active authority by Main Concept v1.6, but remains retained provenance until the later specification-reconciliation task imports or reconciles the current family.
+This checkout now contains Main Concept v1.6, Gameplay v1, Runtime v1 candidate, Physics v3.3, Graphics v2.1, Audio v1.0, Radar/Sensors/Track v1.0, AI Behavior/Decision v1.0, and the supporting Product Story reference. The earlier Read-First, Architecture 1.5.1, and Draft 0.2 family remains at its existing paths as provenance only.
 
 ## Engineering state
 
@@ -45,7 +45,8 @@ Complete and reconcile the remaining R0-F closure work without relabeling bounde
 
 ## Project-truth debt
 
-- The `spec/` tree still contains pre-v1.6 authority material.
-- The active v1.6/v1 design family requires repository reconciliation.
+- The `spec/` corpus now distinguishes current authority, candidate Runtime v1, provenance, supporting references, and project-control records.
+- Physics v3.3 is retained exactly as supplied. Its known formatting, glyph, and parent-reference debt, including modernization or re-rendering, is deferred until after repository reorganization and the new development system are complete.
+- Broader technical-document consolidation is deferred until after repository reorganization and the new development system are complete.
 - `F65_OFFICIAL_RECORD.md` and `CODEX_PROGRESS.md` retain valuable history, but are not the final post-reorganization project-truth interface.
-- `F65_OFFICIAL_RECORD.md` describes the GitHub repository as private, while the current GitHub repository setting is public; repository visibility and the stale record require deliberate reconciliation during later Git/project-control housekeeping.
+- The current GitHub repository visibility is public. The historical bootstrap entry in `F65_OFFICIAL_RECORD.md` retains the earlier private-repository state as provenance; any later visibility change requires deliberate Git/project-control housekeeping.
