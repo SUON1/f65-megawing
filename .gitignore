@@ -15,6 +15,10 @@ tools/**/target/
 tools/**/out/
 *.class
 
+# Python caches
+__pycache__/
+*.py[cod]
+
 # Local tool downloads and emulator state
 toolchain/downloads/
 toolchain/runtime/
