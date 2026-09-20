@@ -1,11 +1,13 @@
 # Current Project State
 
-This is a concise navigation record, not a design authority, contract, acceptance record, or historical journal.
+This records durable integrated project state. It is not a design authority,
+contract, acceptance record, historical journal, or task log. Active task
+status belongs in [WORK_IN_PROGRESS.md](WORK_IN_PROGRESS.md). Completed work is
+recorded here only when it changes enduring project reality.
 
 ## Current baseline
 
 - Integrated branch: `main`.
-- Active reorganization branch: `codex/repository-reorganization`.
 - Target platform: MEGA65.
 - Implementation model: LLVM-MOS C is primary target code; selective 45GS02 assembly serves justified platform-critical or measured low-level work; Java and Python are host tooling languages.
 
@@ -39,7 +41,7 @@ Full R0-F remains open. The CF001 and RH001 proofs are not co-resident; the docu
 - Retained evidence, handoffs, decisions, and plans under `docs/`.
 - Placeholder or future production-module areas, not a completed 65Aero engine.
 
-## Immediate next technical work
+## Durable technical sequence
 
 Complete and reconcile the remaining R0-F closure work without relabeling bounded evidence as full acceptance. Then establish measured limits through the applicable evidence and approval process. The integrated 65Aero Phase 1 harness follows only when its governing gates and contracts are ready.
 
@@ -48,5 +50,5 @@ Complete and reconcile the remaining R0-F closure work without relabeling bounde
 - The `spec/` corpus now distinguishes current authority, candidate Runtime v1, provenance, supporting references, and project-control records.
 - Physics v3.3 is retained exactly as supplied. Its known formatting, glyph, and parent-reference debt, including modernization or re-rendering, is deferred until after repository reorganization and the new development system are complete.
 - Broader technical-document consolidation is deferred until after repository reorganization and the new development system are complete.
-- `F65_OFFICIAL_RECORD.md` and `CODEX_PROGRESS.md` retain valuable history, but are not the final post-reorganization project-truth interface.
+- `F65_OFFICIAL_RECORD.md` retains configuration and R0 history; `CODEX_PROGRESS.md` retains the historical development journal. Neither is the routine live project-status interface.
 - The current GitHub repository visibility is public. The historical bootstrap entry in `F65_OFFICIAL_RECORD.md` retains the earlier private-repository state as provenance; any later visibility change requires deliberate Git/project-control housekeeping.

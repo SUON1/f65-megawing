@@ -2,7 +2,7 @@
 
 These instructions apply to every task in this repository.
 
-## Before changing anything
+## Before work
 
 1. Read [CURRENT_STATE.md](CURRENT_STATE.md) and [WORK_IN_PROGRESS.md](WORK_IN_PROGRESS.md).
 2. Read [the development workflow](docs/DEVELOPMENT_WORKFLOW.md).
@@ -10,7 +10,23 @@ These instructions apply to every task in this repository.
 4. For C work, read [the C readability standard](docs/CODE_STYLE_C.md).
 5. Before any D81-related task, read and obey [00_D81_LOADABILITY_GATE.md](00_D81_LOADABILITY_GATE.md).
 
+Do not routinely read all of [F65_OFFICIAL_RECORD.md](F65_OFFICIAL_RECORD.md)
+or [CODEX_PROGRESS.md](CODEX_PROGRESS.md). Consult them when historical or
+configuration context is actually needed.
+
 State the inspected authority and contracts before the first edit. Identify affected registers/clobbers, CPU-visible and physical memory, MAP/base-page, DMA, timing/deadline, and IRQ/NMI effects; mark non-applicable items explicitly.
+
+## Recovery and Build Intent
+
+When resuming work, inspect `WORK_IN_PROGRESS.md`, the current branch and
+`git status`, the current diff and recent commits, and the governing Build
+Intent. Continue from repository state rather than reconstructing progress from
+chat memory; do not restart merely because the conversation changed.
+
+Substantive work requires an approved Build Intent before implementation. It
+may be in the task prompt, summarized or linked from WIP, or stored as a
+dedicated task record when complexity warrants it. A permanent file is not
+required for every trivial change.
 
 ## Scope and authority discipline
 
@@ -31,7 +47,10 @@ Generated and public interfaces govern layouts. Respect hardware ownership bound
 
 Run validation appropriate to the task and report exact commands and results. Compile/link, host, Xemu, and physical evidence each establish only their own tier; Xemu never substitutes for physical MEGA65 evidence where physical proof is required.
 
-Record changed paths, contract and hardware impact, generated-artifact status, evidence identity, tests run or not run, unresolved risks, and the recommended next action.
+Provide a useful handoff with changed paths, contract and hardware impact,
+validation run, evidence tiers not run, unresolved risks, and the recommended
+next action. State generated-artifact status and evidence identity when
+applicable.
 
 ## Git
 

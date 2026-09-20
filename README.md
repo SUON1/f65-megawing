@@ -15,14 +15,22 @@ R0-F is not silently declared complete: remaining closure and integration obliga
 1. Read [CURRENT_STATE.md](CURRENT_STATE.md).
 2. Read [WORK_IN_PROGRESS.md](WORK_IN_PROGRESS.md).
 3. Read [AGENTS.md](AGENTS.md).
-4. Read [the development workflow](docs/DEVELOPMENT_WORKFLOW.md) and [C style guide](docs/CODE_STYLE_C.md).
-5. Read the applicable governing design documents, interfaces, ledgers, subsystem material, and validation tooling before changing anything.
+4. Read [the development workflow](docs/DEVELOPMENT_WORKFLOW.md).
+5. Read the applicable governing design documents, interfaces, ledgers, subsystem material, evidence, and validation tooling before changing anything.
+6. For C work, read [the C style guide](docs/CODE_STYLE_C.md).
 
-These navigation documents summarize project state; they do not replace the governing design documents, generated contracts, or evidence.
+`CURRENT_STATE.md` is the durable integrated project record. `WORK_IN_PROGRESS.md`
+is the active task record. [F65_OFFICIAL_RECORD.md](F65_OFFICIAL_RECORD.md)
+retains configuration and R0 history; [CODEX_PROGRESS.md](CODEX_PROGRESS.md) is a
+historical development journal. Normal work does not require reading either
+historical record in full.
+
+The routine control documents summarize state and process; they do not replace
+the governing design documents, generated contracts, or evidence.
 
 ## Repository layout
 
-- `spec/` — preserved specification corpus; its design-family reconciliation is still pending.
+- `spec/` — preserved specification corpus; its current authority hierarchy is recorded in `spec/manifests/spec-corpus.json`.
 - `docs/` — workflow, decisions, plans, reports, testing material, and retained evidence.
 - `src/` — R0 proof programs, diagnostics, and platform wrappers; much of this is evidence software, not a completed production engine.
 - `interfaces/` and `memory/` — machine-readable contracts, generated bindings, and ownership ledgers.

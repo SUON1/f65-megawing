@@ -1,6 +1,14 @@
 # F-65 Megawing Official Project Record
 
-This file is the primary status and configuration index for the project. It does not replace the preserved specifications or approve draft material.
+This file is the retained F-65 configuration and R0 historical index. It
+preserves configuration-control state, R0 engineering history, and the
+append-only change record. It does not replace preserved specifications or
+approve draft material.
+
+It is not the routine live project-status interface after repository
+reorganization. Current durable project state is recorded in
+[`CURRENT_STATE.md`](CURRENT_STATE.md); active work is recorded in
+[`WORK_IN_PROGRESS.md`](WORK_IN_PROGRESS.md).
 
 ## 1. Project identity
 
