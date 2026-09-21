@@ -38,6 +38,36 @@ uint8_t r0fs_context_range_valid(uint16_t offset, uint16_t length)
                      && offset <= R0FS_KERNAL_CONTEXT_BYTES - length);
 }
 
+uint8_t r0fs_context_mailbox_valid(uint8_t region, uint16_t offset,
+                                   uint8_t length)
+{
+    uint16_t end;
+
+    if (length == 0u || region > 2u)
+    {
+        return 0u;
+    }
+    if (region != 1u)
+    {
+        return (uint8_t)(offset == 0u
+                         && length <= R0FS_KERNAL_CONTEXT_GUARD_BYTES);
+    }
+    end = (uint16_t)(offset + length);
+    return (uint8_t)(offset < R0FS_KERNAL_CONTEXT_BYTES
+                     && end >= offset
+                     && end <= R0FS_KERNAL_CONTEXT_BYTES);
+}
+
+uint8_t r0fs_completion_allowed(uint8_t state, uint8_t nmi_seen,
+                                uint8_t fault, uint8_t resumed_mask,
+                                uint8_t required_mask)
+{
+    return (uint8_t)(state == R0FS_S_SERVICES_RESUMED
+                     && nmi_seen == 0u
+                     && fault == 0u
+                     && resumed_mask == required_mask);
+}
+
 uint32_t r0fs_crc32(const uint8_t *bytes, uint16_t length)
 {
     uint32_t crc = 0xfffffffful;

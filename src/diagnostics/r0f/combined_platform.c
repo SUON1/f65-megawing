@@ -1,10 +1,24 @@
 #include "combined_platform.h"
+
+#ifdef R0FS_INTEGRATION
+#define R0FS_PROTECTED_DATA __attribute__((section(".r0fs_protected_data")))
+#else
+#define R0FS_PROTECTED_DATA
+#endif
+
 volatile uint8_t *const cfresult=(volatile uint8_t *)R0FC_RESULT;
 uint8_t cffault,cfreclaimed;
 uint32_t cfperiod,cfcia_frame,cfcycles_frame;
-volatile uint8_t r0f_pf_irq_seq,r0f_pf_irq_seen,r0f_pf_nmi_seen,r0f_pf_stack_high;
-volatile uint8_t r0f_pf_cpu_port,r0f_pf_probe_regs[7],r0f_pf_copy_request[9],r0f_pf_copy_ok;
-volatile uint16_t r0f_pf_irq_count,r0f_pf_probe_timeout;
+volatile uint8_t r0f_pf_irq_seq R0FS_PROTECTED_DATA;
+volatile uint8_t r0f_pf_irq_seen R0FS_PROTECTED_DATA;
+volatile uint8_t r0f_pf_nmi_seen R0FS_PROTECTED_DATA;
+volatile uint8_t r0f_pf_stack_high R0FS_PROTECTED_DATA;
+volatile uint8_t r0f_pf_cpu_port R0FS_PROTECTED_DATA;
+volatile uint8_t r0f_pf_probe_regs[7] R0FS_PROTECTED_DATA;
+volatile uint8_t r0f_pf_copy_request[9] R0FS_PROTECTED_DATA;
+volatile uint8_t r0f_pf_copy_ok R0FS_PROTECTED_DATA;
+volatile uint16_t r0f_pf_irq_count R0FS_PROTECTED_DATA;
+volatile uint16_t r0f_pf_probe_timeout R0FS_PROTECTED_DATA;
 volatile uint8_t r0fc_features,r0fc_trap_flags,r0fc_trap_base;
 volatile uint8_t r0fc_hardware_seed,r0fc_hardware_low;
 volatile uint16_t r0fc_software_seed,r0fc_software_low;
