@@ -12,6 +12,11 @@ uint8_t r0fs_storage_allowed(uint8_t state, uint8_t rom_restored,
 uint8_t r0fs_resume_allowed(uint8_t state, uint8_t canonical_restored,
                             uint8_t snapshot_invalidated, uint8_t fault);
 uint8_t r0fs_context_range_valid(uint16_t offset, uint16_t length);
+uint8_t r0fs_context_mailbox_valid(uint8_t region, uint16_t offset,
+                                   uint8_t length);
+uint8_t r0fs_completion_allowed(uint8_t state, uint8_t nmi_seen,
+                                uint8_t fault, uint8_t resumed_mask,
+                                uint8_t required_mask);
 uint32_t r0fs_crc32(const uint8_t *bytes, uint16_t length);
 uint8_t r0fs_snapshot_valid(const uint8_t *leading_guard,
                             const uint8_t *payload,

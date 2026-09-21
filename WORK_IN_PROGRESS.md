@@ -14,38 +14,41 @@ Completed work leaves this file. Durable project changes belong in
 ## Current status
 
 - **Status:** `READY FOR REVIEW`
-- **Task:** R0 Closeout T02 - successor memory/lifecycle contract and static
-  admission.
-- **Branch:** `codex/r0f-successor-memory-lifecycle-admission`
-- **Build Intent:** Prove statically that one successor R0-F harness can combine
-  CF001 and RH001 responsibilities within current memory ownership,
-  PlatformABI / MemoryAccessABI rules and reserve policy, without building the
-  full successor workload.
+- **Task:** R0 Closeout T03 - successor combined-workload integration.
+- **Branch:** `codex/r0f-successor-combined-workload-integration`
+- **Build Intent:** Build one actual linked successor target image combining
+  CF001's 100 Hz / 21-stage workload and active display/audio/input/IRQ/DMA
+  services with RH001's checked same-run returning KERNAL/storage lifecycle.
 - **Governing authority:** `spec/manifests/spec-corpus.json` current authority
-  order; Main Concept v1.6; Gameplay v1; Runtime v1 candidate; current Physics,
-  Graphics, Audio, Radar/Sensors/Tracks and AI papers; retained R0 decisions,
-  contracts, ledgers and evidence for their stated scope.
-- **Authorized area:** One private successor machine-readable contract and
-  generated constants; lifetime-aware ledger; pre-C/startup/linker skeleton;
-  host lifecycle and integrity tests; compile/link/map/symbol/disassembly
-  validators; and focused T02 handoff. No full workload, public ABI, high-level
-  map, timing/stage-order, D81, Xemu, SD, hardware or production StorageService
-  change.
-- **Validation state:** Founder-approved static-ledger correction applied.
-  `$010000-$011FFF` has exclusive application ownership outside the exact
-  `KERNAL_ACTIVE` / `STORAGE_COMPLETE` / `KERNAL_CONTEXT_RESTORED` overlay;
-  application restoration precedes `SERVICES_RESUMED`, and authoritative
-  simulation does not advance during KERNAL ownership. Exhaustive range-pair
-  validation passes and rejects three negative cases: undeclared overlap,
-  concurrent incompatible lifetimes and missing DOS/application exclusion.
-  The complete T02 build passes generated-binding, native ASan/UBSan, fresh
-  CF001/RH001 predecessor, LLVM-MOS compile/link, protected code/data linker,
-  map/symbol/disassembly and conservative fit checks. Post-correction charge
-  remains 40,023 / 40,959 resident bytes with 936 bytes margin, 5,664 guarded
-  Attic transition bytes and zero measured-reserve bytes. JSON/Python syntax,
-  generated reproducibility, Markdown links, whitespace/diff and changed-path
-  scope checks pass. D81, Xemu, SD and physical MEGA65 tiers were not run.
-- **Exact next action:** Founder reviews the corrected T02 ledger, exhaustive
-  validator, protected resident rule, generated accounting and handoff. Do not
-  commit, push, open a PR, start T03 or perform D81/Xemu/hardware work before
-  separate authorization.
+  order; Main Concept v1.6; Gameplay v1; Runtime v1 candidate; T01 successor
+  reconciliation; T02 successor memory/lifecycle admission, private contract,
+  generated bindings and lifetime ledger; retained CF001/RH001 private
+  contracts and evidence for their stated scope.
+- **Authorized area:** Actual successor target source; private generated proof
+  records; real linked-image memory/accounting; host/sanitizer lifecycle and
+  continuation tests; independent oracle; LLVM-MOS compile/link and static
+  MAP/base-page/stack/vector/ROM-call, map/symbol/disassembly, protected-access,
+  reserve and fault/lockout validation; focused T03 handoff. No public ABI,
+  high-level memory-map, admitted T02 range, 100 Hz/stage-order, production
+  StorageService, D81, Xemu, SD, physical hardware, measured-limit or
+  acceptance change.
+- **Validation state:** The founder-directed display-fetch quiescence, global
+  sticky-NMI lockout, protected context-read carry rejection, private ABI
+  wording and T04 disposable-carrier semantics are implemented. Two fresh
+  complete T03 builds reproduced the generated bindings and PRG identity. The
+  actual linked image uses 23,665 / 40,959 resident bytes with 17,294 bytes
+  margin and high-water `$7C72`; protected transition content ends at `$2B0F`.
+  The frozen 5,664-byte Attic range is unchanged; no new physical range or
+  reserve byte is consumed. Native ASan/UBSan lifecycle, continuation, exact
+  mailbox-bound, chunked context CRC, post-resume NMI and fault tests pass
+  1,516,258 checks; independent lineage remains `D9EEAB81` at tick 33 to
+  `307A70D6` at tick 66. Fresh CF001 and RH001 regressions, LLVM-MOS
+  compile/link, map/symbol/disassembly, protected-access, display-quiesce
+  ordering, sticky-NMI, context-bridge carry, reserve, generated-binding,
+  specification, syntax, scope, artifact and whitespace checks pass. D81,
+  Xemu, SD and physical MEGA65 tiers were not run.
+- **Exact next action:** Founder reviews the corrected focused T03 source,
+  private generated records, accounting and
+  `docs/reports/R0-F_SUCCESSOR_INTEGRATION_HANDOFF.md`. Do not commit, push,
+  open a PR, start T04 or perform D81/Xemu/SD/hardware work before separate
+  authorization.
