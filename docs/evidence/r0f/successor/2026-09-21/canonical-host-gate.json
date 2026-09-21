@@ -1,0 +1,508 @@
+{
+  "BUILDER_IDENTITY": {
+    "path": "toolchain/vice-clean/bin/c1541",
+    "realdevice": "disabled",
+    "sha256": "73235289aca30a7e2e8067e521bf604743156cc1d7499c888a3894d6e46fcb3c",
+    "version": "3.10"
+  },
+  "CARRIER_LOADER_LINKER_SHA256": "f540ea08662cd882f7ba5c20bc91dc2e45c63860fd803e18f3095d28f4bf46e4",
+  "CARRIER_LOADER_SHA256": "84f6e574fe042001fcbed64e0ca7c274d4c847835deea8a64c7f39f1cdbb6bba",
+  "CARRIER_LOADER_SOURCE_SHA256": "704cfeae5852b48721fda817ccaf838e6248ef13ae0aa61d28184f5a716c7fa2",
+  "D81_BYTES": 819200,
+  "D81_FILENAME": "R0FSUCC10.D81",
+  "D81_SHA256": "3721dff9b84cfb7842cc154f6885861e0c7cbd3c3408c8ecec190bf6b405d461",
+  "D81_STATE": "XEMU_BOOT_VERIFIED",
+  "DISK_ID": "65",
+  "DISK_LABEL": "R0F SUCC T04",
+  "ENTRY_FILENAME": "AUTOBOOT.C65 embeds STAGE -> SYS $1000 -> KERNAL LOAD R0FSUCC",
+  "HOST_CONTENT_RESULT": "PASS",
+  "HOST_STRUCTURAL_RESULT": "PASS",
+  "PHYSICAL_CHOOSER_RESULT": "NOT RUN",
+  "PHYSICAL_EVIDENCE": null,
+  "PRG_SHA256": "d0979c56c373f8885e4741670141ebf22c0a2e9ef8a84f6a931eaef05592d9df",
+  "SD_CONTIGUITY_RESULT": "NOT RUN",
+  "SD_COPY_SHA256": null,
+  "SD_EXTENT_COUNT": null,
+  "SD_EXTENT_EVIDENCE": null,
+  "SD_FILESYSTEM": null,
+  "SD_SAFE_EJECT_RESULT": "NOT RUN",
+  "SD_TRANSFER_METHOD": null,
+  "SOURCE_BRANCH": "codex/r0f-successor-emulator-exact-carrier",
+  "SOURCE_COMMIT": "20b2aab382d0590037443b6a352fbc77fda7aa42",
+  "STRUCTURAL_VALIDATOR_IDENTITY": {
+    "paths": [
+      "tools/diagnostics/d81_foundation_compare.py",
+      "tools/diagnostics/r0f_successor_emulator.py"
+    ],
+    "sha256": {
+      "d81_foundation_compare.py": "c58c46d8cd857bbb695a3fb3f22f3f7b52feda2d1bcd53343464d5ad7e0d5012",
+      "r0f_successor_emulator.py": "67c172e2af6e7c5652f725fb3ba6302aa5131d2a66b1839a8e72eacfc1e25b30"
+    }
+  },
+  "TOKEN_SHA256": "0e8d0ac2ce727ba51285be0173ea784b52b56fdc4729a1f7c0d2d7271005b572",
+  "XEMU_EVIDENCE": [
+    {
+      "extractedSaveSha256": "86bef4e96b96b157857587afe9bc5d9d5f69e4849320affe5b867a19e6627784",
+      "mountedD81Filename": "R0FSUCC10.D81",
+      "postRunD81Sha256": "2ad1c08b75efcae9e35438bf82da3ba23e59666ef8c2a7296c939aa56d55134d",
+      "preRunD81Sha256": "3721dff9b84cfb7842cc154f6885861e0c7cbd3c3408c8ecec190bf6b405d461",
+      "resultCrc32": "9B3415E1",
+      "resultSha256": "b0a00c09c9e260466e36a6d054954c3d000061fd3a72c1f4ce3720a5661bf796",
+      "run": "ntsc-1",
+      "sourceBranch": "codex/r0f-successor-emulator-exact-carrier",
+      "sourceCommit": "20b2aab382d0590037443b6a352fbc77fda7aa42",
+      "videoMode": "NTSC"
+    },
+    {
+      "extractedSaveSha256": "86bef4e96b96b157857587afe9bc5d9d5f69e4849320affe5b867a19e6627784",
+      "mountedD81Filename": "R0FSUCC10.D81",
+      "postRunD81Sha256": "2ad1c08b75efcae9e35438bf82da3ba23e59666ef8c2a7296c939aa56d55134d",
+      "preRunD81Sha256": "3721dff9b84cfb7842cc154f6885861e0c7cbd3c3408c8ecec190bf6b405d461",
+      "resultCrc32": "67698C03",
+      "resultSha256": "aa792655fb0f210820fa6e5f7e61eee28154150e3a20b095bb0e2aeb663d5209",
+      "run": "ntsc-2",
+      "sourceBranch": "codex/r0f-successor-emulator-exact-carrier",
+      "sourceCommit": "20b2aab382d0590037443b6a352fbc77fda7aa42",
+      "videoMode": "NTSC"
+    },
+    {
+      "extractedSaveSha256": "86bef4e96b96b157857587afe9bc5d9d5f69e4849320affe5b867a19e6627784",
+      "mountedD81Filename": "R0FSUCC10.D81",
+      "postRunD81Sha256": "2ad1c08b75efcae9e35438bf82da3ba23e59666ef8c2a7296c939aa56d55134d",
+      "preRunD81Sha256": "3721dff9b84cfb7842cc154f6885861e0c7cbd3c3408c8ecec190bf6b405d461",
+      "resultCrc32": "18B7D55B",
+      "resultSha256": "be60689f0adc7e2bb28c6f5cde73392878d4ba56e813a5f55f0fa73c782b1bad",
+      "run": "pal-1",
+      "sourceBranch": "codex/r0f-successor-emulator-exact-carrier",
+      "sourceCommit": "20b2aab382d0590037443b6a352fbc77fda7aa42",
+      "videoMode": "PAL"
+    },
+    {
+      "extractedSaveSha256": "86bef4e96b96b157857587afe9bc5d9d5f69e4849320affe5b867a19e6627784",
+      "mountedD81Filename": "R0FSUCC10.D81",
+      "postRunD81Sha256": "2ad1c08b75efcae9e35438bf82da3ba23e59666ef8c2a7296c939aa56d55134d",
+      "preRunD81Sha256": "3721dff9b84cfb7842cc154f6885861e0c7cbd3c3408c8ecec190bf6b405d461",
+      "resultCrc32": "74CDED2E",
+      "resultSha256": "54bba56f94e156b923b23db0f294b56a7fed3ca8a62e52bd893d9473376a6ceb",
+      "run": "pal-2",
+      "sourceBranch": "codex/r0f-successor-emulator-exact-carrier",
+      "sourceCommit": "20b2aab382d0590037443b6a352fbc77fda7aa42",
+      "videoMode": "PAL"
+    }
+  ],
+  "XEMU_RESULT": "PASS",
+  "construction": "fresh format plus all payload writes in one pinned c1541 invocation",
+  "fullAcceptance": false,
+  "identity": "R0F-SUCCESSOR-T04-CANONICAL",
+  "image": {
+    "bamAllocatedSectors": 92,
+    "bamFreeSectors": 3108,
+    "bytes": 819200,
+    "c1541Listing": "D81 disk image recognised: /Users/slice/Developer/f65-megawing/build/r0f/successor-t04/canonical-10/R0FSUCC10.D81, 80 tracks.\nUnit 8 drive 0: D81 disk image attached: /Users/slice/Developer/f65-megawing/build/r0f/successor-t04/canonical-10/R0FSUCC10.D81.\n0 \"R0F SUCC T04    \" 65 3d\n2    \"autoboot.c65\"     prg \n85   \"r0fsucc\"          prg \n1    \"token\"            prg \n3072 blocks free.\nUnit 8 drive 0: D81 disk image detached: /Users/slice/Developer/f65-megawing/build/r0f/successor-t04/canonical-10/R0FSUCC10.D81.\n",
+    "entries": [
+      {
+        "blocks": 2,
+        "chain": [
+          {
+            "sector": 0,
+            "track": 39
+          },
+          {
+            "sector": 1,
+            "track": 39
+          }
+        ],
+        "firstSector": {
+          "sector": 0,
+          "track": 39
+        },
+        "name": "autoboot.c65",
+        "payloadBytes": 464,
+        "payloadSha256": "9bdf352c44c411965229f68b2d92c358f08f0e6ef6486142115b53c9da246cc7",
+        "type": 130
+      },
+      {
+        "blocks": 85,
+        "chain": [
+          {
+            "sector": 2,
+            "track": 39
+          },
+          {
+            "sector": 3,
+            "track": 39
+          },
+          {
+            "sector": 4,
+            "track": 39
+          },
+          {
+            "sector": 5,
+            "track": 39
+          },
+          {
+            "sector": 6,
+            "track": 39
+          },
+          {
+            "sector": 7,
+            "track": 39
+          },
+          {
+            "sector": 8,
+            "track": 39
+          },
+          {
+            "sector": 9,
+            "track": 39
+          },
+          {
+            "sector": 10,
+            "track": 39
+          },
+          {
+            "sector": 11,
+            "track": 39
+          },
+          {
+            "sector": 12,
+            "track": 39
+          },
+          {
+            "sector": 13,
+            "track": 39
+          },
+          {
+            "sector": 14,
+            "track": 39
+          },
+          {
+            "sector": 15,
+            "track": 39
+          },
+          {
+            "sector": 16,
+            "track": 39
+          },
+          {
+            "sector": 17,
+            "track": 39
+          },
+          {
+            "sector": 18,
+            "track": 39
+          },
+          {
+            "sector": 19,
+            "track": 39
+          },
+          {
+            "sector": 20,
+            "track": 39
+          },
+          {
+            "sector": 21,
+            "track": 39
+          },
+          {
+            "sector": 22,
+            "track": 39
+          },
+          {
+            "sector": 23,
+            "track": 39
+          },
+          {
+            "sector": 24,
+            "track": 39
+          },
+          {
+            "sector": 25,
+            "track": 39
+          },
+          {
+            "sector": 26,
+            "track": 39
+          },
+          {
+            "sector": 27,
+            "track": 39
+          },
+          {
+            "sector": 28,
+            "track": 39
+          },
+          {
+            "sector": 29,
+            "track": 39
+          },
+          {
+            "sector": 30,
+            "track": 39
+          },
+          {
+            "sector": 31,
+            "track": 39
+          },
+          {
+            "sector": 32,
+            "track": 39
+          },
+          {
+            "sector": 33,
+            "track": 39
+          },
+          {
+            "sector": 34,
+            "track": 39
+          },
+          {
+            "sector": 35,
+            "track": 39
+          },
+          {
+            "sector": 36,
+            "track": 39
+          },
+          {
+            "sector": 37,
+            "track": 39
+          },
+          {
+            "sector": 38,
+            "track": 39
+          },
+          {
+            "sector": 39,
+            "track": 39
+          },
+          {
+            "sector": 0,
+            "track": 38
+          },
+          {
+            "sector": 1,
+            "track": 38
+          },
+          {
+            "sector": 2,
+            "track": 38
+          },
+          {
+            "sector": 3,
+            "track": 38
+          },
+          {
+            "sector": 4,
+            "track": 38
+          },
+          {
+            "sector": 5,
+            "track": 38
+          },
+          {
+            "sector": 6,
+            "track": 38
+          },
+          {
+            "sector": 7,
+            "track": 38
+          },
+          {
+            "sector": 8,
+            "track": 38
+          },
+          {
+            "sector": 9,
+            "track": 38
+          },
+          {
+            "sector": 10,
+            "track": 38
+          },
+          {
+            "sector": 11,
+            "track": 38
+          },
+          {
+            "sector": 12,
+            "track": 38
+          },
+          {
+            "sector": 13,
+            "track": 38
+          },
+          {
+            "sector": 14,
+            "track": 38
+          },
+          {
+            "sector": 15,
+            "track": 38
+          },
+          {
+            "sector": 16,
+            "track": 38
+          },
+          {
+            "sector": 17,
+            "track": 38
+          },
+          {
+            "sector": 18,
+            "track": 38
+          },
+          {
+            "sector": 19,
+            "track": 38
+          },
+          {
+            "sector": 20,
+            "track": 38
+          },
+          {
+            "sector": 21,
+            "track": 38
+          },
+          {
+            "sector": 22,
+            "track": 38
+          },
+          {
+            "sector": 23,
+            "track": 38
+          },
+          {
+            "sector": 24,
+            "track": 38
+          },
+          {
+            "sector": 25,
+            "track": 38
+          },
+          {
+            "sector": 26,
+            "track": 38
+          },
+          {
+            "sector": 27,
+            "track": 38
+          },
+          {
+            "sector": 28,
+            "track": 38
+          },
+          {
+            "sector": 29,
+            "track": 38
+          },
+          {
+            "sector": 30,
+            "track": 38
+          },
+          {
+            "sector": 31,
+            "track": 38
+          },
+          {
+            "sector": 32,
+            "track": 38
+          },
+          {
+            "sector": 33,
+            "track": 38
+          },
+          {
+            "sector": 34,
+            "track": 38
+          },
+          {
+            "sector": 35,
+            "track": 38
+          },
+          {
+            "sector": 36,
+            "track": 38
+          },
+          {
+            "sector": 37,
+            "track": 38
+          },
+          {
+            "sector": 38,
+            "track": 38
+          },
+          {
+            "sector": 39,
+            "track": 38
+          },
+          {
+            "sector": 0,
+            "track": 37
+          },
+          {
+            "sector": 1,
+            "track": 37
+          },
+          {
+            "sector": 2,
+            "track": 37
+          },
+          {
+            "sector": 3,
+            "track": 37
+          },
+          {
+            "sector": 4,
+            "track": 37
+          },
+          {
+            "sector": 5,
+            "track": 37
+          },
+          {
+            "sector": 6,
+            "track": 37
+          }
+        ],
+        "firstSector": {
+          "sector": 2,
+          "track": 39
+        },
+        "name": "r0fsucc",
+        "payloadBytes": 21481,
+        "payloadSha256": "d0979c56c373f8885e4741670141ebf22c0a2e9ef8a84f6a931eaef05592d9df",
+        "type": 130
+      },
+      {
+        "blocks": 1,
+        "chain": [
+          {
+            "sector": 0,
+            "track": 41
+          }
+        ],
+        "firstSector": {
+          "sector": 0,
+          "track": 41
+        },
+        "name": "token",
+        "payloadBytes": 34,
+        "payloadSha256": "0e8d0ac2ce727ba51285be0173ea784b52b56fdc4729a1f7c0d2d7271005b572",
+        "type": 130
+      }
+    ],
+    "extracted": {
+      "autoboot.c65": "/Users/slice/Developer/f65-megawing/build/r0f/successor-t04/canonical-10/pre-extracted/autoboot.c65",
+      "r0fsucc": "/Users/slice/Developer/f65-megawing/build/r0f/successor-t04/canonical-10/pre-extracted/r0fsucc",
+      "token": "/Users/slice/Developer/f65-megawing/build/r0f/successor-t04/canonical-10/pre-extracted/token"
+    },
+    "freeBlocks": 3108,
+    "identifier": "65",
+    "label": "R0F SUCC T04",
+    "path": "/Users/slice/Developer/f65-megawing/build/r0f/successor-t04/canonical-10/R0FSUCC10.D81",
+    "sha256": "3721dff9b84cfb7842cc154f6885861e0c7cbd3c3408c8ecec190bf6b405d461"
+  },
+  "immutableAfterAdmission": true,
+  "mountedInXemu": false
+}

@@ -1,0 +1,41 @@
+{
+  "canonicalCarrier": false,
+  "content": "PASS",
+  "entry": "direct exact successor PRG; D81 supplies TOKEN only",
+  "hardwareRelease": false,
+  "image": {
+    "bamAllocatedSectors": 5,
+    "bamFreeSectors": 3195,
+    "bytes": 819200,
+    "c1541Listing": "D81 disk image recognised: /Users/slice/Developer/f65-megawing/build/r0f/successor-t04/direct/ntsc-corrected-11/run.D81, 80 tracks.\nUnit 8 drive 0: D81 disk image attached: /Users/slice/Developer/f65-megawing/build/r0f/successor-t04/direct/ntsc-corrected-11/run.D81.\n0 \"R0F T04 DEV     \" 65 3d\n1    \"token\"            prg \n3159 blocks free.\nUnit 8 drive 0: D81 disk image detached: /Users/slice/Developer/f65-megawing/build/r0f/successor-t04/direct/ntsc-corrected-11/run.D81.\n",
+    "entries": [
+      {
+        "blocks": 1,
+        "chain": [
+          {
+            "sector": 0,
+            "track": 39
+          }
+        ],
+        "firstSector": {
+          "sector": 0,
+          "track": 39
+        },
+        "name": "token",
+        "payloadBytes": 34,
+        "payloadSha256": "0e8d0ac2ce727ba51285be0173ea784b52b56fdc4729a1f7c0d2d7271005b572",
+        "type": 130
+      }
+    ],
+    "extracted": {
+      "token": "/Users/slice/Developer/f65-megawing/build/r0f/successor-t04/direct/ntsc-corrected-11/pre-extracted/token"
+    },
+    "freeBlocks": 3195,
+    "identifier": "65",
+    "label": "R0F T04 DEV",
+    "path": "/Users/slice/Developer/f65-megawing/build/r0f/successor-t04/direct/ntsc-corrected-11/run.D81",
+    "sha256": "ee031850017ab0efc9408cf290857914d8a0946e9c62049236d6712367c715d2"
+  },
+  "state": "HOST_CONTENT_VERIFIED",
+  "structural": "PASS"
+}

@@ -787,13 +787,13 @@ int main(void)
     cfresult[1] = 'S';
     cfresult[2] = 'I';
     cfresult[3] = '1';
-    lifecycle_state = R0FS_S_PRE_C_CAPTURED;
-    cfscreen();
     if (!cfentry())
     {
         lockout(83u);
         goto finish;
     }
+    lifecycle_state = R0FS_S_PRE_C_CAPTURED;
+    cfscreen();
     context_crc_expected = context_crc();
     if (!context_crc_expected || !context_valid(context_crc_expected)
         || !dos_copy(DOS_TO_KERNAL_BACKUP) || !dos_crc(1u)

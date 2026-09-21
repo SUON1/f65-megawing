@@ -6,6 +6,19 @@
 r0f_pf_enter:
     sei
     cld
+    lda #0
+    tax
+    tay
+    taz
+    map
+    /* LLVM-MOS linker relaxes even mos16($0001) to direct page. Clear the
+     * inherited MAP first, then select B=0 so this reaches the CPU port. */
+    lda #0
+    tab
+    lda #$35
+    sta $01
+    lda $01
+    sta r0f_pf_cpu_port
     lda #$47
     sta $d02f
     lda #$53
@@ -13,22 +26,6 @@ r0f_pf_enter:
     lda $d030
     and #$46
     sta $d030
-    /* LLVM-MOS linker relaxes even mos16($0001) to direct page. Explicitly
-     * select B=0 here so the instruction reaches the actual CPU port. */
-    lda #0
-    tab
-    lda #$35
-    sta $01
-    lda $01
-    sta r0f_pf_cpu_port
-    lda #0
-    ldy #0
-    ldx #$0f
-    ldz #$0f
-    map
-    ldx #0
-    ldz #0
-    map
     eom
     lda #2
     tab

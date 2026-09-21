@@ -1,0 +1,51 @@
+{
+  "bamAllocatedSectors": 6,
+  "bamFreeSectors": 3194,
+  "bytes": 819200,
+  "c1541Listing": "D81 disk image recognised: /Users/slice/Developer/f65-megawing/build/r0f/successor-t04/direct/pal-corrected-11/run.D81, 80 tracks.\nUnit 8 drive 0: D81 disk image attached: /Users/slice/Developer/f65-megawing/build/r0f/successor-t04/direct/pal-corrected-11/run.D81.\n0 \"R0F T04 DEV     \" 65 3d\n1    \"token\"            prg \n1    \"rsstate\"          prg \n3158 blocks free.\nUnit 8 drive 0: D81 disk image detached: /Users/slice/Developer/f65-megawing/build/r0f/successor-t04/direct/pal-corrected-11/run.D81.\n",
+  "entries": [
+    {
+      "blocks": 1,
+      "chain": [
+        {
+          "sector": 0,
+          "track": 39
+        }
+      ],
+      "firstSector": {
+        "sector": 0,
+        "track": 39
+      },
+      "name": "token",
+      "payloadBytes": 34,
+      "payloadSha256": "0e8d0ac2ce727ba51285be0173ea784b52b56fdc4729a1f7c0d2d7271005b572",
+      "type": 130
+    },
+    {
+      "blocks": 1,
+      "chain": [
+        {
+          "sector": 1,
+          "track": 39
+        }
+      ],
+      "firstSector": {
+        "sector": 1,
+        "track": 39
+      },
+      "name": "rsstate",
+      "payloadBytes": 34,
+      "payloadSha256": "86bef4e96b96b157857587afe9bc5d9d5f69e4849320affe5b867a19e6627784",
+      "type": 130
+    }
+  ],
+  "extracted": {
+    "rsstate": "/Users/slice/Developer/f65-megawing/build/r0f/successor-t04/direct/pal-corrected-11/post-extracted/rsstate",
+    "token": "/Users/slice/Developer/f65-megawing/build/r0f/successor-t04/direct/pal-corrected-11/post-extracted/token"
+  },
+  "freeBlocks": 3194,
+  "identifier": "65",
+  "label": "R0F T04 DEV",
+  "path": "/Users/slice/Developer/f65-megawing/build/r0f/successor-t04/direct/pal-corrected-11/run.D81",
+  "sha256": "390b742716d3228dcf04b1e35850726b30f3b91fb31d75f72bd4a223617ddaa2"
+}
