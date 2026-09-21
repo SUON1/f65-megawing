@@ -26,7 +26,14 @@ This checkout now contains Main Concept v1.6, Gameplay v1, Runtime v1 candidate,
 
 ## Engineering state
 
-R0-A and R0-B are closed bounded proof milestones; R0-D is closed for its accepted calibration-proof scope. R0-C is an owner-waived bounded proof candidate, not a formal gate pass. R0-E is closed only for its bounded functional-proxy and raster-observation scope.
+R0-A and R0-B are closed bounded proof milestones; R0-D is closed for its
+accepted calibration-proof scope. Under current Main Concept v1.6 authority,
+R0-C is COMPLETE for the Revision 1.6 program baseline. Its retained historical
+evidence remains truthful: the recorded owner disposition was a waiver rather
+than a formal historical gate PASS, and no historical record is retroactively
+relabeled. Remaining returning `StorageService` implementation is carried
+forward and does not reopen Charlie. R0-E is closed only for its bounded
+functional-proxy and raster-observation scope.
 
 R0-F contains substantial bounded development and physical evidence. CF001 demonstrated a reset-only combined diagnostic with ROM backup/recovery, synthetic workload, IRQ/DMA/display/PCM/input activity, physical capture reduction, and retained SD integrity evidence. RH001 separately demonstrates a same-run ROM/storage lifecycle continuation in NTSC/PAL Xemu.
 

@@ -2,6 +2,16 @@
 
 Status: **OWNER SELECTED FULL CLOSURE ON THE CURRENT DESIGN; WORK IN PROGRESS.**
 
+Current-authority re-baseline (2026-09-20): the remaining closure scope is
+reconciled against Main v1.6, Gameplay v1, Runtime v1 and the current subsystem
+hierarchy in
+`../reports/R0-F_SUCCESSOR_ADMISSION_RECONCILIATION.md`. That packet is the
+admission input for the next implementation task. It preserves the bounded
+CF001/RH001 evidence, requires their same-run combined integration, separates
+R0-F obligations from measured-limit/Phase-1/later-phase work, and records the
+lifetime-aware memory approach. It does not authorize successor implementation,
+D81 work, a gate pass or measured-limit promotion.
+
 Scope consolidation (2026-09-18): original bounded functional-proxy objectives
 are catalogued with their evidence and retained non-claims in
 `../reports/R0-F_ORIGINAL_OBJECTIVES_STATUS.md`. That evidence does not waive
@@ -156,5 +166,11 @@ artifacts: no changes. Existing dirty implementation files were preserved.
 Validation: official commit lookup succeeded; source audit is partial and
 explicitly not hardware verification; `git diff --check` passed. No target
 build, host functional run, Xemu run, D81/SD operation, commit or push in this
-kickoff. Next work is RC-1 clock-chain/capture specification and RC-2 admission
-reconciliation, not another scope-choice request.
+kickoff.
+
+The immediate next bounded task is **R0-F successor memory/lifecycle contract
+and static admission**, proposed branch
+`codex/r0f-successor-memory-lifecycle-admission`. RC-1 through RC-5 remain the
+overall closure work packages; this immediate task is their next dependency-
+ordered admission step, not a replacement for those packages and not another
+scope-choice request.
