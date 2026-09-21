@@ -1,0 +1,64 @@
+{
+  "identity": "R0F-SUCCESSOR-T02-lifetime-ledger-v1",
+  "contract": "interfaces/r0f_successor_contract.json",
+  "status": "STATIC_ADMISSION_ONLY",
+  "lifetimeOrder": [
+    "PRE_C_CAPTURED",
+    "WORKLOAD_ACTIVE",
+    "QUIESCED",
+    "ROM_RESTORED",
+    "APPLICATION_SAVED",
+    "KERNAL_ACTIVE",
+    "STORAGE_COMPLETE",
+    "KERNAL_CONTEXT_RESTORED",
+    "APPLICATION_RESTORED",
+    "SERVICES_RESUMED",
+    "LOCKOUT"
+  ],
+  "authoritativeSimulationAdvancesOnlyIn": [
+    "WORKLOAD_ACTIVE",
+    "SERVICES_RESUMED"
+  ],
+  "envelopes": [
+    {"id":"active-simulation-envelope","range":"0x010000-0x017fff","bytes":32768,"role":"unchanged high-level active-simulation map envelope; child allocations define physical ownership by lifecycle state"}
+  ],
+  "allocations": [
+    {"id":"resident","range":"0x002001-0x00bfff","bytes":40959,"owner":"successor linked code/data/BSS/static runtime","lifetimes":["WORKLOAD_ACTIVE","QUIESCED","ROM_RESTORED","APPLICATION_SAVED","KERNAL_ACTIVE","STORAGE_COMPLETE","KERNAL_CONTEXT_RESTORED","APPLICATION_RESTORED","SERVICES_RESUMED"],"temporaryMapWindow":"0x008000-0x00bfff","requiredWhileMapActiveMustRemainAccessible":true,"ordinaryWorkloadMayUseFullResidentEnvelope":true,"rule":"any code and data/constant state required while a temporary 0x8000-0xbfff MAP window is active must remain accessible and may not be hidden by that mapping; T02 constrains its protected code below 0x008000, while ordinary workload code may use the admitted 0x002001-0x00bfff envelope"},
+    {"id":"hardware-stack","range":"0x000100-0x0001ff","bytes":256,"owner":"active CPU context","lifetimes":["PRE_C_CAPTURED","WORKLOAD_ACTIVE","QUIESCED","ROM_RESTORED","APPLICATION_SAVED","APPLICATION_RESTORED","SERVICES_RESUMED"],"transition":"application image copied to application-stack-backup before KERNAL owns page 1"},
+    {"id":"software-stack","range":"0x00c000-0x00cfff","bytes":4096,"owner":"successor C runtime","lifetimes":["WORKLOAD_ACTIVE","SERVICES_RESUMED"],"rule":"not linked resident space; worst legal high-water remains a later workload evidence obligation"},
+    {"id":"base-page","range":"0x000200-0x0002ff","bytes":256,"owner":"MemoryAccessABI/CoreRuntime","lifetimes":["WORKLOAD_ACTIVE","QUIESCED","ROM_RESTORED","APPLICATION_SAVED","APPLICATION_RESTORED","SERVICES_RESUMED"],"transition":"application image copied to application-base-page-backup; protected wrapper may use private B=0x16 scratch only before C or while quiesced"},
+    {"id":"low-application","range":"0x000300-0x001fff","bytes":7424,"owner":"capture/result/hot application state","lifetimes":["WORKLOAD_ACTIVE","QUIESCED","ROM_RESTORED","APPLICATION_SAVED","APPLICATION_RESTORED","SERVICES_RESUMED"],"transition":"copied byte-for-byte to low-application-backup before KERNAL entry"},
+    {"id":"active-simulation-dos-application","range":"0x010000-0x011fff","bytes":8192,"owner":"normal application/active-simulation ownership","lifetimes":["WORKLOAD_ACTIVE","QUIESCED","ROM_RESTORED","APPLICATION_SAVED","APPLICATION_RESTORED","SERVICES_RESUMED"],"advancesOnlyIn":["WORKLOAD_ACTIVE","SERVICES_RESUMED"],"transition":"application bytes are backed up at APPLICATION_SAVED before KERNAL ownership and restored at APPLICATION_RESTORED before SERVICES_RESUMED"},
+    {"id":"active-simulation-remainder","range":"0x012000-0x017fff","bytes":24576,"owner":"existing high-level active-simulation owners","lifetimes":["WORKLOAD_ACTIVE","QUIESCED","ROM_RESTORED","APPLICATION_SAVED","KERNAL_ACTIVE","STORAGE_COMPLETE","KERNAL_CONTEXT_RESTORED","APPLICATION_RESTORED","SERVICES_RESUMED"],"advancesOnlyIn":["WORKLOAD_ACTIVE","SERVICES_RESUMED"],"rule":"no successor admission allocation; no Attic simulation authority"},
+    {"id":"dos-context","range":"0x010000-0x011fff","bytes":8192,"owner":"KERNAL/DOS exclusive transition ownership","lifetimes":["KERNAL_ACTIVE","STORAGE_COMPLETE","KERNAL_CONTEXT_RESTORED"],"transition":"ownership begins only after APPLICATION_SAVED and ends before APPLICATION_RESTORED; authoritative simulation does not advance"},
+    {"id":"dos-application-backup","range":"0x01d000-0x01efff","bytes":8192,"owner":"private application DOS-overlay preservation","lifetimes":["APPLICATION_SAVED","KERNAL_ACTIVE","STORAGE_COMPLETE","KERNAL_CONTEXT_RESTORED"],"excludes":["other shared transient workspace users"]},
+    {"id":"rom-display-stores","range":"0x020000-0x03ffff","bytes":131072,"owner":"ROM while storage is active; display stores while workload is active","lifetimes":["WORKLOAD_ACTIVE","QUIESCED","ROM_RESTORED","APPLICATION_SAVED","KERNAL_ACTIVE","STORAGE_COMPLETE","KERNAL_CONTEXT_RESTORED","APPLICATION_RESTORED","SERVICES_RESUMED"],"transition":"display fetch disabled; immutable ROM backup verified before reclaim and restoration"},
+    {"id":"hud-assets","range":"0x040000-0x0409ff","bytes":2560,"owner":"existing protected cockpit/HUD slice","lifetimes":["WORKLOAD_ACTIVE","SERVICES_RESUMED"]},
+    {"id":"low-application-backup","range":"0x050000-0x051cff","bytes":7424,"owner":"private low-memory preservation","lifetimes":["APPLICATION_SAVED","KERNAL_ACTIVE","STORAGE_COMPLETE","KERNAL_CONTEXT_RESTORED"],"reuses":"resource staging only after all active resource jobs complete"},
+    {"id":"application-stack-backup","range":"0x051d00-0x051dff","bytes":256,"owner":"private page-1 preservation","lifetimes":["APPLICATION_SAVED","KERNAL_ACTIVE","STORAGE_COMPLETE","KERNAL_CONTEXT_RESTORED"]},
+    {"id":"application-base-page-backup","range":"0x051e00-0x051eff","bytes":256,"owner":"private page-2 preservation","lifetimes":["APPLICATION_SAVED","KERNAL_ACTIVE","STORAGE_COMPLETE","KERNAL_CONTEXT_RESTORED"]},
+    {"id":"resource-staging-remainder","range":"0x051f00-0x052fff","bytes":4352,"owner":"existing resource staging","lifetimes":["WORKLOAD_ACTIVE","SERVICES_RESUMED"],"rule":"no transition allocation"},
+    {"id":"pcm-cache","range":"0x053000-0x0530fe","bytes":255,"owner":"existing PCM cache","lifetimes":["WORKLOAD_ACTIVE","SERVICES_RESUMED"],"transition":"hardware stopped before storage; bytes remain non-authoritative and are not consumed by KERNAL"},
+    {"id":"kernal-dos-entry-backup","range":"0x054000-0x055fff","bytes":8192,"owner":"private entry-time KERNAL DOS context","lifetimes":["APPLICATION_SAVED","KERNAL_ACTIVE","STORAGE_COMPLETE","KERNAL_CONTEXT_RESTORED"],"reuses":"audio-cache band only while audio is stopped; does not overlap the retained 0x053000-0x0530fe PCM bytes"},
+    {"id":"dma-list","range":"0x056000-0x056010","bytes":17,"owner":"existing application DMA list","lifetimes":["WORKLOAD_ACTIVE","SERVICES_RESUMED"],"transition":"application DMA complete and empty before storage; KERNAL owns any internal storage DMA exclusively"},
+    {"id":"resource-reserve","range":"0x057000-0x057fff","bytes":4096,"owner":"existing staging reserve","lifetimes":["WORKLOAD_ACTIVE","QUIESCED","ROM_RESTORED","APPLICATION_SAVED","KERNAL_ACTIVE","STORAGE_COMPLETE","KERNAL_CONTEXT_RESTORED","APPLICATION_RESTORED","SERVICES_RESUMED"],"successorUse":"none"},
+    {"id":"measured-limits-reserve","range":"0x058000-0x05ffff","bytes":32768,"owner":"measured-limits reserve","lifetimes":["PRE_C_CAPTURED","WORKLOAD_ACTIVE","QUIESCED","ROM_RESTORED","APPLICATION_SAVED","KERNAL_ACTIVE","STORAGE_COMPLETE","KERNAL_CONTEXT_RESTORED","APPLICATION_RESTORED","SERVICES_RESUMED","LOCKOUT"],"successorUse":"forbidden; CRC read-only before and after"},
+    {"id":"rom-backup","range":"0x08000000-0x0801ffff","bytes":131072,"owner":"existing immutable ROM recovery resource","lifetimes":["WORKLOAD_ACTIVE","QUIESCED","ROM_RESTORED","APPLICATION_SAVED","KERNAL_ACTIVE","STORAGE_COMPLETE","KERNAL_CONTEXT_RESTORED","APPLICATION_RESTORED"]},
+    {"id":"kernal-context-guarded","range":"0x08020000-0x0802161f","bytes":5664,"owner":"private proof-platform transition","lifetimes":["PRE_C_CAPTURED","WORKLOAD_ACTIVE","QUIESCED","ROM_RESTORED","APPLICATION_SAVED","KERNAL_ACTIVE","STORAGE_COMPLETE","KERNAL_CONTEXT_RESTORED","APPLICATION_RESTORED"],"payload":"0x08020010-0x0802160f opaque 5632-byte pre-C context","guards":"16 leading and 16 trailing bytes of 0xa5","integrity":"CRC32 payload; guard and CRC failure locks out storage/resume","simulationAuthority":false,"access":"protected assembly with generated fixed bounds only","invalidate":"before SERVICES_RESUMED"},
+    {"id":"color-attributes","range":"0x0ff80000-0x0ff807cf","bytes":2000,"owner":"existing FCM color attributes","lifetimes":["WORKLOAD_ACTIVE","SERVICES_RESUMED"]}
+  ],
+  "overlapDeclarations": [
+    {"id":"active-simulation-application-subrange","relationship":"parent_subrange","parent":"active-simulation-envelope","child":"active-simulation-dos-application"},
+    {"id":"active-simulation-remainder-subrange","relationship":"parent_subrange","parent":"active-simulation-envelope","child":"active-simulation-remainder"},
+    {"id":"active-simulation-dos-transition-subrange","relationship":"parent_subrange","parent":"active-simulation-envelope","child":"dos-context"},
+    {"id":"dos-application-kernal-overlay","relationship":"lifetime_overlay","members":["active-simulation-dos-application","dos-context"],"range":"0x010000-0x011fff","exclusive":true,"applicationOwnerStates":["WORKLOAD_ACTIVE","QUIESCED","ROM_RESTORED","APPLICATION_SAVED","APPLICATION_RESTORED","SERVICES_RESUMED"],"kernalOwnerStates":["KERNAL_ACTIVE","STORAGE_COMPLETE","KERNAL_CONTEXT_RESTORED"],"backupCompleteState":"APPLICATION_SAVED","applicationRestoredState":"APPLICATION_RESTORED","nextAuthoritativeState":"SERVICES_RESUMED","simulationAdvancesDuringKernalOwnership":false}
+  ],
+  "resourceLifetimeExclusions": [
+    {"a":"low-application-backup/application-stack-backup/application-base-page-backup","b":"active resource staging","proof":"transition begins only after resource and application DMA completion; active resource work resumes only after all application bytes are restored"},
+    {"a":"kernal-dos-entry-backup","b":"audio cache users","proof":"PCM/SID service is stopped and IRQ service masked before the transition; cache users resume only after restoration"},
+    {"a":"KERNAL ownership of ROM/display and DOS ranges","b":"renderer/application ownership","proof":"display fetch, renderer, IRQ and application DMA are quiesced for the exclusive storage phase"}
+  ],
+  "reserveBytes": 0,
+  "newPublicOwnership": "none",
+  "generatedAccounting": "build/r0f/successor-admission/accounting.json"
+}
