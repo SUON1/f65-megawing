@@ -14,24 +14,38 @@ Completed work leaves this file. Durable project changes belong in
 ## Current status
 
 - **Status:** `READY FOR REVIEW`
-- **Task:** R0 Closeout T01 - re-baseline remaining R0-F closure against the
-  reorganized repository.
-- **Branch:** `codex/r0f-closeout-t01-rebaseline`
-- **Build Intent:** Reconcile current Main v1.6 / Gameplay v1 / Runtime v1 and
-  subsystem authority with retained R0 evidence; define the minimum successor
-  combined proof without beginning its implementation.
+- **Task:** R0 Closeout T02 - successor memory/lifecycle contract and static
+  admission.
+- **Branch:** `codex/r0f-successor-memory-lifecycle-admission`
+- **Build Intent:** Prove statically that one successor R0-F harness can combine
+  CF001 and RH001 responsibilities within current memory ownership,
+  PlatformABI / MemoryAccessABI rules and reserve policy, without building the
+  full successor workload.
 - **Governing authority:** `spec/manifests/spec-corpus.json` current authority
   order; Main Concept v1.6; Gameplay v1; Runtime v1 candidate; current Physics,
   Graphics, Audio, Radar/Sensors/Tracks and AI papers; retained R0 decisions,
   contracts, ledgers and evidence for their stated scope.
-- **Authorized area:** Documentation/control records only. No target source,
-  generated interface, memory ledger, D81, evidence artifact, specification,
-  dependency or toolchain change.
-- **Validation state:** Founder-approved minor corrections applied. Tracked
-  JSON, Python and shell syntax; R0A configuration validation; all present
-  specification-manifest hashes; changed Markdown local links and whitespace;
-  tracked-artifact guard; branch ancestry; changed-path scope; and
-  `git diff --check` pass. Target, Xemu, D81, SD and physical MEGA65 tiers were
-  not run.
-- **Exact next action:** Founder verifies the corrected T01 packet and may then
-  separately authorize commit/push. Do not start T02 or perform D81 work.
+- **Authorized area:** One private successor machine-readable contract and
+  generated constants; lifetime-aware ledger; pre-C/startup/linker skeleton;
+  host lifecycle and integrity tests; compile/link/map/symbol/disassembly
+  validators; and focused T02 handoff. No full workload, public ABI, high-level
+  map, timing/stage-order, D81, Xemu, SD, hardware or production StorageService
+  change.
+- **Validation state:** Founder-approved static-ledger correction applied.
+  `$010000-$011FFF` has exclusive application ownership outside the exact
+  `KERNAL_ACTIVE` / `STORAGE_COMPLETE` / `KERNAL_CONTEXT_RESTORED` overlay;
+  application restoration precedes `SERVICES_RESUMED`, and authoritative
+  simulation does not advance during KERNAL ownership. Exhaustive range-pair
+  validation passes and rejects three negative cases: undeclared overlap,
+  concurrent incompatible lifetimes and missing DOS/application exclusion.
+  The complete T02 build passes generated-binding, native ASan/UBSan, fresh
+  CF001/RH001 predecessor, LLVM-MOS compile/link, protected code/data linker,
+  map/symbol/disassembly and conservative fit checks. Post-correction charge
+  remains 40,023 / 40,959 resident bytes with 936 bytes margin, 5,664 guarded
+  Attic transition bytes and zero measured-reserve bytes. JSON/Python syntax,
+  generated reproducibility, Markdown links, whitespace/diff and changed-path
+  scope checks pass. D81, Xemu, SD and physical MEGA65 tiers were not run.
+- **Exact next action:** Founder reviews the corrected T02 ledger, exhaustive
+  validator, protected resident rule, generated accounting and handoff. Do not
+  commit, push, open a PR, start T03 or perform D81/Xemu/hardware work before
+  separate authorization.
