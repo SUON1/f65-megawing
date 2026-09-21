@@ -13,7 +13,7 @@ Completed work leaves this file. Durable project changes belong in
 
 ## Current status
 
-- **Status:** `ACTIVE`
+- **Status:** `READY FOR REVIEW`
 - **Task:** R0 Closeout T04 - founder-requested source/provenance remediation.
 - **Branch:** `codex/r0f-successor-emulator-exact-carrier`
 - **Build Intent:** Preserve the accepted T04 runtime behavior and frozen
@@ -56,12 +56,14 @@ Completed work leaves this file. Durable project changes belong in
   service mask `$1F`, independently verified SAVE payload and unchanged
   canonical hash. Canonical `R0FSUCC10.D81` is 819,200 bytes, SHA-256
   `3721dff9b84cfb7842cc154f6885861e0c7cbd3c3408c8ecec190bf6b405d461`,
-  prior state is now historical pending corrected execution. Missing/invalid-
-  token and corrupted reducer input lockouts previously passed but must be
-  repeated from the source freeze. SD and physical tiers were not run and
-  remain prohibited.
-- **Exact next action:** Archive the pre-freeze artifacts without deleting
-  them, validate the reproducing source/tooling, create and push the focused
-  source-freeze commit, then start the clean reproduction phase. Do not open or
-  merge a PR, copy to SD, perform physical work, start T05 or freeze measured
-  limits.
+  prior run is retained as historical diagnostic evidence. Source-freeze
+  commit `20b2aab382d0590037443b6a352fbc77fda7aa42` was pushed before the clean
+  rebuild. Corrected direct NTSC/PAL, two NTSC plus two PAL exact-carrier runs,
+  and missing/invalid-token plus corrupted-result/SAVE reducer lockouts all
+  pass from that commit. Every exact-carrier copy was mounted with basename
+  `R0FSUCC10.D81`; every corrected manifest records the source-freeze commit.
+  SD and physical tiers were not run and remain prohibited.
+- **Exact next action:** Founder review of the separately committed and pushed
+  corrected provenance/evidence set. Do not open or merge a PR, copy to SD,
+  perform physical work, start T05 or freeze measured limits without separate
+  authorization.

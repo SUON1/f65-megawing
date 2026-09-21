@@ -23,7 +23,7 @@ A matching hash of the SD-card copy is necessary but not sufficient. The MEGA65 
 
 Date: 2026-09-20 to 2026-09-21
 
-Status: **ACTIVE - FOUNDER-REQUESTED PROVENANCE REMEDIATION**
+Status: **READY FOR REVIEW - PROVENANCE REMEDIATION COMPLETE**
 
 ## Build Intent
 

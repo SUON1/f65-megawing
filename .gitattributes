@@ -27,3 +27,6 @@
 *.bin binary
 *.zip binary
 *.jar binary
+
+# Preserve verbatim diagnostic/tool output in retained R0-F evidence.
+docs/evidence/r0f/successor/** whitespace=-trailing-space

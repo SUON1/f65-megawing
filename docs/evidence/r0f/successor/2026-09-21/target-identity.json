@@ -1,0 +1,84 @@
+{
+  "atticTransitionBytes": 5664,
+  "canonicalD81Filename": "R0FSUCC10.D81",
+  "canonicalD81Sha256": "3721dff9b84cfb7842cc154f6885861e0c7cbd3c3408c8ecec190bf6b405d461",
+  "commands": [
+    [
+      "git",
+      "branch",
+      "--show-current"
+    ],
+    [
+      "git",
+      "status",
+      "--porcelain",
+      "--untracked-files=all"
+    ],
+    [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "tools/diagnostics/r0f_successor_integration.py",
+      "build"
+    ],
+    [
+      "/Users/slice/Documents/Codex/f65-megawing/toolchain/runtime/jdk-full/jdk-21.0.12+8/Contents/Home/bin/javac",
+      "-Xlint:all",
+      "-Werror",
+      "-d",
+      "/Users/slice/Developer/f65-megawing/build/r0f/successor-t04/classes",
+      "tools/generators/src/main/java/f65/tools/R0FSuccessorRuntimeOracle.java"
+    ],
+    [
+      "/Users/slice/Documents/Codex/f65-megawing/toolchain/runtime/jdk-full/jdk-21.0.12+8/Contents/Home/bin/java",
+      "-cp",
+      "/Users/slice/Developer/f65-megawing/build/r0f/successor-t04/classes",
+      "f65.tools.R0FSuccessorRuntimeOracle",
+      "--model"
+    ],
+    [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    [
+      "git",
+      "branch",
+      "--show-current"
+    ]
+  ],
+  "d81": "XEMU_BOOT_VERIFIED",
+  "fullAcceptance": false,
+  "identity": "R0F-SUCCESSOR-T04",
+  "independentOracleModel": "PASS",
+  "lineage": {
+    "tick33": "D9EEAB81",
+    "tick66": "307A70D6"
+  },
+  "physical": "NOT RUN",
+  "prgBytes": 21481,
+  "prgPath": "build/r0f/successor-integration/R0F-SUCCESSOR-INTEGRATION.prg",
+  "prgSha256": "d0979c56c373f8885e4741670141ebf22c0a2e9ef8a84f6a931eaef05592d9df",
+  "protectedResidentEndExclusive": 11015,
+  "reserveBytes": 0,
+  "residentBytes": 23657,
+  "residentCapacityBytes": 40959,
+  "residentHighWaterExclusive": 31850,
+  "residentMarginBytes": 17302,
+  "reviewedT03Input": {
+    "directRuntimeResult": "LOCKOUT fault 84 before canonical construction",
+    "prgBytes": 21489,
+    "prgSha256": "43074a4322b9a2ec35428e966d9f64ab30655c8f0f27516317e7e3f9e417264a",
+    "reproducedBeforeRuntimeWork": true
+  },
+  "sd": "NOT RUN",
+  "sourceBranch": "codex/r0f-successor-emulator-exact-carrier",
+  "sourceCommit": "20b2aab382d0590037443b6a352fbc77fda7aa42",
+  "sourceState": "clean T04 source-freeze commit",
+  "t03Regression": "PASS",
+  "t04RuntimeCorrection": {
+    "architectureChange": false,
+    "carrierIdentityInvalidatedAndRebuilt": true,
+    "scope": "apply the official single-MAP all-zero clear before CPU-port/I/O access; perform canonical entry before high linked-BSS consumers"
+  },
+  "xemu": "PASS"
+}
