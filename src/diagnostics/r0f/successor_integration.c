@@ -778,6 +778,7 @@ int main(void)
     uint16_t display_after = 0u;
     uint8_t stage = 1u;
     uint8_t resumed_service_mask = 0u;
+    uint8_t final_fault;
 
     for (index = 0u; index < R0FSI_RESULT_BYTES; index++)
     {
@@ -834,7 +835,8 @@ int main(void)
     stage = 4u;
     if (!run_ticks(R0FSI_POST_STORAGE_TICKS))
     {
-        lockout(87u);
+        // Keep the first post-resume failure instead of hiding it with 0x57.
+        lockout(r0fs_post_storage_tick_fault(cffault));
         goto finish;
     }
     irq_after = r0f_pf_irq_count;
@@ -925,6 +927,13 @@ finish:
     cfresult[R0FSI_O_NMI_STICKY] = r0f_pf_nmi_seen;
     cfresult[R0FSI_O_LIFECYCLE] = lifecycle_state;
     cfresult[R0FSI_O_FAULT] = cffault;
+    final_fault = r0fs_final_fault(
+        lifecycle_state, r0f_pf_nmi_seen, cffault, resumed_service_mask,
+        R0FSI_SERVICE_DISPLAY | R0FSI_SERVICE_AUDIO
+            | R0FSI_SERVICE_INPUT | R0FSI_SERVICE_IRQ | R0FSI_SERVICE_DMA,
+        (uint8_t)(reserve_before == reserve_after),
+        (uint8_t)(model.tick == R0FSI_PRE_STORAGE_TICKS
+                              + R0FSI_POST_STORAGE_TICKS));
     if (reserve_before == reserve_after
         && r0fs_completion_allowed(
             lifecycle_state, r0f_pf_nmi_seen, cffault,
@@ -939,7 +948,7 @@ finish:
     }
     else if (!cffault)
     {
-        lockout(88u);
+        lockout(final_fault != 0u ? final_fault : 88u);
         cfresult[R0FSI_O_FAULT] = cffault;
         cfresult[R0FSI_O_LIFECYCLE] = lifecycle_state;
     }
@@ -949,11 +958,17 @@ finish:
     cfscreen();
     cfline(5u, cffault ? "SUCCESSOR LOCKOUT - NO ACCEPTANCE"
                        : "SUCCESSOR HOST/STATIC IMAGE - RUNTIME UNVERIFIED");
-    cfline(7u, "NO D81 / XEMU / SD / HARDWARE / R0-F ACCEPTANCE");
+    cfline(7u, "FAULT   STATE   TICK    MASK  NMI");
     cfhex(9u, 0u, cffault, 2u);
     cfhex(9u, 8u, lifecycle_state, 2u);
     cfhex(9u, 16u, model.tick, 4u);
-    cfhex(9u, 24u, result_get_u32(R0FSI_O_CRC32), 8u);
+    cfhex(9u, 24u, resumed_service_mask, 2u);
+    cfhex(9u, 30u, r0f_pf_nmi_seen, 2u);
+    cfline(11u, "RESERVE BEFORE   RESERVE AFTER");
+    cfhex(13u, 0u, reserve_before, 8u);
+    cfhex(13u, 17u, reserve_after, 8u);
+    cfline(15u, "RESULT CRC32");
+    cfhex(17u, 0u, result_get_u32(R0FSI_O_CRC32), 8u);
     for (;;)
     {
     }

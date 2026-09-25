@@ -9,6 +9,16 @@ These instructions apply to every task in this repository.
 3. Inspect the applicable governing design documents, interfaces, memory ledgers, implementation, and validation tooling.
 4. For C work, read [the C readability standard](docs/CODE_STYLE_C.md).
 5. Before any D81-related task, read and obey [00_D81_LOADABILITY_GATE.md](00_D81_LOADABILITY_GATE.md).
+6. For D81 construction or delivery, follow [the reproducible D81 workflow](docs/D81_WORKFLOW.md). Use exact uppercase FAT 8.3 names, fresh single-session construction, independent extraction/structure checks, and fresh exact-name Xemu copies. Never mount the canonical image writable.
+
+## D81 engineering requirements
+
+- Image construction and SD allocation are separate gates. A correct 819,200-byte image and matching hash do not guarantee a mountable SD file.
+- Do not rely on macOS `F_PREALLOCATE` success as a contiguity guarantee: the observed FSKit FAT implementation ignores its contiguous flag. Do not claim the SD card is defective from candidate fragmentation.
+- The host-created replacement workflow uses a hash-pinned official MEGA65 allocator, independently qualified on disposable fragmented FAT32 fixtures. Any raw-card write requires explicit owner authorization, an unmounted positively identified partition, clean read-only filesystem checks, bounded free-run preflight, no existing destination/alias, retained metadata, and staged/final raw hash/one-extent checks. See the workflow for the unverified physical boundary and qualification command.
+- Never require repeated owner-created blank images as the normal build process. Never overwrite, repair, rename or retest a failed carrier. Retain failed identities and evidence.
+- Respect owner-selected transfer boundaries. If the owner chooses Finder, provide the exact host path, do not transfer automatically, and require a read-only allocation audit after copying. Do not claim Finder guarantees one extent.
+- Do not call a candidate hardware-loadable until its exact SD copy passes physical chooser and entry-load verification. Keep R0-F runtime acceptance separate; stop the wider test sequence until the carrier gate passes.
 
 Do not routinely read all of [F65_OFFICIAL_RECORD.md](F65_OFFICIAL_RECORD.md)
 or [CODEX_PROGRESS.md](CODEX_PROGRESS.md). Consult them when historical or

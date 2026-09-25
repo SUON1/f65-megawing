@@ -37,6 +37,7 @@ import sys
 
 import r0f_platform_build as platform_build
 from d81_foundation_compare import Image
+from d81_delivery import require_name
 
 
 ROOT = platform_build.ROOT
@@ -63,6 +64,10 @@ EXPECTED_CANONICAL_SHA256 = (
 CANONICAL_LABEL = "R0F SUCC T04"
 CANONICAL_ID = "65"
 CANONICAL = OUT / "canonical-10" / CANONICAL_NAME
+EXPECTED_SCREEN_LINES = (
+    "SUCCESSOR HOST/STATIC IMAGE - RUNTIME UNVERIFIED",
+    "NO D81 / XEMU / SD / HARDWARE / R0-F ACCEPTANCE",
+)
 EVIDENCE = ROOT / "docs/evidence/r0f/successor/2026-09-21"
 ORACLE_SOURCE = (
     "tools/generators/src/main/java/f65/tools/"
@@ -366,6 +371,7 @@ def check_disk(image, expected, label, identifier, extracted):
 
 
 def fresh_d81(directory, image, label, expected):
+    require_name(image.name)
     if image.exists():
         raise ValueError("refusing to overwrite a D81 candidate")
     arguments = ["-format", label + "," + CANONICAL_ID, "d81", image]
@@ -579,9 +585,14 @@ def finish_success_run(
         directory, image, result, base_evidence, expected, label):
     decoded = validate_success_result(result)
     screen = (directory / "screen.txt").read_text(errors="replace")
-    if ("SUCCESSOR HOST/STATIC IMAGE - RUNTIME UNVERIFIED" not in screen
-            or "NO D81 / XEMU / SD / HARDWARE / R0-F ACCEPTANCE" not in screen):
-        raise ValueError("stable exact-T03 identity banner missing")
+    missing_screen_lines = [
+        line for line in EXPECTED_SCREEN_LINES if line not in screen
+    ]
+    if missing_screen_lines:
+        raise ValueError(
+            "required result-screen identity missing: "
+            + ", ".join(missing_screen_lines)
+        )
     saved = expected_save(result)
     expected_post = dict(expected)
     expected_post["rsstate"] = saved
@@ -917,11 +928,11 @@ def carrier_run(mode, number):
     return evidence
 
 
-def carrier_tests():
+def carrier_tests(run_plan=(("1", 1), ("1", 2), ("0", 1), ("0", 2))):
     if not CANONICAL.is_file():
         raise ValueError("canonical D81 is missing")
     runs = []
-    for mode, number in (("1", 1), ("1", 2), ("0", 1), ("0", 2)):
+    for mode, number in run_plan:
         runs.append(carrier_run(mode, number))
     host_gate_path = CANONICAL.parent / "host-gate.json"
     host_gate = read_json(host_gate_path)

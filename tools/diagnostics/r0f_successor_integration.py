@@ -51,6 +51,8 @@ def generated_files(contract):
         header.append(f"#define R0FSI_O_{name} {value}u")
     for name, value in contract["serviceMask"].items():
         header.append(f"#define R0FSI_SERVICE_{name} {value}u")
+    for name, value in contract["diagnosticFaults"].items():
+        header.append(f"#define R0FSI_FAULT_{name} {value}u")
     header.extend(("", "#endif", ""))
     assembly.append("")
     return "\n".join(header), "\n".join(assembly)
@@ -117,6 +119,15 @@ def validate_contract(contract, admitted, ledger):
         raise ValueError("resumed service inventory")
     if contract["resultOffsets"].get("NMI_STICKY") != 96:
         raise ValueError("sticky NMI result field")
+    expected_faults = {
+        "POST_STORAGE_TICK": 87,
+        "FINAL_RESERVE": 95, "FINAL_LIFECYCLE": 96, "FINAL_NMI": 97,
+        "FINAL_DISPLAY": 98, "FINAL_AUDIO": 99, "FINAL_INPUT": 100,
+        "FINAL_IRQ": 101, "FINAL_DMA": 102, "FINAL_SERVICE_MASK": 103,
+        "FINAL_TICK": 104,
+    }
+    if contract.get("diagnosticFaults") != expected_faults:
+        raise ValueError("physical final-fault classification")
     admission.validate_contract(
         admitted,
         json.loads((ROOT / "memory/r0f-successor-memory-ledger.json").read_text()),

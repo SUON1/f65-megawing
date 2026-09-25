@@ -1,5 +1,7 @@
 #include "successor_lifecycle.h"
 
+#include "r0f_successor_integration.h"
+
 uint8_t r0fs_transition(uint8_t state, uint8_t event)
 {
     if (state < R0FS_S_SERVICES_RESUMED && event == state)
@@ -66,6 +68,72 @@ uint8_t r0fs_completion_allowed(uint8_t state, uint8_t nmi_seen,
                      && nmi_seen == 0u
                      && fault == 0u
                      && resumed_mask == required_mask);
+}
+
+uint8_t r0fs_final_fault(uint8_t state, uint8_t nmi_seen,
+                         uint8_t existing_fault, uint8_t resumed_mask,
+                         uint8_t required_mask, uint8_t reserve_equal,
+                         uint8_t ticks_equal)
+{
+    if (existing_fault != 0u)
+    {
+        return existing_fault;
+    }
+    if (!reserve_equal)
+    {
+        return R0FSI_FAULT_FINAL_RESERVE;
+    }
+    if (state != R0FS_S_SERVICES_RESUMED)
+    {
+        return R0FSI_FAULT_FINAL_LIFECYCLE;
+    }
+    if (nmi_seen)
+    {
+        return R0FSI_FAULT_FINAL_NMI;
+    }
+    if ((required_mask & R0FSI_SERVICE_DISPLAY) != 0u
+        && (resumed_mask & R0FSI_SERVICE_DISPLAY) == 0u)
+    {
+        return R0FSI_FAULT_FINAL_DISPLAY;
+    }
+    if ((required_mask & R0FSI_SERVICE_AUDIO) != 0u
+        && (resumed_mask & R0FSI_SERVICE_AUDIO) == 0u)
+    {
+        return R0FSI_FAULT_FINAL_AUDIO;
+    }
+    if ((required_mask & R0FSI_SERVICE_INPUT) != 0u
+        && (resumed_mask & R0FSI_SERVICE_INPUT) == 0u)
+    {
+        return R0FSI_FAULT_FINAL_INPUT;
+    }
+    if ((required_mask & R0FSI_SERVICE_IRQ) != 0u
+        && (resumed_mask & R0FSI_SERVICE_IRQ) == 0u)
+    {
+        return R0FSI_FAULT_FINAL_IRQ;
+    }
+    if ((required_mask & R0FSI_SERVICE_DMA) != 0u
+        && (resumed_mask & R0FSI_SERVICE_DMA) == 0u)
+    {
+        return R0FSI_FAULT_FINAL_DMA;
+    }
+    if (resumed_mask != required_mask)
+    {
+        return R0FSI_FAULT_FINAL_SERVICE_MASK;
+    }
+    if (!ticks_equal)
+    {
+        return R0FSI_FAULT_FINAL_TICK;
+    }
+    return 0u;
+}
+
+uint8_t r0fs_post_storage_tick_fault(uint8_t existing_fault)
+{
+    if (existing_fault != 0u)
+    {
+        return existing_fault;
+    }
+    return R0FSI_FAULT_POST_STORAGE_TICK;
 }
 
 uint32_t r0fs_crc32(const uint8_t *bytes, uint16_t length)

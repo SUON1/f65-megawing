@@ -13,6 +13,16 @@ records the one active task. Historical R0 plans, reports, decisions, approvals,
 and evidence remain authoritative for their stated scope but are not a general
 task workflow.
 
+## D81 construction and delivery
+
+The root [D81 loadability gate](../00_D81_LOADABILITY_GATE.md) and
+[reproducible D81 workflow](D81_WORKFLOW.md) govern every image change.
+Fresh image construction, exact-name emulator proof, SD allocation and physical
+chooser proof are separate requirements. Host copy/preallocation success must
+never substitute for an independently measured single FAT32 extent. The new
+direct allocator remains host-fixture-qualified until its first physical test;
+document that limitation instead of promoting fixture results to hardware PASS.
+
 ## Normal lifecycle
 
 ```text

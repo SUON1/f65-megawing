@@ -17,6 +17,11 @@ uint8_t r0fs_context_mailbox_valid(uint8_t region, uint16_t offset,
 uint8_t r0fs_completion_allowed(uint8_t state, uint8_t nmi_seen,
                                 uint8_t fault, uint8_t resumed_mask,
                                 uint8_t required_mask);
+uint8_t r0fs_final_fault(uint8_t state, uint8_t nmi_seen,
+                         uint8_t existing_fault, uint8_t resumed_mask,
+                         uint8_t required_mask, uint8_t reserve_equal,
+                         uint8_t ticks_equal);
+uint8_t r0fs_post_storage_tick_fault(uint8_t existing_fault);
 uint32_t r0fs_crc32(const uint8_t *bytes, uint16_t length);
 uint8_t r0fs_snapshot_valid(const uint8_t *leading_guard,
                             const uint8_t *payload,

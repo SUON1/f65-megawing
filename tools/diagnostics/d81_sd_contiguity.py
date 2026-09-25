@@ -261,16 +261,33 @@ def main():
     info = disk_info(mount)
     if info.get("RemovableMedia") is not True:
         fail("intended removable FAT32 card required")
-    try:
-        extents = physical_extents(image)
-        inspector = "macOS F_LOG2PHYS_EXT via tools/diagnostics/d81_sd_contiguity.py"
-    except SystemExit as error:
-        if "F_LOG2PHYS_EXT is unavailable" not in str(error):
-            raise
-        extents = fat32_extents(
-            info, image.name, image.stat().st_size, root_only=args.fat32_root_only
-        )
-        inspector = "raw FAT32 cluster-chain audit via tools/diagnostics/d81_sd_contiguity.py"
+    if args.fat32_root_only:
+        from d81_fat32_audit import Fat32
+        if image.parent != mount:
+            fail("release image must be at the FAT32 root")
+        raw_device = info['DeviceNode'].replace('/dev/disk', '/dev/rdisk', 1)
+        descriptor = os.open(raw_device, os.O_RDONLY)
+        try:
+            volume = Fat32(descriptor)
+            matches = [e for e in volume.root_entries() if e['name'] == image.name]
+            if len(matches) != 1 or matches[0]['shortName'] != image.name:
+                fail('release path must have an exact FAT short-name entry')
+            raw = volume.inspect(matches[0])
+            if raw['sha256'] != actual_sha or raw['bytes'] != IMAGE_BYTES:
+                fail('raw FAT bytes do not match mounted file hash/length')
+            extents = [(e['logicalOffset'], e['bytes'], e['deviceOffset']) for e in raw['extents']]
+        finally:
+            os.close(descriptor)
+        inspector = 'raw FAT32 root/short-name/chain/content audit via d81_fat32_audit.py'
+    else:
+        try:
+            extents = physical_extents(image)
+            inspector = "macOS F_LOG2PHYS_EXT via tools/diagnostics/d81_sd_contiguity.py"
+        except SystemExit as error:
+            if "F_LOG2PHYS_EXT is unavailable" not in str(error):
+                raise
+            extents = fat32_extents(info, image.name, image.stat().st_size)
+            inspector = "raw FAT32 cluster-chain audit via tools/diagnostics/d81_sd_contiguity.py"
     report = {
         "D81_STATE": "SD_CONTIGUITY_VERIFIED" if len(extents) == 1 else "INVALID_FOR_MEGA65_FREEZER_MOUNT",
         "D81_PATH": str(image),

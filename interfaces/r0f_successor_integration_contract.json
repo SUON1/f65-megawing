@@ -61,6 +61,19 @@
     "IRQ": 8,
     "DMA": 16
   },
+  "diagnosticFaults": {
+    "POST_STORAGE_TICK": 87,
+    "FINAL_RESERVE": 95,
+    "FINAL_LIFECYCLE": 96,
+    "FINAL_NMI": 97,
+    "FINAL_DISPLAY": 98,
+    "FINAL_AUDIO": 99,
+    "FINAL_INPUT": 100,
+    "FINAL_IRQ": 101,
+    "FINAL_DMA": 102,
+    "FINAL_SERVICE_MASK": 103,
+    "FINAL_TICK": 104
+  },
   "rules": [
     "The storage boundary occurs after a complete authoritative tick and before the next tick release.",
     "No authoritative tick advances while the lifecycle is QUIESCED through APPLICATION_RESTORED.",
@@ -69,6 +82,7 @@
     "VIC-IV display fetch is suspended after renderer drain and before ROM restoration, then resumed only after application and canonical platform restoration.",
     "Display, audio, input, IRQ and DMA service paths all execute again after SERVICES_RESUMED.",
     "The sticky NMI observation is recorded and invalidates the run before, during or after storage, including resumed authoritative ticks and final completion.",
+    "A failed post-storage tick preserves its first recorded fault; code 87 is used only when no inner fault was recorded.",
     "Any lifecycle, snapshot, ROM, storage, canonical-state, reserve, NMI or continuation failure enters permanent lockout.",
     "The T02 ranges, public ABI, high-level map, 100 Hz release and 21-stage order remain unchanged."
   ],
