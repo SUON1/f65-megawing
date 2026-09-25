@@ -1,0 +1,66 @@
+{
+  "allocations": [
+    {
+      "attributes": 32,
+      "bytes": 819200,
+      "extentCount": 1,
+      "extents": [
+        {
+          "bytes": 819200,
+          "deviceOffset": 2179072,
+          "logicalOffset": 0
+        }
+      ],
+      "firstCluster": 400,
+      "name": "R0FGIAG4.D81",
+      "sha256": "90a819f49c5b6cb3bf66f71317c1f40e3cae3f4059fb422b46b05589e86915fa",
+      "shortName": "R0FGIAG4.D81",
+      "unrelatedBytes": "UNCHANGED"
+    },
+    {
+      "attributes": 32,
+      "bytes": 819200,
+      "extentCount": 1,
+      "extents": [
+        {
+          "bytes": 819200,
+          "deviceOffset": 2998272,
+          "logicalOffset": 0
+        }
+      ],
+      "firstCluster": 600,
+      "name": "TEST0002.D81",
+      "sha256": "90a819f49c5b6cb3bf66f71317c1f40e3cae3f4059fb422b46b05589e86915fa",
+      "shortName": "TEST0002.D81",
+      "unrelatedBytes": "UNCHANGED"
+    },
+    {
+      "attributes": 32,
+      "bytes": 819200,
+      "extentCount": 1,
+      "extents": [
+        {
+          "bytes": 819200,
+          "deviceOffset": 3817472,
+          "logicalOffset": 0
+        }
+      ],
+      "firstCluster": 800,
+      "name": "TEST0003.D81",
+      "sha256": "90a819f49c5b6cb3bf66f71317c1f40e3cae3f4059fb422b46b05589e86915fa",
+      "shortName": "TEST0003.D81",
+      "unrelatedBytes": "UNCHANGED"
+    }
+  ],
+  "identity": {
+    "build/tools/m65tools-develo-966-23186d-macos/mega65_ftp.osx": "d7acf00fa056b5a8a8bd3756a3a411798bfb6f9b7414bb2c0796a51eeae14580",
+    "toolchain/d81_delivery.lock.json": "d0172470ca8312a6f254369195aadb4a96bbc13f7b4e61dd45d4831d6979ec8b",
+    "tools/diagnostics/d81_direct_delivery.py": "61b4f7670940ba3227592993baf4b6375397c122a85f9e7c97602a8d1bb1d72a",
+    "tools/diagnostics/d81_fat32_audit.py": "d65ded34c37d86e3ebe43fc73047172e7f35bacc2b8c103185b52a3c12adf817",
+    "tools/diagnostics/test_d81_direct_delivery.py": "a613cdae625b248e1842b3f15b7291a3484e9068cbaac3cc066fa918ddfe7b16"
+  },
+  "result": "PASS",
+  "scope": "synthetic fragmented FAT32 partition; no SD writes",
+  "sourceSha256": "90a819f49c5b6cb3bf66f71317c1f40e3cae3f4059fb422b46b05589e86915fa",
+  "testsRun": 11
+}

@@ -1,0 +1,206 @@
+{
+  "identity": "R0F-SUCCESSOR-T03-COMBINED-INTEGRATION",
+  "status": "PRIVATE_R0_PROOF_HOST_STATIC_INTEGRATION_ONLY",
+  "sourceCommit": "ae2b397698cc7197d03349e57cd058b4fb9f3987",
+  "sourceState": "dirty review tree; per-input hashes authoritative",
+  "inputs": {
+    "src/diagnostics/r0f/successor_integration.c": "3ced34a3f9847b5136e7b5d52eeb14d8380c21b6e745657aba5144fac8b408a9",
+    "src/diagnostics/r0f/successor_lifecycle.c": "040461bf55764065d634bae68322dd1bdba3610df443748427bfcc5be8c15baf",
+    "src/diagnostics/r0f/combined_model.c": "46de21d13fca8939cf25742d6920eeaa54ae5ffd5821bc6eaf57d39c3f4b4903",
+    "src/diagnostics/r0f/combined_platform.c": "0a41089e651c5eb8e4a40c34929c429a122c688845c91c018adcc9414e4e6302",
+    "src/platform/r0f/successor_admission_45gs02.s": "5a37a662b8a1dfd6255c777fb7970fdc3399b4b9dfb77b0c6971fc0ebe23c5ce",
+    "src/platform/r0f/successor_integration_45gs02.s": "57b53e531ae4856e964dd60872a07d719ba55ce1facd68b2cd159c2d79cbf2ce",
+    "src/platform/r0f/combined_45gs02.s": "f57927e7b4177adb68a72c3f98d4d76b96257c3940c4bd96f9799effa7fbae11",
+    "src/platform/r0f/qualification_45gs02.s": "af7ff9f6a7e2c3da8dd79a884d5c48873296ca6519df69dbe2bfcd57fe6324dc",
+    "src/platform/r0a_platform_45gs02.s": "a0c9504763c44eb10cc7f38dcb77f2961beabd3ac506c5cc78a26a33552b97ca",
+    "interfaces/r0f_successor_contract.json": "35f4bae25a531d776feae7038d481162df3c3de4535f19d682278eea5d14f845",
+    "interfaces/r0f_successor_integration_contract.json": "7d97939ed0b9687d207b75d353d0ddf11dde0ee919ff2ce5b3291f3a530213ad",
+    "interfaces/generated/r0f_successor.h": "dd1fbd6fc50bffed153f50fce5975359300f472f998f67c65fa7fffc3eb59db1",
+    "interfaces/generated/r0f_successor.inc": "1853d8b29c59ee0804998e6b5a8e5f07675304232c2caa537d896b99e3c37153",
+    "interfaces/generated/r0f_successor_integration.h": "84353bf1727b5e10233470c0db95d6a73c65d831b60461a83749f6a952edeecd",
+    "interfaces/generated/r0f_successor_integration.inc": "3a3ea3856d60d77d4b0136a6456e61b2f92ae6ac3f1b8b54f0fc082cf94e1fb0",
+    "memory/r0f-successor-memory-ledger.json": "600498ab613b3619d371432b08400b0c2cf18cc56e5ef1e5fee972fbabef3adc",
+    "memory/r0f-successor-integration-memory-ledger.json": "47cd44becad4cbf46cd7708cd30789ed7543c44a1b184d65d114357338a683c8",
+    "src/diagnostics/r0f/combined_model.h": "0931d1e42914903d61d073be597910575a941171c6592b45d4a81649123113df",
+    "src/diagnostics/r0f/combined_platform.h": "4d83f75144d74dca6d9442daee528d59e97672d50b8aa41d9f810d4a27436736",
+    "src/diagnostics/r0f/successor_lifecycle.h": "79ffc5c2d363f02b057f31dede41ea73b0dadfd255c25aa5946d2be2112127cb",
+    "src/platform/r0f/startup.ld": "96d85939b28b4b24d0e251164b2abe9c5e950096482334517cbc4e57fcb6b60f",
+    "src/platform/r0f/successor_integration.ld": "1319c0ce22989dfe0e5a8b2d7aa295af7a5dfe4ca81dc46334b579c23a9f20a4",
+    "tools/diagnostics/r0f_successor_integration.py": "de518d7052d9a59a29b1affeaaa329f0f652f52fe6a5ec39fefa9eae6107e02f",
+    "tools/diagnostics/r0f_successor_integration_host_test.c": "d054ed9c187bc7175009448e3b32f92dbfc143125af3f7eea60d8fa6aa814621",
+    "tools/generators/src/main/java/f65/tools/R0FSuccessorOracle.java": "f8d0afe6ee4a2de993fc6044f1073ac8eb9f6926465453fb5a99494e01c852f8"
+  },
+  "prgSha256": "5600782308a16976d0d20303e0c8d215b9db0f1dab1680f17e9a07ccfea47d7c",
+  "prgBytes": 21922,
+  "sections": {
+    ".basic_header": {
+      "start": 8193,
+      "bytes": 22
+    },
+    ".zp.data": {
+      "start": 34,
+      "bytes": 0
+    },
+    ".zp.bss": {
+      "start": 34,
+      "bytes": 0
+    },
+    ".r0fs_protected": {
+      "start": 8215,
+      "bytes": 2800
+    },
+    ".text": {
+      "start": 11015,
+      "bytes": 18642
+    },
+    ".rodata": {
+      "start": 29657,
+      "bytes": 456
+    },
+    ".data": {
+      "start": 30113,
+      "bytes": 0
+    },
+    ".bss": {
+      "start": 30113,
+      "bytes": 2143
+    },
+    ".noinit": {
+      "start": 32256,
+      "bytes": 35
+    },
+    ".comment": {
+      "start": 0,
+      "bytes": 204
+    },
+    ".llvm_sympart": {
+      "start": 0,
+      "bytes": 30
+    },
+    ".symtab": {
+      "start": 0,
+      "bytes": 7168
+    },
+    ".shstrtab": {
+      "start": 0,
+      "bytes": 130
+    },
+    ".strtab": {
+      "start": 0,
+      "bytes": 6734
+    }
+  },
+  "actualResidentBytes": 24098,
+  "residentHighWaterExclusive": 32291,
+  "residentCapacityBytes": 40959,
+  "residentMarginBytes": 16861,
+  "addressSpaceTailMarginBytes": 16861,
+  "protectedResidentBytes": 2800,
+  "protectedResidentEndExclusive": 11015,
+  "atticTransitionBytes": 5664,
+  "newPhysicalAllocations": [],
+  "reserveBytes": 0,
+  "predecessorRegression": {
+    "cf001": "PASS",
+    "rh001": "PASS",
+    "cf001AccountingSha256": "08314dcf7905af04eadf1eba226ce4a0fa5aeccf8f0f44621cff2347e3789913",
+    "rh001AccountingSha256": "c92eb8e6f5409c7086edefbce06406347313b602cc6a8189b152296cc208d78d"
+  },
+  "hostSanitizer": "PASS",
+  "independentOracle": "PASS",
+  "targetStatic": "PASS",
+  "d81": "NOT RUN",
+  "xemu": "NOT RUN",
+  "sd": "NOT RUN",
+  "physical": "NOT RUN",
+  "fullAcceptance": false,
+  "commands": [
+    [
+      "/usr/bin/clang",
+      "-std=c11",
+      "-Wall",
+      "-Wextra",
+      "-Wconversion",
+      "-Werror",
+      "-fsanitize=address,undefined",
+      "-Iinterfaces/generated",
+      "-Isrc/diagnostics/r0f",
+      "src/diagnostics/r0f/combined_model.c",
+      "src/diagnostics/r0f/successor_lifecycle.c",
+      "tools/diagnostics/r0f_successor_integration_host_test.c",
+      "-o",
+      "/Users/slice/Developer/f65-megawing/build/r0f/successor-integration/host-test"
+    ],
+    [
+      "/Users/slice/Developer/f65-megawing/build/r0f/successor-integration/host-test"
+    ],
+    [
+      "/Users/slice/Documents/Codex/f65-megawing/toolchain/runtime/jdk-full/jdk-21.0.12+8/Contents/Home/bin/javac",
+      "-Xlint:all",
+      "-Werror",
+      "-d",
+      "/Users/slice/Developer/f65-megawing/build/r0f/successor-integration/classes",
+      "tools/generators/src/main/java/f65/tools/R0FSuccessorOracle.java"
+    ],
+    [
+      "/Users/slice/Documents/Codex/f65-megawing/toolchain/runtime/jdk-full/jdk-21.0.12+8/Contents/Home/bin/java",
+      "-cp",
+      "/Users/slice/Developer/f65-megawing/build/r0f/successor-integration/classes",
+      "f65.tools.R0FSuccessorOracle",
+      "--model"
+    ],
+    [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "tools/diagnostics/r0f_combined_build.py",
+      "build"
+    ],
+    [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "tools/diagnostics/r0f_resume_build.py",
+      "build"
+    ],
+    [
+      "/Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/mos-mega65-clang",
+      "-mcpu=mos45gs02",
+      "-mlto-zp=0",
+      "-Oz",
+      "-fno-inline-functions",
+      "-DR0FS_INTEGRATION",
+      "-Wall",
+      "-Wextra",
+      "-Wconversion",
+      "-Werror",
+      "-Iinterfaces/generated",
+      "-Isrc/diagnostics/r0f",
+      "src/diagnostics/r0f/successor_integration.c",
+      "src/diagnostics/r0f/successor_lifecycle.c",
+      "src/diagnostics/r0f/combined_model.c",
+      "src/diagnostics/r0f/combined_platform.c",
+      "src/platform/r0f/successor_admission_45gs02.s",
+      "src/platform/r0f/successor_integration_45gs02.s",
+      "src/platform/r0f/combined_45gs02.s",
+      "src/platform/r0f/qualification_45gs02.s",
+      "src/platform/r0a_platform_45gs02.s",
+      "-Wl,-T,src/platform/r0f/startup.ld",
+      "-Wl,-T,src/platform/r0f/successor_integration.ld",
+      "-Wl,-Map,/Users/slice/Developer/f65-megawing/build/r0f/successor-integration/R0F-SUCCESSOR-INTEGRATION.map",
+      "-o",
+      "/Users/slice/Developer/f65-megawing/build/r0f/successor-integration/R0F-SUCCESSOR-INTEGRATION.prg"
+    ],
+    [
+      "/Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/llvm-nm",
+      "/Users/slice/Developer/f65-megawing/build/r0f/successor-integration/R0F-SUCCESSOR-INTEGRATION.prg.elf"
+    ],
+    [
+      "/Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/llvm-objdump",
+      "-d",
+      "--print-imm-hex",
+      "/Users/slice/Developer/f65-megawing/build/r0f/successor-integration/R0F-SUCCESSOR-INTEGRATION.prg.elf"
+    ],
+    [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ]
+  ]
+}

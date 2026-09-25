@@ -1,0 +1,85 @@
+{
+  "state": "READ_ONLY_FORENSICS_NOT_RELEASE",
+  "device": {
+    "Bootable": false,
+    "BusProtocol": "Secure Digital",
+    "CanBeMadeBootable": false,
+    "CanBeMadeBootableRequiresDestroy": false,
+    "Content": "Windows_FAT_32",
+    "DeviceBlockSize": 512,
+    "DeviceIdentifier": "disk4s1",
+    "DeviceNode": "/dev/disk4s1",
+    "DeviceTreePath": "IODeviceTree:/arm-io@10F00000/apcie0@B0000000/pci-bridge1@1/pcie-sdreader@0",
+    "Ejectable": true,
+    "EjectableMediaAutomaticUnderSoftwareControl": true,
+    "EjectableOnly": true,
+    "FilesystemName": "MS-DOS FAT32",
+    "FilesystemType": "msdos",
+    "FilesystemUserVisibleName": "MS-DOS (FAT32)",
+    "FreeSpace": 26439950336,
+    "GlobalPermissionsEnabled": false,
+    "IOKitSize": 29118954496,
+    "IORegistryEntryName": "Untitled 1",
+    "Internal": true,
+    "MediaName": "",
+    "MediaType": "Generic",
+    "MountPoint": "/Volumes/MEGA65FDISK",
+    "OSInternalMedia": false,
+    "ParentWholeDisk": "disk4",
+    "PartitionMapPartition": true,
+    "PartitionMapPartitionOffset": 1048576,
+    "RAIDMaster": false,
+    "RAIDSlice": false,
+    "Removable": true,
+    "RemovableMedia": true,
+    "RemovableMediaOrExternalDevice": true,
+    "SMARTDeviceSpecificKeysMayVaryNotGuaranteed": {},
+    "SMARTStatus": "Not Supported",
+    "Size": 29118954496,
+    "SupportsGlobalPermissionsDisable": false,
+    "SystemImage": false,
+    "TotalSize": 29061902336,
+    "VolumeAllocationBlockSize": 4096,
+    "VolumeName": "MEGA65FDISK",
+    "VolumeSize": 29061902336,
+    "VolumeUUID": "83FFC12E-67E1-307F-91AD-E584C2E01E87",
+    "WholeDisk": false,
+    "Writable": true,
+    "WritableMedia": true,
+    "WritableVolume": true
+  },
+  "inspectorSha256": "d65ded34c37d86e3ebe43fc73047172e7f35bacc2b8c103185b52a3c12adf817",
+  "files": [
+    {
+      "name": "R0FGIAG4.D81",
+      "shortName": "R0FGIAG4.D81",
+      "attributes": 32,
+      "firstCluster": 9596,
+      "bytes": 819200,
+      "sha256": "90a819f49c5b6cb3bf66f71317c1f40e3cae3f4059fb422b46b05589e86915fa",
+      "extentCount": 4,
+      "extents": [
+        {
+          "logicalOffset": 0,
+          "bytes": 49152,
+          "deviceOffset": 96350208
+        },
+        {
+          "logicalOffset": 49152,
+          "bytes": 253952,
+          "deviceOffset": 102072320
+        },
+        {
+          "logicalOffset": 303104,
+          "bytes": 155648,
+          "deviceOffset": 102330368
+        },
+        {
+          "logicalOffset": 458752,
+          "bytes": 360448,
+          "deviceOffset": 102490112
+        }
+      ]
+    }
+  ]
+}
