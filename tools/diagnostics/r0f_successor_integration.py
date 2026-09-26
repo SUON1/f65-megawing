@@ -361,11 +361,12 @@ def build():
     ordered_boundary = [
         "display_drain()", "display_suspend()",
         "restore_rom_after_display_suspend()", "low_application_copy(1u)",
-        "r0f_pf_enter()", "display_resume()",
+        "r0f_pf_enter()", "display_resume()", "if (!cfclock_begin())",
+        "cfaudio_begin()", "next_deadline = cfnow()",
     ]
     positions = [storage_source.find(token) for token in ordered_boundary]
     if -1 in positions or positions != sorted(positions):
-        raise ValueError("display quiesce/restoration/resume ordering")
+        raise ValueError("display/clock/audio resume ordering")
     if target_source.count("cfrom_restore()") != 1:
         raise ValueError("ROM restoration bypasses display-suspend gate")
     if ("application_dma_outstanding" not in target_source

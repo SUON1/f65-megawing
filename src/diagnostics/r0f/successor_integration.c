@@ -736,12 +736,13 @@ static uint8_t storage_transition(void)
         lockout(93u);
         return 0u;
     }
-    cfaudio_begin();
     if (!cfclock_begin())
     {
         lockout(82u);
         return 0u;
     }
+    // Audio initialization reads the CIA clock; restart it first after KERNAL.
+    cfaudio_begin();
     if (r0f_pf_nmi_seen)
     {
         lockout(94u);
