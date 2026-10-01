@@ -1,0 +1,1989 @@
+{
+  "SD": "NOT RUN",
+  "build": {
+    "addedVersusPredecessor": -14,
+    "carrier": "NOT BUILT",
+    "command": [
+      "/Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/mos-mega65-clang",
+      "-mcpu=mos45gs02",
+      "-mlto-zp=0",
+      "-Oz",
+      "-fno-inline-functions",
+      "-DR0FS_INTEGRATION",
+      "-DR0FG1_INTEGRATION",
+      "-finline-functions",
+      "-DR0FG1_PROBE_BYTES=33025ul",
+      "-Wall",
+      "-Wextra",
+      "-Wconversion",
+      "-Werror",
+      "-Iinterfaces/generated",
+      "-Isrc/diagnostics/r0f",
+      "src/diagnostics/r0f/successor_integration.c",
+      "src/diagnostics/r0f/successor_capture.c",
+      "src/diagnostics/r0f/successor_irq.c",
+      "src/diagnostics/r0f/successor_lifecycle.c",
+      "src/diagnostics/r0f/combined_model.c",
+      "src/diagnostics/r0f/combined_platform.c",
+      "src/platform/r0f/successor_admission_45gs02.s",
+      "src/platform/r0f/successor_integration_45gs02.s",
+      "src/platform/r0f/combined_45gs02.s",
+      "src/platform/r0f/group1_irq_45gs02.s",
+      "src/platform/r0a_platform_45gs02.s",
+      "src/diagnostics/r0f/group1_export.c",
+      "src/diagnostics/r0f/group1_transport.c",
+      "src/platform/r0f/group1_export_capture_45gs02.s",
+      "src/platform/r0f/group1_terminal_export_45gs02.s",
+      "src/diagnostics/r0f/group1_capture.c",
+      "src/diagnostics/r0f/group1_timing.c",
+      "src/diagnostics/r0f/group1_workload.c",
+      "src/diagnostics/r0f/group1_presentation.c",
+      "src/diagnostics/r0f/group1_scene.c",
+      "-Wl,-T,src/platform/r0f/startup.ld",
+      "-Wl,-T,src/platform/r0f/successor_integration.ld",
+      "-Wl,-Map,/Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/completion-01/runtime-02/GROUP1.map",
+      "-o",
+      "/Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/completion-01/runtime-02/GROUP1.prg",
+      "src/diagnostics/r0f/group1_pool.c",
+      "src/diagnostics/r0f/group1_pool_owners.c",
+      "src/diagnostics/r0f/group1_geometry_fixture.c"
+    ],
+    "executed": false,
+    "fit": "PASS",
+    "hardware": "NOT RUN",
+    "inputs": {
+      "docs/plans/R0-F_GROUP1_BUILD_INTENT.md": "691b18d88878a4a4e0a8ee9a4cc1ea911b0b58b587e20c3a0e56aca6d651740a",
+      "interfaces/generated/r0a_interfaces.h": "7a8ad3dce5f8f20fcdd2adfd293273117eee6ff27dce65fccff3522b8080aece",
+      "interfaces/generated/r0a_interfaces.inc": "cb52c1f90a6a4ba4619f67784f51dbd2c53e41d23bb9e5bac84e292d1f05306c",
+      "interfaces/generated/r0b_interfaces.h": "a31d5f860e8e76ac9795016531b396d7bc02a515957362ed25ed75a2af13bb6d",
+      "interfaces/generated/r0b_interfaces.inc": "6368650b814a6dde4ed190a3e98f86608269e026b5d77c743a1c2c077e7612c1",
+      "interfaces/generated/r0c_interfaces.h": "e69adb558aac7e3142d1b8396d047c70445d9906ece6389d4b9763e67c31d63f",
+      "interfaces/generated/r0d_interfaces.h": "a00a18cf593ac7d51e055522992f946eed0873006f69e0c8a650a0fdc43c6e97",
+      "interfaces/generated/r0e_interfaces.h": "29609c64855e4ac98cf28e05ece7d9a5bb46957e3c087a1ba4676cde80526bea",
+      "interfaces/generated/r0f_combined.h": "a728d596e43163e28d1de7d2e17ee366b6df4970be8924bff9f64ca2e4a0d4f2",
+      "interfaces/generated/r0f_group1_crc_table.inc": "3f27799f89b5caa2198f4d8ceb3eb19d32f181280eb63601617ba0caf5e5dfe3",
+      "interfaces/generated/r0f_group1_export.h": "e86f3dcb16fb8a204b6411329a661853db113725d8138212dff2bcb8c266ff3d",
+      "interfaces/generated/r0f_group1_export.inc": "4b4439f6f7f2235776bb5f54114971bd19dd3ce0b86e1edcc2d465decac0326e",
+      "interfaces/generated/r0f_group1_pool.h": "3bffc649d595572a165a6ad8f5ff076f89d29d0e15a26ef4302e4bc687da7f62",
+      "interfaces/generated/r0f_group1_presentation.h": "23047406e0bce233021203ffd58ed21e5519f47d064205df9251bf004ea1592b",
+      "interfaces/generated/r0f_group1_trace.h": "00a726963cf451cb78a9639fdf5f90cfd684da5e942ccba52810b9e96d3247b4",
+      "interfaces/generated/r0f_group1_trace.inc": "7238020c03c2c4503fcb7403a3ef0cd26a2e4ef759a6704bc697dad283a16577",
+      "interfaces/generated/r0f_interfaces.h": "a1c0c55cf73e0aae634e2c4267496f700f90959d5529b25ac5a02652337bc995",
+      "interfaces/generated/r0f_platform.h": "e9067d9be6ddf5d78ad4a771e18f3199cb6e7256912bc6bbf29dfec923874363",
+      "interfaces/generated/r0f_resume.h": "55ba5146aa0c008590f18eab49c1cdb42b0e42dd67015963bbf85034ced57805",
+      "interfaces/generated/r0f_successor.h": "dd1fbd6fc50bffed153f50fce5975359300f472f998f67c65fa7fffc3eb59db1",
+      "interfaces/generated/r0f_successor.inc": "1853d8b29c59ee0804998e6b5a8e5f07675304232c2caa537d896b99e3c37153",
+      "interfaces/generated/r0f_successor_integration.h": "412e7ec4ab655b9905a83babd185c1a10b23f2e6bea34cdc4f08ef824f679a91",
+      "interfaces/generated/r0f_successor_integration.inc": "911716fa1aa943543be3aa4085e50d4201d5dac15a61d36fb6f5a6cde64f4928",
+      "interfaces/r0f_combined_contract.json": "c9f78e5baa820b977253155e2bd0aefac840de97d89f1bd0a63310849ef08b69",
+      "interfaces/r0f_group1_export_contract.json": "fa16f94d86095156ea67968cce3af4617a2fd5d768bc95f3a7820fc09d98998f",
+      "interfaces/r0f_group1_pool_contract.json": "3a9d20abcac4ab9d4bfc70ef9a44fe8922fe79f134935bb10df3a08b1778a166",
+      "interfaces/r0f_group1_presentation_contract.json": "21f1dbd27c9c73f07f1c4826c6f4cfeb90de0abb693fd854fd6be90759f048e1",
+      "interfaces/r0f_group1_trace_contract.json": "5d6340bffde730e25a255ca5b6088f270a6dda70e98a0389e000c4f2a43e0363",
+      "interfaces/r0f_platform_contract.json": "787d58238cbe7acb716cde9bd712c36e45264004bf57ca1fc445d055255f1862",
+      "interfaces/r0f_proof_contract.json": "772883b946fb8cb5a8a311bd054d584ea1eb0b2d4f721a786ccbeba5b4f0b085",
+      "interfaces/r0f_resume_contract.json": "b70173e936a8ac70d9ec85493a910f738f0bf181ec4c4def3a406beadc8b3b87",
+      "interfaces/r0f_successor_contract.json": "35f4bae25a531d776feae7038d481162df3c3de4535f19d682278eea5d14f845",
+      "interfaces/r0f_successor_integration_contract.json": "5f7ea9e982f3297444c44548ce3193cdfd58de6e2707e0c9ecb803b14dfc0b5b",
+      "memory/r0f-group1-export-memory-ledger.json": "6b828d121150e27c56a2677077dd860dd9151a37623295a2911045e9f6616206",
+      "memory/r0f-memory-ledger.json": "a4f29d27d7d744db4dee5a3ef5ca1c107233ba010c72b58704e5bc80df97f4ac",
+      "memory/r0f-resume-memory-ledger.json": "e6f3308b653a8fdcba1a7bdd8f38d7056e832b63b6dda8843787c88f8bf048f4",
+      "memory/r0f-successor-integration-memory-ledger.json": "47cd44becad4cbf46cd7708cd30789ed7543c44a1b184d65d114357338a683c8",
+      "memory/r0f-successor-memory-ledger.json": "600498ab613b3619d371432b08400b0c2cf18cc56e5ef1e5fee972fbabef3adc",
+      "spec/core/F65_Main_Concept_v1.6_FINAL_HUMAN_REVIEWED.md": "e7d8ed40ce630d82e707e2a9c7f29995fac6f4281849c2c7ef5261d420c2c425",
+      "src/diagnostics/r0f/combined_model.c": "00fed181cd67df8293653b962c481cf7c14a68d3a3e3938f13d74fe78500cd9f",
+      "src/diagnostics/r0f/combined_model.h": "0931d1e42914903d61d073be597910575a941171c6592b45d4a81649123113df",
+      "src/diagnostics/r0f/combined_platform.c": "5607c0fc7f5915905e748b5e5aeb782775224d85195d63b32b93517974c8e27b",
+      "src/diagnostics/r0f/combined_platform.h": "4d83f75144d74dca6d9442daee528d59e97672d50b8aa41d9f810d4a27436736",
+      "src/diagnostics/r0f/group1_capture.c": "9727fb2ee9ca5609b295ea5b6b14c50625b168ffcb3874f1d3c96c8f64bc9ab4",
+      "src/diagnostics/r0f/group1_capture.h": "2082534cb82bbd36fcca164846749026ffab79b2b01e91e4d75be22edf7a8b0f",
+      "src/diagnostics/r0f/group1_export.c": "905dd8001cb7a765f7c8b51fbe50971e859f1dbd35c491415e5cbd0f9ae0e162",
+      "src/diagnostics/r0f/group1_export.h": "a419aa2496fb30ab76dccde87eaf4bdfd5d9957be5618f0fa16b77e883cce168",
+      "src/diagnostics/r0f/group1_geometry_fixture.c": "c060fe72eaad522f68a009edbfc944e0a775cca875a09d0fe39ef5cde93abd19",
+      "src/diagnostics/r0f/group1_geometry_fixture.h": "c30dc6bd08413de9f39457f56204a0872970ef305279a63b2a05b04970f341d4",
+      "src/diagnostics/r0f/group1_pool.c": "b10b5df16978d25e22e13d7f5982014d85108548380b164297f008976f68ac55",
+      "src/diagnostics/r0f/group1_pool.h": "ed1a6ccf581e3985ead6a7fe8a324238ff88b4e55b30558f058903deb37b645e",
+      "src/diagnostics/r0f/group1_pool_owners.c": "e2e341f39bb8523230b029951b814ca22df9217ac855ad04a3eb474c98337203",
+      "src/diagnostics/r0f/group1_pool_owners.h": "4cc9457d1bcab126768ccc087cba4e50c31f8e4d9faac15a594ead89bf494c6d",
+      "src/diagnostics/r0f/group1_presentation.c": "9c17c3805d3ea56fa8bbe785ba91e4a107f2165f77065ac70a96e8b552297d30",
+      "src/diagnostics/r0f/group1_presentation.h": "ff5c576734a893cf7f2e156b2c54457c0b2324ef51b5fa02ffb8478db6bc300a",
+      "src/diagnostics/r0f/group1_scene.c": "f0adf0960dfd17a1f6f43c49895455b7c85a74dc55a9648f4ccd3ad451c0424c",
+      "src/diagnostics/r0f/group1_scene.h": "a621fca30042136d6b152c9cc799782616e1c1c4126fd808fb9ca476bd4daf10",
+      "src/diagnostics/r0f/group1_timing.c": "0afb867a2ae9437badd0c5969156d1792c05d411696f1e09dee2ac1747d4b865",
+      "src/diagnostics/r0f/group1_timing.h": "b2e8a54fa58836a5c87e8abc860fa3d66b433b924d290b28975c48fc9732bd19",
+      "src/diagnostics/r0f/group1_transport.c": "55184dbc1d972963eab0b0181b19bb8fb8c21979d6718c98f25f71b1475f2e6a",
+      "src/diagnostics/r0f/group1_transport.h": "4791323db21777634796cbab4dc7d3bc37bab0bef95220f80c7fbd8cc4a7d5a0",
+      "src/diagnostics/r0f/group1_workload.c": "1f9e34457385d6d7b54ddbe64e9c49a304f0ca87f3d7c5ed57e9c73376cfe432",
+      "src/diagnostics/r0f/group1_workload.h": "76129ad092877528f7114f6f484225dac7101a2873a2e83f4cc4c0f6148bd41a",
+      "src/diagnostics/r0f/resume_model.h": "a9b80f303261868e41420612edf06ebb8800dc60abb36bda7478b73c53366458",
+      "src/diagnostics/r0f/successor_capture.c": "e44f03bab72e3b946cd5753a1a5608a84f65eb31f13d95b951e34742ba14d1db",
+      "src/diagnostics/r0f/successor_capture.h": "181ff142b1525430911c35c2b7244eb540e05229c80cdd2db18ecb31ec79a484",
+      "src/diagnostics/r0f/successor_integration.c": "3d17ac0800255846a02718cc50c58750da7d59c67d206122a518ebd7f2012957",
+      "src/diagnostics/r0f/successor_irq.c": "a91fd9aef7e92964db4632a79027809e5cfe82c27804b7e4b0dbc22c4c00238a",
+      "src/diagnostics/r0f/successor_irq.h": "adb0619bb19a91c775f304aa8d71b7798e22c9f0a0f48eee6a437fdb629e86e6",
+      "src/diagnostics/r0f/successor_lifecycle.c": "2d49cf9057914b1a2cb1f41b22efe3f9b8c38984cf267f2e92fab58c983016fd",
+      "src/diagnostics/r0f/successor_lifecycle.h": "622681480cf001f90d9e5ff49a20d136248192796cc73568b466ec931c563546",
+      "src/platform/r0a_platform_45gs02.s": "a0c9504763c44eb10cc7f38dcb77f2961beabd3ac506c5cc78a26a33552b97ca",
+      "src/platform/r0f/combined.ld": "0ffa54c02ee31907142f7362fa101a87e426e5d57084568b1adfbda733f6d941",
+      "src/platform/r0f/combined_45gs02.s": "f57927e7b4177adb68a72c3f98d4d76b96257c3940c4bd96f9799effa7fbae11",
+      "src/platform/r0f/group1_export_capture_45gs02.s": "6f581721bd55fcc62c01c7cc9314cca78773bb6fbd0b56729622270c6a7de260",
+      "src/platform/r0f/group1_irq_45gs02.s": "6f8bdd09fcce8aec96d98f9275397ff28e21bbbd70b23cacf43230486be23ad3",
+      "src/platform/r0f/group1_terminal_export_45gs02.s": "4c9fbec830e1e12a6c9fd0715fb0c6e7ae8789ad1682e8974ad333ef286c2436",
+      "src/platform/r0f/kernal_call.inc": "7c3f9a2a183a4b1bdc3bd2c3ab37cbbbb767d8b977711fbc0a90c681580862ba",
+      "src/platform/r0f/opaque_context_capture.inc": "9f39bfb7f90112a4ecc1e596d48f596d504d4d813dc6ba1a5a0b8f93a4215871",
+      "src/platform/r0f/qualification_45gs02.s": "c2ee3a522bd20795074b04a1a1a317baf80a420eebfd3aa1cb2c5f9a1fb9e600",
+      "src/platform/r0f/startup.ld": "96d85939b28b4b24d0e251164b2abe9c5e950096482334517cbc4e57fcb6b60f",
+      "src/platform/r0f/successor_admission.ld": "c31a9d032edc833d283e27471662d3180d0bbcda2d36857a78fb6c0e80a842b2",
+      "src/platform/r0f/successor_admission_45gs02.s": "18127a9fed3b6d3e6a3188a529f08d2ffdac2486050836369713cab79090bcd5",
+      "src/platform/r0f/successor_integration.ld": "1319c0ce22989dfe0e5a8b2d7aa295af7a5dfe4ca81dc46334b579c23a9f20a4",
+      "src/platform/r0f/successor_integration_45gs02.s": "eb0cc2b91371aa512e85b8a88f111dfd99fef270e68910a2a78f9c590995b900",
+      "toolchain/f65_toolchain.lock.json": "0de4864a0665f04cab26f67bdd533697d8006460142dcb7e8e5ce0ecb72d742b",
+      "tools/diagnostics/d81_delivery.py": "a3524ad7ad92f95e69e1c4aef5ea5ac3791c0a7e2aa46b6e61926c91a6cea50b",
+      "tools/diagnostics/d81_foundation_compare.py": "c58c46d8cd857bbb695a3fb3f22f3f7b52feda2d1bcd53343464d5ad7e0d5012",
+      "tools/diagnostics/r0f_combined_host_test.c": "b542e0c01e54b54cc39f361f3acb46266e18d73e0f4909b7b3ea3f1f8b92faf3",
+      "tools/diagnostics/r0f_group1_audio_owner_host_test.c": "c8c057a5961c831bcd692b23eb1786b98239c72f97e59080ff6db29aac11be0f",
+      "tools/diagnostics/r0f_group1_capture_owner_host_test.c": "31718af7f909edff39b56e32fb4c7a20ffe69ee6b7b29111e7e5b859f1146888",
+      "tools/diagnostics/r0f_group1_contract.py": "3d3ae25c51b984f8aea8c521953a1fb5544ed77e07eb864c403d102e1dfd0f30",
+      "tools/diagnostics/r0f_group1_crc_host_test.c": "b03619bb90937235f0c8fd7a0cf55ee3c88e7761c222b4e90d3a479401cf6466",
+      "tools/diagnostics/r0f_group1_display_owner_host_test.c": "26d6f6d7baaa84e2933269f2d7601ba95bb989fd3bcf2044a3a5cee8156e2cef",
+      "tools/diagnostics/r0f_group1_export_admission.py": "8af0a886cfaf2e4f9a2dde09005c0de86a3e3df18380ed80401e5cb7c66e4f32",
+      "tools/diagnostics/r0f_group1_export_probe.py": "6cc15c2db123229f2227e9266ff6258d0824b6ccc0d248e325b11990c11e0ad7",
+      "tools/diagnostics/r0f_group1_host_validate.py": "c32fa97e6708a74bd060e820279da8ffaa3730b6f9c0b9c94d3d0b552141fe64",
+      "tools/diagnostics/r0f_group1_integration.py": "cabfd6d79cbf107a989bb0b6cbc6d62fe0910260930983e4a0eea941514d21e3",
+      "tools/diagnostics/r0f_group1_owners_host_test.c": "4250d90f5caa807e5390c789f6931f138d57284feb257429f0db762774bbb051",
+      "tools/diagnostics/r0f_group1_owners_validate.py": "7bd5ac9f7b086c1586f359b3c4c4246890280c81e7b702933d3a77ab1f0473b6",
+      "tools/diagnostics/r0f_group1_pool_adapter_host_test.c": "04b87015d37f5783e18ae9cf64dc5c9f1dd37e9d87fda574fc97343df02ad714",
+      "tools/diagnostics/r0f_group1_pool_adapter_probe.c": "1a2c791264c43e7b4b2f484f19fd4deb4c6e35c5218b1d227778ebf026de8975",
+      "tools/diagnostics/r0f_group1_pool_build.py": "cb074afbf9d13e45a217d24d6c608786a3681d539471cbc3c44e5a6763ebe768",
+      "tools/diagnostics/r0f_group1_pool_contract.py": "5523648de309f0d0099895305a16b29ca6c34cda12a7355e1f80ac2c827e27d6",
+      "tools/diagnostics/r0f_group1_pool_host_test.c": "393397237dd57d9d640c2f723e9746216e0a6f2b0048a152c9c492eaa22ada35",
+      "tools/diagnostics/r0f_group1_pool_shape.c": "f9b1926ba8736c17a9268d02faa468965f1931046901e9e1656beb21391a3602",
+      "tools/diagnostics/r0f_group1_presentation_contract.py": "9a6ebf6a6e9429719370414314fc8789d3b1184939cec5d01db140925cedcc31",
+      "tools/diagnostics/r0f_group1_recovery_equivalence_test.c": "35b8787a844284e075808fdbf34d7511e692e7f17569d49575df74a648e5af5a",
+      "tools/diagnostics/r0f_group1_reduce.py": "5ac9498a5c9a6f96173527dfa7b05eb563bb9b4529377a25efd49905193accc2",
+      "tools/diagnostics/r0f_group1_run.py": "d5eb3401485768244dd7004dd208d3223e40e8fc76ca597561e36a9c601f5b3c",
+      "tools/diagnostics/r0f_group1_scene_host_test.c": "7b3284f4973c638b2083eec9ecce170a81ec258f3bf0664df512b725bdb5ef2a",
+      "tools/diagnostics/r0f_group1_scene_validate.py": "390d982492021537f8e0084feee6605711eec9b28310aac7b768324ae4e46825",
+      "tools/diagnostics/r0f_group1_workload_host_test.c": "b1038465ac35c8fb4db1c229ec61a7baab19aa0cc4dff922ad19ea4f69dfe067",
+      "tools/diagnostics/r0f_platform_build.py": "451c0c7140422b9a9fa63a5649f3debf33f29771a3549fbc6ecd2a3ac52dfc30",
+      "tools/diagnostics/r0f_successor_carrier_loader.ld": "f540ea08662cd882f7ba5c20bc91dc2e45c63860fd803e18f3095d28f4bf46e4",
+      "tools/diagnostics/r0f_successor_carrier_loader.s": "704cfeae5852b48721fda817ccaf838e6248ef13ae0aa61d28184f5a716c7fa2",
+      "tools/diagnostics/r0f_successor_emulator.py": "a6f8c0545ea3fdb368038f03e8d63b56156e8cb32d99a817747156d7514d976c",
+      "tools/diagnostics/r0f_successor_integration.py": "5e9c8d4ae5c635e8403752cc130fe1c7586899ac0459b1441aebcebad6dfd374",
+      "tools/diagnostics/test_r0f_group1_contract.py": "d9d2ad4236f0a256034ee3fc32620f33e25b876d62cf0b2c18493d8e4718c1d0",
+      "tools/diagnostics/test_r0f_group1_pool_contract.py": "ff728b505e4ed3efaa27be89af98c89d00213afcf1fd3acc5cc282073ace488e",
+      "tools/diagnostics/test_r0f_group1_presentation_contract.py": "a5802d5f9c2102e2b339605b95c3e58972943092a29ed8f6cc3e6e9c56f42c3d",
+      "tools/diagnostics/test_r0f_group1_reduce.py": "a589728db7812abc642d6b8ae0b20833ade6dcd1480a011e5ed1d11d23ca13b8",
+      "tools/diagnostics/test_r0f_group1_terminal.py": "893f3fbd6677c32dca280b130a3bc9abe0acae13d0428915685faac34cbc7820"
+    },
+    "irqTerminalProtectedStatic": "PASS",
+    "prgBytes": 37440,
+    "prgSha256": "941fac20616eccfa85aa9b94ec6406271499a07c5351ca1c0d583c436a5a449d",
+    "residentEndExclusive": 49072,
+    "residentFreeBytes": 80,
+    "sections": {
+      ".basic_header": {
+        "bytes": 22,
+        "start": 8193
+      },
+      ".bss": {
+        "bytes": 3405,
+        "start": 45631
+      },
+      ".comment": {
+        "bytes": 204,
+        "start": 0
+      },
+      ".data": {
+        "bytes": 23,
+        "start": 45608
+      },
+      ".llvm_sympart": {
+        "bytes": 15,
+        "start": 0
+      },
+      ".noinit": {
+        "bytes": 36,
+        "start": 49036
+      },
+      ".r0fs_protected": {
+        "bytes": 4250,
+        "start": 8215
+      },
+      ".rodata": {
+        "bytes": 518,
+        "start": 45090
+      },
+      ".shstrtab": {
+        "bytes": 130,
+        "start": 0
+      },
+      ".strtab": {
+        "bytes": 13029,
+        "start": 0
+      },
+      ".symtab": {
+        "bytes": 12128,
+        "start": 0
+      },
+      ".text": {
+        "bytes": 32625,
+        "start": 12465
+      },
+      ".zp.bss": {
+        "bytes": 0,
+        "start": 34
+      },
+      ".zp.data": {
+        "bytes": 0,
+        "start": 34
+      }
+    },
+    "sourceRoot": "/Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/completion-01/source-inputs"
+  },
+  "commit": "NOT RUN",
+  "correction": [
+    "Finish after final successful scene copy, with snapshot CRC and registration checks retained.",
+    "Choose the next backbuffer after any swap, never clear the just-published front store.",
+    "Completion correction alone did not close the resumed 20 Hz floor."
+  ],
+  "fullGroup1Acceptance": false,
+  "host": {
+    "audioHardware": "NOT RUN",
+    "codecRejects": 83,
+    "commands": [
+      {
+        "command": [
+          "/usr/bin/clang",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wconversion",
+          "-Werror",
+          "-fsanitize=address,undefined",
+          "-DR0FG1_INTEGRATION",
+          "-Iinterfaces/generated",
+          "-Isrc/diagnostics/r0f",
+          "src/diagnostics/r0f/combined_model.c",
+          "src/diagnostics/r0f/group1_workload.c",
+          "src/diagnostics/r0f/successor_lifecycle.c",
+          "src/diagnostics/r0f/group1_pool.c",
+          "src/diagnostics/r0f/group1_pool_owners.c",
+          "tools/diagnostics/r0f_group1_workload_host_test.c",
+          "-o",
+          "/Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/completion-01/host-02/workload"
+        ],
+        "exitCode": 0
+      },
+      {
+        "command": [
+          "/Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/completion-01/host-02/workload"
+        ],
+        "exitCode": 0
+      },
+      {
+        "command": [
+          "/usr/bin/clang",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wconversion",
+          "-Werror",
+          "-fsanitize=address,undefined",
+          "-DR0FG1_INTEGRATION",
+          "-Iinterfaces/generated",
+          "-Isrc/diagnostics/r0f",
+          "src/diagnostics/r0f/group1_pool.c",
+          "src/diagnostics/r0f/group1_pool_owners.c",
+          "src/diagnostics/r0f/group1_geometry_fixture.c",
+          "src/diagnostics/r0f/successor_lifecycle.c",
+          "tools/diagnostics/r0f_group1_owners_host_test.c",
+          "-o",
+          "/Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/completion-01/host-02/owners"
+        ],
+        "exitCode": 0
+      },
+      {
+        "command": [
+          "/Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/completion-01/host-02/owners"
+        ],
+        "exitCode": 0
+      },
+      {
+        "command": [
+          "/usr/bin/clang",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wconversion",
+          "-Werror",
+          "-fsanitize=address,undefined",
+          "-DR0FG1_INTEGRATION",
+          "-Iinterfaces/generated",
+          "-Isrc/diagnostics/r0f",
+          "src/diagnostics/r0f/group1_pool.c",
+          "src/diagnostics/r0f/group1_pool_owners.c",
+          "src/diagnostics/r0f/group1_geometry_fixture.c",
+          "src/diagnostics/r0f/successor_lifecycle.c",
+          "src/diagnostics/r0f/group1_presentation.c",
+          "src/diagnostics/r0f/group1_scene.c",
+          "tools/diagnostics/r0f_group1_scene_host_test.c",
+          "-o",
+          "/Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/completion-01/host-02/scene"
+        ],
+        "exitCode": 0
+      },
+      {
+        "command": [
+          "/Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/completion-01/host-02/scene"
+        ],
+        "exitCode": 0
+      },
+      {
+        "command": [
+          "/usr/bin/clang",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wconversion",
+          "-Werror",
+          "-fsanitize=address,undefined",
+          "-DR0FG1_INTEGRATION",
+          "-Iinterfaces/generated",
+          "-Isrc/diagnostics/r0f",
+          "-I/Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/completion-01/host-02",
+          "src/diagnostics/r0f/group1_pool.c",
+          "src/diagnostics/r0f/group1_pool_owners.c",
+          "tools/diagnostics/r0f_group1_audio_owner_host_test.c",
+          "-o",
+          "/Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/completion-01/host-02/audio"
+        ],
+        "exitCode": 0
+      },
+      {
+        "command": [
+          "/Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/completion-01/host-02/audio"
+        ],
+        "exitCode": 0
+      },
+      {
+        "command": [
+          "/usr/bin/clang",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wconversion",
+          "-Werror",
+          "-fsanitize=address,undefined",
+          "-DR0FG1_INTEGRATION",
+          "-Iinterfaces/generated",
+          "-Isrc/diagnostics/r0f",
+          "-I/Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/completion-01/host-02",
+          "src/diagnostics/r0f/group1_pool.c",
+          "src/diagnostics/r0f/group1_pool_owners.c",
+          "src/diagnostics/r0f/successor_lifecycle.c",
+          "tools/diagnostics/r0f_group1_capture_owner_host_test.c",
+          "-o",
+          "/Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/completion-01/host-02/capture"
+        ],
+        "exitCode": 0
+      },
+      {
+        "command": [
+          "/Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/completion-01/host-02/capture"
+        ],
+        "exitCode": 0
+      },
+      {
+        "command": [
+          "/usr/bin/clang",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wconversion",
+          "-Werror",
+          "-fsanitize=address,undefined",
+          "-DR0FG1_INTEGRATION",
+          "-Iinterfaces/generated",
+          "-Isrc/diagnostics/r0f",
+          "-I/Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/completion-01/host-02",
+          "src/diagnostics/r0f/group1_pool.c",
+          "src/diagnostics/r0f/group1_pool_owners.c",
+          "src/diagnostics/r0f/group1_geometry_fixture.c",
+          "src/diagnostics/r0f/successor_lifecycle.c",
+          "src/diagnostics/r0f/group1_presentation.c",
+          "src/diagnostics/r0f/group1_scene.c",
+          "tools/diagnostics/r0f_group1_display_owner_host_test.c",
+          "-o",
+          "/Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/completion-01/host-02/display"
+        ],
+        "exitCode": 0
+      },
+      {
+        "command": [
+          "/Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/completion-01/host-02/display"
+        ],
+        "exitCode": 0
+      },
+      {
+        "command": [
+          "/usr/bin/clang",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wconversion",
+          "-Werror",
+          "-fsanitize=address,undefined",
+          "-DR0FG1_INTEGRATION",
+          "-Iinterfaces/generated",
+          "-Isrc/diagnostics/r0f",
+          "-I/Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/completion-01/host-02/display-baseline-inputs",
+          "-I/Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/completion-01/host-02",
+          "src/diagnostics/r0f/group1_pool.c",
+          "src/diagnostics/r0f/group1_pool_owners.c",
+          "src/diagnostics/r0f/group1_geometry_fixture.c",
+          "src/diagnostics/r0f/successor_lifecycle.c",
+          "src/diagnostics/r0f/group1_presentation.c",
+          "src/diagnostics/r0f/group1_scene.c",
+          "tools/diagnostics/r0f_group1_display_owner_host_test.c",
+          "-o",
+          "/Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/completion-01/host-02/display-baseline"
+        ],
+        "exitCode": 0
+      },
+      {
+        "command": [
+          "/Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/completion-01/host-02/display-baseline",
+          "--baseline"
+        ],
+        "exitCode": 0
+      },
+      {
+        "command": [
+          "/usr/bin/clang",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wconversion",
+          "-Werror",
+          "-fsanitize=address,undefined",
+          "-DR0FG1_INTEGRATION",
+          "-Iinterfaces/generated",
+          "-Isrc/diagnostics/r0f",
+          "src/diagnostics/r0f/group1_pool.c",
+          "tools/diagnostics/r0f_group1_pool_host_test.c",
+          "-o",
+          "/Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/completion-01/host-02/pool-core"
+        ],
+        "exitCode": 0
+      },
+      {
+        "command": [
+          "/Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/completion-01/host-02/pool-core"
+        ],
+        "exitCode": 0
+      },
+      {
+        "command": [
+          "/usr/bin/clang",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wconversion",
+          "-Werror",
+          "-fsanitize=address,undefined",
+          "-DR0FG1_INTEGRATION",
+          "-Iinterfaces/generated",
+          "-Isrc/diagnostics/r0f",
+          "src/diagnostics/r0f/successor_lifecycle.c",
+          "tools/diagnostics/r0f_group1_crc_host_test.c",
+          "-o",
+          "/Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/completion-01/host-02/crc"
+        ],
+        "exitCode": 0
+      },
+      {
+        "command": [
+          "/Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/completion-01/host-02/crc"
+        ],
+        "exitCode": 0
+      },
+      {
+        "command": [
+          "/usr/bin/clang",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wconversion",
+          "-Werror",
+          "-fsanitize=address,undefined",
+          "-DR0FG1_INTEGRATION",
+          "-Iinterfaces/generated",
+          "-Isrc/diagnostics/r0f",
+          "-Dr0fg1_pool_init=reference_init",
+          "-Dr0fg1_pool_sample=reference_sample",
+          "-c",
+          "/Users/slice/Developer/f65-megawing/build/r0f/group1/pool-integration/owner-01/source-inputs/src/diagnostics/r0f/group1_pool.c",
+          "-o",
+          "/Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/completion-01/host-02/reference-pool.o"
+        ],
+        "exitCode": 0
+      },
+      {
+        "command": [
+          "/usr/bin/clang",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wconversion",
+          "-Werror",
+          "-fsanitize=address,undefined",
+          "-DR0FG1_INTEGRATION",
+          "-Iinterfaces/generated",
+          "-Isrc/diagnostics/r0f",
+          "src/diagnostics/r0f/group1_pool.c",
+          "src/diagnostics/r0f/group1_pool_owners.c",
+          "src/diagnostics/r0f/group1_geometry_fixture.c",
+          "src/diagnostics/r0f/successor_lifecycle.c",
+          "/Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/completion-01/host-02/reference-pool.o",
+          "tools/diagnostics/r0f_group1_recovery_equivalence_test.c",
+          "-o",
+          "/Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/completion-01/host-02/recovery-equivalence"
+        ],
+        "exitCode": 0
+      },
+      {
+        "command": [
+          "/Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/completion-01/host-02/recovery-equivalence"
+        ],
+        "exitCode": 0
+      },
+      {
+        "command": [
+          "python3",
+          "-B",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "tools/diagnostics",
+          "-p",
+          "test_r0f_group1*contract.py",
+          "-v"
+        ],
+        "exitCode": 0
+      }
+    ],
+    "displayOwner": "Actual function, physical-edge mocks; 26 cancellation boundaries, copy/DMA retries and snapshot CRC failure PASS",
+    "displayReferenceSha256": "12c77e03cd0aef04f34e4f5a79ecf572cf5a4934cc5f7f2264dec4d8ab643097",
+    "geometryCrcComparisons": 3201,
+    "inputs": {
+      "docs/plans/R0-F_GROUP1_BUILD_INTENT.md": "691b18d88878a4a4e0a8ee9a4cc1ea911b0b58b587e20c3a0e56aca6d651740a",
+      "interfaces/generated/r0a_interfaces.h": "7a8ad3dce5f8f20fcdd2adfd293273117eee6ff27dce65fccff3522b8080aece",
+      "interfaces/generated/r0a_interfaces.inc": "cb52c1f90a6a4ba4619f67784f51dbd2c53e41d23bb9e5bac84e292d1f05306c",
+      "interfaces/generated/r0b_interfaces.h": "a31d5f860e8e76ac9795016531b396d7bc02a515957362ed25ed75a2af13bb6d",
+      "interfaces/generated/r0b_interfaces.inc": "6368650b814a6dde4ed190a3e98f86608269e026b5d77c743a1c2c077e7612c1",
+      "interfaces/generated/r0c_interfaces.h": "e69adb558aac7e3142d1b8396d047c70445d9906ece6389d4b9763e67c31d63f",
+      "interfaces/generated/r0d_interfaces.h": "a00a18cf593ac7d51e055522992f946eed0873006f69e0c8a650a0fdc43c6e97",
+      "interfaces/generated/r0e_interfaces.h": "29609c64855e4ac98cf28e05ece7d9a5bb46957e3c087a1ba4676cde80526bea",
+      "interfaces/generated/r0f_combined.h": "a728d596e43163e28d1de7d2e17ee366b6df4970be8924bff9f64ca2e4a0d4f2",
+      "interfaces/generated/r0f_group1_crc_table.inc": "3f27799f89b5caa2198f4d8ceb3eb19d32f181280eb63601617ba0caf5e5dfe3",
+      "interfaces/generated/r0f_group1_export.h": "e86f3dcb16fb8a204b6411329a661853db113725d8138212dff2bcb8c266ff3d",
+      "interfaces/generated/r0f_group1_export.inc": "4b4439f6f7f2235776bb5f54114971bd19dd3ce0b86e1edcc2d465decac0326e",
+      "interfaces/generated/r0f_group1_pool.h": "3bffc649d595572a165a6ad8f5ff076f89d29d0e15a26ef4302e4bc687da7f62",
+      "interfaces/generated/r0f_group1_presentation.h": "23047406e0bce233021203ffd58ed21e5519f47d064205df9251bf004ea1592b",
+      "interfaces/generated/r0f_group1_trace.h": "00a726963cf451cb78a9639fdf5f90cfd684da5e942ccba52810b9e96d3247b4",
+      "interfaces/generated/r0f_group1_trace.inc": "7238020c03c2c4503fcb7403a3ef0cd26a2e4ef759a6704bc697dad283a16577",
+      "interfaces/generated/r0f_interfaces.h": "a1c0c55cf73e0aae634e2c4267496f700f90959d5529b25ac5a02652337bc995",
+      "interfaces/generated/r0f_platform.h": "e9067d9be6ddf5d78ad4a771e18f3199cb6e7256912bc6bbf29dfec923874363",
+      "interfaces/generated/r0f_resume.h": "55ba5146aa0c008590f18eab49c1cdb42b0e42dd67015963bbf85034ced57805",
+      "interfaces/generated/r0f_successor.h": "dd1fbd6fc50bffed153f50fce5975359300f472f998f67c65fa7fffc3eb59db1",
+      "interfaces/generated/r0f_successor.inc": "1853d8b29c59ee0804998e6b5a8e5f07675304232c2caa537d896b99e3c37153",
+      "interfaces/generated/r0f_successor_integration.h": "412e7ec4ab655b9905a83babd185c1a10b23f2e6bea34cdc4f08ef824f679a91",
+      "interfaces/generated/r0f_successor_integration.inc": "911716fa1aa943543be3aa4085e50d4201d5dac15a61d36fb6f5a6cde64f4928",
+      "interfaces/r0f_combined_contract.json": "c9f78e5baa820b977253155e2bd0aefac840de97d89f1bd0a63310849ef08b69",
+      "interfaces/r0f_group1_export_contract.json": "fa16f94d86095156ea67968cce3af4617a2fd5d768bc95f3a7820fc09d98998f",
+      "interfaces/r0f_group1_pool_contract.json": "3a9d20abcac4ab9d4bfc70ef9a44fe8922fe79f134935bb10df3a08b1778a166",
+      "interfaces/r0f_group1_presentation_contract.json": "21f1dbd27c9c73f07f1c4826c6f4cfeb90de0abb693fd854fd6be90759f048e1",
+      "interfaces/r0f_group1_trace_contract.json": "5d6340bffde730e25a255ca5b6088f270a6dda70e98a0389e000c4f2a43e0363",
+      "interfaces/r0f_platform_contract.json": "787d58238cbe7acb716cde9bd712c36e45264004bf57ca1fc445d055255f1862",
+      "interfaces/r0f_proof_contract.json": "772883b946fb8cb5a8a311bd054d584ea1eb0b2d4f721a786ccbeba5b4f0b085",
+      "interfaces/r0f_resume_contract.json": "b70173e936a8ac70d9ec85493a910f738f0bf181ec4c4def3a406beadc8b3b87",
+      "interfaces/r0f_successor_contract.json": "35f4bae25a531d776feae7038d481162df3c3de4535f19d682278eea5d14f845",
+      "interfaces/r0f_successor_integration_contract.json": "5f7ea9e982f3297444c44548ce3193cdfd58de6e2707e0c9ecb803b14dfc0b5b",
+      "memory/r0f-group1-export-memory-ledger.json": "6b828d121150e27c56a2677077dd860dd9151a37623295a2911045e9f6616206",
+      "memory/r0f-memory-ledger.json": "a4f29d27d7d744db4dee5a3ef5ca1c107233ba010c72b58704e5bc80df97f4ac",
+      "memory/r0f-resume-memory-ledger.json": "e6f3308b653a8fdcba1a7bdd8f38d7056e832b63b6dda8843787c88f8bf048f4",
+      "memory/r0f-successor-integration-memory-ledger.json": "47cd44becad4cbf46cd7708cd30789ed7543c44a1b184d65d114357338a683c8",
+      "memory/r0f-successor-memory-ledger.json": "600498ab613b3619d371432b08400b0c2cf18cc56e5ef1e5fee972fbabef3adc",
+      "spec/core/F65_Main_Concept_v1.6_FINAL_HUMAN_REVIEWED.md": "e7d8ed40ce630d82e707e2a9c7f29995fac6f4281849c2c7ef5261d420c2c425",
+      "src/diagnostics/r0f/combined_model.c": "00fed181cd67df8293653b962c481cf7c14a68d3a3e3938f13d74fe78500cd9f",
+      "src/diagnostics/r0f/combined_model.h": "0931d1e42914903d61d073be597910575a941171c6592b45d4a81649123113df",
+      "src/diagnostics/r0f/combined_platform.c": "5607c0fc7f5915905e748b5e5aeb782775224d85195d63b32b93517974c8e27b",
+      "src/diagnostics/r0f/combined_platform.h": "4d83f75144d74dca6d9442daee528d59e97672d50b8aa41d9f810d4a27436736",
+      "src/diagnostics/r0f/group1_capture.c": "9727fb2ee9ca5609b295ea5b6b14c50625b168ffcb3874f1d3c96c8f64bc9ab4",
+      "src/diagnostics/r0f/group1_capture.h": "2082534cb82bbd36fcca164846749026ffab79b2b01e91e4d75be22edf7a8b0f",
+      "src/diagnostics/r0f/group1_export.c": "905dd8001cb7a765f7c8b51fbe50971e859f1dbd35c491415e5cbd0f9ae0e162",
+      "src/diagnostics/r0f/group1_export.h": "a419aa2496fb30ab76dccde87eaf4bdfd5d9957be5618f0fa16b77e883cce168",
+      "src/diagnostics/r0f/group1_geometry_fixture.c": "c060fe72eaad522f68a009edbfc944e0a775cca875a09d0fe39ef5cde93abd19",
+      "src/diagnostics/r0f/group1_geometry_fixture.h": "c30dc6bd08413de9f39457f56204a0872970ef305279a63b2a05b04970f341d4",
+      "src/diagnostics/r0f/group1_pool.c": "b10b5df16978d25e22e13d7f5982014d85108548380b164297f008976f68ac55",
+      "src/diagnostics/r0f/group1_pool.h": "ed1a6ccf581e3985ead6a7fe8a324238ff88b4e55b30558f058903deb37b645e",
+      "src/diagnostics/r0f/group1_pool_owners.c": "e2e341f39bb8523230b029951b814ca22df9217ac855ad04a3eb474c98337203",
+      "src/diagnostics/r0f/group1_pool_owners.h": "4cc9457d1bcab126768ccc087cba4e50c31f8e4d9faac15a594ead89bf494c6d",
+      "src/diagnostics/r0f/group1_presentation.c": "9c17c3805d3ea56fa8bbe785ba91e4a107f2165f77065ac70a96e8b552297d30",
+      "src/diagnostics/r0f/group1_presentation.h": "ff5c576734a893cf7f2e156b2c54457c0b2324ef51b5fa02ffb8478db6bc300a",
+      "src/diagnostics/r0f/group1_scene.c": "f0adf0960dfd17a1f6f43c49895455b7c85a74dc55a9648f4ccd3ad451c0424c",
+      "src/diagnostics/r0f/group1_scene.h": "a621fca30042136d6b152c9cc799782616e1c1c4126fd808fb9ca476bd4daf10",
+      "src/diagnostics/r0f/group1_timing.c": "0afb867a2ae9437badd0c5969156d1792c05d411696f1e09dee2ac1747d4b865",
+      "src/diagnostics/r0f/group1_timing.h": "b2e8a54fa58836a5c87e8abc860fa3d66b433b924d290b28975c48fc9732bd19",
+      "src/diagnostics/r0f/group1_transport.c": "55184dbc1d972963eab0b0181b19bb8fb8c21979d6718c98f25f71b1475f2e6a",
+      "src/diagnostics/r0f/group1_transport.h": "4791323db21777634796cbab4dc7d3bc37bab0bef95220f80c7fbd8cc4a7d5a0",
+      "src/diagnostics/r0f/group1_workload.c": "1f9e34457385d6d7b54ddbe64e9c49a304f0ca87f3d7c5ed57e9c73376cfe432",
+      "src/diagnostics/r0f/group1_workload.h": "76129ad092877528f7114f6f484225dac7101a2873a2e83f4cc4c0f6148bd41a",
+      "src/diagnostics/r0f/resume_model.h": "a9b80f303261868e41420612edf06ebb8800dc60abb36bda7478b73c53366458",
+      "src/diagnostics/r0f/successor_capture.c": "e44f03bab72e3b946cd5753a1a5608a84f65eb31f13d95b951e34742ba14d1db",
+      "src/diagnostics/r0f/successor_capture.h": "181ff142b1525430911c35c2b7244eb540e05229c80cdd2db18ecb31ec79a484",
+      "src/diagnostics/r0f/successor_integration.c": "3d17ac0800255846a02718cc50c58750da7d59c67d206122a518ebd7f2012957",
+      "src/diagnostics/r0f/successor_irq.c": "a91fd9aef7e92964db4632a79027809e5cfe82c27804b7e4b0dbc22c4c00238a",
+      "src/diagnostics/r0f/successor_irq.h": "adb0619bb19a91c775f304aa8d71b7798e22c9f0a0f48eee6a437fdb629e86e6",
+      "src/diagnostics/r0f/successor_lifecycle.c": "2d49cf9057914b1a2cb1f41b22efe3f9b8c38984cf267f2e92fab58c983016fd",
+      "src/diagnostics/r0f/successor_lifecycle.h": "622681480cf001f90d9e5ff49a20d136248192796cc73568b466ec931c563546",
+      "src/platform/r0a_platform_45gs02.s": "a0c9504763c44eb10cc7f38dcb77f2961beabd3ac506c5cc78a26a33552b97ca",
+      "src/platform/r0f/combined.ld": "0ffa54c02ee31907142f7362fa101a87e426e5d57084568b1adfbda733f6d941",
+      "src/platform/r0f/combined_45gs02.s": "f57927e7b4177adb68a72c3f98d4d76b96257c3940c4bd96f9799effa7fbae11",
+      "src/platform/r0f/group1_export_capture_45gs02.s": "6f581721bd55fcc62c01c7cc9314cca78773bb6fbd0b56729622270c6a7de260",
+      "src/platform/r0f/group1_irq_45gs02.s": "6f8bdd09fcce8aec96d98f9275397ff28e21bbbd70b23cacf43230486be23ad3",
+      "src/platform/r0f/group1_terminal_export_45gs02.s": "4c9fbec830e1e12a6c9fd0715fb0c6e7ae8789ad1682e8974ad333ef286c2436",
+      "src/platform/r0f/kernal_call.inc": "7c3f9a2a183a4b1bdc3bd2c3ab37cbbbb767d8b977711fbc0a90c681580862ba",
+      "src/platform/r0f/opaque_context_capture.inc": "9f39bfb7f90112a4ecc1e596d48f596d504d4d813dc6ba1a5a0b8f93a4215871",
+      "src/platform/r0f/qualification_45gs02.s": "c2ee3a522bd20795074b04a1a1a317baf80a420eebfd3aa1cb2c5f9a1fb9e600",
+      "src/platform/r0f/startup.ld": "96d85939b28b4b24d0e251164b2abe9c5e950096482334517cbc4e57fcb6b60f",
+      "src/platform/r0f/successor_admission.ld": "c31a9d032edc833d283e27471662d3180d0bbcda2d36857a78fb6c0e80a842b2",
+      "src/platform/r0f/successor_admission_45gs02.s": "18127a9fed3b6d3e6a3188a529f08d2ffdac2486050836369713cab79090bcd5",
+      "src/platform/r0f/successor_integration.ld": "1319c0ce22989dfe0e5a8b2d7aa295af7a5dfe4ca81dc46334b579c23a9f20a4",
+      "src/platform/r0f/successor_integration_45gs02.s": "eb0cc2b91371aa512e85b8a88f111dfd99fef270e68910a2a78f9c590995b900",
+      "toolchain/f65_toolchain.lock.json": "0de4864a0665f04cab26f67bdd533697d8006460142dcb7e8e5ce0ecb72d742b",
+      "tools/diagnostics/d81_delivery.py": "a3524ad7ad92f95e69e1c4aef5ea5ac3791c0a7e2aa46b6e61926c91a6cea50b",
+      "tools/diagnostics/d81_foundation_compare.py": "c58c46d8cd857bbb695a3fb3f22f3f7b52feda2d1bcd53343464d5ad7e0d5012",
+      "tools/diagnostics/r0f_combined_host_test.c": "b542e0c01e54b54cc39f361f3acb46266e18d73e0f4909b7b3ea3f1f8b92faf3",
+      "tools/diagnostics/r0f_group1_audio_owner_host_test.c": "c8c057a5961c831bcd692b23eb1786b98239c72f97e59080ff6db29aac11be0f",
+      "tools/diagnostics/r0f_group1_capture_owner_host_test.c": "31718af7f909edff39b56e32fb4c7a20ffe69ee6b7b29111e7e5b859f1146888",
+      "tools/diagnostics/r0f_group1_contract.py": "3d3ae25c51b984f8aea8c521953a1fb5544ed77e07eb864c403d102e1dfd0f30",
+      "tools/diagnostics/r0f_group1_crc_host_test.c": "b03619bb90937235f0c8fd7a0cf55ee3c88e7761c222b4e90d3a479401cf6466",
+      "tools/diagnostics/r0f_group1_display_owner_host_test.c": "26d6f6d7baaa84e2933269f2d7601ba95bb989fd3bcf2044a3a5cee8156e2cef",
+      "tools/diagnostics/r0f_group1_export_admission.py": "8af0a886cfaf2e4f9a2dde09005c0de86a3e3df18380ed80401e5cb7c66e4f32",
+      "tools/diagnostics/r0f_group1_export_probe.py": "6cc15c2db123229f2227e9266ff6258d0824b6ccc0d248e325b11990c11e0ad7",
+      "tools/diagnostics/r0f_group1_host_validate.py": "c32fa97e6708a74bd060e820279da8ffaa3730b6f9c0b9c94d3d0b552141fe64",
+      "tools/diagnostics/r0f_group1_integration.py": "cabfd6d79cbf107a989bb0b6cbc6d62fe0910260930983e4a0eea941514d21e3",
+      "tools/diagnostics/r0f_group1_owners_host_test.c": "4250d90f5caa807e5390c789f6931f138d57284feb257429f0db762774bbb051",
+      "tools/diagnostics/r0f_group1_owners_validate.py": "7bd5ac9f7b086c1586f359b3c4c4246890280c81e7b702933d3a77ab1f0473b6",
+      "tools/diagnostics/r0f_group1_pool_adapter_host_test.c": "04b87015d37f5783e18ae9cf64dc5c9f1dd37e9d87fda574fc97343df02ad714",
+      "tools/diagnostics/r0f_group1_pool_adapter_probe.c": "1a2c791264c43e7b4b2f484f19fd4deb4c6e35c5218b1d227778ebf026de8975",
+      "tools/diagnostics/r0f_group1_pool_build.py": "cb074afbf9d13e45a217d24d6c608786a3681d539471cbc3c44e5a6763ebe768",
+      "tools/diagnostics/r0f_group1_pool_contract.py": "5523648de309f0d0099895305a16b29ca6c34cda12a7355e1f80ac2c827e27d6",
+      "tools/diagnostics/r0f_group1_pool_host_test.c": "393397237dd57d9d640c2f723e9746216e0a6f2b0048a152c9c492eaa22ada35",
+      "tools/diagnostics/r0f_group1_pool_shape.c": "f9b1926ba8736c17a9268d02faa468965f1931046901e9e1656beb21391a3602",
+      "tools/diagnostics/r0f_group1_presentation_contract.py": "9a6ebf6a6e9429719370414314fc8789d3b1184939cec5d01db140925cedcc31",
+      "tools/diagnostics/r0f_group1_recovery_equivalence_test.c": "35b8787a844284e075808fdbf34d7511e692e7f17569d49575df74a648e5af5a",
+      "tools/diagnostics/r0f_group1_reduce.py": "5ac9498a5c9a6f96173527dfa7b05eb563bb9b4529377a25efd49905193accc2",
+      "tools/diagnostics/r0f_group1_run.py": "d5eb3401485768244dd7004dd208d3223e40e8fc76ca597561e36a9c601f5b3c",
+      "tools/diagnostics/r0f_group1_scene_host_test.c": "7b3284f4973c638b2083eec9ecce170a81ec258f3bf0664df512b725bdb5ef2a",
+      "tools/diagnostics/r0f_group1_scene_validate.py": "390d982492021537f8e0084feee6605711eec9b28310aac7b768324ae4e46825",
+      "tools/diagnostics/r0f_group1_workload_host_test.c": "b1038465ac35c8fb4db1c229ec61a7baab19aa0cc4dff922ad19ea4f69dfe067",
+      "tools/diagnostics/r0f_platform_build.py": "451c0c7140422b9a9fa63a5649f3debf33f29771a3549fbc6ecd2a3ac52dfc30",
+      "tools/diagnostics/r0f_successor_carrier_loader.ld": "f540ea08662cd882f7ba5c20bc91dc2e45c63860fd803e18f3095d28f4bf46e4",
+      "tools/diagnostics/r0f_successor_carrier_loader.s": "704cfeae5852b48721fda817ccaf838e6248ef13ae0aa61d28184f5a716c7fa2",
+      "tools/diagnostics/r0f_successor_emulator.py": "a6f8c0545ea3fdb368038f03e8d63b56156e8cb32d99a817747156d7514d976c",
+      "tools/diagnostics/r0f_successor_integration.py": "5e9c8d4ae5c635e8403752cc130fe1c7586899ac0459b1441aebcebad6dfd374",
+      "tools/diagnostics/test_r0f_group1_contract.py": "d9d2ad4236f0a256034ee3fc32620f33e25b876d62cf0b2c18493d8e4718c1d0",
+      "tools/diagnostics/test_r0f_group1_pool_contract.py": "ff728b505e4ed3efaa27be89af98c89d00213afcf1fd3acc5cc282073ace488e",
+      "tools/diagnostics/test_r0f_group1_presentation_contract.py": "a5802d5f9c2102e2b339605b95c3e58972943092a29ed8f6cc3e6e9c56f42c3d",
+      "tools/diagnostics/test_r0f_group1_reduce.py": "a589728db7812abc642d6b8ae0b20833ade6dcd1480a011e5ed1d11d23ca13b8",
+      "tools/diagnostics/test_r0f_group1_terminal.py": "893f3fbd6677c32dca280b130a3bc9abe0acae13d0428915685faac34cbc7820"
+    },
+    "integratedTraceReduction": "NOT RUN",
+    "recoveryEquivalence": {
+      "generations": 65536,
+      "observerStates": 248832,
+      "referencePoolSha256": "d4a3e3bb0c903677a0e16e249c39d0cbdd41e4bb6425eb91e9c06a25631e8f32"
+    },
+    "result": "PASS",
+    "sceneByteComparisons": 3200,
+    "scope": "Native actual-owner functions and independent field/scene oracles only",
+    "targetTiming": "NOT RUN",
+    "trackCheckpointCounts": [
+      [
+        1625,
+        1601
+      ],
+      [
+        3225,
+        3201
+      ]
+    ]
+  },
+  "physical": "NOT RUN",
+  "push": "NOT RUN",
+  "result": "FIT_HOST_PASS_NTSC_TIMING_FAILED",
+  "runs": {
+    "ntsc": {
+      "execution": {
+        "command": [
+          "/Users/slice/Developer/f65-megawing/toolchain/xemu/xmega65",
+          "-skipconfigfile",
+          "-headless",
+          "-fastboot",
+          "-videostd",
+          "1",
+          "-fastclock",
+          "40.5",
+          "-rom",
+          "/Users/slice/Documents/Codex/f65-megawing/MEGA65.ROM",
+          "-sdimg",
+          "/Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/completion-01/ntsc-01/disposable-sd.img",
+          "-8",
+          "/Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/completion-01/ntsc-01/G1DSP01.D81",
+          "-prg",
+          "/Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/completion-01/ntsc-01/GROUP1.prg",
+          "-dumpscreen",
+          "/Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/completion-01/ntsc-01/screen.txt",
+          "-dumpmem",
+          "/Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/completion-01/ntsc-01/memory.bin",
+          "-screenshot",
+          "/Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/completion-01/ntsc-01/screen.png"
+        ],
+        "disposableSdSha256": "e10b8ef4a05cfbe690186471489ec23eb57ecceb5933beb38df85e7448dafb39",
+        "error": 0,
+        "files": 19,
+        "finishedAtUtc": "2026-10-01T04:58:06.729054+00:00",
+        "mountedD81Filename": "G1DSP01.D81",
+        "processReturnCode": 0,
+        "rom": {
+          "path": "/Users/slice/Documents/Codex/f65-megawing/MEGA65.ROM",
+          "sha256": "af3c447f791a2fdc48cb21e1bd3fab015e32641228d9d30d21259b9e878c6fa0"
+        },
+        "sourceBranch": "codex/r0f-successor-physical-exact-carrier",
+        "sourceCommit": "9e2ffdb4786e4794119933a5edd4b1cf79f653f0",
+        "startedAtUtc": "2026-10-01T04:56:06.589132+00:00",
+        "status": 4,
+        "tier": "GROUP1_DISPLAY_COMPLETION_DEVELOPMENT",
+        "timedTerminationAfterSeconds": 120,
+        "videoArgument": "1",
+        "videoMode": "NTSC",
+        "xemu": {
+          "path": "toolchain/xemu/xmega65",
+          "sha256": "dd37baf7846b9696adcb662ffe5da040031b07214c66aef9a7f48cc30040b738",
+          "sourceCommit": "40dfef0d1d5f56be2469492715c12bdb32c75b67",
+          "version": "20260129235930"
+        }
+      },
+      "negatives": {
+        "existingCases": 30,
+        "outerCrcRepairedForPoolCases": true,
+        "poolCases": 72,
+        "poolRejections": [
+          "0/FACES/CAPACITY",
+          "0/FACES/PEAK",
+          "0/FACES/SAMPLES",
+          "0/FACES/FULL_SAMPLES",
+          "0/VERTICES/CAPACITY",
+          "0/VERTICES/PEAK",
+          "0/VERTICES/SAMPLES",
+          "0/VERTICES/FULL_SAMPLES",
+          "0/SPANS/CAPACITY",
+          "0/SPANS/PEAK",
+          "0/SPANS/SAMPLES",
+          "0/SPANS/FULL_SAMPLES",
+          "0/BUCKETS/CAPACITY",
+          "0/BUCKETS/PEAK",
+          "0/BUCKETS/SAMPLES",
+          "0/BUCKETS/FULL_SAMPLES",
+          "0/PCM_CHANNELS/CAPACITY",
+          "0/PCM_CHANNELS/PEAK",
+          "0/PCM_CHANNELS/SAMPLES",
+          "0/PCM_CHANNELS/FULL_SAMPLES",
+          "0/AUDIO_CACHE/CAPACITY",
+          "0/AUDIO_CACHE/PEAK",
+          "0/AUDIO_CACHE/SAMPLES",
+          "0/AUDIO_CACHE/FULL_SAMPLES",
+          "0/MEGA_TRACKS/CAPACITY",
+          "0/MEGA_TRACKS/PEAK",
+          "0/MEGA_TRACKS/SAMPLES",
+          "0/MEGA_TRACKS/FULL_SAMPLES",
+          "0/RED_TRACKS/CAPACITY",
+          "0/RED_TRACKS/PEAK",
+          "0/RED_TRACKS/SAMPLES",
+          "0/RED_TRACKS/FULL_SAMPLES",
+          "1/FACES/CAPACITY",
+          "1/FACES/PEAK",
+          "1/FACES/SAMPLES",
+          "1/FACES/FULL_SAMPLES",
+          "1/VERTICES/CAPACITY",
+          "1/VERTICES/PEAK",
+          "1/VERTICES/SAMPLES",
+          "1/VERTICES/FULL_SAMPLES",
+          "1/SPANS/CAPACITY",
+          "1/SPANS/PEAK",
+          "1/SPANS/SAMPLES",
+          "1/SPANS/FULL_SAMPLES",
+          "1/BUCKETS/CAPACITY",
+          "1/BUCKETS/PEAK",
+          "1/BUCKETS/SAMPLES",
+          "1/BUCKETS/FULL_SAMPLES",
+          "1/PCM_CHANNELS/CAPACITY",
+          "1/PCM_CHANNELS/PEAK",
+          "1/PCM_CHANNELS/SAMPLES",
+          "1/PCM_CHANNELS/FULL_SAMPLES",
+          "1/AUDIO_CACHE/CAPACITY",
+          "1/AUDIO_CACHE/PEAK",
+          "1/AUDIO_CACHE/SAMPLES",
+          "1/AUDIO_CACHE/FULL_SAMPLES",
+          "1/MEGA_TRACKS/CAPACITY",
+          "1/MEGA_TRACKS/PEAK",
+          "1/MEGA_TRACKS/SAMPLES",
+          "1/MEGA_TRACKS/FULL_SAMPLES",
+          "1/RED_TRACKS/CAPACITY",
+          "1/RED_TRACKS/PEAK",
+          "1/RED_TRACKS/SAMPLES",
+          "1/RED_TRACKS/FULL_SAMPLES",
+          "no-post-storage-samples/FACES",
+          "no-post-storage-samples/VERTICES",
+          "no-post-storage-samples/SPANS",
+          "no-post-storage-samples/BUCKETS",
+          "no-post-storage-samples/PCM_CHANNELS",
+          "no-post-storage-samples/AUDIO_CACHE",
+          "no-post-storage-samples/MEGA_TRACKS",
+          "no-post-storage-samples/RED_TRACKS"
+        ],
+        "result": "PASS",
+        "trace": "/Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/completion-01/ntsc-01/trace.bin"
+      },
+      "reduction": {
+        "acquisition": "PASS",
+        "audioServiceGapCounts": 34369,
+        "boundaryUncertain": 0,
+        "captureMaximumCounts": 1153,
+        "cohortsBelow20Hz": 1,
+        "displayedWorldAgeCounts": {
+          "max": 161154,
+          "p95": 84545,
+          "samples": 4113
+        },
+        "epochs": [
+          {
+            "cohorts": [
+              {
+                "below20HzFloor": false,
+                "boundaryUncertain": 0,
+                "completeWorlds": 27,
+                "dmaJobs": 406,
+                "irqAdvances": 59,
+                "maxDebtCounts": -1072,
+                "nominalDeadlineMisses": 0,
+                "nominalWorldHz": 27.05475487580863,
+                "observedNominalSeconds": 0.9979761459285078,
+                "phase": 0,
+                "rolling33ElapsedCounts": {
+                  "max": 331236,
+                  "p95": 330270,
+                  "samples": 68
+                },
+                "rolling33ExecutionCounts": {
+                  "max": 203459,
+                  "p95": 202211,
+                  "samples": 68
+                },
+                "ticks": 100
+              },
+              {
+                "below20HzFloor": false,
+                "boundaryUncertain": 0,
+                "completeWorlds": 29,
+                "dmaJobs": 460,
+                "irqAdvances": 57,
+                "maxDebtCounts": -1018,
+                "nominalDeadlineMisses": 0,
+                "nominalWorldHz": 29.118992738909625,
+                "observedNominalSeconds": 0.9959135695394221,
+                "phase": 1,
+                "rolling33ElapsedCounts": {
+                  "max": 331290,
+                  "p95": 331021,
+                  "samples": 68
+                },
+                "rolling33ExecutionCounts": {
+                  "max": 204162,
+                  "p95": 203234,
+                  "samples": 68
+                },
+                "ticks": 100
+              },
+              {
+                "below20HzFloor": false,
+                "boundaryUncertain": 0,
+                "completeWorlds": 29,
+                "dmaJobs": 441,
+                "irqAdvances": 60,
+                "maxDebtCounts": -994,
+                "nominalDeadlineMisses": 0,
+                "nominalWorldHz": 29.125352886686507,
+                "observedNominalSeconds": 0.9956960903727348,
+                "phase": 2,
+                "rolling33ElapsedCounts": {
+                  "max": 331314,
+                  "p95": 330540,
+                  "samples": 68
+                },
+                "rolling33ExecutionCounts": {
+                  "max": 203395,
+                  "p95": 202755,
+                  "samples": 68
+                },
+                "ticks": 100
+              },
+              {
+                "below20HzFloor": false,
+                "boundaryUncertain": 0,
+                "completeWorlds": 29,
+                "dmaJobs": 452,
+                "irqAdvances": 57,
+                "maxDebtCounts": -965,
+                "nominalDeadlineMisses": 0,
+                "nominalWorldHz": 29.11315778718546,
+                "observedNominalSeconds": 0.996113173706108,
+                "phase": 3,
+                "rolling33ElapsedCounts": {
+                  "max": 331343,
+                  "p95": 330321,
+                  "samples": 68
+                },
+                "rolling33ExecutionCounts": {
+                  "max": 204835,
+                  "p95": 204515,
+                  "samples": 68
+                },
+                "ticks": 100
+              },
+              {
+                "below20HzFloor": false,
+                "boundaryUncertain": 0,
+                "completeWorlds": 30,
+                "dmaJobs": 450,
+                "irqAdvances": 57,
+                "maxDebtCounts": -1058,
+                "nominalDeadlineMisses": 0,
+                "nominalWorldHz": 30.06326186856181,
+                "observedNominalSeconds": 0.9978957084285001,
+                "phase": 4,
+                "rolling33ElapsedCounts": {
+                  "max": 331250,
+                  "p95": 330319,
+                  "samples": 68
+                },
+                "rolling33ExecutionCounts": {
+                  "max": 202818,
+                  "p95": 202242,
+                  "samples": 68
+                },
+                "ticks": 100
+              },
+              {
+                "below20HzFloor": false,
+                "boundaryUncertain": 0,
+                "completeWorlds": 29,
+                "dmaJobs": 441,
+                "irqAdvances": 60,
+                "maxDebtCounts": -965,
+                "nominalDeadlineMisses": 0,
+                "nominalWorldHz": 29.06381404126687,
+                "observedNominalSeconds": 0.9978043473173802,
+                "phase": 5,
+                "rolling33ElapsedCounts": {
+                  "max": 331343,
+                  "p95": 330353,
+                  "samples": 68
+                },
+                "rolling33ExecutionCounts": {
+                  "max": 203300,
+                  "p95": 203140,
+                  "samples": 68
+                },
+                "ticks": 100
+              },
+              {
+                "below20HzFloor": false,
+                "boundaryUncertain": 0,
+                "completeWorlds": 29,
+                "dmaJobs": 450,
+                "irqAdvances": 57,
+                "maxDebtCounts": -1069,
+                "nominalDeadlineMisses": 0,
+                "nominalWorldHz": 29.055341342698014,
+                "observedNominalSeconds": 0.9980953125951858,
+                "phase": 6,
+                "rolling33ElapsedCounts": {
+                  "max": 330842,
+                  "p95": 330390,
+                  "samples": 68
+                },
+                "rolling33ExecutionCounts": {
+                  "max": 203748,
+                  "p95": 202084,
+                  "samples": 68
+                },
+                "ticks": 100
+              },
+              {
+                "below20HzFloor": false,
+                "boundaryUncertain": 0,
+                "completeWorlds": 29,
+                "dmaJobs": 440,
+                "irqAdvances": 57,
+                "maxDebtCounts": -1021,
+                "nominalDeadlineMisses": 0,
+                "nominalWorldHz": 29.12480098297979,
+                "observedNominalSeconds": 0.995714958428292,
+                "phase": 7,
+                "rolling33ElapsedCounts": {
+                  "max": 331287,
+                  "p95": 331050,
+                  "samples": 68
+                },
+                "rolling33ExecutionCounts": {
+                  "max": 205027,
+                  "p95": 203523,
+                  "samples": 68
+                },
+                "ticks": 100
+              },
+              {
+                "below20HzFloor": false,
+                "boundaryUncertain": 0,
+                "completeWorlds": 29,
+                "dmaJobs": 464,
+                "irqAdvances": 60,
+                "maxDebtCounts": -967,
+                "nominalDeadlineMisses": 0,
+                "nominalWorldHz": 29.11167764897093,
+                "observedNominalSeconds": 0.996163819539446,
+                "phase": 8,
+                "rolling33ElapsedCounts": {
+                  "max": 331278,
+                  "p95": 331123,
+                  "samples": 68
+                },
+                "rolling33ExecutionCounts": {
+                  "max": 205571,
+                  "p95": 204484,
+                  "samples": 68
+                },
+                "ticks": 100
+              },
+              {
+                "below20HzFloor": false,
+                "boundaryUncertain": 0,
+                "completeWorlds": 29,
+                "dmaJobs": 460,
+                "irqAdvances": 59,
+                "maxDebtCounts": -1007,
+                "nominalDeadlineMisses": 0,
+                "nominalWorldHz": 29.131047430191646,
+                "observedNominalSeconds": 0.9955014514838273,
+                "phase": 9,
+                "rolling33ElapsedCounts": {
+                  "max": 331300,
+                  "p95": 330622,
+                  "samples": 68
+                },
+                "rolling33ExecutionCounts": {
+                  "max": 204900,
+                  "p95": 203907,
+                  "samples": 68
+                },
+                "ticks": 100
+              },
+              {
+                "below20HzFloor": false,
+                "boundaryUncertain": 0,
+                "completeWorlds": 28,
+                "dmaJobs": 442,
+                "irqAdvances": 57,
+                "maxDebtCounts": -1081,
+                "nominalDeadlineMisses": 0,
+                "nominalWorldHz": 28.11118951268206,
+                "observedNominalSeconds": 0.996044652872768,
+                "phase": 10,
+                "rolling33ElapsedCounts": {
+                  "max": 331227,
+                  "p95": 330308,
+                  "samples": 68
+                },
+                "rolling33ExecutionCounts": {
+                  "max": 203235,
+                  "p95": 203010,
+                  "samples": 68
+                },
+                "ticks": 100
+              },
+              {
+                "below20HzFloor": false,
+                "boundaryUncertain": 0,
+                "completeWorlds": 29,
+                "dmaJobs": 460,
+                "irqAdvances": 58,
+                "maxDebtCounts": -968,
+                "nominalDeadlineMisses": 0,
+                "nominalWorldHz": 29.12154808086659,
+                "observedNominalSeconds": 0.995826180650525,
+                "phase": 11,
+                "rolling33ElapsedCounts": {
+                  "max": 331339,
+                  "p95": 330725,
+                  "samples": 68
+                },
+                "rolling33ExecutionCounts": {
+                  "max": 204258,
+                  "p95": 201603,
+                  "samples": 68
+                },
+                "ticks": 100
+              },
+              {
+                "below20HzFloor": false,
+                "boundaryUncertain": 0,
+                "completeWorlds": 28,
+                "dmaJobs": 451,
+                "irqAdvances": 57,
+                "maxDebtCounts": -926,
+                "nominalDeadlineMisses": 0,
+                "nominalWorldHz": 28.10914370307864,
+                "observedNominalSeconds": 0.9961171459283306,
+                "phase": 12,
+                "rolling33ElapsedCounts": {
+                  "max": 331049,
+                  "p95": 330429,
+                  "samples": 68
+                },
+                "rolling33ExecutionCounts": {
+                  "max": 203683,
+                  "p95": 202786,
+                  "samples": 68
+                },
+                "ticks": 100
+              },
+              {
+                "below20HzFloor": false,
+                "boundaryUncertain": 0,
+                "completeWorlds": 29,
+                "dmaJobs": 457,
+                "irqAdvances": 59,
+                "maxDebtCounts": -929,
+                "nominalDeadlineMisses": 0,
+                "nominalWorldHz": 29.136191865407884,
+                "observedNominalSeconds": 0.9953256806504772,
+                "phase": 13,
+                "rolling33ElapsedCounts": {
+                  "max": 331379,
+                  "p95": 330421,
+                  "samples": 68
+                },
+                "rolling33ExecutionCounts": {
+                  "max": 204994,
+                  "p95": 204739,
+                  "samples": 68
+                },
+                "ticks": 100
+              },
+              {
+                "below20HzFloor": false,
+                "boundaryUncertain": 0,
+                "completeWorlds": 28,
+                "dmaJobs": 443,
+                "irqAdvances": 58,
+                "maxDebtCounts": -1245,
+                "nominalDeadlineMisses": 0,
+                "nominalWorldHz": 28.09819107731265,
+                "observedNominalSeconds": 0.9965054306505897,
+                "phase": 14,
+                "rolling33ElapsedCounts": {
+                  "max": 331063,
+                  "p95": 330277,
+                  "samples": 68
+                },
+                "rolling33ExecutionCounts": {
+                  "max": 202341,
+                  "p95": 201828,
+                  "samples": 68
+                },
+                "ticks": 100
+              },
+              {
+                "below20HzFloor": false,
+                "boundaryUncertain": 0,
+                "completeWorlds": 28,
+                "dmaJobs": 452,
+                "irqAdvances": 55,
+                "maxDebtCounts": -1114,
+                "nominalDeadlineMisses": 0,
+                "nominalWorldHz": 28.118674668499537,
+                "observedNominalSeconds": 0.9957795070394094,
+                "phase": 15,
+                "rolling33ElapsedCounts": {
+                  "max": 331182,
+                  "p95": 330461,
+                  "samples": 68
+                },
+                "rolling33ExecutionCounts": {
+                  "max": 203011,
+                  "p95": 200995,
+                  "samples": 68
+                },
+                "ticks": 100
+              }
+            ],
+            "epoch": 0
+          },
+          {
+            "cohorts": [
+              {
+                "below20HzFloor": true,
+                "boundaryUncertain": 0,
+                "completeWorlds": 19,
+                "dmaJobs": 307,
+                "irqAdvances": 55,
+                "maxDebtCounts": -1964,
+                "nominalDeadlineMisses": 0,
+                "nominalWorldHz": 19.073776571224826,
+                "observedNominalSeconds": 0.9961320417616651,
+                "phase": 0,
+                "rolling33ElapsedCounts": {
+                  "max": 329684,
+                  "p95": 329627,
+                  "samples": 68
+                },
+                "rolling33ExecutionCounts": {
+                  "max": 192387,
+                  "p95": 191939,
+                  "samples": 68
+                },
+                "ticks": 100
+              },
+              {
+                "below20HzFloor": false,
+                "boundaryUncertain": 0,
+                "completeWorlds": 29,
+                "dmaJobs": 444,
+                "irqAdvances": 59,
+                "maxDebtCounts": -940,
+                "nominalDeadlineMisses": 0,
+                "nominalWorldHz": 29.0799923921402,
+                "observedNominalSeconds": 0.9972492292617717,
+                "phase": 1,
+                "rolling33ElapsedCounts": {
+                  "max": 331368,
+                  "p95": 331265,
+                  "samples": 68
+                },
+                "rolling33ExecutionCounts": {
+                  "max": 206147,
+                  "p95": 205603,
+                  "samples": 68
+                },
+                "ticks": 100
+              },
+              {
+                "below20HzFloor": false,
+                "boundaryUncertain": 0,
+                "completeWorlds": 30,
+                "dmaJobs": 450,
+                "irqAdvances": 58,
+                "maxDebtCounts": -988,
+                "nominalDeadlineMisses": 0,
+                "nominalWorldHz": 30.07403600836741,
+                "observedNominalSeconds": 0.997538208428466,
+                "phase": 2,
+                "rolling33ElapsedCounts": {
+                  "max": 331224,
+                  "p95": 330464,
+                  "samples": 68
+                },
+                "rolling33ExecutionCounts": {
+                  "max": 203235,
+                  "p95": 200547,
+                  "samples": 68
+                },
+                "ticks": 100
+              },
+              {
+                "below20HzFloor": false,
+                "boundaryUncertain": 0,
+                "completeWorlds": 29,
+                "dmaJobs": 463,
+                "irqAdvances": 56,
+                "maxDebtCounts": -920,
+                "nominalDeadlineMisses": 0,
+                "nominalWorldHz": 29.125236694694234,
+                "observedNominalSeconds": 0.9957000625949575,
+                "phase": 3,
+                "rolling33ElapsedCounts": {
+                  "max": 331387,
+                  "p95": 330351,
+                  "samples": 68
+                },
+                "rolling33ExecutionCounts": {
+                  "max": 202946,
+                  "p95": 201987,
+                  "samples": 68
+                },
+                "ticks": 100
+              },
+              {
+                "below20HzFloor": false,
+                "boundaryUncertain": 0,
+                "completeWorlds": 29,
+                "dmaJobs": 451,
+                "irqAdvances": 58,
+                "maxDebtCounts": -993,
+                "nominalDeadlineMisses": 0,
+                "nominalWorldHz": 29.05742291317758,
+                "observedNominalSeconds": 0.998023812595179,
+                "phase": 4,
+                "rolling33ElapsedCounts": {
+                  "max": 331315,
+                  "p95": 330324,
+                  "samples": 68
+                },
+                "rolling33ExecutionCounts": {
+                  "max": 202979,
+                  "p95": 202275,
+                  "samples": 68
+                },
+                "ticks": 100
+              },
+              {
+                "below20HzFloor": false,
+                "boundaryUncertain": 0,
+                "completeWorlds": 29,
+                "dmaJobs": 437,
+                "irqAdvances": 56,
+                "maxDebtCounts": -1393,
+                "nominalDeadlineMisses": 0,
+                "nominalWorldHz": 29.12224507014818,
+                "observedNominalSeconds": 0.9958023473171893,
+                "phase": 5,
+                "rolling33ElapsedCounts": {
+                  "max": 330914,
+                  "p95": 330417,
+                  "samples": 68
+                },
+                "rolling33ExecutionCounts": {
+                  "max": 201890,
+                  "p95": 201442,
+                  "samples": 68
+                },
+                "ticks": 100
+              },
+              {
+                "below20HzFloor": false,
+                "boundaryUncertain": 0,
+                "completeWorlds": 30,
+                "dmaJobs": 463,
+                "irqAdvances": 60,
+                "maxDebtCounts": -973,
+                "nominalDeadlineMisses": 0,
+                "nominalWorldHz": 30.0696954955952,
+                "observedNominalSeconds": 0.9976822014840353,
+                "phase": 6,
+                "rolling33ElapsedCounts": {
+                  "max": 331200,
+                  "p95": 330580,
+                  "samples": 68
+                },
+                "rolling33ExecutionCounts": {
+                  "max": 204642,
+                  "p95": 203586,
+                  "samples": 68
+                },
+                "ticks": 100
+              },
+              {
+                "below20HzFloor": false,
+                "boundaryUncertain": 0,
+                "completeWorlds": 28,
+                "dmaJobs": 439,
+                "irqAdvances": 59,
+                "maxDebtCounts": -977,
+                "nominalDeadlineMisses": 0,
+                "nominalWorldHz": 28.118674668499537,
+                "observedNominalSeconds": 0.9957795070394094,
+                "phase": 7,
+                "rolling33ElapsedCounts": {
+                  "max": 331331,
+                  "p95": 331094,
+                  "samples": 68
+                },
+                "rolling33ExecutionCounts": {
+                  "max": 205058,
+                  "p95": 204451,
+                  "samples": 68
+                },
+                "ticks": 100
+              },
+              {
+                "below20HzFloor": false,
+                "boundaryUncertain": 0,
+                "completeWorlds": 28,
+                "dmaJobs": 450,
+                "irqAdvances": 60,
+                "maxDebtCounts": -961,
+                "nominalDeadlineMisses": 0,
+                "nominalWorldHz": 28.117693241290926,
+                "observedNominalSeconds": 0.9958142639838572,
+                "phase": 8,
+                "rolling33ElapsedCounts": {
+                  "max": 331347,
+                  "p95": 331207,
+                  "samples": 68
+                },
+                "rolling33ExecutionCounts": {
+                  "max": 204995,
+                  "p95": 204962,
+                  "samples": 68
+                },
+                "ticks": 100
+              },
+              {
+                "below20HzFloor": false,
+                "boundaryUncertain": 0,
+                "completeWorlds": 28,
+                "dmaJobs": 461,
+                "irqAdvances": 58,
+                "maxDebtCounts": -975,
+                "nominalDeadlineMisses": 0,
+                "nominalWorldHz": 28.1220400819802,
+                "observedNominalSeconds": 0.9956603403727314,
+                "phase": 9,
+                "rolling33ElapsedCounts": {
+                  "max": 331332,
+                  "p95": 330655,
+                  "samples": 68
+                },
+                "rolling33ExecutionCounts": {
+                  "max": 203876,
+                  "p95": 203203,
+                  "samples": 68
+                },
+                "ticks": 100
+              },
+              {
+                "below20HzFloor": false,
+                "boundaryUncertain": 0,
+                "completeWorlds": 28,
+                "dmaJobs": 430,
+                "irqAdvances": 59,
+                "maxDebtCounts": -966,
+                "nominalDeadlineMisses": 0,
+                "nominalWorldHz": 28.10936788686313,
+                "observedNominalSeconds": 0.9961092014838853,
+                "phase": 10,
+                "rolling33ElapsedCounts": {
+                  "max": 331342,
+                  "p95": 330539,
+                  "samples": 68
+                },
+                "rolling33ExecutionCounts": {
+                  "max": 206916,
+                  "p95": 206788,
+                  "samples": 68
+                },
+                "ticks": 100
+              },
+              {
+                "below20HzFloor": false,
+                "boundaryUncertain": 0,
+                "completeWorlds": 29,
+                "dmaJobs": 450,
+                "irqAdvances": 58,
+                "maxDebtCounts": -936,
+                "nominalDeadlineMisses": 0,
+                "nominalWorldHz": 29.12154808086659,
+                "observedNominalSeconds": 0.995826180650525,
+                "phase": 11,
+                "rolling33ElapsedCounts": {
+                  "max": 331371,
+                  "p95": 330758,
+                  "samples": 68
+                },
+                "rolling33ExecutionCounts": {
+                  "max": 201571,
+                  "p95": 201380,
+                  "samples": 68
+                },
+                "ticks": 100
+              },
+              {
+                "below20HzFloor": false,
+                "boundaryUncertain": 0,
+                "completeWorlds": 28,
+                "dmaJobs": 450,
+                "irqAdvances": 59,
+                "maxDebtCounts": -945,
+                "nominalDeadlineMisses": 0,
+                "nominalWorldHz": 28.118113844562707,
+                "observedNominalSeconds": 0.9957993681505224,
+                "phase": 12,
+                "rolling33ElapsedCounts": {
+                  "max": 331325,
+                  "p95": 330501,
+                  "samples": 68
+                },
+                "rolling33ExecutionCounts": {
+                  "max": 200930,
+                  "p95": 199874,
+                  "samples": 68
+                },
+                "ticks": 100
+              },
+              {
+                "below20HzFloor": false,
+                "boundaryUncertain": 0,
+                "completeWorlds": 29,
+                "dmaJobs": 452,
+                "irqAdvances": 56,
+                "maxDebtCounts": -1063,
+                "nominalDeadlineMisses": 0,
+                "nominalWorldHz": 29.125933860554206,
+                "observedNominalSeconds": 0.9956762292616217,
+                "phase": 13,
+                "rolling33ElapsedCounts": {
+                  "max": 331245,
+                  "p95": 330421,
+                  "samples": 68
+                },
+                "rolling33ExecutionCounts": {
+                  "max": 203811,
+                  "p95": 202820,
+                  "samples": 68
+                },
+                "ticks": 100
+              },
+              {
+                "below20HzFloor": false,
+                "boundaryUncertain": 0,
+                "completeWorlds": 29,
+                "dmaJobs": 465,
+                "irqAdvances": 60,
+                "maxDebtCounts": -945,
+                "nominalDeadlineMisses": 0,
+                "nominalWorldHz": 29.111909817561777,
+                "observedNominalSeconds": 0.9961558750950009,
+                "phase": 14,
+                "rolling33ElapsedCounts": {
+                  "max": 331363,
+                  "p95": 331094,
+                  "samples": 68
+                },
+                "rolling33ExecutionCounts": {
+                  "max": 204387,
+                  "p95": 204130,
+                  "samples": 68
+                },
+                "ticks": 100
+              },
+              {
+                "below20HzFloor": false,
+                "boundaryUncertain": 0,
+                "completeWorlds": 28,
+                "dmaJobs": 440,
+                "irqAdvances": 58,
+                "maxDebtCounts": -1076,
+                "nominalDeadlineMisses": 0,
+                "nominalWorldHz": 28.08733092109795,
+                "observedNominalSeconds": 0.9968907362061821,
+                "phase": 15,
+                "rolling33ElapsedCounts": {
+                  "max": 331232,
+                  "p95": 330428,
+                  "samples": 68
+                },
+                "rolling33ExecutionCounts": {
+                  "max": 202178,
+                  "p95": 201155,
+                  "samples": 68
+                },
+                "ticks": 100
+              }
+            ],
+            "epoch": 1
+          }
+        ],
+        "fullGroup1Acceptance": false,
+        "hardwareStackHighWaterBytes": 67,
+        "instrumentedExecutionCounts": {
+          "max": 8033,
+          "p95": 7680,
+          "samples": 3200
+        },
+        "irqBodyReadIntervals": [
+          {
+            "maxCounts": 0,
+            "resolution": "NO_NONZERO_INTERVAL_OBSERVED",
+            "samples": 928,
+            "totalCounts": 0
+          },
+          {
+            "maxCounts": 0,
+            "resolution": "NO_NONZERO_INTERVAL_OBSERVED",
+            "samples": 930,
+            "totalCounts": 0
+          }
+        ],
+        "irqMeasurementBoundary": "Two epoch summaries: count u16, total CIA counts u32, maximum u16. Only declared cohorts are enabled. Interval is between coherent CIA reads after register preservation and before restoration; includes part of probes, excludes hardware entry and tails. Not full interrupt cost or entry latency. Bounded-read, count, total and duration overflow invalidate acquisition.",
+        "nominalDeadlineMisses": 0,
+        "nominalTiming": "FAIL",
+        "physical": "NOT RUN",
+        "physicalSiUncertainty": "UNRESOLVED; nominal counter ratio only",
+        "poolObservations": [
+          {
+            "AUDIO_CACHE": {
+              "CAPACITY": 255,
+              "FULL_SAMPLES": 1,
+              "PEAK": 255,
+              "SAMPLES": 3
+            },
+            "BUCKETS": {
+              "CAPACITY": 8,
+              "FULL_SAMPLES": 52,
+              "PEAK": 8,
+              "SAMPLES": 947
+            },
+            "FACES": {
+              "CAPACITY": 16,
+              "FULL_SAMPLES": 28,
+              "PEAK": 16,
+              "SAMPLES": 947
+            },
+            "MEGA_TRACKS": {
+              "CAPACITY": 24,
+              "FULL_SAMPLES": 1601,
+              "PEAK": 24,
+              "SAMPLES": 1625
+            },
+            "PCM_CHANNELS": {
+              "CAPACITY": 4,
+              "FULL_SAMPLES": 0,
+              "PEAK": 1,
+              "SAMPLES": 3
+            },
+            "RED_TRACKS": {
+              "CAPACITY": 24,
+              "FULL_SAMPLES": 1601,
+              "PEAK": 24,
+              "SAMPLES": 1625
+            },
+            "SPANS": {
+              "CAPACITY": 32,
+              "FULL_SAMPLES": 15,
+              "PEAK": 32,
+              "SAMPLES": 947
+            },
+            "VERTICES": {
+              "CAPACITY": 32,
+              "FULL_SAMPLES": 14,
+              "PEAK": 32,
+              "SAMPLES": 947
+            }
+          },
+          {
+            "AUDIO_CACHE": {
+              "CAPACITY": 255,
+              "FULL_SAMPLES": 2,
+              "PEAK": 255,
+              "SAMPLES": 5
+            },
+            "BUCKETS": {
+              "CAPACITY": 8,
+              "FULL_SAMPLES": 104,
+              "PEAK": 8,
+              "SAMPLES": 1883
+            },
+            "FACES": {
+              "CAPACITY": 16,
+              "FULL_SAMPLES": 56,
+              "PEAK": 16,
+              "SAMPLES": 1883
+            },
+            "MEGA_TRACKS": {
+              "CAPACITY": 24,
+              "FULL_SAMPLES": 3201,
+              "PEAK": 24,
+              "SAMPLES": 3225
+            },
+            "PCM_CHANNELS": {
+              "CAPACITY": 4,
+              "FULL_SAMPLES": 0,
+              "PEAK": 1,
+              "SAMPLES": 6
+            },
+            "RED_TRACKS": {
+              "CAPACITY": 24,
+              "FULL_SAMPLES": 3201,
+              "PEAK": 24,
+              "SAMPLES": 3225
+            },
+            "SPANS": {
+              "CAPACITY": 32,
+              "FULL_SAMPLES": 29,
+              "PEAK": 32,
+              "SAMPLES": 1883
+            },
+            "VERTICES": {
+              "CAPACITY": 32,
+              "FULL_SAMPLES": 28,
+              "PEAK": 32,
+              "SAMPLES": 1883
+            }
+          }
+        ],
+        "presentation": {
+          "anchorDrops": 1882,
+          "anchorHigh": 4,
+          "boundary": "Private 69-byte diagnostic scene CRC including bounded geometry byte-record storage; not production geometry or physical display evidence",
+          "occlusionHigh": 4,
+          "tierMask": 3,
+          "viewCancels": 25,
+          "viewMask": 3,
+          "viewRequests": 25,
+          "worldPairsVerified": 928
+        },
+        "publicationCounts": {
+          "max": 4576,
+          "p95": 3968,
+          "samples": 3200
+        },
+        "readMaximumCounts": 32,
+        "records": 3200,
+        "releaseLatenessCounts": {
+          "max": 2897,
+          "p95": 1828,
+          "samples": 3200
+        },
+        "scope": "instrumented bounded combined fixture",
+        "servicePhaseBoundary": "Pre-release starts only; sixteen balanced nominal-period bins and six completed service orders per epoch. Aggregate masks do not prove every relative phase combination or external input/audio latency.",
+        "serviceStartPhase": [
+          {
+            "completedOrderMask": "3F",
+            "epoch": 0,
+            "startBinMasks": {
+              "audio": "FFFF",
+              "display": "FFFF",
+              "input": "FFFF"
+            }
+          },
+          {
+            "completedOrderMask": "3F",
+            "epoch": 1,
+            "startBinMasks": {
+              "audio": "FFFF",
+              "display": "FFFF",
+              "input": "FFFF"
+            }
+          }
+        ],
+        "services": {
+          "audio": {
+            "max": 2144,
+            "p95": 352,
+            "samples": 3200
+          },
+          "display": {
+            "max": 18337,
+            "p95": 6336,
+            "samples": 3200
+          },
+          "input": {
+            "max": 2080,
+            "p95": 352,
+            "samples": 3200
+          }
+        },
+        "softwareStackHighWaterBytes": 124,
+        "stages": [
+          {
+            "max": 32,
+            "p95": 32,
+            "samples": 3200
+          },
+          {
+            "max": 97,
+            "p95": 96,
+            "samples": 3200
+          },
+          {
+            "max": 65,
+            "p95": 64,
+            "samples": 3200
+          },
+          {
+            "max": 32,
+            "p95": 32,
+            "samples": 3200
+          },
+          {
+            "max": 97,
+            "p95": 96,
+            "samples": 3200
+          },
+          {
+            "max": 97,
+            "p95": 96,
+            "samples": 3200
+          },
+          {
+            "max": 97,
+            "p95": 96,
+            "samples": 3200
+          },
+          {
+            "max": 256,
+            "p95": 224,
+            "samples": 3200
+          },
+          {
+            "max": 97,
+            "p95": 96,
+            "samples": 3200
+          },
+          {
+            "max": 96,
+            "p95": 96,
+            "samples": 3200
+          },
+          {
+            "max": 32,
+            "p95": 32,
+            "samples": 3200
+          },
+          {
+            "max": 545,
+            "p95": 512,
+            "samples": 3200
+          },
+          {
+            "max": 353,
+            "p95": 320,
+            "samples": 3200
+          },
+          {
+            "max": 225,
+            "p95": 192,
+            "samples": 3200
+          },
+          {
+            "max": 960,
+            "p95": 320,
+            "samples": 3200
+          },
+          {
+            "max": 129,
+            "p95": 128,
+            "samples": 3200
+          },
+          {
+            "max": 64,
+            "p95": 64,
+            "samples": 3200
+          },
+          {
+            "max": 32,
+            "p95": 32,
+            "samples": 3200
+          },
+          {
+            "max": 128,
+            "p95": 96,
+            "samples": 3200
+          },
+          {
+            "max": 1377,
+            "p95": 1344,
+            "samples": 3200
+          },
+          {
+            "max": 289,
+            "p95": 256,
+            "samples": 3200
+          }
+        ],
+        "successor": {
+          "audioAfter": 1955,
+          "audioBefore": 978,
+          "canonicalBasePage": 2,
+          "canonicalCpuPort": 53,
+          "checksumAfter": "607348BD",
+          "checksumBefore": "6B765FDB",
+          "contextCrc32": "59E20CC9",
+          "contextInvalidated": 1,
+          "dmaAfter": 14240,
+          "dmaBefore": 7169,
+          "dosAfterCrc32": "D5C268FC",
+          "dosBeforeCrc32": "D5C268FC",
+          "fault": 0,
+          "identity": "RSI1",
+          "iecOutputBefore": 0,
+          "iecOutputReleased": 0,
+          "independentCrc32": "D3EED7DB",
+          "inputAfter": 1954,
+          "inputBefore": 977,
+          "irqAfter": 1887,
+          "irqBefore": 953,
+          "irqCompareHigh": 0,
+          "irqCompareLow": 0,
+          "irqCpuStatus": 49,
+          "irqVector": 11846,
+          "irqVicMask": 225,
+          "irqVicStatus": 96,
+          "irqVideoMode": 128,
+          "lifecycle": 9,
+          "lowAfterCrc32": "4A814C91",
+          "lowBeforeCrc32": "4A814C91",
+          "nmiSticky": 0,
+          "reclaimFeatures": 107,
+          "reserveAfterCrc32": "3C7D60D8",
+          "reserveBeforeCrc32": "3C7D60D8",
+          "restoredRomCrc32": "967A5200",
+          "resultCrc32": "D3EED7DB",
+          "resumedServiceMask": 31,
+          "romCrc32": "967A5200",
+          "snapshotsAfter": 2379,
+          "snapshotsBefore": 1205,
+          "stage": 127,
+          "storageDenied": 0,
+          "storageError": 0,
+          "storagePhase": 5,
+          "storageReturned": 1,
+          "tickAfter": 3200,
+          "tickBefore": 1600,
+          "version": 1
+        },
+        "worldCompletionAgeCounts": {
+          "max": 68865,
+          "p95": 51617,
+          "samples": 927
+        },
+        "worldEventsRetained": 928
+      }
+    }
+  },
+  "unchanged": [
+    "scene encoding and nine copies",
+    "15 bounded 4096-byte clears",
+    "view cancellation policy",
+    "frame-boundary publication",
+    "all capacities and integrity checks",
+    "generated contracts",
+    "resident/physical memory envelopes",
+    "100 Hz and 21-stage order"
+  ]
+}

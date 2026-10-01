@@ -119,6 +119,8 @@ public final class R0FSuccessorOracle {
         require(result[56] == 5 && result[57] == 0 && result[58] == 1,
                 "storage transaction");
         require((result[95] & 255) == 31, "resumed service mask");
+        require(((u16(result, 62) - u16(result, 60)) & 0xFFFF) != 0,
+                "resumed IRQ advancement");
         require(result[96] == 0, "sticky NMI lockout");
         require(u32(result, 508) == crc(result), "record CRC");
     }

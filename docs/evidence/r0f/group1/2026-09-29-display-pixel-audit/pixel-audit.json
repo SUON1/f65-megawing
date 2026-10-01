@@ -1,0 +1,130 @@
+{
+  "scope": "Xemu saved PNG pixel audit, not physical display acceptance",
+  "decoder": "ffmpeg version 9.0.1 Copyright (c) 2000-2026 the FFmpeg developers",
+  "runs": {
+    "label-probe-01": {
+      "programSha256": "b8ffb36ef0ad1b6dbfaa2e7e7e24a8e3656ae5fc90609ce472812c59dfb1c2d5",
+      "pngSha256": "e931dd3a9485c03f13bd91c43b3c40b432430c9e39f5a2e0b14241757b0e57e5",
+      "pngTextBands": [
+        {
+          "first": 72,
+          "last": 85,
+          "nonBackgroundPixels": 1788
+        },
+        {
+          "first": 104,
+          "last": 117,
+          "nonBackgroundPixels": 1800
+        },
+        {
+          "first": 136,
+          "last": 149,
+          "nonBackgroundPixels": 1530
+        },
+        {
+          "first": 168,
+          "last": 181,
+          "nonBackgroundPixels": 1612
+        },
+        {
+          "first": 200,
+          "last": 213,
+          "nonBackgroundPixels": 650
+        },
+        {
+          "first": 232,
+          "last": 245,
+          "nonBackgroundPixels": 1470
+        }
+      ],
+      "fault": 107,
+      "tickAfter": 3200,
+      "actualReturnedSave": "PASS",
+      "diskStructureAndContents": "PASS"
+    },
+    "label-probe-02": {
+      "programSha256": "b8ffb36ef0ad1b6dbfaa2e7e7e24a8e3656ae5fc90609ce472812c59dfb1c2d5",
+      "pngSha256": "e931dd3a9485c03f13bd91c43b3c40b432430c9e39f5a2e0b14241757b0e57e5",
+      "pngTextBands": [
+        {
+          "first": 72,
+          "last": 85,
+          "nonBackgroundPixels": 1788
+        },
+        {
+          "first": 104,
+          "last": 117,
+          "nonBackgroundPixels": 1800
+        },
+        {
+          "first": 136,
+          "last": 149,
+          "nonBackgroundPixels": 1530
+        },
+        {
+          "first": 168,
+          "last": 181,
+          "nonBackgroundPixels": 1612
+        },
+        {
+          "first": 200,
+          "last": 213,
+          "nonBackgroundPixels": 650
+        },
+        {
+          "first": 232,
+          "last": 245,
+          "nonBackgroundPixels": 1470
+        }
+      ],
+      "fault": 107,
+      "tickAfter": 3200,
+      "actualReturnedSave": "PASS",
+      "diskStructureAndContents": "PASS"
+    },
+    "label-probe-03": {
+      "programSha256": "e9649966665f5f398b4cfba192a9687522a367c3cd9c7c9fd8e7b1fd92781bc1",
+      "pngSha256": "10461979ca7b6ca5d1315b72f04ec130d9dfd087a07fa19be6a302c9256f2e76",
+      "pngTextBands": [
+        {
+          "first": 72,
+          "last": 85,
+          "nonBackgroundPixels": 1788
+        },
+        {
+          "first": 104,
+          "last": 117,
+          "nonBackgroundPixels": 1800
+        },
+        {
+          "first": 136,
+          "last": 149,
+          "nonBackgroundPixels": 1278
+        },
+        {
+          "first": 168,
+          "last": 181,
+          "nonBackgroundPixels": 1016
+        },
+        {
+          "first": 200,
+          "last": 213,
+          "nonBackgroundPixels": 650
+        },
+        {
+          "first": 232,
+          "last": 245,
+          "nonBackgroundPixels": 1152
+        }
+      ],
+      "fault": 107,
+      "tickAfter": 3200,
+      "actualReturnedSave": "PASS",
+      "diskStructureAndContents": "PASS"
+    }
+  },
+  "comparisons": {
+    "digitProgram90sVs180s": "IDENTICAL_PNG",
+    "originalProgram90sVsFrozen180s": "IDENTICAL_PNG"
+  }
+}

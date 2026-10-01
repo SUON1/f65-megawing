@@ -1,0 +1,48 @@
+{
+  "scope": "corrected six-order rebuild and one focused NTSC acquisition",
+  "commands": [
+    {
+      "command": "python3 -B tools/diagnostics/r0f_group1_build.py",
+      "result": "PASS: sanitizers, 1000000 releases, deadline/wrap/service-phase boundaries, export policy and target objects"
+    },
+    {
+      "command": "python3 -B tools/diagnostics/r0f_group1_integration.py",
+      "result": "PASS: target link, allocation/lifetime and IRQ static boundaries"
+    },
+    {
+      "command": "python3 -B tools/diagnostics/r0f_group1_host_validate.py",
+      "result": "PASS: stage/input/held-intent lineage and 1025 CRC lengths"
+    },
+    {
+      "command": "python3 -B -m unittest discover -s tools/diagnostics -p test_r0f_group1_contract.py -v",
+      "result": "PASS: 7 tests"
+    },
+    {
+      "command": "python3 -B tools/diagnostics/r0f_group1_run.py --out build/r0f/group1/integration/six-order-corrected-ntsc-01 --mode 1 --timeout-seconds 60",
+      "result": "INCOMPLETE EXPORT: runner exit 1, 3200 records, fault/IRQ/export error zero, status 3, 4 chunks completed at timed termination"
+    },
+    {
+      "command": "python3 -B build/r0f/group1/integration/six-order-corrected-ntsc-01/inspect_partial.py",
+      "result": "PASS: actual SAVE, closed-chunk framing and exported header equality; incomplete image and partial trace correctly rejected"
+    },
+    {
+      "command": "python3 -B tools/diagnostics/r0f_successor_integration.py build",
+      "result": "PASS: ordinary successor regressions and byte-identical cf605bd3 PRG"
+    },
+    {
+      "command": "git diff --check",
+      "result": "PASS"
+    }
+  ],
+  "additionalHostChecks": {
+    "irqLongBranchGuard": "PASS: injected F3 opcode rejected",
+    "reducerNegativeCases": 22,
+    "reducerFixtureBoundary": "SYNTHETIC HOST ONLY: preceding actual fixed-order trace with service-order masks set to 3F and outer CRC repaired; not new acquisition evidence"
+  },
+  "emulatorAcquisitions": 1,
+  "fullTraceReduction": "NOT RUN: incomplete export",
+  "sixOrderCoverageAcceptance": false,
+  "sd": "NOT RUN",
+  "physical": "NOT RUN",
+  "fullGroup1Acceptance": false
+}

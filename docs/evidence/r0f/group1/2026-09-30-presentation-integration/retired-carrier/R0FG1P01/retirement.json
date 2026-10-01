@@ -1,0 +1,21 @@
+{
+  "D81_FILENAME": "R0FG1P01.D81",
+  "canonicalSha256": "70a4aa6f4fb1baf0da5f2adbe9d2fe27d1d2771a88a598aa0dd23131807f15e7",
+  "failedRun": "ntsc-01",
+  "failure": "D81 foundation comparison failed: R0FG1P01.D81: directory block count mismatch for rsstate",
+  "state": "RETIRED_AFTER_LOCAL_GATE_FAILURE",
+  "postRunSha256": "7576c3b1a89277f13a95db78b7f7c376a1242d288913560cd4fb5789de5739a7",
+  "rsstateDirectoryBlocks": 1,
+  "rsstateActualChainBlocks": 65,
+  "rsstateAndG1T00FirstSector": [36, 30],
+  "rsstateAndG1T00PayloadBytes": 16386,
+  "rsstateAndG1T00PayloadSha256": "f80ca47965e15b76be101af73a82c04f45ddf328bd4282cab125f43e7687c300",
+  "rsstateEqualsFirstTraceChunk": true,
+  "entryDosBackupBamOffsets": [350208, 350464],
+  "cause": "Terminal restore rewinds a valid entry-time DOS/BAM cache to before returning storage allocated RSSTATE. First trace SAVE reuses its sector.",
+  "canonicalUnchanged": true,
+  "failedImageRepairedOrRetested": false,
+  "sd": "NOT RUN",
+  "physical": "NOT RUN",
+  "testEligible": false
+}

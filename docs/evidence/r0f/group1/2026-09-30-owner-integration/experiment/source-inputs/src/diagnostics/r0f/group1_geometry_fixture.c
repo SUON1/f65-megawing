@@ -1,0 +1,38 @@
+#include "group1_geometry_fixture.h"
+#include "group1_pool_owners.h"
+#include "successor_lifecycle.h"
+
+static uint8_t faces[R0FG1_POOL_FACES_CAPACITY];
+static uint8_t vertices[R0FG1_POOL_VERTICES_CAPACITY];
+static uint8_t spans[R0FG1_POOL_SPANS_CAPACITY];
+static uint8_t buckets[R0FG1_POOL_BUCKETS_CAPACITY];
+static uint8_t live[R0FG1_POOL_GEOMETRY_COUNT];
+
+uint32_t r0fg1_geometry_fixture(uint16_t generation, uint16_t source_tick)
+{
+    static uint8_t *const buffers[R0FG1_POOL_GEOMETRY_COUNT] = {
+        faces, vertices, spans, buckets,
+    };
+    static const uint8_t capacities[R0FG1_POOL_GEOMETRY_COUNT] = {
+        R0FG1_POOL_FACES_CAPACITY, R0FG1_POOL_VERTICES_CAPACITY,
+        R0FG1_POOL_SPANS_CAPACITY, R0FG1_POOL_BUCKETS_CAPACITY,
+    };
+    uint32_t crc = 0xfffffffful;
+    for (uint8_t owner = 0u; owner < R0FG1_POOL_GEOMETRY_COUNT; owner++)
+    {
+        // Widen before addition: identical stream on 16- and 32-bit hosts.
+        live[owner] = (uint8_t)(((uint32_t)generation
+            + (uint32_t)owner * R0FG1_POOL_OFFSET_STRIDE)
+            % (capacities[owner] + 1u));
+        r0fg1_owner_sample(owner, live[owner]);
+        for (uint8_t index = 0u; index < live[owner]; index++)
+        {
+            buffers[owner][index] = (uint8_t)(source_tick
+                + (uint16_t)(owner * R0FG1_POOL_OFFSET_STRIDE) + index);
+        }
+        crc = r0fs_crc32_update(crc, buffers[owner], live[owner]);
+        live[owner] = 0u;
+        r0fg1_owner_sample(owner, live[owner]);
+    }
+    return ~crc;
+}

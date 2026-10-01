@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/completion-01/source-inputs/tools/diagnostics/r0f_group1_owners_validate.py", line 183, in <module>
+    main(args.out, args.reference_pool, args.reference_display)
+  File "/Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/completion-01/source-inputs/tools/diagnostics/r0f_group1_owners_validate.py", line 118, in main
+    native("display-baseline", [*OWNER, *GEOMETRY,
+  File "/Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/completion-01/source-inputs/tools/diagnostics/r0f_group1_owners_validate.py", line 37, in native
+    run([*FLAGS, *flags, *sources, "-o", binary], name + "-compiler")
+  File "/Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/completion-01/source-inputs/tools/diagnostics/r0f_group1_owners_validate.py", line 32, in run
+    result.check_returncode()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 460, in check_returncode
+    raise CalledProcessError(self.returncode, self.args, self.stdout,
+subprocess.CalledProcessError: Command '['/usr/bin/clang', '-std=c11', '-Wall', '-Wextra', '-Wconversion', '-Werror', '-fsanitize=address,undefined', '-DR0FG1_INTEGRATION', '-Iinterfaces/generated', '-Isrc/diagnostics/r0f', '-I/Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/completion-01/host-final/display-baseline', '-I/Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/completion-01/host-final', 'src/diagnostics/r0f/group1_pool.c', 'src/diagnostics/r0f/group1_pool_owners.c', 'src/diagnostics/r0f/group1_geometry_fixture.c', 'src/diagnostics/r0f/successor_lifecycle.c', 'src/diagnostics/r0f/group1_presentation.c', 'src/diagnostics/r0f/group1_scene.c', 'tools/diagnostics/r0f_group1_display_owner_host_test.c', '-o', '/Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/completion-01/host-final/display-baseline']' returned non-zero exit status 1.

@@ -1,0 +1,515 @@
+{
+  "result": "PASS",
+  "scope": "Bounded private presentation integration, fit, fresh timing and local exact-carrier gates only",
+  "sourceCommit": "9e2ffdb4786e4794119933a5edd4b1cf79f653f0",
+  "sourceBranch": "codex/r0f-successor-physical-exact-carrier",
+  "prgSha256": "25a18c23c750d0877103209fccd0114afe7cd30f31690731605b9687bfea94e1",
+  "prgBytes": 37623,
+  "residentEndExclusive": 49093,
+  "residentFreeBytes": 59,
+  "buildInputsVerified": 93,
+  "finalInputsVerified": 95,
+  "D81_FILENAME": "R0FG1P02.D81",
+  "D81_SHA256": "60cea9c8dd51b0f2c199605e60574c0bebd7c758d5899fb9b1e7c2901f83e832",
+  "D81_STATE": "XEMU_BOOT_VERIFIED",
+  "canonicalMountedWritable": false,
+  "runs": [
+    {
+      "run": "presentation-ntsc-04",
+      "tier": "DIRECT_XEMU",
+      "videoMode": "NTSC",
+      "traceSha256": "ec5770073637ec6acf84842b002f93ee3b91d1b36202663a47b720d12f397e7c",
+      "records": 3200,
+      "completePairs": 956,
+      "nominalMisses": 0,
+      "boundaryUncertain": 0,
+      "cohortsBelow20Hz": 0,
+      "result": "PASS"
+    },
+    {
+      "run": "presentation-pal-02",
+      "tier": "DIRECT_XEMU",
+      "videoMode": "PAL",
+      "traceSha256": "ce3c4edb022323478cc9e5302cfb59fd92159fa3c4f193431cd9643bce01bfac",
+      "records": 3200,
+      "completePairs": 807,
+      "nominalMisses": 0,
+      "boundaryUncertain": 0,
+      "cohortsBelow20Hz": 0,
+      "result": "PASS"
+    },
+    {
+      "run": "ntsc-01",
+      "tier": "EXACT_NAME_XEMU_CARRIER",
+      "videoMode": "NTSC",
+      "traceSha256": "305d3b88fa4d44ed1d88ae511792ed80c4e16fa704886d893972cc5076176347",
+      "records": 3200,
+      "completePairs": 956,
+      "nominalMisses": 0,
+      "boundaryUncertain": 0,
+      "cohortsBelow20Hz": 0,
+      "result": "PASS"
+    },
+    {
+      "run": "ntsc-02",
+      "tier": "EXACT_NAME_XEMU_CARRIER",
+      "videoMode": "NTSC",
+      "traceSha256": "d7f751fbde9b12e9d8893ebe6a9b62f7cc3f3a6e26d331dceb5a6b127624d6d9",
+      "records": 3200,
+      "completePairs": 956,
+      "nominalMisses": 0,
+      "boundaryUncertain": 0,
+      "cohortsBelow20Hz": 0,
+      "result": "PASS"
+    },
+    {
+      "run": "pal-01",
+      "tier": "EXACT_NAME_XEMU_CARRIER",
+      "videoMode": "PAL",
+      "traceSha256": "9b0dfc39a2eea612572f4390f53fa7d36ee34bd85d9df45cbb1ad9142d533232",
+      "records": 3200,
+      "completePairs": 807,
+      "nominalMisses": 0,
+      "boundaryUncertain": 0,
+      "cohortsBelow20Hz": 0,
+      "result": "PASS"
+    },
+    {
+      "run": "pal-02",
+      "tier": "EXACT_NAME_XEMU_CARRIER",
+      "videoMode": "PAL",
+      "traceSha256": "2434fb69851794343cfd19c8bdb49cb9005fbdc16054d5befd8755eaba0e576a",
+      "records": 3200,
+      "completePairs": 807,
+      "nominalMisses": 0,
+      "boundaryUncertain": 0,
+      "cohortsBelow20Hz": 0,
+      "result": "PASS"
+    }
+  ],
+  "hostTests": 30,
+  "corruptionCasesPerTrace": 30,
+  "corpus": {
+    "commands": [
+      [
+        "/usr/bin/clang",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Wconversion",
+        "-Werror",
+        "-Isrc/diagnostics/r0f",
+        "-Iinterfaces/generated",
+        "-fsanitize=address,undefined",
+        "src/diagnostics/r0f/group1_presentation.c",
+        "src/diagnostics/r0f/group1_scene.c",
+        "tools/diagnostics/r0f_group1_scene_host_test.c",
+        "-o",
+        "/Users/slice/Developer/f65-megawing/build/r0f/group1/scene/scene-host-test"
+      ],
+      [
+        "/Users/slice/Developer/f65-megawing/build/r0f/group1/scene/scene-host-test"
+      ],
+      [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools/diagnostics",
+        "-p",
+        "test_r0f_group1*contract.py",
+        "-v"
+      ],
+      [
+        "/usr/bin/clang",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Wconversion",
+        "-Werror",
+        "-Isrc/diagnostics/r0f",
+        "-Iinterfaces/generated",
+        "-fsanitize=address,undefined",
+        "src/diagnostics/r0f/group1_presentation.c",
+        "tools/diagnostics/r0f_group1_presentation_host_test.c",
+        "-o",
+        "/Users/slice/Developer/f65-megawing/build/r0f/group1/scene/presentation-host-test"
+      ],
+      [
+        "/Users/slice/Developer/f65-megawing/build/r0f/group1/scene/presentation-host-test"
+      ]
+    ],
+    "hostSanitizers": "PASS",
+    "independentSceneComparisons": 3200,
+    "inputs": {
+      "interfaces/generated/r0f_group1_presentation.h": "0bb9fbe4add169446e6f713524b82c7368efa319dc092611537ff4e9087b3f45",
+      "interfaces/r0f_group1_presentation_contract.json": "8571d7015d995feaae50f99e57ff7b9ce6b90c173828fa9a463123b165a13e2f",
+      "src/diagnostics/r0f/group1_presentation.c": "9c17c3805d3ea56fa8bbe785ba91e4a107f2165f77065ac70a96e8b552297d30",
+      "src/diagnostics/r0f/group1_presentation.h": "ff5c576734a893cf7f2e156b2c54457c0b2324ef51b5fa02ffb8478db6bc300a",
+      "src/diagnostics/r0f/group1_scene.c": "e5bf88c3b371203ce13128d7fdaf9487475a4f57d8bc918c70ea18f5db73ac19",
+      "src/diagnostics/r0f/group1_scene.h": "a621fca30042136d6b152c9cc799782616e1c1c4126fd808fb9ca476bd4daf10",
+      "tools/diagnostics/r0f_group1_reduce.py": "d155a43cd291bc086f8ed0dad3c1b4d669d5050469b9c782ed26036dd5ca2ca9",
+      "tools/diagnostics/r0f_group1_scene_host_test.c": "c2a32bf278e1ed6fde36789596b99b34013b508e876b4b0dd3014b79695fb5a8",
+      "tools/diagnostics/r0f_group1_scene_validate.py": "390d982492021537f8e0084feee6605711eec9b28310aac7b768324ae4e46825"
+    },
+    "physical": "NOT RUN",
+    "purePresentationBoundaryCorpus": "Presentation coherence/overflow PASS; anchors 720 permutations; occlusion 2592 cases; LOD 131072 comparisons\nHost native state 138 bytes; not target-linked memory accounting\n",
+    "result": "PASS",
+    "targetMemoryTiming": "NOT RUN"
+  },
+  "preservation": [
+    {
+      "freeze": "2026-09-30-six-order-corrected-ntsc",
+      "verifiedFiles": 108,
+      "manifestSha256": "8243e85ae0111856e5944844c801a3b6375fd23bcc520bace350ad10b5fbb79c"
+    },
+    {
+      "freeze": "2026-09-30-six-order-ntsc-120s",
+      "verifiedFiles": 61,
+      "manifestSha256": "91b4628aa3b7181001a6715f3feda5726d8aa6f75f75739e50090e921ff258e3"
+    },
+    {
+      "freeze": "2026-09-30-six-order-pal-120s",
+      "verifiedFiles": 61,
+      "manifestSha256": "cbb429bfa7e789bf12ea269bfb4c4d64c9771a9613d62dd03149e8e080c5cde0"
+    },
+    {
+      "freeze": "2026-09-30-presentation-core",
+      "verifiedFiles": 18,
+      "manifestSha256": "6675cc69982ddf97710c3c0b6156268df39a30e7f59d87813158a9c576b0dfb8"
+    }
+  ],
+  "baselines": {
+    "build/r0f/group1/integration/preacq-trace-exact-f596-01/baseline-GROUP1.prg": "ec259fc7611d8bb5809d15f6c333f5b224df4c945a8e9ffca5b2402d8444cb30",
+    "docs/evidence/r0f/group1/2026-09-30-six-order-corrected-ntsc/baseline/GROUP1.prg": "0d96a1b21eb36680b05689b659ac8c6f73cc2b61e647c060ab2f369c2bbfc244",
+    "docs/evidence/r0f/group1/2026-09-30-six-order-corrected-ntsc/build/GROUP1.prg": "c249f4e4da972cdc0c5d0958a1a3a148387eb1ad4de602404c6b79fb7c79492b",
+    "build/r0f/successor-integration/R0F-SUCCESSOR-INTEGRATION.prg": "cf605bd377ddcee2c72cdc4abfd20c3ae9eee350b7b78b36cbde8ff1adf8fc23",
+    "build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg": "cf605bd377ddcee2c72cdc4abfd20c3ae9eee350b7b78b36cbde8ff1adf8fc23"
+  },
+  "retiredCarrierPreserved": true,
+  "originalContextLifetimesUnchanged": true,
+  "probeInputsVerified": {
+    "normal": 73,
+    "initializeError": 73,
+    "collision": 77
+  },
+  "collisionProbe": {
+    "actualFiles": 0,
+    "carrierBootDevelopmentProbe": true,
+    "case": "existing",
+    "error": 3,
+    "execution": {
+      "command": [
+        "/Users/slice/Developer/f65-megawing/toolchain/xemu/xmega65",
+        "-skipconfigfile",
+        "-headless",
+        "-fastboot",
+        "-videostd",
+        "0",
+        "-fastclock",
+        "40.5",
+        "-rom",
+        "/Users/slice/Documents/Codex/f65-megawing/MEGA65.ROM",
+        "-sdimg",
+        "/Users/slice/Developer/f65-megawing/build/r0f/group1/cache-refresh-collision-probe/pal-existing-01/disposable-sd.img",
+        "-8",
+        "/Users/slice/Developer/f65-megawing/build/r0f/group1/cache-refresh-collision-probe/pal-existing-01/G1EXP01.D81",
+        "-autoload",
+        "-dumpscreen",
+        "/Users/slice/Developer/f65-megawing/build/r0f/group1/cache-refresh-collision-probe/pal-existing-01/screen.txt",
+        "-dumpmem",
+        "/Users/slice/Developer/f65-megawing/build/r0f/group1/cache-refresh-collision-probe/pal-existing-01/memory.bin",
+        "-screenshot",
+        "/Users/slice/Developer/f65-megawing/build/r0f/group1/cache-refresh-collision-probe/pal-existing-01/screen.png"
+      ],
+      "disposableSdSha256": "e10b8ef4a05cfbe690186471489ec23eb57ecceb5933beb38df85e7448dafb39",
+      "finishedAtUtc": "2026-09-30T21:51:04.385310+00:00",
+      "mountedD81Filename": "G1EXP01.D81",
+      "processReturnCode": 0,
+      "rom": {
+        "path": "/Users/slice/Documents/Codex/f65-megawing/MEGA65.ROM",
+        "sha256": "af3c447f791a2fdc48cb21e1bd3fab015e32641228d9d30d21259b9e878c6fa0"
+      },
+      "sourceBranch": "codex/r0f-successor-physical-exact-carrier",
+      "sourceCommit": "9e2ffdb4786e4794119933a5edd4b1cf79f653f0",
+      "startedAtUtc": "2026-09-30T21:50:04.256098+00:00",
+      "tier": "DEVELOPMENT_EXPORT_PROBE",
+      "timedTerminationAfterSeconds": 60,
+      "videoArgument": "0",
+      "videoMode": "PAL",
+      "xemu": {
+        "path": "toolchain/xemu/xmega65",
+        "sha256": "dd37baf7846b9696adcb662ffe5da040031b07214c66aef9a7f48cc30040b738",
+        "sourceCommit": "40dfef0d1d5f56be2469492715c12bdb32c75b67",
+        "version": "20260129235930"
+      }
+    },
+    "existingFileUnchanged": true,
+    "fullGroup1": "NOT RUN",
+    "loader": {
+      "entryAddress": 12459,
+      "generatedLoaderSha256": "4d5b4d804d98b4ef27409f95e2ac7b67a6ac9c3d3d79b1d41a3e42d0ab0954fb",
+      "generatedLoaderSourceSha256": "355734623f2b25b24014a3b8a05546d5613c25c17d8d879a9ed8dd8af76baaf4"
+    },
+    "physical": "NOT RUN",
+    "prgSha256": "211e20db8be5a7ab82a96c0fc488101dfa590dd5647a287a9d22d6b028dbc4e9",
+    "probeBytes": 33025,
+    "result": "PASS",
+    "scope": "export qualification only",
+    "status": 5,
+    "successorResult": {
+      "audioAfter": 35,
+      "audioBefore": 18,
+      "canonicalBasePage": 2,
+      "canonicalCpuPort": 53,
+      "checksumAfter": "307A70D6",
+      "checksumBefore": "D9EEAB81",
+      "contextCrc32": "CB9B2E6D",
+      "contextInvalidated": 1,
+      "dmaAfter": 495,
+      "dmaBefore": 241,
+      "dosAfterCrc32": "D5C268FC",
+      "dosBeforeCrc32": "D5C268FC",
+      "fault": 0,
+      "identity": "RSI1",
+      "iecOutputBefore": 0,
+      "iecOutputReleased": 0,
+      "independentCrc32": "E8F659C4",
+      "inputAfter": 35,
+      "inputBefore": 18,
+      "irqAfter": 52,
+      "irqBefore": 36,
+      "irqCompareHigh": 0,
+      "irqCompareLow": 0,
+      "irqCpuStatus": 49,
+      "irqVector": 11846,
+      "irqVicMask": 225,
+      "irqVicStatus": 96,
+      "irqVideoMode": 0,
+      "lifecycle": 9,
+      "lowAfterCrc32": "644C9907",
+      "lowBeforeCrc32": "644C9907",
+      "nmiSticky": 0,
+      "reclaimFeatures": 107,
+      "reserveAfterCrc32": "3C7D60D8",
+      "reserveBeforeCrc32": "3C7D60D8",
+      "restoredRomCrc32": "967A5200",
+      "resultCrc32": "E8F659C4",
+      "resumedServiceMask": 31,
+      "romCrc32": "967A5200",
+      "snapshotsAfter": 66,
+      "snapshotsBefore": 33,
+      "stage": 127,
+      "storageDenied": 0,
+      "storageError": 0,
+      "storagePhase": 5,
+      "storageReturned": 1,
+      "tickAfter": 66,
+      "tickBefore": 33,
+      "version": 1
+    },
+    "traceBytes": 0,
+    "traceCrc32": "00000000"
+  },
+  "commands": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools/diagnostics",
+        "-p",
+        "test_r0f_group1_*.py",
+        "-v"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": "test_exact_name_rejects_aliases (test_r0f_group1_carrier.CarrierAdmissionTests) ... ok\ntest_failed_admission_has_no_image_side_effect (test_r0f_group1_carrier.CarrierAdmissionTests) ... ok\ntest_retired_identity_rejects_before_boot_or_finish (test_r0f_group1_carrier.CarrierAdmissionTests) ... ok\ntest_structural_failure_retires_candidate (test_r0f_group1_carrier.CarrierAdmissionTests) ... ok\ntest_timing_failures_precede_any_construction (test_r0f_group1_carrier.CarrierAdmissionTests) ... ok\ntest_capacity_cannot_borrow_reserve (test_r0f_group1_contract.ContractTests) ... ok\ntest_header_overlap (test_r0f_group1_contract.ContractTests) ... ok\ntest_invalid_geometry_and_bounds (test_r0f_group1_contract.ContractTests) ... ok\ntest_irq_summary_geometry (test_r0f_group1_contract.ContractTests) ... ok\ntest_irq_summary_overlap (test_r0f_group1_contract.ContractTests) ... ok\ntest_record_overlap (test_r0f_group1_contract.ContractTests) ... ok\ntest_valid_shape (test_r0f_group1_contract.ContractTests) ... ok\ntest_world_event_overlap (test_r0f_group1_contract.ContractTests) ... ok\ntest_capsule_cannot_alias_original (test_r0f_group1_export_admission.AdmissionTests) ... ok\ntest_capsule_shape_rejected (test_r0f_group1_export_admission.AdmissionTests) ... ok\ntest_original_lifecycle_unchanged (test_r0f_group1_export_admission.AdmissionTests) ... ok\ntest_reserves_and_authoritative_attic_rejected (test_r0f_group1_export_admission.AdmissionTests) ... ok\ntest_staging_cannot_overlap_live_workload (test_r0f_group1_export_admission.AdmissionTests) ... ok\ntest_trace_cannot_alias_capsule (test_r0f_group1_export_admission.AdmissionTests) ... ok\ntest_undeclared_overlay_rejected (test_r0f_group1_export_admission.AdmissionTests) ... ok\ntest_unsupported_copy_geometry (test_r0f_group1_export_admission.AdmissionTests) ... ok\ntest_exact_integer_fields (test_r0f_group1_presentation_contract.PresentationContractTests) ... ok\ntest_invalid_capacities_and_lod (test_r0f_group1_presentation_contract.PresentationContractTests) ... ok\ntest_no_production_promotion (test_r0f_group1_presentation_contract.PresentationContractTests) ... ok\ntest_serialized_scene_overlap (test_r0f_group1_presentation_contract.PresentationContractTests) ... ok\ntest_valid_private_fixture (test_r0f_group1_presentation_contract.PresentationContractTests) ... ok\ntest_aliased_labels_use_symbol_instruction_bounds (test_r0f_group1_terminal.TerminalBoundaryTests) ... ok\ntest_refresh_after_save_rejected (test_r0f_group1_terminal.TerminalBoundaryTests) ... ok\ntest_setup_cannot_call_application (test_r0f_group1_terminal.TerminalBoundaryTests) ... ok\ntest_terminal_return_rejected (test_r0f_group1_terminal.TerminalBoundaryTests) ... ok\n\n----------------------------------------------------------------------\nRan 30 tests in 0.009s\n\nOK\n"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "tools/diagnostics/r0f_group1_reduce.py",
+        "/Users/slice/Developer/f65-megawing/docs/evidence/r0f/group1/2026-09-30-presentation-integration/development/presentation-ntsc-04/trace.bin",
+        "--saved",
+        "/Users/slice/Developer/f65-megawing/docs/evidence/r0f/group1/2026-09-30-presentation-integration/development/presentation-ntsc-04/saved.prg",
+        "--payload-address",
+        "0x00002f6e",
+        "--out",
+        "/Users/slice/Developer/f65-megawing/docs/evidence/r0f/group1/2026-09-30-presentation-integration/final-audit/presentation-ntsc-04-reduction.json"
+      ],
+      "exitCode": 0,
+      "stdout": "Group 1 acquisition/reduction PASS; nominal timing observations retained separately\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "tools/diagnostics/test_r0f_group1_reduce.py",
+        "/Users/slice/Developer/f65-megawing/docs/evidence/r0f/group1/2026-09-30-presentation-integration/development/presentation-ntsc-04/trace.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "Independent reducer rejected 30 corruption cases: truncated, crc, tick-order, epoch, phase, release-drift, stage-overflow, snapshot-overflow, future-world, capture-cost, ai-causality, domain-state, world-capacity, world-source, world-event-time, presentation-view, presentation-tier, presentation-buffer, presentation-anchor, presentation-registration, presentation-high-water, presentation-cancel, presentation-valid-flag, irq-error, irq-empty, irq-total, service-phase-empty, service-phase-incomplete, service-order-missing, service-post-order-missing\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "tools/diagnostics/r0f_group1_reduce.py",
+        "/Users/slice/Developer/f65-megawing/docs/evidence/r0f/group1/2026-09-30-presentation-integration/development/presentation-pal-02/trace.bin",
+        "--saved",
+        "/Users/slice/Developer/f65-megawing/docs/evidence/r0f/group1/2026-09-30-presentation-integration/development/presentation-pal-02/saved.prg",
+        "--payload-address",
+        "0x00002f6e",
+        "--out",
+        "/Users/slice/Developer/f65-megawing/docs/evidence/r0f/group1/2026-09-30-presentation-integration/final-audit/presentation-pal-02-reduction.json"
+      ],
+      "exitCode": 0,
+      "stdout": "Group 1 acquisition/reduction PASS; nominal timing observations retained separately\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "tools/diagnostics/test_r0f_group1_reduce.py",
+        "/Users/slice/Developer/f65-megawing/docs/evidence/r0f/group1/2026-09-30-presentation-integration/development/presentation-pal-02/trace.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "Independent reducer rejected 30 corruption cases: truncated, crc, tick-order, epoch, phase, release-drift, stage-overflow, snapshot-overflow, future-world, capture-cost, ai-causality, domain-state, world-capacity, world-source, world-event-time, presentation-view, presentation-tier, presentation-buffer, presentation-anchor, presentation-registration, presentation-high-water, presentation-cancel, presentation-valid-flag, irq-error, irq-empty, irq-total, service-phase-empty, service-phase-incomplete, service-order-missing, service-post-order-missing\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "tools/diagnostics/r0f_group1_reduce.py",
+        "/Users/slice/Developer/f65-megawing/docs/evidence/r0f/group1/2026-09-30-presentation-integration/carrier/R0FG1P02/ntsc-01/trace.bin",
+        "--saved",
+        "/Users/slice/Developer/f65-megawing/docs/evidence/r0f/group1/2026-09-30-presentation-integration/carrier/R0FG1P02/ntsc-01/saved.prg",
+        "--payload-address",
+        "0x00002f6e",
+        "--out",
+        "/Users/slice/Developer/f65-megawing/docs/evidence/r0f/group1/2026-09-30-presentation-integration/final-audit/ntsc-01-reduction.json"
+      ],
+      "exitCode": 0,
+      "stdout": "Group 1 acquisition/reduction PASS; nominal timing observations retained separately\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "tools/diagnostics/test_r0f_group1_reduce.py",
+        "/Users/slice/Developer/f65-megawing/docs/evidence/r0f/group1/2026-09-30-presentation-integration/carrier/R0FG1P02/ntsc-01/trace.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "Independent reducer rejected 30 corruption cases: truncated, crc, tick-order, epoch, phase, release-drift, stage-overflow, snapshot-overflow, future-world, capture-cost, ai-causality, domain-state, world-capacity, world-source, world-event-time, presentation-view, presentation-tier, presentation-buffer, presentation-anchor, presentation-registration, presentation-high-water, presentation-cancel, presentation-valid-flag, irq-error, irq-empty, irq-total, service-phase-empty, service-phase-incomplete, service-order-missing, service-post-order-missing\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "tools/diagnostics/r0f_group1_reduce.py",
+        "/Users/slice/Developer/f65-megawing/docs/evidence/r0f/group1/2026-09-30-presentation-integration/carrier/R0FG1P02/ntsc-02/trace.bin",
+        "--saved",
+        "/Users/slice/Developer/f65-megawing/docs/evidence/r0f/group1/2026-09-30-presentation-integration/carrier/R0FG1P02/ntsc-02/saved.prg",
+        "--payload-address",
+        "0x00002f6e",
+        "--out",
+        "/Users/slice/Developer/f65-megawing/docs/evidence/r0f/group1/2026-09-30-presentation-integration/final-audit/ntsc-02-reduction.json"
+      ],
+      "exitCode": 0,
+      "stdout": "Group 1 acquisition/reduction PASS; nominal timing observations retained separately\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "tools/diagnostics/r0f_group1_reduce.py",
+        "/Users/slice/Developer/f65-megawing/docs/evidence/r0f/group1/2026-09-30-presentation-integration/carrier/R0FG1P02/pal-01/trace.bin",
+        "--saved",
+        "/Users/slice/Developer/f65-megawing/docs/evidence/r0f/group1/2026-09-30-presentation-integration/carrier/R0FG1P02/pal-01/saved.prg",
+        "--payload-address",
+        "0x00002f6e",
+        "--out",
+        "/Users/slice/Developer/f65-megawing/docs/evidence/r0f/group1/2026-09-30-presentation-integration/final-audit/pal-01-reduction.json"
+      ],
+      "exitCode": 0,
+      "stdout": "Group 1 acquisition/reduction PASS; nominal timing observations retained separately\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "tools/diagnostics/r0f_group1_reduce.py",
+        "/Users/slice/Developer/f65-megawing/docs/evidence/r0f/group1/2026-09-30-presentation-integration/carrier/R0FG1P02/pal-02/trace.bin",
+        "--saved",
+        "/Users/slice/Developer/f65-megawing/docs/evidence/r0f/group1/2026-09-30-presentation-integration/carrier/R0FG1P02/pal-02/saved.prg",
+        "--payload-address",
+        "0x00002f6e",
+        "--out",
+        "/Users/slice/Developer/f65-megawing/docs/evidence/r0f/group1/2026-09-30-presentation-integration/final-audit/pal-02-reduction.json"
+      ],
+      "exitCode": 0,
+      "stdout": "Group 1 acquisition/reduction PASS; nominal timing observations retained separately\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exitCode": 0,
+      "stdout": "9e2ffdb4786e4794119933a5edd4b1cf79f653f0\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "branch",
+        "--show-current"
+      ],
+      "exitCode": 0,
+      "stdout": "codex/r0f-successor-physical-exact-carrier\n",
+      "stderr": ""
+    }
+  ],
+  "physical": "NOT RUN",
+  "sd": "NOT RUN",
+  "commit": "NOT RUN",
+  "push": "NOT RUN",
+  "fullGroup1Acceptance": false,
+  "fullR0FAcceptance": false,
+  "testEligible": false,
+  "remaining": [
+    "Production projection/directional hysteresis/terrain-carrier registration",
+    "Geometry/audio/sensor pool observations",
+    "Integrated near-capacity trace",
+    "Compact operator summary",
+    "Whole ISR/entry latency and physical SI uncertainty",
+    "SD allocation/one extent and physical chooser/entry/runtime"
+  ]
+}

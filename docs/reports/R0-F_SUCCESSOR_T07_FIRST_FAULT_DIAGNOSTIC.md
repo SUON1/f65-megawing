@@ -119,3 +119,18 @@ configuration access produced the four passes.
 These checks establish source-frozen exact-carrier Xemu evidence, not SD
 allocation, safe eject, physical chooser, physical runtime, or R0-F acceptance.
 No card write or filesystem repair occurred in this follow-up.
+
+## Physical follow-up — 2026-09-25
+
+The owner Finder-copied the exact `R0FDBG07.D81` to the FAT32 root. Read-only
+raw audit proved its canonical SHA-256 and one 819,200-byte extent; safe eject
+passed. The owner explicitly confirmed selecting that filename on the MEGA65.
+Photographs show ROM verification and the stable successor diagnostic banner:
+physical chooser/entry load **PASS**, runtime **FAIL** with `FAULT 03`, state
+`0A`, tick `0021`, mask `00`, NMI `00`, equal reserve CRCs `3C7D60D8`, and
+result CRC32 `E029CB70`. `cfnow()` assigns code `03` after 32 unsuccessful
+coherent CIA timer reads. The exact failing call and root cause are unproven.
+This is not R0-F acceptance. Preserve the tested carrier and stop wider tests.
+The unmodified photos, audit snapshot, hashes and precise tier assessment are
+retained in
+[R0FDBG07 physical evidence](../evidence/r0f/successor/2026-09-25-r0fdbg07-physical/README.md).

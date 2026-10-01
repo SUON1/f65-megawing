@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "id": "R0F-PLAT-PF001",
+  "status": "OWNER_AUTHORIZED_PROOF_DEVELOPMENT_NOT_QUALIFIED",
+  "contract": "docs/reports/R0-F_PLATFORM_QUALIFICATION_CONTRACT.md",
+  "constants": {
+    "RESULT_ADDRESS": 6400,
+    "RESULT_BYTES": 256,
+    "STAGING_START": 327680,
+    "STAGING_END": 339968,
+    "COPY_SOURCE": 327680,
+    "COPY_DEST": 327936,
+    "AUDIO_START": 339968,
+    "LIST_ADDRESS": 352256,
+    "LIST_BYTES": 17,
+    "MAX_COPY": 255,
+    "FRAME_SAMPLES": 16,
+    "PCM_INCREMENT": 4096
+  },
+  "result": {
+    "encoding": "explicit little endian bytes; trailing CRC32 over bytes 0..251",
+    "magic": "RPF1",
+    "offsets": {
+      "version": 4, "stage": 5, "fault": 6, "base_page": 7,
+      "stack_high": 8, "cpu_port": 9, "d030": 10,
+      "nmi": 11, "irq_count": 12, "dma_matches": 14,
+      "dma_counts": 16, "pcm_progress": 20, "pcm_stopped": 21,
+      "register_probe": 22, "video": 23, "speed": 24,
+      "calibrated": 25, "combined_ready": 26, "read_overhead": 28,
+      "before_frames": 32, "after_frames": 96, "irq_registers": 160,
+      "dma_jobs": 168, "reserved": 170, "crc32": 252
+    }
+  },
+  "private_entry_points": [
+    "r0f_pf_enter", "r0f_pf_start_irq", "r0f_pf_stop_irq",
+    "r0f_pf_flat_copy", "r0f_pf_register_probe"
+  ],
+  "non_claims": ["full combined workload", "SI calibration", "cycle calibration", "physical verification", "R0-F acceptance"]
+}

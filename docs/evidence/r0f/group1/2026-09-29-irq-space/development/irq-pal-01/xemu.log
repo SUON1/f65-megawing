@@ -1,0 +1,9 @@
+T04_SOURCE_BRANCH=codex/r0f-successor-physical-exact-carrier
+T04_SOURCE_COMMIT=9e2ffdb4786e4794119933a5edd4b1cf79f653f0
+T04_MOUNTED_D81_FILENAME=G1DEV01.D81
+ERROR: Cannot save config template
+Cannot create file: @mega65-template.cfg.TMP
+Operation not permitted
+2026-09-29 14:25:07.836 xmega65[19189:1916122] Failure on line 688 in function id scheduleApplicationNotification(LSNotificationCode, NSWorkspaceNotificationCenter *): noErr == _LSModifyNotification(notificationID, 1, &code, 0, NULL, NULL, NULL)
+2026-09-29 14:25:08.017 xmega65[19189:1916129] Connection Invalid error for service com.apple.hiservices-xpcservice.
+2026-09-29 14:25:08.017 xmega65[19189:1916122] Error received in message reply handler: Connection invalid

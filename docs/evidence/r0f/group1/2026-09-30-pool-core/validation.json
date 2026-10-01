@@ -1,0 +1,248 @@
+{
+  "result": "PASS_HOST_OBJECT_AND_PRESERVATION",
+  "sourceCommit": "9e2ffdb4786e4794119933a5edd4b1cf79f653f0",
+  "sourceBranch": "codex/r0f-successor-physical-exact-carrier",
+  "dirtyTree": true,
+  "qualification": {
+    "identity": "R0FG1-POOL-OBSERVATION-1",
+    "result": "PASS",
+    "commands": [
+      [
+        "/usr/bin/clang",
+        "-std=c11",
+        "-UNDEBUG",
+        "-Wall",
+        "-Wextra",
+        "-Wconversion",
+        "-Werror",
+        "-Isrc/diagnostics/r0f",
+        "-Iinterfaces/generated",
+        "-fsanitize=address,undefined",
+        "src/diagnostics/r0f/group1_pool.c",
+        "tools/diagnostics/r0f_group1_pool_host_test.c",
+        "-o",
+        "/Users/slice/Developer/f65-megawing/build/r0f/group1/pool-core/pool-host-test"
+      ],
+      [
+        "/Users/slice/Developer/f65-megawing/build/r0f/group1/pool-core/pool-host-test"
+      ],
+      [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools/diagnostics",
+        "-p",
+        "test_r0f_group1_pool_contract.py",
+        "-v"
+      ],
+      [
+        "/Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/mos-mega65-clang",
+        "-mcpu=mos45gs02",
+        "-Oz",
+        "-fno-lto",
+        "-Wall",
+        "-Wextra",
+        "-Wconversion",
+        "-Werror",
+        "-Isrc/diagnostics/r0f",
+        "-Iinterfaces/generated",
+        "-c",
+        "src/diagnostics/r0f/group1_pool.c",
+        "-o",
+        "/Users/slice/Developer/f65-megawing/build/r0f/group1/pool-core/group1_pool.o"
+      ],
+      [
+        "/Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/mos-mega65-clang",
+        "-mcpu=mos45gs02",
+        "-Oz",
+        "-fno-lto",
+        "-Wall",
+        "-Wextra",
+        "-Wconversion",
+        "-Werror",
+        "-Isrc/diagnostics/r0f",
+        "-Iinterfaces/generated",
+        "-c",
+        "tools/diagnostics/r0f_group1_pool_shape.c",
+        "-o",
+        "/Users/slice/Developer/f65-megawing/build/r0f/group1/pool-core/pool-shape.o"
+      ],
+      [
+        "/Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/llvm-nm",
+        "-S",
+        "/Users/slice/Developer/f65-megawing/build/r0f/group1/pool-core/pool-shape.o"
+      ]
+    ],
+    "inputs": {
+      "src/diagnostics/r0f/group1_pool.c": "d4a3e3bb0c903677a0e16e249c39d0cbdd41e4bb6425eb91e9c06a25631e8f32",
+      "src/diagnostics/r0f/group1_pool.h": "ed1a6ccf581e3985ead6a7fe8a324238ff88b4e55b30558f058903deb37b645e",
+      "tools/diagnostics/r0f_group1_pool_host_test.c": "393397237dd57d9d640c2f723e9746216e0a6f2b0048a152c9c492eaa22ada35",
+      "tools/diagnostics/r0f_group1_pool_shape.c": "f9b1926ba8736c17a9268d02faa468965f1931046901e9e1656beb21391a3602",
+      "tools/diagnostics/r0f_group1_pool_build.py": "cb074afbf9d13e45a217d24d6c608786a3681d539471cbc3c44e5a6763ebe768",
+      "tools/diagnostics/r0f_group1_pool_contract.py": "349ace8ab4f4ddd8ec894a505d40b38fa6f35e74cd1200e200ca634df1c28224",
+      "tools/diagnostics/test_r0f_group1_pool_contract.py": "c6b4ea4be40aeea14d8f3864c7d481626b7821ede3b5b85cbe15ab22cc0e3bce",
+      "interfaces/r0f_group1_pool_contract.json": "ed9c5709e996f44a8135bda98edc61fa482e48e47739640fe3cc1d0ec388951d",
+      "interfaces/generated/r0f_group1_pool.h": "2e4dd7b2805cb62fa936c1ba52231b7092fe762e8332a2aee7fe37be11a57455",
+      "interfaces/r0f_group1_trace_contract.json": "27a84c42514666b1485082282de714b5670a427573b9a083061d013d4933fff7",
+      "interfaces/generated/r0f_group1_trace.h": "63e342c6fce691550541ca8b21bc82b42fb893f9366b95ac43b4adebcee413d6",
+      "toolchain/f65_toolchain.lock.json": "0de4864a0665f04cab26f67bdd533697d8006460142dcb7e8e5ce0ecb72d742b",
+      "tools/diagnostics/r0f_platform_build.py": "451c0c7140422b9a9fa63a5649f3debf33f29771a3549fbc6ecd2a3ac52dfc30",
+      "docs/plans/R0-F_GROUP1_BUILD_INTENT.md": "691b18d88878a4a4e0a8ee9a4cc1ea911b0b58b587e20c3a0e56aca6d651740a",
+      "spec/core/F65_Main_Concept_v1.6_FINAL_HUMAN_REVIEWED.md": "e7d8ed40ce630d82e707e2a9c7f29995fac6f4281849c2c7ef5261d420c2c425"
+    },
+    "hostSanitizers": "PASS",
+    "transitionCases": 170335,
+    "independentSamples": 25600,
+    "hostTicks": 3200,
+    "emptyFullPressure": "PASS",
+    "peerIsolation": "PASS",
+    "counterBoundarySequences": 2,
+    "contractTests": 5,
+    "capacities": [
+      16,
+      32,
+      32,
+      8,
+      4,
+      255,
+      24,
+      24
+    ],
+    "peaks": [
+      16,
+      32,
+      32,
+      8,
+      4,
+      255,
+      24,
+      24
+    ],
+    "fullSamples": [
+      188,
+      97,
+      97,
+      356,
+      640,
+      12,
+      128,
+      128
+    ],
+    "zeroSamples": [
+      188,
+      97,
+      97,
+      355,
+      640,
+      12,
+      128,
+      128
+    ],
+    "targetObjectCompilation": "PASS",
+    "targetStateBytes": 64,
+    "targetObjectSha256": "0a8784a817d91f755b5f725b11c07bd233f6ebda76b820469b9c908f841d2d61",
+    "preservedIntegratedPrgSha256": "25a18c23c750d0877103209fccd0114afe7cd30f31690731605b9687bfea94e1",
+    "preservedIntegratedInputCount": 93,
+    "baselineResidentFreeBytes": 59,
+    "stateAloneExceedsBaselineSlack": true,
+    "targetLinkMemoryTiming": "NOT RUN",
+    "integratedPoolOwnerHooks": "NOT RUN",
+    "newXemu": "NOT RUN",
+    "sd": "NOT RUN",
+    "physical": "NOT RUN",
+    "fullGroup1Acceptance": false,
+    "boundary": "Pure observation kernel and synthetic host occupancy only; not allocation, renderer geometry, audio scheduling/cache, real sensors or target runtime high-water proof"
+  },
+  "fitProbe": {
+    "fit": "FAIL",
+    "overflowBytes": 626,
+    "admitted": false,
+    "executed": false,
+    "prgSha256": "e1299565de2a378076dd46c83ad77160036cdfd23a26e2a844b78b6ea422d379"
+  },
+  "commands": [
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools/diagnostics",
+        "-p",
+        "test_r0f_group1_*.py",
+        "-v"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": "test_exact_name_rejects_aliases (test_r0f_group1_carrier.CarrierAdmissionTests) ... ok\ntest_failed_admission_has_no_image_side_effect (test_r0f_group1_carrier.CarrierAdmissionTests) ... ok\ntest_retired_identity_rejects_before_boot_or_finish (test_r0f_group1_carrier.CarrierAdmissionTests) ... ok\ntest_structural_failure_retires_candidate (test_r0f_group1_carrier.CarrierAdmissionTests) ... ok\ntest_timing_failures_precede_any_construction (test_r0f_group1_carrier.CarrierAdmissionTests) ... ok\ntest_capacity_cannot_borrow_reserve (test_r0f_group1_contract.ContractTests) ... ok\ntest_header_overlap (test_r0f_group1_contract.ContractTests) ... ok\ntest_invalid_geometry_and_bounds (test_r0f_group1_contract.ContractTests) ... ok\ntest_irq_summary_geometry (test_r0f_group1_contract.ContractTests) ... ok\ntest_irq_summary_overlap (test_r0f_group1_contract.ContractTests) ... ok\ntest_record_overlap (test_r0f_group1_contract.ContractTests) ... ok\ntest_valid_shape (test_r0f_group1_contract.ContractTests) ... ok\ntest_world_event_overlap (test_r0f_group1_contract.ContractTests) ... ok\ntest_capsule_cannot_alias_original (test_r0f_group1_export_admission.AdmissionTests) ... ok\ntest_capsule_shape_rejected (test_r0f_group1_export_admission.AdmissionTests) ... ok\ntest_original_lifecycle_unchanged (test_r0f_group1_export_admission.AdmissionTests) ... ok\ntest_reserves_and_authoritative_attic_rejected (test_r0f_group1_export_admission.AdmissionTests) ... ok\ntest_staging_cannot_overlap_live_workload (test_r0f_group1_export_admission.AdmissionTests) ... ok\ntest_trace_cannot_alias_capsule (test_r0f_group1_export_admission.AdmissionTests) ... ok\ntest_undeclared_overlay_rejected (test_r0f_group1_export_admission.AdmissionTests) ... ok\ntest_unsupported_copy_geometry (test_r0f_group1_export_admission.AdmissionTests) ... ok\ntest_capacity_range_and_integer (test_r0f_group1_pool_contract.PoolContractTests) ... ok\ntest_fixed_domains_and_channels (test_r0f_group1_pool_contract.PoolContractTests) ... ok\ntest_no_production_promotion (test_r0f_group1_pool_contract.PoolContractTests) ... ok\ntest_units_and_identity (test_r0f_group1_pool_contract.PoolContractTests) ... ok\ntest_valid_and_generated (test_r0f_group1_pool_contract.PoolContractTests) ... ok\ntest_exact_integer_fields (test_r0f_group1_presentation_contract.PresentationContractTests) ... ok\ntest_invalid_capacities_and_lod (test_r0f_group1_presentation_contract.PresentationContractTests) ... ok\ntest_no_production_promotion (test_r0f_group1_presentation_contract.PresentationContractTests) ... ok\ntest_serialized_scene_overlap (test_r0f_group1_presentation_contract.PresentationContractTests) ... ok\ntest_valid_private_fixture (test_r0f_group1_presentation_contract.PresentationContractTests) ... ok\ntest_aliased_labels_use_symbol_instruction_bounds (test_r0f_group1_terminal.TerminalBoundaryTests) ... ok\ntest_refresh_after_save_rejected (test_r0f_group1_terminal.TerminalBoundaryTests) ... ok\ntest_setup_cannot_call_application (test_r0f_group1_terminal.TerminalBoundaryTests) ... ok\ntest_terminal_return_rejected (test_r0f_group1_terminal.TerminalBoundaryTests) ... ok\n\n----------------------------------------------------------------------\nRan 35 tests in 0.009s\n\nOK\n"
+    }
+  ],
+  "preservedPrgSha256": "25a18c23c750d0877103209fccd0114afe7cd30f31690731605b9687bfea94e1",
+  "preservedInputs": 93,
+  "canonicalState": "XEMU_BOOT_VERIFIED",
+  "canonicalSha256": "60cea9c8dd51b0f2c199605e60574c0bebd7c758d5899fb9b1e7c2901f83e832",
+  "baselines": {
+    "build/r0f/group1/integration/preacq-trace-exact-f596-01/baseline-GROUP1.prg": "ec259fc7611d8bb5809d15f6c333f5b224df4c945a8e9ffca5b2402d8444cb30",
+    "docs/evidence/r0f/group1/2026-09-30-six-order-corrected-ntsc/baseline/GROUP1.prg": "0d96a1b21eb36680b05689b659ac8c6f73cc2b61e647c060ab2f369c2bbfc244",
+    "docs/evidence/r0f/group1/2026-09-30-six-order-corrected-ntsc/build/GROUP1.prg": "c249f4e4da972cdc0c5d0958a1a3a148387eb1ad4de602404c6b79fb7c79492b",
+    "build/r0f/successor-integration/R0F-SUCCESSOR-INTEGRATION.prg": "cf605bd377ddcee2c72cdc4abfd20c3ae9eee350b7b78b36cbde8ff1adf8fc23"
+  },
+  "priorManifests": [
+    {
+      "freeze": "2026-09-30-six-order-corrected-ntsc",
+      "verifiedFiles": 108,
+      "manifestSha256": "8243e85ae0111856e5944844c801a3b6375fd23bcc520bace350ad10b5fbb79c"
+    },
+    {
+      "freeze": "2026-09-30-six-order-ntsc-120s",
+      "verifiedFiles": 61,
+      "manifestSha256": "91b4628aa3b7181001a6715f3feda5726d8aa6f75f75739e50090e921ff258e3"
+    },
+    {
+      "freeze": "2026-09-30-six-order-pal-120s",
+      "verifiedFiles": 61,
+      "manifestSha256": "cbb429bfa7e789bf12ea269bfb4c4d64c9771a9613d62dd03149e8e080c5cde0"
+    },
+    {
+      "freeze": "2026-09-30-presentation-core",
+      "verifiedFiles": 18,
+      "manifestSha256": "6675cc69982ddf97710c3c0b6156268df39a30e7f59d87813158a9c576b0dfb8"
+    },
+    {
+      "freeze": "2026-09-30-presentation-integration",
+      "verifiedFiles": 1389,
+      "manifestSha256": "fe3f91134db588a24f49e7ce15fa28ab4efece0bdf5f752f546fb042b1b52616"
+    }
+  ],
+  "governingPdfs": {
+    "spec/core/F65_65Aero_Engine_Runtime_and_Technical_Supplement_v1_HUMAN_APPROVED_CANDIDATE_DESIGN.pdf": "bcb50a96ca6aadfd45637c48c4a80a10d8ce61b1e2461ba03448b4f06497d260",
+    "spec/subsystems/F-65_Megawing_Graphics_White_Paper_v2.1.pdf": "b94b3db857b0b7536aad23dcdc4918625fc7da27584df6886da58391b75fdb51",
+    "spec/subsystems/F-65_Megawing_Audio_Sound_Effects_and_Music_Engineering_White_Paper_v1.0_FINAL.pdf": "2ae025b36bdbd92b5a0ac51bcead40baeec96d23765e1519fa5d672915be35ff",
+    "spec/subsystems/F-65_Megawing_SensorAndTrackEngine_Engineering_Model_Phase-3_v1.0.pdf": "cd9369116018b81d622360d7868e534c6e31afc98fc6378e0ed8d7450d617b25"
+  },
+  "newXemu": "NOT RUN",
+  "newCarrier": "NOT RUN",
+  "sd": "NOT RUN",
+  "physical": "NOT RUN",
+  "commit": "NOT RUN",
+  "push": "NOT RUN",
+  "integratedPoolEvidence": false,
+  "targetFitAdmitted": false,
+  "fullGroup1Acceptance": false,
+  "fullR0FAcceptance": false
+}

@@ -1,0 +1,24 @@
+T04 Xemu GROUP1_NEGATIVE mode=1: /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/nmi-visible-01
+Traceback (most recent call last):
+  File "/Users/slice/Developer/f65-megawing/tools/diagnostics/r0f_successor_emulator.py", line 560, in run_xemu
+    process.wait(timeout=timeout_seconds)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 1189, in wait
+    return self._wait(timeout=timeout)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 1909, in _wait
+    raise TimeoutExpired(self.args, timeout)
+subprocess.TimeoutExpired: Command '['/Users/slice/Developer/f65-megawing/toolchain/xemu/xmega65', '-skipconfigfile', '-fastboot', '-videostd', '1', '-fastclock', '40.5', '-rom', '/Users/slice/Documents/Codex/f65-megawing/MEGA65.ROM', '-sdimg', '/Users/slice/Developer/f65-megawing/build/r0f/group1/integration/nmi-visible-01/disposable-sd.img', '-8', '/Users/slice/Developer/f65-megawing/build/r0f/group1/integration/nmi-visible-01/G1NEG01.D81', '-prg', '/Users/slice/Developer/f65-megawing/build/r0f/group1/integration/nmi-visible-01/NEGATIVE.prg', '-dumpscreen', '/Users/slice/Developer/f65-megawing/build/r0f/group1/integration/nmi-visible-01/screen.txt', '-dumpmem', '/Users/slice/Developer/f65-megawing/build/r0f/group1/integration/nmi-visible-01/memory.bin', '-screenshot', '/Users/slice/Developer/f65-megawing/build/r0f/group1/integration/nmi-visible-01/screen.png']' timed out after 60 seconds
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/private/tmp/f65-group1-visible.py", line 9, in <module>
+    n.run('nmi-sticky',Path('build/r0f/group1/integration/nmi-visible-01').resolve())
+  File "/Users/slice/Developer/f65-megawing/tools/diagnostics/r0f_group1_negative.py", line 63, in run
+    result, environment = runtime.run_xemu(output, "1", image,
+  File "/Users/slice/Developer/f65-megawing/tools/diagnostics/r0f_successor_emulator.py", line 564, in run_xemu
+    process.wait(timeout=10)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 1189, in wait
+    return self._wait(timeout=timeout)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 1909, in _wait
+    raise TimeoutExpired(self.args, timeout)
+subprocess.TimeoutExpired: Command '['/Users/slice/Developer/f65-megawing/toolchain/xemu/xmega65', '-skipconfigfile', '-fastboot', '-videostd', '1', '-fastclock', '40.5', '-rom', '/Users/slice/Documents/Codex/f65-megawing/MEGA65.ROM', '-sdimg', '/Users/slice/Developer/f65-megawing/build/r0f/group1/integration/nmi-visible-01/disposable-sd.img', '-8', '/Users/slice/Developer/f65-megawing/build/r0f/group1/integration/nmi-visible-01/G1NEG01.D81', '-prg', '/Users/slice/Developer/f65-megawing/build/r0f/group1/integration/nmi-visible-01/NEGATIVE.prg', '-dumpscreen', '/Users/slice/Developer/f65-megawing/build/r0f/group1/integration/nmi-visible-01/screen.txt', '-dumpmem', '/Users/slice/Developer/f65-megawing/build/r0f/group1/integration/nmi-visible-01/memory.bin', '-screenshot', '/Users/slice/Developer/f65-megawing/build/r0f/group1/integration/nmi-visible-01/screen.png']' timed out after 10 seconds

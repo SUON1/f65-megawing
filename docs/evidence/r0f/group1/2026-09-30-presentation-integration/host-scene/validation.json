@@ -1,0 +1,70 @@
+{
+  "commands": [
+    [
+      "/usr/bin/clang",
+      "-std=c11",
+      "-Wall",
+      "-Wextra",
+      "-Wconversion",
+      "-Werror",
+      "-Isrc/diagnostics/r0f",
+      "-Iinterfaces/generated",
+      "-fsanitize=address,undefined",
+      "src/diagnostics/r0f/group1_presentation.c",
+      "src/diagnostics/r0f/group1_scene.c",
+      "tools/diagnostics/r0f_group1_scene_host_test.c",
+      "-o",
+      "/Users/slice/Developer/f65-megawing/build/r0f/group1/scene/scene-host-test"
+    ],
+    [
+      "/Users/slice/Developer/f65-megawing/build/r0f/group1/scene/scene-host-test"
+    ],
+    [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tools/diagnostics",
+      "-p",
+      "test_r0f_group1*contract.py",
+      "-v"
+    ],
+    [
+      "/usr/bin/clang",
+      "-std=c11",
+      "-Wall",
+      "-Wextra",
+      "-Wconversion",
+      "-Werror",
+      "-Isrc/diagnostics/r0f",
+      "-Iinterfaces/generated",
+      "-fsanitize=address,undefined",
+      "src/diagnostics/r0f/group1_presentation.c",
+      "tools/diagnostics/r0f_group1_presentation_host_test.c",
+      "-o",
+      "/Users/slice/Developer/f65-megawing/build/r0f/group1/scene/presentation-host-test"
+    ],
+    [
+      "/Users/slice/Developer/f65-megawing/build/r0f/group1/scene/presentation-host-test"
+    ]
+  ],
+  "hostSanitizers": "PASS",
+  "independentSceneComparisons": 3200,
+  "inputs": {
+    "interfaces/generated/r0f_group1_presentation.h": "0bb9fbe4add169446e6f713524b82c7368efa319dc092611537ff4e9087b3f45",
+    "interfaces/r0f_group1_presentation_contract.json": "8571d7015d995feaae50f99e57ff7b9ce6b90c173828fa9a463123b165a13e2f",
+    "src/diagnostics/r0f/group1_presentation.c": "9c17c3805d3ea56fa8bbe785ba91e4a107f2165f77065ac70a96e8b552297d30",
+    "src/diagnostics/r0f/group1_presentation.h": "ff5c576734a893cf7f2e156b2c54457c0b2324ef51b5fa02ffb8478db6bc300a",
+    "src/diagnostics/r0f/group1_scene.c": "e5bf88c3b371203ce13128d7fdaf9487475a4f57d8bc918c70ea18f5db73ac19",
+    "src/diagnostics/r0f/group1_scene.h": "a621fca30042136d6b152c9cc799782616e1c1c4126fd808fb9ca476bd4daf10",
+    "tools/diagnostics/r0f_group1_reduce.py": "d155a43cd291bc086f8ed0dad3c1b4d669d5050469b9c782ed26036dd5ca2ca9",
+    "tools/diagnostics/r0f_group1_scene_host_test.c": "c2a32bf278e1ed6fde36789596b99b34013b508e876b4b0dd3014b79695fb5a8",
+    "tools/diagnostics/r0f_group1_scene_validate.py": "390d982492021537f8e0084feee6605711eec9b28310aac7b768324ae4e46825"
+  },
+  "physical": "NOT RUN",
+  "purePresentationBoundaryCorpus": "Presentation coherence/overflow PASS; anchors 720 permutations; occlusion 2592 cases; LOD 131072 comparisons\nHost native state 138 bytes; not target-linked memory accounting\n",
+  "result": "PASS",
+  "targetMemoryTiming": "NOT RUN"
+}

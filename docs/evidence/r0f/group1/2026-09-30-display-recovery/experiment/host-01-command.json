@@ -1,0 +1,14 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "tools/diagnostics/r0f_group1_owners_validate.py",
+    "/Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/host-01",
+    "--reference-pool",
+    "/Users/slice/Developer/f65-megawing/build/r0f/group1/pool-integration/owner-01/source-inputs/src/diagnostics/r0f/group1_pool.c",
+    "--reference-display",
+    "/Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/source-inputs/src/diagnostics/r0f/successor_integration.c"
+  ],
+  "cwd": "/Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/source-inputs",
+  "exitCode": 0
+}

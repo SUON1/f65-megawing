@@ -14,8 +14,559 @@ Completed work leaves this file. Durable project changes belong in
 ## Current status
 
 - **Status:** `ACTIVE`
-- **Task:** R0-F successor first-fault diagnostic after a physically loadable
-  `R0FDIAG3.D81` reported post-storage lockout.
+- **Task:** R0-F Group 1 combined workload, timing and storage resume.
+- **Preservation publication approved (2026-10-01):** Owner authorized a
+  reviewed checkpoint commit and push of the current locally/Xemu-validated
+  Group 1 work. This supersedes earlier no-commit/no-push wording for this
+  checkpoint only; it does not authorize SD writes, physical execution, merge
+  or acceptance. Publish the retained exact source/evidence snapshots without
+  promoting the version-7 variant over the earlier root passing source.
+  See `docs/reports/R0-F_GROUP1_PUBLICATION_CHECKPOINT.md`.
+- **Current capacity/summary continuation (2026-10-01):** The isolated
+  `build/r0f/group1/capacity-summary/integrated-02/source-inputs/` candidate
+  integrates private trace version 7 and protected terminal operator output.
+  PRG `c068cc53...`, 37517 bytes, ends at `$BFFD`: **3 bytes free**.
+  All 3200 real ticks, actual owner checkpoints and real world events remain;
+  a separately verified non-timing pattern fills the unused tail only after
+  acquisition stops. The full unchanged 327680-byte allocation exports in
+  twenty closed files. Shared volatile-preserving CRC paths fund the additions;
+  all prior integrity comparisons, capacities, reserves, timing floors and
+  100 Hz/21-stage order remain. Host ASan/UBSan, boundary/corruption and 47 root
+  tests pass. Fresh focused NTSC/PAL pass actual SAVE/export/reduction and
+  timing with zero nominal misses, uncertain or below-floor cohorts. Actual
+  success and forced-collision failure summaries are readable; the collision
+  preserves the existing file, exports zero chunks and does not retry.
+  Fresh `R0FG1P04.D81` passes structure/content and all four clean exact-name
+  NTSC/PAL boots, each with twenty full chunks, timing, 114 corruption rejects
+  and operator screen review. State is `XEMU_BOOT_VERIFIED` only, not hardware
+  ready or `TEST_ELIGIBLE`. Canonical is read-only, 819200 bytes, SHA
+  `2519af02...`; it is never mounted writable. The first sandbox-blocked launch
+  and all compile/host trials remain preserved; P03 and every older passing
+  source/PRG/carrier remain unchanged. Eleven prior freezes / 5726 entries
+  are audited. Evidence:
+  `docs/evidence/r0f/group1/2026-10-01-capacity-summary/`; report:
+  `docs/reports/R0-F_GROUP1_CAPACITY_SUMMARY.md`.
+  **Next:** complete the authorized preservation publication, then obtain
+  separate approval for exact-copy SD/carrier gates and the bounded Group 1
+  physical test with returned-trace reduction and owner review. Freeze this
+  exact target; no additional target feature is prescribed. Any missing case
+  must be named against the approved scope, not inferred from a generic list
+  of diagnostic limitations. Full Group 1/R0-F acceptance and Groups 2/3
+  remain open. No SD write, physical run or merge is authorized.
+- **Preserved display/owner predecessor (2026-09-30):** Isolated candidate
+  `build/r0f/group1/display-recovery/ram-crc-02/source-inputs/` closes the
+  resumed world-cadence failure without relaxing the workload or timing gate.
+  Finish after the ninth successful copy, retain snapshot/registration checks
+  and later frame-boundary publication; switch the next clear to the actual
+  backbuffer after a swap; reuse the existing compact CRC for the three
+  ordinary-RAM display checks. Volatile checks and all generated contracts,
+  capacities, backing buffers, reserves and IRQ/MAP/base-page paths stay intact.
+  PRG `523d0369...`, 37483 bytes, ends at `$BFDB`: **37 bytes free**.
+  Full owner ASan/UBSan/independent host checks pass, including actual old/new
+  display paths, 26 cancellation boundaries, failed copy/DMA retry and snapshot
+  corruption. The first compile-only control-flow spelling fails fit by
+  157 bytes and is retained unexecuted. The smaller completion-only variant
+  `941fac20...` fits with 80 free but retains the resumed 19.0738 Hz failure;
+  its full failed trace and 102 corruption checks are preserved separately.
+  Final focused NTSC/PAL each pass all 3200 records, 19 closed export chunks,
+  actual SAVE/reduction, complete phase/order masks, zero nominal misses or
+  uncertain/below-floor cohorts and 102 corruption rejects. Minimum cohort
+  cadence is 28.1116/23.1109 Hz; execution max/p95 7328/6784 and 7264/6528 CIA
+  counts; hardware/software stack peaks 67/124 and 62/124 bytes.
+  Fresh `R0FG1P03.D81` passes host structure/content and all four clean exact-name
+  NTSC/PAL boots, each with actual SAVE/export, timing and 102 corruption rejects.
+  Carrier state is `XEMU_BOOT_VERIFIED` only. Canonical SHA
+  `d1f60b4b...`, 819200 bytes, is read-only and never mounted writable.
+  Evidence: `docs/evidence/r0f/group1/2026-09-30-display-recovery/`;
+  ten preceding freezes and all 4498 prior entries are independently audited
+  during closeout. **Next:** close integrated near-capacity trace and compact
+  operator summary before any
+  hardware proposal. See `docs/reports/R0-F_GROUP1_DISPLAY_THROUGHPUT_RECOVERY.md`.
+  Passing/failed predecessors, root inputs and `R0FG1P02.D81` remain intact.
+  SD writes, physical, commit and push remain NOT RUN; no full Group 1/SI/
+  whole-ISR/production or hardware-readiness promotion. This current checkpoint
+  supersedes the next-action wording in the retained checkpoints below.
+- **Owner recovery / timing blocker (2026-09-30):** Approved arithmetic and
+  encoding correction now fits the complete owner-observation candidate.
+  `build/r0f/group1/pool-recovery/arithmetic-codec-01/source-inputs/` is
+  separate from the preserved failed owner candidate and passing root inputs.
+  PRG `ee3b59a1...`, 37454 bytes, ends at `$BFBE`: **66 bytes free**.
+  Recovered 1875 bytes (1882 less code, 7 more constant data); BSS, buffers,
+  observer state, capacities, generated contracts, all three acquisition/
+  readback CRC comparisons and whole-stream/export-residue checks are unchanged.
+  Thirteen compile-only trial checkpoints retain the rejected outlining
+  alternatives; only the identical final qualified binary was executed.
+  Native ASan/UBSan checks pass all 65536 generation values with actual geometry
+  CRC/counter comparisons; 248832 observer-state equivalence cases plus null;
+  3200 scene comparisons, unchanged workload/AI lineage, track continuity,
+  mocked-edge actual audio functions, all five export region corruption/read
+  failures through full world capacity, 83 codec rejects and 18 contract tests.
+  Root suite passes 41 tests.
+  Fresh 120-second NTSC completes actual SAVE, 19 closed export chunks,
+  309780 trace bytes, all 3200 version-6 records, 905 world pairs, complete
+  phase/order masks, actual pre/post owner observations, and 102 repaired/raw
+  corruption rejects. Acquisition PASS; **nominal timing FAIL**: zero deadline
+  misses or uncertain boundaries, but post-storage epoch 1 / phase 0 has
+  19 worlds in 0.99604 seconds (19.0756 Hz), below the unchanged 20 Hz floor.
+  First resumed world arrives after 2.950 tick periods. Subsequent swaps are
+  about five periods apart; the tick-1664 view change coincides with a
+  9.997-period gap between generations 468/469 (source ticks 1653/1663).
+  This matches the existing unfinished-world cancellation path, not a stalled
+  acquisition or slow first resumed world. Exact instruction/frame-edge cause
+  remains uninstrumented. Execution max/p95 is 8128/7680 CIA counts; capture
+  maximum 1153; hardware/software stack peaks 67/121 bytes.
+  Exact commands, trial maps, host evidence and cohort events:
+  `build/r0f/group1/pool-recovery/arithmetic-codec-01/closeout.json`.
+  Separate freeze: `docs/evidence/r0f/group1/2026-09-30-owner-recovery/`.
+  **Next:** narrow display-throughput correction around view cancellation;
+  retain all workload/capacity/integrity requirements and this failed trace.
+  Repeat fit/host then fresh NTSC before PAL or a new local carrier.
+  Do not omit the resumed interval, add a grace period or relax 20 Hz.
+  PAL, new carrier, SD, physical, commit and push are NOT RUN. Nine prior
+  freezes, passing PRGs/carrier and original dirty work remain preserved.
+- **Approved foreground recovery (2026-09-30):** Owner approved the next
+  isolated size experiment. Retaining one shared copy of the existing pure
+  `inside` bounds helper saves another 163 bytes from the passing nibble-CRC
+  build, 1031 bytes total from the preserved presentation build. Runtime
+  `acbabeed...` ends at `$BBBE`, 1090 bytes free. The unchanged cold pool
+  API/state/adapter probe now fits at `$BF9F`, 97 bytes free, and remains
+  unexecuted. Host arithmetic/range/DMA, CRC and workload checks pass.
+  Fresh 120-second NTSC acquisition passes all 3200 records, 19 closed export
+  chunks, actual SAVE/reduction, full phase/order coverage, zero nominal
+  timing misses and all 30 corruption rejects. Observed execution max/p95 is
+  7489/7456 CIA counts; hardware/software stack peaks are 67/120 bytes.
+  This closes the selected recovery experiment, not actual pool integration.
+  Next implement and measure real owner hooks plus versioned trace encoding
+  against this 97-byte remaining margin; retain the fit gate before execution.
+  A fit failure still stops fresh integrated NTSC/PAL and a new carrier.
+  Prior PRGs, all source inputs, canonical carrier and seven freezes remain
+  intact. See `docs/reports/R0-F_GROUP1_FOREGROUND_MEMORY_EXPERIMENT.md` and
+  `docs/evidence/r0f/group1/2026-09-30-foreground-memory-experiment/`.
+  No capacity, memory-envelope, deadline, SD, physical or publication change.
+- **Isolated memory recovery (2026-09-30):** The one copied-source nibble-CRC
+  variant recovers 868 resident bytes: runtime end `$BC61`, 927 free. The
+  retained eight-observer API/state probe now fits at `$BF0E`, 242 free.
+  Independent CRC ASan/UBSan checks pass 69641 cases, workload lineage and
+  1025 streaming lengths pass, and the full Group 1 Python suite passes 41
+  tests. One completed fresh 120-second NTSC acquisition passes actual SAVE,
+  19 closed chunks, 3200 version-5 records, independent reduction, complete
+  phase/order masks, zero nominal misses and all 30 corruption rejects.
+  Instrumented execution maximum rises from 6880 to 7457 CIA counts; this
+  is a measured memory/speed tradeoff, not free timing headroom.
+  A subsequent unexecuted cold initialization/sample/field-wise export
+  adapter adds 308 bytes and ends at `$C042`: fit FAIL, 66 bytes over before
+  actual owner hooks or trace-version integration. This concrete candidate
+  is not a lower bound for every possible adapter. Pool integration is blocked
+  at the memory gate; fresh PAL timing and a new local carrier are NOT RUN.
+  The one recovery variant is complete; next approve a bounded foreground
+  code-size experiment, then repeat fit before actual pool observations.
+  No capacity, reserve, deadline, memory-map or public ABI relaxation.
+  Passing `25a18c23...`/original `ec259fc7...`, root inputs, `R0FG1P02.D81`
+  and prior freezes remain unchanged. Two aborted pre-program fixtures are
+  retained separately and do not count as NTSC proof. See
+  `docs/reports/R0-F_GROUP1_CRC_MEMORY_EXPERIMENT.md` and separate
+  `docs/evidence/r0f/group1/2026-09-30-crc-memory-experiment/`.
+  No SD write, physical run, commit, push or acceptance promotion.
+- **Pool-observation preparation (2026-09-30):** Pure owner-fed high-water
+  recording passes ASan/UBSan, 170335 transitions, 25600 independent samples,
+  counter limits, peer/domain isolation, five private-contract tests and
+  pinned target-object compilation. Target-native eight-observer state is
+  64 bytes versus 59 free. A separate unexecuted cold fit probe ends at
+  `$C272`, 626 bytes over before owner hooks/transport. Fit FAIL is retained;
+  the passing PRG `25a18c23...`, all 93 inputs, canonical `R0FG1P02.D81`
+  and immutable freezes stay unchanged. Full host suite now passes 35 tests.
+  This is isolated preparation, not actual runtime pool high-water proof.
+  See `docs/reports/R0-F_GROUP1_POOL_OBSERVATION_CORE.md` and separate
+  `docs/evidence/r0f/group1/2026-09-30-pool-core/`.
+  Next recover resident space within the admitted envelope, then actual owner
+  hooks/versioned trace and fresh timing. No reserve borrowing, overwrite of
+  preserved sources/carriers, SD write, hardware run, commit, push or acceptance promotion.
+- **Presentation integration and carrier continuation (2026-09-30):** The
+  bounded private view/registration/priority-anchor/occlusion/size-LOD fixture
+  is now linked and independently checked in the real incremental display
+  path. Fresh corrected PRG `25a18c23...`, 37623 bytes, ends at `$BFC5` with
+  59 bytes free; no reserve borrowing. NTSC/PAL each pass actual SAVE, 19 closed
+  chunks, all 3200 version-5 records, complete-pair registration CRCs, phase
+  masks FFFF/order masks 3F, zero nominal misses/uncertain/below-20Hz cohorts
+  and all 30 corruption cases. Original `ec259fc7...`, corrected `0d96a1b...`,
+  six-order `c249f4e4...` and all immutable manifests remain preserved.
+  First carrier `R0FG1P01.D81` is retired: restoring its entry-time DOS/BAM
+  cache caused G1T00 to overwrite RSSTATE at sector 36/30. The public terminal
+  initialize-command correction passes short autoload normal/error/no-overwrite probes,
+  retains both original context lifetimes and has no returning-storage change.
+  Replacement `R0FG1P02.D81` passes host structure/content and all four fresh
+  exact-name NTSC/PAL boots with actual SAVE/export reduction and zero nominal
+  timing misses. Canonical SHA `60cea9c8...`, state XEMU_BOOT_VERIFIED only;
+  no SD/physical eligibility follows. See
+  `docs/reports/R0-F_GROUP1_PRESENTATION_INTEGRATION.md` and
+  `docs/evidence/r0f/group1/2026-09-30-presentation-integration/`.
+  Next close remaining geometry/audio/sensor observations, integrated
+  near-capacity trace and compact operator summary before proposing hardware.
+  Physical/SI/whole-ISR/production projection boundaries remain open. No
+  SD write, physical run, commit, push or full acceptance is authorized.
+- **Isolated presentation policy (2026-09-30):** Continued the approved local
+  coverage work after complete six-order NTSC/PAL proof. A separate pure kernel
+  now passes ASan/UBSan, 720 priority-anchor permutations, 2592 independently
+  enumerated occlusion cases, 131072 size-LOD comparisons, coherence/overflow
+  rejection, four private-contract tests and target-object compilation. New
+  parameters are generated from a private diagnostic contract; no production
+  layout, capacity or threshold is selected. At this isolated checkpoint the
+  kernel was not linked, so it did not close combined presentation timing.
+  The `c249f4e4...` PRG and all 74 build inputs remain unchanged. See
+  `docs/reports/R0-F_GROUP1_PRESENTATION_CORE.md` and
+  `docs/evidence/r0f/group1/2026-09-30-presentation-core/`.
+  The subsequent integration/fit/changed-build validation is recorded above;
+  the isolated checkpoint had 616 bytes free in the unchanged six-order PRG.
+- **Complete six-order PAL export (2026-09-30):** The fresh unchanged-PRG
+  120-second PAL run passed status 4/error 0, all 20 closed chunks, 3200
+  records and 314620 trace bytes. Independent extraction/BAM/chains, actual
+  SAVE, full CRC/reduction and all 22 corruption cases pass. Both epochs have
+  phase masks `FFFF` and order masks `3F`; nominal timing is
+  WITHIN_OBSERVED_BOUNDS with no deadline misses, uncertain cases or cohorts
+  below 20 Hz. PRG `c249f4e4...`, all 79 frozen inputs and both preceding
+  evidence manifests remain unchanged. IRQ samples 782/786 retain the
+  no-nonzero-interval resolution boundary. Evidence:
+  `docs/evidence/r0f/group1/2026-09-30-six-order-pal-120s/`.
+  Declared sampled phase/order coverage now passes locally in both modes.
+  Continue view/registration/occlusion/LOD and applicable pool observations,
+  integrated near-capacity trace, operator summary and exact-carrier gates.
+  No hardware readiness, SD write, physical run, commit or push is authorized.
+- **Complete six-order NTSC export (2026-09-30):** The owner-authorized fresh
+  120-second run of unchanged PRG `c249f4e4...` completed export status 4,
+  error 0 and 20 closed chunks. All 3200 records and 315780 trace bytes pass
+  independent extraction, D81 structure/BAM/chains, actual SAVE, full CRC and
+  reduction. Both epochs have phase masks `FFFF` and order masks `3F`;
+  nominal timing is WITHIN_OBSERVED_BOUNDS, with zero deadline misses, zero
+  uncertain cases and no cohort below 20 Hz. All 22 corruption cases reject
+  against the actual complete trace. No target or generated-contract change
+  occurred; baselines and the interrupted image remain preserved. IRQ samples
+  912/919 again have no nonzero intervals, retaining the Xemu timing-resolution
+  boundary. Evidence: `docs/evidence/r0f/group1/2026-09-30-six-order-ntsc-120s/`.
+  The fresh unchanged-PRG PAL result is recorded above. Remaining Group 1 coverage and
+  physical/acceptance boundaries remain open. No SD write, physical run,
+  commit or push is authorized.
+- **Focused six-order acquisition (2026-09-30):** Owner requested rebuilding
+  the six-order phase variant from the corrected baseline and one focused NTSC
+  acquisition. Version-4 phase/order recording and the six service permutations
+  are reapplied with the corrected short IRQ branch retained. The independent
+  reducer requires all sixteen service-start bins and all six orders in both
+  epochs. Corrected normal PRG `0d96a1b...`, its build artifacts and the prior
+  source are preserved at `/private/tmp/f65-group1-six-order-prebuild.qOlidq/`;
+  the passing `ec259fc7...` evidence also remains retained. The six-order PRG
+  is `c249f4e4...`, 37191 bytes, resident end `$BD98`, 616 bytes free. Host,
+  target/static and seven contract checks pass; the ordinary successor remains
+  byte-identical. The one 60-second NTSC run reached all 3200 records, fault 0
+  and IRQ error 0; phase masks `FFFF` and order masks `3F` in both epochs. The
+  wall-clock limit interrupted terminal export at status 3 with four closed
+  chunks and error 0. Actual SAVE and the exported header validate, but open
+  `G1T04` and the partial trace correctly fail complete-image/reduction checks.
+  No complete phase-coverage or nominal-timing result is claimed. Evidence:
+  `docs/evidence/r0f/group1/2026-09-30-six-order-corrected-ntsc/`.
+  The subsequent fresh 120-second NTSC result is recorded above. Do not reuse
+  the interrupted image. No SD write, physical run, commit or push is authorized.
+- **Pre-acquisition correction (2026-09-30):** Binary-neutral serial-monitor
+  tracing of exact fixed-order PRG `f5963ae5...` found the initial calibration
+  stall: the IRQ probe's relaxed `BEQ16` at `$3298` landed one byte before its
+  intended `$3321` `RTS`; the layout-dependent operand byte then branched into
+  a `BRK` and recursive IRQ entry. The source now uses an in-range short branch
+  plus immediate inactive-path return, and the Group 1 validator rejects all
+  long branches in the IRQ probe. A copy of the exact failing PRG with only
+  those three bytes corrected completed 3200 records and 20-chunk export in
+  under one minute; independent D81 extraction/BAM-chain checks and fixed-order
+  reduction passed with fault/error zero, all phase masks `FFFF`, zero nominal
+  misses and zero cohorts below 20 Hz. The normal corrected PRG is `0d96a1b...`
+  and differs from preserved passing `ec259fc7...` in exactly three bytes;
+  ordinary successor remains `cf605bd...`. Six-order coverage remains open.
+  See `docs/evidence/r0f/group1/2026-09-30-preacquisition-long-branch/` and the
+  updated service-phase report. The requested six-order rebuild and focused
+  NTSC acquisition are now recorded above; full NTSC/PAL export and reduction
+  remain required.
+  No SD write, physical run, commit or push is authorized.
+- **Earlier service-phase diagnostic (2026-09-30):** The six-order NTSC variant reached
+  tick 3200 but failed closed at terminal export on an invalid private IRQ
+  interval; no valid trace resulted. A narrower fixed-order phase-bin variant
+  timed out before its first tick under both 180- and 360-second development
+  waits. The previously validated Group 1 PRG completed on the same host in a
+  fresh control image. That checkpoint's pre-acquisition cause is now resolved
+  by the correction above; the separate six-order private IRQ-interval failure
+  remains open.
+  Failed PRGs/images/memory and input identities are retained in
+  `docs/evidence/r0f/group1/2026-09-30-service-order-irq-failure/`; see
+  `docs/reports/R0-F_GROUP1_SERVICE_PHASE_DIAGNOSTIC.md`. All touched target,
+  trace and reducer source was restored from the passing freeze and rebuilt
+  the exact `ec259fc7...` PRG. That passing baseline remains preserved; the
+  three-byte branch correction above now supersedes it for subsequent builds.
+  The ordinary successor PRG also remains byte-identical. No six-order phase
+  coverage, new carrier, SD or physical pass is claimed.
+- **Corrected presentation finding:** The apparent missing screenshot rows
+  came from image viewing, not the saved PNG bytes. Same-PRG 90/180-second
+  screenshots are byte-identical; independent RGB decoding found all six
+  expected text bands in every saved PNG. Actual returned SAVEs and fault
+  results also validate. See
+  `docs/evidence/r0f/group1/2026-09-29-display-pixel-audit/` and the corrected
+  `docs/reports/R0-F_GROUP1_IRQ_SPACE.md`. The HOTREG pointer fix remains;
+  the unsuccessful D031 experiment remains removed. The preserved
+  pre-correction PRG is `ec259fc7...`; its corrected normal baseline is
+  `0d96a1b...`, the same size and with the same 1365-byte resident reserve.
+  Physical/operator presentation and exact-carrier readiness remain
+  unverified.
+- **Current continuation checkpoint (2026-09-29):** Resident-space recovery,
+  version-3 IRQ observations and integrated failure checks now pass local
+  validation. The current resident end is `$BAAB`, leaving 1365 bytes within
+  the unchanged envelope. NTSC/PAL each validate 3200 ticks, actual SAVE and
+  trace, zero nominal deadline misses and no measured cohort below 20 Hz.
+  Capsule corruption, simulated sticky NMI and IRQ reader-error injection
+  each lock out without export. The NMI check exposed and corrected a
+  Group 1 pre-storage first-fault overwrite. Ordinary CAP14 successor PRG
+  remains byte-identical. IRQ body-read intervals are unresolved in pinned
+  Xemu, whose CIA timer advances in 32-count scanline batches; zero readings
+  are not a zero-cost PASS. See `docs/reports/R0-F_GROUP1_IRQ_SPACE.md` and
+  `docs/evidence/r0f/group1/2026-09-29-irq-display/`.
+  Next: independent-service phase coverage and view/pool observations, then
+  compact success/operator summary and exact-carrier gates. The separate
+  development transport capacity boundary now passes, as recorded below.
+  Whole-ISR cost, entry latency and physical SI uncertainty remain open.
+  No SD write, physical run, commit or push is authorized.
+- **Terminal-export capacity checkpoint (2026-09-29):** A parameterized
+  development probe passed NTSC 327,680-byte/20-chunk export with independent
+  actual D81 extraction and result/SAVE validation. A PAL pre-existing
+  `G1T19` collision preserved the sentinel and failed status 5/error 3 after
+  19 preceding chunks; a 327,681-byte request failed before any trace file
+  or export permit. The original 33,025-byte case passed after the runner
+  refactor. See `docs/reports/R0-F_GROUP1_EXPORT_CAPACITY.md` and its three
+  new evidence freezes. These direct-PRG probes qualify transport boundaries,
+  not the integrated Group 1 workload or a physical delivery carrier.
+- **Workload/timing integration checkpoint (2026-09-29):** Owner requested
+  continuation. The final version-2 recorder passes host/target and direct-PRG
+  NTSC/PAL Xemu checks: 3200 ticks per run, returning storage at 1600, complete
+  stage/service timing and world-event capture, independent actual result/SAVE
+  reduction, zero observed nominal deadline misses and no cohort below 20 Hz.
+  See `docs/reports/R0-F_GROUP1_INTEGRATION.md` and the exact case/remaining
+  coverage matrix in `docs/plans/R0-F_GROUP1_MEASUREMENT_MATRIX.md`.
+  Final evidence/source freeze:
+  `docs/evidence/r0f/group1/2026-09-29-workload-timing/`.
+  Earlier timing failures and incomplete version-1 age captures are preserved.
+  No physical test or delivery carrier was ready at that checkpoint. Its
+  resident end `$BE29` left 471 bytes; space recovery and the next IRQ/failure
+  checks are now recorded above. No reserve borrowing,
+  new hardware action, commit or push is authorized.
+- **Build Intent (2026-09-29):** Owner approved the three-group campaign and
+  requested "Build it" for Group 1. See
+  `docs/plans/R0-F_GROUP1_BUILD_INTENT.md`. Preserve the dirty successor tree
+  and all CAP14/T11 evidence. Local implementation/validation only; no SD writes,
+  physical run, commit or push. Fresh origin/main remains ae2b397, an ancestor.
+- **Export amendment approved (2026-09-29):** Owner requested "Make the
+  corrections" and immediate DRY, ETC and orthogonality. Implement the separate
+  terminal-only capability in `docs/plans/R0-F_GROUP1_EXPORT_AMENDMENT.md`;
+  retain original T02 invalidation. Cross-language principles are now linked
+  from AGENTS.md, the development workflow and the C standard. Independent
+  timing arithmetic/validation is complete. The bounded workload/capture
+  integration is now validated above; full Group 1 coverage/carrier remains open.
+- **Local correction result:** Pure timing/export host and target-object checks,
+  eight memory-admission tests, predecessor regressions and export-probe target
+  link/static checks PASS. Development NTSC/PAL runs exported and independently
+  validated all 33,025 bytes plus actual result/SAVE; existing-file rejection
+  preserved the sentinel and halted. The predecessor PRG is byte-identical;
+  retained evidence hashes are unchanged. See
+  `docs/reports/R0-F_GROUP1_CORRECTIONS.md` for exact commands, identities,
+  limitations and the retained failed sandbox launch. This is transport
+  qualification, not Group 1 timing or carrier acceptance. Its next action was
+  the integration now recorded above. Remaining local work is already
+  authorized; no new approval or hardware action is required.
+- **CAP14 physical result (2026-09-28):** Owner-run direct installation passed
+  clean pre/post filesystem checks, exact canonical hash, one extent at 60727296,
+  mounted readback and safe eject. Subsequent three owner photos establish
+  entry and complete result capture: 00/09/0042/1F/00, IRQ 0015 -> 0029,
+  reserve unchanged. All 512 photographed bytes pass CRC 49C0FF3E and the
+  existing semantic validator. Original photos, transcript, decoded record
+  and actual SD reports retained at
+  `docs/evidence/r0f/successor/2026-09-28-cap14-physical/`.
+  The direct-allocator route now has one bounded physical success;
+  arbitrary Finder copies and full R0-F are not thereby accepted.
+  Returned-card verification now also PASS: actual 34-byte RSSTATE extracted
+  from a read-only host snapshot, all original image payloads unchanged,
+  independent structure/content checks and Java result/SAVE oracle PASS.
+  Post-run D81 SHA 0d7dcea08e6252edcbd7afb67f6e41d74f9068d341daef30db61cf544b20f12a;
+  saved SHA 86bef4e96b96b157857587afe9bc5d9d5f69e4849320affe5b867a19e6627784.
+  Evidence under that physical directory's `returned/`. No SD writes or new
+  blank/run. T11 bounded capture/storage validation complete, awaiting review;
+  broader R0-F requirements and owner acceptance remain open.
+- **2026-09-28 allocation recovery:** CAP13 Finder copy matches the canonical
+  819200 bytes/hash but the owner's raw audit shows 13 extents. Mark that SD
+  copy INVALID FOR PHYSICAL TEST; preserve it and passing IRQ11. Owner approved
+  preparation of the controlled contiguous allocator route. Fresh identity
+  R0FCAP14.D81 will contain unchanged CAP13 program/bootstrap/token bytes and
+  repeat host/exact-name Xemu gates. The visible program banner remains CAP13;
+  disk identity is CAP14. This is delivery isolation, not a program fix.
+  Requalify the pinned allocator on disposable FAT32 fixtures. No card repair,
+  automatic raw write, new blank, commit/push or R0-F acceptance is included.
+- **CAP14 preparation result:** Fresh construction/extraction, target/host and
+  four exact-name NTSC/PAL boots PASS. Canonical is XEMU_BOOT_VERIFIED,
+  819200 bytes, SHA-256
+  `6afda08bfed92784356c85d2a6605632457f9693d85bae174fd91dfdb802889e`.
+  All three payloads and target accounting match CAP13; only the disk-label
+  byte differs. Allocator qualification 16 tests and delivery 18 tests PASS.
+  Fresh `diskutil verifyVolume` returned no result after five minutes and was
+  interrupted; mounted card remains visible. Filesystem health is NOT VERIFIED
+  by that attempt. The installer must pass its own clean read-only check before
+  any write. No CAP14 SD write or physical test. See
+  `docs/reports/R0-F_CAP14_DELIVERY_PREPARATION.md` for the exact owner-run step.
+- **Current build intent (2026-09-28):** Preserve the owner's IRQ11 summary
+  PASS and its exact delivery evidence. Add a post-acquisition two-page viewer
+  for the existing 512-byte result and a fail-closed transcript importer;
+  fresh-build R0FCAP13.D81 and verify host/target plus exact-name NTSC/PAL.
+  CAP12 is retained but discarded before delivery after visual QA found stale
+  heading text. Its partial emulator sequence was stopped; do not release it.
+  Workload/lifecycle/fault criteria and admitted ranges stay unchanged.
+  See `docs/reports/R0-F_SUCCESSOR_T11_RESULT_CAPTURE.md`.
+  No SD transfer, commit/push or full R0-F acceptance is implied.
+- **IRQ11 physical summary:** Owner photo shows 00/09/0042/1F/00,
+  reserve 3C7D60D8 unchanged, IRQ 0015 -> 0029, result CRC F9A5C840.
+  Pre-run SD exact hash/one extent and safe eject passed. This is bounded
+  physical summary success, not independent reduction of unseen result bytes.
+- **Current amendment (2026-09-26):** Owner reports IRQ10 failure and supplies
+  new native blank `R0FIRQ11.D81`. Photo: `65/0A/0042/17/00`, reserve
+  `3C7D60D8` unchanged, result CRC `E96A691D`, IRQ `0000 -> 0000`, IEC
+  `00 -> 00`, features `2B`. This does not support the T09 IEC-defer hypothesis
+  at the sampled reclaim. Preserve IRQ10. Its local post-fill audit proves
+  exact canonical bytes, one extent at 122056704 and safe eject; physical
+  entry succeeded but runtime failed. No card repair or other file write.
+  Continue the approved narrow Fault 65 correction: use interior raster line
+  128, add pre-cleanup CPU/VIC diagnostics and regress before a fresh exact
+  IRQ11 build. Shared PF001/CF001 code and acceptance predicates stay unchanged.
+  See `docs/reports/R0-F_SUCCESSOR_T10_RASTER_IRQ.md`.
+- **T10 local result:** Target/host regressions, 525,587 IRQ checks, independent
+  negative fault-65 test, native-slot helper tests, source/layout checks and
+  four fresh exact-name NTSC/PAL carrier runs PASS. Canonical IRQ11 is
+  `XEMU_BOOT_VERIFIED`, 819,200 bytes, SHA-256
+  `e7889a59f95a68d3b167880398881f4d17b628b0cd2c1b269f8e4b701797e5fa`, at
+  `build/r0f/d81-workflow/R0FIRQ11/canonical/R0FIRQ11.D81`. PRG 22,803 bytes,
+  SHA-256 `a7420418b8fa60e0fe8f83847dabae3a905a0b2920569b64592b5e689e999a95`.
+  Working-tree input hashes retained, not a new source commit. No commit/push.
+- **2026-09-28 mount recovery:** Owner reports mounted. Current read-only
+  checks confirm removable FAT32 volume UUID `83FFC12E-67E1-307F-91AD-E584C2E01E87`
+  at `/Volumes/MEGA65FDISK` (`disk4s1` at inspection). IRQ11 is readable,
+  structurally valid and empty, 819,200 bytes, blank SHA-256
+  `3acd72a0d993eb7eb48734714e49f6055629493ddd69bfe20c766a7d19bc6f49`.
+  Canonical hash and all current source inputs still match retained release.
+  The earlier I/O blocker has cleared. No SD write or new physical test.
+- **2026-09-28 fill preflight failure:** Owner's command stopped in
+  `Fat32.__init__` with `mirrored FATs differ`, before the helper's data-write
+  step. A fresh mounted read confirms IRQ11 remains empty and byte-identical
+  to blank SHA `3acd72a0d993eb7eb48734714e49f6055629493ddd69bfe20c766a7d19bc6f49`.
+  No slot-pre or slot-post audit was produced. Current volume UUID still
+  matches; direct read-only partition access requires local administrator
+  authentication. Do not retry fill, choose one FAT as authoritative, repair
+  metadata, reformat or request another blank from this evidence.
+- **2026-09-28 mirror result:** Owner report shows 543 differing data-cluster
+  entries, all in the meaningful low 28 bits, with identical hashes across
+  both reads. Samples mark clusters free in FAT0 and allocated in FAT1. This
+  is not a reserved-bit/tail-only discrepancy. It does not establish which
+  FAT is correct, what caused it, or defective card hardware. Do not waive
+  the mirror gate. Candidate contents and physical Fault 65 remain separate.
+- **2026-09-28 backup authority and result:** Owner approved backup/investigation
+  and updating the existing Desktop backup without creating a duplicate folder;
+  a clean format/minimal restore was suggested for discussion, not performed.
+  Added 72 missing files (28,368,984 bytes) to
+  `/Users/slice/Desktop/MEGA65FDISK`, with no replacement/deletion of existing
+  files. Checksum comparison reports zero content transfers remaining for the
+  selected visible files; macOS metadata directories are excluded. This is a
+  file backup, not a complete card/hidden-partition backup. Three saved proof
+  D81s are short; retain as evidence, do not restore as working images.
+  See `docs/reports/SD_BACKUP_2026-09-28.md`.
+- **Whole-card backup verified (2026-09-28):** Owner Terminal completed the
+  read-only full-card backup and two verification passes. Local independent
+  `shasum -a 256` agrees: `MEGA65-CARD.img`, 31,267,487,744 bytes, SHA-256
+  `f3504d20ddc6f623cc55e53fb41fba79d4b3e3db9d67dd8dd8146f9750a71a14`.
+  Image and manifest are inside the existing Desktop backup folder. The
+  image is read-only and includes FAT32 plus the 2 GiB 0x41 system partition.
+  Helper left the card unmounted; no format, repair or fill occurred. The
+  earlier in-app raw-access failure remains historical, not a current blocker
+  to backup inspection. No restore test or filesystem-health PASS is claimed.
+- **Offline inspection:** Exploratory read-only traversal of the backup using
+  each FAT separately found 708 live files, 64 directories, no detected
+  size/chain mismatch or cross-link in either view. The same 543 meaningful
+  differences remain but are not referenced by those current file/directory
+  chains. All 17 root `.M65`/`.ROM` files match between both FAT views and
+  the Desktop copies. IRQ11 remains the original blank hash. Existing three
+  truncated D81s remain invalid despite their current FAT sizes being consistent.
+  Neither FAT is selected as authoritative and no production gate is bypassed.
+- **Clean setup (2026-09-28):** Owner explicitly approved erasure and identified
+  the external microSD. Owner photographs show MEGA65 FDISK completed the
+  format and populated 12 system files from slot 1, release 0.97.1 b5c770c,
+  then requested MEGA65.ROM. On return to Mac, current inspection confirmed
+  removable Secure Digital FAT32 at `/Volumes/MEGA65FDISK`, disk4s1,
+  with the same UUID as before (do not use UUID alone as evidence of format).
+  The 12 system files were present; ROM and D81s were absent. Restored only
+  the original Desktop backup's MEGA65.ROM using a no-clobber file copy.
+  Byte comparison and SHA-256 PASS:
+  `af3c447f791a2fdc48cb21e1bd3fab015e32641228d9d30d21259b9e878c6fa0`.
+  Backups remain off-card; no D81 delivery or firmware flash occurred.
+- **Clean filesystem check:** `diskutil verifyVolume /Volumes/MEGA65FDISK`
+  unmounted the volume and ran `fsck_msdos -n /dev/rdisk4s1`; all three
+  phases completed with filesystem check exit code 0. This establishes
+  that check's result, not a D81 allocation or physical-runtime PASS.
+- **T11 completed local build:** R0FCAP13.D81 is XEMU_BOOT_VERIFIED,
+  819200 bytes, SHA-256
+  `86377dd0d677b91a8a21c87ed243a1ed22f78d8cbbace8f048aa75cbd6a157c0`.
+  Fresh construction/extraction, target/host regressions, two NTSC and two
+  PAL exact-name boots, independent result/SAVE oracles, real viewer key/page
+  checks and disabled-IRQ negative checks PASS. Canonical file:
+  `build/r0f/d81-workflow/R0FCAP13/canonical/R0FCAP13.D81`.
+  No SD copy or physical run. No commit/push. Source hashes retained.
+- **Immediate action:** Continue the approved Group 1 local work from the
+  passing presentation/timing/carrier checkpoint and isolated pool recorder.
+  Next recover resident space for the measured pool-fit shortfall, then actual
+  pool-owner hooks, versioned observations, fresh timing, near-capacity trace
+  and operator summary before a changed-build exact carrier. Sampled masks are not exhaustive relative
+  phase or external latency proof. Preserve CAP14, IRQ11 and fragmented CAP13.
+  No current hardware action, SD write, commit or push is authorized.
+- **Superseded fill instruction (do not retry yet):** Owner runs the T10 report's exact privileged native-slot
+  command. The helper must recheck the blank hash and one raw FAT32 extent
+  before writing, then prove the candidate hash and unchanged allocation and
+  safely eject. Local password entry is owner-only. Paste the helper output;
+  do not replace the blank in Finder. Hardware resolution remains pending.
+- **Historical 2026-09-26 delivery blocker (cleared above):** Local correction is ready for
+  review; physical resolution remains unproven. Blank IRQ11 content reads
+  are stuck in macOS I/O despite readable metadata; no SD write has occurred.
+  Owner was asked to eject normally and reconnect, or report an eject failure
+  without forcing it. TERM was requested for only the two stalled read-only
+  Python checks (94934, 95306); OS I/O had not returned at that checkpoint.
+  Once readable, verify blank structure/hash and use the same-name native-slot
+  helper with current canonical and blank hashes, raw one-extent before/after
+  checks and safe eject. Do not issue a fill command before blank verification.
+  Do not repair the card, force unmount, replace the slot in Finder, overwrite
+  IRQ10 or request another blank. Next hardware run must capture the entire
+  screen; full R0-F acceptance remains stopped pending physical IRQ service.
+- **Historical T09 Build Intent (2026-09-26):**
+  The owner requested the
+  Fault 65 correction and supplied new MEGA65-native blank `R0FIRQ10.D81`.
+  Preserve CLK09 and prior evidence; implement the narrow IRQ/IEC handoff
+  correction, regress it and build the exact new candidate under all D81
+  gates. See `docs/reports/R0-F_SUCCESSOR_T09_IRQ_HANDOFF.md`. No card repair,
+  public ABI/range change, commit/push or R0-F acceptance is authorized here.
+  CLK09 loaded physically but reported `65/0A/0042/17/00`, equal reserve
+  CRCs `3C7D60D8`, result CRC `42FBFDA2`. The preceding `FAULT 03` did not
+  recur in that run; the missing IRQ service is the active blocker.
+- **T09 completed build:** IRQ/IEC correction and coherent IRQ observations
+  implemented without changing the IRQ handler or relaxing the final check.
+  524,307 new host checks, existing integration/predecessor regressions, NTSC
+  and PAL development runs, disabled-IRQ negative test and four exact-name
+  carrier runs PASS. Generated-contract, memory, source-hash and image gates
+  PASS. No commit or push. See the T09 report for commands and retained
+  evidence, including both discarded development-only status-register drafts.
+  Canonical `build/r0f/d81-workflow/R0FIRQ10/canonical/R0FIRQ10.D81`, 819,200
+  bytes, SHA-256
+  `ae0b45d8cfa3324ddb829fd9127d2a9cbfb887a4486c96490238158fdb080355`.
+  State `XEMU_BOOT_VERIFIED`; physical fix not yet confirmed.
+- **Superseded T09 next action (already performed; do not rerun):** Owner runs the T09 report's exact native-slot
+  helper command with local administrator authentication. Its raw allocation
+  gate must pass before it fills the verified empty `R0FIRQ10.D81`; blank SHA
+  `dd7fbc7f319c0faa8504d75c405ed2f4c3c438d8a7bdfedd334c552840d0feb1`.
+  No SD write or safe eject has occurred in this task. After successful
+  in-place fill, unchanged one-extent/hash audit and safe eject, owner tests
+  IRQ10 and photographs the final screen including IRQ counts. Broader R0-F
+  testing remains stopped pending that result. No additional blank is needed.
 - **Branch:** `codex/r0f-successor-physical-exact-carrier`
 - **Build Intent:** The owner's 2026-09-21 recovery request supersedes the
   earlier frozen host filename: diagnose photographed chooser FF, fix fresh
@@ -271,8 +822,120 @@ Completed work leaves this file. Durable project changes belong in
   independent reduction and Java oracle. See the T07 report and retained
   `post-source-freeze-e8caf09/` evidence. Its construction occurred before
   the source freeze; the post-freeze runs preserve that provenance distinction.
-  SD copy, one-extent audit, safe eject, physical chooser and physical runtime
-  for this candidate remain NOT RUN. The separate evidence commit records these
-  historical and post-freeze results. Next: provide the canonical host path
-  for owner-selected Finder transfer; read-only audit and safe eject are
-  mandatory before any hardware test.
+  At that checkpoint, SD copy, one-extent audit, safe eject, physical chooser
+  and physical runtime for this candidate remained NOT RUN. The separate
+  evidence commit records those historical and post-freeze Xemu results.
+- **Current physical checkpoint (2026-09-25):** The owner copied exact
+  `R0FDBG07.D81` to the FAT32 root using Finder. A read-only raw audit passed
+  exact SHA-256
+  `c780d79a0e24ff00f10fbb7f3829ec943783c8b2d4413417ba389d900edcc775`
+  and one 819,200-byte extent at device offset 120,762,368; safe eject passed.
+  The owner explicitly confirmed selecting that filename on the MEGA65. The
+  photos show ROM verification and the stable successor diagnostic banner, so
+  chooser/entry load PASS for this exact SD copy. Physical runtime FAIL:
+  `FAULT 03`, `STATE 0A`, `TICK 0021`, `MASK 00`, `NMI 00`, equal reserve CRCs
+  `3C7D60D8`, result CRC32 `E029CB70`. Fault `03` is the `cfnow()` coherent
+  CIA-timer-read exhaustion; which call produced it is not proven. The source
+  ordering of audio start before clock start is a hypothesis, not a diagnosis.
+  The tested carrier remains unchanged and must not be rerun or overwritten.
+  Retained evidence:
+  `docs/evidence/r0f/successor/2026-09-25-r0fdbg07-physical/README.md`.
+  At this physical checkpoint, a separate narrow Build Intent was needed
+  before changing the clock path or building a new carrier; wider R0-F testing
+  remained stopped. No R0-F acceptance or measured-limit approval is claimed.
+- **T08 narrow Build Intent (owner's 2026-09-25 "Continue"):** Address the
+  first physical `FAULT 03` after storage. Inspect the source/contract and
+  correct only the observed post-storage initialization order so the CIA clock
+  is restarted before audio initialization reads it; add a source-order
+  regression, run host/target/static checks and a disposable direct-PRG Xemu
+  probe if available. Do not change the 100 Hz period, 21-stage order,
+  storage sequence, T02 ranges, public ABI, reserve policy or acceptance
+  criteria. No new physical D81 carrier, SD transfer, hardware run, commit,
+  push, PR or merge is authorized by this continuation. The correction is a
+  code-supported hypothesis until a later exact-carrier physical retest;
+  Xemu success is development evidence only.
+- **T08 validation checkpoint:** The post-storage path now starts the CIA clock
+  before audio initialization reads it, matching initial startup; a static
+  source-order regression guards this sequence. The full successor host/target
+  build PASSed 1,527,538 checks, CF001/RH001 regressions and static accounting.
+  The new 21,922-byte PRG SHA-256 is
+  `fd8b61263ba5f33ba3a4084ff33051e6dadf29cbc8dda51d0c97a58fa1f4089a`.
+  The first disposable direct-PRG Xemu attempt produced no runtime result
+  because macOS denied a config-template write; a retained fresh retry passed
+  NTSC and PAL with `FAULT 00`, state `09`, tick `0042`, mask `1F`, NMI `00`
+  and equal reserve CRCs. See
+  `docs/reports/R0-F_SUCCESSOR_T08_CLOCK_ORDER.md` and retained development
+  evidence. No new full-payload D81, SD or physical run occurred. **Next:**
+  review the narrow diff and evidence; source freeze, new exact-name carrier,
+  delivery and physical retest require their separate gates/decisions.
+- **T08 source freeze (2026-09-25):** The owner separately approved saving and
+  uploading the tested clock-order change. Commit
+  `9e2ffdb4786e4794119933a5edd4b1cf79f653f0` is pushed to the current
+  branch with the C change, static ordering guard, T08 report and non-photo
+  direct-PRG Xemu evidence. A post-commit complete host/target build still
+  produces the same 21,922-byte PRG SHA-256
+  `fd8b61263ba5f33ba3a4084ff33051e6dadf29cbc8dda51d0c97a58fa1f4089a`.
+  The owner's physical photos and their local interpretation were intentionally
+  not published. No full-payload D81, SD copy, physical retest, PR or merge
+  occurred. **Next:** obtain separate owner approval to build a new test D81;
+  preserve `R0FDBG07.D81` and keep broader R0-F testing stopped.
+- **T08 new test disk (2026-09-25 owner build approval):** Fresh exact-name
+  `R0FCLK08.D81` was constructed from the frozen T08 source in one session.
+  Its canonical image is 819,200 bytes, SHA-256
+  `638a40eec0d74135342736323b2107fb369c0fdc94a46e8a2493b017253bedef`,
+  at `build/r0f/d81-workflow/R0FCLK08/canonical/R0FCLK08.D81`. Independent
+  internal structure/content checks and four fresh exact-name Xemu boots
+  (two NTSC, two PAL) passed. Source commit is `9e2ffdb4786e4794119933a5edd4b1cf79f653f0`;
+  target PRG SHA-256 remains
+  `fd8b61263ba5f33ba3a4084ff33051e6dadf29cbc8dda51d0c97a58fa1f4089a`.
+  Release evidence is under
+  `docs/evidence/r0f/successor/2026-09-22-workflow/R0FCLK08/`. State is
+  `XEMU_BOOT_VERIFIED` only at this build checkpoint: SD copy, raw card
+  hash/extent audit, safe eject, physical chooser and physical runtime were
+  NOT RUN then. The owner chose Finder transfer, not automatic card transfer.
+  The later failed SD allocation is recorded below. Preserve all earlier
+  carriers.
+- **T08 SD allocation failure (2026-09-25):** The owner copied
+  `R0FCLK08.D81` to the FAT32 root using Finder. The mounted-file SHA-256
+  matches the canonical 819,200-byte image, and the read-only raw FAT32 audit
+  confirms the exact short name and matching hash. Its chain occupies **14
+  physical extents**, however, so this exact SD copy is `INVALID — DO NOT
+  USE` for the MEGA65 chooser. No safe eject, chooser, or physical runtime
+  test has been recorded for it. Preserve the failed SD copy and identity;
+  do not retry, rename, overwrite, or treat this as D81-content or card-wide
+  failure. Raw allocation evidence is retained at
+  `docs/evidence/r0f/successor/2026-09-22-workflow/R0FCLK08/sd-copy-raw-audit.json`.
+  **Blocker:** a separately approved delivery route and new carrier identity
+  are needed before another physical attempt. The last direct-allocator
+  attempt stopped on an unrelated pre-existing filesystem error; do not
+  assume that check now passes or bypass it. Wider R0-F testing
+  remains stopped.
+- **T08 native-slot fallback (owner approval):** Ethernet is unavailable, and
+  the owner approved one more MEGA65-formatted blank as an exceptional route
+  to resume the physical test. Exact new identity: `R0FCLK09.D81`; the owner
+  enters `R0FCLK09` in the MEGA65 `NEW D81 DD IMAGE` dialog at the FAT32 root.
+  The host image was freshly constructed in one pinned session from the
+  unchanged source-freeze commit `9e2ffdb4786e4794119933a5edd4b1cf79f653f0`.
+  Canonical path:
+  `build/r0f/d81-workflow/R0FCLK09/canonical/R0FCLK09.D81`; 819,200 bytes;
+  SHA-256 `fbf7f02950619ed73f65356b3388b408a98221482b10633c532e0d392720e8f6`.
+  The 21,922-byte target PRG retains SHA-256
+  `fd8b61263ba5f33ba3a4084ff33051e6dadf29cbc8dda51d0c97a58fa1f4089a`.
+  Full host/target checks, independent D81 structure/content extraction,
+  and four fresh exact-name Xemu runs (two NTSC, two PAL) PASS. Visible NTSC
+  and PAL screens show `FAULT 00`, state `09`, tick `0042`, mask `1F`, NMI
+  `00` and equal reserve CRCs. Evidence:
+  `docs/evidence/r0f/successor/2026-09-22-workflow/R0FCLK09/`.
+  On 2026-09-26, the owner's fresh same-name blank passed empty D81
+  structure and raw FAT32 checks: 819,200 bytes, exact short name, SHA-256
+  `1f740af3a4a394876f7047145774e07c05809c3f5273a3a42e186a02e5fe22c0`,
+  one extent at device offset 117,862,400. The owner then ran the authorized
+  native-slot helper. Post-fill raw SHA-256 matches the canonical image;
+  the same single extent and safe eject both PASS. Pre/post and blank audits
+  are retained in that evidence directory as `sd-slot-pre.json`,
+  `sd-slot-post.json` and `sd-native-blank-raw-audit.json`.
+  The subsequent owner test established physical chooser/entry PASS but
+  runtime `FAULT 65` at tick 66. See the current T09 entry and
+  `docs/evidence/r0f/successor/2026-09-26-r0fclk09-physical/README.md`.
+  Broader R0-F testing remains stopped. Keep tested CLK09 and failed CLK08
+  untouched; the new owner-provided blank is `R0FIRQ10.D81`.

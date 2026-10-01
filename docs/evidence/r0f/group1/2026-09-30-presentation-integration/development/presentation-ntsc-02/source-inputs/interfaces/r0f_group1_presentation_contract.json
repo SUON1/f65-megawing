@@ -1,0 +1,61 @@
+{
+  "id": "R0FG1-PRESENTATION-FIXTURE-2",
+  "status": "PRIVATE_DIAGNOSTIC_NOT_PRODUCTION_ABI_OR_MEASURED_LIMITS",
+  "authority": [
+    "docs/plans/R0-F_GROUP1_BUILD_INTENT.md",
+    "docs/plans/R0-F_GROUP1_MEASUREMENT_MATRIX.md",
+    "spec/core/F65_Main_Concept_v1.6_FINAL_HUMAN_REVIEWED.md sections 10 and 17",
+    "spec/subsystems/F-65_Megawing_Graphics_White_Paper_v2.1.pdf sections 2.6, 3.1, 6.4 and 7"
+  ],
+  "constants": {
+    "VIEWS": 2,
+    "BUFFERS": 2,
+    "TIERS": 2,
+    "ANCHORS": 4,
+    "ANCHOR_PRIORITIES": 4,
+    "OCCLUSION_COLUMNS": 4,
+    "LOD_ENTER_PIXELS": 12,
+    "LOD_EXIT_PIXELS": 8,
+    "VIEW_TICK_SHIFT": 7,
+    "SCENE_CANDIDATES": 6,
+    "ANCHOR_BYTES": 7,
+    "COLUMN_BYTES": 4,
+    "SCENE_BYTES": 65
+  },
+  "sceneOffsets": {
+    "GENERATION": 0,
+    "SOURCE_TICK": 2,
+    "VIEW": 4,
+    "TIER": 5,
+    "BUFFER": 6,
+    "HORIZON": 7,
+    "ANCHOR_COUNT": 9,
+    "ANCHORS": 10,
+    "COLUMNS": 38,
+    "COLUMN_MASK": 54,
+    "COLUMN_COUNT": 55,
+    "VISIBLE_BOTTOMS": 56,
+    "CLIP_CODES": 64
+  },
+  "sceneEncoding": "Private little-endian fixture bytes, not native C/public registration ABI. Anchors are handle/x/y u16 and priority u8; columns are ridge Y/depth u16. Six candidates have handles 0..5, X=(source tick & 63)+handle, Y=20+handle, priority 3,2,1,1,0,0. Horizon/ridge Y is 40+(source tick & 3), depth is 100+column. Four fragments exercise front, clipped, hidden and above-ridge cases. Hidden bottom remains 65535; clip codes occupy two bits each. Size is 8+2*(source tick & 3), selected from the previous displayed tier. Requested view is (request tick >> VIEW_TICK_SHIFT)&1. The 65 encoded bytes are actually copied into the incremental backbuffer and their CRC32 is retained at swap.",
+  "rules": [
+    "All capacities and thresholds are diagnostic fixture parameters, not selected production limits or assets.",
+    "Single foreground owner; no IRQ readers. Logical commit copies the complete registration, buffer identity, view and composition together. Actual VIC publication remains a separate integration obligation.",
+    "An attempt binds generation, source snapshot tick, view, tier, buffer and horizon once. View requests do not mutate a bound attempt or displayed generation.",
+    "Only complete-buffer plus matching registration may become ready. A ready generation for a superseded requested view cannot swap.",
+    "Anchors rank by priority ascending, then stable handle ascending; selected/essential cues use priority 0, decorative cues 3. Overflow discards the lowest-ranked anchor and is counted; duplicate retained handles reject.",
+    "Occlusion columns belong to the bound generation. Screen Y increases downward; a greater unsigned depth is behind terrain. Behind fragments at or below ridge Y are hidden or clipped. This is presentation-only integer geometry, not terrain query/contact data.",
+    "Tier 0 is the cheap fixture and tier 1 the detailed fixture. Enter at or above LOD_ENTER_PIXELS; leave at or below LOD_EXIT_PIXELS; retain the previous choice in between. Selection occurs before bind, never during resume.",
+    "Invalid identity, missing envelope columns, premature swap and counter overflow reject without publication. Cancel abandons only the private unfinished/ready attempt; the displayed generation is retained."
+  ],
+  "nonClaims": [
+    "integrated Group 1 coverage",
+    "rendered scene or production GraphicsEngine",
+    "complete camera/projection model",
+    "directional angle-bin hysteresis",
+    "terrain/carrier visual-query tolerance proof",
+    "face/vertex/span/bucket/audio/sensor pool coverage",
+    "target link, memory-fit or timing evidence",
+    "VIC-IV atomic publication or physical evidence"
+  ]
+}

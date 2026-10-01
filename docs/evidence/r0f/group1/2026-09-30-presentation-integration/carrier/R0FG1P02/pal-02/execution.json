@@ -1,0 +1,49 @@
+{
+  "command": [
+    "/Users/slice/Developer/f65-megawing/toolchain/xemu/xmega65",
+    "-skipconfigfile",
+    "-headless",
+    "-fastboot",
+    "-videostd",
+    "0",
+    "-fastclock",
+    "40.5",
+    "-rom",
+    "/Users/slice/Documents/Codex/f65-megawing/MEGA65.ROM",
+    "-sdimg",
+    "/Users/slice/Developer/f65-megawing/build/r0f/group1/carriers/R0FG1P02/pal-02/disposable-sd.img",
+    "-8",
+    "/Users/slice/Developer/f65-megawing/build/r0f/group1/carriers/R0FG1P02/pal-02/R0FG1P02.D81",
+    "-autoload",
+    "-dumpscreen",
+    "/Users/slice/Developer/f65-megawing/build/r0f/group1/carriers/R0FG1P02/pal-02/screen.txt",
+    "-dumpmem",
+    "/Users/slice/Developer/f65-megawing/build/r0f/group1/carriers/R0FG1P02/pal-02/memory.bin",
+    "-screenshot",
+    "/Users/slice/Developer/f65-megawing/build/r0f/group1/carriers/R0FG1P02/pal-02/screen.png"
+  ],
+  "disposableSdSha256": "e10b8ef4a05cfbe690186471489ec23eb57ecceb5933beb38df85e7448dafb39",
+  "error": 0,
+  "files": 19,
+  "finishedAtUtc": "2026-09-30T21:49:17.272309+00:00",
+  "mountedD81Filename": "R0FG1P02.D81",
+  "processReturnCode": 0,
+  "rom": {
+    "path": "/Users/slice/Documents/Codex/f65-megawing/MEGA65.ROM",
+    "sha256": "af3c447f791a2fdc48cb21e1bd3fab015e32641228d9d30d21259b9e878c6fa0"
+  },
+  "sourceBranch": "codex/r0f-successor-physical-exact-carrier",
+  "sourceCommit": "9e2ffdb4786e4794119933a5edd4b1cf79f653f0",
+  "startedAtUtc": "2026-09-30T21:47:17.136259+00:00",
+  "status": 4,
+  "tier": "GROUP1_EXACT_NAME_CARRIER_COPY",
+  "timedTerminationAfterSeconds": 120,
+  "videoArgument": "0",
+  "videoMode": "PAL",
+  "xemu": {
+    "path": "toolchain/xemu/xmega65",
+    "sha256": "dd37baf7846b9696adcb662ffe5da040031b07214c66aef9a7f48cc30040b738",
+    "sourceCommit": "40dfef0d1d5f56be2469492715c12bdb32c75b67",
+    "version": "20260129235930"
+  }
+}

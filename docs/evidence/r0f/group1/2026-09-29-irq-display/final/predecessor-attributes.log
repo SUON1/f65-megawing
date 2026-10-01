@@ -1,0 +1,33 @@
+R0-F successor T03 lifecycle/continuation/fault checks PASS: 1527538
+T03 deterministic lineage: tick 33 d9eeab81 -> tick 66 307a70d6
+R0-F successor IRQ handoff host PASS: 525587 checks
+PASS: 512 bytes, two pages, 254 invalid pages, immutable result
+.......
+----------------------------------------------------------------------
+Ran 7 tests in 0.001s
+
+OK
+T03 independent 21-stage lineage PASS: D9EEAB81 -> 307A70D6
+10000 short/held/repeated edge pairs and simultaneous bitmask PASS (not semantic-command corpus)
+CF001 33-tick golden: d9eeab81
+Exact ratio vectors PASS: 6092
+CF001 native model/snapshot/range/DMA boundary tests PASS
+
+Independent Java CF001 33-tick golden PASS: D9EEAB81
+
+{".basic_header": {"start": 8193, "bytes": 22}, ".text": {"start": 8215, "bytes": 21886}, ".rodata": {"start": 30101, "bytes": 775}, ".data": {"start": 30876, "bytes": 0}, ".bss": {"start": 30876, "bytes": 1701}, ".noinit": {"start": 32577, "bytes": 40}, ".zp.data": {"start": 34, "bytes": 0}, ".zp.bss": {"start": 34, "bytes": 0}, ".r0fc_capture": {"start": 768, "bytes": 5280}, ".r0fc_hot": {"start": 6048, "bytes": 347}}
+RH001 admission/invalid-state/lockout checks PASS: 16842752
+
+RH001 independent continuation golden: D9EEAB81 -> 400B181F
+
+RH001 compile/link/static checks PASS
+{
+  "actualResidentBytes": 25971,
+  "residentCapacityBytes": 40959,
+  "residentMarginBytes": 14988,
+  "residentHighWaterExclusive": "0x8574",
+  "protectedResidentEndExclusive": "0x2b07",
+  "atticTransitionBytes": 5664,
+  "reserveBytes": 0
+}
+R0-F successor T03 host/static integration PASS

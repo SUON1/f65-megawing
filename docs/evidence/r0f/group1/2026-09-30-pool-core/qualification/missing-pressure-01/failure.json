@@ -1,0 +1,10 @@
+{
+  "result": "FAIL",
+  "command": "python3 -B tools/diagnostics/r0f_group1_pool_build.py",
+  "error": "missing empty/full pool pressure",
+  "cause": "The initial synthetic input progression aliases one 24-slot domain modulo 25, so it never fills that pool. The independent corpus check correctly rejects incomplete pressure; this is not an observer implementation or baseline regression.",
+  "correction": "Use generated per-owner offsets of a unit-stride occupancy progression, covering every count from zero through capacity. Retain the rejected input corpus and both original fixture/validator sources.",
+  "xemu": "NOT RUN",
+  "sd": "NOT RUN",
+  "physical": "NOT RUN"
+}

@@ -1,0 +1,74 @@
+#!/usr/bin/env python3
+"""Build the Group 1 acquisition variant using the admitted successor pipeline."""
+import re
+
+import r0f_group1_contract as contract
+import r0f_group1_presentation_contract as presentation
+import r0f_group1_export_probe as probe
+
+
+def validate_irq(disassembly):
+    handler = disassembly.split("<r0f_pf_irq>:", 1)[1].split("<r0f_pf_nmi>:", 1)[0]
+    instructions = re.findall(r"\t([a-z]+)(?:\t[^\n]*)?\s*$", handler, re.M)
+    if instructions[:6] != ["pha", "phx", "phy", "phz", "tba", "pha"] or instructions[-7:] != ["pla", "tab", "plz", "ply", "plx", "pla", "rti"]:
+        raise ValueError("IRQ register preservation changed")
+    calls = re.findall(r"\bjsr\s+\$[0-9a-f]+ <([^>]+)>", handler)
+    if calls != ["r0fg1_irq_begin", "r0fg1_irq_end"]:
+        raise ValueError("unexpected IRQ body calls")
+    probes = disassembly.split("<r0fg1_irq_begin>:", 1)[1].split("<r0fg1_irq_timing_end>:", 1)[0]
+    for opcode in re.findall(r"^\s*[0-9a-f]+: ([0-9a-f]{2}) ", probes, re.M):
+        if int(opcode, 16) in {
+                0x13, 0x33, 0x53, 0x73, 0x83, 0x93, 0xB3, 0xD3, 0xF3}:
+            raise ValueError("unadmitted long branch in IRQ probe")
+    if re.search(r"\b(?:map|tab|cli|rti)\b", probes) or re.search(r"\b(?:sta|stx|sty|stz|inc|dec)\s+\$d[0-9a-f]{3}\b", probes):
+        raise ValueError("IRQ probe changes hardware ownership")
+    if set(re.findall(r"\bjsr\s+\$[0-9a-f]+ <([^>]+)>", probes)) != {"r0fg1_irq_read"}:
+        raise ValueError("IRQ probe calls outside private reader")
+
+
+def build():
+    contract.generate()
+    presentation.generate()
+    output = probe.ROOT / "build/r0f/group1/integration"
+    sources = [name for name in probe.EXTRA_SOURCES
+                           if not name.endswith("group1_export_probe.c")]
+    sources += [
+        "src/diagnostics/r0f/group1_capture.c",
+        "src/diagnostics/r0f/group1_timing.c",
+        "src/diagnostics/r0f/group1_workload.c",
+        "src/diagnostics/r0f/group1_presentation.c",
+        "src/diagnostics/r0f/group1_scene.c",
+    ]
+    probe.build(["-DR0FG1_INTEGRATION", "-finline-functions"],
+                "Group 1 phase/timing acquisition; physical and full coverage unverified",
+                out=output, prg_name="GROUP1.prg", extra_sources=sources,
+                source_replacements={"src/platform/r0f/qualification_45gs02.s":
+                                     "src/platform/r0f/group1_irq_45gs02.s"})
+    validate_irq((output / "disassembly.txt").read_text())
+    report = probe.emulator.read_json(output / "build.json")
+    for name in ("tools/diagnostics/r0f_group1_integration.py",
+                 "tools/diagnostics/r0f_group1_contract.py",
+                 "tools/diagnostics/r0f_group1_presentation_contract.py",
+                 "tools/diagnostics/r0f_group1_run.py",
+                 "tools/diagnostics/r0f_group1_reduce.py",
+                 "tools/diagnostics/r0f_group1_scene_validate.py",
+                 "tools/diagnostics/r0f_group1_scene_host_test.c",
+                 "tools/diagnostics/r0f_group1_host_validate.py",
+                 "tools/diagnostics/test_r0f_group1_reduce.py",
+                 "tools/diagnostics/test_r0f_group1_contract.py",
+                 "tools/diagnostics/test_r0f_group1_presentation_contract.py"):
+        report["inputs"][name] = probe.emulator.sha256(probe.ROOT / name)
+    resident_names = (".text", ".rodata", ".data", ".bss", ".noinit")
+    end = max(report["sections"][name]["start"]
+              + report["sections"][name]["bytes"] for name in resident_names)
+    report["residentEndExclusive"] = end
+    report["residentFreeBytes"] = 0xc000 - end
+    report["group1VariantCompilerFlags"] = ["-DR0FG1_INTEGRATION", "-finline-functions"]
+    report["commands"] = probe.integration.COMMANDS
+    report["irqProbeStatic"] = "PASS"
+    probe.emulator.write_json(output / "build.json", report)
+    print("IRQ assembly boundaries and no-C/no-hardware-write checks PASS")
+
+
+if __name__ == "__main__":
+    build()

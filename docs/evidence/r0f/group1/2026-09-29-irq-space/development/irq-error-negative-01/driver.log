@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "/Users/slice/Developer/f65-megawing/tools/diagnostics/r0f_group1_negative.py", line 98, in <module>
+    run(args.case, args.out.resolve())
+  File "/Users/slice/Developer/f65-megawing/tools/diagnostics/r0f_group1_negative.py", line 63, in run
+    initial = runtime.fresh_d81(output, image, "G1 NEGATIVE", {"token": token})
+  File "/Users/slice/Developer/f65-megawing/tools/diagnostics/r0f_successor_emulator.py", line 381, in fresh_d81
+    construction = c154(arguments)
+  File "/Users/slice/Developer/f65-megawing/tools/diagnostics/r0f_successor_emulator.py", line 251, in c154
+    raise ValueError("c1541 diagnostic failure: " + diagnostic)
+ValueError: c1541 diagnostic failure: D81 disk image recognised: /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/irq-error-negative-01/G1NEG01.D81, 80 tracks.
+Unit 8 drive 0: D81 disk image attached: /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/irq-error-negative-01/G1NEG01.D81.
+formatting in unit 8 ...
+writing file `ÔÏËÅÎ.PRG' as `TOKEN' to unit 8
+0 "G1 NEGATIVE     " 65 3d
+1    "token"            prg 
+3159 blocks free.
+Unit 8 drive 0: D81 disk image detached: /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/irq-error-negative-01/G1NEG01.D81.
+

@@ -1,0 +1,454 @@
+     VMA      LMA     Size Align Out     In      Symbol
+       0        0        0     1 
+       0        0        0     1 
+       0        0        0     1 __basic_zp_start = 0x0002
+       0        0        0     1 __basic_zp_end = 0x0090
+       0        0        0     1 __rc0 = __basic_zp_start
+       0        0        0     1 __rc1 = __rc0 + 1
+       0        0        0     1 PROVIDE(__rc2 = __rc1 + 1)
+       0        0        0     1 __rc3 = __rc2 + 1
+       0        0        0     1 PROVIDE(__rc4 = __rc3 + 1)
+       0        0        0     1 __rc5 = __rc4 + 1
+       0        0        0     1 PROVIDE(__rc6 = __rc5 + 1)
+       0        0        0     1 __rc7 = __rc6 + 1
+       0        0        0     1 PROVIDE(__rc8 = __rc7 + 1)
+       0        0        0     1 __rc9 = __rc8 + 1
+       0        0        0     1 PROVIDE(__rc10 = __rc9 + 1)
+       0        0        0     1 __rc11 = __rc10 + 1
+       0        0        0     1 PROVIDE(__rc12 = __rc11 + 1)
+       0        0        0     1 __rc13 = __rc12 + 1
+       0        0        0     1 PROVIDE(__rc14 = __rc13 + 1)
+       0        0        0     1 __rc15 = __rc14 + 1
+       0        0        0     1 PROVIDE(__rc16 = __rc15 + 1)
+       0        0        0     1 __rc17 = __rc16 + 1
+       0        0        0     1 PROVIDE(__rc18 = __rc17 + 1)
+       0        0        0     1 __rc19 = __rc18 + 1
+       0        0        0     1 PROVIDE(__rc20 = __rc19 + 1)
+       0        0        0     1 __rc21 = __rc20 + 1
+       0        0        0     1 PROVIDE(__rc22 = __rc21 + 1)
+       0        0        0     1 __rc23 = __rc22 + 1
+       0        0        0     1 PROVIDE(__rc24 = __rc23 + 1)
+       0        0        0     1 __rc25 = __rc24 + 1
+       0        0        0     1 PROVIDE(__rc26 = __rc25 + 1)
+       0        0        0     1 __rc27 = __rc26 + 1
+       0        0        0     1 PROVIDE(__rc28 = __rc27 + 1)
+       0        0        0     1 __rc29 = __rc28 + 1
+       0        0        0     1 PROVIDE(__rc30 = __rc29 + 1)
+       0        0        0     1 __rc31 = __rc30 + 1
+       0        0        0     1 __basic_zp_size = __basic_zp_end - __basic_zp_start
+    2001     2001       16     1 .basic_header
+    2001     2001       16     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/basic-header.o:(.basic_header)
+    2015     2015        0     1                 next_line
+      22       22        0     1 .zp.data
+      22       22        0     1         __zp_data_start = .
+      22       22        0     1 __zp_data_load_start = LOADADDR(.zp.data)
+      22       22        0     1 __zp_data_size = SIZEOF(.zp.data)
+      22       22        0     1 .zp.bss
+      22       22        0     1         __zp_bss_start = .
+      22       22        0     1 __zp_bss_size = SIZEOF(.zp.bss)
+    2017     2017      af0     1 .r0fs_protected
+    2017     2017        9     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/successor_admission_45gs02-3ede4f.o:(.text.r0fs_protected)
+    2017     2017        0     1                 r0fs_quiesce_marker
+    2019     2019        0     1                 r0fs_context_restore_marker
+    201b     201b        0     1                 r0fs_canonical_restore_marker
+    201f     201f        0     1                 r0fs_resume_marker
+    2020     2020      81b     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/successor_integration_45gs02-5fec91.o:(.text.r0fs_protected)
+    2020     2020        0     1                 r0fs_context_read
+    20df     20df        0     1                 r0fs_context_invalidate
+    211b     211b        0     1                 r0fs_storage
+    282f     282f        0     1                 r0fs_storage_end
+    283b     283b      140     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/qualification_45gs02-657110.o:(.text.r0f_pf)
+    283b     283b        0     1                 r0f_pf_enter
+    289b     289b        0     1                 r0f_pf_start_irq
+    28b2     28b2        0     1                 r0f_pf_stop_irq
+    28be     28be        0     1                 r0f_pf_irq
+    28ea     28ea        0     1                 r0f_pf_nmi
+    28f2     28f2        0     1                 r0f_pf_flat_copy
+    292f     292f        0     1                 r0f_pf_register_probe
+    297b     297b      18c     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.r0fs_protected_data)
+    297b     297b        1     1                 r0fsi_storage_phase
+    297c     297c        1     1                 r0fsi_storage_error
+    297d     297d        1     1                 r0fsi_storage_returned
+    297e     297e        1     1                 r0fsi_storage_denied
+    297f     297f        1     1                 r0fsi_permit
+    2980     2980        1     1                 r0fsi_input
+    2981     2981        1     1                 r0fsi_output
+    2982     2982        1     1                 r0fsi_input_end
+    2983     2983        1     1                 r0fsi_output_end
+    2984     2984       20     1                 r0fsi_token
+    29a4     29a4       20     1                 r0fsi_read
+    29c4     29c4       20     1                 r0fsi_payload
+    29e4     29e4        4     1                 r0fsi_end
+    29e8     29e8        1     1                 r0fsi_app_sp
+    29e9     29e9        2     1                 r0fsi_context_offset
+    29eb     29eb        1     1                 r0fsi_context_length
+    29ec     29ec        1     1                 r0fsi_context_region
+    29ed     29ed        1     1                 r0fsi_context_copy_ok
+    29ee     29ee       ff     1                 r0fsi_context_buffer
+    2aed     2aed        9     1                 r0f_pf_copy_request
+    2af6     2af6        1     1                 r0f_pf_cpu_port
+    2af7     2af7        1     1                 r0f_pf_stack_high
+    2af8     2af8        1     1                 r0f_pf_nmi_seen
+    2af9     2af9        2     1                 r0f_pf_irq_count
+    2afb     2afb        1     1                 r0f_pf_irq_seq
+    2afc     2afc        1     1                 r0f_pf_irq_seen
+    2afd     2afd        7     1                 r0f_pf_probe_regs
+    2b04     2b04        1     1                 r0f_pf_copy_ok
+    2b05     2b05        2     1                 r0f_pf_probe_timeout
+    2b07     2b07     4e8f     1 .text
+    2b07     2b07        0     1         _init = .
+    2b07     2b07        0     1         _start = .
+    2b07     2b07       c5     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/successor_admission_45gs02-3ede4f.o:(.init.005)
+    2b07     2b07        0     1                 r0fs_pre_c_capture
+    2bcc     2bcc        0     1                 r0fs_pre_c_capture_end
+    2bcc     2bcc        e     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/unmap-basic.o:(.init.010)
+    2bda     2bda        3     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/r0a_platform_45gs02-2b31f6.o:(.init.011)
+    2bda     2bda        0     1                 f65_basepage_enter
+    2bdd     2bdd        8     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(init-stack.S.obj):(.init.100)
+    2bdd     2bdd        0     1                 __do_init_stack
+    2be5     2be5        3     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(zero-bss.c.obj):(.init.200)
+    2be5     2be5        0     1                 __do_zero_bss
+    2be8     2be8        3     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/common/lib/crt0.o:(.call_main)
+    2beb     2beb        3     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(exit-custom.S.obj):(.after_main)
+    2beb     2beb        0     1                 __after_main
+    2bee     2bee        0     1         _fini = .
+    2bee     2bee        3     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/r0a_platform_45gs02-2b31f6.o:(.fini.989)
+    2bee     2bee        0     1                 f65_basepage_leave
+    2bf1     2bf1        a     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/unmap-basic.o:(.fini.990)
+    2bfb     2bfb        1     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/common/lib/crt0.o:(.fini_rts)
+    2bfc     2bfc        3     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/successor_integration_45gs02-5fec91.o:(.text.r0fsi_status)
+    2bfc     2bfc        0     1                 r0fsi_irq_cpu_status
+    2bff     2bff       b4     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/combined_45gs02-5d2167.o:(.text.r0fc_platform)
+    2bff     2bff        0     1                 r0fc_rom_toggle
+    2c22     2c22        0     1                 r0fc_stack_seed
+    2c69     2c69        0     1                 r0fc_stack_measure
+    2cb3     2cb3       13     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(zero-bss.c.obj):(.text.__zero_bss)
+    2cb3     2cb3       13     1                 __zero_bss
+    2cc6     2cc6      d81     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.main)
+    2cc6     2cc6      d81     1                 main
+    3a47     3a47       14     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.lockout)
+    3a47     3a47       14     1                 lockout
+    3a5b     3a5b      115     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.context_crc)
+    3a5b     3a5b      115     1                 context_crc
+    3b70     3b70       89     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.context_valid)
+    3b70     3b70       89     1                 context_valid
+    3bf9     3bf9      109     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.dos_copy)
+    3bf9     3bf9      109     1                 dos_copy
+    3d02     3d02      1c7     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.dos_crc)
+    3d02     3d02      1c7     1                 dos_crc
+    3ec9     3ec9       19     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.transition)
+    3ec9     3ec9       19     1                 transition
+    3ee2     3ee2      181     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.display_begin)
+    3ee2     3ee2      181     1                 display_begin
+    4063     4063       1c     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.run_ticks)
+    4063     4063       1c     1                 run_ticks
+    407f     407f      472     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.storage_transition)
+    407f     407f      472     1                 storage_transition
+    44f1     44f1       2a     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.display_abandon_and_suspend)
+    44f1     44f1       2a     1                 display_abandon_and_suspend
+    451b     451b       24     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.restore_rom_after_display_suspend)
+    451b     451b       24     1                 restore_rom_after_display_suspend
+    453f     453f       3c     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.display_restore)
+    453f     453f       3c     1                 display_restore
+    457b     457b       1e     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.result_u16)
+    457b     457b       1e     1                 result_u16
+    4599     4599       2a     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.result_u32)
+    4599     4599       2a     1                 result_u32
+    45c3     45c3       25     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.result_get_u32)
+    45c3     45c3       25     1                 result_get_u32
+    45e8     45e8       30     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.display_drain)
+    45e8     45e8       30     1                 display_drain
+    4618     4618       29     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.display_suspend)
+    4618     4618       29     1                 display_suspend
+    4641     4641       bd     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.low_application_copy)
+    4641     4641       bd     1                 low_application_copy
+    46fe     46fe       3c     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.reclaim_after_storage)
+    46fe     46fe       3c     1                 reclaim_after_storage
+    473a     473a       21     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.display_resume)
+    473a     473a       21     1                 display_resume
+    475b     475b       3f     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.display_configure)
+    475b     475b       3f     1                 display_configure
+    479a     479a      1d8     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.display_quantum)
+    479a     479a      1d8     1                 display_quantum
+    4972     4972       1d     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.application_dma)
+    4972     4972       1d     1                 application_dma
+    498f     498f      142     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.run_authoritative_tick)
+    498f     498f      142     1                 run_authoritative_tick
+    4ad1     4ad1       ef     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.fixed_physical_copy)
+    4ad1     4ad1       ef     1                 fixed_physical_copy
+    4bc0     4bc0       72     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.crc_update)
+    4bc0     4bc0       72     1                 crc_update
+    4c32     4c32       13     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.context_read)
+    4c32     4c32       13     1                 context_read
+    4c45     4c45      18b     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.r0fsi_capture_page)
+    4c45     4c45      18b     1                 r0fsi_capture_page
+    4dd0     4dd0       1d     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.r0fsi_irq_select_line)
+    4dd0     4dd0       1d     1                 r0fsi_irq_select_line
+    4ded     4ded        7     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.read_register)
+    4ded     4ded        7     1                 read_register
+    4df4     4df4        9     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.write_register)
+    4df4     4df4        9     1                 write_register
+    4dfd     4dfd       3e     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.r0fsi_prepare_rom_toggle)
+    4dfd     4dfd       3e     1                 r0fsi_prepare_rom_toggle
+    4e3b     4e3b       96     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.r0fsi_irq_snapshot)
+    4e3b     4e3b       96     1                 r0fsi_irq_snapshot
+    4ed1     4ed1        c     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.read_irq_byte)
+    4ed1     4ed1        c     1                 read_irq_byte
+    4edd     4edd       10     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.r0fs_transition)
+    4edd     4edd       10     1                 r0fs_transition
+    4eed     4eed        e     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.r0fs_storage_allowed)
+    4eed     4eed        e     1                 r0fs_storage_allowed
+    4efb     4efb        a     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.r0fs_resume_allowed)
+    4efb     4efb        a     1                 r0fs_resume_allowed
+    4f05     4f05       19     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.r0fs_completion_allowed)
+    4f05     4f05       19     1                 r0fs_completion_allowed
+    4f1e     4f1e       6e     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.r0fs_final_fault)
+    4f1e     4f1e       6e     1                 r0fs_final_fault
+    4f8c     4f8c        7     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.r0fs_post_storage_tick_fault)
+    4f8c     4f8c        7     1                 r0fs_post_storage_tick_fault
+    4f93     4f93       2e     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.r0fc_edge_sample)
+    4f93     4f93       2e     1                 r0fc_edge_sample
+    4fc1     4fc1       12     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.bits)
+    4fc1     4fc1       12     1                 bits
+    4fd3     4fd3       52     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.r0fc_edge_consume)
+    4fd3     4fd3       52     1                 r0fc_edge_consume
+    5025     5025      2c6     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.cfratio)
+    5025     5025      2c6     1                 cfratio
+    52eb     52eb       42     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.r0fc_hash)
+    52eb     52eb       42     1                 r0fc_hash
+    532d     532d       cd     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.r0fc_reset)
+    532d     532d       cd     1                 r0fc_reset
+    53fa     53fa       25     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.r0fc_event)
+    53fa     53fa       25     1                 r0fc_event
+    541f     541f      4e0     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.r0fc_tick)
+    541f     541f      4e0     1                 r0fc_tick
+    58ff     58ff       45     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.r0fc_snap_reset)
+    58ff     58ff       45     1                 r0fc_snap_reset
+    5944     5944      180     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.r0fc_publish)
+    5944     5944      180     1                 r0fc_publish
+    5ac4     5ac4       99     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.r0fc_acquire)
+    5ac4     5ac4       99     1                 r0fc_acquire
+    5b5d     5b5d       10     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.r0fc_release)
+    5b5d     5b5d       10     1                 r0fc_release
+    5b6d     5b6d      15a     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.r0fc_range)
+    5b6d     5b6d      15a     1                 r0fc_range
+    5cc7     5cc7       ba     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.inside)
+    5cc7     5cc7       ba     1                 inside
+    5d81     5d81      10c     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.r0fc_dma_encode)
+    5d81     5d81      10c     1                 r0fc_dma_encode
+    5e8d     5e8d       1e     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.cfput16)
+    5e8d     5e8d       1e     1                 cfput16
+    5eab     5eab       2a     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.cfput32)
+    5eab     5eab       2a     1                 cfput32
+    5ed5     5ed5       2c     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.cfget32)
+    5ed5     5ed5       2c     1                 cfget32
+    5f01     5f01       6a     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.cfadd)
+    5f01     5f01       6a     1                 cfadd
+    5f6b     5f6b       5f     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.cfcrc)
+    5f6b     5f6b       5f     1                 cfcrc
+    5fca     5fca       54     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.crc_byte)
+    5fca     5fca       54     1                 crc_byte
+    601e     601e       1a     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.cffinal_screen)
+    601e     601e       1a     1                 cffinal_screen
+    6038     6038       b0     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.cfline)
+    6038     6038       b0     1                 cfline
+    60e8     60e8       3c     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.screen_byte)
+    60e8     60e8       3c     1                 screen_byte
+    6124     6124      1cf     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.cfcopy)
+    6124     6124      1cf     1                 cfcopy
+    62f3     62f3       ec     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.cfhex)
+    62f3     62f3       ec     1                 cfhex
+    63df     63df       54     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.cfscreen)
+    63df     63df       54     1                 cfscreen
+    6433     6433      1c5     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.cfphysical_crc)
+    6433     6433      1c5     1                 cfphysical_crc
+    65f8     65f8       7a     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.cfentry)
+    65f8     65f8       7a     1                 cfentry
+    6672     6672      254     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.cfrom_begin)
+    6672     6672      254     1                 cfrom_begin
+    68c6     68c6      2c4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.cfrom_restore)
+    68c6     68c6      2c4     1                 cfrom_restore
+    6b8a     6b8a       33     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.cfclock_begin)
+    6b8a     6b8a       33     1                 cfclock_begin
+    6bbd     6bbd       8e     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.cfnow)
+    6bbd     6bbd       8e     1                 cfnow
+    6c4b     6c4b       a1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.cfframe_wait)
+    6c4b     6c4b       a1     1                 cfframe_wait
+    6cec     6cec       a1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.cfinput)
+    6cec     6cec       a1     1                 cfinput
+    6d8d     6d8d      139     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.cfaudio_service)
+    6d8d     6d8d      139     1                 cfaudio_service
+    6ec6     6ec6      516     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.cfcalibrate)
+    6ec6     6ec6      516     1                 cfcalibrate
+    73dc     73dc      15f     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.cfdma)
+    73dc     73dc      15f     1                 cfdma
+    753b     753b       19     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.cfaudio_stop)
+    753b     753b       19     1                 cfaudio_stop
+    7554     7554       b7     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.cfaudio_begin)
+    7554     7554       b7     1                 cfaudio_begin
+    760b     760b       9f     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.cfinput_tick)
+    760b     760b       9f     1                 cfinput_tick
+    76aa     76aa        5     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.exit)
+    76aa     76aa        5     1                 exit
+    76af     76af       17     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.__lshrsi3)
+    76af     76af       17     1                 __lshrsi3
+    76c6     76c6       bd     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.__udivhi3)
+    76c6     76c6       bd     1                 __udivhi3
+    7783     7783       45     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.__umodqi3)
+    7783     7783       45     1                 __umodqi3
+    77c8     77c8      1b2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.__udivmodsi4)
+    77c8     77c8      1b2     1                 __udivmodsi4
+    797a     797a       1c     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.text.__memset)
+    797a     797a       1c     1                 __memset
+    7996     7996        0     1         __init_array_start = .
+    7996     7996        0     1         __init_array_end = .
+    7996     7996        0     1         __fini_array_start = .
+    7996     7996        0     1         __fini_array_end = .
+    7996     7996      34e     1 .rodata
+    7996     7996        1     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/common/lib/libcrt.a(const.S.obj):(.rodata)
+    7996     7996        0     1                 __set_v
+    7997     7997        8     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.rodata.dos_copy)
+    799f     799f       1c     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.rodata.r0fc_tick)
+    79bb     79bb      2d3     1         <internal>:(.rodata.str1.1)
+    7c8e     7c8e       1e     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.rodata.display_registers)
+    7c8e     7c8e       1e     1                 display_registers
+    7cac     7cac       38     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.rodata.r0fc_range.ranges)
+    7cac     7cac       38     1                 r0fc_range.ranges
+    7ce4     7ce4        b     1 .data
+    7ce4     7ce4        0     1         __data_start = .
+    7ce4     7ce4        8     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.data.irq_observation)
+    7ce4     7ce4        8     1                 irq_observation
+    7cec     7cec        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.data.iec_before_record)
+    7cec     7cec        1     1                 iec_before_record
+    7ced     7ced        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.data.iec_after_record)
+    7ced     7ced        1     1                 iec_after_record
+    7cee     7cee        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.data.reclaim_features_record)
+    7cee     7cee        1     1                 reclaim_features_record
+    7cef     7cef        0     1         __data_end = .
+    7cef     7cef        0     1 __data_load_start = LOADADDR(.data)
+    7cef     7cef        0     1 __data_size = SIZEOF(.data)
+    7cef     7cef      862     1 .bss
+    7cef     7cef        0     1         __bss_start = .
+    7cef     7cef        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.lifecycle_state)
+    7cef     7cef        1     1                 lifecycle_state
+    7cf0     7cf0        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.context_crc_expected)
+    7cf0     7cf0        4     1                 context_crc_expected
+    7cf4     7cf4      3d1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.model)
+    7cf4     7cf4      3d1     1                 model
+    80c5     80c5       cb     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.snapshots)
+    80c5     80c5       cb     1                 snapshots
+    8190     8190        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.next_deadline)
+    8190     8190        4     1                 next_deadline
+    8194     8194        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.display_services)
+    8194     8194        2     1                 display_services
+    8196     8196        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.display_started)
+    8196     8196        1     1                 display_started
+    8197     8197        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.tick_before_record)
+    8197     8197        2     1                 tick_before_record
+    8199     8199        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.checksum_before_record)
+    8199     8199        4     1                 checksum_before_record
+    819d     819d        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.low_before_record)
+    819d     819d        4     1                 low_before_record
+    81a1     81a1        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.low_after_record)
+    81a1     81a1        4     1                 low_after_record
+    81a5     81a5        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.dos_before_record)
+    81a5     81a5        4     1                 dos_before_record
+    81a9     81a9        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.dos_after_record)
+    81a9     81a9        4     1                 dos_after_record
+    81ad     81ad        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.context_invalidated_record)
+    81ad     81ad        1     1                 context_invalidated_record
+    81ae     81ae       ff     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.transfer)
+    81ae     81ae       ff     1                 transfer
+    82ad     82ad        f     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.display_saved)
+    82ad     82ad        f     1                 display_saved
+    82bc     82bc        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.display_front)
+    82bc     82bc        1     1                 display_front
+    82bd     82bd        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.display_ready)
+    82bd     82bd        1     1                 display_ready
+    82be     82be        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.display_slot)
+    82be     82be        1     1                 display_slot
+    82bf     82bf        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.display_clear_at)
+    82bf     82bf        2     1                 display_clear_at
+    82c1     82c1        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.display_suspended)
+    82c1     82c1        1     1                 display_suspended
+    82c2     82c2        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.application_dma_outstanding)
+    82c2     82c2        1     1                 application_dma_outstanding
+    82c3     82c3        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.display_frame)
+    82c3     82c3        1     1                 display_frame
+    82c4     82c4        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.display_snapshot_crc)
+    82c4     82c4        4     1                 display_snapshot_crc
+    82c8     82c8       40     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.display_pixels)
+    82c8     82c8       40     1                 display_pixels
+    8308     8308        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.display_suspended_d011)
+    8308     8308        1     1                 display_suspended_d011
+    8309     8309        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.r0fsi_iec_before)
+    8309     8309        1     1                 r0fsi_iec_before
+    830a     830a        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.r0fsi_iec_after)
+    830a     830a        1     1                 r0fsi_iec_after
+    830b     830b        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.r0fsi_irq_fault)
+    830b     830b        1     1                 r0fsi_irq_fault
+    830c     830c        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.final_screen)
+    830c     830c        1     1                 final_screen
+    830d     830d        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.cfreclaimed)
+    830d     830d        1     1                 cfreclaimed
+    830e     830e        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.backup_valid)
+    830e     830e        1     1                 backup_valid
+    830f     830f        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.cffault)
+    830f     830f        1     1                 cffault
+    8310     8310       ff     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.block)
+    8310     8310       ff     1                 block
+    840f     840f       ff     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.cfworkspace)
+    840f     840f       ff     1                 cfworkspace
+    850e     850e        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.features_open)
+    850e     850e        1     1                 features_open
+    850f     850f        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.r0fc_trap_flags)
+    850f     850f        1     1                 r0fc_trap_flags
+    8510     8510        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.r0fc_trap_base)
+    8510     8510        1     1                 r0fc_trap_base
+    8511     8511        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.cfperiod)
+    8511     8511        4     1                 cfperiod
+    8515     8515       11     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.list)
+    8515     8515       11     1                 list
+    8526     8526        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.pcm_on)
+    8526     8526        1     1                 pcm_on
+    8527     8527        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.pcm_last)
+    8527     8527        1     1                 pcm_last
+    8528     8528        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.service_last)
+    8528     8528        4     1                 service_last
+    852c     852c        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.audio_frame)
+    852c     852c        1     1                 audio_frame
+    852d     852d        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.keys_valid)
+    852d     852d        1     1                 keys_valid
+    852e     852e        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.input_frame)
+    852e     852e        1     1                 input_frame
+    852f     852f       18     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.keys)
+    852f     852f       18     1                 keys
+    8547     8547        3     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.scripted)
+    8547     8547        3     1                 scripted
+    854a     854a        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.r0fc_hardware_low)
+    854a     854a        1     1                 r0fc_hardware_low
+    854b     854b        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.r0fc_software_low)
+    854b     854b        2     1                 r0fc_software_low
+    854d     854d        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.r0fc_features)
+    854d     854d        1     1                 r0fc_features
+    854e     854e        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.r0fc_hardware_seed)
+    854e     854e        1     1                 r0fc_hardware_seed
+    854f     854f        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.bss.r0fc_software_seed)
+    854f     854f        2     1                 r0fc_software_seed
+    8551     8551        0     1         __bss_end = .
+    8551     8551        0     1 __bss_size = SIZEOF(.bss)
+    8551     8551       23     1 .noinit
+    8551     8551       23     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.noinit..Lstatic_stack)
+    8574     8574        0     1         __heap_start = ALIGN(., 2)
+    8574     8574        0     1 __stack = 0xd000
+       0        0       cc     1 .comment
+       0        0       cc     1         <internal>:(.comment)
+       0        0       1e     1 .llvm_sympart
+       0        0        f     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.llvm_sympart)
+       f        f        f     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/ordinary-preservation-final/R0F-SUCCESSOR-INTEGRATION.prg.lto.o:(.llvm_sympart)
+       0        0     1d00     4 .symtab
+       0        0     1d00     4         <internal>:(.symtab)
+       0        0       82     1 .shstrtab
+       0        0       82     1         <internal>:(.shstrtab)
+       0        0     1b75     1 .strtab
+       0        0     1b75     1         <internal>:(.strtab)

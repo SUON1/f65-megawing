@@ -1,0 +1,39 @@
+{
+  "id": "R0F-GROUP1-TERMINAL-EXPORT-1",
+  "status": "OWNER_APPROVED_PRIVATE_CONTRACT_IMPLEMENTATION_IN_PROGRESS",
+  "authority": "docs/plans/R0-F_GROUP1_EXPORT_AMENDMENT.md",
+  "predecessor": "interfaces/r0f_successor_contract.json",
+  "constants": {
+    "CAPSULE_START": 134356992,
+    "CAPSULE_PAYLOAD": 134357008,
+    "CAPSULE_BYTES": 5664,
+    "CONTEXT_BYTES": 5632,
+    "GUARD_BYTES": 16,
+    "GUARD_VALUE": 165,
+    "TRACE_START": 134414336,
+    "TRACE_CAPACITY": 327680,
+    "STAGING_START": 16384,
+    "STAGING_BYTES": 16384,
+    "COPY_CHUNK_BYTES": 255
+  },
+  "states": {
+    "COLD": 0,
+    "ACQUIRING": 1,
+    "FROZEN": 2,
+    "EXPORTING": 3,
+    "EXPORTED": 4,
+    "FAILED": 5
+  },
+  "rules": [
+    "The original T02 context is invalidated before SERVICES_RESUMED, unchanged.",
+    "A distinct guarded pre-C opaque export capsule is terminal-only, never read by simulation and never used to resume measured work.",
+    "Trace is non-authoritative append-only diagnostic output during acquisition, immutable after freeze.",
+    "Export is admitted only after acquisition stops, DMA drains, display/audio/IRQ stop, ROM and capsule verify, and NMI is absent.",
+    "Consume the export capability before calling storage; no automatic retry or transition back to acquisition.",
+    "Terminal staging overlays dead ordinary resident code/data only after irreversible entry; all terminal code/data must remain below STAGING_START.",
+    "Save chunks with unique G1T00 through G1T19 names without replace syntax; no pre-existing file may be overwritten.",
+    "The acquisition record and export outcome are separate; transport success is not timing or workload acceptance.",
+    "Physical export evidence requires extraction of actual saved bytes and independent length, ordering, CRC and semantic validation."
+  ],
+  "nonClaims": ["production StorageService", "traceable SI timing", "Group 1 completion", "physical execution", "R0-F acceptance"]
+}

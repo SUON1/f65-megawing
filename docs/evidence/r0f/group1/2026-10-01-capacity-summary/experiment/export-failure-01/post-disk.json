@@ -1,0 +1,69 @@
+{
+  "bamAllocatedSectors": 7,
+  "bamFreeSectors": 3193,
+  "bytes": 819200,
+  "c1541Listing": "D81 disk image recognised: /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-02/export-failure-01/G1FAIL01.D81, 80 tracks.\nUnit 8 drive 0: D81 disk image attached: /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-02/export-failure-01/G1FAIL01.D81.\n0 \"G1 CAP FAILURE  \" 65 3d\n1    \"token\"            prg \n1    \"g1t00\"            prg \n1    \"rsstate\"          prg \n3157 blocks free.\nUnit 8 drive 0: D81 disk image detached: /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-02/export-failure-01/G1FAIL01.D81.\n",
+  "entries": [
+    {
+      "blocks": 1,
+      "chain": [
+        {
+          "sector": 0,
+          "track": 39
+        }
+      ],
+      "firstSector": {
+        "sector": 0,
+        "track": 39
+      },
+      "name": "token",
+      "payloadBytes": 34,
+      "payloadSha256": "0e8d0ac2ce727ba51285be0173ea784b52b56fdc4729a1f7c0d2d7271005b572",
+      "type": 130
+    },
+    {
+      "blocks": 1,
+      "chain": [
+        {
+          "sector": 1,
+          "track": 39
+        }
+      ],
+      "firstSector": {
+        "sector": 1,
+        "track": 39
+      },
+      "name": "g1t00",
+      "payloadBytes": 34,
+      "payloadSha256": "0e8d0ac2ce727ba51285be0173ea784b52b56fdc4729a1f7c0d2d7271005b572",
+      "type": 130
+    },
+    {
+      "blocks": 1,
+      "chain": [
+        {
+          "sector": 2,
+          "track": 39
+        }
+      ],
+      "firstSector": {
+        "sector": 2,
+        "track": 39
+      },
+      "name": "rsstate",
+      "payloadBytes": 34,
+      "payloadSha256": "7d2f63b8e8e970bb35c351174fae1ca365245f14acf35db0d3cf9016ba8ba5bd",
+      "type": 130
+    }
+  ],
+  "extracted": {
+    "g1t00": "/Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-02/export-failure-01/post-extracted/g1t00",
+    "rsstate": "/Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-02/export-failure-01/post-extracted/rsstate",
+    "token": "/Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-02/export-failure-01/post-extracted/token"
+  },
+  "freeBlocks": 3193,
+  "identifier": "65",
+  "label": "G1 CAP FAILURE",
+  "path": "/Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-02/export-failure-01/G1FAIL01.D81",
+  "sha256": "7ddfb6bdb7b88d5a882deb2659aba0df86e5ee66fdf8dc3005fb5bd3bc88e223"
+}
