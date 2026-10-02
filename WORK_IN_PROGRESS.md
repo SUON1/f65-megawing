@@ -5,9 +5,9 @@ authority. Its status is one of ACTIVE, BLOCKED, READY FOR REVIEW or NONE.
 
 ## Current status
 
-- **Status:** `BLOCKED`
+- **Status:** `READY FOR REVIEW`
 - **Task:** Merge the published Group 1 closeout checkpoint; CI policy
-  reconciliation remains.
+  apply the approved exact-path/hash CI correction and require green checks.
 - **Branch:** `codex/r0f-successor-physical-exact-carrier`.
 - **Existing published checkpoint:** `2d9a42e110cdd9066031e28e83662ce4fdec6219`.
 - **Owner intent:** Analyze the returned data, close this work unit and retain
@@ -17,6 +17,8 @@ authority. Its status is one of ACTIVE, BLOCKED, READY FOR REVIEW or NONE.
   and push", then "merge it" for this closeout. Preserve the frozen packet
   unchanged and publish only the named Group 1 scope. No SD write, new
   target/hardware run, CI bypass or acceptance promotion is authorized.
+  Owner subsequently approved the narrow hash-verified evidence exception
+  and merge after fresh green CI; no blanket evidence-directory exclusion.
 - **Outcome:** Development campaign closed as a preserved checkpoint **with a
   physical blocker**, not a Group 1/R0-F PASS. Local fit/host/four exact-name
   Xemu runs pass. P05 SD hash, one extent, safe eject and physical entry pass.
@@ -45,11 +47,17 @@ authority. Its status is one of ACTIVE, BLOCKED, READY FOR REVIEW or NONE.
   rejects 116 retained evidence images under the Group 1 and successor roots.
   Local syntax checks pass for 1737 JSON, 1047 Python and 11 shell files.
   Do not normalize frozen bytes, remove evidence or bypass CI. A narrow
-  evidence-aware CI policy correction requires owner direction before merge.
-- **Next:** Open/review the focused PR and confirm the hosted CI result.
+  evidence-aware CI policy correction is now owner-approved. PR #10's original
+  hosted check failed changed-range whitespace; later steps were skipped.
+- **CI correction validation:** 13 fail-closed fixtures and 47 Group 1 host
+  tests PASS. All 193 exact text pins and 117 exact D81 pins match committed
+  evidence; the remaining changed-range whitespace check and 333-entry
+  physical closeout packet PASS. Target source/contracts/evidence are unchanged.
+- **Next:** Publish the scoped correction to
+  [PR #10](https://github.com/SUON1/f65-megawing/pull/10)
+  and require fresh green hosted CI before the authorized merge commit.
   Leave unrelated dirty local backup, mirror tools/reports and older physical
-  directories unstaged and intact. Reconcile the named CI policy conflict,
-  then require fresh green CI before the authorized history-preserving merge.
+  directories unstaged and intact.
   After merge, move to a fresh chat using the closeout handoff. First remaining
   R0-F task is the physical display-resume subfault/clock-order diagnostic;
   Groups 2/3, existing measurement boundaries and owner acceptance remain.
