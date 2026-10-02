@@ -5,17 +5,18 @@ authority. Its status is one of ACTIVE, BLOCKED, READY FOR REVIEW or NONE.
 
 ## Current status
 
-- **Status:** `READY FOR REVIEW`
-- **Task:** Publish the Group 1 closeout checkpoint; PR/merge review remains.
+- **Status:** `BLOCKED`
+- **Task:** Merge the published Group 1 closeout checkpoint; CI policy
+  reconciliation remains.
 - **Branch:** `codex/r0f-successor-physical-exact-carrier`.
 - **Existing published checkpoint:** `2d9a42e110cdd9066031e28e83662ce4fdec6219`.
 - **Owner intent:** Analyze the returned data, close this work unit and retain
   a compact handoff; publication/merge precede a new chat for remaining R0-F.
   No new implementation, SD write or hardware run is part of closeout.
 - **Publication authority (2026-10-01):** Owner explicitly requested "commit
-  and push" for this closeout. Preserve the frozen packet unchanged and publish
-  only the named Group 1 scope. No merge, SD write or new target/hardware run
-  is authorized by this step.
+  and push", then "merge it" for this closeout. Preserve the frozen packet
+  unchanged and publish only the named Group 1 scope. No SD write, new
+  target/hardware run, CI bypass or acceptance promotion is authorized.
 - **Outcome:** Development campaign closed as a preserved checkpoint **with a
   physical blocker**, not a Group 1/R0-F PASS. Local fit/host/four exact-name
   Xemu runs pass. P05 SD hash, one extent, safe eject and physical entry pass.
@@ -38,10 +39,17 @@ authority. Its status is one of ACTIVE, BLOCKED, READY FOR REVIEW or NONE.
   original PRGs and P05 inputs match; four existing version-7 Xemu traces
   independently re-reduce. Actual returned structure/payload/SAVE checks pass.
   No new target build, Xemu launch or physical test. Hardware/ABI impact none.
-- **Next:** After this authorized commit/push, review/open the focused PR and
-  separately approve merge with fresh branch/remote/CI review. Leave unrelated
-  dirty local backup,
-  mirror tools/reports and older physical directories unstaged and intact.
+- **Merge preflight blocker:** The existing static CI checks conflict with
+  immutable evidence preservation: `git diff --check origin/main...HEAD`
+  reports 1257 findings, all under `docs/evidence/`; the tracked artifact guard
+  rejects 116 retained evidence images under the Group 1 and successor roots.
+  Local syntax checks pass for 1737 JSON, 1047 Python and 11 shell files.
+  Do not normalize frozen bytes, remove evidence or bypass CI. A narrow
+  evidence-aware CI policy correction requires owner direction before merge.
+- **Next:** Open/review the focused PR and confirm the hosted CI result.
+  Leave unrelated dirty local backup, mirror tools/reports and older physical
+  directories unstaged and intact. Reconcile the named CI policy conflict,
+  then require fresh green CI before the authorized history-preserving merge.
   After merge, move to a fresh chat using the closeout handoff. First remaining
   R0-F task is the physical display-resume subfault/clock-order diagnostic;
   Groups 2/3, existing measurement boundaries and owner acceptance remain.
