@@ -5,63 +5,22 @@ authority. Its status is one of ACTIVE, BLOCKED, READY FOR REVIEW or NONE.
 
 ## Current status
 
-- **Status:** `READY FOR REVIEW`
-- **Task:** Merge the published Group 1 closeout checkpoint; CI policy
-  apply the approved exact-path/hash CI correction and require green checks.
-- **Branch:** `codex/r0f-successor-physical-exact-carrier`.
-- **Existing published checkpoint:** `2d9a42e110cdd9066031e28e83662ce4fdec6219`.
-- **Owner intent:** Analyze the returned data, close this work unit and retain
-  a compact handoff; publication/merge precede a new chat for remaining R0-F.
-  No new implementation, SD write or hardware run is part of closeout.
-- **Publication authority (2026-10-01):** Owner explicitly requested "commit
-  and push", then "merge it" for this closeout. Preserve the frozen packet
-  unchanged and publish only the named Group 1 scope. No SD write, new
-  target/hardware run, CI bypass or acceptance promotion is authorized.
-  Owner subsequently approved the narrow hash-verified evidence exception
-  and merge after fresh green CI; no blanket evidence-directory exclusion.
-- **Outcome:** Development campaign closed as a preserved checkpoint **with a
-  physical blocker**, not a Group 1/R0-F PASS. Local fit/host/four exact-name
-  Xemu runs pass. P05 SD hash, one extent, safe eject and physical entry pass.
-  The physical run fails `5D/0A/0640/00/00` at display resume after tick 1600.
-  Actual returned `RSSTATE` passes the independent tick-1600 golden; no trace
-  chunks exist, so physical timing is unavailable.
-- **Exact target:** PRG `c068cc532dc820845d8c0649b1c2ea7dfc0bda394b32f7c186088a04d0dc048b`,
-  37517 bytes, resident end `$BFFD`, 3 free bytes. Root source is an earlier
-  variant; the qualified version-7 source is the published isolated snapshot
-  identified in the closeout report. Generated contracts are unchanged.
-- **Retained failure:** P05 `046198fc...5ee4ff` and returned disk
-  `9816043f...f4197d` are preserved. P05 is retired, INVALID — DO NOT USE;
-  no rerun, repair, rename or overwrite. P04's ten-extent failure and the
-  original `ec259fc7...` baseline remain unchanged.
-- **Authority/evidence/handoff:** [Group 1 closeout](docs/reports/R0-F_GROUP1_CLOSEOUT.md)
+- **Status:** `NONE`
+- **Active task:** None. The Group 1 development checkpoint and physical
+  closeout are integrated via [PR #10](https://github.com/SUON1/f65-megawing/pull/10),
+  merge `468c6040996d5b89f61a8a96cc376ac573348c1a`.
+- **Handoff for a fresh chat:** [Group 1 closeout](docs/reports/R0-F_GROUP1_CLOSEOUT.md)
   and [physical packet](docs/evidence/r0f/group1/2026-10-01-physical-closeout/README.md).
-  Governing [Build Intent](docs/plans/R0-F_GROUP1_BUILD_INTENT.md) remains;
-  this closeout does not waive its resumed-workload requirement.
-- **Validation:** 47 fresh host tests; twelve prior freezes/7511 entries,
-  original PRGs and P05 inputs match; four existing version-7 Xemu traces
-  independently re-reduce. Actual returned structure/payload/SAVE checks pass.
-  No new target build, Xemu launch or physical test. Hardware/ABI impact none.
-- **Merge preflight blocker:** The existing static CI checks conflict with
-  immutable evidence preservation: `git diff --check origin/main...HEAD`
-  reports 1257 findings, all under `docs/evidence/`; the tracked artifact guard
-  rejects 116 retained evidence images under the Group 1 and successor roots.
-  Local syntax checks pass for 1737 JSON, 1047 Python and 11 shell files.
-  Do not normalize frozen bytes, remove evidence or bypass CI. A narrow
-  evidence-aware CI policy correction is now owner-approved. PR #10's original
-  hosted check failed changed-range whitespace; later steps were skipped.
-- **CI correction validation:** 13 fail-closed fixtures and 47 Group 1 host
-  tests PASS. All 193 exact text pins and 117 exact D81 pins match committed
-  evidence; the remaining changed-range whitespace check and 333-entry
-  physical closeout packet PASS. Target source/contracts/evidence are unchanged.
-- **Next:** Publish the scoped correction to
-  [PR #10](https://github.com/SUON1/f65-megawing/pull/10)
-  and require fresh green hosted CI before the authorized merge commit.
-  Leave unrelated dirty local backup, mirror tools/reports and older physical
-  directories unstaged and intact.
-  After merge, move to a fresh chat using the closeout handoff. First remaining
-  R0-F task is the physical display-resume subfault/clock-order diagnostic;
-  Groups 2/3, existing measurement boundaries and owner acceptance remain.
-  No additional target feature is prescribed and no acceptance follows a merge.
+  This is a preserved development checkpoint with physical `5D` display-resume
+  failure at tick 1600, not Group 1/R0-F acceptance.
+- **Next task, not started:** Establish the first physical display-resume
+  subfault and review clock ordering under the original
+  [Build Intent](docs/plans/R0-F_GROUP1_BUILD_INTENT.md). Then return to the
+  original remaining R0-F scope. No new target/SD/hardware execution is
+  authorized by this navigation record; P05 remains retired, INVALID — DO NOT USE.
+- **Local preservation:** Unrelated backup/mirror tools, reports and older
+  physical directories remain untracked and untouched. The original passing
+  `ec259fc7...` baseline and all frozen evidence remain unchanged.
 
 The former 994-line WIP is retained byte-for-byte at
 `docs/evidence/r0f/group1/2026-10-01-physical-closeout/WIP-before-closeout.md`.
