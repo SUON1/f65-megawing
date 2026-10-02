@@ -1,0 +1,559 @@
+     VMA      LMA     Size Align Out     In      Symbol
+       0        0        0     1 
+       0        0        0     1 
+       0        0        0     1 __basic_zp_start = 0x0002
+       0        0        0     1 __basic_zp_end = 0x0090
+       0        0        0     1 __rc0 = __basic_zp_start
+       0        0        0     1 __rc1 = __rc0 + 1
+       0        0        0     1 PROVIDE(__rc2 = __rc1 + 1)
+       0        0        0     1 __rc3 = __rc2 + 1
+       0        0        0     1 PROVIDE(__rc4 = __rc3 + 1)
+       0        0        0     1 __rc5 = __rc4 + 1
+       0        0        0     1 PROVIDE(__rc6 = __rc5 + 1)
+       0        0        0     1 __rc7 = __rc6 + 1
+       0        0        0     1 PROVIDE(__rc8 = __rc7 + 1)
+       0        0        0     1 __rc9 = __rc8 + 1
+       0        0        0     1 PROVIDE(__rc10 = __rc9 + 1)
+       0        0        0     1 __rc11 = __rc10 + 1
+       0        0        0     1 PROVIDE(__rc12 = __rc11 + 1)
+       0        0        0     1 __rc13 = __rc12 + 1
+       0        0        0     1 PROVIDE(__rc14 = __rc13 + 1)
+       0        0        0     1 __rc15 = __rc14 + 1
+       0        0        0     1 PROVIDE(__rc16 = __rc15 + 1)
+       0        0        0     1 __rc17 = __rc16 + 1
+       0        0        0     1 PROVIDE(__rc18 = __rc17 + 1)
+       0        0        0     1 __rc19 = __rc18 + 1
+       0        0        0     1 PROVIDE(__rc20 = __rc19 + 1)
+       0        0        0     1 __rc21 = __rc20 + 1
+       0        0        0     1 PROVIDE(__rc22 = __rc21 + 1)
+       0        0        0     1 __rc23 = __rc22 + 1
+       0        0        0     1 PROVIDE(__rc24 = __rc23 + 1)
+       0        0        0     1 __rc25 = __rc24 + 1
+       0        0        0     1 PROVIDE(__rc26 = __rc25 + 1)
+       0        0        0     1 __rc27 = __rc26 + 1
+       0        0        0     1 PROVIDE(__rc28 = __rc27 + 1)
+       0        0        0     1 __rc29 = __rc28 + 1
+       0        0        0     1 PROVIDE(__rc30 = __rc29 + 1)
+       0        0        0     1 __rc31 = __rc30 + 1
+       0        0        0     1 __basic_zp_size = __basic_zp_end - __basic_zp_start
+    2001     2001       16     1 .basic_header
+    2001     2001       16     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/basic-header.o:(.basic_header)
+    2015     2015        0     1                 next_line
+      22       22        0     1 .zp.data
+      22       22        0     1         __zp_data_start = .
+      22       22        0     1 __zp_data_load_start = LOADADDR(.zp.data)
+      22       22        0     1 __zp_data_size = SIZEOF(.zp.data)
+      22       22        0     1 .zp.bss
+      22       22        0     1         __zp_bss_start = .
+      22       22        0     1 __zp_bss_size = SIZEOF(.zp.bss)
+    2017     2017     109a     1 .r0fs_protected
+    2017     2017        9     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/successor_admission_45gs02-aeff55.o:(.text.r0fs_protected)
+    2017     2017        0     1                 r0fs_quiesce_marker
+    2019     2019        0     1                 r0fs_context_restore_marker
+    201b     201b        0     1                 r0fs_canonical_restore_marker
+    201f     201f        0     1                 r0fs_resume_marker
+    2020     2020      81b     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/successor_integration_45gs02-af5597.o:(.text.r0fs_protected)
+    2020     2020        0     1                 r0fs_context_read
+    20df     20df        0     1                 r0fs_context_invalidate
+    211b     211b        0     1                 r0fs_storage
+    282f     282f        0     1                 r0fs_storage_end
+    283b     283b      588     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/group1_terminal_export_45gs02-4c57c8.o:(.text.r0fs_protected)
+    283b     283b        0     1                 r0fg1_terminal_export
+    2cf4     2cf4        0     1                 r0fg1_terminal_export_end
+    2cf4     2cf4        0     1                 r0fg1_terminal_file_setup
+    2dc3     2dc3        0     1                 r0fg1_terminal_file_setup_end
+    2dc3     2dc3      146     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/group1_irq_45gs02-60dcda.o:(.text.r0f_pf)
+    2dc3     2dc3        0     1                 r0f_pf_enter
+    2e23     2e23        0     1                 r0f_pf_start_irq
+    2e3a     2e3a        0     1                 r0f_pf_stop_irq
+    2e46     2e46        0     1                 r0f_pf_irq
+    2e78     2e78        0     1                 r0f_pf_nmi
+    2e80     2e80        0     1                 r0f_pf_flat_copy
+    2ebd     2ebd        0     1                 r0f_pf_register_probe
+    2f09     2f09       1c     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/group1_terminal_export_45gs02-4c57c8.o:(.r0fs_protected_data)
+    2f09     2f09        0     1                 r0fg1_export_permit
+    2f0a     2f0a        0     1                 r0fg1_export_status
+    2f0b     2f0b        0     1                 r0fg1_export_error
+    2f0c     2f0c        0     1                 r0fg1_export_files
+    2f0d     2f0d        0     1                 r0fg1_export_bytes
+    2f11     2f11        0     1                 r0fg1_export_remaining
+    2f15     2f15        0     1                 r0fg1_export_source
+    2f19     2f19        0     1                 r0fg1_export_chunk
+    2f1b     2f1b        0     1                 r0fg1_export_copy_left
+    2f1d     2f1d        0     1                 r0fg1_export_filename
+    2f22     2f22        0     1                 r0fg1_export_initialize
+    2f24     2f24        0     1                 r0fg1_export_secondary
+    2f25     2f25      18c     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.r0fs_protected_data)
+    2f25     2f25        1     1                 r0fsi_storage_phase
+    2f26     2f26        1     1                 r0fsi_storage_error
+    2f27     2f27        1     1                 r0fsi_storage_returned
+    2f28     2f28        1     1                 r0fsi_storage_denied
+    2f29     2f29        1     1                 r0fsi_permit
+    2f2a     2f2a        1     1                 r0fsi_input
+    2f2b     2f2b        1     1                 r0fsi_output
+    2f2c     2f2c        1     1                 r0fsi_input_end
+    2f2d     2f2d        1     1                 r0fsi_output_end
+    2f2e     2f2e       20     1                 r0fsi_token
+    2f4e     2f4e       20     1                 r0fsi_read
+    2f6e     2f6e       20     1                 r0fsi_payload
+    2f8e     2f8e        4     1                 r0fsi_end
+    2f92     2f92        1     1                 r0fsi_app_sp
+    2f93     2f93        2     1                 r0fsi_context_offset
+    2f95     2f95        1     1                 r0fsi_context_length
+    2f96     2f96        1     1                 r0fsi_context_region
+    2f97     2f97        1     1                 r0fsi_context_copy_ok
+    2f98     2f98       ff     1                 r0fsi_context_buffer
+    3097     3097        1     1                 r0f_pf_cpu_port
+    3098     3098        2     1                 r0f_pf_irq_count
+    309a     309a        1     1                 r0f_pf_irq_seq
+    309b     309b        1     1                 r0f_pf_irq_seen
+    309c     309c        7     1                 r0f_pf_probe_regs
+    30a3     30a3        1     1                 r0f_pf_copy_ok
+    30a4     30a4        2     1                 r0f_pf_probe_timeout
+    30a6     30a6        1     1                 r0f_pf_nmi_seen
+    30a7     30a7        9     1                 r0f_pf_copy_request
+    30b0     30b0        1     1                 r0f_pf_stack_high
+    30b1     30b1     7f9c     1 .text
+    30b1     30b1        0     1         _init = .
+    30b1     30b1        0     1         _start = .
+    30b1     30b1       c5     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/successor_admission_45gs02-aeff55.o:(.init.005)
+    30b1     30b1        0     1                 r0fs_pre_c_capture
+    3176     3176        0     1                 r0fs_pre_c_capture_end
+    3176     3176       c5     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/group1_export_capture_45gs02-bea8df.o:(.init.006)
+    3176     3176        0     1                 r0fg1_export_capture
+    323b     323b        0     1                 r0fg1_export_capture_end
+    323b     323b        e     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/unmap-basic.o:(.init.010)
+    3249     3249        3     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/r0a_platform_45gs02-34989e.o:(.init.011)
+    3249     3249        0     1                 f65_basepage_enter
+    324c     324c        8     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(init-stack.S.obj):(.init.100)
+    324c     324c        0     1                 __do_init_stack
+    3254     3254        3     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(zero-bss.c.obj):(.init.200)
+    3254     3254        0     1                 __do_zero_bss
+    3257     3257        3     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/common/lib/crt0.o:(.call_main)
+    325a     325a        3     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(exit-custom.S.obj):(.after_main)
+    325a     325a        0     1                 __after_main
+    325d     325d        0     1         _fini = .
+    325d     325d        3     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/r0a_platform_45gs02-34989e.o:(.fini.989)
+    325d     325d        0     1                 f65_basepage_leave
+    3260     3260        a     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/unmap-basic.o:(.fini.990)
+    326a     326a        1     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/common/lib/crt0.o:(.fini_rts)
+    326b     326b        3     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/successor_integration_45gs02-af5597.o:(.text.r0fsi_status)
+    326b     326b        0     1                 r0fsi_irq_cpu_status
+    326e     326e       b4     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/combined_45gs02-d9d721.o:(.text.r0fc_platform)
+    326e     326e        0     1                 r0fc_rom_toggle
+    3291     3291        0     1                 r0fc_stack_seed
+    32d8     32d8        0     1                 r0fc_stack_measure
+    3322     3322       fa     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/group1_irq_45gs02-60dcda.o:(.text.r0fg1_irq)
+    3322     3322        0     1                 r0fg1_irq_begin
+    333a     333a        0     1                 r0fg1_irq_end
+    33cd     33cd        0     1                 r0fg1_irq_read
+    341c     341c        0     1                 r0fg1_irq_timing_end
+    341c     341c       13     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(zero-bss.c.obj):(.text.__zero_bss)
+    341c     341c       13     1                 __zero_bss
+    342f     342f     22eb     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.main)
+    342f     342f     22eb     1                 main
+    571a     571a       14     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.lockout)
+    571a     571a       14     1                 lockout
+    572e     572e      10b     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.context_crc)
+    572e     572e      10b     1                 context_crc
+    5839     5839       94     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.context_valid)
+    5839     5839       94     1                 context_valid
+    58cd     58cd      109     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.dos_copy)
+    58cd     58cd      109     1                 dos_copy
+    59d6     59d6      1c7     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.dos_crc)
+    59d6     59d6      1c7     1                 dos_crc
+    5b9d     5b9d       23     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.transition)
+    5b9d     5b9d       23     1                 transition
+    5bc0     5bc0       c7     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.display_seed_staging)
+    5bc0     5bc0       c7     1                 display_seed_staging
+    5c87     5c87       41     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.display_configure)
+    5c87     5c87       41     1                 display_configure
+    5cc8     5cc8     127a     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.run_ticks)
+    5cc8     5cc8     127a     1                 run_ticks
+    6f42     6f42      ebe     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.display_quantum)
+    6f42     6f42      ebe     1                 display_quantum
+    7e00     7e00      319     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.restore_rom_after_display_suspend)
+    7e00     7e00      319     1                 restore_rom_after_display_suspend
+    8119     8119       bd     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.low_application_copy)
+    8119     8119       bd     1                 low_application_copy
+    81d6     81d6      34f     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.application_dma)
+    81d6     81d6      34f     1                 application_dma
+    8525     8525       2a     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.result_u32)
+    8525     8525       2a     1                 result_u32
+    854f     854f      102     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.group1_service_sweep)
+    854f     854f      102     1                 group1_service_sweep
+    8651     8651       ef     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.fixed_physical_copy)
+    8651     8651       ef     1                 fixed_physical_copy
+    8740     8740       72     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.crc_update)
+    8740     8740       72     1                 crc_update
+    87b2     87b2       27     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.r0fsi_prepare_rom_toggle)
+    87b2     87b2       27     1                 r0fsi_prepare_rom_toggle
+    87d9     87d9       39     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.r0fsi_irq_snapshot)
+    87d9     87d9       39     1                 r0fsi_irq_snapshot
+    8812     8812       2b     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.r0fs_crc32)
+    8812     8812       2b     1                 r0fs_crc32
+    883d     883d       ca     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.r0fs_crc32_update)
+    883d     883d       ca     1                 r0fs_crc32_update
+    8907     8907       2e     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.r0fc_edge_sample)
+    8907     8907       2e     1                 r0fc_edge_sample
+    8935     8935       12     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.bits)
+    8935     8935       12     1                 bits
+    8947     8947       52     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.r0fc_edge_consume)
+    8947     8947       52     1                 r0fc_edge_consume
+    8999     8999       ba     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.inside)
+    8999     8999       ba     1                 inside
+    8a53     8a53       2a     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.cfput32)
+    8a53     8a53       2a     1                 cfput32
+    8a7d     8a7d       2c     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.cfget32)
+    8a7d     8a7d       2c     1                 cfget32
+    8aa9     8aa9       6a     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.cfadd)
+    8aa9     8aa9       6a     1                 cfadd
+    8b13     8b13       5f     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.cfcrc)
+    8b13     8b13       5f     1                 cfcrc
+    8b72     8b72       54     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.crc_byte)
+    8b72     8b72       54     1                 crc_byte
+    8bc6     8bc6       b0     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.cfline)
+    8bc6     8bc6       b0     1                 cfline
+    8c76     8c76       3c     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.screen_byte)
+    8c76     8c76       3c     1                 screen_byte
+    8cb2     8cb2      2eb     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.cfcopy)
+    8cb2     8cb2      2eb     1                 cfcopy
+    8f9d     8f9d       be     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.cfhex)
+    8f9d     8f9d       be     1                 cfhex
+    905b     905b       54     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.cfscreen)
+    905b     905b       54     1                 cfscreen
+    90af     90af      1c5     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.cfphysical_crc)
+    90af     90af      1c5     1                 cfphysical_crc
+    9274     9274       33     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.cfclock_begin)
+    9274     9274       33     1                 cfclock_begin
+    92a7     92a7       8e     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.cfnow)
+    92a7     92a7       8e     1                 cfnow
+    9335     9335       a1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.cfframe_wait)
+    9335     9335       a1     1                 cfframe_wait
+    93d6     93d6       a1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.cfinput)
+    93d6     93d6       a1     1                 cfinput
+    9477     9477      144     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.cfaudio_service)
+    9477     9477      144     1                 cfaudio_service
+    95bb     95bb      8bb     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.cfcalibrate)
+    95bb     95bb      8bb     1                 cfcalibrate
+    9e76     9e76       21     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.cfaudio_stop)
+    9e76     9e76       21     1                 cfaudio_stop
+    9e97     9e97       e5     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.cfaudio_begin)
+    9e97     9e97       e5     1                 cfaudio_begin
+    9f7c     9f7c      1c9     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.validate_capsule)
+    9f7c     9f7c      1c9     1                 validate_capsule
+    a145     a145      1c2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.transfer.108)
+    a145     a145      1c2     1                 transfer.108
+    a307     a307       48     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.r0fg1_trace_write)
+    a307     a307       48     1                 r0fg1_trace_write
+    a34f     a34f      29b     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.r0fg1_calibration)
+    a34f     a34f      29b     1                 r0fg1_calibration
+    a5ea     a5ea       17     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.put32)
+    a5ea     a5ea       17     1                 put32
+    a601     a601       e0     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.r0fg1_phase_end)
+    a601     a601       e0     1                 r0fg1_phase_end
+    a6e1     a6e1       1e     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.r0fg1_stage_begin)
+    a6e1     a6e1       1e     1                 r0fg1_stage_begin
+    a6ff     a6ff       7f     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.r0fg1_stage_end)
+    a6ff     a6ff       7f     1                 r0fg1_stage_end
+    a77e     a77e      1e0     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.r0fg1_service)
+    a77e     a77e      1e0     1                 r0fg1_service
+    a95e     a95e      133     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.r0fg1_occlusion_clip)
+    a95e     a95e      133     1                 r0fg1_occlusion_clip
+    aa91     aa91       27     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.r0fg1_lod_select)
+    aa91     aa91       27     1                 r0fg1_lod_select
+    aab8     aab8      1d5     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.r0fg1_owner_sample)
+    aab8     aab8      1d5     1                 r0fg1_owner_sample
+    ac8d     ac8d        5     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.exit)
+    ac8d     ac8d        5     1                 exit
+    ac92     ac92       24     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.memcpy)
+    ac92     ac92       24     1                 memcpy
+    acb6     acb6       1c     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.__memset)
+    acb6     acb6       1c     1                 __memset
+    acd2     acd2        b     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.__ashlqi3)
+    acd2     acd2        b     1                 __ashlqi3
+    acdd     acdd       13     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.__ashlhi3)
+    acdd     acdd       13     1                 __ashlhi3
+    acf0     acf0       17     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.__lshrsi3)
+    acf0     acf0       17     1                 __lshrsi3
+    ad07     ad07       bd     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.__udivhi3)
+    ad07     ad07       bd     1                 __udivhi3
+    adc4     adc4       45     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.__umodqi3)
+    adc4     adc4       45     1                 __umodqi3
+    ae09     ae09       a6     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.__umodhi3)
+    ae09     ae09       a6     1                 __umodhi3
+    aeaf     aeaf       d8     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.__udivmodhi4)
+    aeaf     aeaf       d8     1                 __udivmodhi4
+    af87     af87       1b     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.__mulqi3)
+    af87     af87       1b     1                 __mulqi3
+    afa2     afa2       32     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.__mulhi3)
+    afa2     afa2       32     1                 __mulhi3
+    afd4     afd4       79     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.text.__mulsi3)
+    afd4     afd4       79     1                 __mulsi3
+    b04d     b04d        0     1         __init_array_start = .
+    b04d     b04d        0     1         __init_array_end = .
+    b04d     b04d        0     1         __fini_array_start = .
+    b04d     b04d        0     1         __fini_array_end = .
+    b04d     b04d      206     1 .rodata
+    b04d     b04d        8     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.rodata.dos_copy)
+    b055     b055       1c     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.rodata.run_ticks)
+    b071     b071      10d     1         <internal>:(.rodata.str1.1)
+    b17e     b17e       1e     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.rodata.display_registers)
+    b17e     b17e       1e     1                 display_registers
+    b19c     b19c       12     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.rodata.group1_orders)
+    b19c     b19c       12     1                 group1_orders
+    b1ae     b1ae       40     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.rodata.r0fs_crc32_update.crc_table)
+    b1ae     b1ae       40     1                 r0fs_crc32_update.crc_table
+    b1ee     b1ee       38     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.rodata.r0fc_range.ranges)
+    b1ee     b1ee       38     1                 r0fc_range.ranges
+    b226     b226        8     1         <internal>:(.rodata.cst8)
+    b22e     b22e        3     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.rodata.r0fg1_workload_stage.cadence)
+    b22e     b22e        3     1                 r0fg1_workload_stage.cadence
+    b231     b231        6     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.rodata.r0fg1_scene_encode.priorities)
+    b231     b231        6     1                 r0fg1_scene_encode.priorities
+    b237     b237       10     1         <internal>:(.rodata.cst16)
+    b247     b247        8     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.rodata.r0fg1_geometry_fixture.buffers)
+    b247     b247        8     1                 r0fg1_geometry_fixture.buffers
+    b24f     b24f        4     1         <internal>:(.rodata.cst4)
+    b253     b253       17     1 .data
+    b253     b253        0     1         __data_start = .
+    b253     b253        8     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.data.irq_observation)
+    b253     b253        8     1                 irq_observation
+    b25b     b25b        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.data.iec_before_record)
+    b25b     b25b        1     1                 iec_before_record
+    b25c     b25c        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.data.iec_after_record)
+    b25c     b25c        1     1                 iec_after_record
+    b25d     b25d        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.data.reclaim_features_record)
+    b25d     b25d        1     1                 reclaim_features_record
+    b25e     b25e        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.data.pools_crc)
+    b25e     b25e        4     1                 pools_crc
+    b262     b262        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.data.worlds_crc)
+    b262     b262        4     1                 worlds_crc
+    b266     b266        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.data.records_crc)
+    b266     b266        4     1                 records_crc
+    b26a     b26a        0     1         __data_end = .
+    b26a     b26a        0     1 __data_load_start = LOADADDR(.data)
+    b26a     b26a        0     1 __data_size = SIZEOF(.data)
+    b26a     b26a      d4d     1 .bss
+    b26a     b26a        0     1         __bss_start = .
+    b26a     b26a       1b     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/group1_irq_45gs02-60dcda.o:(.bss.r0fg1_irq)
+    b26a     b26a        0     1                 r0fg1_irq_epoch
+    b26b     b26b        0     1                 r0fg1_irq_error
+    b26c     b26c        0     1                 r0fg1_irq_summary
+    b27c     b27c        0     1                 r0fg1_irq_entered
+    b27d     b27d        0     1                 r0fg1_irq_start
+    b281     b281        0     1                 r0fg1_irq_now
+    b285     b285       7d     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.display_presentation)
+    b285     b285       7d     1                 display_presentation
+    b302     b302        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.display_requests)
+    b302     b302        2     1                 display_requests
+    b304     b304        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.display_cancels)
+    b304     b304        2     1                 display_cancels
+    b306     b306        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.display_views)
+    b306     b306        1     1                 display_views
+    b307     b307        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.display_tiers)
+    b307     b307        1     1                 display_tiers
+    b308     b308        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.lifecycle_state)
+    b308     b308        1     1                 lifecycle_state
+    b309     b309        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.context_crc_expected)
+    b309     b309        4     1                 context_crc_expected
+    b30d     b30d      3d1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.model)
+    b30d     b30d      3d1     1                 model
+    b6de     b6de       cb     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.snapshots)
+    b6de     b6de       cb     1                 snapshots
+    b7a9     b7a9        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.next_deadline)
+    b7a9     b7a9        4     1                 next_deadline
+    b7ad     b7ad        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.display_services)
+    b7ad     b7ad        2     1                 display_services
+    b7af     b7af        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.capture_epoch)
+    b7af     b7af        1     1                 capture_epoch
+    b7b0     b7b0        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.display_started)
+    b7b0     b7b0        1     1                 display_started
+    b7b1     b7b1        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.tick_before_record)
+    b7b1     b7b1        2     1                 tick_before_record
+    b7b3     b7b3        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.checksum_before_record)
+    b7b3     b7b3        4     1                 checksum_before_record
+    b7b7     b7b7        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.low_before_record)
+    b7b7     b7b7        4     1                 low_before_record
+    b7bb     b7bb        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.low_after_record)
+    b7bb     b7bb        4     1                 low_after_record
+    b7bf     b7bf        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.dos_before_record)
+    b7bf     b7bf        4     1                 dos_before_record
+    b7c3     b7c3        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.dos_after_record)
+    b7c3     b7c3        4     1                 dos_after_record
+    b7c7     b7c7        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.context_invalidated_record)
+    b7c7     b7c7        1     1                 context_invalidated_record
+    b7c8     b7c8       ff     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.transfer)
+    b7c8     b7c8       ff     1                 transfer
+    b8c7     b8c7        f     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.display_saved)
+    b8c7     b8c7        f     1                 display_saved
+    b8d6     b8d6        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.display_front)
+    b8d6     b8d6        1     1                 display_front
+    b8d7     b8d7        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.display_ready)
+    b8d7     b8d7        1     1                 display_ready
+    b8d8     b8d8        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.display_slot)
+    b8d8     b8d8        1     1                 display_slot
+    b8d9     b8d9        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.display_clear_at)
+    b8d9     b8d9        2     1                 display_clear_at
+    b8db     b8db        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.display_suspended)
+    b8db     b8db        1     1                 display_suspended
+    b8dc     b8dc        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.application_dma_outstanding)
+    b8dc     b8dc        1     1                 application_dma_outstanding
+    b8dd     b8dd        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.display_frame)
+    b8dd     b8dd        1     1                 display_frame
+    b8de     b8de        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.group1_order)
+    b8de     b8de        1     1                 group1_order
+    b8df     b8df        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.display_request_tick)
+    b8df     b8df        2     1                 display_request_tick
+    b8e1     b8e1        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.display_registration_crc)
+    b8e1     b8e1        4     1                 display_registration_crc
+    b8e5     b8e5        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.display_snapshot_crc)
+    b8e5     b8e5        4     1                 display_snapshot_crc
+    b8e9     b8e9       45     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.display_pixels)
+    b8e9     b8e9       45     1                 display_pixels
+    b92e     b92e        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.display_suspended_d011)
+    b92e     b92e        1     1                 display_suspended_d011
+    b92f     b92f        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.r0fsi_iec_before)
+    b92f     b92f        1     1                 r0fsi_iec_before
+    b930     b930        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.r0fsi_iec_after)
+    b930     b930        1     1                 r0fsi_iec_after
+    b931     b931        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.r0fsi_irq_fault)
+    b931     b931        1     1                 r0fsi_irq_fault
+    b932     b932        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.final_screen)
+    b932     b932        1     1                 final_screen
+    b933     b933        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.backup_valid)
+    b933     b933        1     1                 backup_valid
+    b934     b934       ff     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.block)
+    b934     b934       ff     1                 block
+    ba33     ba33       ff     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.cfworkspace)
+    ba33     ba33       ff     1                 cfworkspace
+    bb32     bb32        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.features_open)
+    bb32     bb32        1     1                 features_open
+    bb33     bb33        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.r0fc_trap_flags)
+    bb33     bb33        1     1                 r0fc_trap_flags
+    bb34     bb34        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.r0fc_trap_base)
+    bb34     bb34        1     1                 r0fc_trap_base
+    bb35     bb35       11     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.list)
+    bb35     bb35       11     1                 list
+    bb46     bb46        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.pcm_on)
+    bb46     bb46        1     1                 pcm_on
+    bb47     bb47        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.pcm_last)
+    bb47     bb47        1     1                 pcm_last
+    bb48     bb48        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.service_last)
+    bb48     bb48        4     1                 service_last
+    bb4c     bb4c        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.audio_frame)
+    bb4c     bb4c        1     1                 audio_frame
+    bb4d     bb4d        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.keys_valid)
+    bb4d     bb4d        1     1                 keys_valid
+    bb4e     bb4e        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.input_frame)
+    bb4e     bb4e        1     1                 input_frame
+    bb4f     bb4f       18     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.keys)
+    bb4f     bb4f       18     1                 keys
+    bb67     bb67        3     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.scripted)
+    bb67     bb67        3     1                 scripted
+    bb6a     bb6a        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.r0fc_features)
+    bb6a     bb6a        1     1                 r0fc_features
+    bb6b     bb6b        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.r0fc_hardware_seed)
+    bb6b     bb6b        1     1                 r0fc_hardware_seed
+    bb6c     bb6c        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.r0fc_software_seed)
+    bb6c     bb6c        2     1                 r0fc_software_seed
+    bb6e     bb6e        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.export.0)
+    bb6e     bb6e        4     1                 export.0
+    bb72     bb72        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.export.2)
+    bb72     bb72        1     1                 export.2
+    bb73     bb73       ff     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.buffer)
+    bb73     bb73       ff     1                 buffer
+    bc72     bc72        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.cfreclaimed)
+    bc72     bc72        1     1                 cfreclaimed
+    bc73     bc73        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.capsule_crc)
+    bc73     bc73        4     1                 capsule_crc
+    bc77     bc77      100     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.header)
+    bc77     bc77      100     1                 header
+    bd77     bd77        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.cfperiod)
+    bd77     bd77        4     1                 cfperiod
+    bd7b     bd7b        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.cfcia_frame)
+    bd7b     bd7b        4     1                 cfcia_frame
+    bd7f     bd7f        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.cfcycles_frame)
+    bd7f     bd7f        4     1                 cfcycles_frame
+    bd83     bd83        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.epoch)
+    bd83     bd83        1     1                 epoch
+    bd84     bd84        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.phase)
+    bd84     bd84        1     1                 phase
+    bd85     bd85        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.clock.0)
+    bd85     bd85        4     1                 clock.0
+    bd89     bd89        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.clock.1)
+    bd89     bd89        4     1                 clock.1
+    bd8d     bd8d        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.clock.2)
+    bd8d     bd8d        2     1                 clock.2
+    bd8f     bd8f       1e     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.phase_edges)
+    bd8f     bd8f       1e     1                 phase_edges
+    bdad     bdad       5c     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.record)
+    bdad     bdad       5c     1                 record
+    be09     be09        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.previous_capture)
+    be09     be09        4     1                 previous_capture
+    be0d     be0d        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.next_stage)
+    be0d     be0d        1     1                 next_stage
+    be0e     be0e        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.active)
+    be0e     be0e        1     1                 active
+    be0f     be0f        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.stage_start)
+    be0f     be0f        4     1                 stage_start
+    be13     be13        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.world_generation)
+    be13     be13        2     1                 world_generation
+    be15     be15        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.world_tick)
+    be15     be15        2     1                 world_tick
+    be17     be17        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.records)
+    be17     be17        2     1                 records
+    be19     be19        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.capture_max)
+    be19     be19        4     1                 capture_max
+    be1d     be1d        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.r0fc_hardware_low)
+    be1d     be1d        1     1                 r0fc_hardware_low
+    be1e     be1e        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.r0fc_software_low)
+    be1e     be1e        2     1                 r0fc_software_low
+    be20     be20       12     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.eligible)
+    be20     be20       12     1                 eligible
+    be32     be32        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.causality_errors)
+    be32     be32        2     1                 causality_errors
+    be34     be34       12     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.pending)
+    be34     be34       12     1                 pending
+    be46     be46       12     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.intent)
+    be46     be46       12     1                 intent
+    be58     be58       48     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.full)
+    be58     be58       48     1                 full
+    bea0     bea0       12     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.reduced)
+    bea0     bea0       12     1                 reduced
+    beb2     beb2       60     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.tracks)
+    beb2     beb2       60     1                 tracks
+    bf12     bf12        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.populated)
+    bf12     bf12        2     1                 populated
+    bf14     bf14        6     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.runs)
+    bf14     bf14        6     1                 runs
+    bf1a     bf1a       40     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.observations)
+    bf1a     bf1a       40     1                 observations
+    bf5a     bf5a        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.cffault)
+    bf5a     bf5a        1     1                 cffault
+    bf5b     bf5b       10     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.faces)
+    bf5b     bf5b       10     1                 faces
+    bf6b     bf6b       20     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.vertices)
+    bf6b     bf6b       20     1                 vertices
+    bf8b     bf8b       20     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.spans)
+    bf8b     bf8b       20     1                 spans
+    bfab     bfab        8     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.buckets)
+    bfab     bfab        8     1                 buckets
+    bfb3     bfb3        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.bss.live)
+    bfb3     bfb3        4     1                 live
+    bfb7     bfb7        0     1         __bss_end = .
+    bfb7     bfb7        0     1 __bss_size = SIZEOF(.bss)
+    bfb7     bfb7       24     1 .noinit
+    bfb7     bfb7       24     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.noinit..Lstatic_stack)
+    bfdb     bfdb        0     1         __heap_start = ALIGN(., 2)
+    bfdb     bfdb        0     1 __stack = 0xd000
+       0        0       cc     1 .comment
+       0        0       cc     1         <internal>:(.comment)
+       0        0        f     1 .llvm_sympart
+       0        0        f     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/display-recovery/ram-crc-02/runtime-01/GROUP1.prg.lto.o:(.llvm_sympart)
+       0        0     2f70     4 .symtab
+       0        0     2f70     4         <internal>:(.symtab)
+       0        0       82     1 .shstrtab
+       0        0       82     1         <internal>:(.shstrtab)
+       0        0     32f0     1 .strtab
+       0        0     32f0     1         <internal>:(.strtab)

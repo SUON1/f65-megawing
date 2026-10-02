@@ -1,0 +1,518 @@
+{
+  "canonicalD81Filename": "R0FDBG07.D81",
+  "canonicalD81Path": "build/r0f/d81-workflow/R0FDBG07/canonical/R0FDBG07.D81",
+  "canonicalD81Sha256": "c780d79a0e24ff00f10fbb7f3829ec943783c8b2d4413417ba389d900edcc775",
+  "canonicalMountedWritable": false,
+  "command": [
+    "/Users/slice/Developer/f65-megawing/toolchain/xemu/xmega65",
+    "-skipconfigfile",
+    "-headless",
+    "-fastboot",
+    "-videostd",
+    "0",
+    "-fastclock",
+    "40.5",
+    "-rom",
+    "/Users/slice/Documents/Codex/f65-megawing/MEGA65.ROM",
+    "-sdimg",
+    "/Users/slice/Developer/f65-megawing/build/r0f/d81-workflow/R0FDBG07/post-source-freeze-e8caf09-host-2/carrier-source-freeze/pal-2/disposable-sd.img",
+    "-8",
+    "/Users/slice/Developer/f65-megawing/build/r0f/d81-workflow/R0FDBG07/post-source-freeze-e8caf09-host-2/carrier-source-freeze/pal-2/R0FDBG07.D81",
+    "-autoload",
+    "-dumpscreen",
+    "/Users/slice/Developer/f65-megawing/build/r0f/d81-workflow/R0FDBG07/post-source-freeze-e8caf09-host-2/carrier-source-freeze/pal-2/screen.txt",
+    "-dumpmem",
+    "/Users/slice/Developer/f65-megawing/build/r0f/d81-workflow/R0FDBG07/post-source-freeze-e8caf09-host-2/carrier-source-freeze/pal-2/memory.bin",
+    "-screenshot",
+    "/Users/slice/Developer/f65-megawing/build/r0f/d81-workflow/R0FDBG07/post-source-freeze-e8caf09-host-2/carrier-source-freeze/pal-2/screen.png"
+  ],
+  "disposableCopyMountedWritable": true,
+  "disposableSdSha256": "e10b8ef4a05cfbe690186471489ec23eb57ecceb5933beb38df85e7448dafb39",
+  "extractedSaveBytes": 34,
+  "extractedSaveSha256": "86bef4e96b96b157857587afe9bc5d9d5f69e4849320affe5b867a19e6627784",
+  "extractedSaveValidation": "PASS",
+  "finishedAtUtc": "2026-09-25T03:39:35.928418+00:00",
+  "fullAcceptance": false,
+  "javaOracle": "PASS",
+  "mountedD81Filename": "R0FDBG07.D81",
+  "physical": "NOT RUN",
+  "postRunD81Sha256": "ec63822cb39bf34903584e9fef542d9176068ab56cbd8033bb54a8140bb0c649",
+  "postRunStructureAndContent": "PASS",
+  "preRunByteIdenticalToCanonical": true,
+  "preRunD81Sha256": "c780d79a0e24ff00f10fbb7f3829ec943783c8b2d4413417ba389d900edcc775",
+  "preRunStructure": {
+    "bytes": 819200,
+    "entries": [
+      {
+        "blocks": 2,
+        "chain": [
+          {
+            "sector": 0,
+            "track": 39
+          },
+          {
+            "sector": 1,
+            "track": 39
+          }
+        ],
+        "firstSector": {
+          "sector": 0,
+          "track": 39
+        },
+        "name": "autoboot.c65",
+        "payloadBytes": 464,
+        "payloadSha256": "9bdf352c44c411965229f68b2d92c358f08f0e6ef6486142115b53c9da246cc7",
+        "type": 130
+      },
+      {
+        "blocks": 87,
+        "chain": [
+          {
+            "sector": 2,
+            "track": 39
+          },
+          {
+            "sector": 3,
+            "track": 39
+          },
+          {
+            "sector": 4,
+            "track": 39
+          },
+          {
+            "sector": 5,
+            "track": 39
+          },
+          {
+            "sector": 6,
+            "track": 39
+          },
+          {
+            "sector": 7,
+            "track": 39
+          },
+          {
+            "sector": 8,
+            "track": 39
+          },
+          {
+            "sector": 9,
+            "track": 39
+          },
+          {
+            "sector": 10,
+            "track": 39
+          },
+          {
+            "sector": 11,
+            "track": 39
+          },
+          {
+            "sector": 12,
+            "track": 39
+          },
+          {
+            "sector": 13,
+            "track": 39
+          },
+          {
+            "sector": 14,
+            "track": 39
+          },
+          {
+            "sector": 15,
+            "track": 39
+          },
+          {
+            "sector": 16,
+            "track": 39
+          },
+          {
+            "sector": 17,
+            "track": 39
+          },
+          {
+            "sector": 18,
+            "track": 39
+          },
+          {
+            "sector": 19,
+            "track": 39
+          },
+          {
+            "sector": 20,
+            "track": 39
+          },
+          {
+            "sector": 21,
+            "track": 39
+          },
+          {
+            "sector": 22,
+            "track": 39
+          },
+          {
+            "sector": 23,
+            "track": 39
+          },
+          {
+            "sector": 24,
+            "track": 39
+          },
+          {
+            "sector": 25,
+            "track": 39
+          },
+          {
+            "sector": 26,
+            "track": 39
+          },
+          {
+            "sector": 27,
+            "track": 39
+          },
+          {
+            "sector": 28,
+            "track": 39
+          },
+          {
+            "sector": 29,
+            "track": 39
+          },
+          {
+            "sector": 30,
+            "track": 39
+          },
+          {
+            "sector": 31,
+            "track": 39
+          },
+          {
+            "sector": 32,
+            "track": 39
+          },
+          {
+            "sector": 33,
+            "track": 39
+          },
+          {
+            "sector": 34,
+            "track": 39
+          },
+          {
+            "sector": 35,
+            "track": 39
+          },
+          {
+            "sector": 36,
+            "track": 39
+          },
+          {
+            "sector": 37,
+            "track": 39
+          },
+          {
+            "sector": 38,
+            "track": 39
+          },
+          {
+            "sector": 39,
+            "track": 39
+          },
+          {
+            "sector": 0,
+            "track": 38
+          },
+          {
+            "sector": 1,
+            "track": 38
+          },
+          {
+            "sector": 2,
+            "track": 38
+          },
+          {
+            "sector": 3,
+            "track": 38
+          },
+          {
+            "sector": 4,
+            "track": 38
+          },
+          {
+            "sector": 5,
+            "track": 38
+          },
+          {
+            "sector": 6,
+            "track": 38
+          },
+          {
+            "sector": 7,
+            "track": 38
+          },
+          {
+            "sector": 8,
+            "track": 38
+          },
+          {
+            "sector": 9,
+            "track": 38
+          },
+          {
+            "sector": 10,
+            "track": 38
+          },
+          {
+            "sector": 11,
+            "track": 38
+          },
+          {
+            "sector": 12,
+            "track": 38
+          },
+          {
+            "sector": 13,
+            "track": 38
+          },
+          {
+            "sector": 14,
+            "track": 38
+          },
+          {
+            "sector": 15,
+            "track": 38
+          },
+          {
+            "sector": 16,
+            "track": 38
+          },
+          {
+            "sector": 17,
+            "track": 38
+          },
+          {
+            "sector": 18,
+            "track": 38
+          },
+          {
+            "sector": 19,
+            "track": 38
+          },
+          {
+            "sector": 20,
+            "track": 38
+          },
+          {
+            "sector": 21,
+            "track": 38
+          },
+          {
+            "sector": 22,
+            "track": 38
+          },
+          {
+            "sector": 23,
+            "track": 38
+          },
+          {
+            "sector": 24,
+            "track": 38
+          },
+          {
+            "sector": 25,
+            "track": 38
+          },
+          {
+            "sector": 26,
+            "track": 38
+          },
+          {
+            "sector": 27,
+            "track": 38
+          },
+          {
+            "sector": 28,
+            "track": 38
+          },
+          {
+            "sector": 29,
+            "track": 38
+          },
+          {
+            "sector": 30,
+            "track": 38
+          },
+          {
+            "sector": 31,
+            "track": 38
+          },
+          {
+            "sector": 32,
+            "track": 38
+          },
+          {
+            "sector": 33,
+            "track": 38
+          },
+          {
+            "sector": 34,
+            "track": 38
+          },
+          {
+            "sector": 35,
+            "track": 38
+          },
+          {
+            "sector": 36,
+            "track": 38
+          },
+          {
+            "sector": 37,
+            "track": 38
+          },
+          {
+            "sector": 38,
+            "track": 38
+          },
+          {
+            "sector": 39,
+            "track": 38
+          },
+          {
+            "sector": 0,
+            "track": 37
+          },
+          {
+            "sector": 1,
+            "track": 37
+          },
+          {
+            "sector": 2,
+            "track": 37
+          },
+          {
+            "sector": 3,
+            "track": 37
+          },
+          {
+            "sector": 4,
+            "track": 37
+          },
+          {
+            "sector": 5,
+            "track": 37
+          },
+          {
+            "sector": 6,
+            "track": 37
+          },
+          {
+            "sector": 7,
+            "track": 37
+          },
+          {
+            "sector": 8,
+            "track": 37
+          }
+        ],
+        "firstSector": {
+          "sector": 2,
+          "track": 39
+        },
+        "name": "r0fsucc",
+        "payloadBytes": 21922,
+        "payloadSha256": "5600782308a16976d0d20303e0c8d215b9db0f1dab1680f17e9a07ccfea47d7c",
+        "type": 130
+      },
+      {
+        "blocks": 1,
+        "chain": [
+          {
+            "sector": 0,
+            "track": 41
+          }
+        ],
+        "firstSector": {
+          "sector": 0,
+          "track": 41
+        },
+        "name": "token",
+        "payloadBytes": 34,
+        "payloadSha256": "0e8d0ac2ce727ba51285be0173ea784b52b56fdc4729a1f7c0d2d7271005b572",
+        "type": 130
+      }
+    ],
+    "freeBlocks": 3106,
+    "identifier": "65",
+    "label": "R0FDBG07",
+    "path": "/Users/slice/Developer/f65-megawing/build/r0f/d81-workflow/R0FDBG07/post-source-freeze-e8caf09-host-2/carrier-source-freeze/pal-2/R0FDBG07.D81",
+    "sha256": "c780d79a0e24ff00f10fbb7f3829ec943783c8b2d4413417ba389d900edcc775"
+  },
+  "prgSha256": "5600782308a16976d0d20303e0c8d215b9db0f1dab1680f17e9a07ccfea47d7c",
+  "processReturnCode": 0,
+  "result": {
+    "audioAfter": 36,
+    "audioBefore": 18,
+    "canonicalBasePage": 2,
+    "canonicalCpuPort": 53,
+    "checksumAfter": "307A70D6",
+    "checksumBefore": "D9EEAB81",
+    "contextCrc32": "90398F58",
+    "contextInvalidated": 1,
+    "dmaAfter": 492,
+    "dmaBefore": 241,
+    "dosAfterCrc32": "D5C268FC",
+    "dosBeforeCrc32": "D5C268FC",
+    "fault": 0,
+    "identity": "RSI1",
+    "independentCrc32": "984419E2",
+    "inputAfter": 36,
+    "inputBefore": 18,
+    "irqAfter": 52,
+    "irqBefore": 35,
+    "lifecycle": 9,
+    "lowAfterCrc32": "ACED2429",
+    "lowBeforeCrc32": "ACED2429",
+    "nmiSticky": 0,
+    "reserveAfterCrc32": "3C7D60D8",
+    "reserveBeforeCrc32": "3C7D60D8",
+    "restoredRomCrc32": "967A5200",
+    "resultCrc32": "984419E2",
+    "resumedServiceMask": 31,
+    "romCrc32": "967A5200",
+    "snapshotsAfter": 66,
+    "snapshotsBefore": 33,
+    "stage": 127,
+    "storageDenied": 0,
+    "storageError": 0,
+    "storagePhase": 5,
+    "storageReturned": 1,
+    "tickAfter": 66,
+    "tickBefore": 33,
+    "version": 1
+  },
+  "resultReduction": "PASS",
+  "resultSha256": "c58781ab80f28052de349a0fd7812d806ba2c4a5b3cd473b24c57975ae540999",
+  "rom": {
+    "path": "/Users/slice/Documents/Codex/f65-megawing/MEGA65.ROM",
+    "sha256": "af3c447f791a2fdc48cb21e1bd3fab015e32641228d9d30d21259b9e878c6fa0"
+  },
+  "run": "pal-2",
+  "screenIdentity": "PASS",
+  "screenshotSha256": "bb3bc61b64537edb15392d650ff5e70456e9af1a4007aed13a5b1f76a0681b90",
+  "sd": "NOT RUN",
+  "sourceBranch": "codex/r0f-successor-physical-exact-carrier",
+  "sourceCommit": "e8caf09002b7793be2effd9f5badd825aeedf301",
+  "startedAtUtc": "2026-09-25T03:37:55.791229+00:00",
+  "tier": "EXACT_CANONICAL_CARRIER_COPY",
+  "timedTerminationAfterSeconds": 100,
+  "videoArgument": "0",
+  "videoMode": "PAL",
+  "xemu": {
+    "path": "toolchain/xemu/xmega65",
+    "sha256": "dd37baf7846b9696adcb662ffe5da040031b07214c66aef9a7f48cc30040b738",
+    "sourceCommit": "40dfef0d1d5f56be2469492715c12bdb32c75b67",
+    "version": "20260129235930"
+  }
+}

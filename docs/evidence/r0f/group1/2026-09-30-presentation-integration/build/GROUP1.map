@@ -1,0 +1,526 @@
+     VMA      LMA     Size Align Out     In      Symbol
+       0        0        0     1 
+       0        0        0     1 
+       0        0        0     1 __basic_zp_start = 0x0002
+       0        0        0     1 __basic_zp_end = 0x0090
+       0        0        0     1 __rc0 = __basic_zp_start
+       0        0        0     1 __rc1 = __rc0 + 1
+       0        0        0     1 PROVIDE(__rc2 = __rc1 + 1)
+       0        0        0     1 __rc3 = __rc2 + 1
+       0        0        0     1 PROVIDE(__rc4 = __rc3 + 1)
+       0        0        0     1 __rc5 = __rc4 + 1
+       0        0        0     1 PROVIDE(__rc6 = __rc5 + 1)
+       0        0        0     1 __rc7 = __rc6 + 1
+       0        0        0     1 PROVIDE(__rc8 = __rc7 + 1)
+       0        0        0     1 __rc9 = __rc8 + 1
+       0        0        0     1 PROVIDE(__rc10 = __rc9 + 1)
+       0        0        0     1 __rc11 = __rc10 + 1
+       0        0        0     1 PROVIDE(__rc12 = __rc11 + 1)
+       0        0        0     1 __rc13 = __rc12 + 1
+       0        0        0     1 PROVIDE(__rc14 = __rc13 + 1)
+       0        0        0     1 __rc15 = __rc14 + 1
+       0        0        0     1 PROVIDE(__rc16 = __rc15 + 1)
+       0        0        0     1 __rc17 = __rc16 + 1
+       0        0        0     1 PROVIDE(__rc18 = __rc17 + 1)
+       0        0        0     1 __rc19 = __rc18 + 1
+       0        0        0     1 PROVIDE(__rc20 = __rc19 + 1)
+       0        0        0     1 __rc21 = __rc20 + 1
+       0        0        0     1 PROVIDE(__rc22 = __rc21 + 1)
+       0        0        0     1 __rc23 = __rc22 + 1
+       0        0        0     1 PROVIDE(__rc24 = __rc23 + 1)
+       0        0        0     1 __rc25 = __rc24 + 1
+       0        0        0     1 PROVIDE(__rc26 = __rc25 + 1)
+       0        0        0     1 __rc27 = __rc26 + 1
+       0        0        0     1 PROVIDE(__rc28 = __rc27 + 1)
+       0        0        0     1 __rc29 = __rc28 + 1
+       0        0        0     1 PROVIDE(__rc30 = __rc29 + 1)
+       0        0        0     1 __rc31 = __rc30 + 1
+       0        0        0     1 __basic_zp_size = __basic_zp_end - __basic_zp_start
+    2001     2001       16     1 .basic_header
+    2001     2001       16     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/basic-header.o:(.basic_header)
+    2015     2015        0     1                 next_line
+      22       22        0     1 .zp.data
+      22       22        0     1         __zp_data_start = .
+      22       22        0     1 __zp_data_load_start = LOADADDR(.zp.data)
+      22       22        0     1 __zp_data_size = SIZEOF(.zp.data)
+      22       22        0     1 .zp.bss
+      22       22        0     1         __zp_bss_start = .
+      22       22        0     1 __zp_bss_size = SIZEOF(.zp.bss)
+    2017     2017     109a     1 .r0fs_protected
+    2017     2017        9     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/successor_admission_45gs02-4b7a76.o:(.text.r0fs_protected)
+    2017     2017        0     1                 r0fs_quiesce_marker
+    2019     2019        0     1                 r0fs_context_restore_marker
+    201b     201b        0     1                 r0fs_canonical_restore_marker
+    201f     201f        0     1                 r0fs_resume_marker
+    2020     2020      81b     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/successor_integration_45gs02-690644.o:(.text.r0fs_protected)
+    2020     2020        0     1                 r0fs_context_read
+    20df     20df        0     1                 r0fs_context_invalidate
+    211b     211b        0     1                 r0fs_storage
+    282f     282f        0     1                 r0fs_storage_end
+    283b     283b      588     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/group1_terminal_export_45gs02-48481a.o:(.text.r0fs_protected)
+    283b     283b        0     1                 r0fg1_terminal_export
+    2cf4     2cf4        0     1                 r0fg1_terminal_export_end
+    2cf4     2cf4        0     1                 r0fg1_terminal_file_setup
+    2dc3     2dc3        0     1                 r0fg1_terminal_file_setup_end
+    2dc3     2dc3      146     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/group1_irq_45gs02-0d69f3.o:(.text.r0f_pf)
+    2dc3     2dc3        0     1                 r0f_pf_enter
+    2e23     2e23        0     1                 r0f_pf_start_irq
+    2e3a     2e3a        0     1                 r0f_pf_stop_irq
+    2e46     2e46        0     1                 r0f_pf_irq
+    2e78     2e78        0     1                 r0f_pf_nmi
+    2e80     2e80        0     1                 r0f_pf_flat_copy
+    2ebd     2ebd        0     1                 r0f_pf_register_probe
+    2f09     2f09       1c     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/group1_terminal_export_45gs02-48481a.o:(.r0fs_protected_data)
+    2f09     2f09        0     1                 r0fg1_export_permit
+    2f0a     2f0a        0     1                 r0fg1_export_status
+    2f0b     2f0b        0     1                 r0fg1_export_error
+    2f0c     2f0c        0     1                 r0fg1_export_files
+    2f0d     2f0d        0     1                 r0fg1_export_bytes
+    2f11     2f11        0     1                 r0fg1_export_remaining
+    2f15     2f15        0     1                 r0fg1_export_source
+    2f19     2f19        0     1                 r0fg1_export_chunk
+    2f1b     2f1b        0     1                 r0fg1_export_copy_left
+    2f1d     2f1d        0     1                 r0fg1_export_filename
+    2f22     2f22        0     1                 r0fg1_export_initialize
+    2f24     2f24        0     1                 r0fg1_export_secondary
+    2f25     2f25      18c     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.r0fs_protected_data)
+    2f25     2f25        1     1                 r0fsi_storage_phase
+    2f26     2f26        1     1                 r0fsi_storage_error
+    2f27     2f27        1     1                 r0fsi_storage_returned
+    2f28     2f28        1     1                 r0fsi_storage_denied
+    2f29     2f29        1     1                 r0fsi_permit
+    2f2a     2f2a        1     1                 r0fsi_input
+    2f2b     2f2b        1     1                 r0fsi_output
+    2f2c     2f2c        1     1                 r0fsi_input_end
+    2f2d     2f2d        1     1                 r0fsi_output_end
+    2f2e     2f2e       20     1                 r0fsi_token
+    2f4e     2f4e       20     1                 r0fsi_read
+    2f6e     2f6e       20     1                 r0fsi_payload
+    2f8e     2f8e        4     1                 r0fsi_end
+    2f92     2f92        1     1                 r0fsi_app_sp
+    2f93     2f93        2     1                 r0fsi_context_offset
+    2f95     2f95        1     1                 r0fsi_context_length
+    2f96     2f96        1     1                 r0fsi_context_region
+    2f97     2f97        1     1                 r0fsi_context_copy_ok
+    2f98     2f98       ff     1                 r0fsi_context_buffer
+    3097     3097        1     1                 r0f_pf_cpu_port
+    3098     3098        2     1                 r0f_pf_irq_count
+    309a     309a        1     1                 r0f_pf_irq_seq
+    309b     309b        1     1                 r0f_pf_irq_seen
+    309c     309c        7     1                 r0f_pf_probe_regs
+    30a3     30a3        1     1                 r0f_pf_copy_ok
+    30a4     30a4        2     1                 r0f_pf_probe_timeout
+    30a6     30a6        1     1                 r0f_pf_nmi_seen
+    30a7     30a7        9     1                 r0f_pf_copy_request
+    30b0     30b0        1     1                 r0f_pf_stack_high
+    30b1     30b1     7c90     1 .text
+    30b1     30b1        0     1         _init = .
+    30b1     30b1        0     1         _start = .
+    30b1     30b1       c5     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/successor_admission_45gs02-4b7a76.o:(.init.005)
+    30b1     30b1        0     1                 r0fs_pre_c_capture
+    3176     3176        0     1                 r0fs_pre_c_capture_end
+    3176     3176       c5     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/group1_export_capture_45gs02-3f9e91.o:(.init.006)
+    3176     3176        0     1                 r0fg1_export_capture
+    323b     323b        0     1                 r0fg1_export_capture_end
+    323b     323b        e     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/unmap-basic.o:(.init.010)
+    3249     3249        3     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/r0a_platform_45gs02-abf243.o:(.init.011)
+    3249     3249        0     1                 f65_basepage_enter
+    324c     324c        8     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(init-stack.S.obj):(.init.100)
+    324c     324c        0     1                 __do_init_stack
+    3254     3254        3     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(zero-bss.c.obj):(.init.200)
+    3254     3254        0     1                 __do_zero_bss
+    3257     3257        3     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/common/lib/crt0.o:(.call_main)
+    325a     325a        3     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(exit-custom.S.obj):(.after_main)
+    325a     325a        0     1                 __after_main
+    325d     325d        0     1         _fini = .
+    325d     325d        3     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/r0a_platform_45gs02-abf243.o:(.fini.989)
+    325d     325d        0     1                 f65_basepage_leave
+    3260     3260        a     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/unmap-basic.o:(.fini.990)
+    326a     326a        1     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/common/lib/crt0.o:(.fini_rts)
+    326b     326b        3     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/successor_integration_45gs02-690644.o:(.text.r0fsi_status)
+    326b     326b        0     1                 r0fsi_irq_cpu_status
+    326e     326e       b4     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/combined_45gs02-1e927a.o:(.text.r0fc_platform)
+    326e     326e        0     1                 r0fc_rom_toggle
+    3291     3291        0     1                 r0fc_stack_seed
+    32d8     32d8        0     1                 r0fc_stack_measure
+    3322     3322       fa     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/group1_irq_45gs02-0d69f3.o:(.text.r0fg1_irq)
+    3322     3322        0     1                 r0fg1_irq_begin
+    333a     333a        0     1                 r0fg1_irq_end
+    33cd     33cd        0     1                 r0fg1_irq_read
+    341c     341c        0     1                 r0fg1_irq_timing_end
+    341c     341c       13     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(zero-bss.c.obj):(.text.__zero_bss)
+    341c     341c       13     1                 __zero_bss
+    342f     342f     253f     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.main)
+    342f     342f     253f     1                 main
+    596e     596e       14     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.lockout)
+    596e     596e       14     1                 lockout
+    5982     5982      10b     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.context_crc)
+    5982     5982      10b     1                 context_crc
+    5a8d     5a8d       94     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.context_valid)
+    5a8d     5a8d       94     1                 context_valid
+    5b21     5b21      109     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.dos_copy)
+    5b21     5b21      109     1                 dos_copy
+    5c2a     5c2a      1c7     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.dos_crc)
+    5c2a     5c2a      1c7     1                 dos_crc
+    5df1     5df1       23     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.transition)
+    5df1     5df1       23     1                 transition
+    5e14     5e14       c7     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.display_seed_staging)
+    5e14     5e14       c7     1                 display_seed_staging
+    5edb     5edb       41     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.display_configure)
+    5edb     5edb       41     1                 display_configure
+    5f1c     5f1c     120a     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.run_ticks)
+    5f1c     5f1c     120a     1                 run_ticks
+    7126     7126      d2a     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.display_quantum)
+    7126     7126      d2a     1                 display_quantum
+    7e50     7e50      319     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.restore_rom_after_display_suspend)
+    7e50     7e50      319     1                 restore_rom_after_display_suspend
+    8169     8169       bd     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.low_application_copy)
+    8169     8169       bd     1                 low_application_copy
+    8226     8226      29d     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.application_dma)
+    8226     8226      29d     1                 application_dma
+    84c3     84c3       2a     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.result_u32)
+    84c3     84c3       2a     1                 result_u32
+    84ed     84ed      102     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.group1_service_sweep)
+    84ed     84ed      102     1                 group1_service_sweep
+    85ef     85ef       ef     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.fixed_physical_copy)
+    85ef     85ef       ef     1                 fixed_physical_copy
+    86de     86de       72     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.crc_update)
+    86de     86de       72     1                 crc_update
+    8750     8750       27     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.r0fsi_prepare_rom_toggle)
+    8750     8750       27     1                 r0fsi_prepare_rom_toggle
+    8777     8777       39     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.r0fsi_irq_snapshot)
+    8777     8777       39     1                 r0fsi_irq_snapshot
+    87b0     87b0       6e     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.r0fs_crc32_update)
+    87b0     87b0       6e     1                 r0fs_crc32_update
+    881e     881e       2e     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.r0fc_edge_sample)
+    881e     881e       2e     1                 r0fc_edge_sample
+    884c     884c       12     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.bits)
+    884c     884c       12     1                 bits
+    885e     885e       52     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.r0fc_edge_consume)
+    885e     885e       52     1                 r0fc_edge_consume
+    88b0     88b0       2a     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.cfput32)
+    88b0     88b0       2a     1                 cfput32
+    88da     88da       2c     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.cfget32)
+    88da     88da       2c     1                 cfget32
+    8906     8906       6a     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.cfadd)
+    8906     8906       6a     1                 cfadd
+    8970     8970       5f     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.cfcrc)
+    8970     8970       5f     1                 cfcrc
+    89cf     89cf       54     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.crc_byte)
+    89cf     89cf       54     1                 crc_byte
+    8a23     8a23       b0     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.cfline)
+    8a23     8a23       b0     1                 cfline
+    8ad3     8ad3       3c     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.screen_byte)
+    8ad3     8ad3       3c     1                 screen_byte
+    8b0f     8b0f      4c5     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.cfcopy)
+    8b0f     8b0f      4c5     1                 cfcopy
+    8fd4     8fd4       be     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.cfhex)
+    8fd4     8fd4       be     1                 cfhex
+    9092     9092       54     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.cfscreen)
+    9092     9092       54     1                 cfscreen
+    90e6     90e6      1c5     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.cfphysical_crc)
+    90e6     90e6      1c5     1                 cfphysical_crc
+    92ab     92ab       33     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.cfclock_begin)
+    92ab     92ab       33     1                 cfclock_begin
+    92de     92de       8e     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.cfnow)
+    92de     92de       8e     1                 cfnow
+    936c     936c       a1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.cfframe_wait)
+    936c     936c       a1     1                 cfframe_wait
+    940d     940d       a1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.cfinput)
+    940d     940d       a1     1                 cfinput
+    94ae     94ae      139     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.cfaudio_service)
+    94ae     94ae      139     1                 cfaudio_service
+    95e7     95e7      8bb     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.cfcalibrate)
+    95e7     95e7      8bb     1                 cfcalibrate
+    9ea2     9ea2       19     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.cfaudio_stop)
+    9ea2     9ea2       19     1                 cfaudio_stop
+    9ebb     9ebb       b7     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.cfaudio_begin)
+    9ebb     9ebb       b7     1                 cfaudio_begin
+    9f72     9f72      1c9     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.validate_capsule)
+    9f72     9f72      1c9     1                 validate_capsule
+    a13b     a13b      1c2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.transfer.106)
+    a13b     a13b      1c2     1                 transfer.106
+    a2fd     a2fd       48     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.r0fg1_trace_write)
+    a2fd     a2fd       48     1                 r0fg1_trace_write
+    a345     a345      29b     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.r0fg1_calibration)
+    a345     a345      29b     1                 r0fg1_calibration
+    a5e0     a5e0       17     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.put32)
+    a5e0     a5e0       17     1                 put32
+    a5f7     a5f7       1e     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.r0fg1_stage_begin)
+    a5f7     a5f7       1e     1                 r0fg1_stage_begin
+    a615     a615       7f     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.r0fg1_stage_end)
+    a615     a615       7f     1                 r0fg1_stage_end
+    a694     a694      1e0     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.r0fg1_service)
+    a694     a694      1e0     1                 r0fg1_service
+    a874     a874      133     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.r0fg1_occlusion_clip)
+    a874     a874      133     1                 r0fg1_occlusion_clip
+    a9a7     a9a7       27     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.r0fg1_lod_select)
+    a9a7     a9a7       27     1                 r0fg1_lod_select
+    a9ce     a9ce        5     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.exit)
+    a9ce     a9ce        5     1                 exit
+    a9d3     a9d3       24     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.memcpy)
+    a9d3     a9d3       24     1                 memcpy
+    a9f7     a9f7       1c     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.__memset)
+    a9f7     a9f7       1c     1                 __memset
+    aa13     aa13        b     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.__ashlqi3)
+    aa13     aa13        b     1                 __ashlqi3
+    aa1e     aa1e       13     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.__ashlhi3)
+    aa1e     aa1e       13     1                 __ashlhi3
+    aa31     aa31       17     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.__lshrsi3)
+    aa31     aa31       17     1                 __lshrsi3
+    aa48     aa48       bd     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.__udivhi3)
+    aa48     aa48       bd     1                 __udivhi3
+    ab05     ab05       45     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.__umodqi3)
+    ab05     ab05       45     1                 __umodqi3
+    ab4a     ab4a       a6     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.__umodhi3)
+    ab4a     ab4a       a6     1                 __umodhi3
+    abf0     abf0       d8     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.__udivmodhi4)
+    abf0     abf0       d8     1                 __udivmodhi4
+    acc8     acc8       79     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.text.__mulsi3)
+    acc8     acc8       79     1                 __mulsi3
+    ad41     ad41        0     1         __init_array_start = .
+    ad41     ad41        0     1         __init_array_end = .
+    ad41     ad41        0     1         __fini_array_start = .
+    ad41     ad41        0     1         __fini_array_end = .
+    ad41     ad41      5a2     1 .rodata
+    ad41     ad41        8     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.rodata.dos_copy)
+    ad49     ad49       1c     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.rodata.run_ticks)
+    ad65     ad65      10d     1         <internal>:(.rodata.str1.1)
+    ae72     ae72       1e     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.rodata.display_registers)
+    ae72     ae72       1e     1                 display_registers
+    ae90     ae90       12     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.rodata.group1_orders)
+    ae90     ae90       12     1                 group1_orders
+    aea2     aea2      400     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.rodata.r0fs_crc32_update.crc_table)
+    aea2     aea2      400     1                 r0fs_crc32_update.crc_table
+    b2a2     b2a2       38     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.rodata.r0fc_range.ranges)
+    b2a2     b2a2       38     1                 r0fc_range.ranges
+    b2da     b2da        3     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.rodata.r0fg1_workload_stage.cadence)
+    b2da     b2da        3     1                 r0fg1_workload_stage.cadence
+    b2dd     b2dd        6     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.rodata.r0fg1_scene_encode.priorities)
+    b2dd     b2dd        6     1                 r0fg1_scene_encode.priorities
+    b2e3     b2e3       13     1 .data
+    b2e3     b2e3        0     1         __data_start = .
+    b2e3     b2e3        8     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.data.irq_observation)
+    b2e3     b2e3        8     1                 irq_observation
+    b2eb     b2eb        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.data.iec_before_record)
+    b2eb     b2eb        1     1                 iec_before_record
+    b2ec     b2ec        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.data.iec_after_record)
+    b2ec     b2ec        1     1                 iec_after_record
+    b2ed     b2ed        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.data.reclaim_features_record)
+    b2ed     b2ed        1     1                 reclaim_features_record
+    b2ee     b2ee        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.data.worlds_crc)
+    b2ee     b2ee        4     1                 worlds_crc
+    b2f2     b2f2        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.data.records_crc)
+    b2f2     b2f2        4     1                 records_crc
+    b2f6     b2f6        0     1         __data_end = .
+    b2f6     b2f6        0     1 __data_load_start = LOADADDR(.data)
+    b2f6     b2f6        0     1 __data_size = SIZEOF(.data)
+    b2f6     b2f6      cab     1 .bss
+    b2f6     b2f6        0     1         __bss_start = .
+    b2f6     b2f6       1b     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/group1_irq_45gs02-0d69f3.o:(.bss.r0fg1_irq)
+    b2f6     b2f6        0     1                 r0fg1_irq_epoch
+    b2f7     b2f7        0     1                 r0fg1_irq_error
+    b2f8     b2f8        0     1                 r0fg1_irq_summary
+    b308     b308        0     1                 r0fg1_irq_entered
+    b309     b309        0     1                 r0fg1_irq_start
+    b30d     b30d        0     1                 r0fg1_irq_now
+    b311     b311       7d     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.display_presentation)
+    b311     b311       7d     1                 display_presentation
+    b38e     b38e        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.display_requests)
+    b38e     b38e        2     1                 display_requests
+    b390     b390        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.display_cancels)
+    b390     b390        2     1                 display_cancels
+    b392     b392        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.display_views)
+    b392     b392        1     1                 display_views
+    b393     b393        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.display_tiers)
+    b393     b393        1     1                 display_tiers
+    b394     b394        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.lifecycle_state)
+    b394     b394        1     1                 lifecycle_state
+    b395     b395        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.context_crc_expected)
+    b395     b395        4     1                 context_crc_expected
+    b399     b399      3d1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.model)
+    b399     b399      3d1     1                 model
+    b76a     b76a       cb     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.snapshots)
+    b76a     b76a       cb     1                 snapshots
+    b835     b835        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.next_deadline)
+    b835     b835        4     1                 next_deadline
+    b839     b839        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.display_services)
+    b839     b839        2     1                 display_services
+    b83b     b83b        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.capture_epoch)
+    b83b     b83b        1     1                 capture_epoch
+    b83c     b83c        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.display_started)
+    b83c     b83c        1     1                 display_started
+    b83d     b83d        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.tick_before_record)
+    b83d     b83d        2     1                 tick_before_record
+    b83f     b83f        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.checksum_before_record)
+    b83f     b83f        4     1                 checksum_before_record
+    b843     b843        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.low_before_record)
+    b843     b843        4     1                 low_before_record
+    b847     b847        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.low_after_record)
+    b847     b847        4     1                 low_after_record
+    b84b     b84b        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.dos_before_record)
+    b84b     b84b        4     1                 dos_before_record
+    b84f     b84f        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.dos_after_record)
+    b84f     b84f        4     1                 dos_after_record
+    b853     b853        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.context_invalidated_record)
+    b853     b853        1     1                 context_invalidated_record
+    b854     b854       ff     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.transfer)
+    b854     b854       ff     1                 transfer
+    b953     b953        f     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.display_saved)
+    b953     b953        f     1                 display_saved
+    b962     b962        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.display_front)
+    b962     b962        1     1                 display_front
+    b963     b963        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.display_ready)
+    b963     b963        1     1                 display_ready
+    b964     b964        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.display_slot)
+    b964     b964        1     1                 display_slot
+    b965     b965        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.display_clear_at)
+    b965     b965        2     1                 display_clear_at
+    b967     b967        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.display_suspended)
+    b967     b967        1     1                 display_suspended
+    b968     b968        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.application_dma_outstanding)
+    b968     b968        1     1                 application_dma_outstanding
+    b969     b969        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.display_frame)
+    b969     b969        1     1                 display_frame
+    b96a     b96a        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.group1_order)
+    b96a     b96a        1     1                 group1_order
+    b96b     b96b        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.display_request_tick)
+    b96b     b96b        2     1                 display_request_tick
+    b96d     b96d        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.display_registration_crc)
+    b96d     b96d        4     1                 display_registration_crc
+    b971     b971        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.display_snapshot_crc)
+    b971     b971        4     1                 display_snapshot_crc
+    b975     b975       41     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.display_pixels)
+    b975     b975       41     1                 display_pixels
+    b9b6     b9b6        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.display_suspended_d011)
+    b9b6     b9b6        1     1                 display_suspended_d011
+    b9b7     b9b7        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.r0fsi_iec_before)
+    b9b7     b9b7        1     1                 r0fsi_iec_before
+    b9b8     b9b8        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.r0fsi_iec_after)
+    b9b8     b9b8        1     1                 r0fsi_iec_after
+    b9b9     b9b9        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.r0fsi_irq_fault)
+    b9b9     b9b9        1     1                 r0fsi_irq_fault
+    b9ba     b9ba        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.final_screen)
+    b9ba     b9ba        1     1                 final_screen
+    b9bb     b9bb        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.backup_valid)
+    b9bb     b9bb        1     1                 backup_valid
+    b9bc     b9bc       ff     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.block)
+    b9bc     b9bc       ff     1                 block
+    babb     babb       ff     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.cfworkspace)
+    babb     babb       ff     1                 cfworkspace
+    bbba     bbba        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.features_open)
+    bbba     bbba        1     1                 features_open
+    bbbb     bbbb        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.r0fc_trap_flags)
+    bbbb     bbbb        1     1                 r0fc_trap_flags
+    bbbc     bbbc        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.r0fc_trap_base)
+    bbbc     bbbc        1     1                 r0fc_trap_base
+    bbbd     bbbd       11     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.list)
+    bbbd     bbbd       11     1                 list
+    bbce     bbce        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.pcm_on)
+    bbce     bbce        1     1                 pcm_on
+    bbcf     bbcf        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.pcm_last)
+    bbcf     bbcf        1     1                 pcm_last
+    bbd0     bbd0        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.service_last)
+    bbd0     bbd0        4     1                 service_last
+    bbd4     bbd4        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.audio_frame)
+    bbd4     bbd4        1     1                 audio_frame
+    bbd5     bbd5        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.keys_valid)
+    bbd5     bbd5        1     1                 keys_valid
+    bbd6     bbd6        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.input_frame)
+    bbd6     bbd6        1     1                 input_frame
+    bbd7     bbd7       18     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.keys)
+    bbd7     bbd7       18     1                 keys
+    bbef     bbef        3     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.scripted)
+    bbef     bbef        3     1                 scripted
+    bbf2     bbf2        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.r0fc_features)
+    bbf2     bbf2        1     1                 r0fc_features
+    bbf3     bbf3        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.r0fc_hardware_seed)
+    bbf3     bbf3        1     1                 r0fc_hardware_seed
+    bbf4     bbf4        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.r0fc_software_seed)
+    bbf4     bbf4        2     1                 r0fc_software_seed
+    bbf6     bbf6        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.export.0)
+    bbf6     bbf6        4     1                 export.0
+    bbfa     bbfa        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.export.2)
+    bbfa     bbfa        1     1                 export.2
+    bbfb     bbfb       ff     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.buffer)
+    bbfb     bbfb       ff     1                 buffer
+    bcfa     bcfa        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.cfreclaimed)
+    bcfa     bcfa        1     1                 cfreclaimed
+    bcfb     bcfb        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.capsule_crc)
+    bcfb     bcfb        4     1                 capsule_crc
+    bcff     bcff      100     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.header)
+    bcff     bcff      100     1                 header
+    bdff     bdff        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.cfperiod)
+    bdff     bdff        4     1                 cfperiod
+    be03     be03        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.cfcia_frame)
+    be03     be03        4     1                 cfcia_frame
+    be07     be07        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.cfcycles_frame)
+    be07     be07        4     1                 cfcycles_frame
+    be0b     be0b        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.epoch)
+    be0b     be0b        1     1                 epoch
+    be0c     be0c        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.phase)
+    be0c     be0c        1     1                 phase
+    be0d     be0d        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.clock.0)
+    be0d     be0d        4     1                 clock.0
+    be11     be11        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.clock.1)
+    be11     be11        4     1                 clock.1
+    be15     be15        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.clock.2)
+    be15     be15        2     1                 clock.2
+    be17     be17       1e     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.phase_edges)
+    be17     be17       1e     1                 phase_edges
+    be35     be35        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.cffault)
+    be35     be35        1     1                 cffault
+    be36     be36       5c     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.record)
+    be36     be36       5c     1                 record
+    be92     be92        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.previous_capture)
+    be92     be92        4     1                 previous_capture
+    be96     be96        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.next_stage)
+    be96     be96        1     1                 next_stage
+    be97     be97        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.active)
+    be97     be97        1     1                 active
+    be98     be98        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.stage_start)
+    be98     be98        4     1                 stage_start
+    be9c     be9c        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.world_generation)
+    be9c     be9c        2     1                 world_generation
+    be9e     be9e        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.world_tick)
+    be9e     be9e        2     1                 world_tick
+    bea0     bea0        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.records)
+    bea0     bea0        2     1                 records
+    bea2     bea2        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.capture_max)
+    bea2     bea2        4     1                 capture_max
+    bea6     bea6        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.r0fc_hardware_low)
+    bea6     bea6        1     1                 r0fc_hardware_low
+    bea7     bea7        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.r0fc_software_low)
+    bea7     bea7        2     1                 r0fc_software_low
+    bea9     bea9       12     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.eligible)
+    bea9     bea9       12     1                 eligible
+    bebb     bebb        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.causality_errors)
+    bebb     bebb        2     1                 causality_errors
+    bebd     bebd       12     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.pending)
+    bebd     bebd       12     1                 pending
+    becf     becf       12     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.intent)
+    becf     becf       12     1                 intent
+    bee1     bee1       48     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.full)
+    bee1     bee1       48     1                 full
+    bf29     bf29       12     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.reduced)
+    bf29     bf29       12     1                 reduced
+    bf3b     bf3b       60     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.tracks)
+    bf3b     bf3b       60     1                 tracks
+    bf9b     bf9b        6     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.bss.runs)
+    bf9b     bf9b        6     1                 runs
+    bfa1     bfa1        0     1         __bss_end = .
+    bfa1     bfa1        0     1 __bss_size = SIZEOF(.bss)
+    bfa1     bfa1       24     1 .noinit
+    bfa1     bfa1       24     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.noinit..Lstatic_stack)
+    bfc5     bfc5        0     1         __heap_start = ALIGN(., 2)
+    bfc5     bfc5        0     1 __stack = 0xd000
+       0        0       cc     1 .comment
+       0        0       cc     1         <internal>:(.comment)
+       0        0        f     1 .llvm_sympart
+       0        0        f     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/GROUP1.prg.lto.o:(.llvm_sympart)
+       0        0     2e40     4 .symtab
+       0        0     2e40     4         <internal>:(.symtab)
+       0        0       82     1 .shstrtab
+       0        0       82     1         <internal>:(.shstrtab)
+       0        0     31cf     1 .strtab
+       0        0     31cf     1         <internal>:(.strtab)

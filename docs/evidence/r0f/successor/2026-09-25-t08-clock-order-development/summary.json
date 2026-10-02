@@ -1,0 +1,27 @@
+{
+  "fullAcceptance": false,
+  "physical": "NOT RUN",
+  "prgBytes": 21922,
+  "prgSha256": "fd8b61263ba5f33ba3a4084ff33051e6dadf29cbc8dda51d0c97a58fa1f4089a",
+  "result": "PASS",
+  "runs": [
+    {
+      "evidence": "build/r0f/successor-post-storage-clock-order-probe-2/ntsc/evidence.json",
+      "fault": 0,
+      "fixtureSha256": "19758bd37148e781aa6efb1a70c056b3e68dc0b092f7d93e3cfe2a8df9c8dd70",
+      "mode": "ntsc",
+      "prgSha256": "fd8b61263ba5f33ba3a4084ff33051e6dadf29cbc8dda51d0c97a58fa1f4089a",
+      "result": "PASS"
+    },
+    {
+      "evidence": "build/r0f/successor-post-storage-clock-order-probe-2/pal/evidence.json",
+      "fault": 0,
+      "fixtureSha256": "19758bd37148e781aa6efb1a70c056b3e68dc0b092f7d93e3cfe2a8df9c8dd70",
+      "mode": "pal",
+      "prgSha256": "fd8b61263ba5f33ba3a4084ff33051e6dadf29cbc8dda51d0c97a58fa1f4089a",
+      "result": "PASS"
+    }
+  ],
+  "sd": "NOT RUN",
+  "tier": "DIRECT_PRG_DEVELOPMENT_NOT_CARRIER"
+}

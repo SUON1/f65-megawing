@@ -1,0 +1,162 @@
+{
+  "state": "READ_ONLY_FORENSICS_NOT_RELEASE",
+  "device": {
+    "Bootable": false,
+    "BusProtocol": "Secure Digital",
+    "CanBeMadeBootable": false,
+    "CanBeMadeBootableRequiresDestroy": false,
+    "Content": "Windows_FAT_32",
+    "DeviceBlockSize": 512,
+    "DeviceIdentifier": "disk4s1",
+    "DeviceNode": "/dev/disk4s1",
+    "DeviceTreePath": "IODeviceTree:/arm-io@10F00000/apcie0@B0000000/pci-bridge1@1/pcie-sdreader@0",
+    "Ejectable": true,
+    "EjectableMediaAutomaticUnderSoftwareControl": true,
+    "EjectableOnly": true,
+    "FilesystemName": "MS-DOS FAT32",
+    "FilesystemType": "msdos",
+    "FilesystemUserVisibleName": "MS-DOS (FAT32)",
+    "FreeSpace": 26441117696,
+    "GlobalPermissionsEnabled": false,
+    "IOKitSize": 29118954496,
+    "IORegistryEntryName": "Untitled 1",
+    "Internal": true,
+    "MediaName": "",
+    "MediaType": "Generic",
+    "MountPoint": "/Volumes/MEGA65FDISK",
+    "OSInternalMedia": false,
+    "ParentWholeDisk": "disk4",
+    "PartitionMapPartition": true,
+    "PartitionMapPartitionOffset": 1048576,
+    "RAIDMaster": false,
+    "RAIDSlice": false,
+    "Removable": true,
+    "RemovableMedia": true,
+    "RemovableMediaOrExternalDevice": true,
+    "SMARTDeviceSpecificKeysMayVaryNotGuaranteed": {},
+    "SMARTStatus": "Not Supported",
+    "Size": 29118954496,
+    "SupportsGlobalPermissionsDisable": false,
+    "SystemImage": false,
+    "TotalSize": 29061902336,
+    "VolumeAllocationBlockSize": 4096,
+    "VolumeName": "MEGA65FDISK",
+    "VolumeSize": 29061902336,
+    "VolumeUUID": "83FFC12E-67E1-307F-91AD-E584C2E01E87",
+    "WholeDisk": false,
+    "Writable": true,
+    "WritableMedia": true,
+    "WritableVolume": true
+  },
+  "inspectorSha256": "d0325c6fa6284ede5e3a7ae7fe38a01a7ae5bea5b49c0f21a27fed20e0ca922a",
+  "files": [
+    {
+      "name": "R0FDIAG2.D81",
+      "shortName": "R0FDIAG2.D81",
+      "attributes": 32,
+      "firstCluster": 7114,
+      "bytes": 819200,
+      "sha256": "912df16828f1c60127e4fcdd8d545dfca0c2ad8fe6a24a64ae01b4ac280df17d",
+      "extentCount": 13,
+      "extents": [
+        {
+          "logicalOffset": 0,
+          "bytes": 20480,
+          "deviceOffset": 86183936
+        },
+        {
+          "logicalOffset": 20480,
+          "bytes": 86016,
+          "deviceOffset": 86208512
+        },
+        {
+          "logicalOffset": 106496,
+          "bytes": 16384,
+          "deviceOffset": 86323200
+        },
+        {
+          "logicalOffset": 122880,
+          "bytes": 32768,
+          "deviceOffset": 86347776
+        },
+        {
+          "logicalOffset": 155648,
+          "bytes": 24576,
+          "deviceOffset": 86544384
+        },
+        {
+          "logicalOffset": 180224,
+          "bytes": 28672,
+          "deviceOffset": 86749184
+        },
+        {
+          "logicalOffset": 208896,
+          "bytes": 28672,
+          "deviceOffset": 86781952
+        },
+        {
+          "logicalOffset": 237568,
+          "bytes": 20480,
+          "deviceOffset": 86851584
+        },
+        {
+          "logicalOffset": 258048,
+          "bytes": 12288,
+          "deviceOffset": 87310336
+        },
+        {
+          "logicalOffset": 270336,
+          "bytes": 4096,
+          "deviceOffset": 87445504
+        },
+        {
+          "logicalOffset": 274432,
+          "bytes": 40960,
+          "deviceOffset": 87801856
+        },
+        {
+          "logicalOffset": 315392,
+          "bytes": 61440,
+          "deviceOffset": 87859200
+        },
+        {
+          "logicalOffset": 376832,
+          "bytes": 442368,
+          "deviceOffset": 95576064
+        }
+      ]
+    },
+    {
+      "name": "R0FDIAG3.D81",
+      "shortName": "R0FDIAG3.D81",
+      "attributes": 32,
+      "firstCluster": 14080,
+      "bytes": 819200,
+      "sha256": "357078cd97a9aae0bf676ed844e5a01bfcafd32994309cf0d657f53e2a590018",
+      "extentCount": 1,
+      "extents": [
+        {
+          "logicalOffset": 0,
+          "bytes": 819200,
+          "deviceOffset": 114716672
+        }
+      ]
+    },
+    {
+      "name": "R0FHOST1.D81",
+      "shortName": "R0FHOST1.D81",
+      "attributes": 32,
+      "firstCluster": 13205,
+      "bytes": 819200,
+      "sha256": "2ad1c08b75efcae9e35438bf82da3ba23e59666ef8c2a7296c939aa56d55134d",
+      "extentCount": 1,
+      "extents": [
+        {
+          "logicalOffset": 0,
+          "bytes": 819200,
+          "deviceOffset": 111132672
+        }
+      ]
+    }
+  ]
+}

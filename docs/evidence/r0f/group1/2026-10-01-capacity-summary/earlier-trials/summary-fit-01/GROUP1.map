@@ -1,0 +1,565 @@
+     VMA      LMA     Size Align Out     In      Symbol
+       0        0        0     1 
+       0        0        0     1 
+       0        0        0     1 __basic_zp_start = 0x0002
+       0        0        0     1 __basic_zp_end = 0x0090
+       0        0        0     1 __rc0 = __basic_zp_start
+       0        0        0     1 __rc1 = __rc0 + 1
+       0        0        0     1 PROVIDE(__rc2 = __rc1 + 1)
+       0        0        0     1 __rc3 = __rc2 + 1
+       0        0        0     1 PROVIDE(__rc4 = __rc3 + 1)
+       0        0        0     1 __rc5 = __rc4 + 1
+       0        0        0     1 PROVIDE(__rc6 = __rc5 + 1)
+       0        0        0     1 __rc7 = __rc6 + 1
+       0        0        0     1 PROVIDE(__rc8 = __rc7 + 1)
+       0        0        0     1 __rc9 = __rc8 + 1
+       0        0        0     1 PROVIDE(__rc10 = __rc9 + 1)
+       0        0        0     1 __rc11 = __rc10 + 1
+       0        0        0     1 PROVIDE(__rc12 = __rc11 + 1)
+       0        0        0     1 __rc13 = __rc12 + 1
+       0        0        0     1 PROVIDE(__rc14 = __rc13 + 1)
+       0        0        0     1 __rc15 = __rc14 + 1
+       0        0        0     1 PROVIDE(__rc16 = __rc15 + 1)
+       0        0        0     1 __rc17 = __rc16 + 1
+       0        0        0     1 PROVIDE(__rc18 = __rc17 + 1)
+       0        0        0     1 __rc19 = __rc18 + 1
+       0        0        0     1 PROVIDE(__rc20 = __rc19 + 1)
+       0        0        0     1 __rc21 = __rc20 + 1
+       0        0        0     1 PROVIDE(__rc22 = __rc21 + 1)
+       0        0        0     1 __rc23 = __rc22 + 1
+       0        0        0     1 PROVIDE(__rc24 = __rc23 + 1)
+       0        0        0     1 __rc25 = __rc24 + 1
+       0        0        0     1 PROVIDE(__rc26 = __rc25 + 1)
+       0        0        0     1 __rc27 = __rc26 + 1
+       0        0        0     1 PROVIDE(__rc28 = __rc27 + 1)
+       0        0        0     1 __rc29 = __rc28 + 1
+       0        0        0     1 PROVIDE(__rc30 = __rc29 + 1)
+       0        0        0     1 __rc31 = __rc30 + 1
+       0        0        0     1 __basic_zp_size = __basic_zp_end - __basic_zp_start
+    2001     2001       16     1 .basic_header
+    2001     2001       16     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/basic-header.o:(.basic_header)
+    2015     2015        0     1                 next_line
+      22       22        0     1 .zp.data
+      22       22        0     1         __zp_data_start = .
+      22       22        0     1 __zp_data_load_start = LOADADDR(.zp.data)
+      22       22        0     1 __zp_data_size = SIZEOF(.zp.data)
+      22       22        0     1 .zp.bss
+      22       22        0     1         __zp_bss_start = .
+      22       22        0     1 __zp_bss_size = SIZEOF(.zp.bss)
+    2017     2017     118f     1 .r0fs_protected
+    2017     2017        9     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/successor_admission_45gs02-b8ae4c.o:(.text.r0fs_protected)
+    2017     2017        0     1                 r0fs_quiesce_marker
+    2019     2019        0     1                 r0fs_context_restore_marker
+    201b     201b        0     1                 r0fs_canonical_restore_marker
+    201f     201f        0     1                 r0fs_resume_marker
+    2020     2020      81b     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/successor_integration_45gs02-fe4a0a.o:(.text.r0fs_protected)
+    2020     2020        0     1                 r0fs_context_read
+    20df     20df        0     1                 r0fs_context_invalidate
+    211b     211b        0     1                 r0fs_storage
+    282f     282f        0     1                 r0fs_storage_end
+    283b     283b      616     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/group1_terminal_export_45gs02-6a0946.o:(.text.r0fs_protected)
+    283b     283b        0     1                 r0fg1_terminal_export
+    2d01     2d01        0     1                 r0fg1_terminal_export_end
+    2d01     2d01        0     1                 r0fg1_terminal_file_setup
+    2dd0     2dd0        0     1                 r0fg1_terminal_summary
+    2dd0     2dd0        0     1                 r0fg1_terminal_file_setup_end
+    2e39     2e39        0     1                 r0fg1_terminal_summary_end
+    2e39     2e39        0     1                 r0fg1_terminal_summary_hex
+    2e51     2e51        0     1                 r0fg1_terminal_summary_hex_end
+    2e51     2e51      146     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/group1_irq_45gs02-c66300.o:(.text.r0f_pf)
+    2e51     2e51        0     1                 r0f_pf_enter
+    2eb1     2eb1        0     1                 r0f_pf_start_irq
+    2ec8     2ec8        0     1                 r0f_pf_stop_irq
+    2ed4     2ed4        0     1                 r0f_pf_irq
+    2f06     2f06        0     1                 r0f_pf_nmi
+    2f0e     2f0e        0     1                 r0f_pf_flat_copy
+    2f4b     2f4b        0     1                 r0f_pf_register_probe
+    2f97     2f97       83     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/group1_terminal_export_45gs02-6a0946.o:(.r0fs_protected_data)
+    2f97     2f97        0     1                 r0fg1_export_permit
+    2f98     2f98        0     1                 r0fg1_export_status
+    2f99     2f99        0     1                 r0fg1_export_error
+    2f9a     2f9a        0     1                 r0fg1_export_files
+    2f9b     2f9b        0     1                 r0fg1_export_bytes
+    2f9f     2f9f        0     1                 r0fg1_export_remaining
+    2fa3     2fa3        0     1                 r0fg1_export_source
+    2fa7     2fa7        0     1                 r0fg1_export_chunk
+    2fa9     2fa9        0     1                 r0fg1_export_copy_left
+    2fab     2fab        0     1                 r0fg1_export_filename
+    2fb0     2fb0        0     1                 r0fg1_export_initialize
+    2fb2     2fb2        0     1                 r0fg1_export_secondary
+    2fb3     2fb3        0     1                 r0fg1_operator_hex
+    2fc3     2fc3        0     1                 r0fg1_operator_text
+    2fd0     2fd0        0     1                 r0fg1_operator_status
+    2fd4     2fd4        0     1                 r0fg1_operator_error
+    2fd9     2fd9        0     1                 r0fg1_operator_files
+    301a     301a        0     1                 r0fg1_operator_text_end
+    301a     301a      18c     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.r0fs_protected_data)
+    301a     301a        1     1                 r0fsi_storage_phase
+    301b     301b        1     1                 r0fsi_storage_error
+    301c     301c        1     1                 r0fsi_storage_returned
+    301d     301d        1     1                 r0fsi_storage_denied
+    301e     301e        1     1                 r0fsi_permit
+    301f     301f        1     1                 r0fsi_input
+    3020     3020        1     1                 r0fsi_output
+    3021     3021        1     1                 r0fsi_input_end
+    3022     3022        1     1                 r0fsi_output_end
+    3023     3023       20     1                 r0fsi_token
+    3043     3043       20     1                 r0fsi_read
+    3063     3063       20     1                 r0fsi_payload
+    3083     3083        4     1                 r0fsi_end
+    3087     3087        1     1                 r0fsi_app_sp
+    3088     3088        2     1                 r0fsi_context_offset
+    308a     308a        1     1                 r0fsi_context_length
+    308b     308b        1     1                 r0fsi_context_region
+    308c     308c        1     1                 r0fsi_context_copy_ok
+    308d     308d       ff     1                 r0fsi_context_buffer
+    318c     318c        1     1                 r0f_pf_cpu_port
+    318d     318d        2     1                 r0f_pf_irq_count
+    318f     318f        1     1                 r0f_pf_irq_seq
+    3190     3190        1     1                 r0f_pf_irq_seen
+    3191     3191        7     1                 r0f_pf_probe_regs
+    3198     3198        1     1                 r0f_pf_copy_ok
+    3199     3199        2     1                 r0f_pf_probe_timeout
+    319b     319b        1     1                 r0f_pf_nmi_seen
+    319c     319c        9     1                 r0f_pf_copy_request
+    31a5     31a5        1     1                 r0f_pf_stack_high
+    31a6     31a6     7ec9     1 .text
+    31a6     31a6        0     1         _init = .
+    31a6     31a6        0     1         _start = .
+    31a6     31a6       c5     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/successor_admission_45gs02-b8ae4c.o:(.init.005)
+    31a6     31a6        0     1                 r0fs_pre_c_capture
+    326b     326b        0     1                 r0fs_pre_c_capture_end
+    326b     326b       c5     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/group1_export_capture_45gs02-d7aa9b.o:(.init.006)
+    326b     326b        0     1                 r0fg1_export_capture
+    3330     3330        0     1                 r0fg1_export_capture_end
+    3330     3330        e     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/unmap-basic.o:(.init.010)
+    333e     333e        3     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/r0a_platform_45gs02-23438f.o:(.init.011)
+    333e     333e        0     1                 f65_basepage_enter
+    3341     3341        8     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(init-stack.S.obj):(.init.100)
+    3341     3341        0     1                 __do_init_stack
+    3349     3349        3     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(zero-bss.c.obj):(.init.200)
+    3349     3349        0     1                 __do_zero_bss
+    334c     334c        3     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/common/lib/crt0.o:(.call_main)
+    334f     334f        3     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(exit-custom.S.obj):(.after_main)
+    334f     334f        0     1                 __after_main
+    3352     3352        0     1         _fini = .
+    3352     3352        3     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/r0a_platform_45gs02-23438f.o:(.fini.989)
+    3352     3352        0     1                 f65_basepage_leave
+    3355     3355        a     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/unmap-basic.o:(.fini.990)
+    335f     335f        1     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/common/lib/crt0.o:(.fini_rts)
+    3360     3360        3     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/successor_integration_45gs02-fe4a0a.o:(.text.r0fsi_status)
+    3360     3360        0     1                 r0fsi_irq_cpu_status
+    3363     3363       b4     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/combined_45gs02-f038f0.o:(.text.r0fc_platform)
+    3363     3363        0     1                 r0fc_rom_toggle
+    3386     3386        0     1                 r0fc_stack_seed
+    33cd     33cd        0     1                 r0fc_stack_measure
+    3417     3417       fa     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/group1_irq_45gs02-c66300.o:(.text.r0fg1_irq)
+    3417     3417        0     1                 r0fg1_irq_begin
+    342f     342f        0     1                 r0fg1_irq_end
+    34c2     34c2        0     1                 r0fg1_irq_read
+    3511     3511        0     1                 r0fg1_irq_timing_end
+    3511     3511       13     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(zero-bss.c.obj):(.text.__zero_bss)
+    3511     3511       13     1                 __zero_bss
+    3524     3524     2321     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.main)
+    3524     3524     2321     1                 main
+    5845     5845       14     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.lockout)
+    5845     5845       14     1                 lockout
+    5859     5859      10b     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.context_crc)
+    5859     5859      10b     1                 context_crc
+    5964     5964       94     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.context_valid)
+    5964     5964       94     1                 context_valid
+    59f8     59f8      109     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.dos_copy)
+    59f8     59f8      109     1                 dos_copy
+    5b01     5b01      1c7     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.dos_crc)
+    5b01     5b01      1c7     1                 dos_crc
+    5cc8     5cc8       23     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.transition)
+    5cc8     5cc8       23     1                 transition
+    5ceb     5ceb       c7     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.display_seed_staging)
+    5ceb     5ceb       c7     1                 display_seed_staging
+    5db2     5db2       41     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.display_configure)
+    5db2     5db2       41     1                 display_configure
+    5df3     5df3     127a     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.run_ticks)
+    5df3     5df3     127a     1                 run_ticks
+    706d     706d      ebe     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.display_quantum)
+    706d     706d      ebe     1                 display_quantum
+    7f2b     7f2b      319     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.restore_rom_after_display_suspend)
+    7f2b     7f2b      319     1                 restore_rom_after_display_suspend
+    8244     8244       bd     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.low_application_copy)
+    8244     8244       bd     1                 low_application_copy
+    8301     8301      34f     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.application_dma)
+    8301     8301      34f     1                 application_dma
+    8650     8650       2a     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.result_u32)
+    8650     8650       2a     1                 result_u32
+    867a     867a      102     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.group1_service_sweep)
+    867a     867a      102     1                 group1_service_sweep
+    877c     877c       ef     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.fixed_physical_copy)
+    877c     877c       ef     1                 fixed_physical_copy
+    886b     886b       27     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.r0fsi_prepare_rom_toggle)
+    886b     886b       27     1                 r0fsi_prepare_rom_toggle
+    8892     8892       39     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.r0fsi_irq_snapshot)
+    8892     8892       39     1                 r0fsi_irq_snapshot
+    88cb     88cb       2b     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.r0fs_crc32)
+    88cb     88cb       2b     1                 r0fs_crc32
+    88f6     88f6       c1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.r0fs_crc32_update)
+    88f6     88f6       c1     1                 r0fs_crc32_update
+    89b7     89b7       2e     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.r0fc_edge_sample)
+    89b7     89b7       2e     1                 r0fc_edge_sample
+    89e5     89e5       12     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.bits)
+    89e5     89e5       12     1                 bits
+    89f7     89f7       52     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.r0fc_edge_consume)
+    89f7     89f7       52     1                 r0fc_edge_consume
+    8a49     8a49       ba     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.inside)
+    8a49     8a49       ba     1                 inside
+    8b03     8b03       2a     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.cfput32)
+    8b03     8b03       2a     1                 cfput32
+    8b2d     8b2d       2c     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.cfget32)
+    8b2d     8b2d       2c     1                 cfget32
+    8b59     8b59       6a     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.cfadd)
+    8b59     8b59       6a     1                 cfadd
+    8bc3     8bc3       b0     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.cfline)
+    8bc3     8bc3       b0     1                 cfline
+    8c73     8c73       3c     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.screen_byte)
+    8c73     8c73       3c     1                 screen_byte
+    8caf     8caf      2e3     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.cfcopy)
+    8caf     8caf      2e3     1                 cfcopy
+    8f92     8f92       be     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.cfhex)
+    8f92     8f92       be     1                 cfhex
+    9050     9050       54     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.cfscreen)
+    9050     9050       54     1                 cfscreen
+    90a4     90a4      1aa     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.cfphysical_crc)
+    90a4     90a4      1aa     1                 cfphysical_crc
+    924e     924e       33     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.cfclock_begin)
+    924e     924e       33     1                 cfclock_begin
+    9281     9281       8e     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.cfnow)
+    9281     9281       8e     1                 cfnow
+    930f     930f       a1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.cfframe_wait)
+    930f     930f       a1     1                 cfframe_wait
+    93b0     93b0       a1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.cfinput)
+    93b0     93b0       a1     1                 cfinput
+    9451     9451      144     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.cfaudio_service)
+    9451     9451      144     1                 cfaudio_service
+    9595     9595      8bb     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.cfcalibrate)
+    9595     9595      8bb     1                 cfcalibrate
+    9e50     9e50       21     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.cfaudio_stop)
+    9e50     9e50       21     1                 cfaudio_stop
+    9e71     9e71       e5     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.cfaudio_begin)
+    9e71     9e71       e5     1                 cfaudio_begin
+    9f56     9f56      1c9     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.validate_capsule)
+    9f56     9f56      1c9     1                 validate_capsule
+    a11f     a11f      1c2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.transfer.110)
+    a11f     a11f      1c2     1                 transfer.110
+    a2e1     a2e1       48     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.r0fg1_trace_write)
+    a2e1     a2e1       48     1                 r0fg1_trace_write
+    a329     a329       48     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.r0fg1_trace_read)
+    a329     a329       48     1                 r0fg1_trace_read
+    a371     a371      29b     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.r0fg1_calibration)
+    a371     a371      29b     1                 r0fg1_calibration
+    a60c     a60c       17     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.put32)
+    a60c     a60c       17     1                 put32
+    a623     a623       e0     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.r0fg1_phase_end)
+    a623     a623       e0     1                 r0fg1_phase_end
+    a703     a703       1e     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.r0fg1_stage_begin)
+    a703     a703       1e     1                 r0fg1_stage_begin
+    a721     a721       7f     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.r0fg1_stage_end)
+    a721     a721       7f     1                 r0fg1_stage_end
+    a7a0     a7a0      1e0     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.r0fg1_service)
+    a7a0     a7a0      1e0     1                 r0fg1_service
+    a980     a980      133     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.r0fg1_occlusion_clip)
+    a980     a980      133     1                 r0fg1_occlusion_clip
+    aab3     aab3       27     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.r0fg1_lod_select)
+    aab3     aab3       27     1                 r0fg1_lod_select
+    aada     aada      1d5     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.r0fg1_owner_sample)
+    aada     aada      1d5     1                 r0fg1_owner_sample
+    acaf     acaf        5     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.exit)
+    acaf     acaf        5     1                 exit
+    acb4     acb4       24     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.memcpy)
+    acb4     acb4       24     1                 memcpy
+    acd8     acd8       1c     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.__memset)
+    acd8     acd8       1c     1                 __memset
+    acf4     acf4        b     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.__ashlqi3)
+    acf4     acf4        b     1                 __ashlqi3
+    acff     acff       13     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.__ashlhi3)
+    acff     acff       13     1                 __ashlhi3
+    ad12     ad12       17     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.__lshrsi3)
+    ad12     ad12       17     1                 __lshrsi3
+    ad29     ad29       bd     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.__udivhi3)
+    ad29     ad29       bd     1                 __udivhi3
+    ade6     ade6       45     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.__umodqi3)
+    ade6     ade6       45     1                 __umodqi3
+    ae2b     ae2b       a6     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.__umodhi3)
+    ae2b     ae2b       a6     1                 __umodhi3
+    aed1     aed1       d8     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.__udivmodhi4)
+    aed1     aed1       d8     1                 __udivmodhi4
+    afa9     afa9       1b     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.__mulqi3)
+    afa9     afa9       1b     1                 __mulqi3
+    afc4     afc4       32     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.__mulhi3)
+    afc4     afc4       32     1                 __mulhi3
+    aff6     aff6       79     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.text.__mulsi3)
+    aff6     aff6       79     1                 __mulsi3
+    b06f     b06f        0     1         __init_array_start = .
+    b06f     b06f        0     1         __init_array_end = .
+    b06f     b06f        0     1         __fini_array_start = .
+    b06f     b06f        0     1         __fini_array_end = .
+    b06f     b06f      206     1 .rodata
+    b06f     b06f        8     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.rodata.dos_copy)
+    b077     b077       1c     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.rodata.run_ticks)
+    b093     b093      10d     1         <internal>:(.rodata.str1.1)
+    b1a0     b1a0       1e     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.rodata.display_registers)
+    b1a0     b1a0       1e     1                 display_registers
+    b1be     b1be       12     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.rodata.group1_orders)
+    b1be     b1be       12     1                 group1_orders
+    b1d0     b1d0       40     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.rodata.r0fs_crc32_update.crc_table)
+    b1d0     b1d0       40     1                 r0fs_crc32_update.crc_table
+    b210     b210       38     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.rodata.r0fc_range.ranges)
+    b210     b210       38     1                 r0fc_range.ranges
+    b248     b248        8     1         <internal>:(.rodata.cst8)
+    b250     b250        3     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.rodata.r0fg1_workload_stage.cadence)
+    b250     b250        3     1                 r0fg1_workload_stage.cadence
+    b253     b253        6     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.rodata.r0fg1_scene_encode.priorities)
+    b253     b253        6     1                 r0fg1_scene_encode.priorities
+    b259     b259       10     1         <internal>:(.rodata.cst16)
+    b269     b269        8     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.rodata.r0fg1_geometry_fixture.buffers)
+    b269     b269        8     1                 r0fg1_geometry_fixture.buffers
+    b271     b271        4     1         <internal>:(.rodata.cst4)
+    b275     b275       17     1 .data
+    b275     b275        0     1         __data_start = .
+    b275     b275        8     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.data.irq_observation)
+    b275     b275        8     1                 irq_observation
+    b27d     b27d        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.data.iec_before_record)
+    b27d     b27d        1     1                 iec_before_record
+    b27e     b27e        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.data.iec_after_record)
+    b27e     b27e        1     1                 iec_after_record
+    b27f     b27f        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.data.reclaim_features_record)
+    b27f     b27f        1     1                 reclaim_features_record
+    b280     b280        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.data.pools_crc)
+    b280     b280        4     1                 pools_crc
+    b284     b284        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.data.worlds_crc)
+    b284     b284        4     1                 worlds_crc
+    b288     b288        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.data.records_crc)
+    b288     b288        4     1                 records_crc
+    b28c     b28c        0     1         __data_end = .
+    b28c     b28c        0     1 __data_load_start = LOADADDR(.data)
+    b28c     b28c        0     1 __data_size = SIZEOF(.data)
+    b28c     b28c      d4d     1 .bss
+    b28c     b28c        0     1         __bss_start = .
+    b28c     b28c       1b     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/group1_irq_45gs02-c66300.o:(.bss.r0fg1_irq)
+    b28c     b28c        0     1                 r0fg1_irq_epoch
+    b28d     b28d        0     1                 r0fg1_irq_error
+    b28e     b28e        0     1                 r0fg1_irq_summary
+    b29e     b29e        0     1                 r0fg1_irq_entered
+    b29f     b29f        0     1                 r0fg1_irq_start
+    b2a3     b2a3        0     1                 r0fg1_irq_now
+    b2a7     b2a7       7d     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.display_presentation)
+    b2a7     b2a7       7d     1                 display_presentation
+    b324     b324        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.display_requests)
+    b324     b324        2     1                 display_requests
+    b326     b326        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.display_cancels)
+    b326     b326        2     1                 display_cancels
+    b328     b328        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.display_views)
+    b328     b328        1     1                 display_views
+    b329     b329        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.display_tiers)
+    b329     b329        1     1                 display_tiers
+    b32a     b32a        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.lifecycle_state)
+    b32a     b32a        1     1                 lifecycle_state
+    b32b     b32b        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.context_crc_expected)
+    b32b     b32b        4     1                 context_crc_expected
+    b32f     b32f      3d1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.model)
+    b32f     b32f      3d1     1                 model
+    b700     b700       cb     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.snapshots)
+    b700     b700       cb     1                 snapshots
+    b7cb     b7cb        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.next_deadline)
+    b7cb     b7cb        4     1                 next_deadline
+    b7cf     b7cf        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.display_services)
+    b7cf     b7cf        2     1                 display_services
+    b7d1     b7d1        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.capture_epoch)
+    b7d1     b7d1        1     1                 capture_epoch
+    b7d2     b7d2        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.display_started)
+    b7d2     b7d2        1     1                 display_started
+    b7d3     b7d3        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.tick_before_record)
+    b7d3     b7d3        2     1                 tick_before_record
+    b7d5     b7d5        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.checksum_before_record)
+    b7d5     b7d5        4     1                 checksum_before_record
+    b7d9     b7d9        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.low_before_record)
+    b7d9     b7d9        4     1                 low_before_record
+    b7dd     b7dd        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.low_after_record)
+    b7dd     b7dd        4     1                 low_after_record
+    b7e1     b7e1        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.dos_before_record)
+    b7e1     b7e1        4     1                 dos_before_record
+    b7e5     b7e5        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.dos_after_record)
+    b7e5     b7e5        4     1                 dos_after_record
+    b7e9     b7e9        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.context_invalidated_record)
+    b7e9     b7e9        1     1                 context_invalidated_record
+    b7ea     b7ea       ff     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.transfer)
+    b7ea     b7ea       ff     1                 transfer
+    b8e9     b8e9        f     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.display_saved)
+    b8e9     b8e9        f     1                 display_saved
+    b8f8     b8f8        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.display_front)
+    b8f8     b8f8        1     1                 display_front
+    b8f9     b8f9        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.display_ready)
+    b8f9     b8f9        1     1                 display_ready
+    b8fa     b8fa        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.display_slot)
+    b8fa     b8fa        1     1                 display_slot
+    b8fb     b8fb        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.display_clear_at)
+    b8fb     b8fb        2     1                 display_clear_at
+    b8fd     b8fd        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.display_suspended)
+    b8fd     b8fd        1     1                 display_suspended
+    b8fe     b8fe        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.application_dma_outstanding)
+    b8fe     b8fe        1     1                 application_dma_outstanding
+    b8ff     b8ff        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.display_frame)
+    b8ff     b8ff        1     1                 display_frame
+    b900     b900        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.group1_order)
+    b900     b900        1     1                 group1_order
+    b901     b901        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.display_request_tick)
+    b901     b901        2     1                 display_request_tick
+    b903     b903        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.display_registration_crc)
+    b903     b903        4     1                 display_registration_crc
+    b907     b907        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.display_snapshot_crc)
+    b907     b907        4     1                 display_snapshot_crc
+    b90b     b90b       45     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.display_pixels)
+    b90b     b90b       45     1                 display_pixels
+    b950     b950        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.display_suspended_d011)
+    b950     b950        1     1                 display_suspended_d011
+    b951     b951        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.r0fsi_iec_before)
+    b951     b951        1     1                 r0fsi_iec_before
+    b952     b952        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.r0fsi_iec_after)
+    b952     b952        1     1                 r0fsi_iec_after
+    b953     b953        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.r0fsi_irq_fault)
+    b953     b953        1     1                 r0fsi_irq_fault
+    b954     b954        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.final_screen)
+    b954     b954        1     1                 final_screen
+    b955     b955        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.backup_valid)
+    b955     b955        1     1                 backup_valid
+    b956     b956       ff     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.block)
+    b956     b956       ff     1                 block
+    ba55     ba55       ff     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.cfworkspace)
+    ba55     ba55       ff     1                 cfworkspace
+    bb54     bb54        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.features_open)
+    bb54     bb54        1     1                 features_open
+    bb55     bb55        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.r0fc_trap_flags)
+    bb55     bb55        1     1                 r0fc_trap_flags
+    bb56     bb56        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.r0fc_trap_base)
+    bb56     bb56        1     1                 r0fc_trap_base
+    bb57     bb57       11     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.list)
+    bb57     bb57       11     1                 list
+    bb68     bb68        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.pcm_on)
+    bb68     bb68        1     1                 pcm_on
+    bb69     bb69        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.pcm_last)
+    bb69     bb69        1     1                 pcm_last
+    bb6a     bb6a        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.service_last)
+    bb6a     bb6a        4     1                 service_last
+    bb6e     bb6e        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.audio_frame)
+    bb6e     bb6e        1     1                 audio_frame
+    bb6f     bb6f        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.keys_valid)
+    bb6f     bb6f        1     1                 keys_valid
+    bb70     bb70        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.input_frame)
+    bb70     bb70        1     1                 input_frame
+    bb71     bb71       18     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.keys)
+    bb71     bb71       18     1                 keys
+    bb89     bb89        3     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.scripted)
+    bb89     bb89        3     1                 scripted
+    bb8c     bb8c        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.r0fc_features)
+    bb8c     bb8c        1     1                 r0fc_features
+    bb8d     bb8d        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.r0fc_hardware_seed)
+    bb8d     bb8d        1     1                 r0fc_hardware_seed
+    bb8e     bb8e        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.r0fc_software_seed)
+    bb8e     bb8e        2     1                 r0fc_software_seed
+    bb90     bb90        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.export.0)
+    bb90     bb90        4     1                 export.0
+    bb94     bb94        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.export.2)
+    bb94     bb94        1     1                 export.2
+    bb95     bb95       ff     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.buffer)
+    bb95     bb95       ff     1                 buffer
+    bc94     bc94        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.cfreclaimed)
+    bc94     bc94        1     1                 cfreclaimed
+    bc95     bc95        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.capsule_crc)
+    bc95     bc95        4     1                 capsule_crc
+    bc99     bc99      100     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.header)
+    bc99     bc99      100     1                 header
+    bd99     bd99        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.cfperiod)
+    bd99     bd99        4     1                 cfperiod
+    bd9d     bd9d        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.cfcia_frame)
+    bd9d     bd9d        4     1                 cfcia_frame
+    bda1     bda1        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.cfcycles_frame)
+    bda1     bda1        4     1                 cfcycles_frame
+    bda5     bda5        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.epoch)
+    bda5     bda5        1     1                 epoch
+    bda6     bda6        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.phase)
+    bda6     bda6        1     1                 phase
+    bda7     bda7        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.clock.0)
+    bda7     bda7        4     1                 clock.0
+    bdab     bdab        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.clock.1)
+    bdab     bdab        4     1                 clock.1
+    bdaf     bdaf        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.clock.2)
+    bdaf     bdaf        2     1                 clock.2
+    bdb1     bdb1       1e     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.phase_edges)
+    bdb1     bdb1       1e     1                 phase_edges
+    bdcf     bdcf       5c     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.record)
+    bdcf     bdcf       5c     1                 record
+    be2b     be2b        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.previous_capture)
+    be2b     be2b        4     1                 previous_capture
+    be2f     be2f        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.next_stage)
+    be2f     be2f        1     1                 next_stage
+    be30     be30        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.active)
+    be30     be30        1     1                 active
+    be31     be31        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.stage_start)
+    be31     be31        4     1                 stage_start
+    be35     be35        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.world_generation)
+    be35     be35        2     1                 world_generation
+    be37     be37        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.world_tick)
+    be37     be37        2     1                 world_tick
+    be39     be39        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.records)
+    be39     be39        2     1                 records
+    be3b     be3b        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.capture_max)
+    be3b     be3b        4     1                 capture_max
+    be3f     be3f        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.r0fc_hardware_low)
+    be3f     be3f        1     1                 r0fc_hardware_low
+    be40     be40        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.r0fc_software_low)
+    be40     be40        2     1                 r0fc_software_low
+    be42     be42       12     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.eligible)
+    be42     be42       12     1                 eligible
+    be54     be54        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.causality_errors)
+    be54     be54        2     1                 causality_errors
+    be56     be56       12     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.pending)
+    be56     be56       12     1                 pending
+    be68     be68       12     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.intent)
+    be68     be68       12     1                 intent
+    be7a     be7a       48     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.full)
+    be7a     be7a       48     1                 full
+    bec2     bec2       12     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.reduced)
+    bec2     bec2       12     1                 reduced
+    bed4     bed4       60     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.tracks)
+    bed4     bed4       60     1                 tracks
+    bf34     bf34        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.populated)
+    bf34     bf34        2     1                 populated
+    bf36     bf36        6     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.runs)
+    bf36     bf36        6     1                 runs
+    bf3c     bf3c       40     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.observations)
+    bf3c     bf3c       40     1                 observations
+    bf7c     bf7c        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.cffault)
+    bf7c     bf7c        1     1                 cffault
+    bf7d     bf7d       10     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.faces)
+    bf7d     bf7d       10     1                 faces
+    bf8d     bf8d       20     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.vertices)
+    bf8d     bf8d       20     1                 vertices
+    bfad     bfad       20     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.spans)
+    bfad     bfad       20     1                 spans
+    bfcd     bfcd        8     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.buckets)
+    bfcd     bfcd        8     1                 buckets
+    bfd5     bfd5        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.bss.live)
+    bfd5     bfd5        4     1                 live
+    bfd9     bfd9        0     1         __bss_end = .
+    bfd9     bfd9        0     1 __bss_size = SIZEOF(.bss)
+    bfd9     bfd9       24     1 .noinit
+    bfd9     bfd9       24     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.noinit..Lstatic_stack)
+    bffd     bffd        0     1         __heap_start = ALIGN(., 2)
+    bffd     bffd        0     1 __stack = 0xd000
+       0        0       cc     1 .comment
+       0        0       cc     1         <internal>:(.comment)
+       0        0        f     1 .llvm_sympart
+       0        0        f     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-01/summary-fit-01/GROUP1.prg.lto.o:(.llvm_sympart)
+       0        0     3000     4 .symtab
+       0        0     3000     4         <internal>:(.symtab)
+       0        0       82     1 .shstrtab
+       0        0       82     1         <internal>:(.shstrtab)
+       0        0     33ed     1 .strtab
+       0        0     33ed     1         <internal>:(.strtab)

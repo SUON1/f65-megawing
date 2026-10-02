@@ -1,0 +1,44 @@
+{
+  "scope": "unchanged six-order PRG, one fresh PAL run with 120-second allowance",
+  "prgSha256": "c249f4e4da972cdc0c5d0958a1a3a148387eb1ad4de602404c6b79fb7c79492b",
+  "preflight": {
+    "retainedEvidenceManifestFiles": 169,
+    "unchangedSourceAndToolingInputs": 79,
+    "symbolIdentity": "PASS",
+    "prgMatchesRetainedFreeze": "PASS",
+    "freshOutputDirectory": "PASS"
+  },
+  "commands": [
+    {
+      "command": "python3 -B tools/diagnostics/r0f_group1_run.py --out build/r0f/group1/integration/six-order-corrected-pal-01 --mode 0 --timeout-seconds 120",
+      "exitCode": 0,
+      "result": "PASS: status 4, error 0, 20 closed chunks, independent extraction/structure/SAVE/full-trace reduction"
+    },
+    {
+      "command": "python3 -B tools/diagnostics/test_r0f_group1_reduce.py build/r0f/group1/integration/six-order-corrected-pal-01/trace.bin",
+      "exitCode": 0,
+      "result": "PASS: 22 corruption cases rejected against actual complete trace"
+    },
+    {
+      "command": "git diff --check",
+      "exitCode": 0,
+      "result": "PASS"
+    }
+  ],
+  "records": 3200,
+  "traceBytes": 314620,
+  "acquisition": "PASS",
+  "nominalTiming": "WITHIN_OBSERVED_BOUNDS",
+  "nominalDeadlineMisses": 0,
+  "boundaryUncertain": 0,
+  "cohortsBelow20Hz": 0,
+  "palDeclaredSampledPhaseOrderCoverage": "PASS",
+  "irqTimingResolution": "UNRESOLVED: no nonzero body-read interval observed",
+  "targetSourceChanges": false,
+  "generatedContractChanges": false,
+  "emulatorAcquisitionsThisCheckpoint": 1,
+  "exactNameReleaseCarrierGate": "NOT RUN",
+  "sd": "NOT RUN",
+  "physical": "NOT RUN",
+  "fullGroup1Acceptance": false
+}

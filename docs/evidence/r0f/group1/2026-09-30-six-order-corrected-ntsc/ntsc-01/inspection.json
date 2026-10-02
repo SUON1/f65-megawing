@@ -1,0 +1,99 @@
+{
+  "actualSaveValidation": "PASS",
+  "closedChunkFraming": "PASS",
+  "completeImageValidation": "REJECTED: D81 foundation comparison failed: G1DEV01.D81: unsupported directory file type 02",
+  "exportBytesRemainingAtChunkBoundary": 250244,
+  "exportError": 0,
+  "exportFilesCompleted": 4,
+  "exportStatus": 3,
+  "exportedHeaderEqualsFrozenHeader": "PASS",
+  "fullGroup1Acceptance": false,
+  "fullTraceReduction": "NOT RUN: incomplete export",
+  "irqError": 0,
+  "irqSummaries": [
+    {
+      "count": 916,
+      "maxCounts": 0,
+      "totalCounts": 0
+    },
+    {
+      "count": 912,
+      "maxCounts": 0,
+      "totalCounts": 0
+    }
+  ],
+  "partialTraceReduction": "REJECTED: trace length",
+  "phaseCoverageAcceptance": false,
+  "physical": "NOT RUN",
+  "records": 3200,
+  "result": {
+    "audioAfter": 1957,
+    "audioBefore": 978,
+    "canonicalBasePage": 2,
+    "canonicalCpuPort": 53,
+    "checksumAfter": "607348BD",
+    "checksumBefore": "6B765FDB",
+    "contextCrc32": "B287D306",
+    "contextInvalidated": 1,
+    "dmaAfter": 14651,
+    "dmaBefore": 7317,
+    "dosAfterCrc32": "D5C268FC",
+    "dosBeforeCrc32": "D5C268FC",
+    "fault": 0,
+    "identity": "RSI1",
+    "iecOutputBefore": 0,
+    "iecOutputReleased": 0,
+    "independentCrc32": "6ED11C16",
+    "inputAfter": 1957,
+    "inputBefore": 978,
+    "irqAfter": 1860,
+    "irqBefore": 941,
+    "irqCompareHigh": 0,
+    "irqCompareLow": 0,
+    "irqCpuStatus": 49,
+    "irqVector": 11684,
+    "irqVicMask": 225,
+    "irqVicStatus": 96,
+    "irqVideoMode": 128,
+    "lifecycle": 9,
+    "lowAfterCrc32": "CDA6D73C",
+    "lowBeforeCrc32": "CDA6D73C",
+    "nmiSticky": 0,
+    "reclaimFeatures": 107,
+    "reserveAfterCrc32": "3C7D60D8",
+    "reserveBeforeCrc32": "3C7D60D8",
+    "restoredRomCrc32": "967A5200",
+    "resultCrc32": "6ED11C16",
+    "resumedServiceMask": 31,
+    "romCrc32": "967A5200",
+    "snapshotsAfter": 2883,
+    "snapshotsBefore": 1441,
+    "stage": 127,
+    "storageDenied": 0,
+    "storageError": 0,
+    "storagePhase": 5,
+    "storageReturned": 1,
+    "tickAfter": 3200,
+    "tickBefore": 1600,
+    "version": 1
+  },
+  "scope": "one focused NTSC acquisition; export interrupted at 60 seconds",
+  "serviceOrderMasks": [
+    "3F",
+    "3F"
+  ],
+  "servicePhaseMasks": [
+    [
+      "FFFF",
+      "FFFF",
+      "FFFF"
+    ],
+    [
+      "FFFF",
+      "FFFF",
+      "FFFF"
+    ]
+  ],
+  "targetFault": 0,
+  "traceBytesDeclared": 315780
+}

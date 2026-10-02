@@ -139,6 +139,8 @@ public final class R0FSuccessorRuntimeOracle {
         require((result[93] & 0xFF) == 0x35, "canonical CPU port");
         require((result[94] & 0xFF) == 1, "context invalidation");
         require((result[95] & 0xFF) == 31, "resumed service mask");
+        require(((u16(result, 62) - u16(result, 60)) & 0xFFFF) != 0,
+                "resumed IRQ advancement");
         require((result[96] & 0xFF) == 0, "sticky NMI");
         require(u32(result, RESULT_CRC_OFFSET) == crc(result),
                 "result CRC");

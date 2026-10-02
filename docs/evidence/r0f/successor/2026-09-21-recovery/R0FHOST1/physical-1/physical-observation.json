@@ -1,0 +1,71 @@
+{
+  "identity": "R0F-T05-PHYSICAL-1",
+  "state": "PHYSICAL_RUNTIME_FAILED_RETAIN_EVIDENCE",
+  "carrier": {
+    "filename": "R0FHOST1.D81",
+    "bytes": 819200,
+    "preRunSha256": "3721dff9b84cfb7842cc154f6885861e0c7cbd3c3408c8ecec190bf6b405d461",
+    "hostStructuralResult": "PASS",
+    "hostContentResult": "PASS",
+    "xemuResult": "PASS_TWO_NTSC_TWO_PAL",
+    "sdCopyResult": "PASS",
+    "sdContiguityResult": "PASS",
+    "sdExtentCount": 1,
+    "sdDeviceOffset": 111132672,
+    "sdSafeEjectResult": "PASS",
+    "physicalChooserResult": "OWNER_REPORTED_PASS",
+    "d81GateStateReachedBeforeRuntime": "TEST_ELIGIBLE"
+  },
+  "physicalRuntime": {
+    "result": "FAIL",
+    "startupTextObserved": "VERIFYING IMMUTABLE ROM BACKUP - DO NOT PRESS RESTORE",
+    "ownerReportedTransientGraphics": true,
+    "ownerReportedSound": true,
+    "finalText": "SUCCESSOR LOCKOUT - NO ACCEPTANCE",
+    "faultHex": "58",
+    "faultDecimal": 88,
+    "lifecycleHex": "0A",
+    "lifecycle": "LOCKOUT",
+    "tickHex": "0042",
+    "tickDecimal": 66,
+    "displayedResultCrc32": "20452538"
+  },
+  "classification": {
+    "d81ChooserOrAttachFailure": false,
+    "programExecuted": true,
+    "failureLayer": "successor runtime final completion predicate",
+    "narrowedCandidates": [
+      "measured reserve changed",
+      "one or more required resumed-service counters did not advance",
+      "another value used by the aggregate final completion predicate differed"
+    ],
+    "exactPredicateIdentified": false
+  },
+  "evidence": [
+    {
+      "path": "startup-rom-verification.jpg",
+      "bytes": 48483,
+      "sha256": "e1c028bfa37431ece6e5688aa785b44245be049b633dafd693c9805c3b518ec4"
+    },
+    {
+      "path": "final-lockout-58.jpg",
+      "bytes": 49833,
+      "sha256": "93a1ef9ed298510bad5a4299c96c5603466e2f0c1a02c0985227f912ae4117ff"
+    },
+    {
+      "path": "sd-staging.json",
+      "sha256": "7f6cf8356bff7bd8914251607e668f13471f6799e14af2da4cb9bbd50cbbd546"
+    },
+    {
+      "path": "sd-final.json",
+      "sha256": "71f5069c63c026ede804bf2303e1ec0ba9e5777b03ff6ec6a13b876ae036f462"
+    }
+  ],
+  "limitations": [
+    "The photos do not show the chooser filename; filename identity comes from the immediately preceding owner-run transfer and test context.",
+    "The final screen exposes only aggregate fault 0x58, lifecycle, tick and result CRC, not the failing subpredicate.",
+    "Transient graphics and sound are owner observations; cadence and audio path are not independently measured.",
+    "The post-runtime on-card D81 bytes and RSSTATE file have not been acquired.",
+    "This is not full R0-F acceptance."
+  ]
+}

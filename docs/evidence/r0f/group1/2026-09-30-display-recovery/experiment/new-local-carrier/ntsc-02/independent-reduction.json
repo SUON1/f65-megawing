@@ -1,0 +1,1115 @@
+{
+  "acquisition": "PASS",
+  "scope": "instrumented bounded combined fixture",
+  "poolObservations": [
+    {
+      "FACES": {
+        "CAPACITY": 16,
+        "PEAK": 16,
+        "SAMPLES": 971,
+        "FULL_SAMPLES": 28
+      },
+      "VERTICES": {
+        "CAPACITY": 32,
+        "PEAK": 32,
+        "SAMPLES": 971,
+        "FULL_SAMPLES": 14
+      },
+      "SPANS": {
+        "CAPACITY": 32,
+        "PEAK": 32,
+        "SAMPLES": 971,
+        "FULL_SAMPLES": 15
+      },
+      "BUCKETS": {
+        "CAPACITY": 8,
+        "PEAK": 8,
+        "SAMPLES": 971,
+        "FULL_SAMPLES": 54
+      },
+      "PCM_CHANNELS": {
+        "CAPACITY": 4,
+        "PEAK": 1,
+        "SAMPLES": 3,
+        "FULL_SAMPLES": 0
+      },
+      "AUDIO_CACHE": {
+        "CAPACITY": 255,
+        "PEAK": 255,
+        "SAMPLES": 3,
+        "FULL_SAMPLES": 1
+      },
+      "MEGA_TRACKS": {
+        "CAPACITY": 24,
+        "PEAK": 24,
+        "SAMPLES": 1625,
+        "FULL_SAMPLES": 1601
+      },
+      "RED_TRACKS": {
+        "CAPACITY": 24,
+        "PEAK": 24,
+        "SAMPLES": 1625,
+        "FULL_SAMPLES": 1601
+      }
+    },
+    {
+      "FACES": {
+        "CAPACITY": 16,
+        "PEAK": 16,
+        "SAMPLES": 1943,
+        "FULL_SAMPLES": 57
+      },
+      "VERTICES": {
+        "CAPACITY": 32,
+        "PEAK": 32,
+        "SAMPLES": 1943,
+        "FULL_SAMPLES": 29
+      },
+      "SPANS": {
+        "CAPACITY": 32,
+        "PEAK": 32,
+        "SAMPLES": 1943,
+        "FULL_SAMPLES": 29
+      },
+      "BUCKETS": {
+        "CAPACITY": 8,
+        "PEAK": 8,
+        "SAMPLES": 1943,
+        "FULL_SAMPLES": 107
+      },
+      "PCM_CHANNELS": {
+        "CAPACITY": 4,
+        "PEAK": 1,
+        "SAMPLES": 6,
+        "FULL_SAMPLES": 0
+      },
+      "AUDIO_CACHE": {
+        "CAPACITY": 255,
+        "PEAK": 255,
+        "SAMPLES": 5,
+        "FULL_SAMPLES": 2
+      },
+      "MEGA_TRACKS": {
+        "CAPACITY": 24,
+        "PEAK": 24,
+        "SAMPLES": 3225,
+        "FULL_SAMPLES": 3201
+      },
+      "RED_TRACKS": {
+        "CAPACITY": 24,
+        "PEAK": 24,
+        "SAMPLES": 3225,
+        "FULL_SAMPLES": 3201
+      }
+    }
+  ],
+  "nominalDeadlineMisses": 0,
+  "cohortsBelow20Hz": 0,
+  "boundaryUncertain": 0,
+  "nominalTiming": "WITHIN_OBSERVED_BOUNDS",
+  "records": 3200,
+  "epochs": [
+    {
+      "epoch": 0,
+      "cohorts": [
+        {
+          "phase": 0,
+          "ticks": 100,
+          "nominalDeadlineMisses": 0,
+          "boundaryUncertain": 0,
+          "maxDebtCounts": -2614,
+          "rolling33ExecutionCounts": {
+            "samples": 68,
+            "p95": 186403,
+            "max": 188227
+          },
+          "rolling33ElapsedCounts": {
+            "samples": 68,
+            "p95": 329029,
+            "max": 329694
+          },
+          "completeWorlds": 29,
+          "observedNominalSeconds": 0.9974041459284533,
+          "nominalWorldHz": 29.075475691957124,
+          "below20HzFloor": false,
+          "dmaJobs": 450,
+          "irqAdvances": 52
+        },
+        {
+          "phase": 1,
+          "ticks": 100,
+          "nominalDeadlineMisses": 0,
+          "boundaryUncertain": 0,
+          "maxDebtCounts": -2501,
+          "rolling33ExecutionCounts": {
+            "samples": 68,
+            "p95": 186979,
+            "max": 187171
+          },
+          "rolling33ElapsedCounts": {
+            "samples": 68,
+            "p95": 329064,
+            "max": 329514
+          },
+          "completeWorlds": 29,
+          "observedNominalSeconds": 0.9966454514839365,
+          "nominalWorldHz": 29.09760934224001,
+          "below20HzFloor": false,
+          "dmaJobs": 450,
+          "irqAdvances": 52
+        },
+        {
+          "phase": 2,
+          "ticks": 100,
+          "nominalDeadlineMisses": 0,
+          "boundaryUncertain": 0,
+          "maxDebtCounts": -2817,
+          "rolling33ExecutionCounts": {
+            "samples": 68,
+            "p95": 188195,
+            "max": 188515
+          },
+          "rolling33ElapsedCounts": {
+            "samples": 68,
+            "p95": 329260,
+            "max": 329491
+          },
+          "completeWorlds": 30,
+          "observedNominalSeconds": 0.996711986206165,
+          "nominalWorldHz": 30.098965814779163,
+          "below20HzFloor": false,
+          "dmaJobs": 444,
+          "irqAdvances": 52
+        },
+        {
+          "phase": 3,
+          "ticks": 100,
+          "nominalDeadlineMisses": 0,
+          "boundaryUncertain": 0,
+          "maxDebtCounts": -2513,
+          "rolling33ExecutionCounts": {
+            "samples": 68,
+            "p95": 187684,
+            "max": 189060
+          },
+          "rolling33ElapsedCounts": {
+            "samples": 68,
+            "p95": 329207,
+            "max": 329795
+          },
+          "completeWorlds": 29,
+          "observedNominalSeconds": 0.9968440625950664,
+          "nominalWorldHz": 29.09181193747076,
+          "below20HzFloor": false,
+          "dmaJobs": 464,
+          "irqAdvances": 55
+        },
+        {
+          "phase": 4,
+          "ticks": 100,
+          "nominalDeadlineMisses": 0,
+          "boundaryUncertain": 0,
+          "maxDebtCounts": -2784,
+          "rolling33ExecutionCounts": {
+            "samples": 68,
+            "p95": 188324,
+            "max": 188548
+          },
+          "rolling33ElapsedCounts": {
+            "samples": 68,
+            "p95": 329095,
+            "max": 329107
+          },
+          "completeWorlds": 30,
+          "observedNominalSeconds": 0.9967527014839466,
+          "nominalWorldHz": 30.097736334535707,
+          "below20HzFloor": false,
+          "dmaJobs": 450,
+          "irqAdvances": 57
+        },
+        {
+          "phase": 5,
+          "ticks": 100,
+          "nominalDeadlineMisses": 0,
+          "boundaryUncertain": 0,
+          "maxDebtCounts": -2551,
+          "rolling33ExecutionCounts": {
+            "samples": 68,
+            "p95": 188834,
+            "max": 189122
+          },
+          "rolling33ElapsedCounts": {
+            "samples": 68,
+            "p95": 329169,
+            "max": 329757
+          },
+          "completeWorlds": 30,
+          "observedNominalSeconds": 0.996024791761655,
+          "nominalWorldHz": 30.11973220760843,
+          "below20HzFloor": false,
+          "dmaJobs": 446,
+          "irqAdvances": 56
+        },
+        {
+          "phase": 6,
+          "ticks": 100,
+          "nominalDeadlineMisses": 0,
+          "boundaryUncertain": 0,
+          "maxDebtCounts": -2400,
+          "rolling33ExecutionCounts": {
+            "samples": 68,
+            "p95": 186083,
+            "max": 186371
+          },
+          "rolling33ElapsedCounts": {
+            "samples": 68,
+            "p95": 329287,
+            "max": 329908
+          },
+          "completeWorlds": 30,
+          "observedNominalSeconds": 0.9960297570394333,
+          "nominalWorldHz": 30.11958205864354,
+          "below20HzFloor": false,
+          "dmaJobs": 467,
+          "irqAdvances": 56
+        },
+        {
+          "phase": 7,
+          "ticks": 100,
+          "nominalDeadlineMisses": 0,
+          "boundaryUncertain": 0,
+          "maxDebtCounts": -2524,
+          "rolling33ExecutionCounts": {
+            "samples": 68,
+            "p95": 188770,
+            "max": 188962
+          },
+          "rolling33ElapsedCounts": {
+            "samples": 68,
+            "p95": 329086,
+            "max": 329553
+          },
+          "completeWorlds": 29,
+          "observedNominalSeconds": 0.995334618150478,
+          "nominalWorldHz": 29.135930240111154,
+          "below20HzFloor": false,
+          "dmaJobs": 461,
+          "irqAdvances": 55
+        },
+        {
+          "phase": 8,
+          "ticks": 100,
+          "nominalDeadlineMisses": 0,
+          "boundaryUncertain": 0,
+          "maxDebtCounts": -2207,
+          "rolling33ExecutionCounts": {
+            "samples": 68,
+            "p95": 188706,
+            "max": 188898
+          },
+          "rolling33ElapsedCounts": {
+            "samples": 68,
+            "p95": 329353,
+            "max": 330101
+          },
+          "completeWorlds": 29,
+          "observedNominalSeconds": 0.9956553750949532,
+          "nominalWorldHz": 29.126543908060903,
+          "below20HzFloor": false,
+          "dmaJobs": 457,
+          "irqAdvances": 57
+        },
+        {
+          "phase": 9,
+          "ticks": 100,
+          "nominalDeadlineMisses": 0,
+          "boundaryUncertain": 0,
+          "maxDebtCounts": -2664,
+          "rolling33ExecutionCounts": {
+            "samples": 68,
+            "p95": 188067,
+            "max": 188514
+          },
+          "rolling33ElapsedCounts": {
+            "samples": 68,
+            "p95": 329221,
+            "max": 329644
+          },
+          "completeWorlds": 29,
+          "observedNominalSeconds": 0.9958827848171969,
+          "nominalWorldHz": 29.11989286502548,
+          "below20HzFloor": false,
+          "dmaJobs": 458,
+          "irqAdvances": 56
+        },
+        {
+          "phase": 10,
+          "ticks": 100,
+          "nominalDeadlineMisses": 0,
+          "boundaryUncertain": 0,
+          "maxDebtCounts": -2744,
+          "rolling33ExecutionCounts": {
+            "samples": 68,
+            "p95": 187971,
+            "max": 188131
+          },
+          "rolling33ElapsedCounts": {
+            "samples": 68,
+            "p95": 329085,
+            "max": 329564
+          },
+          "completeWorlds": 28,
+          "observedNominalSeconds": 0.9952512014838034,
+          "nominalWorldHz": 28.13360080174258,
+          "below20HzFloor": false,
+          "dmaJobs": 465,
+          "irqAdvances": 57
+        },
+        {
+          "phase": 11,
+          "ticks": 100,
+          "nominalDeadlineMisses": 0,
+          "boundaryUncertain": 0,
+          "maxDebtCounts": -2728,
+          "rolling33ExecutionCounts": {
+            "samples": 68,
+            "p95": 188995,
+            "max": 189955
+          },
+          "rolling33ElapsedCounts": {
+            "samples": 68,
+            "p95": 329082,
+            "max": 329325
+          },
+          "completeWorlds": 29,
+          "observedNominalSeconds": 0.9956355139838401,
+          "nominalWorldHz": 29.127124929445507,
+          "below20HzFloor": false,
+          "dmaJobs": 472,
+          "irqAdvances": 58
+        },
+        {
+          "phase": 12,
+          "ticks": 100,
+          "nominalDeadlineMisses": 0,
+          "boundaryUncertain": 0,
+          "maxDebtCounts": -2435,
+          "rolling33ExecutionCounts": {
+            "samples": 68,
+            "p95": 189283,
+            "max": 189539
+          },
+          "rolling33ElapsedCounts": {
+            "samples": 68,
+            "p95": 329316,
+            "max": 329872
+          },
+          "completeWorlds": 28,
+          "observedNominalSeconds": 0.9952273681504679,
+          "nominalWorldHz": 28.134274534707828,
+          "below20HzFloor": false,
+          "dmaJobs": 457,
+          "irqAdvances": 54
+        },
+        {
+          "phase": 13,
+          "ticks": 100,
+          "nominalDeadlineMisses": 0,
+          "boundaryUncertain": 0,
+          "maxDebtCounts": -2758,
+          "rolling33ExecutionCounts": {
+            "samples": 68,
+            "p95": 188100,
+            "max": 189061
+          },
+          "rolling33ElapsedCounts": {
+            "samples": 68,
+            "p95": 329136,
+            "max": 329549
+          },
+          "completeWorlds": 29,
+          "observedNominalSeconds": 0.9960575625949915,
+          "nominalWorldHz": 29.114783210367268,
+          "below20HzFloor": false,
+          "dmaJobs": 460,
+          "irqAdvances": 56
+        },
+        {
+          "phase": 14,
+          "ticks": 100,
+          "nominalDeadlineMisses": 0,
+          "boundaryUncertain": 0,
+          "maxDebtCounts": -2473,
+          "rolling33ExecutionCounts": {
+            "samples": 68,
+            "p95": 188770,
+            "max": 188898
+          },
+          "rolling33ElapsedCounts": {
+            "samples": 68,
+            "p95": 329143,
+            "max": 329509
+          },
+          "completeWorlds": 29,
+          "observedNominalSeconds": 0.9960297570394333,
+          "nominalWorldHz": 29.11559599002209,
+          "below20HzFloor": false,
+          "dmaJobs": 461,
+          "irqAdvances": 56
+        },
+        {
+          "phase": 15,
+          "ticks": 100,
+          "nominalDeadlineMisses": 0,
+          "boundaryUncertain": 0,
+          "maxDebtCounts": -2400,
+          "rolling33ExecutionCounts": {
+            "samples": 68,
+            "p95": 189538,
+            "max": 189858
+          },
+          "rolling33ElapsedCounts": {
+            "samples": 68,
+            "p95": 329447,
+            "max": 329908
+          },
+          "completeWorlds": 29,
+          "observedNominalSeconds": 0.9968281737061759,
+          "nominalWorldHz": 29.09227564483747,
+          "below20HzFloor": false,
+          "dmaJobs": 454,
+          "irqAdvances": 53
+        }
+      ]
+    },
+    {
+      "epoch": 1,
+      "cohorts": [
+        {
+          "phase": 0,
+          "ticks": 100,
+          "nominalDeadlineMisses": 0,
+          "boundaryUncertain": 0,
+          "maxDebtCounts": -2349,
+          "rolling33ExecutionCounts": {
+            "samples": 68,
+            "p95": 192643,
+            "max": 193123
+          },
+          "rolling33ElapsedCounts": {
+            "samples": 68,
+            "p95": 329275,
+            "max": 329959
+          },
+          "completeWorlds": 28,
+          "observedNominalSeconds": 0.9951469306504602,
+          "nominalWorldHz": 28.136548621717896,
+          "below20HzFloor": false,
+          "dmaJobs": 450,
+          "irqAdvances": 52
+        },
+        {
+          "phase": 1,
+          "ticks": 100,
+          "nominalDeadlineMisses": 0,
+          "boundaryUncertain": 0,
+          "maxDebtCounts": -2469,
+          "rolling33ExecutionCounts": {
+            "samples": 68,
+            "p95": 188707,
+            "max": 188867
+          },
+          "rolling33ElapsedCounts": {
+            "samples": 68,
+            "p95": 329103,
+            "max": 329482
+          },
+          "completeWorlds": 30,
+          "observedNominalSeconds": 0.9965818959283748,
+          "nominalWorldHz": 30.102894827377163,
+          "below20HzFloor": false,
+          "dmaJobs": 452,
+          "irqAdvances": 55
+        },
+        {
+          "phase": 2,
+          "ticks": 100,
+          "nominalDeadlineMisses": 0,
+          "boundaryUncertain": 0,
+          "maxDebtCounts": -2504,
+          "rolling33ExecutionCounts": {
+            "samples": 68,
+            "p95": 190531,
+            "max": 190851
+          },
+          "rolling33ElapsedCounts": {
+            "samples": 68,
+            "p95": 329342,
+            "max": 329804
+          },
+          "completeWorlds": 30,
+          "observedNominalSeconds": 0.9969344306506307,
+          "nominalWorldHz": 30.092249878882264,
+          "below20HzFloor": false,
+          "dmaJobs": 450,
+          "irqAdvances": 55
+        },
+        {
+          "phase": 3,
+          "ticks": 100,
+          "nominalDeadlineMisses": 0,
+          "boundaryUncertain": 0,
+          "maxDebtCounts": -2459,
+          "rolling33ExecutionCounts": {
+            "samples": 68,
+            "p95": 189091,
+            "max": 190467
+          },
+          "rolling33ElapsedCounts": {
+            "samples": 68,
+            "p95": 329187,
+            "max": 329647
+          },
+          "completeWorlds": 30,
+          "observedNominalSeconds": 0.9970982848173129,
+          "nominalWorldHz": 30.087304789112704,
+          "below20HzFloor": false,
+          "dmaJobs": 452,
+          "irqAdvances": 56
+        },
+        {
+          "phase": 4,
+          "ticks": 100,
+          "nominalDeadlineMisses": 0,
+          "boundaryUncertain": 0,
+          "maxDebtCounts": -2624,
+          "rolling33ExecutionCounts": {
+            "samples": 68,
+            "p95": 188773,
+            "max": 189251
+          },
+          "rolling33ElapsedCounts": {
+            "samples": 68,
+            "p95": 329107,
+            "max": 329166
+          },
+          "completeWorlds": 29,
+          "observedNominalSeconds": 0.9968798125950699,
+          "nominalWorldHz": 29.090768649941282,
+          "below20HzFloor": false,
+          "dmaJobs": 463,
+          "irqAdvances": 54
+        },
+        {
+          "phase": 5,
+          "ticks": 100,
+          "nominalDeadlineMisses": 0,
+          "boundaryUncertain": 0,
+          "maxDebtCounts": -2698,
+          "rolling33ExecutionCounts": {
+            "samples": 68,
+            "p95": 188803,
+            "max": 189635
+          },
+          "rolling33ElapsedCounts": {
+            "samples": 68,
+            "p95": 329112,
+            "max": 329609
+          },
+          "completeWorlds": 30,
+          "observedNominalSeconds": 0.9960565695394358,
+          "nominalWorldHz": 30.118771280100717,
+          "below20HzFloor": false,
+          "dmaJobs": 452,
+          "irqAdvances": 56
+        },
+        {
+          "phase": 6,
+          "ticks": 100,
+          "nominalDeadlineMisses": 0,
+          "boundaryUncertain": 0,
+          "maxDebtCounts": -2675,
+          "rolling33ExecutionCounts": {
+            "samples": 68,
+            "p95": 187810,
+            "max": 188707
+          },
+          "rolling33ElapsedCounts": {
+            "samples": 68,
+            "p95": 329442,
+            "max": 329633
+          },
+          "completeWorlds": 30,
+          "observedNominalSeconds": 0.9962204237061181,
+          "nominalWorldHz": 30.11381747063028,
+          "below20HzFloor": false,
+          "dmaJobs": 461,
+          "irqAdvances": 54
+        },
+        {
+          "phase": 7,
+          "ticks": 100,
+          "nominalDeadlineMisses": 0,
+          "boundaryUncertain": 0,
+          "maxDebtCounts": -2556,
+          "rolling33ExecutionCounts": {
+            "samples": 68,
+            "p95": 187746,
+            "max": 188195
+          },
+          "rolling33ElapsedCounts": {
+            "samples": 68,
+            "p95": 329164,
+            "max": 329290
+          },
+          "completeWorlds": 28,
+          "observedNominalSeconds": 0.9951439514837932,
+          "nominalWorldHz": 28.136632854222803,
+          "below20HzFloor": false,
+          "dmaJobs": 450,
+          "irqAdvances": 57
+        },
+        {
+          "phase": 8,
+          "ticks": 100,
+          "nominalDeadlineMisses": 0,
+          "boundaryUncertain": 0,
+          "maxDebtCounts": -2386,
+          "rolling33ExecutionCounts": {
+            "samples": 68,
+            "p95": 189602,
+            "max": 189955
+          },
+          "rolling33ElapsedCounts": {
+            "samples": 68,
+            "p95": 329237,
+            "max": 329921
+          },
+          "completeWorlds": 29,
+          "observedNominalSeconds": 0.9957824862060763,
+          "nominalWorldHz": 29.122825920035787,
+          "below20HzFloor": false,
+          "dmaJobs": 452,
+          "irqAdvances": 59
+        },
+        {
+          "phase": 9,
+          "ticks": 100,
+          "nominalDeadlineMisses": 0,
+          "boundaryUncertain": 0,
+          "maxDebtCounts": -2676,
+          "rolling33ExecutionCounts": {
+            "samples": 68,
+            "p95": 188707,
+            "max": 189155
+          },
+          "rolling33ElapsedCounts": {
+            "samples": 68,
+            "p95": 329305,
+            "max": 329631
+          },
+          "completeWorlds": 28,
+          "observedNominalSeconds": 0.9958827848171969,
+          "nominalWorldHz": 28.115758628300465,
+          "below20HzFloor": false,
+          "dmaJobs": 457,
+          "irqAdvances": 57
+        },
+        {
+          "phase": 10,
+          "ticks": 100,
+          "nominalDeadlineMisses": 0,
+          "boundaryUncertain": 0,
+          "maxDebtCounts": -2744,
+          "rolling33ExecutionCounts": {
+            "samples": 68,
+            "p95": 187651,
+            "max": 187843
+          },
+          "rolling33ElapsedCounts": {
+            "samples": 68,
+            "p95": 329194,
+            "max": 329564
+          },
+          "completeWorlds": 29,
+          "observedNominalSeconds": 0.9952512014838034,
+          "nominalWorldHz": 29.138372258947676,
+          "below20HzFloor": false,
+          "dmaJobs": 472,
+          "irqAdvances": 56
+        },
+        {
+          "phase": 11,
+          "ticks": 100,
+          "nominalDeadlineMisses": 0,
+          "boundaryUncertain": 0,
+          "maxDebtCounts": -2862,
+          "rolling33ExecutionCounts": {
+            "samples": 68,
+            "p95": 189058,
+            "max": 189314
+          },
+          "rolling33ElapsedCounts": {
+            "samples": 68,
+            "p95": 329197,
+            "max": 329357
+          },
+          "completeWorlds": 29,
+          "observedNominalSeconds": 0.9951906250949087,
+          "nominalWorldHz": 29.140145886356542,
+          "below20HzFloor": false,
+          "dmaJobs": 465,
+          "irqAdvances": 57
+        },
+        {
+          "phase": 12,
+          "ticks": 100,
+          "nominalDeadlineMisses": 0,
+          "boundaryUncertain": 0,
+          "maxDebtCounts": -2435,
+          "rolling33ExecutionCounts": {
+            "samples": 68,
+            "p95": 189605,
+            "max": 189925
+          },
+          "rolling33ElapsedCounts": {
+            "samples": 68,
+            "p95": 329252,
+            "max": 329872
+          },
+          "completeWorlds": 28,
+          "observedNominalSeconds": 0.9951638125949062,
+          "nominalWorldHz": 28.136071313716215,
+          "below20HzFloor": false,
+          "dmaJobs": 457,
+          "irqAdvances": 58
+        },
+        {
+          "phase": 13,
+          "ticks": 100,
+          "nominalDeadlineMisses": 0,
+          "boundaryUncertain": 0,
+          "maxDebtCounts": -2526,
+          "rolling33ExecutionCounts": {
+            "samples": 68,
+            "p95": 189220,
+            "max": 190596
+          },
+          "rolling33ElapsedCounts": {
+            "samples": 68,
+            "p95": 329306,
+            "max": 329781
+          },
+          "completeWorlds": 28,
+          "observedNominalSeconds": 0.9952631181504712,
+          "nominalWorldHz": 28.133263947360255,
+          "below20HzFloor": false,
+          "dmaJobs": 465,
+          "irqAdvances": 57
+        },
+        {
+          "phase": 14,
+          "ticks": 100,
+          "nominalDeadlineMisses": 0,
+          "boundaryUncertain": 0,
+          "maxDebtCounts": -2569,
+          "rolling33ExecutionCounts": {
+            "samples": 68,
+            "p95": 189603,
+            "max": 189826
+          },
+          "rolling33ElapsedCounts": {
+            "samples": 68,
+            "p95": 329106,
+            "max": 329476
+          },
+          "completeWorlds": 28,
+          "observedNominalSeconds": 0.9959652084283159,
+          "nominalWorldHz": 28.113431837830394,
+          "below20HzFloor": false,
+          "dmaJobs": 462,
+          "irqAdvances": 55
+        },
+        {
+          "phase": 15,
+          "ticks": 100,
+          "nominalDeadlineMisses": 0,
+          "boundaryUncertain": 0,
+          "maxDebtCounts": -2624,
+          "rolling33ExecutionCounts": {
+            "samples": 68,
+            "p95": 189666,
+            "max": 189890
+          },
+          "rolling33ElapsedCounts": {
+            "samples": 68,
+            "p95": 329192,
+            "max": 329684
+          },
+          "completeWorlds": 29,
+          "observedNominalSeconds": 0.996382291761689,
+          "nominalWorldHz": 29.105294463559286,
+          "below20HzFloor": false,
+          "dmaJobs": 454,
+          "irqAdvances": 54
+        }
+      ]
+    }
+  ],
+  "successor": {
+    "identity": "RSI1",
+    "version": 1,
+    "stage": 127,
+    "fault": 0,
+    "lifecycle": 9,
+    "tickBefore": 1600,
+    "tickAfter": 3200,
+    "checksumBefore": "6B765FDB",
+    "checksumAfter": "607348BD",
+    "contextCrc32": "6917C13C",
+    "romCrc32": "967A5200",
+    "restoredRomCrc32": "967A5200",
+    "reserveBeforeCrc32": "3C7D60D8",
+    "reserveAfterCrc32": "3C7D60D8",
+    "lowBeforeCrc32": "1303106E",
+    "lowAfterCrc32": "1303106E",
+    "dosBeforeCrc32": "D5C268FC",
+    "dosAfterCrc32": "D5C268FC",
+    "storagePhase": 5,
+    "storageError": 0,
+    "storageReturned": 1,
+    "storageDenied": 0,
+    "irqBefore": 909,
+    "irqAfter": 1807,
+    "dmaBefore": 7316,
+    "dmaAfter": 14659,
+    "inputBefore": 977,
+    "inputAfter": 1954,
+    "audioBefore": 977,
+    "audioAfter": 1954,
+    "snapshotsBefore": 1440,
+    "snapshotsAfter": 2879,
+    "canonicalBasePage": 2,
+    "canonicalCpuPort": 53,
+    "contextInvalidated": 1,
+    "resumedServiceMask": 31,
+    "nmiSticky": 0,
+    "iecOutputBefore": 0,
+    "iecOutputReleased": 0,
+    "reclaimFeatures": 107,
+    "irqCpuStatus": 49,
+    "irqVicStatus": 96,
+    "irqVicMask": 225,
+    "irqVideoMode": 128,
+    "irqCompareLow": 0,
+    "irqCompareHigh": 0,
+    "irqVector": 11846,
+    "resultCrc32": "96539B64",
+    "independentCrc32": "96539B64"
+  },
+  "irqBodyReadIntervals": [
+    {
+      "samples": 883,
+      "totalCounts": 0,
+      "maxCounts": 0,
+      "resolution": "NO_NONZERO_INTERVAL_OBSERVED"
+    },
+    {
+      "samples": 894,
+      "totalCounts": 0,
+      "maxCounts": 0,
+      "resolution": "NO_NONZERO_INTERVAL_OBSERVED"
+    }
+  ],
+  "irqMeasurementBoundary": "Two epoch summaries: count u16, total CIA counts u32, maximum u16. Only declared cohorts are enabled. Interval is between coherent CIA reads after register preservation and before restoration; includes part of probes, excludes hardware entry and tails. Not full interrupt cost or entry latency. Bounded-read, count, total and duration overflow invalidate acquisition.",
+  "serviceStartPhase": [
+    {
+      "epoch": 0,
+      "startBinMasks": {
+        "input": "FFFF",
+        "audio": "FFFF",
+        "display": "FFFF"
+      },
+      "completedOrderMask": "3F"
+    },
+    {
+      "epoch": 1,
+      "startBinMasks": {
+        "input": "FFFF",
+        "audio": "FFFF",
+        "display": "FFFF"
+      },
+      "completedOrderMask": "3F"
+    }
+  ],
+  "servicePhaseBoundary": "Pre-release starts only; sixteen balanced nominal-period bins and six completed service orders per epoch. Aggregate masks do not prove every relative phase combination or external input/audio latency.",
+  "instrumentedExecutionCounts": {
+    "samples": 3200,
+    "p95": 6784,
+    "max": 7328
+  },
+  "publicationCounts": {
+    "samples": 3200,
+    "p95": 3968,
+    "max": 4544
+  },
+  "releaseLatenessCounts": {
+    "samples": 3200,
+    "p95": 1458,
+    "max": 1967
+  },
+  "stages": [
+    {
+      "samples": 3200,
+      "p95": 32,
+      "max": 32
+    },
+    {
+      "samples": 3200,
+      "p95": 96,
+      "max": 97
+    },
+    {
+      "samples": 3200,
+      "p95": 64,
+      "max": 65
+    },
+    {
+      "samples": 3200,
+      "p95": 32,
+      "max": 32
+    },
+    {
+      "samples": 3200,
+      "p95": 96,
+      "max": 129
+    },
+    {
+      "samples": 3200,
+      "p95": 96,
+      "max": 96
+    },
+    {
+      "samples": 3200,
+      "p95": 96,
+      "max": 97
+    },
+    {
+      "samples": 3200,
+      "p95": 224,
+      "max": 257
+    },
+    {
+      "samples": 3200,
+      "p95": 96,
+      "max": 97
+    },
+    {
+      "samples": 3200,
+      "p95": 96,
+      "max": 96
+    },
+    {
+      "samples": 3200,
+      "p95": 32,
+      "max": 32
+    },
+    {
+      "samples": 3200,
+      "p95": 512,
+      "max": 545
+    },
+    {
+      "samples": 3200,
+      "p95": 320,
+      "max": 352
+    },
+    {
+      "samples": 3200,
+      "p95": 192,
+      "max": 193
+    },
+    {
+      "samples": 3200,
+      "p95": 320,
+      "max": 960
+    },
+    {
+      "samples": 3200,
+      "p95": 128,
+      "max": 160
+    },
+    {
+      "samples": 3200,
+      "p95": 64,
+      "max": 65
+    },
+    {
+      "samples": 3200,
+      "p95": 32,
+      "max": 32
+    },
+    {
+      "samples": 3200,
+      "p95": 96,
+      "max": 129
+    },
+    {
+      "samples": 3200,
+      "p95": 1344,
+      "max": 1377
+    },
+    {
+      "samples": 3200,
+      "p95": 256,
+      "max": 288
+    }
+  ],
+  "services": {
+    "input": {
+      "samples": 3200,
+      "p95": 512,
+      "max": 1952
+    },
+    "audio": {
+      "samples": 3200,
+      "p95": 544,
+      "max": 2368
+    },
+    "display": {
+      "samples": 3200,
+      "p95": 5344,
+      "max": 16992
+    }
+  },
+  "displayedWorldAgeCounts": {
+    "samples": 4146,
+    "p95": 72833,
+    "max": 123426
+  },
+  "worldEventsRetained": 955,
+  "presentation": {
+    "worldPairsVerified": 955,
+    "anchorHigh": 4,
+    "occlusionHigh": 4,
+    "anchorDrops": 1942,
+    "viewRequests": 25,
+    "viewCancels": 25,
+    "viewMask": 3,
+    "tierMask": 3,
+    "boundary": "Private 69-byte diagnostic scene CRC including bounded geometry byte-record storage; not production geometry or physical display evidence"
+  },
+  "worldCompletionAgeCounts": {
+    "samples": 955,
+    "p95": 40577,
+    "max": 71074
+  },
+  "captureMaximumCounts": 1185,
+  "readMaximumCounts": 32,
+  "hardwareStackHighWaterBytes": 67,
+  "softwareStackHighWaterBytes": 124,
+  "audioServiceGapCounts": 32737,
+  "physicalSiUncertainty": "UNRESOLVED; nominal counter ratio only",
+  "physical": "NOT RUN",
+  "fullGroup1Acceptance": false
+}

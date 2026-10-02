@@ -1,0 +1,42 @@
+{
+  "identity": "R0F-SUCCESSOR-T03-linked-image-ledger-v1",
+  "admissionLedger": "memory/r0f-successor-memory-ledger.json",
+  "integrationContract": "interfaces/r0f_successor_integration_contract.json",
+  "status": "HOST_STATIC_INTEGRATION_ONLY",
+  "residentEnvelope": "0x002001-0x00bfff",
+  "softwareStack": "0x00c000-0x00cfff",
+  "actualLinkedAccounting": "build/r0f/successor-integration/accounting.json",
+  "newPhysicalAllocations": [],
+  "reusedPhysicalAllocations": [
+    "0x000100-0x0001ff application hardware stack",
+    "0x000200-0x0002ff application base page",
+    "0x000300-0x001fff application low state and result",
+    "0x010000-0x011fff exclusive application/KERNAL DOS overlay",
+    "0x01d000-0x01efff application DOS-overlay backup",
+    "0x020000-0x03ffff ROM/display stores",
+    "0x040000-0x0409ff HUD",
+    "0x050000-0x051cff low-application backup",
+    "0x051d00-0x051dff application stack backup",
+    "0x051e00-0x051eff application base-page backup",
+    "0x053000-0x0530fe PCM cache",
+    "0x054000-0x055fff KERNAL-entry DOS backup",
+    "0x056000-0x056010 DMA list",
+    "0x08000000-0x0801ffff immutable ROM backup",
+    "0x08020000-0x0802161f guarded opaque KERNAL context",
+    "0x0ff80000-0x0ff807cf color attributes"
+  ],
+  "protectedResidentRule": {
+    "mapWindow": "0x008000-0x00bfff",
+    "requiredTransitionCodeAndDataEndExclusive": "0x008000",
+    "validation": "linker section plus map/symbol/disassembly validator"
+  },
+  "resourceReserve": {
+    "range": "0x057000-0x057fff",
+    "successorBytes": 0
+  },
+  "measuredReserve": {
+    "range": "0x058000-0x05ffff",
+    "access": "CRC read-only before and after",
+    "successorBytes": 0
+  }
+}

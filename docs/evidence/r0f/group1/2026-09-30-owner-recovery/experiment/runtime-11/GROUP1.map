@@ -1,0 +1,552 @@
+     VMA      LMA     Size Align Out     In      Symbol
+       0        0        0     1 
+       0        0        0     1 
+       0        0        0     1 __basic_zp_start = 0x0002
+       0        0        0     1 __basic_zp_end = 0x0090
+       0        0        0     1 __rc0 = __basic_zp_start
+       0        0        0     1 __rc1 = __rc0 + 1
+       0        0        0     1 PROVIDE(__rc2 = __rc1 + 1)
+       0        0        0     1 __rc3 = __rc2 + 1
+       0        0        0     1 PROVIDE(__rc4 = __rc3 + 1)
+       0        0        0     1 __rc5 = __rc4 + 1
+       0        0        0     1 PROVIDE(__rc6 = __rc5 + 1)
+       0        0        0     1 __rc7 = __rc6 + 1
+       0        0        0     1 PROVIDE(__rc8 = __rc7 + 1)
+       0        0        0     1 __rc9 = __rc8 + 1
+       0        0        0     1 PROVIDE(__rc10 = __rc9 + 1)
+       0        0        0     1 __rc11 = __rc10 + 1
+       0        0        0     1 PROVIDE(__rc12 = __rc11 + 1)
+       0        0        0     1 __rc13 = __rc12 + 1
+       0        0        0     1 PROVIDE(__rc14 = __rc13 + 1)
+       0        0        0     1 __rc15 = __rc14 + 1
+       0        0        0     1 PROVIDE(__rc16 = __rc15 + 1)
+       0        0        0     1 __rc17 = __rc16 + 1
+       0        0        0     1 PROVIDE(__rc18 = __rc17 + 1)
+       0        0        0     1 __rc19 = __rc18 + 1
+       0        0        0     1 PROVIDE(__rc20 = __rc19 + 1)
+       0        0        0     1 __rc21 = __rc20 + 1
+       0        0        0     1 PROVIDE(__rc22 = __rc21 + 1)
+       0        0        0     1 __rc23 = __rc22 + 1
+       0        0        0     1 PROVIDE(__rc24 = __rc23 + 1)
+       0        0        0     1 __rc25 = __rc24 + 1
+       0        0        0     1 PROVIDE(__rc26 = __rc25 + 1)
+       0        0        0     1 __rc27 = __rc26 + 1
+       0        0        0     1 PROVIDE(__rc28 = __rc27 + 1)
+       0        0        0     1 __rc29 = __rc28 + 1
+       0        0        0     1 PROVIDE(__rc30 = __rc29 + 1)
+       0        0        0     1 __rc31 = __rc30 + 1
+       0        0        0     1 __basic_zp_size = __basic_zp_end - __basic_zp_start
+    2001     2001       16     1 .basic_header
+    2001     2001       16     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/basic-header.o:(.basic_header)
+    2015     2015        0     1                 next_line
+      22       22        0     1 .zp.data
+      22       22        0     1         __zp_data_start = .
+      22       22        0     1 __zp_data_load_start = LOADADDR(.zp.data)
+      22       22        0     1 __zp_data_size = SIZEOF(.zp.data)
+      22       22        0     1 .zp.bss
+      22       22        0     1         __zp_bss_start = .
+      22       22        0     1 __zp_bss_size = SIZEOF(.zp.bss)
+    2017     2017     109a     1 .r0fs_protected
+    2017     2017        9     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/successor_admission_45gs02-e47a6a.o:(.text.r0fs_protected)
+    2017     2017        0     1                 r0fs_quiesce_marker
+    2019     2019        0     1                 r0fs_context_restore_marker
+    201b     201b        0     1                 r0fs_canonical_restore_marker
+    201f     201f        0     1                 r0fs_resume_marker
+    2020     2020      81b     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/successor_integration_45gs02-9910ba.o:(.text.r0fs_protected)
+    2020     2020        0     1                 r0fs_context_read
+    20df     20df        0     1                 r0fs_context_invalidate
+    211b     211b        0     1                 r0fs_storage
+    282f     282f        0     1                 r0fs_storage_end
+    283b     283b      588     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/group1_terminal_export_45gs02-e9c35c.o:(.text.r0fs_protected)
+    283b     283b        0     1                 r0fg1_terminal_export
+    2cf4     2cf4        0     1                 r0fg1_terminal_export_end
+    2cf4     2cf4        0     1                 r0fg1_terminal_file_setup
+    2dc3     2dc3        0     1                 r0fg1_terminal_file_setup_end
+    2dc3     2dc3      146     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/group1_irq_45gs02-73576c.o:(.text.r0f_pf)
+    2dc3     2dc3        0     1                 r0f_pf_enter
+    2e23     2e23        0     1                 r0f_pf_start_irq
+    2e3a     2e3a        0     1                 r0f_pf_stop_irq
+    2e46     2e46        0     1                 r0f_pf_irq
+    2e78     2e78        0     1                 r0f_pf_nmi
+    2e80     2e80        0     1                 r0f_pf_flat_copy
+    2ebd     2ebd        0     1                 r0f_pf_register_probe
+    2f09     2f09       1c     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/group1_terminal_export_45gs02-e9c35c.o:(.r0fs_protected_data)
+    2f09     2f09        0     1                 r0fg1_export_permit
+    2f0a     2f0a        0     1                 r0fg1_export_status
+    2f0b     2f0b        0     1                 r0fg1_export_error
+    2f0c     2f0c        0     1                 r0fg1_export_files
+    2f0d     2f0d        0     1                 r0fg1_export_bytes
+    2f11     2f11        0     1                 r0fg1_export_remaining
+    2f15     2f15        0     1                 r0fg1_export_source
+    2f19     2f19        0     1                 r0fg1_export_chunk
+    2f1b     2f1b        0     1                 r0fg1_export_copy_left
+    2f1d     2f1d        0     1                 r0fg1_export_filename
+    2f22     2f22        0     1                 r0fg1_export_initialize
+    2f24     2f24        0     1                 r0fg1_export_secondary
+    2f25     2f25      18c     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.r0fs_protected_data)
+    2f25     2f25        1     1                 r0fsi_storage_phase
+    2f26     2f26        1     1                 r0fsi_storage_error
+    2f27     2f27        1     1                 r0fsi_storage_returned
+    2f28     2f28        1     1                 r0fsi_storage_denied
+    2f29     2f29        1     1                 r0fsi_permit
+    2f2a     2f2a        1     1                 r0fsi_input
+    2f2b     2f2b        1     1                 r0fsi_output
+    2f2c     2f2c        1     1                 r0fsi_input_end
+    2f2d     2f2d        1     1                 r0fsi_output_end
+    2f2e     2f2e       20     1                 r0fsi_token
+    2f4e     2f4e       20     1                 r0fsi_read
+    2f6e     2f6e       20     1                 r0fsi_payload
+    2f8e     2f8e        4     1                 r0fsi_end
+    2f92     2f92        1     1                 r0fsi_app_sp
+    2f93     2f93        2     1                 r0fsi_context_offset
+    2f95     2f95        1     1                 r0fsi_context_length
+    2f96     2f96        1     1                 r0fsi_context_region
+    2f97     2f97        1     1                 r0fsi_context_copy_ok
+    2f98     2f98       ff     1                 r0fsi_context_buffer
+    3097     3097        1     1                 r0f_pf_cpu_port
+    3098     3098        2     1                 r0f_pf_irq_count
+    309a     309a        1     1                 r0f_pf_irq_seq
+    309b     309b        1     1                 r0f_pf_irq_seen
+    309c     309c        7     1                 r0f_pf_probe_regs
+    30a3     30a3        1     1                 r0f_pf_copy_ok
+    30a4     30a4        2     1                 r0f_pf_probe_timeout
+    30a6     30a6        1     1                 r0f_pf_nmi_seen
+    30a7     30a7        9     1                 r0f_pf_copy_request
+    30b0     30b0        1     1                 r0f_pf_stack_high
+    30b1     30b1     7fed     1 .text
+    30b1     30b1        0     1         _init = .
+    30b1     30b1        0     1         _start = .
+    30b1     30b1       c5     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/successor_admission_45gs02-e47a6a.o:(.init.005)
+    30b1     30b1        0     1                 r0fs_pre_c_capture
+    3176     3176        0     1                 r0fs_pre_c_capture_end
+    3176     3176       c5     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/group1_export_capture_45gs02-177507.o:(.init.006)
+    3176     3176        0     1                 r0fg1_export_capture
+    323b     323b        0     1                 r0fg1_export_capture_end
+    323b     323b        e     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/unmap-basic.o:(.init.010)
+    3249     3249        3     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/r0a_platform_45gs02-55c34e.o:(.init.011)
+    3249     3249        0     1                 f65_basepage_enter
+    324c     324c        8     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(init-stack.S.obj):(.init.100)
+    324c     324c        0     1                 __do_init_stack
+    3254     3254        3     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(zero-bss.c.obj):(.init.200)
+    3254     3254        0     1                 __do_zero_bss
+    3257     3257        3     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/common/lib/crt0.o:(.call_main)
+    325a     325a        3     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(exit-custom.S.obj):(.after_main)
+    325a     325a        0     1                 __after_main
+    325d     325d        0     1         _fini = .
+    325d     325d        3     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/r0a_platform_45gs02-55c34e.o:(.fini.989)
+    325d     325d        0     1                 f65_basepage_leave
+    3260     3260        a     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/unmap-basic.o:(.fini.990)
+    326a     326a        1     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/common/lib/crt0.o:(.fini_rts)
+    326b     326b        3     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/successor_integration_45gs02-9910ba.o:(.text.r0fsi_status)
+    326b     326b        0     1                 r0fsi_irq_cpu_status
+    326e     326e       b4     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/combined_45gs02-617dc9.o:(.text.r0fc_platform)
+    326e     326e        0     1                 r0fc_rom_toggle
+    3291     3291        0     1                 r0fc_stack_seed
+    32d8     32d8        0     1                 r0fc_stack_measure
+    3322     3322       fa     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/group1_irq_45gs02-73576c.o:(.text.r0fg1_irq)
+    3322     3322        0     1                 r0fg1_irq_begin
+    333a     333a        0     1                 r0fg1_irq_end
+    33cd     33cd        0     1                 r0fg1_irq_read
+    341c     341c        0     1                 r0fg1_irq_timing_end
+    341c     341c       13     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(zero-bss.c.obj):(.text.__zero_bss)
+    341c     341c       13     1                 __zero_bss
+    342f     342f     2348     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.main)
+    342f     342f     2348     1                 main
+    5777     5777       14     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.lockout)
+    5777     5777       14     1                 lockout
+    578b     578b      10b     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.context_crc)
+    578b     578b      10b     1                 context_crc
+    5896     5896       94     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.context_valid)
+    5896     5896       94     1                 context_valid
+    592a     592a      109     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.dos_copy)
+    592a     592a      109     1                 dos_copy
+    5a33     5a33      1c7     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.dos_crc)
+    5a33     5a33      1c7     1                 dos_crc
+    5bfa     5bfa       23     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.transition)
+    5bfa     5bfa       23     1                 transition
+    5c1d     5c1d       c7     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.display_seed_staging)
+    5c1d     5c1d       c7     1                 display_seed_staging
+    5ce4     5ce4       41     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.display_configure)
+    5ce4     5ce4       41     1                 display_configure
+    5d25     5d25     127a     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.run_ticks)
+    5d25     5d25     127a     1                 run_ticks
+    6f9f     6f9f      f2d     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.display_quantum)
+    6f9f     6f9f      f2d     1                 display_quantum
+    7ecc     7ecc      319     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.restore_rom_after_display_suspend)
+    7ecc     7ecc      319     1                 restore_rom_after_display_suspend
+    81e5     81e5       bd     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.low_application_copy)
+    81e5     81e5       bd     1                 low_application_copy
+    82a2     82a2      31a     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.application_dma)
+    82a2     82a2      31a     1                 application_dma
+    85bc     85bc       2a     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.result_u32)
+    85bc     85bc       2a     1                 result_u32
+    85e6     85e6      102     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.group1_service_sweep)
+    85e6     85e6      102     1                 group1_service_sweep
+    86e8     86e8       ef     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.fixed_physical_copy)
+    86e8     86e8       ef     1                 fixed_physical_copy
+    87d7     87d7       72     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.crc_update)
+    87d7     87d7       72     1                 crc_update
+    8849     8849       27     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.r0fsi_prepare_rom_toggle)
+    8849     8849       27     1                 r0fsi_prepare_rom_toggle
+    8870     8870       39     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.r0fsi_irq_snapshot)
+    8870     8870       39     1                 r0fsi_irq_snapshot
+    88a9     88a9       ca     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.r0fs_crc32_update)
+    88a9     88a9       ca     1                 r0fs_crc32_update
+    8973     8973       2e     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.r0fc_edge_sample)
+    8973     8973       2e     1                 r0fc_edge_sample
+    89a1     89a1       12     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.bits)
+    89a1     89a1       12     1                 bits
+    89b3     89b3       52     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.r0fc_edge_consume)
+    89b3     89b3       52     1                 r0fc_edge_consume
+    8a05     8a05       ba     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.inside)
+    8a05     8a05       ba     1                 inside
+    8abf     8abf       2a     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.cfput32)
+    8abf     8abf       2a     1                 cfput32
+    8ae9     8ae9       2c     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.cfget32)
+    8ae9     8ae9       2c     1                 cfget32
+    8b15     8b15       6a     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.cfadd)
+    8b15     8b15       6a     1                 cfadd
+    8b7f     8b7f       5f     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.cfcrc)
+    8b7f     8b7f       5f     1                 cfcrc
+    8bde     8bde       54     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.crc_byte)
+    8bde     8bde       54     1                 crc_byte
+    8c32     8c32       b0     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.cfline)
+    8c32     8c32       b0     1                 cfline
+    8ce2     8ce2       3c     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.screen_byte)
+    8ce2     8ce2       3c     1                 screen_byte
+    8d1e     8d1e      2eb     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.cfcopy)
+    8d1e     8d1e      2eb     1                 cfcopy
+    9009     9009       be     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.cfhex)
+    9009     9009       be     1                 cfhex
+    90c7     90c7       54     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.cfscreen)
+    90c7     90c7       54     1                 cfscreen
+    911b     911b      1c5     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.cfphysical_crc)
+    911b     911b      1c5     1                 cfphysical_crc
+    92e0     92e0       33     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.cfclock_begin)
+    92e0     92e0       33     1                 cfclock_begin
+    9313     9313       8e     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.cfnow)
+    9313     9313       8e     1                 cfnow
+    93a1     93a1       a1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.cfframe_wait)
+    93a1     93a1       a1     1                 cfframe_wait
+    9442     9442       a1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.cfinput)
+    9442     9442       a1     1                 cfinput
+    94e3     94e3      144     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.cfaudio_service)
+    94e3     94e3      144     1                 cfaudio_service
+    9627     9627      8bb     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.cfcalibrate)
+    9627     9627      8bb     1                 cfcalibrate
+    9ee2     9ee2       21     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.cfaudio_stop)
+    9ee2     9ee2       21     1                 cfaudio_stop
+    9f03     9f03       e5     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.cfaudio_begin)
+    9f03     9f03       e5     1                 cfaudio_begin
+    9fe8     9fe8      1c9     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.validate_capsule)
+    9fe8     9fe8      1c9     1                 validate_capsule
+    a1b1     a1b1      1c2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.transfer.106)
+    a1b1     a1b1      1c2     1                 transfer.106
+    a373     a373       48     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.r0fg1_trace_write)
+    a373     a373       48     1                 r0fg1_trace_write
+    a3bb     a3bb      29b     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.r0fg1_calibration)
+    a3bb     a3bb      29b     1                 r0fg1_calibration
+    a656     a656       17     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.put32)
+    a656     a656       17     1                 put32
+    a66d     a66d       e0     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.r0fg1_phase_end)
+    a66d     a66d       e0     1                 r0fg1_phase_end
+    a74d     a74d       1e     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.r0fg1_stage_begin)
+    a74d     a74d       1e     1                 r0fg1_stage_begin
+    a76b     a76b       7f     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.r0fg1_stage_end)
+    a76b     a76b       7f     1                 r0fg1_stage_end
+    a7ea     a7ea      1e0     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.r0fg1_service)
+    a7ea     a7ea      1e0     1                 r0fg1_service
+    a9ca     a9ca      133     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.r0fg1_occlusion_clip)
+    a9ca     a9ca      133     1                 r0fg1_occlusion_clip
+    aafd     aafd       27     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.r0fg1_lod_select)
+    aafd     aafd       27     1                 r0fg1_lod_select
+    ab24     ab24      1d5     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.r0fg1_owner_sample)
+    ab24     ab24      1d5     1                 r0fg1_owner_sample
+    acf9     acf9        5     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.exit)
+    acf9     acf9        5     1                 exit
+    acfe     acfe       24     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.memcpy)
+    acfe     acfe       24     1                 memcpy
+    ad22     ad22       1c     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.__memset)
+    ad22     ad22       1c     1                 __memset
+    ad3e     ad3e        b     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.__ashlqi3)
+    ad3e     ad3e        b     1                 __ashlqi3
+    ad49     ad49       13     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.__ashlhi3)
+    ad49     ad49       13     1                 __ashlhi3
+    ad5c     ad5c       17     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.__lshrsi3)
+    ad5c     ad5c       17     1                 __lshrsi3
+    ad73     ad73       bd     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.__udivhi3)
+    ad73     ad73       bd     1                 __udivhi3
+    ae30     ae30       45     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.__umodqi3)
+    ae30     ae30       45     1                 __umodqi3
+    ae75     ae75       a6     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.__umodhi3)
+    ae75     ae75       a6     1                 __umodhi3
+    af1b     af1b       d8     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.__udivmodhi4)
+    af1b     af1b       d8     1                 __udivmodhi4
+    aff3     aff3       32     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.__mulhi3)
+    aff3     aff3       32     1                 __mulhi3
+    b025     b025       79     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.text.__mulsi3)
+    b025     b025       79     1                 __mulsi3
+    b09e     b09e        0     1         __init_array_start = .
+    b09e     b09e        0     1         __init_array_end = .
+    b09e     b09e        0     1         __fini_array_start = .
+    b09e     b09e        0     1         __fini_array_end = .
+    b09e     b09e      20e     1 .rodata
+    b09e     b09e        8     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.rodata.dos_copy)
+    b0a6     b0a6       1c     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.rodata.run_ticks)
+    b0c2     b0c2      10d     1         <internal>:(.rodata.str1.1)
+    b1cf     b1cf       1e     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.rodata.display_registers)
+    b1cf     b1cf       1e     1                 display_registers
+    b1ed     b1ed       12     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.rodata.group1_orders)
+    b1ed     b1ed       12     1                 group1_orders
+    b1ff     b1ff       40     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.rodata.r0fs_crc32_update.crc_table)
+    b1ff     b1ff       40     1                 r0fs_crc32_update.crc_table
+    b23f     b23f       38     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.rodata.r0fc_range.ranges)
+    b23f     b23f       38     1                 r0fc_range.ranges
+    b277     b277       20     1         <internal>:(.rodata.cst16)
+    b297     b297        3     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.rodata.r0fg1_workload_stage.cadence)
+    b297     b297        3     1                 r0fg1_workload_stage.cadence
+    b29a     b29a        6     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.rodata.r0fg1_scene_encode.priorities)
+    b29a     b29a        6     1                 r0fg1_scene_encode.priorities
+    b2a0     b2a0        8     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.rodata.r0fg1_geometry_fixture.buffers)
+    b2a0     b2a0        8     1                 r0fg1_geometry_fixture.buffers
+    b2a8     b2a8        4     1         <internal>:(.rodata.cst4)
+    b2ac     b2ac       17     1 .data
+    b2ac     b2ac        0     1         __data_start = .
+    b2ac     b2ac        8     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.data.irq_observation)
+    b2ac     b2ac        8     1                 irq_observation
+    b2b4     b2b4        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.data.iec_before_record)
+    b2b4     b2b4        1     1                 iec_before_record
+    b2b5     b2b5        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.data.iec_after_record)
+    b2b5     b2b5        1     1                 iec_after_record
+    b2b6     b2b6        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.data.reclaim_features_record)
+    b2b6     b2b6        1     1                 reclaim_features_record
+    b2b7     b2b7        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.data.pools_crc)
+    b2b7     b2b7        4     1                 pools_crc
+    b2bb     b2bb        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.data.worlds_crc)
+    b2bb     b2bb        4     1                 worlds_crc
+    b2bf     b2bf        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.data.records_crc)
+    b2bf     b2bf        4     1                 records_crc
+    b2c3     b2c3        0     1         __data_end = .
+    b2c3     b2c3        0     1 __data_load_start = LOADADDR(.data)
+    b2c3     b2c3        0     1 __data_size = SIZEOF(.data)
+    b2c3     b2c3      d49     1 .bss
+    b2c3     b2c3        0     1         __bss_start = .
+    b2c3     b2c3       1b     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/group1_irq_45gs02-73576c.o:(.bss.r0fg1_irq)
+    b2c3     b2c3        0     1                 r0fg1_irq_epoch
+    b2c4     b2c4        0     1                 r0fg1_irq_error
+    b2c5     b2c5        0     1                 r0fg1_irq_summary
+    b2d5     b2d5        0     1                 r0fg1_irq_entered
+    b2d6     b2d6        0     1                 r0fg1_irq_start
+    b2da     b2da        0     1                 r0fg1_irq_now
+    b2de     b2de       7d     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.display_presentation)
+    b2de     b2de       7d     1                 display_presentation
+    b35b     b35b        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.display_requests)
+    b35b     b35b        2     1                 display_requests
+    b35d     b35d        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.display_cancels)
+    b35d     b35d        2     1                 display_cancels
+    b35f     b35f        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.display_views)
+    b35f     b35f        1     1                 display_views
+    b360     b360        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.display_tiers)
+    b360     b360        1     1                 display_tiers
+    b361     b361        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.lifecycle_state)
+    b361     b361        1     1                 lifecycle_state
+    b362     b362        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.context_crc_expected)
+    b362     b362        4     1                 context_crc_expected
+    b366     b366      3d1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.model)
+    b366     b366      3d1     1                 model
+    b737     b737       cb     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.snapshots)
+    b737     b737       cb     1                 snapshots
+    b802     b802        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.next_deadline)
+    b802     b802        4     1                 next_deadline
+    b806     b806        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.display_services)
+    b806     b806        2     1                 display_services
+    b808     b808        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.capture_epoch)
+    b808     b808        1     1                 capture_epoch
+    b809     b809        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.display_started)
+    b809     b809        1     1                 display_started
+    b80a     b80a        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.tick_before_record)
+    b80a     b80a        2     1                 tick_before_record
+    b80c     b80c        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.checksum_before_record)
+    b80c     b80c        4     1                 checksum_before_record
+    b810     b810        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.low_before_record)
+    b810     b810        4     1                 low_before_record
+    b814     b814        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.low_after_record)
+    b814     b814        4     1                 low_after_record
+    b818     b818        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.dos_before_record)
+    b818     b818        4     1                 dos_before_record
+    b81c     b81c        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.dos_after_record)
+    b81c     b81c        4     1                 dos_after_record
+    b820     b820        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.context_invalidated_record)
+    b820     b820        1     1                 context_invalidated_record
+    b821     b821       ff     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.transfer)
+    b821     b821       ff     1                 transfer
+    b920     b920        f     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.display_saved)
+    b920     b920        f     1                 display_saved
+    b92f     b92f        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.display_front)
+    b92f     b92f        1     1                 display_front
+    b930     b930        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.display_ready)
+    b930     b930        1     1                 display_ready
+    b931     b931        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.display_slot)
+    b931     b931        1     1                 display_slot
+    b932     b932        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.display_clear_at)
+    b932     b932        2     1                 display_clear_at
+    b934     b934        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.display_suspended)
+    b934     b934        1     1                 display_suspended
+    b935     b935        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.application_dma_outstanding)
+    b935     b935        1     1                 application_dma_outstanding
+    b936     b936        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.display_frame)
+    b936     b936        1     1                 display_frame
+    b937     b937        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.group1_order)
+    b937     b937        1     1                 group1_order
+    b938     b938        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.display_request_tick)
+    b938     b938        2     1                 display_request_tick
+    b93a     b93a        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.display_registration_crc)
+    b93a     b93a        4     1                 display_registration_crc
+    b93e     b93e        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.display_snapshot_crc)
+    b93e     b93e        4     1                 display_snapshot_crc
+    b942     b942       45     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.display_pixels)
+    b942     b942       45     1                 display_pixels
+    b987     b987        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.display_suspended_d011)
+    b987     b987        1     1                 display_suspended_d011
+    b988     b988        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.r0fsi_iec_before)
+    b988     b988        1     1                 r0fsi_iec_before
+    b989     b989        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.r0fsi_iec_after)
+    b989     b989        1     1                 r0fsi_iec_after
+    b98a     b98a        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.r0fsi_irq_fault)
+    b98a     b98a        1     1                 r0fsi_irq_fault
+    b98b     b98b        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.final_screen)
+    b98b     b98b        1     1                 final_screen
+    b98c     b98c        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.backup_valid)
+    b98c     b98c        1     1                 backup_valid
+    b98d     b98d       ff     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.block)
+    b98d     b98d       ff     1                 block
+    ba8c     ba8c       ff     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.cfworkspace)
+    ba8c     ba8c       ff     1                 cfworkspace
+    bb8b     bb8b        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.features_open)
+    bb8b     bb8b        1     1                 features_open
+    bb8c     bb8c        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.r0fc_trap_flags)
+    bb8c     bb8c        1     1                 r0fc_trap_flags
+    bb8d     bb8d        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.r0fc_trap_base)
+    bb8d     bb8d        1     1                 r0fc_trap_base
+    bb8e     bb8e       11     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.list)
+    bb8e     bb8e       11     1                 list
+    bb9f     bb9f        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.pcm_on)
+    bb9f     bb9f        1     1                 pcm_on
+    bba0     bba0        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.pcm_last)
+    bba0     bba0        1     1                 pcm_last
+    bba1     bba1        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.service_last)
+    bba1     bba1        4     1                 service_last
+    bba5     bba5        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.audio_frame)
+    bba5     bba5        1     1                 audio_frame
+    bba6     bba6        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.keys_valid)
+    bba6     bba6        1     1                 keys_valid
+    bba7     bba7        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.input_frame)
+    bba7     bba7        1     1                 input_frame
+    bba8     bba8       18     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.keys)
+    bba8     bba8       18     1                 keys
+    bbc0     bbc0        3     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.scripted)
+    bbc0     bbc0        3     1                 scripted
+    bbc3     bbc3        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.r0fc_features)
+    bbc3     bbc3        1     1                 r0fc_features
+    bbc4     bbc4        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.r0fc_hardware_seed)
+    bbc4     bbc4        1     1                 r0fc_hardware_seed
+    bbc5     bbc5        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.r0fc_software_seed)
+    bbc5     bbc5        2     1                 r0fc_software_seed
+    bbc7     bbc7        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.export.0)
+    bbc7     bbc7        4     1                 export.0
+    bbcb     bbcb        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.export.2)
+    bbcb     bbcb        1     1                 export.2
+    bbcc     bbcc       ff     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.buffer)
+    bbcc     bbcc       ff     1                 buffer
+    bccb     bccb        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.cfreclaimed)
+    bccb     bccb        1     1                 cfreclaimed
+    bccc     bccc        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.capsule_crc)
+    bccc     bccc        4     1                 capsule_crc
+    bcd0     bcd0      100     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.header)
+    bcd0     bcd0      100     1                 header
+    bdd0     bdd0        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.cfperiod)
+    bdd0     bdd0        4     1                 cfperiod
+    bdd4     bdd4        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.cfcia_frame)
+    bdd4     bdd4        4     1                 cfcia_frame
+    bdd8     bdd8        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.cfcycles_frame)
+    bdd8     bdd8        4     1                 cfcycles_frame
+    bddc     bddc        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.epoch)
+    bddc     bddc        1     1                 epoch
+    bddd     bddd        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.phase)
+    bddd     bddd        1     1                 phase
+    bdde     bdde        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.clock.0)
+    bdde     bdde        4     1                 clock.0
+    bde2     bde2        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.clock.1)
+    bde2     bde2        4     1                 clock.1
+    bde6     bde6        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.clock.2)
+    bde6     bde6        2     1                 clock.2
+    bde8     bde8       1e     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.phase_edges)
+    bde8     bde8       1e     1                 phase_edges
+    be06     be06       5c     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.record)
+    be06     be06       5c     1                 record
+    be62     be62        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.previous_capture)
+    be62     be62        4     1                 previous_capture
+    be66     be66        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.next_stage)
+    be66     be66        1     1                 next_stage
+    be67     be67        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.active)
+    be67     be67        1     1                 active
+    be68     be68        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.stage_start)
+    be68     be68        4     1                 stage_start
+    be6c     be6c        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.world_generation)
+    be6c     be6c        2     1                 world_generation
+    be6e     be6e        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.world_tick)
+    be6e     be6e        2     1                 world_tick
+    be70     be70        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.records)
+    be70     be70        2     1                 records
+    be72     be72        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.capture_max)
+    be72     be72        4     1                 capture_max
+    be76     be76        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.r0fc_hardware_low)
+    be76     be76        1     1                 r0fc_hardware_low
+    be77     be77        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.r0fc_software_low)
+    be77     be77        2     1                 r0fc_software_low
+    be79     be79       12     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.eligible)
+    be79     be79       12     1                 eligible
+    be8b     be8b        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.causality_errors)
+    be8b     be8b        2     1                 causality_errors
+    be8d     be8d       12     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.pending)
+    be8d     be8d       12     1                 pending
+    be9f     be9f       12     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.intent)
+    be9f     be9f       12     1                 intent
+    beb1     beb1       48     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.full)
+    beb1     beb1       48     1                 full
+    bef9     bef9       12     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.reduced)
+    bef9     bef9       12     1                 reduced
+    bf0b     bf0b       60     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.tracks)
+    bf0b     bf0b       60     1                 tracks
+    bf6b     bf6b        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.populated)
+    bf6b     bf6b        2     1                 populated
+    bf6d     bf6d        6     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.runs)
+    bf6d     bf6d        6     1                 runs
+    bf73     bf73       40     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.observations)
+    bf73     bf73       40     1                 observations
+    bfb3     bfb3        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.cffault)
+    bfb3     bfb3        1     1                 cffault
+    bfb4     bfb4       10     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.faces)
+    bfb4     bfb4       10     1                 faces
+    bfc4     bfc4       20     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.vertices)
+    bfc4     bfc4       20     1                 vertices
+    bfe4     bfe4       20     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.spans)
+    bfe4     bfe4       20     1                 spans
+    c004     c004        8     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.bss.buckets)
+    c004     c004        8     1                 buckets
+    c00c     c00c        0     1         __bss_end = .
+    c00c     c00c        0     1 __bss_size = SIZEOF(.bss)
+    c00c     c00c       24     1 .noinit
+    c00c     c00c       24     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.noinit..Lstatic_stack)
+    c030     c030        0     1         __heap_start = ALIGN(., 2)
+    c030     c030        0     1 __stack = 0xd000
+       0        0       cc     1 .comment
+       0        0       cc     1         <internal>:(.comment)
+       0        0        f     1 .llvm_sympart
+       0        0        f     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/pool-recovery/arithmetic-codec-01/runtime-11/GROUP1.prg.lto.o:(.llvm_sympart)
+       0        0     2f40     4 .symtab
+       0        0     2f40     4         <internal>:(.symtab)
+       0        0       82     1 .shstrtab
+       0        0       82     1         <internal>:(.shstrtab)
+       0        0     32d9     1 .strtab
+       0        0     32d9     1         <internal>:(.strtab)

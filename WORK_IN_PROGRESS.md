@@ -1,69 +1,68 @@
 # Work in Progress
 
-This is the sole routine active-work record. It is not a project history or
-design authority. Its operational status is exactly one of: `ACTIVE`,
-`BLOCKED`, `READY FOR REVIEW`, or `NONE`.
-
-It records the current task, branch, Build Intent summary or link, governing
-authority, authorized area, blocker if any, validation/evidence state, and exact
-next action. If no substantive work is active, status is `NONE`.
-
-Completed work leaves this file. Durable project changes belong in
-`CURRENT_STATE.md` only when they change enduring project reality.
+This is the sole routine active-work record, not project history or design
+authority. Its status is one of ACTIVE, BLOCKED, READY FOR REVIEW or NONE.
 
 ## Current status
 
 - **Status:** `READY FOR REVIEW`
-- **Task:** R0 Closeout T04 - founder-requested source/provenance remediation.
-- **Branch:** `codex/r0f-successor-emulator-exact-carrier`
-- **Build Intent:** Preserve the accepted T04 runtime behavior and frozen
-  T02/T03 architecture while correcting the fail-closed evidence chain. First
-  commit and push every reproducing target/loader/builder/validator/oracle
-  source. Then rebuild from that clean commit, require the exact accepted PRG
-  and D81 identities, mount every Gate-3 disposable copy with basename
-  `R0FSUCC10.D81`, regenerate all direct/carrier/fault evidence with the source
-  commit identity, and commit/push the corrected evidence separately.
-- **Governing authority:** `spec/manifests/spec-corpus.json` current authority
-  order; Main Concept v1.6; Gameplay v1; Runtime v1 candidate; T01 successor
-  reconciliation; frozen T02 contracts/ledgers; reviewed T03 implementation,
-  private integration contract/ledger and handoff; and
-  `00_D81_LOADABILITY_GATE.md`. The verbatim mandatory D81 prompt header and
-  execution order are retained in
-  `docs/plans/R0-F_SUCCESSOR_EMULATOR_EXACT_CARRIER_EXECUTION.md`.
-- **Authorized area:** Bounded successor entry corrections required by direct
-  Xemu diagnosis; T04-only carrier bootstrap, host builder/validator/oracle
-  tooling, canonical carrier and disposable Xemu-run artifacts, retained
-  runtime evidence/manifests, WIP and focused handoff. No public ABI,
-  high-level memory map, frozen range, 100 Hz/stage order, production
-  StorageService, SD-card, physical hardware, measured-limit or R0-F
-  acceptance change.
-- **Validation state:** Founder review accepted T04 runtime behavior but
-  withdrew the Gate-3 provenance claim: prior carrier copies were mounted as
-  `run.D81`, and manifests identified the pre-T04 baseline commit. Those runs
-  remain preserved historical diagnostics and are not final Gate-3 evidence.
-  Live local `main`, `origin/main` and GitHub `main` were
-  verified at `e3cf022c73e76679d85532795d9f79095fa8ead5` before branch creation.
-  A fresh full T03 regression reproduced the reviewed PRG byte-for-byte:
-  21,489 bytes, SHA-256
-  `43074a4322b9a2ec35428e966d9f64ab30655c8f0f27516317e7e3f9e417264a`;
-  resident use was 23,665 / 40,959, high-water `$7C72`, protected end `$2B0F`
-  and reserve use zero. Direct execution exposed entry-order/MAP assumptions;
-  the bounded corrections produced a 21,481-byte PRG with SHA-256
-  `d0979c56c373f8885e4741670141ebf22c0a2e9ef8a84f6a931eaef05592d9df`,
-  resident use 23,657 / 40,959, high-water `$7C6A`, protected end `$2B07`, no
-  new physical allocation and zero reserve use. Direct NTSC/PAL and two fresh
-  exact-carrier runs per mode pass with lineage `D9EEAB81` to `307A70D6`, full
-  service mask `$1F`, independently verified SAVE payload and unchanged
-  canonical hash. Canonical `R0FSUCC10.D81` is 819,200 bytes, SHA-256
-  `3721dff9b84cfb7842cc154f6885861e0c7cbd3c3408c8ecec190bf6b405d461`,
-  prior run is retained as historical diagnostic evidence. Source-freeze
-  commit `20b2aab382d0590037443b6a352fbc77fda7aa42` was pushed before the clean
-  rebuild. Corrected direct NTSC/PAL, two NTSC plus two PAL exact-carrier runs,
-  and missing/invalid-token plus corrupted-result/SAVE reducer lockouts all
-  pass from that commit. Every exact-carrier copy was mounted with basename
-  `R0FSUCC10.D81`; every corrected manifest records the source-freeze commit.
-  SD and physical tiers were not run and remain prohibited.
-- **Exact next action:** Founder review of the separately committed and pushed
-  corrected provenance/evidence set. Do not open or merge a PR, copy to SD,
-  perform physical work, start T05 or freeze measured limits without separate
-  authorization.
+- **Task:** Merge the published Group 1 closeout checkpoint; CI policy
+  apply the approved exact-path/hash CI correction and require green checks.
+- **Branch:** `codex/r0f-successor-physical-exact-carrier`.
+- **Existing published checkpoint:** `2d9a42e110cdd9066031e28e83662ce4fdec6219`.
+- **Owner intent:** Analyze the returned data, close this work unit and retain
+  a compact handoff; publication/merge precede a new chat for remaining R0-F.
+  No new implementation, SD write or hardware run is part of closeout.
+- **Publication authority (2026-10-01):** Owner explicitly requested "commit
+  and push", then "merge it" for this closeout. Preserve the frozen packet
+  unchanged and publish only the named Group 1 scope. No SD write, new
+  target/hardware run, CI bypass or acceptance promotion is authorized.
+  Owner subsequently approved the narrow hash-verified evidence exception
+  and merge after fresh green CI; no blanket evidence-directory exclusion.
+- **Outcome:** Development campaign closed as a preserved checkpoint **with a
+  physical blocker**, not a Group 1/R0-F PASS. Local fit/host/four exact-name
+  Xemu runs pass. P05 SD hash, one extent, safe eject and physical entry pass.
+  The physical run fails `5D/0A/0640/00/00` at display resume after tick 1600.
+  Actual returned `RSSTATE` passes the independent tick-1600 golden; no trace
+  chunks exist, so physical timing is unavailable.
+- **Exact target:** PRG `c068cc532dc820845d8c0649b1c2ea7dfc0bda394b32f7c186088a04d0dc048b`,
+  37517 bytes, resident end `$BFFD`, 3 free bytes. Root source is an earlier
+  variant; the qualified version-7 source is the published isolated snapshot
+  identified in the closeout report. Generated contracts are unchanged.
+- **Retained failure:** P05 `046198fc...5ee4ff` and returned disk
+  `9816043f...f4197d` are preserved. P05 is retired, INVALID — DO NOT USE;
+  no rerun, repair, rename or overwrite. P04's ten-extent failure and the
+  original `ec259fc7...` baseline remain unchanged.
+- **Authority/evidence/handoff:** [Group 1 closeout](docs/reports/R0-F_GROUP1_CLOSEOUT.md)
+  and [physical packet](docs/evidence/r0f/group1/2026-10-01-physical-closeout/README.md).
+  Governing [Build Intent](docs/plans/R0-F_GROUP1_BUILD_INTENT.md) remains;
+  this closeout does not waive its resumed-workload requirement.
+- **Validation:** 47 fresh host tests; twelve prior freezes/7511 entries,
+  original PRGs and P05 inputs match; four existing version-7 Xemu traces
+  independently re-reduce. Actual returned structure/payload/SAVE checks pass.
+  No new target build, Xemu launch or physical test. Hardware/ABI impact none.
+- **Merge preflight blocker:** The existing static CI checks conflict with
+  immutable evidence preservation: `git diff --check origin/main...HEAD`
+  reports 1257 findings, all under `docs/evidence/`; the tracked artifact guard
+  rejects 116 retained evidence images under the Group 1 and successor roots.
+  Local syntax checks pass for 1737 JSON, 1047 Python and 11 shell files.
+  Do not normalize frozen bytes, remove evidence or bypass CI. A narrow
+  evidence-aware CI policy correction is now owner-approved. PR #10's original
+  hosted check failed changed-range whitespace; later steps were skipped.
+- **CI correction validation:** 13 fail-closed fixtures and 47 Group 1 host
+  tests PASS. All 193 exact text pins and 117 exact D81 pins match committed
+  evidence; the remaining changed-range whitespace check and 333-entry
+  physical closeout packet PASS. Target source/contracts/evidence are unchanged.
+- **Next:** Publish the scoped correction to
+  [PR #10](https://github.com/SUON1/f65-megawing/pull/10)
+  and require fresh green hosted CI before the authorized merge commit.
+  Leave unrelated dirty local backup, mirror tools/reports and older physical
+  directories unstaged and intact.
+  After merge, move to a fresh chat using the closeout handoff. First remaining
+  R0-F task is the physical display-resume subfault/clock-order diagnostic;
+  Groups 2/3, existing measurement boundaries and owner acceptance remain.
+  No additional target feature is prescribed and no acceptance follows a merge.
+
+The former 994-line WIP is retained byte-for-byte at
+`docs/evidence/r0f/group1/2026-10-01-physical-closeout/WIP-before-closeout.md`.
+Use it only for historical recovery, not routine startup.

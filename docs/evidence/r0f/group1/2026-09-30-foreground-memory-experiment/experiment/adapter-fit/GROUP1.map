@@ -1,0 +1,543 @@
+     VMA      LMA     Size Align Out     In      Symbol
+       0        0        0     1 
+       0        0        0     1 
+       0        0        0     1 __basic_zp_start = 0x0002
+       0        0        0     1 __basic_zp_end = 0x0090
+       0        0        0     1 __rc0 = __basic_zp_start
+       0        0        0     1 __rc1 = __rc0 + 1
+       0        0        0     1 PROVIDE(__rc2 = __rc1 + 1)
+       0        0        0     1 __rc3 = __rc2 + 1
+       0        0        0     1 PROVIDE(__rc4 = __rc3 + 1)
+       0        0        0     1 __rc5 = __rc4 + 1
+       0        0        0     1 PROVIDE(__rc6 = __rc5 + 1)
+       0        0        0     1 __rc7 = __rc6 + 1
+       0        0        0     1 PROVIDE(__rc8 = __rc7 + 1)
+       0        0        0     1 __rc9 = __rc8 + 1
+       0        0        0     1 PROVIDE(__rc10 = __rc9 + 1)
+       0        0        0     1 __rc11 = __rc10 + 1
+       0        0        0     1 PROVIDE(__rc12 = __rc11 + 1)
+       0        0        0     1 __rc13 = __rc12 + 1
+       0        0        0     1 PROVIDE(__rc14 = __rc13 + 1)
+       0        0        0     1 __rc15 = __rc14 + 1
+       0        0        0     1 PROVIDE(__rc16 = __rc15 + 1)
+       0        0        0     1 __rc17 = __rc16 + 1
+       0        0        0     1 PROVIDE(__rc18 = __rc17 + 1)
+       0        0        0     1 __rc19 = __rc18 + 1
+       0        0        0     1 PROVIDE(__rc20 = __rc19 + 1)
+       0        0        0     1 __rc21 = __rc20 + 1
+       0        0        0     1 PROVIDE(__rc22 = __rc21 + 1)
+       0        0        0     1 __rc23 = __rc22 + 1
+       0        0        0     1 PROVIDE(__rc24 = __rc23 + 1)
+       0        0        0     1 __rc25 = __rc24 + 1
+       0        0        0     1 PROVIDE(__rc26 = __rc25 + 1)
+       0        0        0     1 __rc27 = __rc26 + 1
+       0        0        0     1 PROVIDE(__rc28 = __rc27 + 1)
+       0        0        0     1 __rc29 = __rc28 + 1
+       0        0        0     1 PROVIDE(__rc30 = __rc29 + 1)
+       0        0        0     1 __rc31 = __rc30 + 1
+       0        0        0     1 __basic_zp_size = __basic_zp_end - __basic_zp_start
+    2001     2001       16     1 .basic_header
+    2001     2001       16     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/basic-header.o:(.basic_header)
+    2015     2015        0     1                 next_line
+      22       22        0     1 .zp.data
+      22       22        0     1         __zp_data_start = .
+      22       22        0     1 __zp_data_load_start = LOADADDR(.zp.data)
+      22       22        0     1 __zp_data_size = SIZEOF(.zp.data)
+      22       22        0     1 .zp.bss
+      22       22        0     1         __zp_bss_start = .
+      22       22        0     1 __zp_bss_size = SIZEOF(.zp.bss)
+    2017     2017     109a     1 .r0fs_protected
+    2017     2017        9     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/successor_admission_45gs02-6e9448.o:(.text.r0fs_protected)
+    2017     2017        0     1                 r0fs_quiesce_marker
+    2019     2019        0     1                 r0fs_context_restore_marker
+    201b     201b        0     1                 r0fs_canonical_restore_marker
+    201f     201f        0     1                 r0fs_resume_marker
+    2020     2020      81b     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/successor_integration_45gs02-72621f.o:(.text.r0fs_protected)
+    2020     2020        0     1                 r0fs_context_read
+    20df     20df        0     1                 r0fs_context_invalidate
+    211b     211b        0     1                 r0fs_storage
+    282f     282f        0     1                 r0fs_storage_end
+    283b     283b      588     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/group1_terminal_export_45gs02-8a1c81.o:(.text.r0fs_protected)
+    283b     283b        0     1                 r0fg1_terminal_export
+    2cf4     2cf4        0     1                 r0fg1_terminal_export_end
+    2cf4     2cf4        0     1                 r0fg1_terminal_file_setup
+    2dc3     2dc3        0     1                 r0fg1_terminal_file_setup_end
+    2dc3     2dc3      146     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/group1_irq_45gs02-594998.o:(.text.r0f_pf)
+    2dc3     2dc3        0     1                 r0f_pf_enter
+    2e23     2e23        0     1                 r0f_pf_start_irq
+    2e3a     2e3a        0     1                 r0f_pf_stop_irq
+    2e46     2e46        0     1                 r0f_pf_irq
+    2e78     2e78        0     1                 r0f_pf_nmi
+    2e80     2e80        0     1                 r0f_pf_flat_copy
+    2ebd     2ebd        0     1                 r0f_pf_register_probe
+    2f09     2f09       1c     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/group1_terminal_export_45gs02-8a1c81.o:(.r0fs_protected_data)
+    2f09     2f09        0     1                 r0fg1_export_permit
+    2f0a     2f0a        0     1                 r0fg1_export_status
+    2f0b     2f0b        0     1                 r0fg1_export_error
+    2f0c     2f0c        0     1                 r0fg1_export_files
+    2f0d     2f0d        0     1                 r0fg1_export_bytes
+    2f11     2f11        0     1                 r0fg1_export_remaining
+    2f15     2f15        0     1                 r0fg1_export_source
+    2f19     2f19        0     1                 r0fg1_export_chunk
+    2f1b     2f1b        0     1                 r0fg1_export_copy_left
+    2f1d     2f1d        0     1                 r0fg1_export_filename
+    2f22     2f22        0     1                 r0fg1_export_initialize
+    2f24     2f24        0     1                 r0fg1_export_secondary
+    2f25     2f25      18c     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.r0fs_protected_data)
+    2f25     2f25        1     1                 r0fsi_storage_phase
+    2f26     2f26        1     1                 r0fsi_storage_error
+    2f27     2f27        1     1                 r0fsi_storage_returned
+    2f28     2f28        1     1                 r0fsi_storage_denied
+    2f29     2f29        1     1                 r0fsi_permit
+    2f2a     2f2a        1     1                 r0fsi_input
+    2f2b     2f2b        1     1                 r0fsi_output
+    2f2c     2f2c        1     1                 r0fsi_input_end
+    2f2d     2f2d        1     1                 r0fsi_output_end
+    2f2e     2f2e       20     1                 r0fsi_token
+    2f4e     2f4e       20     1                 r0fsi_read
+    2f6e     2f6e       20     1                 r0fsi_payload
+    2f8e     2f8e        4     1                 r0fsi_end
+    2f92     2f92        1     1                 r0fsi_app_sp
+    2f93     2f93        2     1                 r0fsi_context_offset
+    2f95     2f95        1     1                 r0fsi_context_length
+    2f96     2f96        1     1                 r0fsi_context_region
+    2f97     2f97        1     1                 r0fsi_context_copy_ok
+    2f98     2f98       ff     1                 r0fsi_context_buffer
+    3097     3097        1     1                 r0f_pf_cpu_port
+    3098     3098        2     1                 r0f_pf_irq_count
+    309a     309a        1     1                 r0f_pf_irq_seq
+    309b     309b        1     1                 r0f_pf_irq_seen
+    309c     309c        7     1                 r0f_pf_probe_regs
+    30a3     30a3        1     1                 r0f_pf_copy_ok
+    30a4     30a4        2     1                 r0f_pf_probe_timeout
+    30a6     30a6        1     1                 r0f_pf_nmi_seen
+    30a7     30a7        9     1                 r0f_pf_copy_request
+    30b0     30b0        1     1                 r0f_pf_stack_high
+    30b1     30b1     7fd9     1 .text
+    30b1     30b1        0     1         _init = .
+    30b1     30b1        0     1         _start = .
+    30b1     30b1       c5     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/successor_admission_45gs02-6e9448.o:(.init.005)
+    30b1     30b1        0     1                 r0fs_pre_c_capture
+    3176     3176        0     1                 r0fs_pre_c_capture_end
+    3176     3176       c5     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/group1_export_capture_45gs02-1d1395.o:(.init.006)
+    3176     3176        0     1                 r0fg1_export_capture
+    323b     323b        0     1                 r0fg1_export_capture_end
+    323b     323b        e     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/unmap-basic.o:(.init.010)
+    3249     3249        3     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/r0a_platform_45gs02-2788b1.o:(.init.011)
+    3249     3249        0     1                 f65_basepage_enter
+    324c     324c        8     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(init-stack.S.obj):(.init.100)
+    324c     324c        0     1                 __do_init_stack
+    3254     3254        3     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(zero-bss.c.obj):(.init.200)
+    3254     3254        0     1                 __do_zero_bss
+    3257     3257        3     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/common/lib/crt0.o:(.call_main)
+    325a     325a        3     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(exit-custom.S.obj):(.after_main)
+    325a     325a        0     1                 __after_main
+    325d     325d        0     1         _fini = .
+    325d     325d        3     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/r0a_platform_45gs02-2788b1.o:(.fini.989)
+    325d     325d        0     1                 f65_basepage_leave
+    3260     3260        a     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/unmap-basic.o:(.fini.990)
+    326a     326a        1     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/common/lib/crt0.o:(.fini_rts)
+    326b     326b        3     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/successor_integration_45gs02-72621f.o:(.text.r0fsi_status)
+    326b     326b        0     1                 r0fsi_irq_cpu_status
+    326e     326e       b4     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/combined_45gs02-8972e2.o:(.text.r0fc_platform)
+    326e     326e        0     1                 r0fc_rom_toggle
+    3291     3291        0     1                 r0fc_stack_seed
+    32d8     32d8        0     1                 r0fc_stack_measure
+    3322     3322       fa     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/group1_irq_45gs02-594998.o:(.text.r0fg1_irq)
+    3322     3322        0     1                 r0fg1_irq_begin
+    333a     333a        0     1                 r0fg1_irq_end
+    33cd     33cd        0     1                 r0fg1_irq_read
+    341c     341c        0     1                 r0fg1_irq_timing_end
+    341c     341c       13     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(zero-bss.c.obj):(.text.__zero_bss)
+    341c     341c       13     1                 __zero_bss
+    342f     342f     253f     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.main)
+    342f     342f     253f     1                 main
+    596e     596e       14     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.lockout)
+    596e     596e       14     1                 lockout
+    5982     5982      10b     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.context_crc)
+    5982     5982      10b     1                 context_crc
+    5a8d     5a8d       94     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.context_valid)
+    5a8d     5a8d       94     1                 context_valid
+    5b21     5b21      109     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.dos_copy)
+    5b21     5b21      109     1                 dos_copy
+    5c2a     5c2a      1c7     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.dos_crc)
+    5c2a     5c2a      1c7     1                 dos_crc
+    5df1     5df1       23     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.transition)
+    5df1     5df1       23     1                 transition
+    5e14     5e14       c7     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.display_seed_staging)
+    5e14     5e14       c7     1                 display_seed_staging
+    5edb     5edb       41     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.display_configure)
+    5edb     5edb       41     1                 display_configure
+    5f1c     5f1c     120a     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.run_ticks)
+    5f1c     5f1c     120a     1                 run_ticks
+    7126     7126      d2a     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.display_quantum)
+    7126     7126      d2a     1                 display_quantum
+    7e50     7e50      319     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.restore_rom_after_display_suspend)
+    7e50     7e50      319     1                 restore_rom_after_display_suspend
+    8169     8169       bd     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.low_application_copy)
+    8169     8169       bd     1                 low_application_copy
+    8226     8226      31a     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.application_dma)
+    8226     8226      31a     1                 application_dma
+    8540     8540       2a     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.result_u32)
+    8540     8540       2a     1                 result_u32
+    856a     856a      102     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.group1_service_sweep)
+    856a     856a      102     1                 group1_service_sweep
+    866c     866c       ef     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.fixed_physical_copy)
+    866c     866c       ef     1                 fixed_physical_copy
+    875b     875b       72     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.crc_update)
+    875b     875b       72     1                 crc_update
+    87cd     87cd       27     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.r0fsi_prepare_rom_toggle)
+    87cd     87cd       27     1                 r0fsi_prepare_rom_toggle
+    87f4     87f4       39     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.r0fsi_irq_snapshot)
+    87f4     87f4       39     1                 r0fsi_irq_snapshot
+    882d     882d       ca     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.r0fs_crc32_update)
+    882d     882d       ca     1                 r0fs_crc32_update
+    88f7     88f7       2e     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.r0fc_edge_sample)
+    88f7     88f7       2e     1                 r0fc_edge_sample
+    8925     8925       12     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.bits)
+    8925     8925       12     1                 bits
+    8937     8937       52     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.r0fc_edge_consume)
+    8937     8937       52     1                 r0fc_edge_consume
+    8989     8989       ba     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.inside)
+    8989     8989       ba     1                 inside
+    8a43     8a43       2a     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.cfput32)
+    8a43     8a43       2a     1                 cfput32
+    8a6d     8a6d       2c     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.cfget32)
+    8a6d     8a6d       2c     1                 cfget32
+    8a99     8a99       6a     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.cfadd)
+    8a99     8a99       6a     1                 cfadd
+    8b03     8b03       5f     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.cfcrc)
+    8b03     8b03       5f     1                 cfcrc
+    8b62     8b62       54     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.crc_byte)
+    8b62     8b62       54     1                 crc_byte
+    8bb6     8bb6       b0     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.cfline)
+    8bb6     8bb6       b0     1                 cfline
+    8c66     8c66       3c     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.screen_byte)
+    8c66     8c66       3c     1                 screen_byte
+    8ca2     8ca2      2eb     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.cfcopy)
+    8ca2     8ca2      2eb     1                 cfcopy
+    8f8d     8f8d       be     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.cfhex)
+    8f8d     8f8d       be     1                 cfhex
+    904b     904b       54     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.cfscreen)
+    904b     904b       54     1                 cfscreen
+    909f     909f      1c5     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.cfphysical_crc)
+    909f     909f      1c5     1                 cfphysical_crc
+    9264     9264       33     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.cfclock_begin)
+    9264     9264       33     1                 cfclock_begin
+    9297     9297       8e     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.cfnow)
+    9297     9297       8e     1                 cfnow
+    9325     9325       a1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.cfframe_wait)
+    9325     9325       a1     1                 cfframe_wait
+    93c6     93c6       a1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.cfinput)
+    93c6     93c6       a1     1                 cfinput
+    9467     9467      139     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.cfaudio_service)
+    9467     9467      139     1                 cfaudio_service
+    95a0     95a0      8bb     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.cfcalibrate)
+    95a0     95a0      8bb     1                 cfcalibrate
+    9e5b     9e5b       19     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.cfaudio_stop)
+    9e5b     9e5b       19     1                 cfaudio_stop
+    9e74     9e74       b7     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.cfaudio_begin)
+    9e74     9e74       b7     1                 cfaudio_begin
+    9f2b     9f2b      1c9     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.validate_capsule)
+    9f2b     9f2b      1c9     1                 validate_capsule
+    a0f4     a0f4      1c2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.transfer.106)
+    a0f4     a0f4      1c2     1                 transfer.106
+    a2b6     a2b6       48     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.r0fg1_trace_write)
+    a2b6     a2b6       48     1                 r0fg1_trace_write
+    a2fe     a2fe      29b     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.r0fg1_calibration)
+    a2fe     a2fe      29b     1                 r0fg1_calibration
+    a599     a599       17     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.put32)
+    a599     a599       17     1                 put32
+    a5b0     a5b0       1e     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.r0fg1_stage_begin)
+    a5b0     a5b0       1e     1                 r0fg1_stage_begin
+    a5ce     a5ce       7f     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.r0fg1_stage_end)
+    a5ce     a5ce       7f     1                 r0fg1_stage_end
+    a64d     a64d      1e0     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.r0fg1_service)
+    a64d     a64d      1e0     1                 r0fg1_service
+    a82d     a82d      133     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.r0fg1_occlusion_clip)
+    a82d     a82d      133     1                 r0fg1_occlusion_clip
+    a960     a960       27     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.r0fg1_lod_select)
+    a960     a960       27     1                 r0fg1_lod_select
+    a987     a987       76     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.r0fg1_pool_init)
+    a987     a987       76     1                 r0fg1_pool_init
+    a9fd     a9fd      1f6     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.r0fg1_pool_sample)
+    a9fd     a9fd      1f6     1                 r0fg1_pool_sample
+    abf3     abf3       4c     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.r0fg1_pool_probe_begin)
+    abf3     abf3       4c     1                 r0fg1_pool_probe_begin
+    ac3f     ac3f       31     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.r0fg1_pool_probe_sample)
+    ac3f     ac3f       31     1                 r0fg1_pool_probe_sample
+    ac70     ac70       a7     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.r0fg1_pool_probe_encode)
+    ac70     ac70       a7     1                 r0fg1_pool_probe_encode
+    ad17     ad17        5     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.exit)
+    ad17     ad17        5     1                 exit
+    ad1c     ad1c       24     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.memcpy)
+    ad1c     ad1c       24     1                 memcpy
+    ad40     ad40       1c     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.__memset)
+    ad40     ad40       1c     1                 __memset
+    ad5c     ad5c        b     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.__ashlqi3)
+    ad5c     ad5c        b     1                 __ashlqi3
+    ad67     ad67       13     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.__ashlhi3)
+    ad67     ad67       13     1                 __ashlhi3
+    ad7a     ad7a       17     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.__lshrsi3)
+    ad7a     ad7a       17     1                 __lshrsi3
+    ad91     ad91       bd     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.__udivhi3)
+    ad91     ad91       bd     1                 __udivhi3
+    ae4e     ae4e       45     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.__umodqi3)
+    ae4e     ae4e       45     1                 __umodqi3
+    ae93     ae93       a6     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.__umodhi3)
+    ae93     ae93       a6     1                 __umodhi3
+    af39     af39       d8     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.__udivmodhi4)
+    af39     af39       d8     1                 __udivmodhi4
+    b011     b011       79     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.text.__mulsi3)
+    b011     b011       79     1                 __mulsi3
+    b08a     b08a        0     1         __init_array_start = .
+    b08a     b08a        0     1         __init_array_end = .
+    b08a     b08a        0     1         __fini_array_start = .
+    b08a     b08a        0     1         __fini_array_end = .
+    b08a     b08a      1f3     1 .rodata
+    b08a     b08a        1     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/common/lib/libcrt.a(const.S.obj):(.rodata)
+    b08a     b08a        0     1                 __set_v
+    b08b     b08b        8     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.rodata.dos_copy)
+    b093     b093       1c     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.rodata.run_ticks)
+    b0af     b0af      10d     1         <internal>:(.rodata.str1.1)
+    b1bc     b1bc       1e     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.rodata.display_registers)
+    b1bc     b1bc       1e     1                 display_registers
+    b1da     b1da       12     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.rodata.group1_orders)
+    b1da     b1da       12     1                 group1_orders
+    b1ec     b1ec       40     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.rodata.r0fs_crc32_update.crc_table)
+    b1ec     b1ec       40     1                 r0fs_crc32_update.crc_table
+    b22c     b22c       38     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.rodata.r0fc_range.ranges)
+    b22c     b22c       38     1                 r0fc_range.ranges
+    b264     b264        3     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.rodata.r0fg1_workload_stage.cadence)
+    b264     b264        3     1                 r0fg1_workload_stage.cadence
+    b267     b267        6     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.rodata.r0fg1_scene_encode.priorities)
+    b267     b267        6     1                 r0fg1_scene_encode.priorities
+    b26d     b26d       10     1         <internal>:(.rodata.cst16)
+    b27d     b27d       13     1 .data
+    b27d     b27d        0     1         __data_start = .
+    b27d     b27d        8     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.data.irq_observation)
+    b27d     b27d        8     1                 irq_observation
+    b285     b285        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.data.iec_before_record)
+    b285     b285        1     1                 iec_before_record
+    b286     b286        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.data.iec_after_record)
+    b286     b286        1     1                 iec_after_record
+    b287     b287        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.data.reclaim_features_record)
+    b287     b287        1     1                 reclaim_features_record
+    b288     b288        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.data.worlds_crc)
+    b288     b288        4     1                 worlds_crc
+    b28c     b28c        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.data.records_crc)
+    b28c     b28c        4     1                 records_crc
+    b290     b290        0     1         __data_end = .
+    b290     b290        0     1 __data_load_start = LOADADDR(.data)
+    b290     b290        0     1 __data_size = SIZEOF(.data)
+    b290     b290      ceb     1 .bss
+    b290     b290        0     1         __bss_start = .
+    b290     b290       1b     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/group1_irq_45gs02-594998.o:(.bss.r0fg1_irq)
+    b290     b290        0     1                 r0fg1_irq_epoch
+    b291     b291        0     1                 r0fg1_irq_error
+    b292     b292        0     1                 r0fg1_irq_summary
+    b2a2     b2a2        0     1                 r0fg1_irq_entered
+    b2a3     b2a3        0     1                 r0fg1_irq_start
+    b2a7     b2a7        0     1                 r0fg1_irq_now
+    b2ab     b2ab       7d     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.display_presentation)
+    b2ab     b2ab       7d     1                 display_presentation
+    b328     b328        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.display_requests)
+    b328     b328        2     1                 display_requests
+    b32a     b32a        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.display_cancels)
+    b32a     b32a        2     1                 display_cancels
+    b32c     b32c        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.display_views)
+    b32c     b32c        1     1                 display_views
+    b32d     b32d        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.display_tiers)
+    b32d     b32d        1     1                 display_tiers
+    b32e     b32e        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.lifecycle_state)
+    b32e     b32e        1     1                 lifecycle_state
+    b32f     b32f        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.context_crc_expected)
+    b32f     b32f        4     1                 context_crc_expected
+    b333     b333      3d1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.model)
+    b333     b333      3d1     1                 model
+    b704     b704       cb     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.snapshots)
+    b704     b704       cb     1                 snapshots
+    b7cf     b7cf        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.next_deadline)
+    b7cf     b7cf        4     1                 next_deadline
+    b7d3     b7d3        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.display_services)
+    b7d3     b7d3        2     1                 display_services
+    b7d5     b7d5        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.capture_epoch)
+    b7d5     b7d5        1     1                 capture_epoch
+    b7d6     b7d6        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.display_started)
+    b7d6     b7d6        1     1                 display_started
+    b7d7     b7d7        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.tick_before_record)
+    b7d7     b7d7        2     1                 tick_before_record
+    b7d9     b7d9        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.checksum_before_record)
+    b7d9     b7d9        4     1                 checksum_before_record
+    b7dd     b7dd        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.low_before_record)
+    b7dd     b7dd        4     1                 low_before_record
+    b7e1     b7e1        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.low_after_record)
+    b7e1     b7e1        4     1                 low_after_record
+    b7e5     b7e5        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.dos_before_record)
+    b7e5     b7e5        4     1                 dos_before_record
+    b7e9     b7e9        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.dos_after_record)
+    b7e9     b7e9        4     1                 dos_after_record
+    b7ed     b7ed        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.context_invalidated_record)
+    b7ed     b7ed        1     1                 context_invalidated_record
+    b7ee     b7ee       ff     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.transfer)
+    b7ee     b7ee       ff     1                 transfer
+    b8ed     b8ed        f     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.display_saved)
+    b8ed     b8ed        f     1                 display_saved
+    b8fc     b8fc        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.display_front)
+    b8fc     b8fc        1     1                 display_front
+    b8fd     b8fd        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.display_ready)
+    b8fd     b8fd        1     1                 display_ready
+    b8fe     b8fe        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.display_slot)
+    b8fe     b8fe        1     1                 display_slot
+    b8ff     b8ff        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.display_clear_at)
+    b8ff     b8ff        2     1                 display_clear_at
+    b901     b901        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.display_suspended)
+    b901     b901        1     1                 display_suspended
+    b902     b902        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.application_dma_outstanding)
+    b902     b902        1     1                 application_dma_outstanding
+    b903     b903        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.display_frame)
+    b903     b903        1     1                 display_frame
+    b904     b904        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.group1_order)
+    b904     b904        1     1                 group1_order
+    b905     b905        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.display_request_tick)
+    b905     b905        2     1                 display_request_tick
+    b907     b907        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.display_registration_crc)
+    b907     b907        4     1                 display_registration_crc
+    b90b     b90b        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.display_snapshot_crc)
+    b90b     b90b        4     1                 display_snapshot_crc
+    b90f     b90f       41     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.display_pixels)
+    b90f     b90f       41     1                 display_pixels
+    b950     b950        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.display_suspended_d011)
+    b950     b950        1     1                 display_suspended_d011
+    b951     b951        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.r0fsi_iec_before)
+    b951     b951        1     1                 r0fsi_iec_before
+    b952     b952        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.r0fsi_iec_after)
+    b952     b952        1     1                 r0fsi_iec_after
+    b953     b953        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.r0fsi_irq_fault)
+    b953     b953        1     1                 r0fsi_irq_fault
+    b954     b954        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.final_screen)
+    b954     b954        1     1                 final_screen
+    b955     b955        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.backup_valid)
+    b955     b955        1     1                 backup_valid
+    b956     b956       ff     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.block)
+    b956     b956       ff     1                 block
+    ba55     ba55       ff     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.cfworkspace)
+    ba55     ba55       ff     1                 cfworkspace
+    bb54     bb54        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.features_open)
+    bb54     bb54        1     1                 features_open
+    bb55     bb55        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.r0fc_trap_flags)
+    bb55     bb55        1     1                 r0fc_trap_flags
+    bb56     bb56        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.r0fc_trap_base)
+    bb56     bb56        1     1                 r0fc_trap_base
+    bb57     bb57       11     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.list)
+    bb57     bb57       11     1                 list
+    bb68     bb68        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.pcm_on)
+    bb68     bb68        1     1                 pcm_on
+    bb69     bb69        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.pcm_last)
+    bb69     bb69        1     1                 pcm_last
+    bb6a     bb6a        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.service_last)
+    bb6a     bb6a        4     1                 service_last
+    bb6e     bb6e        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.audio_frame)
+    bb6e     bb6e        1     1                 audio_frame
+    bb6f     bb6f        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.keys_valid)
+    bb6f     bb6f        1     1                 keys_valid
+    bb70     bb70        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.input_frame)
+    bb70     bb70        1     1                 input_frame
+    bb71     bb71       18     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.keys)
+    bb71     bb71       18     1                 keys
+    bb89     bb89        3     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.scripted)
+    bb89     bb89        3     1                 scripted
+    bb8c     bb8c        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.r0fc_features)
+    bb8c     bb8c        1     1                 r0fc_features
+    bb8d     bb8d        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.r0fc_hardware_seed)
+    bb8d     bb8d        1     1                 r0fc_hardware_seed
+    bb8e     bb8e        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.r0fc_software_seed)
+    bb8e     bb8e        2     1                 r0fc_software_seed
+    bb90     bb90        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.export.0)
+    bb90     bb90        4     1                 export.0
+    bb94     bb94        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.export.2)
+    bb94     bb94        1     1                 export.2
+    bb95     bb95       ff     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.buffer)
+    bb95     bb95       ff     1                 buffer
+    bc94     bc94        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.cfreclaimed)
+    bc94     bc94        1     1                 cfreclaimed
+    bc95     bc95        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.capsule_crc)
+    bc95     bc95        4     1                 capsule_crc
+    bc99     bc99      100     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.header)
+    bc99     bc99      100     1                 header
+    bd99     bd99        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.cfperiod)
+    bd99     bd99        4     1                 cfperiod
+    bd9d     bd9d        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.cfcia_frame)
+    bd9d     bd9d        4     1                 cfcia_frame
+    bda1     bda1        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.cfcycles_frame)
+    bda1     bda1        4     1                 cfcycles_frame
+    bda5     bda5        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.epoch)
+    bda5     bda5        1     1                 epoch
+    bda6     bda6        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.phase)
+    bda6     bda6        1     1                 phase
+    bda7     bda7        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.clock.0)
+    bda7     bda7        4     1                 clock.0
+    bdab     bdab        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.clock.1)
+    bdab     bdab        4     1                 clock.1
+    bdaf     bdaf        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.clock.2)
+    bdaf     bdaf        2     1                 clock.2
+    bdb1     bdb1       1e     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.phase_edges)
+    bdb1     bdb1       1e     1                 phase_edges
+    bdcf     bdcf        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.cffault)
+    bdcf     bdcf        1     1                 cffault
+    bdd0     bdd0       5c     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.record)
+    bdd0     bdd0       5c     1                 record
+    be2c     be2c        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.previous_capture)
+    be2c     be2c        4     1                 previous_capture
+    be30     be30        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.next_stage)
+    be30     be30        1     1                 next_stage
+    be31     be31        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.active)
+    be31     be31        1     1                 active
+    be32     be32        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.stage_start)
+    be32     be32        4     1                 stage_start
+    be36     be36        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.world_generation)
+    be36     be36        2     1                 world_generation
+    be38     be38        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.world_tick)
+    be38     be38        2     1                 world_tick
+    be3a     be3a        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.records)
+    be3a     be3a        2     1                 records
+    be3c     be3c        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.capture_max)
+    be3c     be3c        4     1                 capture_max
+    be40     be40        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.r0fc_hardware_low)
+    be40     be40        1     1                 r0fc_hardware_low
+    be41     be41        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.r0fc_software_low)
+    be41     be41        2     1                 r0fc_software_low
+    be43     be43       12     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.eligible)
+    be43     be43       12     1                 eligible
+    be55     be55        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.causality_errors)
+    be55     be55        2     1                 causality_errors
+    be57     be57       12     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.pending)
+    be57     be57       12     1                 pending
+    be69     be69       12     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.intent)
+    be69     be69       12     1                 intent
+    be7b     be7b       48     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.full)
+    be7b     be7b       48     1                 full
+    bec3     bec3       12     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.reduced)
+    bec3     bec3       12     1                 reduced
+    bed5     bed5       60     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.tracks)
+    bed5     bed5       60     1                 tracks
+    bf35     bf35        6     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.runs)
+    bf35     bf35        6     1                 runs
+    bf3b     bf3b       40     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.bss.r0fg1_pool_shape)
+    bf3b     bf3b       40     1                 r0fg1_pool_shape
+    bf7b     bf7b        0     1         __bss_end = .
+    bf7b     bf7b        0     1 __bss_size = SIZEOF(.bss)
+    bf7b     bf7b       24     1 .noinit
+    bf7b     bf7b       24     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.noinit..Lstatic_stack)
+    bf9f     bf9f        0     1         __heap_start = ALIGN(., 2)
+    bf9f     bf9f        0     1 __stack = 0xd000
+       0        0       cc     1 .comment
+       0        0       cc     1         <internal>:(.comment)
+       0        0        f     1 .llvm_sympart
+       0        0        f     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/adapter-fit/GROUP1.prg.lto.o:(.llvm_sympart)
+       0        0     2ed0     4 .symtab
+       0        0     2ed0     4         <internal>:(.symtab)
+       0        0       82     1 .shstrtab
+       0        0       82     1         <internal>:(.shstrtab)
+       0        0     327a     1 .strtab
+       0        0     327a     1         <internal>:(.strtab)

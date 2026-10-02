@@ -1,0 +1,70 @@
+{
+  "D81_FILENAME": "R0FG1P03.D81",
+  "D81_SHA256": "d1f60b4b56c9eff5b2e1b7d216794789d4817730e411f37af64e5897576194ef",
+  "D81_STATE": "XEMU_BOOT_VERIFIED",
+  "SD": "NOT RUN",
+  "canonicalMountedWritable": false,
+  "carrierInputsVerified": 133,
+  "commit": "NOT RUN",
+  "fullGroup1Acceptance": false,
+  "physical": "NOT RUN",
+  "prgSha256": "523d0369f88957b4bdf33cd15441954ebdf033685e097513411456791634f65d",
+  "push": "NOT RUN",
+  "remaining": [
+    "Integrated near-capacity trace",
+    "Compact operator summary",
+    "Physical SI/whole-ISR/real scanout and PCM boundaries",
+    "Physical carrier/runtime gates"
+  ],
+  "result": "PASS_FIT_HOST_FOCUSED_TIMING_FOUR_EXACT_NAME_BOOTS",
+  "runs": {
+    "ntsc-01": {
+      "corruptionRejects": 102,
+      "executionCounts": {
+        "max": 7328,
+        "p95": 6784,
+        "samples": 3200
+      },
+      "minimumCohortHz": 28.11432886805561,
+      "records": 3200,
+      "traceSha256": "312c5ab0d75b4eb61e8afdb5505b199f320f0bac538077d8215a5d4e24fd7914",
+      "worldPairs": 955
+    },
+    "ntsc-02": {
+      "corruptionRejects": 102,
+      "executionCounts": {
+        "max": 7328,
+        "p95": 6784,
+        "samples": 3200
+      },
+      "minimumCohortHz": 28.113431837830394,
+      "records": 3200,
+      "traceSha256": "c16a728024d9b8463f9d6e9c8bc89ef746b8ab655aa729255cc3a12c2d520761",
+      "worldPairs": 955
+    },
+    "pal-01": {
+      "corruptionRejects": 102,
+      "executionCounts": {
+        "max": 7232,
+        "p95": 6528,
+        "samples": 3200
+      },
+      "minimumCohortHz": 23.11018938297804,
+      "records": 3200,
+      "traceSha256": "17d9a6938e04ef2a7feb87a2bdf5d7681326c6639421757c55e3f9f249c85be0",
+      "worldPairs": 807
+    },
+    "pal-02": {
+      "corruptionRejects": 102,
+      "executionCounts": {
+        "max": 7264,
+        "p95": 6528,
+        "samples": 3200
+      },
+      "minimumCohortHz": 23.110932475884244,
+      "records": 3200,
+      "traceSha256": "98ab91bfd380662d0439a3415b0dfa4da8748d1af5db2265e0d864a33d43e394",
+      "worldPairs": 807
+    }
+  }
+}

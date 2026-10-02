@@ -1,0 +1,11 @@
+T04 Xemu GROUP1_DEVELOPMENT mode=1: /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/irq-ntsc-02
+Traceback (most recent call last):
+  File "/Users/slice/Developer/f65-megawing/tools/diagnostics/r0f_group1_run.py", line 73, in <module>
+    run(args.out.resolve(), args.mode)
+  File "/Users/slice/Developer/f65-megawing/tools/diagnostics/r0f_group1_run.py", line 61, in run
+    report = reducer.reduce(trace, actual["rsstate"], payload_address)
+  File "/Users/slice/Developer/f65-megawing/tools/diagnostics/r0f_group1_reduce.py", line 155, in reduce
+    require(samples > 0 and maximum > 0 and maximum <= total <= samples * maximum,
+  File "/Users/slice/Developer/f65-megawing/tools/diagnostics/r0f_group1_reduce.py", line 27, in require
+    raise ValueError(message)
+ValueError: IRQ aggregate bounds

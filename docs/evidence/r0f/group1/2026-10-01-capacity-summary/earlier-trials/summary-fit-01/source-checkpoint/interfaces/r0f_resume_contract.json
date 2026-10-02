@@ -1,0 +1,19 @@
+{
+  "id": "R0F-RH001",
+  "status": "PRIVATE_NO_RESTART_DEVELOPMENT_NOT_ACCEPTED",
+  "decision": "docs/decisions/R0-F-RH001-NO-RESTART-HANDOFF.md",
+  "constants": {
+    "RESULT": 6400, "RESULT_BYTES": 256,
+    "LOW_START": 768, "LOW_BYTES": 7424, "LOW_BACKUP": 327680,
+    "FILE_BYTES": 32, "PERMIT": 165,
+    "DOS": 65536, "DOS_BYTES": 8192, "DOS_BACKUP": 118784,
+    "KERNEL_DOS": 344064
+  },
+  "states": {"INITIAL": 0, "RECLAIMED": 1, "QUIESCENT": 2, "RESTORED": 3, "STORAGE": 4, "RESUMED": 5, "LOCKOUT": 6},
+  "events": {"RECLAIM": 0, "STOP": 1, "RESTORE": 2, "OPEN_STORAGE": 3, "RESUME": 4, "FAIL": 5},
+  "result": {"magic": "RRH1", "version": 1, "crcOffset": 252},
+  "physical": "NOT RUN",
+  "hardwareCarrier": false,
+  "reserveBytes": 0,
+  "nonClaims": ["full R0-F", "production storage ABI", "full workload integration", "bounded KERNAL latency", "physical acceptance"]
+}

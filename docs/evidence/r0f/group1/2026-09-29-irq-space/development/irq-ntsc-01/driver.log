@@ -1,0 +1,9 @@
+T04 Xemu GROUP1_DEVELOPMENT mode=1: /Users/slice/Developer/f65-megawing/build/r0f/group1/integration/irq-ntsc-01
+Traceback (most recent call last):
+  File "/Users/slice/Developer/f65-megawing/tools/diagnostics/r0f_group1_run.py", line 73, in <module>
+    run(args.out.resolve(), args.mode)
+  File "/Users/slice/Developer/f65-megawing/tools/diagnostics/r0f_group1_run.py", line 32, in run
+    _, execution = probe.emulator.run_xemu(output, mode, image,
+  File "/Users/slice/Developer/f65-megawing/tools/diagnostics/r0f_successor_emulator.py", line 571, in run_xemu
+    raise ValueError("Xemu memory capture unavailable")
+ValueError: Xemu memory capture unavailable

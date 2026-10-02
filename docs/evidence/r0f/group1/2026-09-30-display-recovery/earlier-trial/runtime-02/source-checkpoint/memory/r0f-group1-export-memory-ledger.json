@@ -1,0 +1,40 @@
+{
+  "id": "R0F-GROUP1-EXPORT-DELTA-1",
+  "baseLedger": "memory/r0f-successor-memory-ledger.json",
+  "contract": "interfaces/r0f_group1_export_contract.json",
+  "extendLifetimes": {
+    "kernal-dos-entry-backup": ["SERVICES_RESUMED", "TERMINAL_EXPORT"]
+  },
+  "allocations": [
+    {
+      "id": "group1-export-capsule",
+      "startConstant": "CAPSULE_START",
+      "bytesConstant": "CAPSULE_BYTES",
+      "owner": "private terminal exporter",
+      "lifetimes": ["PRE_C_CAPTURED", "WORKLOAD_ACTIVE", "QUIESCED", "ROM_RESTORED", "APPLICATION_SAVED", "KERNAL_ACTIVE", "STORAGE_COMPLETE", "KERNAL_CONTEXT_RESTORED", "APPLICATION_RESTORED", "SERVICES_RESUMED", "TERMINAL_EXPORT"],
+      "simulationAuthority": false
+    },
+    {
+      "id": "group1-trace",
+      "startConstant": "TRACE_START",
+      "bytesConstant": "TRACE_CAPACITY",
+      "owner": "append-only measurement recorder then read-only terminal exporter",
+      "lifetimes": ["WORKLOAD_ACTIVE", "QUIESCED", "ROM_RESTORED", "APPLICATION_SAVED", "KERNAL_ACTIVE", "STORAGE_COMPLETE", "KERNAL_CONTEXT_RESTORED", "APPLICATION_RESTORED", "SERVICES_RESUMED", "TERMINAL_EXPORT"],
+      "simulationAuthority": false
+    },
+    {
+      "id": "group1-terminal-staging",
+      "startConstant": "STAGING_START",
+      "bytesConstant": "STAGING_BYTES",
+      "owner": "private terminal exporter; ordinary application code no longer executable",
+      "lifetimes": ["TERMINAL_EXPORT"],
+      "simulationAuthority": false
+    }
+  ],
+  "overlays": [
+    {"first": "resident", "second": "group1-terminal-staging"}
+  ],
+  "protectedCodeEndExclusiveConstant": "STAGING_START",
+  "resourceReserveBytes": 0,
+  "measuredReserveBytes": 0
+}

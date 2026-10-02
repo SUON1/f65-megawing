@@ -1,0 +1,40 @@
+{
+  "id": "R0FG1-PRESENTATION-FIXTURE-1",
+  "status": "PRIVATE_DIAGNOSTIC_NOT_PRODUCTION_ABI_OR_MEASURED_LIMITS",
+  "authority": [
+    "docs/plans/R0-F_GROUP1_BUILD_INTENT.md",
+    "docs/plans/R0-F_GROUP1_MEASUREMENT_MATRIX.md",
+    "spec/core/F65_Main_Concept_v1.6_FINAL_HUMAN_REVIEWED.md sections 10 and 17",
+    "spec/subsystems/F-65_Megawing_Graphics_White_Paper_v2.1.pdf sections 2.6, 3.1, 6.4 and 7"
+  ],
+  "constants": {
+    "VIEWS": 2,
+    "BUFFERS": 2,
+    "TIERS": 2,
+    "ANCHORS": 4,
+    "ANCHOR_PRIORITIES": 4,
+    "OCCLUSION_COLUMNS": 4,
+    "LOD_ENTER_PIXELS": 12,
+    "LOD_EXIT_PIXELS": 8
+  },
+  "rules": [
+    "All capacities and thresholds are diagnostic fixture parameters, not selected production limits or assets.",
+    "Single foreground owner; no IRQ readers. Logical commit copies the complete registration, buffer identity, view and composition together. Actual VIC publication remains a separate integration obligation.",
+    "An attempt binds generation, source snapshot tick, view, tier, buffer and horizon once. View requests do not mutate a bound attempt or displayed generation.",
+    "Only complete-buffer plus matching registration may become ready. A ready generation for a superseded requested view cannot swap.",
+    "Anchors rank by priority ascending, then stable handle ascending; selected/essential cues use priority 0, decorative cues 3. Overflow discards the lowest-ranked anchor and is counted; duplicate retained handles reject.",
+    "Occlusion columns belong to the bound generation. Screen Y increases downward; a greater unsigned depth is behind terrain. Behind fragments at or below ridge Y are hidden or clipped. This is presentation-only integer geometry, not terrain query/contact data.",
+    "Tier 0 is the cheap fixture and tier 1 the detailed fixture. Enter at or above LOD_ENTER_PIXELS; leave at or below LOD_EXIT_PIXELS; retain the previous choice in between. Selection occurs before bind, never during resume.",
+    "Invalid identity, missing envelope columns, premature swap and counter overflow reject without publication. Cancel abandons only the private unfinished/ready attempt; the displayed generation is retained."
+  ],
+  "nonClaims": [
+    "integrated Group 1 coverage",
+    "rendered scene or production GraphicsEngine",
+    "complete camera/projection model",
+    "directional angle-bin hysteresis",
+    "terrain/carrier visual-query tolerance proof",
+    "face/vertex/span/bucket/audio/sensor pool coverage",
+    "target link, memory-fit or timing evidence",
+    "VIC-IV atomic publication or physical evidence"
+  ]
+}

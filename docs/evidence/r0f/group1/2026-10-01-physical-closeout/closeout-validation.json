@@ -1,0 +1,57 @@
+{
+  "result": "PASS_CLOSEOUT_DOCUMENTATION_EVIDENCE_AND_HOST_ONLY",
+  "date": "2026-10-01",
+  "currentSourceCheckpoint": "2d9a42e110cdd9066031e28e83662ce4fdec6219",
+  "commands": [
+    {
+      "command": "python3 -B -m unittest discover -s tools/diagnostics -p 'test_r0f_group1_*.py' -v",
+      "exitCode": 0,
+      "tests": 47
+    },
+    {
+      "command": "python3 -B tools/diagnostics/test_d81_delivery.py",
+      "exitCode": 0,
+      "tests": 18,
+      "scope": "DISPOSABLE_HOST_FIXTURES_NO_SD_ACCESS"
+    },
+    {
+      "command": "git diff --check",
+      "exitCode": 0
+    }
+  ],
+  "validations": {
+    "twelvePriorFrozenManifests7511Entries": "PASS",
+    "originalBaselinePrgs": "PASS",
+    "rootP02P03AndP05Inputs": "PASS",
+    "p05ReleaseAndCurrentAllocatorQualification": "PASS",
+    "recordedStagedFinalHashesAndOneExtent": "PASS",
+    "physicalFilenameAndPhoto": "OWNER_CONFIRMED_5D_FAILURE",
+    "actualReturnedDiskStructureOriginalPayloadsAndSave": "PASS",
+    "fourRetainedVersion7TraceReductions": "PASS",
+    "retiredP05RejectedBeforeRuntime": "PASS",
+    "newMarkdownLinksAndPacketJson": "PASS"
+  },
+  "knownTransientCheckerFailures": [
+    "Initial read-only audit selected root version-5 decoder for version-7 trace; corrected to frozen decoder, no target artifact changed or rerun",
+    "Initial new README relative link had two extra parent traversals; corrected and link checks passed",
+    "Sandboxed diskutil info could not use DiskManagement; approved unsandboxed read-only identity lookup succeeded"
+  ],
+  "scope": {
+    "targetSourceChanges": false,
+    "generatedChanges": false,
+    "sdWrites": false,
+    "newXemuRuns": 0,
+    "newPhysicalRuns": 0,
+    "currentStateChanged": false,
+    "stagingPerformed": false,
+    "commitPerformed": false,
+    "pushPerformed": false,
+    "mergePerformed": false
+  },
+  "outcome": "DEVELOPMENT_CAMPAIGN_CLOSEOUT_WITH_PHYSICAL_RESUME_BLOCKER_NOT_ACCEPTANCE",
+  "physicalRuntime": "FAIL_5D_AT_0640",
+  "physicalTraceChunks": 0,
+  "physicalTiming": "UNAVAILABLE",
+  "residualWork": "Existing physical display-resume subfault and restart ordering; original remaining R0-F campaign; no new feature requirements",
+  "dirtyTreeBoundary": "Only WIP and Group 1 closeout/hand-off evidence scope changed; unrelated local tools/reports and older physical evidence preserved unstaged"
+}

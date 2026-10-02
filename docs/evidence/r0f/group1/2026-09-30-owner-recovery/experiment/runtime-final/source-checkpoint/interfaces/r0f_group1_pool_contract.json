@@ -1,0 +1,21 @@
+{
+  "id": "R0FG1-POOL-OBSERVATION-2",
+  "authority": "docs/plans/R0-F_GROUP1_BUILD_INTENT.md",
+  "status": "PRIVATE_DIAGNOSTIC_NOT_PRODUCTION_ABI_OR_MEASURED_LIMITS",
+  "fixtureParameters": {"OFFSET_STRIDE": 13},
+  "wire": {"RECORD_BYTES": 8, "FAULT": 113, "GEOMETRY_COUNT": 4},
+  "wireOffsets": {"CAPACITY": 0, "PEAK": 2, "SAMPLES": 4, "FULL_SAMPLES": 6},
+  "integration": "Trace v6 carries two cumulative eight-owner checkpoints (pre/post storage), four little-endian u16 fields per owner. Geometry owners claim byte-record buffers using (generation + owner*OFFSET_STRIDE) mod (capacity+1), populate source_tick + owner*OFFSET_STRIDE + index modulo 256, consume their concatenation into the scene CRC, then release. This is bounded diagnostic storage, not production geometry. Track owners count first populated slots without changing the 24-slot workload. PCM observes the actual channel-0 on/off state (other channels remain off); cache observes valid bytes only after successful refill. Observation state is not reset across storage.",
+  "pools": {
+    "FACES": {"unit": "fixture faces", "capacity": 16},
+    "VERTICES": {"unit": "fixture vertices", "capacity": 32},
+    "SPANS": {"unit": "fixture spans", "capacity": 32},
+    "BUCKETS": {"unit": "fixture buckets", "capacity": 8},
+    "PCM_CHANNELS": {"unit": "fixture active PCM channels", "capacity": 4},
+    "AUDIO_CACHE": {"unit": "fixture cached bytes", "capacity": 255},
+    "MEGA_TRACKS": {"unit": "fixture MEGA track slots", "capacity": 24},
+    "RED_TRACKS": {"unit": "fixture RED track slots", "capacity": 24}
+  },
+  "observation": "The subsystem owner supplies current occupancy, including zero, after every relevant occupancy transition. An observer records peak, sample count and full-capacity sample count. It does not allocate, release, evict, steal a voice, drop work or select a policy. Full occupancy is an observation, not a universal acceptance failure or success. Capacity is immutable between explicit initializations. Invalid state, out-of-range occupancy or counter overflow rejects without mutation; the caller must treat rejection as invalid evidence, never saturation or omission.",
+  "scope": "Candidate actual-owner integration with separately qualified native tests. Fixture capacities are not production geometry/audio-cache limits. Track occupancy means populated scalar fixture slots, not production sensor allocation. PCM occupancy covers channel zero only; four-channel contention is not established. Domain observers cannot mutate each other's state. Single foreground owner; no concurrency/IRQ atomicity guarantee. Native state is not serialized. Trace version 6 is private field-wise encoding. Full resident fit and fresh target timing are gates before execution; implementation alone proves neither."
+}

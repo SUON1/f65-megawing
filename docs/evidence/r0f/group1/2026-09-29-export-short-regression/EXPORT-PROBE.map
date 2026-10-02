@@ -1,0 +1,505 @@
+     VMA      LMA     Size Align Out     In      Symbol
+       0        0        0     1 
+       0        0        0     1 
+       0        0        0     1 __basic_zp_start = 0x0002
+       0        0        0     1 __basic_zp_end = 0x0090
+       0        0        0     1 __rc0 = __basic_zp_start
+       0        0        0     1 __rc1 = __rc0 + 1
+       0        0        0     1 PROVIDE(__rc2 = __rc1 + 1)
+       0        0        0     1 __rc3 = __rc2 + 1
+       0        0        0     1 PROVIDE(__rc4 = __rc3 + 1)
+       0        0        0     1 __rc5 = __rc4 + 1
+       0        0        0     1 PROVIDE(__rc6 = __rc5 + 1)
+       0        0        0     1 __rc7 = __rc6 + 1
+       0        0        0     1 PROVIDE(__rc8 = __rc7 + 1)
+       0        0        0     1 __rc9 = __rc8 + 1
+       0        0        0     1 PROVIDE(__rc10 = __rc9 + 1)
+       0        0        0     1 __rc11 = __rc10 + 1
+       0        0        0     1 PROVIDE(__rc12 = __rc11 + 1)
+       0        0        0     1 __rc13 = __rc12 + 1
+       0        0        0     1 PROVIDE(__rc14 = __rc13 + 1)
+       0        0        0     1 __rc15 = __rc14 + 1
+       0        0        0     1 PROVIDE(__rc16 = __rc15 + 1)
+       0        0        0     1 __rc17 = __rc16 + 1
+       0        0        0     1 PROVIDE(__rc18 = __rc17 + 1)
+       0        0        0     1 __rc19 = __rc18 + 1
+       0        0        0     1 PROVIDE(__rc20 = __rc19 + 1)
+       0        0        0     1 __rc21 = __rc20 + 1
+       0        0        0     1 PROVIDE(__rc22 = __rc21 + 1)
+       0        0        0     1 __rc23 = __rc22 + 1
+       0        0        0     1 PROVIDE(__rc24 = __rc23 + 1)
+       0        0        0     1 __rc25 = __rc24 + 1
+       0        0        0     1 PROVIDE(__rc26 = __rc25 + 1)
+       0        0        0     1 __rc27 = __rc26 + 1
+       0        0        0     1 PROVIDE(__rc28 = __rc27 + 1)
+       0        0        0     1 __rc29 = __rc28 + 1
+       0        0        0     1 PROVIDE(__rc30 = __rc29 + 1)
+       0        0        0     1 __rc31 = __rc30 + 1
+       0        0        0     1 __basic_zp_size = __basic_zp_end - __basic_zp_start
+    2001     2001       16     1 .basic_header
+    2001     2001       16     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/basic-header.o:(.basic_header)
+    2015     2015        0     1                 next_line
+      22       22        0     1 .zp.data
+      22       22        0     1         __zp_data_start = .
+      22       22        0     1 __zp_data_load_start = LOADADDR(.zp.data)
+      22       22        0     1 __zp_data_size = SIZEOF(.zp.data)
+      22       22        0     1 .zp.bss
+      22       22        0     1         __zp_bss_start = .
+      22       22        0     1 __zp_bss_size = SIZEOF(.zp.bss)
+    2017     2017      fef     1 .r0fs_protected
+    2017     2017        9     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/successor_admission_45gs02-1ece74.o:(.text.r0fs_protected)
+    2017     2017        0     1                 r0fs_quiesce_marker
+    2019     2019        0     1                 r0fs_context_restore_marker
+    201b     201b        0     1                 r0fs_canonical_restore_marker
+    201f     201f        0     1                 r0fs_resume_marker
+    2020     2020      81b     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/successor_integration_45gs02-057d4c.o:(.text.r0fs_protected)
+    2020     2020        0     1                 r0fs_context_read
+    20df     20df        0     1                 r0fs_context_invalidate
+    211b     211b        0     1                 r0fs_storage
+    282f     282f        0     1                 r0fs_storage_end
+    283b     283b      4e6     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/group1_terminal_export_45gs02-045d28.o:(.text.r0fs_protected)
+    283b     283b        0     1                 r0fg1_terminal_export
+    2d21     2d21        0     1                 r0fg1_terminal_export_end
+    2d21     2d21      140     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/qualification_45gs02-3aa614.o:(.text.r0f_pf)
+    2d21     2d21        0     1                 r0f_pf_enter
+    2d81     2d81        0     1                 r0f_pf_start_irq
+    2d98     2d98        0     1                 r0f_pf_stop_irq
+    2da4     2da4        0     1                 r0f_pf_irq
+    2dd0     2dd0        0     1                 r0f_pf_nmi
+    2dd8     2dd8        0     1                 r0f_pf_flat_copy
+    2e15     2e15        0     1                 r0f_pf_register_probe
+    2e61     2e61       19     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/group1_terminal_export_45gs02-045d28.o:(.r0fs_protected_data)
+    2e61     2e61        0     1                 r0fg1_export_permit
+    2e62     2e62        0     1                 r0fg1_export_status
+    2e63     2e63        0     1                 r0fg1_export_error
+    2e64     2e64        0     1                 r0fg1_export_files
+    2e65     2e65        0     1                 r0fg1_export_bytes
+    2e69     2e69        0     1                 r0fg1_export_remaining
+    2e6d     2e6d        0     1                 r0fg1_export_source
+    2e71     2e71        0     1                 r0fg1_export_chunk
+    2e73     2e73        0     1                 r0fg1_export_copy_left
+    2e75     2e75        0     1                 r0fg1_export_filename
+    2e7a     2e7a      18c     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.r0fs_protected_data)
+    2e7a     2e7a        1     1                 r0fsi_storage_phase
+    2e7b     2e7b        1     1                 r0fsi_storage_error
+    2e7c     2e7c        1     1                 r0fsi_storage_returned
+    2e7d     2e7d        1     1                 r0fsi_storage_denied
+    2e7e     2e7e        1     1                 r0fsi_permit
+    2e7f     2e7f        1     1                 r0fsi_input
+    2e80     2e80        1     1                 r0fsi_output
+    2e81     2e81        1     1                 r0fsi_input_end
+    2e82     2e82        1     1                 r0fsi_output_end
+    2e83     2e83       20     1                 r0fsi_token
+    2ea3     2ea3       20     1                 r0fsi_read
+    2ec3     2ec3       20     1                 r0fsi_payload
+    2ee3     2ee3        4     1                 r0fsi_end
+    2ee7     2ee7        1     1                 r0fsi_app_sp
+    2ee8     2ee8        2     1                 r0fsi_context_offset
+    2eea     2eea        1     1                 r0fsi_context_length
+    2eeb     2eeb        1     1                 r0fsi_context_region
+    2eec     2eec        1     1                 r0fsi_context_copy_ok
+    2eed     2eed       ff     1                 r0fsi_context_buffer
+    2fec     2fec        1     1                 r0f_pf_cpu_port
+    2fed     2fed        1     1                 r0f_pf_stack_high
+    2fee     2fee        2     1                 r0f_pf_irq_count
+    2ff0     2ff0        1     1                 r0f_pf_irq_seq
+    2ff1     2ff1        1     1                 r0f_pf_irq_seen
+    2ff2     2ff2        7     1                 r0f_pf_probe_regs
+    2ff9     2ff9        1     1                 r0f_pf_copy_ok
+    2ffa     2ffa        2     1                 r0f_pf_probe_timeout
+    2ffc     2ffc        1     1                 r0f_pf_nmi_seen
+    2ffd     2ffd        9     1                 r0f_pf_copy_request
+    3006     3006     5b80     1 .text
+    3006     3006        0     1         _init = .
+    3006     3006        0     1         _start = .
+    3006     3006       c5     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/successor_admission_45gs02-1ece74.o:(.init.005)
+    3006     3006        0     1                 r0fs_pre_c_capture
+    30cb     30cb        0     1                 r0fs_pre_c_capture_end
+    30cb     30cb       c5     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/group1_export_capture_45gs02-d3bb23.o:(.init.006)
+    30cb     30cb        0     1                 r0fg1_export_capture
+    3190     3190        0     1                 r0fg1_export_capture_end
+    3190     3190        e     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/unmap-basic.o:(.init.010)
+    319e     319e        3     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/r0a_platform_45gs02-9e4177.o:(.init.011)
+    319e     319e        0     1                 f65_basepage_enter
+    31a1     31a1        8     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(init-stack.S.obj):(.init.100)
+    31a1     31a1        0     1                 __do_init_stack
+    31a9     31a9        3     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(zero-bss.c.obj):(.init.200)
+    31a9     31a9        0     1                 __do_zero_bss
+    31ac     31ac        3     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/common/lib/crt0.o:(.call_main)
+    31af     31af        3     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(exit-custom.S.obj):(.after_main)
+    31af     31af        0     1                 __after_main
+    31b2     31b2        0     1         _fini = .
+    31b2     31b2        3     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/r0a_platform_45gs02-9e4177.o:(.fini.989)
+    31b2     31b2        0     1                 f65_basepage_leave
+    31b5     31b5        a     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/unmap-basic.o:(.fini.990)
+    31bf     31bf        1     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/common/lib/crt0.o:(.fini_rts)
+    31c0     31c0        3     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/successor_integration_45gs02-057d4c.o:(.text.r0fsi_status)
+    31c0     31c0        0     1                 r0fsi_irq_cpu_status
+    31c3     31c3       b4     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/combined_45gs02-bc1562.o:(.text.r0fc_platform)
+    31c3     31c3        0     1                 r0fc_rom_toggle
+    31e6     31e6        0     1                 r0fc_stack_seed
+    322d     322d        0     1                 r0fc_stack_measure
+    3277     3277       13     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(zero-bss.c.obj):(.text.__zero_bss)
+    3277     3277       13     1                 __zero_bss
+    328a     328a      e21     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.main)
+    328a     328a      e21     1                 main
+    40ab     40ab       14     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.lockout)
+    40ab     40ab       14     1                 lockout
+    40bf     40bf      115     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.context_crc)
+    40bf     40bf      115     1                 context_crc
+    41d4     41d4       89     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.context_valid)
+    41d4     41d4       89     1                 context_valid
+    425d     425d      109     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.dos_copy)
+    425d     425d      109     1                 dos_copy
+    4366     4366      1c7     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.dos_crc)
+    4366     4366      1c7     1                 dos_crc
+    452d     452d       19     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.transition)
+    452d     452d       19     1                 transition
+    4546     4546      181     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.display_begin)
+    4546     4546      181     1                 display_begin
+    46c7     46c7       1c     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.run_ticks)
+    46c7     46c7       1c     1                 run_ticks
+    46e3     46e3      472     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.storage_transition)
+    46e3     46e3      472     1                 storage_transition
+    4b55     4b55       2a     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.display_abandon_and_suspend)
+    4b55     4b55       2a     1                 display_abandon_and_suspend
+    4b7f     4b7f       24     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.restore_rom_after_display_suspend)
+    4b7f     4b7f       24     1                 restore_rom_after_display_suspend
+    4ba3     4ba3       3c     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.display_restore)
+    4ba3     4ba3       3c     1                 display_restore
+    4bdf     4bdf       1e     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.result_u16)
+    4bdf     4bdf       1e     1                 result_u16
+    4bfd     4bfd       2a     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.result_u32)
+    4bfd     4bfd       2a     1                 result_u32
+    4c27     4c27       25     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.result_get_u32)
+    4c27     4c27       25     1                 result_get_u32
+    4c4c     4c4c       30     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.display_drain)
+    4c4c     4c4c       30     1                 display_drain
+    4c7c     4c7c       29     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.display_suspend)
+    4c7c     4c7c       29     1                 display_suspend
+    4ca5     4ca5       bd     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.low_application_copy)
+    4ca5     4ca5       bd     1                 low_application_copy
+    4d62     4d62       3c     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.reclaim_after_storage)
+    4d62     4d62       3c     1                 reclaim_after_storage
+    4d9e     4d9e       21     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.display_resume)
+    4d9e     4d9e       21     1                 display_resume
+    4dbf     4dbf       3f     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.display_configure)
+    4dbf     4dbf       3f     1                 display_configure
+    4dfe     4dfe      1d8     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.display_quantum)
+    4dfe     4dfe      1d8     1                 display_quantum
+    4fd6     4fd6       1d     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.application_dma)
+    4fd6     4fd6       1d     1                 application_dma
+    4ff3     4ff3      142     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.run_authoritative_tick)
+    4ff3     4ff3      142     1                 run_authoritative_tick
+    5135     5135       ef     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.fixed_physical_copy)
+    5135     5135       ef     1                 fixed_physical_copy
+    5224     5224       72     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.crc_update)
+    5224     5224       72     1                 crc_update
+    5296     5296       13     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.context_read)
+    5296     5296       13     1                 context_read
+    52a9     52a9      18b     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.r0fsi_capture_page)
+    52a9     52a9      18b     1                 r0fsi_capture_page
+    5434     5434       1d     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.r0fsi_irq_select_line)
+    5434     5434       1d     1                 r0fsi_irq_select_line
+    5451     5451        7     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.read_register)
+    5451     5451        7     1                 read_register
+    5458     5458        9     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.write_register)
+    5458     5458        9     1                 write_register
+    5461     5461       3e     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.r0fsi_prepare_rom_toggle)
+    5461     5461       3e     1                 r0fsi_prepare_rom_toggle
+    549f     549f       96     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.r0fsi_irq_snapshot)
+    549f     549f       96     1                 r0fsi_irq_snapshot
+    5535     5535        c     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.read_irq_byte)
+    5535     5535        c     1                 read_irq_byte
+    5541     5541       10     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.r0fs_transition)
+    5541     5541       10     1                 r0fs_transition
+    5551     5551        e     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.r0fs_storage_allowed)
+    5551     5551        e     1                 r0fs_storage_allowed
+    555f     555f        a     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.r0fs_resume_allowed)
+    555f     555f        a     1                 r0fs_resume_allowed
+    5569     5569       19     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.r0fs_completion_allowed)
+    5569     5569       19     1                 r0fs_completion_allowed
+    5582     5582       6e     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.r0fs_final_fault)
+    5582     5582       6e     1                 r0fs_final_fault
+    55f0     55f0        7     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.r0fs_post_storage_tick_fault)
+    55f0     55f0        7     1                 r0fs_post_storage_tick_fault
+    55f7     55f7       71     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.r0fs_crc32_update)
+    55f7     55f7       71     1                 r0fs_crc32_update
+    5668     5668       2e     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.r0fc_edge_sample)
+    5668     5668       2e     1                 r0fc_edge_sample
+    5696     5696       12     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.bits)
+    5696     5696       12     1                 bits
+    56a8     56a8       52     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.r0fc_edge_consume)
+    56a8     56a8       52     1                 r0fc_edge_consume
+    56fa     56fa      2c6     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.cfratio)
+    56fa     56fa      2c6     1                 cfratio
+    59c0     59c0       42     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.r0fc_hash)
+    59c0     59c0       42     1                 r0fc_hash
+    5a02     5a02       cd     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.r0fc_reset)
+    5a02     5a02       cd     1                 r0fc_reset
+    5acf     5acf       25     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.r0fc_event)
+    5acf     5acf       25     1                 r0fc_event
+    5af4     5af4      4e0     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.r0fc_tick)
+    5af4     5af4      4e0     1                 r0fc_tick
+    5fd4     5fd4       45     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.r0fc_snap_reset)
+    5fd4     5fd4       45     1                 r0fc_snap_reset
+    6019     6019      180     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.r0fc_publish)
+    6019     6019      180     1                 r0fc_publish
+    6199     6199       99     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.r0fc_acquire)
+    6199     6199       99     1                 r0fc_acquire
+    6232     6232       10     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.r0fc_release)
+    6232     6232       10     1                 r0fc_release
+    6242     6242      15a     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.r0fc_range)
+    6242     6242      15a     1                 r0fc_range
+    639c     639c       ba     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.inside)
+    639c     639c       ba     1                 inside
+    6456     6456      10c     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.r0fc_dma_encode)
+    6456     6456      10c     1                 r0fc_dma_encode
+    6562     6562       1e     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.cfput16)
+    6562     6562       1e     1                 cfput16
+    6580     6580       2a     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.cfput32)
+    6580     6580       2a     1                 cfput32
+    65aa     65aa       2c     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.cfget32)
+    65aa     65aa       2c     1                 cfget32
+    65d6     65d6       6a     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.cfadd)
+    65d6     65d6       6a     1                 cfadd
+    6640     6640       5f     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.cfcrc)
+    6640     6640       5f     1                 cfcrc
+    669f     669f       54     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.crc_byte)
+    669f     669f       54     1                 crc_byte
+    66f3     66f3       1a     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.cffinal_screen)
+    66f3     66f3       1a     1                 cffinal_screen
+    670d     670d       b0     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.cfline)
+    670d     670d       b0     1                 cfline
+    67bd     67bd       3c     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.screen_byte)
+    67bd     67bd       3c     1                 screen_byte
+    67f9     67f9      1cf     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.cfcopy)
+    67f9     67f9      1cf     1                 cfcopy
+    69c8     69c8       ec     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.cfhex)
+    69c8     69c8       ec     1                 cfhex
+    6ab4     6ab4       54     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.cfscreen)
+    6ab4     6ab4       54     1                 cfscreen
+    6b08     6b08      1c5     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.cfphysical_crc)
+    6b08     6b08      1c5     1                 cfphysical_crc
+    6ccd     6ccd       7a     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.cfentry)
+    6ccd     6ccd       7a     1                 cfentry
+    6d47     6d47      254     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.cfrom_begin)
+    6d47     6d47      254     1                 cfrom_begin
+    6f9b     6f9b      2c4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.cfrom_restore)
+    6f9b     6f9b      2c4     1                 cfrom_restore
+    725f     725f       33     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.cfclock_begin)
+    725f     725f       33     1                 cfclock_begin
+    7292     7292       8e     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.cfnow)
+    7292     7292       8e     1                 cfnow
+    7320     7320       a1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.cfframe_wait)
+    7320     7320       a1     1                 cfframe_wait
+    73c1     73c1       a1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.cfinput)
+    73c1     73c1       a1     1                 cfinput
+    7462     7462      139     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.cfaudio_service)
+    7462     7462      139     1                 cfaudio_service
+    759b     759b      516     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.cfcalibrate)
+    759b     759b      516     1                 cfcalibrate
+    7ab1     7ab1      15f     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.cfdma)
+    7ab1     7ab1      15f     1                 cfdma
+    7c10     7c10       19     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.cfaudio_stop)
+    7c10     7c10       19     1                 cfaudio_stop
+    7c29     7c29       b7     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.cfaudio_begin)
+    7c29     7c29       b7     1                 cfaudio_begin
+    7ce0     7ce0       9f     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.cfinput_tick)
+    7ce0     7ce0       9f     1                 cfinput_tick
+    7d7f     7d7f       1c     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.r0fg1_export_activate)
+    7d7f     7d7f       1c     1                 r0fg1_export_activate
+    7d9b     7d9b       be     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.r0fg1_export_append)
+    7d9b     7d9b       be     1                 r0fg1_export_append
+    7e59     7e59       70     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.r0fg1_export_freeze)
+    7e59     7e59       70     1                 r0fg1_export_freeze
+    7ec9     7ec9       a6     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.r0fg1_export_begin)
+    7ec9     7ec9       a6     1                 r0fg1_export_begin
+    7f6f     7f6f        e     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.r0fg1_transport_init)
+    7f6f     7f6f        e     1                 r0fg1_transport_init
+    7f7d     7f7d      1c9     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.validate_capsule)
+    7f7d     7f7d      1c9     1                 validate_capsule
+    8146     8146      1bd     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.transfer.114)
+    8146     8146      1bd     1                 transfer.114
+    8303     8303       44     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.r0fg1_trace_write)
+    8303     8303       44     1                 r0fg1_trace_write
+    8347     8347      345     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.r0fg1_transport_prepare)
+    8347     8347      345     1                 r0fg1_transport_prepare
+    868c     868c        3     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.r0fg1_export_probe_init)
+    868c     868c        3     1                 r0fg1_export_probe_init
+    868f     868f      20b     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.r0fg1_export_probe_prepare)
+    868f     868f      20b     1                 r0fg1_export_probe_prepare
+    889a     889a        5     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.exit)
+    889a     889a        5     1                 exit
+    889f     889f       17     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.__lshrsi3)
+    889f     889f       17     1                 __lshrsi3
+    88b6     88b6       bd     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.__udivhi3)
+    88b6     88b6       bd     1                 __udivhi3
+    8973     8973       45     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.__umodqi3)
+    8973     8973       45     1                 __umodqi3
+    89b8     89b8      1b2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.__udivmodsi4)
+    89b8     89b8      1b2     1                 __udivmodsi4
+    8b6a     8b6a       1c     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.text.__memset)
+    8b6a     8b6a       1c     1                 __memset
+    8b86     8b86        0     1         __init_array_start = .
+    8b86     8b86        0     1         __init_array_end = .
+    8b86     8b86        0     1         __fini_array_start = .
+    8b86     8b86        0     1         __fini_array_end = .
+    8b86     8b86      34e     1 .rodata
+    8b86     8b86        1     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/common/lib/libcrt.a(const.S.obj):(.rodata)
+    8b86     8b86        0     1                 __set_v
+    8b87     8b87        8     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.rodata.dos_copy)
+    8b8f     8b8f       1c     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.rodata.r0fc_tick)
+    8bab     8bab      2d3     1         <internal>:(.rodata.str1.1)
+    8e7e     8e7e       1e     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.rodata.display_registers)
+    8e7e     8e7e       1e     1                 display_registers
+    8e9c     8e9c       38     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.rodata.r0fc_range.ranges)
+    8e9c     8e9c       38     1                 r0fc_range.ranges
+    8ed4     8ed4        b     1 .data
+    8ed4     8ed4        0     1         __data_start = .
+    8ed4     8ed4        8     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.data.irq_observation)
+    8ed4     8ed4        8     1                 irq_observation
+    8edc     8edc        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.data.iec_before_record)
+    8edc     8edc        1     1                 iec_before_record
+    8edd     8edd        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.data.iec_after_record)
+    8edd     8edd        1     1                 iec_after_record
+    8ede     8ede        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.data.reclaim_features_record)
+    8ede     8ede        1     1                 reclaim_features_record
+    8edf     8edf        0     1         __data_end = .
+    8edf     8edf        0     1 __data_load_start = LOADADDR(.data)
+    8edf     8edf        0     1 __data_size = SIZEOF(.data)
+    8edf     8edf      a69     1 .bss
+    8edf     8edf        0     1         __bss_start = .
+    8edf     8edf        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.lifecycle_state)
+    8edf     8edf        1     1                 lifecycle_state
+    8ee0     8ee0        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.context_crc_expected)
+    8ee0     8ee0        4     1                 context_crc_expected
+    8ee4     8ee4      3d1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.model)
+    8ee4     8ee4      3d1     1                 model
+    92b5     92b5       cb     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.snapshots)
+    92b5     92b5       cb     1                 snapshots
+    9380     9380        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.next_deadline)
+    9380     9380        4     1                 next_deadline
+    9384     9384        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.display_services)
+    9384     9384        2     1                 display_services
+    9386     9386        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.display_started)
+    9386     9386        1     1                 display_started
+    9387     9387        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.tick_before_record)
+    9387     9387        2     1                 tick_before_record
+    9389     9389        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.checksum_before_record)
+    9389     9389        4     1                 checksum_before_record
+    938d     938d        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.low_before_record)
+    938d     938d        4     1                 low_before_record
+    9391     9391        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.low_after_record)
+    9391     9391        4     1                 low_after_record
+    9395     9395        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.dos_before_record)
+    9395     9395        4     1                 dos_before_record
+    9399     9399        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.dos_after_record)
+    9399     9399        4     1                 dos_after_record
+    939d     939d        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.context_invalidated_record)
+    939d     939d        1     1                 context_invalidated_record
+    939e     939e       ff     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.transfer)
+    939e     939e       ff     1                 transfer
+    949d     949d        f     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.display_saved)
+    949d     949d        f     1                 display_saved
+    94ac     94ac        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.display_front)
+    94ac     94ac        1     1                 display_front
+    94ad     94ad        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.display_ready)
+    94ad     94ad        1     1                 display_ready
+    94ae     94ae        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.display_slot)
+    94ae     94ae        1     1                 display_slot
+    94af     94af        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.display_clear_at)
+    94af     94af        2     1                 display_clear_at
+    94b1     94b1        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.display_suspended)
+    94b1     94b1        1     1                 display_suspended
+    94b2     94b2        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.application_dma_outstanding)
+    94b2     94b2        1     1                 application_dma_outstanding
+    94b3     94b3        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.display_frame)
+    94b3     94b3        1     1                 display_frame
+    94b4     94b4        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.display_snapshot_crc)
+    94b4     94b4        4     1                 display_snapshot_crc
+    94b8     94b8       40     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.display_pixels)
+    94b8     94b8       40     1                 display_pixels
+    94f8     94f8        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.display_suspended_d011)
+    94f8     94f8        1     1                 display_suspended_d011
+    94f9     94f9        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.r0fsi_iec_before)
+    94f9     94f9        1     1                 r0fsi_iec_before
+    94fa     94fa        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.r0fsi_iec_after)
+    94fa     94fa        1     1                 r0fsi_iec_after
+    94fb     94fb        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.r0fsi_irq_fault)
+    94fb     94fb        1     1                 r0fsi_irq_fault
+    94fc     94fc        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.final_screen)
+    94fc     94fc        1     1                 final_screen
+    94fd     94fd        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.backup_valid)
+    94fd     94fd        1     1                 backup_valid
+    94fe     94fe       ff     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.block)
+    94fe     94fe       ff     1                 block
+    95fd     95fd       ff     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.cfworkspace)
+    95fd     95fd       ff     1                 cfworkspace
+    96fc     96fc        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.features_open)
+    96fc     96fc        1     1                 features_open
+    96fd     96fd        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.r0fc_trap_flags)
+    96fd     96fd        1     1                 r0fc_trap_flags
+    96fe     96fe        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.r0fc_trap_base)
+    96fe     96fe        1     1                 r0fc_trap_base
+    96ff     96ff        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.cfperiod)
+    96ff     96ff        4     1                 cfperiod
+    9703     9703       11     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.list)
+    9703     9703       11     1                 list
+    9714     9714        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.pcm_on)
+    9714     9714        1     1                 pcm_on
+    9715     9715        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.pcm_last)
+    9715     9715        1     1                 pcm_last
+    9716     9716        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.service_last)
+    9716     9716        4     1                 service_last
+    971a     971a        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.audio_frame)
+    971a     971a        1     1                 audio_frame
+    971b     971b        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.keys_valid)
+    971b     971b        1     1                 keys_valid
+    971c     971c        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.input_frame)
+    971c     971c        1     1                 input_frame
+    971d     971d       18     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.keys)
+    971d     971d       18     1                 keys
+    9735     9735        3     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.scripted)
+    9735     9735        3     1                 scripted
+    9738     9738        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.r0fc_hardware_low)
+    9738     9738        1     1                 r0fc_hardware_low
+    9739     9739        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.r0fc_software_low)
+    9739     9739        2     1                 r0fc_software_low
+    973b     973b        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.r0fc_features)
+    973b     973b        1     1                 r0fc_features
+    973c     973c        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.r0fc_hardware_seed)
+    973c     973c        1     1                 r0fc_hardware_seed
+    973d     973d        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.r0fc_software_seed)
+    973d     973d        2     1                 r0fc_software_seed
+    973f     973f        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.export.0)
+    973f     973f        4     1                 export.0
+    9743     9743        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.export.2)
+    9743     9743        1     1                 export.2
+    9744     9744       ff     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.buffer)
+    9744     9744       ff     1                 buffer
+    9843     9843        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.cffault)
+    9843     9843        1     1                 cffault
+    9844     9844        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.cfreclaimed)
+    9844     9844        1     1                 cfreclaimed
+    9845     9845        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.capsule_crc)
+    9845     9845        4     1                 capsule_crc
+    9849     9849       ff     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.bss.buffer.119)
+    9849     9849       ff     1                 buffer.119
+    9948     9948        0     1         __bss_end = .
+    9948     9948        0     1 __bss_size = SIZEOF(.bss)
+    9948     9948       23     1 .noinit
+    9948     9948       23     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.noinit..Lstatic_stack)
+    996b     996b        0     1         __heap_start = ALIGN(., 2)
+    996b     996b        0     1 __stack = 0xd000
+       0        0       cc     1 .comment
+       0        0       cc     1         <internal>:(.comment)
+       0        0       1e     1 .llvm_sympart
+       0        0        f     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.llvm_sympart)
+       f        f        f     1         /Users/slice/Developer/f65-megawing/build/r0f/group1/export-regression-02/EXPORT-PROBE.prg.lto.o:(.llvm_sympart)
+       0        0     2760     4 .symtab
+       0        0     2760     4         <internal>:(.symtab)
+       0        0       82     1 .shstrtab
+       0        0       82     1         <internal>:(.shstrtab)
+       0        0     2a11     1 .strtab
+       0        0     2a11     1         <internal>:(.strtab)

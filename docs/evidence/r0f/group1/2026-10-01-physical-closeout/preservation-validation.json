@@ -1,0 +1,62 @@
+{
+  "baselinePrgs": {
+    "build/r0f/group1/integration/preacq-trace-exact-f596-01/baseline-GROUP1.prg": "ec259fc7611d8bb5809d15f6c333f5b224df4c945a8e9ffca5b2402d8444cb30",
+    "build/r0f/successor-integration/R0F-SUCCESSOR-INTEGRATION.prg": "cf605bd377ddcee2c72cdc4abfd20c3ae9eee350b7b78b36cbde8ff1adf8fc23",
+    "docs/evidence/r0f/group1/2026-09-30-six-order-corrected-ntsc/baseline/GROUP1.prg": "0d96a1b21eb36680b05689b659ac8c6f73cc2b61e647c060ab2f369c2bbfc244",
+    "docs/evidence/r0f/group1/2026-09-30-six-order-corrected-ntsc/build/GROUP1.prg": "c249f4e4da972cdc0c5d0958a1a3a148387eb1ad4de602404c6b79fb7c79492b"
+  },
+  "firstAuditAttempt": "Root version-5 reducer rejected version-7 trace length; corrected to the frozen version-7 decoder without modifying or rerunning any target artifact",
+  "p05FourRetainedRuns": [
+    {
+      "name": "ntsc-01",
+      "nominalTiming": "WITHIN_OBSERVED_BOUNDS",
+      "records": 3200,
+      "savedSha256": "7d2f63b8e8e970bb35c351174fae1ca365245f14acf35db0d3cf9016ba8ba5bd",
+      "traceSha256": "aa9752de8358d51b91dcb29b469fb63b0823802048dbc2573c0ec37b65950655",
+      "worldPairs": 955
+    },
+    {
+      "name": "ntsc-02",
+      "nominalTiming": "WITHIN_OBSERVED_BOUNDS",
+      "records": 3200,
+      "savedSha256": "7d2f63b8e8e970bb35c351174fae1ca365245f14acf35db0d3cf9016ba8ba5bd",
+      "traceSha256": "03d6ee0a3a4747a19682f895a087b3644a2f12b3e459037ef54879deb975693c",
+      "worldPairs": 955
+    },
+    {
+      "name": "pal-01",
+      "nominalTiming": "WITHIN_OBSERVED_BOUNDS",
+      "records": 3200,
+      "savedSha256": "7d2f63b8e8e970bb35c351174fae1ca365245f14acf35db0d3cf9016ba8ba5bd",
+      "traceSha256": "13c693698335209b823a4882da801398e1aad390655386e97759822e253ab0eb",
+      "worldPairs": 807
+    },
+    {
+      "name": "pal-02",
+      "nominalTiming": "WITHIN_OBSERVED_BOUNDS",
+      "records": 3200,
+      "savedSha256": "7d2f63b8e8e970bb35c351174fae1ca365245f14acf35db0d3cf9016ba8ba5bd",
+      "traceSha256": "6bfbfe43047ef3f70eb0769fb731178695fcde76656ff9b47370e604e67c53aa",
+      "worldPairs": 807
+    }
+  ],
+  "p05InputsVerified": 134,
+  "passingInputSets": [
+    {
+      "inputsVerified": 93,
+      "metadata": "build/r0f/group1/integration/build.json"
+    },
+    {
+      "inputsVerified": 95,
+      "metadata": "build/r0f/group1/carriers/R0FG1P02/canonical/host-gate.json"
+    },
+    {
+      "inputsVerified": 133,
+      "metadata": "build/r0f/group1/carriers/R0FG1P03/canonical/host-gate.json"
+    }
+  ],
+  "predecessorFreezeCount": 12,
+  "priorEntriesVerified": 7511,
+  "result": "PASS",
+  "scope": "READ_ONLY_AUDIT_AND_REDUCTION_NO_NEW_RUNTIME"
+}

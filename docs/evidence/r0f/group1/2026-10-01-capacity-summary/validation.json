@@ -1,0 +1,89 @@
+{
+  "SD": "NOT RUN",
+  "carrierSha256": "2519af02741197fb8851dccc26ab1379591d5340f1cae3b68cb243844c3730d4",
+  "carrierState": "XEMU_BOOT_VERIFIED",
+  "excluded": "Disposable multi-gigabyte SD fixtures only; retained source/PRG/D81, memory, actual export, logs, screenshots and checks included.",
+  "fullGroup1Acceptance": false,
+  "originalBaselinePrgs": {
+    "build/r0f/group1/integration/preacq-trace-exact-f596-01/baseline-GROUP1.prg": "ec259fc7611d8bb5809d15f6c333f5b224df4c945a8e9ffca5b2402d8444cb30",
+    "build/r0f/successor-integration/R0F-SUCCESSOR-INTEGRATION.prg": "cf605bd377ddcee2c72cdc4abfd20c3ae9eee350b7b78b36cbde8ff1adf8fc23",
+    "docs/evidence/r0f/group1/2026-09-30-six-order-corrected-ntsc/baseline/GROUP1.prg": "0d96a1b21eb36680b05689b659ac8c6f73cc2b61e647c060ab2f369c2bbfc244",
+    "docs/evidence/r0f/group1/2026-09-30-six-order-corrected-ntsc/build/GROUP1.prg": "c249f4e4da972cdc0c5d0958a1a3a148387eb1ad4de602404c6b79fb7c79492b"
+  },
+  "passingInputsVerified": [
+    {
+      "inputsVerified": 93,
+      "metadata": "build/r0f/group1/integration/build.json"
+    },
+    {
+      "inputsVerified": 95,
+      "metadata": "build/r0f/group1/carriers/R0FG1P02/canonical/host-gate.json"
+    },
+    {
+      "inputsVerified": 133,
+      "metadata": "build/r0f/group1/carriers/R0FG1P03/canonical/host-gate.json"
+    }
+  ],
+  "physical": "NOT RUN",
+  "prgSha256": "c068cc532dc820845d8c0649b1c2ea7dfc0bda394b32f7c186088a04d0dc048b",
+  "priorEntriesVerified": 5726,
+  "priorFrozenManifests": [
+    {
+      "entries": 108,
+      "manifestSha256": "8243e85ae0111856e5944844c801a3b6375fd23bcc520bace350ad10b5fbb79c",
+      "name": "2026-09-30-six-order-corrected-ntsc"
+    },
+    {
+      "entries": 61,
+      "manifestSha256": "91b4628aa3b7181001a6715f3feda5726d8aa6f75f75739e50090e921ff258e3",
+      "name": "2026-09-30-six-order-ntsc-120s"
+    },
+    {
+      "entries": 61,
+      "manifestSha256": "cbb429bfa7e789bf12ea269bfb4c4d64c9771a9613d62dd03149e8e080c5cde0",
+      "name": "2026-09-30-six-order-pal-120s"
+    },
+    {
+      "entries": 18,
+      "manifestSha256": "6675cc69982ddf97710c3c0b6156268df39a30e7f59d87813158a9c576b0dfb8",
+      "name": "2026-09-30-presentation-core"
+    },
+    {
+      "entries": 1389,
+      "manifestSha256": "fe3f91134db588a24f49e7ce15fa28ab4efece0bdf5f752f546fb042b1b52616",
+      "name": "2026-09-30-presentation-integration"
+    },
+    {
+      "entries": 140,
+      "manifestSha256": "4ecad119e57ff31137ac26b8af6da153220968d81440cd9fb9fac038edc06f59",
+      "name": "2026-09-30-pool-core"
+    },
+    {
+      "entries": 239,
+      "manifestSha256": "a24e3adcb73679f33287b48af9038f080431bfadc8b82a5ca45922ffb83dbeb9",
+      "name": "2026-09-30-crc-memory-experiment"
+    },
+    {
+      "entries": 210,
+      "manifestSha256": "e10a0c3a6a517f3c2ccb4028f8c2fe85c1cd555592259e9711d5de5dcbe7a734",
+      "name": "2026-09-30-foreground-memory-experiment"
+    },
+    {
+      "entries": 203,
+      "manifestSha256": "1af8670c5cbb01067a54cb3c50273286f325b4206b1dc3ab7030577d845683f6",
+      "name": "2026-09-30-owner-integration"
+    },
+    {
+      "entries": 2069,
+      "manifestSha256": "695b83b5071989f1d1da86e9318e6604c5d99a0daea741920e004648b0a3f7f9",
+      "name": "2026-09-30-owner-recovery"
+    },
+    {
+      "entries": 1228,
+      "manifestSha256": "b22b56605e133dc79b883cc8e807e00a4d8bc8185b08ee80f16cff1496fcbbb6",
+      "name": "2026-09-30-display-recovery"
+    }
+  ],
+  "residentFreeBytes": 3,
+  "result": "PASS_LOCAL_INTEGRATED_CAPACITY_OPERATOR_SUMMARY"
+}

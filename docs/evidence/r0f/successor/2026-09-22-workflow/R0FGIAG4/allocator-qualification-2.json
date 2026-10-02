@@ -1,0 +1,69 @@
+{
+  "allocations": [
+    {
+      "attributes": 32,
+      "bytes": 819200,
+      "extentCount": 1,
+      "extents": [
+        {
+          "bytes": 819200,
+          "deviceOffset": 2179072,
+          "logicalOffset": 0
+        }
+      ],
+      "firstCluster": 400,
+      "name": "R0FGIAG4.D81",
+      "sha256": "90a819f49c5b6cb3bf66f71317c1f40e3cae3f4059fb422b46b05589e86915fa",
+      "shortName": "R0FGIAG4.D81",
+      "unrelatedBytes": "UNCHANGED"
+    },
+    {
+      "attributes": 32,
+      "bytes": 819200,
+      "extentCount": 1,
+      "extents": [
+        {
+          "bytes": 819200,
+          "deviceOffset": 2998272,
+          "logicalOffset": 0
+        }
+      ],
+      "firstCluster": 600,
+      "name": "TEST0002.D81",
+      "sha256": "90a819f49c5b6cb3bf66f71317c1f40e3cae3f4059fb422b46b05589e86915fa",
+      "shortName": "TEST0002.D81",
+      "unrelatedBytes": "UNCHANGED"
+    },
+    {
+      "attributes": 32,
+      "bytes": 819200,
+      "extentCount": 1,
+      "extents": [
+        {
+          "bytes": 819200,
+          "deviceOffset": 3817472,
+          "logicalOffset": 0
+        }
+      ],
+      "firstCluster": 800,
+      "name": "TEST0003.D81",
+      "sha256": "90a819f49c5b6cb3bf66f71317c1f40e3cae3f4059fb422b46b05589e86915fa",
+      "shortName": "TEST0003.D81",
+      "unrelatedBytes": "UNCHANGED"
+    }
+  ],
+  "identity": {
+    "build/tools/m65tools-develo-966-23186d-macos/mega65_ftp.osx": "d7acf00fa056b5a8a8bd3756a3a411798bfb6f9b7414bb2c0796a51eeae14580",
+    "toolchain/d81_delivery.lock.json": "d0172470ca8312a6f254369195aadb4a96bbc13f7b4e61dd45d4831d6979ec8b",
+    "tools/diagnostics/d81_delivery.py": "a3524ad7ad92f95e69e1c4aef5ea5ac3791c0a7e2aa46b6e61926c91a6cea50b",
+    "tools/diagnostics/d81_direct_delivery.py": "5c7af425c341a3f49c258431bd7640e0aed52b63a144c7d02b0d090c490bb886",
+    "tools/diagnostics/d81_fat32_audit.py": "d65ded34c37d86e3ebe43fc73047172e7f35bacc2b8c103185b52a3c12adf817",
+    "tools/diagnostics/d81_foundation_compare.py": "c58c46d8cd857bbb695a3fb3f22f3f7b52feda2d1bcd53343464d5ad7e0d5012",
+    "tools/diagnostics/d81_sd_contiguity.py": "7c97d0fd58535c26b05872a4a10010f86b2a966d3b7158b9b6e22213759f2e5e",
+    "tools/diagnostics/test_d81_direct_delivery.py": "a613cdae625b248e1842b3f15b7291a3484e9068cbaac3cc066fa918ddfe7b16"
+  },
+  "result": "PASS",
+  "scope": "synthetic fragmented FAT32 partition; no SD writes",
+  "sourceSha256": "90a819f49c5b6cb3bf66f71317c1f40e3cae3f4059fb422b46b05589e86915fa",
+  "testsRun": 11
+}

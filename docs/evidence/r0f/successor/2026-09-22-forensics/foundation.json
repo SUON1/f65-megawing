@@ -1,0 +1,3129 @@
+{
+  "candidates": [
+    {
+      "differenceFromControl": {
+        "differencesByControlComponent": {
+          "bam": 24,
+          "directory": 58,
+          "header": 12,
+          "payload:autoboot.c65": 62,
+          "payload:r0f-evid": 7935,
+          "payload:r0f-proof": 22553
+        },
+        "differingBytes": 30644,
+        "differingRanges": 491,
+        "firstRanges": [
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 368671,
+            "startByte": 368640,
+            "startSector": {
+              "offset": 0,
+              "sector": 0,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 368730,
+            "startByte": 368673,
+            "startSector": {
+              "offset": 33,
+              "sector": 0,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 368808,
+            "startByte": 368732,
+            "startSector": {
+              "offset": 92,
+              "sector": 0,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 368838,
+            "startByte": 368810,
+            "startSector": {
+              "offset": 170,
+              "sector": 0,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 368846,
+            "startByte": 368840,
+            "startSector": {
+              "offset": 200,
+              "sector": 0,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 368850,
+            "startByte": 368848,
+            "startSector": {
+              "offset": 208,
+              "sector": 0,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 368867,
+            "startByte": 368852,
+            "startSector": {
+              "offset": 212,
+              "sector": 0,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 368880,
+            "startByte": 368869,
+            "startSector": {
+              "offset": 229,
+              "sector": 0,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 368918,
+            "startByte": 368882,
+            "startSector": {
+              "offset": 242,
+              "sector": 0,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 368924,
+            "startByte": 368920,
+            "startSector": {
+              "offset": 24,
+              "sector": 1,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 368945,
+            "startByte": 368926,
+            "startSector": {
+              "offset": 30,
+              "sector": 1,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 368994,
+            "startByte": 368947,
+            "startSector": {
+              "offset": 51,
+              "sector": 1,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369083,
+            "startByte": 368996,
+            "startSector": {
+              "offset": 100,
+              "sector": 1,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369224,
+            "startByte": 369085,
+            "startSector": {
+              "offset": 189,
+              "sector": 1,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369389,
+            "startByte": 369226,
+            "startSector": {
+              "offset": 74,
+              "sector": 2,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369505,
+            "startByte": 369391,
+            "startSector": {
+              "offset": 239,
+              "sector": 2,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369525,
+            "startByte": 369507,
+            "startSector": {
+              "offset": 99,
+              "sector": 3,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369557,
+            "startByte": 369527,
+            "startSector": {
+              "offset": 119,
+              "sector": 3,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369616,
+            "startByte": 369559,
+            "startSector": {
+              "offset": 151,
+              "sector": 3,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369705,
+            "startByte": 369618,
+            "startSector": {
+              "offset": 210,
+              "sector": 3,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369824,
+            "startByte": 369707,
+            "startSector": {
+              "offset": 43,
+              "sector": 4,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369830,
+            "startByte": 369826,
+            "startSector": {
+              "offset": 162,
+              "sector": 4,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369860,
+            "startByte": 369832,
+            "startSector": {
+              "offset": 168,
+              "sector": 4,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369866,
+            "startByte": 369862,
+            "startSector": {
+              "offset": 198,
+              "sector": 4,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369896,
+            "startByte": 369868,
+            "startSector": {
+              "offset": 204,
+              "sector": 4,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369902,
+            "startByte": 369898,
+            "startSector": {
+              "offset": 234,
+              "sector": 4,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 370013,
+            "startByte": 369904,
+            "startSector": {
+              "offset": 240,
+              "sector": 4,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 370173,
+            "startByte": 370015,
+            "startSector": {
+              "offset": 95,
+              "sector": 5,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 370361,
+            "startByte": 370175,
+            "startSector": {
+              "offset": 255,
+              "sector": 5,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 370380,
+            "startByte": 370363,
+            "startSector": {
+              "offset": 187,
+              "sector": 6,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 370408,
+            "startByte": 370382,
+            "startSector": {
+              "offset": 206,
+              "sector": 6,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 370410,
+            "startByte": 370410,
+            "startSector": {
+              "offset": 234,
+              "sector": 6,
+              "track": 37
+            }
+          }
+        ]
+      },
+      "image": {
+        "bytes": 819200,
+        "entries": [],
+        "freeBlocks": 3196,
+        "identifier": "F6",
+        "label": "R0FDIAG3",
+        "path": "/Volumes/MEGA65FDISK/R0FDIAG3.D81",
+        "sha256": "357078cd97a9aae0bf676ed844e5a01bfcafd32994309cf0d657f53e2a590018"
+      }
+    },
+    {
+      "differenceFromControl": {
+        "differencesByControlComponent": {
+          "bam": 7,
+          "directory": 18,
+          "header": 11,
+          "payload:autoboot.c65": 241,
+          "payload:r0f-evid": 7927,
+          "payload:r0f-proof": 22446
+        },
+        "differingBytes": 30650,
+        "differingRanges": 479,
+        "firstRanges": [
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 368666,
+            "startByte": 368642,
+            "startSector": {
+              "offset": 2,
+              "sector": 0,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 368702,
+            "startByte": 368668,
+            "startSector": {
+              "offset": 28,
+              "sector": 0,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 368707,
+            "startByte": 368704,
+            "startSector": {
+              "offset": 64,
+              "sector": 0,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 368711,
+            "startByte": 368709,
+            "startSector": {
+              "offset": 69,
+              "sector": 0,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 368823,
+            "startByte": 368713,
+            "startSector": {
+              "offset": 73,
+              "sector": 0,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 368895,
+            "startByte": 368825,
+            "startSector": {
+              "offset": 185,
+              "sector": 0,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 368956,
+            "startByte": 368898,
+            "startSector": {
+              "offset": 2,
+              "sector": 1,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369151,
+            "startByte": 368958,
+            "startSector": {
+              "offset": 62,
+              "sector": 1,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369369,
+            "startByte": 369154,
+            "startSector": {
+              "offset": 2,
+              "sector": 2,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369407,
+            "startByte": 369371,
+            "startSector": {
+              "offset": 219,
+              "sector": 2,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369524,
+            "startByte": 369410,
+            "startSector": {
+              "offset": 2,
+              "sector": 3,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369651,
+            "startByte": 369526,
+            "startSector": {
+              "offset": 118,
+              "sector": 3,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369663,
+            "startByte": 369653,
+            "startSector": {
+              "offset": 245,
+              "sector": 3,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369737,
+            "startByte": 369666,
+            "startSector": {
+              "offset": 2,
+              "sector": 4,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369745,
+            "startByte": 369739,
+            "startSector": {
+              "offset": 75,
+              "sector": 4,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369824,
+            "startByte": 369747,
+            "startSector": {
+              "offset": 83,
+              "sector": 4,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369878,
+            "startByte": 369826,
+            "startSector": {
+              "offset": 162,
+              "sector": 4,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369919,
+            "startByte": 369880,
+            "startSector": {
+              "offset": 216,
+              "sector": 4,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 370022,
+            "startByte": 369922,
+            "startSector": {
+              "offset": 2,
+              "sector": 5,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 370024,
+            "startByte": 370024,
+            "startSector": {
+              "offset": 104,
+              "sector": 5,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 370026,
+            "startByte": 370026,
+            "startSector": {
+              "offset": 106,
+              "sector": 5,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 370028,
+            "startByte": 370028,
+            "startSector": {
+              "offset": 108,
+              "sector": 5,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 370037,
+            "startByte": 370030,
+            "startSector": {
+              "offset": 110,
+              "sector": 5,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 370073,
+            "startByte": 370039,
+            "startSector": {
+              "offset": 119,
+              "sector": 5,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 370104,
+            "startByte": 370075,
+            "startSector": {
+              "offset": 155,
+              "sector": 5,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 370154,
+            "startByte": 370106,
+            "startSector": {
+              "offset": 186,
+              "sector": 5,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 370175,
+            "startByte": 370158,
+            "startSector": {
+              "offset": 238,
+              "sector": 5,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 370213,
+            "startByte": 370178,
+            "startSector": {
+              "offset": 2,
+              "sector": 6,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 370215,
+            "startByte": 370215,
+            "startSector": {
+              "offset": 39,
+              "sector": 6,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 370408,
+            "startByte": 370217,
+            "startSector": {
+              "offset": 41,
+              "sector": 6,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 370431,
+            "startByte": 370410,
+            "startSector": {
+              "offset": 234,
+              "sector": 6,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 370521,
+            "startByte": 370434,
+            "startSector": {
+              "offset": 2,
+              "sector": 7,
+              "track": 37
+            }
+          }
+        ]
+      },
+      "image": {
+        "bytes": 819200,
+        "entries": [
+          {
+            "blocks": 2,
+            "chain": [
+              {
+                "sector": 0,
+                "track": 39
+              },
+              {
+                "sector": 1,
+                "track": 39
+              }
+            ],
+            "firstSector": {
+              "sector": 0,
+              "track": 39
+            },
+            "name": "autoboot.c65",
+            "payloadBytes": 464,
+            "payloadSha256": "9bdf352c44c411965229f68b2d92c358f08f0e6ef6486142115b53c9da246cc7",
+            "type": 130
+          },
+          {
+            "blocks": 87,
+            "chain": [
+              {
+                "sector": 2,
+                "track": 39
+              },
+              {
+                "sector": 3,
+                "track": 39
+              },
+              {
+                "sector": 4,
+                "track": 39
+              },
+              {
+                "sector": 5,
+                "track": 39
+              },
+              {
+                "sector": 6,
+                "track": 39
+              },
+              {
+                "sector": 7,
+                "track": 39
+              },
+              {
+                "sector": 8,
+                "track": 39
+              },
+              {
+                "sector": 9,
+                "track": 39
+              },
+              {
+                "sector": 10,
+                "track": 39
+              },
+              {
+                "sector": 11,
+                "track": 39
+              },
+              {
+                "sector": 12,
+                "track": 39
+              },
+              {
+                "sector": 13,
+                "track": 39
+              },
+              {
+                "sector": 14,
+                "track": 39
+              },
+              {
+                "sector": 15,
+                "track": 39
+              },
+              {
+                "sector": 16,
+                "track": 39
+              },
+              {
+                "sector": 17,
+                "track": 39
+              },
+              {
+                "sector": 18,
+                "track": 39
+              },
+              {
+                "sector": 19,
+                "track": 39
+              },
+              {
+                "sector": 20,
+                "track": 39
+              },
+              {
+                "sector": 21,
+                "track": 39
+              },
+              {
+                "sector": 22,
+                "track": 39
+              },
+              {
+                "sector": 23,
+                "track": 39
+              },
+              {
+                "sector": 24,
+                "track": 39
+              },
+              {
+                "sector": 25,
+                "track": 39
+              },
+              {
+                "sector": 26,
+                "track": 39
+              },
+              {
+                "sector": 27,
+                "track": 39
+              },
+              {
+                "sector": 28,
+                "track": 39
+              },
+              {
+                "sector": 29,
+                "track": 39
+              },
+              {
+                "sector": 30,
+                "track": 39
+              },
+              {
+                "sector": 31,
+                "track": 39
+              },
+              {
+                "sector": 32,
+                "track": 39
+              },
+              {
+                "sector": 33,
+                "track": 39
+              },
+              {
+                "sector": 34,
+                "track": 39
+              },
+              {
+                "sector": 35,
+                "track": 39
+              },
+              {
+                "sector": 36,
+                "track": 39
+              },
+              {
+                "sector": 37,
+                "track": 39
+              },
+              {
+                "sector": 38,
+                "track": 39
+              },
+              {
+                "sector": 39,
+                "track": 39
+              },
+              {
+                "sector": 0,
+                "track": 38
+              },
+              {
+                "sector": 1,
+                "track": 38
+              },
+              {
+                "sector": 2,
+                "track": 38
+              },
+              {
+                "sector": 3,
+                "track": 38
+              },
+              {
+                "sector": 4,
+                "track": 38
+              },
+              {
+                "sector": 5,
+                "track": 38
+              },
+              {
+                "sector": 6,
+                "track": 38
+              },
+              {
+                "sector": 7,
+                "track": 38
+              },
+              {
+                "sector": 8,
+                "track": 38
+              },
+              {
+                "sector": 9,
+                "track": 38
+              },
+              {
+                "sector": 10,
+                "track": 38
+              },
+              {
+                "sector": 11,
+                "track": 38
+              },
+              {
+                "sector": 12,
+                "track": 38
+              },
+              {
+                "sector": 13,
+                "track": 38
+              },
+              {
+                "sector": 14,
+                "track": 38
+              },
+              {
+                "sector": 15,
+                "track": 38
+              },
+              {
+                "sector": 16,
+                "track": 38
+              },
+              {
+                "sector": 17,
+                "track": 38
+              },
+              {
+                "sector": 18,
+                "track": 38
+              },
+              {
+                "sector": 19,
+                "track": 38
+              },
+              {
+                "sector": 20,
+                "track": 38
+              },
+              {
+                "sector": 21,
+                "track": 38
+              },
+              {
+                "sector": 22,
+                "track": 38
+              },
+              {
+                "sector": 23,
+                "track": 38
+              },
+              {
+                "sector": 24,
+                "track": 38
+              },
+              {
+                "sector": 25,
+                "track": 38
+              },
+              {
+                "sector": 26,
+                "track": 38
+              },
+              {
+                "sector": 27,
+                "track": 38
+              },
+              {
+                "sector": 28,
+                "track": 38
+              },
+              {
+                "sector": 29,
+                "track": 38
+              },
+              {
+                "sector": 30,
+                "track": 38
+              },
+              {
+                "sector": 31,
+                "track": 38
+              },
+              {
+                "sector": 32,
+                "track": 38
+              },
+              {
+                "sector": 33,
+                "track": 38
+              },
+              {
+                "sector": 34,
+                "track": 38
+              },
+              {
+                "sector": 35,
+                "track": 38
+              },
+              {
+                "sector": 36,
+                "track": 38
+              },
+              {
+                "sector": 37,
+                "track": 38
+              },
+              {
+                "sector": 38,
+                "track": 38
+              },
+              {
+                "sector": 39,
+                "track": 38
+              },
+              {
+                "sector": 0,
+                "track": 37
+              },
+              {
+                "sector": 1,
+                "track": 37
+              },
+              {
+                "sector": 2,
+                "track": 37
+              },
+              {
+                "sector": 3,
+                "track": 37
+              },
+              {
+                "sector": 4,
+                "track": 37
+              },
+              {
+                "sector": 5,
+                "track": 37
+              },
+              {
+                "sector": 6,
+                "track": 37
+              },
+              {
+                "sector": 7,
+                "track": 37
+              },
+              {
+                "sector": 8,
+                "track": 37
+              }
+            ],
+            "firstSector": {
+              "sector": 2,
+              "track": 39
+            },
+            "name": "r0fsucc",
+            "payloadBytes": 21921,
+            "payloadSha256": "3ce9aeb1029676465d47755145ec31d6b30ab2ca0c8ae95dc88e9703dd99446b",
+            "type": 130
+          },
+          {
+            "blocks": 1,
+            "chain": [
+              {
+                "sector": 0,
+                "track": 41
+              }
+            ],
+            "firstSector": {
+              "sector": 0,
+              "track": 41
+            },
+            "name": "token",
+            "payloadBytes": 34,
+            "payloadSha256": "0e8d0ac2ce727ba51285be0173ea784b52b56fdc4729a1f7c0d2d7271005b572",
+            "type": 130
+          }
+        ],
+        "freeBlocks": 3106,
+        "identifier": "65",
+        "label": "R0F DIAG T06",
+        "path": "/Volumes/MEGA65FDISK/R0FDIAG2.D81",
+        "sha256": "912df16828f1c60127e4fcdd8d545dfca0c2ad8fe6a24a64ae01b4ac280df17d"
+      }
+    },
+    {
+      "differenceFromControl": {
+        "differencesByControlComponent": {
+          "bam": 7,
+          "directory": 38,
+          "header": 11,
+          "payload:autoboot.c65": 241,
+          "payload:r0f-evid": 7930,
+          "payload:r0f-proof": 22495
+        },
+        "differingBytes": 30722,
+        "differingRanges": 447,
+        "firstRanges": [
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 368671,
+            "startByte": 368642,
+            "startSector": {
+              "offset": 2,
+              "sector": 0,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 368677,
+            "startByte": 368673,
+            "startSector": {
+              "offset": 33,
+              "sector": 0,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 368895,
+            "startByte": 368679,
+            "startSector": {
+              "offset": 39,
+              "sector": 0,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369116,
+            "startByte": 368898,
+            "startSector": {
+              "offset": 2,
+              "sector": 1,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369151,
+            "startByte": 369118,
+            "startSector": {
+              "offset": 222,
+              "sector": 1,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369166,
+            "startByte": 369154,
+            "startSector": {
+              "offset": 2,
+              "sector": 2,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369407,
+            "startByte": 369168,
+            "startSector": {
+              "offset": 16,
+              "sector": 2,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369442,
+            "startByte": 369410,
+            "startSector": {
+              "offset": 2,
+              "sector": 3,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369574,
+            "startByte": 369444,
+            "startSector": {
+              "offset": 36,
+              "sector": 3,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369582,
+            "startByte": 369576,
+            "startSector": {
+              "offset": 168,
+              "sector": 3,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369617,
+            "startByte": 369584,
+            "startSector": {
+              "offset": 176,
+              "sector": 3,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369619,
+            "startByte": 369619,
+            "startSector": {
+              "offset": 211,
+              "sector": 3,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369621,
+            "startByte": 369621,
+            "startSector": {
+              "offset": 213,
+              "sector": 3,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369623,
+            "startByte": 369623,
+            "startSector": {
+              "offset": 215,
+              "sector": 3,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369663,
+            "startByte": 369625,
+            "startSector": {
+              "offset": 217,
+              "sector": 3,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369724,
+            "startByte": 369666,
+            "startSector": {
+              "offset": 2,
+              "sector": 4,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369732,
+            "startByte": 369726,
+            "startSector": {
+              "offset": 62,
+              "sector": 4,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369734,
+            "startByte": 369734,
+            "startSector": {
+              "offset": 70,
+              "sector": 4,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369760,
+            "startByte": 369736,
+            "startSector": {
+              "offset": 72,
+              "sector": 4,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369785,
+            "startByte": 369762,
+            "startSector": {
+              "offset": 98,
+              "sector": 4,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369828,
+            "startByte": 369787,
+            "startSector": {
+              "offset": 123,
+              "sector": 4,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369868,
+            "startByte": 369830,
+            "startSector": {
+              "offset": 166,
+              "sector": 4,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369876,
+            "startByte": 369870,
+            "startSector": {
+              "offset": 206,
+              "sector": 4,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369894,
+            "startByte": 369878,
+            "startSector": {
+              "offset": 214,
+              "sector": 4,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369919,
+            "startByte": 369896,
+            "startSector": {
+              "offset": 232,
+              "sector": 4,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 370094,
+            "startByte": 369922,
+            "startSector": {
+              "offset": 2,
+              "sector": 5,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 370211,
+            "startByte": 370096,
+            "startSector": {
+              "offset": 176,
+              "sector": 5,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 370436,
+            "startByte": 370213,
+            "startSector": {
+              "offset": 37,
+              "sector": 6,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 370465,
+            "startByte": 370438,
+            "startSector": {
+              "offset": 6,
+              "sector": 7,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 370499,
+            "startByte": 370467,
+            "startSector": {
+              "offset": 35,
+              "sector": 7,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 370501,
+            "startByte": 370501,
+            "startSector": {
+              "offset": 69,
+              "sector": 7,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 370589,
+            "startByte": 370503,
+            "startSector": {
+              "offset": 71,
+              "sector": 7,
+              "track": 37
+            }
+          }
+        ]
+      },
+      "image": {
+        "bytes": 819200,
+        "entries": [
+          {
+            "blocks": 2,
+            "chain": [
+              {
+                "sector": 0,
+                "track": 39
+              },
+              {
+                "sector": 1,
+                "track": 39
+              }
+            ],
+            "firstSector": {
+              "sector": 0,
+              "track": 39
+            },
+            "name": "autoboot.c65",
+            "payloadBytes": 464,
+            "payloadSha256": "9bdf352c44c411965229f68b2d92c358f08f0e6ef6486142115b53c9da246cc7",
+            "type": 130
+          },
+          {
+            "blocks": 85,
+            "chain": [
+              {
+                "sector": 2,
+                "track": 39
+              },
+              {
+                "sector": 3,
+                "track": 39
+              },
+              {
+                "sector": 4,
+                "track": 39
+              },
+              {
+                "sector": 5,
+                "track": 39
+              },
+              {
+                "sector": 6,
+                "track": 39
+              },
+              {
+                "sector": 7,
+                "track": 39
+              },
+              {
+                "sector": 8,
+                "track": 39
+              },
+              {
+                "sector": 9,
+                "track": 39
+              },
+              {
+                "sector": 10,
+                "track": 39
+              },
+              {
+                "sector": 11,
+                "track": 39
+              },
+              {
+                "sector": 12,
+                "track": 39
+              },
+              {
+                "sector": 13,
+                "track": 39
+              },
+              {
+                "sector": 14,
+                "track": 39
+              },
+              {
+                "sector": 15,
+                "track": 39
+              },
+              {
+                "sector": 16,
+                "track": 39
+              },
+              {
+                "sector": 17,
+                "track": 39
+              },
+              {
+                "sector": 18,
+                "track": 39
+              },
+              {
+                "sector": 19,
+                "track": 39
+              },
+              {
+                "sector": 20,
+                "track": 39
+              },
+              {
+                "sector": 21,
+                "track": 39
+              },
+              {
+                "sector": 22,
+                "track": 39
+              },
+              {
+                "sector": 23,
+                "track": 39
+              },
+              {
+                "sector": 24,
+                "track": 39
+              },
+              {
+                "sector": 25,
+                "track": 39
+              },
+              {
+                "sector": 26,
+                "track": 39
+              },
+              {
+                "sector": 27,
+                "track": 39
+              },
+              {
+                "sector": 28,
+                "track": 39
+              },
+              {
+                "sector": 29,
+                "track": 39
+              },
+              {
+                "sector": 30,
+                "track": 39
+              },
+              {
+                "sector": 31,
+                "track": 39
+              },
+              {
+                "sector": 32,
+                "track": 39
+              },
+              {
+                "sector": 33,
+                "track": 39
+              },
+              {
+                "sector": 34,
+                "track": 39
+              },
+              {
+                "sector": 35,
+                "track": 39
+              },
+              {
+                "sector": 36,
+                "track": 39
+              },
+              {
+                "sector": 37,
+                "track": 39
+              },
+              {
+                "sector": 38,
+                "track": 39
+              },
+              {
+                "sector": 39,
+                "track": 39
+              },
+              {
+                "sector": 0,
+                "track": 38
+              },
+              {
+                "sector": 1,
+                "track": 38
+              },
+              {
+                "sector": 2,
+                "track": 38
+              },
+              {
+                "sector": 3,
+                "track": 38
+              },
+              {
+                "sector": 4,
+                "track": 38
+              },
+              {
+                "sector": 5,
+                "track": 38
+              },
+              {
+                "sector": 6,
+                "track": 38
+              },
+              {
+                "sector": 7,
+                "track": 38
+              },
+              {
+                "sector": 8,
+                "track": 38
+              },
+              {
+                "sector": 9,
+                "track": 38
+              },
+              {
+                "sector": 10,
+                "track": 38
+              },
+              {
+                "sector": 11,
+                "track": 38
+              },
+              {
+                "sector": 12,
+                "track": 38
+              },
+              {
+                "sector": 13,
+                "track": 38
+              },
+              {
+                "sector": 14,
+                "track": 38
+              },
+              {
+                "sector": 15,
+                "track": 38
+              },
+              {
+                "sector": 16,
+                "track": 38
+              },
+              {
+                "sector": 17,
+                "track": 38
+              },
+              {
+                "sector": 18,
+                "track": 38
+              },
+              {
+                "sector": 19,
+                "track": 38
+              },
+              {
+                "sector": 20,
+                "track": 38
+              },
+              {
+                "sector": 21,
+                "track": 38
+              },
+              {
+                "sector": 22,
+                "track": 38
+              },
+              {
+                "sector": 23,
+                "track": 38
+              },
+              {
+                "sector": 24,
+                "track": 38
+              },
+              {
+                "sector": 25,
+                "track": 38
+              },
+              {
+                "sector": 26,
+                "track": 38
+              },
+              {
+                "sector": 27,
+                "track": 38
+              },
+              {
+                "sector": 28,
+                "track": 38
+              },
+              {
+                "sector": 29,
+                "track": 38
+              },
+              {
+                "sector": 30,
+                "track": 38
+              },
+              {
+                "sector": 31,
+                "track": 38
+              },
+              {
+                "sector": 32,
+                "track": 38
+              },
+              {
+                "sector": 33,
+                "track": 38
+              },
+              {
+                "sector": 34,
+                "track": 38
+              },
+              {
+                "sector": 35,
+                "track": 38
+              },
+              {
+                "sector": 36,
+                "track": 38
+              },
+              {
+                "sector": 37,
+                "track": 38
+              },
+              {
+                "sector": 38,
+                "track": 38
+              },
+              {
+                "sector": 39,
+                "track": 38
+              },
+              {
+                "sector": 0,
+                "track": 37
+              },
+              {
+                "sector": 1,
+                "track": 37
+              },
+              {
+                "sector": 2,
+                "track": 37
+              },
+              {
+                "sector": 3,
+                "track": 37
+              },
+              {
+                "sector": 4,
+                "track": 37
+              },
+              {
+                "sector": 5,
+                "track": 37
+              },
+              {
+                "sector": 6,
+                "track": 37
+              }
+            ],
+            "firstSector": {
+              "sector": 2,
+              "track": 39
+            },
+            "name": "r0fsucc",
+            "payloadBytes": 21481,
+            "payloadSha256": "d0979c56c373f8885e4741670141ebf22c0a2e9ef8a84f6a931eaef05592d9df",
+            "type": 130
+          },
+          {
+            "blocks": 1,
+            "chain": [
+              {
+                "sector": 0,
+                "track": 41
+              }
+            ],
+            "firstSector": {
+              "sector": 0,
+              "track": 41
+            },
+            "name": "token",
+            "payloadBytes": 34,
+            "payloadSha256": "0e8d0ac2ce727ba51285be0173ea784b52b56fdc4729a1f7c0d2d7271005b572",
+            "type": 130
+          },
+          {
+            "blocks": 1,
+            "chain": [
+              {
+                "sector": 7,
+                "track": 37
+              }
+            ],
+            "firstSector": {
+              "sector": 7,
+              "track": 37
+            },
+            "name": "rsstate",
+            "payloadBytes": 34,
+            "payloadSha256": "86bef4e96b96b157857587afe9bc5d9d5f69e4849320affe5b867a19e6627784",
+            "type": 130
+          }
+        ],
+        "freeBlocks": 3107,
+        "identifier": "65",
+        "label": "R0F SUCC T04",
+        "path": "/Volumes/MEGA65FDISK/R0FHOST1.D81",
+        "sha256": "2ad1c08b75efcae9e35438bf82da3ba23e59666ef8c2a7296c939aa56d55134d"
+      }
+    },
+    {
+      "differenceFromControl": {
+        "differencesByControlComponent": {
+          "bam": 8,
+          "directory": 18,
+          "header": 11,
+          "payload:autoboot.c65": 241,
+          "payload:r0f-evid": 7930,
+          "payload:r0f-proof": 22497
+        },
+        "differingBytes": 30705,
+        "differingRanges": 442,
+        "firstRanges": [
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 368671,
+            "startByte": 368642,
+            "startSector": {
+              "offset": 2,
+              "sector": 0,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 368677,
+            "startByte": 368673,
+            "startSector": {
+              "offset": 33,
+              "sector": 0,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 368895,
+            "startByte": 368679,
+            "startSector": {
+              "offset": 39,
+              "sector": 0,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369116,
+            "startByte": 368898,
+            "startSector": {
+              "offset": 2,
+              "sector": 1,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369151,
+            "startByte": 369118,
+            "startSector": {
+              "offset": 222,
+              "sector": 1,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369166,
+            "startByte": 369154,
+            "startSector": {
+              "offset": 2,
+              "sector": 2,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369407,
+            "startByte": 369168,
+            "startSector": {
+              "offset": 16,
+              "sector": 2,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369442,
+            "startByte": 369410,
+            "startSector": {
+              "offset": 2,
+              "sector": 3,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369574,
+            "startByte": 369444,
+            "startSector": {
+              "offset": 36,
+              "sector": 3,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369582,
+            "startByte": 369576,
+            "startSector": {
+              "offset": 168,
+              "sector": 3,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369617,
+            "startByte": 369584,
+            "startSector": {
+              "offset": 176,
+              "sector": 3,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369619,
+            "startByte": 369619,
+            "startSector": {
+              "offset": 211,
+              "sector": 3,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369621,
+            "startByte": 369621,
+            "startSector": {
+              "offset": 213,
+              "sector": 3,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369623,
+            "startByte": 369623,
+            "startSector": {
+              "offset": 215,
+              "sector": 3,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369663,
+            "startByte": 369625,
+            "startSector": {
+              "offset": 217,
+              "sector": 3,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369724,
+            "startByte": 369666,
+            "startSector": {
+              "offset": 2,
+              "sector": 4,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369732,
+            "startByte": 369726,
+            "startSector": {
+              "offset": 62,
+              "sector": 4,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369734,
+            "startByte": 369734,
+            "startSector": {
+              "offset": 70,
+              "sector": 4,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369760,
+            "startByte": 369736,
+            "startSector": {
+              "offset": 72,
+              "sector": 4,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369785,
+            "startByte": 369762,
+            "startSector": {
+              "offset": 98,
+              "sector": 4,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369828,
+            "startByte": 369787,
+            "startSector": {
+              "offset": 123,
+              "sector": 4,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369868,
+            "startByte": 369830,
+            "startSector": {
+              "offset": 166,
+              "sector": 4,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369876,
+            "startByte": 369870,
+            "startSector": {
+              "offset": 206,
+              "sector": 4,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369894,
+            "startByte": 369878,
+            "startSector": {
+              "offset": 214,
+              "sector": 4,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 369919,
+            "startByte": 369896,
+            "startSector": {
+              "offset": 232,
+              "sector": 4,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 370094,
+            "startByte": 369922,
+            "startSector": {
+              "offset": 2,
+              "sector": 5,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 370211,
+            "startByte": 370096,
+            "startSector": {
+              "offset": 176,
+              "sector": 5,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 370499,
+            "startByte": 370213,
+            "startSector": {
+              "offset": 37,
+              "sector": 6,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 370501,
+            "startByte": 370501,
+            "startSector": {
+              "offset": 69,
+              "sector": 7,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 370589,
+            "startByte": 370503,
+            "startSector": {
+              "offset": 71,
+              "sector": 7,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 370637,
+            "startByte": 370591,
+            "startSector": {
+              "offset": 159,
+              "sector": 7,
+              "track": 37
+            }
+          },
+          {
+            "component": "payload:r0f-proof",
+            "endByte": 370654,
+            "startByte": 370639,
+            "startSector": {
+              "offset": 207,
+              "sector": 7,
+              "track": 37
+            }
+          }
+        ]
+      },
+      "image": {
+        "bytes": 819200,
+        "entries": [
+          {
+            "blocks": 2,
+            "chain": [
+              {
+                "sector": 0,
+                "track": 39
+              },
+              {
+                "sector": 1,
+                "track": 39
+              }
+            ],
+            "firstSector": {
+              "sector": 0,
+              "track": 39
+            },
+            "name": "autoboot.c65",
+            "payloadBytes": 464,
+            "payloadSha256": "9bdf352c44c411965229f68b2d92c358f08f0e6ef6486142115b53c9da246cc7",
+            "type": 130
+          },
+          {
+            "blocks": 85,
+            "chain": [
+              {
+                "sector": 2,
+                "track": 39
+              },
+              {
+                "sector": 3,
+                "track": 39
+              },
+              {
+                "sector": 4,
+                "track": 39
+              },
+              {
+                "sector": 5,
+                "track": 39
+              },
+              {
+                "sector": 6,
+                "track": 39
+              },
+              {
+                "sector": 7,
+                "track": 39
+              },
+              {
+                "sector": 8,
+                "track": 39
+              },
+              {
+                "sector": 9,
+                "track": 39
+              },
+              {
+                "sector": 10,
+                "track": 39
+              },
+              {
+                "sector": 11,
+                "track": 39
+              },
+              {
+                "sector": 12,
+                "track": 39
+              },
+              {
+                "sector": 13,
+                "track": 39
+              },
+              {
+                "sector": 14,
+                "track": 39
+              },
+              {
+                "sector": 15,
+                "track": 39
+              },
+              {
+                "sector": 16,
+                "track": 39
+              },
+              {
+                "sector": 17,
+                "track": 39
+              },
+              {
+                "sector": 18,
+                "track": 39
+              },
+              {
+                "sector": 19,
+                "track": 39
+              },
+              {
+                "sector": 20,
+                "track": 39
+              },
+              {
+                "sector": 21,
+                "track": 39
+              },
+              {
+                "sector": 22,
+                "track": 39
+              },
+              {
+                "sector": 23,
+                "track": 39
+              },
+              {
+                "sector": 24,
+                "track": 39
+              },
+              {
+                "sector": 25,
+                "track": 39
+              },
+              {
+                "sector": 26,
+                "track": 39
+              },
+              {
+                "sector": 27,
+                "track": 39
+              },
+              {
+                "sector": 28,
+                "track": 39
+              },
+              {
+                "sector": 29,
+                "track": 39
+              },
+              {
+                "sector": 30,
+                "track": 39
+              },
+              {
+                "sector": 31,
+                "track": 39
+              },
+              {
+                "sector": 32,
+                "track": 39
+              },
+              {
+                "sector": 33,
+                "track": 39
+              },
+              {
+                "sector": 34,
+                "track": 39
+              },
+              {
+                "sector": 35,
+                "track": 39
+              },
+              {
+                "sector": 36,
+                "track": 39
+              },
+              {
+                "sector": 37,
+                "track": 39
+              },
+              {
+                "sector": 38,
+                "track": 39
+              },
+              {
+                "sector": 39,
+                "track": 39
+              },
+              {
+                "sector": 0,
+                "track": 38
+              },
+              {
+                "sector": 1,
+                "track": 38
+              },
+              {
+                "sector": 2,
+                "track": 38
+              },
+              {
+                "sector": 3,
+                "track": 38
+              },
+              {
+                "sector": 4,
+                "track": 38
+              },
+              {
+                "sector": 5,
+                "track": 38
+              },
+              {
+                "sector": 6,
+                "track": 38
+              },
+              {
+                "sector": 7,
+                "track": 38
+              },
+              {
+                "sector": 8,
+                "track": 38
+              },
+              {
+                "sector": 9,
+                "track": 38
+              },
+              {
+                "sector": 10,
+                "track": 38
+              },
+              {
+                "sector": 11,
+                "track": 38
+              },
+              {
+                "sector": 12,
+                "track": 38
+              },
+              {
+                "sector": 13,
+                "track": 38
+              },
+              {
+                "sector": 14,
+                "track": 38
+              },
+              {
+                "sector": 15,
+                "track": 38
+              },
+              {
+                "sector": 16,
+                "track": 38
+              },
+              {
+                "sector": 17,
+                "track": 38
+              },
+              {
+                "sector": 18,
+                "track": 38
+              },
+              {
+                "sector": 19,
+                "track": 38
+              },
+              {
+                "sector": 20,
+                "track": 38
+              },
+              {
+                "sector": 21,
+                "track": 38
+              },
+              {
+                "sector": 22,
+                "track": 38
+              },
+              {
+                "sector": 23,
+                "track": 38
+              },
+              {
+                "sector": 24,
+                "track": 38
+              },
+              {
+                "sector": 25,
+                "track": 38
+              },
+              {
+                "sector": 26,
+                "track": 38
+              },
+              {
+                "sector": 27,
+                "track": 38
+              },
+              {
+                "sector": 28,
+                "track": 38
+              },
+              {
+                "sector": 29,
+                "track": 38
+              },
+              {
+                "sector": 30,
+                "track": 38
+              },
+              {
+                "sector": 31,
+                "track": 38
+              },
+              {
+                "sector": 32,
+                "track": 38
+              },
+              {
+                "sector": 33,
+                "track": 38
+              },
+              {
+                "sector": 34,
+                "track": 38
+              },
+              {
+                "sector": 35,
+                "track": 38
+              },
+              {
+                "sector": 36,
+                "track": 38
+              },
+              {
+                "sector": 37,
+                "track": 38
+              },
+              {
+                "sector": 38,
+                "track": 38
+              },
+              {
+                "sector": 39,
+                "track": 38
+              },
+              {
+                "sector": 0,
+                "track": 37
+              },
+              {
+                "sector": 1,
+                "track": 37
+              },
+              {
+                "sector": 2,
+                "track": 37
+              },
+              {
+                "sector": 3,
+                "track": 37
+              },
+              {
+                "sector": 4,
+                "track": 37
+              },
+              {
+                "sector": 5,
+                "track": 37
+              },
+              {
+                "sector": 6,
+                "track": 37
+              }
+            ],
+            "firstSector": {
+              "sector": 2,
+              "track": 39
+            },
+            "name": "r0fsucc",
+            "payloadBytes": 21481,
+            "payloadSha256": "d0979c56c373f8885e4741670141ebf22c0a2e9ef8a84f6a931eaef05592d9df",
+            "type": 130
+          },
+          {
+            "blocks": 1,
+            "chain": [
+              {
+                "sector": 0,
+                "track": 41
+              }
+            ],
+            "firstSector": {
+              "sector": 0,
+              "track": 41
+            },
+            "name": "token",
+            "payloadBytes": 34,
+            "payloadSha256": "0e8d0ac2ce727ba51285be0173ea784b52b56fdc4729a1f7c0d2d7271005b572",
+            "type": 130
+          }
+        ],
+        "freeBlocks": 3108,
+        "identifier": "65",
+        "label": "R0F SUCC T04",
+        "path": "/Users/slice/Developer/f65-megawing/build/r0f/successor-t04/canonical-10/R0FSUCC10.D81",
+        "sha256": "3721dff9b84cfb7842cc154f6885861e0c7cbd3c3408c8ecec190bf6b405d461"
+      }
+    }
+  ],
+  "control": {
+    "bytes": 819200,
+    "entries": [
+      {
+        "blocks": 1,
+        "chain": [
+          {
+            "sector": 0,
+            "track": 39
+          }
+        ],
+        "firstSector": {
+          "sector": 0,
+          "track": 39
+        },
+        "name": "autoboot.c65",
+        "payloadBytes": 69,
+        "payloadSha256": "255315f072865f673ee2f5266434d5d249363cee02d36555d6150f42792d9b7b",
+        "type": 130
+      },
+      {
+        "blocks": 90,
+        "chain": [
+          {
+            "sector": 1,
+            "track": 39
+          },
+          {
+            "sector": 2,
+            "track": 39
+          },
+          {
+            "sector": 3,
+            "track": 39
+          },
+          {
+            "sector": 4,
+            "track": 39
+          },
+          {
+            "sector": 5,
+            "track": 39
+          },
+          {
+            "sector": 6,
+            "track": 39
+          },
+          {
+            "sector": 7,
+            "track": 39
+          },
+          {
+            "sector": 8,
+            "track": 39
+          },
+          {
+            "sector": 9,
+            "track": 39
+          },
+          {
+            "sector": 10,
+            "track": 39
+          },
+          {
+            "sector": 11,
+            "track": 39
+          },
+          {
+            "sector": 12,
+            "track": 39
+          },
+          {
+            "sector": 13,
+            "track": 39
+          },
+          {
+            "sector": 14,
+            "track": 39
+          },
+          {
+            "sector": 15,
+            "track": 39
+          },
+          {
+            "sector": 16,
+            "track": 39
+          },
+          {
+            "sector": 17,
+            "track": 39
+          },
+          {
+            "sector": 18,
+            "track": 39
+          },
+          {
+            "sector": 19,
+            "track": 39
+          },
+          {
+            "sector": 20,
+            "track": 39
+          },
+          {
+            "sector": 21,
+            "track": 39
+          },
+          {
+            "sector": 22,
+            "track": 39
+          },
+          {
+            "sector": 23,
+            "track": 39
+          },
+          {
+            "sector": 24,
+            "track": 39
+          },
+          {
+            "sector": 25,
+            "track": 39
+          },
+          {
+            "sector": 26,
+            "track": 39
+          },
+          {
+            "sector": 27,
+            "track": 39
+          },
+          {
+            "sector": 28,
+            "track": 39
+          },
+          {
+            "sector": 29,
+            "track": 39
+          },
+          {
+            "sector": 30,
+            "track": 39
+          },
+          {
+            "sector": 31,
+            "track": 39
+          },
+          {
+            "sector": 32,
+            "track": 39
+          },
+          {
+            "sector": 33,
+            "track": 39
+          },
+          {
+            "sector": 34,
+            "track": 39
+          },
+          {
+            "sector": 35,
+            "track": 39
+          },
+          {
+            "sector": 36,
+            "track": 39
+          },
+          {
+            "sector": 37,
+            "track": 39
+          },
+          {
+            "sector": 38,
+            "track": 39
+          },
+          {
+            "sector": 39,
+            "track": 39
+          },
+          {
+            "sector": 0,
+            "track": 38
+          },
+          {
+            "sector": 1,
+            "track": 38
+          },
+          {
+            "sector": 2,
+            "track": 38
+          },
+          {
+            "sector": 3,
+            "track": 38
+          },
+          {
+            "sector": 4,
+            "track": 38
+          },
+          {
+            "sector": 5,
+            "track": 38
+          },
+          {
+            "sector": 6,
+            "track": 38
+          },
+          {
+            "sector": 7,
+            "track": 38
+          },
+          {
+            "sector": 8,
+            "track": 38
+          },
+          {
+            "sector": 9,
+            "track": 38
+          },
+          {
+            "sector": 10,
+            "track": 38
+          },
+          {
+            "sector": 11,
+            "track": 38
+          },
+          {
+            "sector": 12,
+            "track": 38
+          },
+          {
+            "sector": 13,
+            "track": 38
+          },
+          {
+            "sector": 14,
+            "track": 38
+          },
+          {
+            "sector": 15,
+            "track": 38
+          },
+          {
+            "sector": 16,
+            "track": 38
+          },
+          {
+            "sector": 17,
+            "track": 38
+          },
+          {
+            "sector": 18,
+            "track": 38
+          },
+          {
+            "sector": 19,
+            "track": 38
+          },
+          {
+            "sector": 20,
+            "track": 38
+          },
+          {
+            "sector": 21,
+            "track": 38
+          },
+          {
+            "sector": 22,
+            "track": 38
+          },
+          {
+            "sector": 23,
+            "track": 38
+          },
+          {
+            "sector": 24,
+            "track": 38
+          },
+          {
+            "sector": 25,
+            "track": 38
+          },
+          {
+            "sector": 26,
+            "track": 38
+          },
+          {
+            "sector": 27,
+            "track": 38
+          },
+          {
+            "sector": 28,
+            "track": 38
+          },
+          {
+            "sector": 29,
+            "track": 38
+          },
+          {
+            "sector": 30,
+            "track": 38
+          },
+          {
+            "sector": 31,
+            "track": 38
+          },
+          {
+            "sector": 32,
+            "track": 38
+          },
+          {
+            "sector": 33,
+            "track": 38
+          },
+          {
+            "sector": 34,
+            "track": 38
+          },
+          {
+            "sector": 35,
+            "track": 38
+          },
+          {
+            "sector": 36,
+            "track": 38
+          },
+          {
+            "sector": 37,
+            "track": 38
+          },
+          {
+            "sector": 38,
+            "track": 38
+          },
+          {
+            "sector": 39,
+            "track": 38
+          },
+          {
+            "sector": 0,
+            "track": 37
+          },
+          {
+            "sector": 1,
+            "track": 37
+          },
+          {
+            "sector": 2,
+            "track": 37
+          },
+          {
+            "sector": 3,
+            "track": 37
+          },
+          {
+            "sector": 4,
+            "track": 37
+          },
+          {
+            "sector": 5,
+            "track": 37
+          },
+          {
+            "sector": 6,
+            "track": 37
+          },
+          {
+            "sector": 7,
+            "track": 37
+          },
+          {
+            "sector": 8,
+            "track": 37
+          },
+          {
+            "sector": 9,
+            "track": 37
+          },
+          {
+            "sector": 10,
+            "track": 37
+          }
+        ],
+        "firstSector": {
+          "sector": 1,
+          "track": 39
+        },
+        "name": "r0f-proof",
+        "payloadBytes": 22693,
+        "payloadSha256": "163579294c45994c647a02efc190c94e53d4df7149ae234d44357ec97ac08530",
+        "type": 130
+      },
+      {
+        "blocks": 31,
+        "chain": [
+          {
+            "sector": 0,
+            "track": 41
+          },
+          {
+            "sector": 1,
+            "track": 41
+          },
+          {
+            "sector": 2,
+            "track": 41
+          },
+          {
+            "sector": 3,
+            "track": 41
+          },
+          {
+            "sector": 4,
+            "track": 41
+          },
+          {
+            "sector": 5,
+            "track": 41
+          },
+          {
+            "sector": 6,
+            "track": 41
+          },
+          {
+            "sector": 7,
+            "track": 41
+          },
+          {
+            "sector": 8,
+            "track": 41
+          },
+          {
+            "sector": 9,
+            "track": 41
+          },
+          {
+            "sector": 10,
+            "track": 41
+          },
+          {
+            "sector": 11,
+            "track": 41
+          },
+          {
+            "sector": 12,
+            "track": 41
+          },
+          {
+            "sector": 13,
+            "track": 41
+          },
+          {
+            "sector": 14,
+            "track": 41
+          },
+          {
+            "sector": 15,
+            "track": 41
+          },
+          {
+            "sector": 16,
+            "track": 41
+          },
+          {
+            "sector": 17,
+            "track": 41
+          },
+          {
+            "sector": 18,
+            "track": 41
+          },
+          {
+            "sector": 19,
+            "track": 41
+          },
+          {
+            "sector": 20,
+            "track": 41
+          },
+          {
+            "sector": 21,
+            "track": 41
+          },
+          {
+            "sector": 22,
+            "track": 41
+          },
+          {
+            "sector": 23,
+            "track": 41
+          },
+          {
+            "sector": 24,
+            "track": 41
+          },
+          {
+            "sector": 25,
+            "track": 41
+          },
+          {
+            "sector": 26,
+            "track": 41
+          },
+          {
+            "sector": 27,
+            "track": 41
+          },
+          {
+            "sector": 28,
+            "track": 41
+          },
+          {
+            "sector": 29,
+            "track": 41
+          },
+          {
+            "sector": 30,
+            "track": 41
+          }
+        ],
+        "firstSector": {
+          "sector": 0,
+          "track": 41
+        },
+        "name": "r0f-evid",
+        "payloadBytes": 7730,
+        "payloadSha256": "c441fdf9e27bbd86e4613e47ab4a8be74c70555b9b0874983f33439255f4f7fe",
+        "type": 130
+      }
+    ],
+    "freeBlocks": 3074,
+    "identifier": "65",
+    "label": "F65 CF001",
+    "path": "/Users/slice/Developer/f65-megawing/docs/evidence/r0f/combined/F65BLK02.D81",
+    "sha256": "b13853a7ddaf3bf26dfcaceb7e4466ab2d58702b96bfcbe9ae62c7db56ed3d82"
+  },
+  "limitations": [
+    "A structural pass and byte comparison do not prove Freezer mountability.",
+    "SD-card file allocation and physical chooser evidence are separate gates.",
+    "The report identifies byte-level differences; it does not infer a cause from them."
+  ],
+  "state": "FORENSIC_COMPARISON_ONLY",
+  "tool": "tools/diagnostics/d81_foundation_compare.py"
+}

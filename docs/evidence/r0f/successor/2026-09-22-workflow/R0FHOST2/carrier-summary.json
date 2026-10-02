@@ -1,0 +1,2094 @@
+{
+  "D81_STATE": "XEMU_BOOT_VERIFIED",
+  "canonicalD81Bytes": 819200,
+  "canonicalD81Filename": "R0FHOST2.D81",
+  "canonicalD81Sha256": "49e8c104e6def9f0557bd55ce1149b8e1d0fe111b3454e022e06642dcff5c2bd",
+  "canonicalFinalIdentityUnchanged": true,
+  "exactMountedFilenameEveryRun": "R0FHOST2.D81",
+  "freshDisposableCopyPerRun": true,
+  "fullAcceptance": false,
+  "identity": "R0F-SUCCESSOR-T04-EXACT-CARRIER",
+  "ntscRuns": 2,
+  "palRuns": 2,
+  "physicalChooser": "NOT RUN",
+  "postRunImagesRetainedLocally": true,
+  "postRunImagesReused": false,
+  "result": "PASS",
+  "runs": [
+    {
+      "canonicalD81Filename": "R0FHOST2.D81",
+      "canonicalD81Path": "build/r0f/d81-workflow/R0FHOST2/canonical/R0FHOST2.D81",
+      "canonicalD81Sha256": "49e8c104e6def9f0557bd55ce1149b8e1d0fe111b3454e022e06642dcff5c2bd",
+      "canonicalMountedWritable": false,
+      "command": [
+        "/Users/slice/Developer/f65-megawing/toolchain/xemu/xmega65",
+        "-skipconfigfile",
+        "-headless",
+        "-fastboot",
+        "-videostd",
+        "1",
+        "-fastclock",
+        "40.5",
+        "-rom",
+        "/Users/slice/Documents/Codex/f65-megawing/MEGA65.ROM",
+        "-sdimg",
+        "/Users/slice/Developer/f65-megawing/build/r0f/d81-workflow/R0FHOST2/carrier-source-freeze/ntsc-1/disposable-sd.img",
+        "-8",
+        "/Users/slice/Developer/f65-megawing/build/r0f/d81-workflow/R0FHOST2/carrier-source-freeze/ntsc-1/R0FHOST2.D81",
+        "-autoload",
+        "-dumpscreen",
+        "/Users/slice/Developer/f65-megawing/build/r0f/d81-workflow/R0FHOST2/carrier-source-freeze/ntsc-1/screen.txt",
+        "-dumpmem",
+        "/Users/slice/Developer/f65-megawing/build/r0f/d81-workflow/R0FHOST2/carrier-source-freeze/ntsc-1/memory.bin",
+        "-screenshot",
+        "/Users/slice/Developer/f65-megawing/build/r0f/d81-workflow/R0FHOST2/carrier-source-freeze/ntsc-1/screen.png"
+      ],
+      "disposableCopyMountedWritable": true,
+      "disposableSdSha256": "e10b8ef4a05cfbe690186471489ec23eb57ecceb5933beb38df85e7448dafb39",
+      "extractedSaveBytes": 34,
+      "extractedSaveSha256": "86bef4e96b96b157857587afe9bc5d9d5f69e4849320affe5b867a19e6627784",
+      "extractedSaveValidation": "PASS",
+      "finishedAtUtc": "2026-09-22T23:35:00.932979+00:00",
+      "fullAcceptance": false,
+      "javaOracle": "PASS",
+      "mountedD81Filename": "R0FHOST2.D81",
+      "physical": "NOT RUN",
+      "postRunD81Sha256": "d673d99e055bd8fbbebf14b6c9c9fab8e699170168ce23cf0c29ae959ea088f0",
+      "postRunStructureAndContent": "PASS",
+      "preRunByteIdenticalToCanonical": true,
+      "preRunD81Sha256": "49e8c104e6def9f0557bd55ce1149b8e1d0fe111b3454e022e06642dcff5c2bd",
+      "preRunStructure": {
+        "bytes": 819200,
+        "entries": [
+          {
+            "blocks": 2,
+            "chain": [
+              {
+                "sector": 0,
+                "track": 39
+              },
+              {
+                "sector": 1,
+                "track": 39
+              }
+            ],
+            "firstSector": {
+              "sector": 0,
+              "track": 39
+            },
+            "name": "autoboot.c65",
+            "payloadBytes": 464,
+            "payloadSha256": "9bdf352c44c411965229f68b2d92c358f08f0e6ef6486142115b53c9da246cc7",
+            "type": 130
+          },
+          {
+            "blocks": 87,
+            "chain": [
+              {
+                "sector": 2,
+                "track": 39
+              },
+              {
+                "sector": 3,
+                "track": 39
+              },
+              {
+                "sector": 4,
+                "track": 39
+              },
+              {
+                "sector": 5,
+                "track": 39
+              },
+              {
+                "sector": 6,
+                "track": 39
+              },
+              {
+                "sector": 7,
+                "track": 39
+              },
+              {
+                "sector": 8,
+                "track": 39
+              },
+              {
+                "sector": 9,
+                "track": 39
+              },
+              {
+                "sector": 10,
+                "track": 39
+              },
+              {
+                "sector": 11,
+                "track": 39
+              },
+              {
+                "sector": 12,
+                "track": 39
+              },
+              {
+                "sector": 13,
+                "track": 39
+              },
+              {
+                "sector": 14,
+                "track": 39
+              },
+              {
+                "sector": 15,
+                "track": 39
+              },
+              {
+                "sector": 16,
+                "track": 39
+              },
+              {
+                "sector": 17,
+                "track": 39
+              },
+              {
+                "sector": 18,
+                "track": 39
+              },
+              {
+                "sector": 19,
+                "track": 39
+              },
+              {
+                "sector": 20,
+                "track": 39
+              },
+              {
+                "sector": 21,
+                "track": 39
+              },
+              {
+                "sector": 22,
+                "track": 39
+              },
+              {
+                "sector": 23,
+                "track": 39
+              },
+              {
+                "sector": 24,
+                "track": 39
+              },
+              {
+                "sector": 25,
+                "track": 39
+              },
+              {
+                "sector": 26,
+                "track": 39
+              },
+              {
+                "sector": 27,
+                "track": 39
+              },
+              {
+                "sector": 28,
+                "track": 39
+              },
+              {
+                "sector": 29,
+                "track": 39
+              },
+              {
+                "sector": 30,
+                "track": 39
+              },
+              {
+                "sector": 31,
+                "track": 39
+              },
+              {
+                "sector": 32,
+                "track": 39
+              },
+              {
+                "sector": 33,
+                "track": 39
+              },
+              {
+                "sector": 34,
+                "track": 39
+              },
+              {
+                "sector": 35,
+                "track": 39
+              },
+              {
+                "sector": 36,
+                "track": 39
+              },
+              {
+                "sector": 37,
+                "track": 39
+              },
+              {
+                "sector": 38,
+                "track": 39
+              },
+              {
+                "sector": 39,
+                "track": 39
+              },
+              {
+                "sector": 0,
+                "track": 38
+              },
+              {
+                "sector": 1,
+                "track": 38
+              },
+              {
+                "sector": 2,
+                "track": 38
+              },
+              {
+                "sector": 3,
+                "track": 38
+              },
+              {
+                "sector": 4,
+                "track": 38
+              },
+              {
+                "sector": 5,
+                "track": 38
+              },
+              {
+                "sector": 6,
+                "track": 38
+              },
+              {
+                "sector": 7,
+                "track": 38
+              },
+              {
+                "sector": 8,
+                "track": 38
+              },
+              {
+                "sector": 9,
+                "track": 38
+              },
+              {
+                "sector": 10,
+                "track": 38
+              },
+              {
+                "sector": 11,
+                "track": 38
+              },
+              {
+                "sector": 12,
+                "track": 38
+              },
+              {
+                "sector": 13,
+                "track": 38
+              },
+              {
+                "sector": 14,
+                "track": 38
+              },
+              {
+                "sector": 15,
+                "track": 38
+              },
+              {
+                "sector": 16,
+                "track": 38
+              },
+              {
+                "sector": 17,
+                "track": 38
+              },
+              {
+                "sector": 18,
+                "track": 38
+              },
+              {
+                "sector": 19,
+                "track": 38
+              },
+              {
+                "sector": 20,
+                "track": 38
+              },
+              {
+                "sector": 21,
+                "track": 38
+              },
+              {
+                "sector": 22,
+                "track": 38
+              },
+              {
+                "sector": 23,
+                "track": 38
+              },
+              {
+                "sector": 24,
+                "track": 38
+              },
+              {
+                "sector": 25,
+                "track": 38
+              },
+              {
+                "sector": 26,
+                "track": 38
+              },
+              {
+                "sector": 27,
+                "track": 38
+              },
+              {
+                "sector": 28,
+                "track": 38
+              },
+              {
+                "sector": 29,
+                "track": 38
+              },
+              {
+                "sector": 30,
+                "track": 38
+              },
+              {
+                "sector": 31,
+                "track": 38
+              },
+              {
+                "sector": 32,
+                "track": 38
+              },
+              {
+                "sector": 33,
+                "track": 38
+              },
+              {
+                "sector": 34,
+                "track": 38
+              },
+              {
+                "sector": 35,
+                "track": 38
+              },
+              {
+                "sector": 36,
+                "track": 38
+              },
+              {
+                "sector": 37,
+                "track": 38
+              },
+              {
+                "sector": 38,
+                "track": 38
+              },
+              {
+                "sector": 39,
+                "track": 38
+              },
+              {
+                "sector": 0,
+                "track": 37
+              },
+              {
+                "sector": 1,
+                "track": 37
+              },
+              {
+                "sector": 2,
+                "track": 37
+              },
+              {
+                "sector": 3,
+                "track": 37
+              },
+              {
+                "sector": 4,
+                "track": 37
+              },
+              {
+                "sector": 5,
+                "track": 37
+              },
+              {
+                "sector": 6,
+                "track": 37
+              },
+              {
+                "sector": 7,
+                "track": 37
+              },
+              {
+                "sector": 8,
+                "track": 37
+              }
+            ],
+            "firstSector": {
+              "sector": 2,
+              "track": 39
+            },
+            "name": "r0fsucc",
+            "payloadBytes": 21921,
+            "payloadSha256": "3ce9aeb1029676465d47755145ec31d6b30ab2ca0c8ae95dc88e9703dd99446b",
+            "type": 130
+          },
+          {
+            "blocks": 1,
+            "chain": [
+              {
+                "sector": 0,
+                "track": 41
+              }
+            ],
+            "firstSector": {
+              "sector": 0,
+              "track": 41
+            },
+            "name": "token",
+            "payloadBytes": 34,
+            "payloadSha256": "0e8d0ac2ce727ba51285be0173ea784b52b56fdc4729a1f7c0d2d7271005b572",
+            "type": 130
+          }
+        ],
+        "freeBlocks": 3106,
+        "identifier": "65",
+        "label": "R0FHOST2",
+        "path": "/Users/slice/Developer/f65-megawing/build/r0f/d81-workflow/R0FHOST2/carrier-source-freeze/ntsc-1/R0FHOST2.D81",
+        "sha256": "49e8c104e6def9f0557bd55ce1149b8e1d0fe111b3454e022e06642dcff5c2bd"
+      },
+      "prgSha256": "3ce9aeb1029676465d47755145ec31d6b30ab2ca0c8ae95dc88e9703dd99446b",
+      "processReturnCode": 0,
+      "result": {
+        "audioAfter": 42,
+        "audioBefore": 21,
+        "canonicalBasePage": 2,
+        "canonicalCpuPort": 53,
+        "checksumAfter": "307A70D6",
+        "checksumBefore": "D9EEAB81",
+        "contextCrc32": "CE0DA925",
+        "contextInvalidated": 1,
+        "dmaAfter": 418,
+        "dmaBefore": 197,
+        "dosAfterCrc32": "D5C268FC",
+        "dosBeforeCrc32": "D5C268FC",
+        "fault": 0,
+        "identity": "RSI1",
+        "independentCrc32": "F870AD84",
+        "inputAfter": 42,
+        "inputBefore": 21,
+        "irqAfter": 56,
+        "irqBefore": 36,
+        "lifecycle": 9,
+        "lowAfterCrc32": "F2A09A41",
+        "lowBeforeCrc32": "F2A09A41",
+        "nmiSticky": 0,
+        "reserveAfterCrc32": "3C7D60D8",
+        "reserveBeforeCrc32": "3C7D60D8",
+        "restoredRomCrc32": "967A5200",
+        "resultCrc32": "F870AD84",
+        "resumedServiceMask": 31,
+        "romCrc32": "967A5200",
+        "snapshotsAfter": 56,
+        "snapshotsBefore": 27,
+        "stage": 127,
+        "storageDenied": 0,
+        "storageError": 0,
+        "storagePhase": 5,
+        "storageReturned": 1,
+        "tickAfter": 66,
+        "tickBefore": 33,
+        "version": 1
+      },
+      "resultReduction": "PASS",
+      "resultSha256": "1a0d24a7ec7d36df3444db767fe47c3931a2741c6f02011c573e45af83be7960",
+      "rom": {
+        "path": "/Users/slice/Documents/Codex/f65-megawing/MEGA65.ROM",
+        "sha256": "af3c447f791a2fdc48cb21e1bd3fab015e32641228d9d30d21259b9e878c6fa0"
+      },
+      "run": "ntsc-1",
+      "screenIdentity": "PASS",
+      "screenshotSha256": "b2851b5ee676d5848107028f0934254d72444eb4e0ed8219fa2c599ac4a03ed2",
+      "sd": "NOT RUN",
+      "sourceBranch": "codex/r0f-successor-physical-exact-carrier",
+      "sourceCommit": "ae2b397698cc7197d03349e57cd058b4fb9f3987",
+      "startedAtUtc": "2026-09-22T23:33:20.792595+00:00",
+      "tier": "EXACT_CANONICAL_CARRIER_COPY",
+      "timedTerminationAfterSeconds": 100,
+      "videoArgument": "1",
+      "videoMode": "NTSC",
+      "xemu": {
+        "path": "toolchain/xemu/xmega65",
+        "sha256": "dd37baf7846b9696adcb662ffe5da040031b07214c66aef9a7f48cc30040b738",
+        "sourceCommit": "40dfef0d1d5f56be2469492715c12bdb32c75b67",
+        "version": "20260129235930"
+      }
+    },
+    {
+      "canonicalD81Filename": "R0FHOST2.D81",
+      "canonicalD81Path": "build/r0f/d81-workflow/R0FHOST2/canonical/R0FHOST2.D81",
+      "canonicalD81Sha256": "49e8c104e6def9f0557bd55ce1149b8e1d0fe111b3454e022e06642dcff5c2bd",
+      "canonicalMountedWritable": false,
+      "command": [
+        "/Users/slice/Developer/f65-megawing/toolchain/xemu/xmega65",
+        "-skipconfigfile",
+        "-headless",
+        "-fastboot",
+        "-videostd",
+        "1",
+        "-fastclock",
+        "40.5",
+        "-rom",
+        "/Users/slice/Documents/Codex/f65-megawing/MEGA65.ROM",
+        "-sdimg",
+        "/Users/slice/Developer/f65-megawing/build/r0f/d81-workflow/R0FHOST2/carrier-source-freeze/ntsc-2/disposable-sd.img",
+        "-8",
+        "/Users/slice/Developer/f65-megawing/build/r0f/d81-workflow/R0FHOST2/carrier-source-freeze/ntsc-2/R0FHOST2.D81",
+        "-autoload",
+        "-dumpscreen",
+        "/Users/slice/Developer/f65-megawing/build/r0f/d81-workflow/R0FHOST2/carrier-source-freeze/ntsc-2/screen.txt",
+        "-dumpmem",
+        "/Users/slice/Developer/f65-megawing/build/r0f/d81-workflow/R0FHOST2/carrier-source-freeze/ntsc-2/memory.bin",
+        "-screenshot",
+        "/Users/slice/Developer/f65-megawing/build/r0f/d81-workflow/R0FHOST2/carrier-source-freeze/ntsc-2/screen.png"
+      ],
+      "disposableCopyMountedWritable": true,
+      "disposableSdSha256": "e10b8ef4a05cfbe690186471489ec23eb57ecceb5933beb38df85e7448dafb39",
+      "extractedSaveBytes": 34,
+      "extractedSaveSha256": "86bef4e96b96b157857587afe9bc5d9d5f69e4849320affe5b867a19e6627784",
+      "extractedSaveValidation": "PASS",
+      "finishedAtUtc": "2026-09-22T23:36:43.092356+00:00",
+      "fullAcceptance": false,
+      "javaOracle": "PASS",
+      "mountedD81Filename": "R0FHOST2.D81",
+      "physical": "NOT RUN",
+      "postRunD81Sha256": "d673d99e055bd8fbbebf14b6c9c9fab8e699170168ce23cf0c29ae959ea088f0",
+      "postRunStructureAndContent": "PASS",
+      "preRunByteIdenticalToCanonical": true,
+      "preRunD81Sha256": "49e8c104e6def9f0557bd55ce1149b8e1d0fe111b3454e022e06642dcff5c2bd",
+      "preRunStructure": {
+        "bytes": 819200,
+        "entries": [
+          {
+            "blocks": 2,
+            "chain": [
+              {
+                "sector": 0,
+                "track": 39
+              },
+              {
+                "sector": 1,
+                "track": 39
+              }
+            ],
+            "firstSector": {
+              "sector": 0,
+              "track": 39
+            },
+            "name": "autoboot.c65",
+            "payloadBytes": 464,
+            "payloadSha256": "9bdf352c44c411965229f68b2d92c358f08f0e6ef6486142115b53c9da246cc7",
+            "type": 130
+          },
+          {
+            "blocks": 87,
+            "chain": [
+              {
+                "sector": 2,
+                "track": 39
+              },
+              {
+                "sector": 3,
+                "track": 39
+              },
+              {
+                "sector": 4,
+                "track": 39
+              },
+              {
+                "sector": 5,
+                "track": 39
+              },
+              {
+                "sector": 6,
+                "track": 39
+              },
+              {
+                "sector": 7,
+                "track": 39
+              },
+              {
+                "sector": 8,
+                "track": 39
+              },
+              {
+                "sector": 9,
+                "track": 39
+              },
+              {
+                "sector": 10,
+                "track": 39
+              },
+              {
+                "sector": 11,
+                "track": 39
+              },
+              {
+                "sector": 12,
+                "track": 39
+              },
+              {
+                "sector": 13,
+                "track": 39
+              },
+              {
+                "sector": 14,
+                "track": 39
+              },
+              {
+                "sector": 15,
+                "track": 39
+              },
+              {
+                "sector": 16,
+                "track": 39
+              },
+              {
+                "sector": 17,
+                "track": 39
+              },
+              {
+                "sector": 18,
+                "track": 39
+              },
+              {
+                "sector": 19,
+                "track": 39
+              },
+              {
+                "sector": 20,
+                "track": 39
+              },
+              {
+                "sector": 21,
+                "track": 39
+              },
+              {
+                "sector": 22,
+                "track": 39
+              },
+              {
+                "sector": 23,
+                "track": 39
+              },
+              {
+                "sector": 24,
+                "track": 39
+              },
+              {
+                "sector": 25,
+                "track": 39
+              },
+              {
+                "sector": 26,
+                "track": 39
+              },
+              {
+                "sector": 27,
+                "track": 39
+              },
+              {
+                "sector": 28,
+                "track": 39
+              },
+              {
+                "sector": 29,
+                "track": 39
+              },
+              {
+                "sector": 30,
+                "track": 39
+              },
+              {
+                "sector": 31,
+                "track": 39
+              },
+              {
+                "sector": 32,
+                "track": 39
+              },
+              {
+                "sector": 33,
+                "track": 39
+              },
+              {
+                "sector": 34,
+                "track": 39
+              },
+              {
+                "sector": 35,
+                "track": 39
+              },
+              {
+                "sector": 36,
+                "track": 39
+              },
+              {
+                "sector": 37,
+                "track": 39
+              },
+              {
+                "sector": 38,
+                "track": 39
+              },
+              {
+                "sector": 39,
+                "track": 39
+              },
+              {
+                "sector": 0,
+                "track": 38
+              },
+              {
+                "sector": 1,
+                "track": 38
+              },
+              {
+                "sector": 2,
+                "track": 38
+              },
+              {
+                "sector": 3,
+                "track": 38
+              },
+              {
+                "sector": 4,
+                "track": 38
+              },
+              {
+                "sector": 5,
+                "track": 38
+              },
+              {
+                "sector": 6,
+                "track": 38
+              },
+              {
+                "sector": 7,
+                "track": 38
+              },
+              {
+                "sector": 8,
+                "track": 38
+              },
+              {
+                "sector": 9,
+                "track": 38
+              },
+              {
+                "sector": 10,
+                "track": 38
+              },
+              {
+                "sector": 11,
+                "track": 38
+              },
+              {
+                "sector": 12,
+                "track": 38
+              },
+              {
+                "sector": 13,
+                "track": 38
+              },
+              {
+                "sector": 14,
+                "track": 38
+              },
+              {
+                "sector": 15,
+                "track": 38
+              },
+              {
+                "sector": 16,
+                "track": 38
+              },
+              {
+                "sector": 17,
+                "track": 38
+              },
+              {
+                "sector": 18,
+                "track": 38
+              },
+              {
+                "sector": 19,
+                "track": 38
+              },
+              {
+                "sector": 20,
+                "track": 38
+              },
+              {
+                "sector": 21,
+                "track": 38
+              },
+              {
+                "sector": 22,
+                "track": 38
+              },
+              {
+                "sector": 23,
+                "track": 38
+              },
+              {
+                "sector": 24,
+                "track": 38
+              },
+              {
+                "sector": 25,
+                "track": 38
+              },
+              {
+                "sector": 26,
+                "track": 38
+              },
+              {
+                "sector": 27,
+                "track": 38
+              },
+              {
+                "sector": 28,
+                "track": 38
+              },
+              {
+                "sector": 29,
+                "track": 38
+              },
+              {
+                "sector": 30,
+                "track": 38
+              },
+              {
+                "sector": 31,
+                "track": 38
+              },
+              {
+                "sector": 32,
+                "track": 38
+              },
+              {
+                "sector": 33,
+                "track": 38
+              },
+              {
+                "sector": 34,
+                "track": 38
+              },
+              {
+                "sector": 35,
+                "track": 38
+              },
+              {
+                "sector": 36,
+                "track": 38
+              },
+              {
+                "sector": 37,
+                "track": 38
+              },
+              {
+                "sector": 38,
+                "track": 38
+              },
+              {
+                "sector": 39,
+                "track": 38
+              },
+              {
+                "sector": 0,
+                "track": 37
+              },
+              {
+                "sector": 1,
+                "track": 37
+              },
+              {
+                "sector": 2,
+                "track": 37
+              },
+              {
+                "sector": 3,
+                "track": 37
+              },
+              {
+                "sector": 4,
+                "track": 37
+              },
+              {
+                "sector": 5,
+                "track": 37
+              },
+              {
+                "sector": 6,
+                "track": 37
+              },
+              {
+                "sector": 7,
+                "track": 37
+              },
+              {
+                "sector": 8,
+                "track": 37
+              }
+            ],
+            "firstSector": {
+              "sector": 2,
+              "track": 39
+            },
+            "name": "r0fsucc",
+            "payloadBytes": 21921,
+            "payloadSha256": "3ce9aeb1029676465d47755145ec31d6b30ab2ca0c8ae95dc88e9703dd99446b",
+            "type": 130
+          },
+          {
+            "blocks": 1,
+            "chain": [
+              {
+                "sector": 0,
+                "track": 41
+              }
+            ],
+            "firstSector": {
+              "sector": 0,
+              "track": 41
+            },
+            "name": "token",
+            "payloadBytes": 34,
+            "payloadSha256": "0e8d0ac2ce727ba51285be0173ea784b52b56fdc4729a1f7c0d2d7271005b572",
+            "type": 130
+          }
+        ],
+        "freeBlocks": 3106,
+        "identifier": "65",
+        "label": "R0FHOST2",
+        "path": "/Users/slice/Developer/f65-megawing/build/r0f/d81-workflow/R0FHOST2/carrier-source-freeze/ntsc-2/R0FHOST2.D81",
+        "sha256": "49e8c104e6def9f0557bd55ce1149b8e1d0fe111b3454e022e06642dcff5c2bd"
+      },
+      "prgSha256": "3ce9aeb1029676465d47755145ec31d6b30ab2ca0c8ae95dc88e9703dd99446b",
+      "processReturnCode": 0,
+      "result": {
+        "audioAfter": 42,
+        "audioBefore": 21,
+        "canonicalBasePage": 2,
+        "canonicalCpuPort": 53,
+        "checksumAfter": "307A70D6",
+        "checksumBefore": "D9EEAB81",
+        "contextCrc32": "BC6FA9BA",
+        "contextInvalidated": 1,
+        "dmaAfter": 417,
+        "dmaBefore": 197,
+        "dosAfterCrc32": "D5C268FC",
+        "dosBeforeCrc32": "D5C268FC",
+        "fault": 0,
+        "identity": "RSI1",
+        "independentCrc32": "2EE02015",
+        "inputAfter": 42,
+        "inputBefore": 21,
+        "irqAfter": 57,
+        "irqBefore": 37,
+        "lifecycle": 9,
+        "lowAfterCrc32": "8FE4A3B3",
+        "lowBeforeCrc32": "8FE4A3B3",
+        "nmiSticky": 0,
+        "reserveAfterCrc32": "3C7D60D8",
+        "reserveBeforeCrc32": "3C7D60D8",
+        "restoredRomCrc32": "967A5200",
+        "resultCrc32": "2EE02015",
+        "resumedServiceMask": 31,
+        "romCrc32": "967A5200",
+        "snapshotsAfter": 56,
+        "snapshotsBefore": 27,
+        "stage": 127,
+        "storageDenied": 0,
+        "storageError": 0,
+        "storagePhase": 5,
+        "storageReturned": 1,
+        "tickAfter": 66,
+        "tickBefore": 33,
+        "version": 1
+      },
+      "resultReduction": "PASS",
+      "resultSha256": "1a81bc54f9712c6cbb627c09c0e12c74160ec9f8971887dd291405987ea8f09c",
+      "rom": {
+        "path": "/Users/slice/Documents/Codex/f65-megawing/MEGA65.ROM",
+        "sha256": "af3c447f791a2fdc48cb21e1bd3fab015e32641228d9d30d21259b9e878c6fa0"
+      },
+      "run": "ntsc-2",
+      "screenIdentity": "PASS",
+      "screenshotSha256": "dde96cb1488a494d270fa0869ee43e0c76f77b2367fa6ee7ea92fa443e74cddb",
+      "sd": "NOT RUN",
+      "sourceBranch": "codex/r0f-successor-physical-exact-carrier",
+      "sourceCommit": "ae2b397698cc7197d03349e57cd058b4fb9f3987",
+      "startedAtUtc": "2026-09-22T23:35:02.965546+00:00",
+      "tier": "EXACT_CANONICAL_CARRIER_COPY",
+      "timedTerminationAfterSeconds": 100,
+      "videoArgument": "1",
+      "videoMode": "NTSC",
+      "xemu": {
+        "path": "toolchain/xemu/xmega65",
+        "sha256": "dd37baf7846b9696adcb662ffe5da040031b07214c66aef9a7f48cc30040b738",
+        "sourceCommit": "40dfef0d1d5f56be2469492715c12bdb32c75b67",
+        "version": "20260129235930"
+      }
+    },
+    {
+      "canonicalD81Filename": "R0FHOST2.D81",
+      "canonicalD81Path": "build/r0f/d81-workflow/R0FHOST2/canonical/R0FHOST2.D81",
+      "canonicalD81Sha256": "49e8c104e6def9f0557bd55ce1149b8e1d0fe111b3454e022e06642dcff5c2bd",
+      "canonicalMountedWritable": false,
+      "command": [
+        "/Users/slice/Developer/f65-megawing/toolchain/xemu/xmega65",
+        "-skipconfigfile",
+        "-headless",
+        "-fastboot",
+        "-videostd",
+        "0",
+        "-fastclock",
+        "40.5",
+        "-rom",
+        "/Users/slice/Documents/Codex/f65-megawing/MEGA65.ROM",
+        "-sdimg",
+        "/Users/slice/Developer/f65-megawing/build/r0f/d81-workflow/R0FHOST2/carrier-source-freeze/pal-1/disposable-sd.img",
+        "-8",
+        "/Users/slice/Developer/f65-megawing/build/r0f/d81-workflow/R0FHOST2/carrier-source-freeze/pal-1/R0FHOST2.D81",
+        "-autoload",
+        "-dumpscreen",
+        "/Users/slice/Developer/f65-megawing/build/r0f/d81-workflow/R0FHOST2/carrier-source-freeze/pal-1/screen.txt",
+        "-dumpmem",
+        "/Users/slice/Developer/f65-megawing/build/r0f/d81-workflow/R0FHOST2/carrier-source-freeze/pal-1/memory.bin",
+        "-screenshot",
+        "/Users/slice/Developer/f65-megawing/build/r0f/d81-workflow/R0FHOST2/carrier-source-freeze/pal-1/screen.png"
+      ],
+      "disposableCopyMountedWritable": true,
+      "disposableSdSha256": "e10b8ef4a05cfbe690186471489ec23eb57ecceb5933beb38df85e7448dafb39",
+      "extractedSaveBytes": 34,
+      "extractedSaveSha256": "86bef4e96b96b157857587afe9bc5d9d5f69e4849320affe5b867a19e6627784",
+      "extractedSaveValidation": "PASS",
+      "finishedAtUtc": "2026-09-22T23:38:25.210813+00:00",
+      "fullAcceptance": false,
+      "javaOracle": "PASS",
+      "mountedD81Filename": "R0FHOST2.D81",
+      "physical": "NOT RUN",
+      "postRunD81Sha256": "d673d99e055bd8fbbebf14b6c9c9fab8e699170168ce23cf0c29ae959ea088f0",
+      "postRunStructureAndContent": "PASS",
+      "preRunByteIdenticalToCanonical": true,
+      "preRunD81Sha256": "49e8c104e6def9f0557bd55ce1149b8e1d0fe111b3454e022e06642dcff5c2bd",
+      "preRunStructure": {
+        "bytes": 819200,
+        "entries": [
+          {
+            "blocks": 2,
+            "chain": [
+              {
+                "sector": 0,
+                "track": 39
+              },
+              {
+                "sector": 1,
+                "track": 39
+              }
+            ],
+            "firstSector": {
+              "sector": 0,
+              "track": 39
+            },
+            "name": "autoboot.c65",
+            "payloadBytes": 464,
+            "payloadSha256": "9bdf352c44c411965229f68b2d92c358f08f0e6ef6486142115b53c9da246cc7",
+            "type": 130
+          },
+          {
+            "blocks": 87,
+            "chain": [
+              {
+                "sector": 2,
+                "track": 39
+              },
+              {
+                "sector": 3,
+                "track": 39
+              },
+              {
+                "sector": 4,
+                "track": 39
+              },
+              {
+                "sector": 5,
+                "track": 39
+              },
+              {
+                "sector": 6,
+                "track": 39
+              },
+              {
+                "sector": 7,
+                "track": 39
+              },
+              {
+                "sector": 8,
+                "track": 39
+              },
+              {
+                "sector": 9,
+                "track": 39
+              },
+              {
+                "sector": 10,
+                "track": 39
+              },
+              {
+                "sector": 11,
+                "track": 39
+              },
+              {
+                "sector": 12,
+                "track": 39
+              },
+              {
+                "sector": 13,
+                "track": 39
+              },
+              {
+                "sector": 14,
+                "track": 39
+              },
+              {
+                "sector": 15,
+                "track": 39
+              },
+              {
+                "sector": 16,
+                "track": 39
+              },
+              {
+                "sector": 17,
+                "track": 39
+              },
+              {
+                "sector": 18,
+                "track": 39
+              },
+              {
+                "sector": 19,
+                "track": 39
+              },
+              {
+                "sector": 20,
+                "track": 39
+              },
+              {
+                "sector": 21,
+                "track": 39
+              },
+              {
+                "sector": 22,
+                "track": 39
+              },
+              {
+                "sector": 23,
+                "track": 39
+              },
+              {
+                "sector": 24,
+                "track": 39
+              },
+              {
+                "sector": 25,
+                "track": 39
+              },
+              {
+                "sector": 26,
+                "track": 39
+              },
+              {
+                "sector": 27,
+                "track": 39
+              },
+              {
+                "sector": 28,
+                "track": 39
+              },
+              {
+                "sector": 29,
+                "track": 39
+              },
+              {
+                "sector": 30,
+                "track": 39
+              },
+              {
+                "sector": 31,
+                "track": 39
+              },
+              {
+                "sector": 32,
+                "track": 39
+              },
+              {
+                "sector": 33,
+                "track": 39
+              },
+              {
+                "sector": 34,
+                "track": 39
+              },
+              {
+                "sector": 35,
+                "track": 39
+              },
+              {
+                "sector": 36,
+                "track": 39
+              },
+              {
+                "sector": 37,
+                "track": 39
+              },
+              {
+                "sector": 38,
+                "track": 39
+              },
+              {
+                "sector": 39,
+                "track": 39
+              },
+              {
+                "sector": 0,
+                "track": 38
+              },
+              {
+                "sector": 1,
+                "track": 38
+              },
+              {
+                "sector": 2,
+                "track": 38
+              },
+              {
+                "sector": 3,
+                "track": 38
+              },
+              {
+                "sector": 4,
+                "track": 38
+              },
+              {
+                "sector": 5,
+                "track": 38
+              },
+              {
+                "sector": 6,
+                "track": 38
+              },
+              {
+                "sector": 7,
+                "track": 38
+              },
+              {
+                "sector": 8,
+                "track": 38
+              },
+              {
+                "sector": 9,
+                "track": 38
+              },
+              {
+                "sector": 10,
+                "track": 38
+              },
+              {
+                "sector": 11,
+                "track": 38
+              },
+              {
+                "sector": 12,
+                "track": 38
+              },
+              {
+                "sector": 13,
+                "track": 38
+              },
+              {
+                "sector": 14,
+                "track": 38
+              },
+              {
+                "sector": 15,
+                "track": 38
+              },
+              {
+                "sector": 16,
+                "track": 38
+              },
+              {
+                "sector": 17,
+                "track": 38
+              },
+              {
+                "sector": 18,
+                "track": 38
+              },
+              {
+                "sector": 19,
+                "track": 38
+              },
+              {
+                "sector": 20,
+                "track": 38
+              },
+              {
+                "sector": 21,
+                "track": 38
+              },
+              {
+                "sector": 22,
+                "track": 38
+              },
+              {
+                "sector": 23,
+                "track": 38
+              },
+              {
+                "sector": 24,
+                "track": 38
+              },
+              {
+                "sector": 25,
+                "track": 38
+              },
+              {
+                "sector": 26,
+                "track": 38
+              },
+              {
+                "sector": 27,
+                "track": 38
+              },
+              {
+                "sector": 28,
+                "track": 38
+              },
+              {
+                "sector": 29,
+                "track": 38
+              },
+              {
+                "sector": 30,
+                "track": 38
+              },
+              {
+                "sector": 31,
+                "track": 38
+              },
+              {
+                "sector": 32,
+                "track": 38
+              },
+              {
+                "sector": 33,
+                "track": 38
+              },
+              {
+                "sector": 34,
+                "track": 38
+              },
+              {
+                "sector": 35,
+                "track": 38
+              },
+              {
+                "sector": 36,
+                "track": 38
+              },
+              {
+                "sector": 37,
+                "track": 38
+              },
+              {
+                "sector": 38,
+                "track": 38
+              },
+              {
+                "sector": 39,
+                "track": 38
+              },
+              {
+                "sector": 0,
+                "track": 37
+              },
+              {
+                "sector": 1,
+                "track": 37
+              },
+              {
+                "sector": 2,
+                "track": 37
+              },
+              {
+                "sector": 3,
+                "track": 37
+              },
+              {
+                "sector": 4,
+                "track": 37
+              },
+              {
+                "sector": 5,
+                "track": 37
+              },
+              {
+                "sector": 6,
+                "track": 37
+              },
+              {
+                "sector": 7,
+                "track": 37
+              },
+              {
+                "sector": 8,
+                "track": 37
+              }
+            ],
+            "firstSector": {
+              "sector": 2,
+              "track": 39
+            },
+            "name": "r0fsucc",
+            "payloadBytes": 21921,
+            "payloadSha256": "3ce9aeb1029676465d47755145ec31d6b30ab2ca0c8ae95dc88e9703dd99446b",
+            "type": 130
+          },
+          {
+            "blocks": 1,
+            "chain": [
+              {
+                "sector": 0,
+                "track": 41
+              }
+            ],
+            "firstSector": {
+              "sector": 0,
+              "track": 41
+            },
+            "name": "token",
+            "payloadBytes": 34,
+            "payloadSha256": "0e8d0ac2ce727ba51285be0173ea784b52b56fdc4729a1f7c0d2d7271005b572",
+            "type": 130
+          }
+        ],
+        "freeBlocks": 3106,
+        "identifier": "65",
+        "label": "R0FHOST2",
+        "path": "/Users/slice/Developer/f65-megawing/build/r0f/d81-workflow/R0FHOST2/carrier-source-freeze/pal-1/R0FHOST2.D81",
+        "sha256": "49e8c104e6def9f0557bd55ce1149b8e1d0fe111b3454e022e06642dcff5c2bd"
+      },
+      "prgSha256": "3ce9aeb1029676465d47755145ec31d6b30ab2ca0c8ae95dc88e9703dd99446b",
+      "processReturnCode": 0,
+      "result": {
+        "audioAfter": 36,
+        "audioBefore": 18,
+        "canonicalBasePage": 2,
+        "canonicalCpuPort": 53,
+        "checksumAfter": "307A70D6",
+        "checksumBefore": "D9EEAB81",
+        "contextCrc32": "407E8667",
+        "contextInvalidated": 1,
+        "dmaAfter": 492,
+        "dmaBefore": 241,
+        "dosAfterCrc32": "D5C268FC",
+        "dosBeforeCrc32": "D5C268FC",
+        "fault": 0,
+        "identity": "RSI1",
+        "independentCrc32": "8F7C4D30",
+        "inputAfter": 36,
+        "inputBefore": 18,
+        "irqAfter": 52,
+        "irqBefore": 35,
+        "lifecycle": 9,
+        "lowAfterCrc32": "BD959A63",
+        "lowBeforeCrc32": "BD959A63",
+        "nmiSticky": 0,
+        "reserveAfterCrc32": "3C7D60D8",
+        "reserveBeforeCrc32": "3C7D60D8",
+        "restoredRomCrc32": "967A5200",
+        "resultCrc32": "8F7C4D30",
+        "resumedServiceMask": 31,
+        "romCrc32": "967A5200",
+        "snapshotsAfter": 66,
+        "snapshotsBefore": 33,
+        "stage": 127,
+        "storageDenied": 0,
+        "storageError": 0,
+        "storagePhase": 5,
+        "storageReturned": 1,
+        "tickAfter": 66,
+        "tickBefore": 33,
+        "version": 1
+      },
+      "resultReduction": "PASS",
+      "resultSha256": "906088369af45c060982320f6aee8ef2ac940ea37a8942af964084555a2474a7",
+      "rom": {
+        "path": "/Users/slice/Documents/Codex/f65-megawing/MEGA65.ROM",
+        "sha256": "af3c447f791a2fdc48cb21e1bd3fab015e32641228d9d30d21259b9e878c6fa0"
+      },
+      "run": "pal-1",
+      "screenIdentity": "PASS",
+      "screenshotSha256": "53b9a95dbd449e79bba9820359acd652f7b84bb992a367f018097dd4897fd8d1",
+      "sd": "NOT RUN",
+      "sourceBranch": "codex/r0f-successor-physical-exact-carrier",
+      "sourceCommit": "ae2b397698cc7197d03349e57cd058b4fb9f3987",
+      "startedAtUtc": "2026-09-22T23:36:45.070061+00:00",
+      "tier": "EXACT_CANONICAL_CARRIER_COPY",
+      "timedTerminationAfterSeconds": 100,
+      "videoArgument": "0",
+      "videoMode": "PAL",
+      "xemu": {
+        "path": "toolchain/xemu/xmega65",
+        "sha256": "dd37baf7846b9696adcb662ffe5da040031b07214c66aef9a7f48cc30040b738",
+        "sourceCommit": "40dfef0d1d5f56be2469492715c12bdb32c75b67",
+        "version": "20260129235930"
+      }
+    },
+    {
+      "canonicalD81Filename": "R0FHOST2.D81",
+      "canonicalD81Path": "build/r0f/d81-workflow/R0FHOST2/canonical/R0FHOST2.D81",
+      "canonicalD81Sha256": "49e8c104e6def9f0557bd55ce1149b8e1d0fe111b3454e022e06642dcff5c2bd",
+      "canonicalMountedWritable": false,
+      "command": [
+        "/Users/slice/Developer/f65-megawing/toolchain/xemu/xmega65",
+        "-skipconfigfile",
+        "-headless",
+        "-fastboot",
+        "-videostd",
+        "0",
+        "-fastclock",
+        "40.5",
+        "-rom",
+        "/Users/slice/Documents/Codex/f65-megawing/MEGA65.ROM",
+        "-sdimg",
+        "/Users/slice/Developer/f65-megawing/build/r0f/d81-workflow/R0FHOST2/carrier-source-freeze/pal-2/disposable-sd.img",
+        "-8",
+        "/Users/slice/Developer/f65-megawing/build/r0f/d81-workflow/R0FHOST2/carrier-source-freeze/pal-2/R0FHOST2.D81",
+        "-autoload",
+        "-dumpscreen",
+        "/Users/slice/Developer/f65-megawing/build/r0f/d81-workflow/R0FHOST2/carrier-source-freeze/pal-2/screen.txt",
+        "-dumpmem",
+        "/Users/slice/Developer/f65-megawing/build/r0f/d81-workflow/R0FHOST2/carrier-source-freeze/pal-2/memory.bin",
+        "-screenshot",
+        "/Users/slice/Developer/f65-megawing/build/r0f/d81-workflow/R0FHOST2/carrier-source-freeze/pal-2/screen.png"
+      ],
+      "disposableCopyMountedWritable": true,
+      "disposableSdSha256": "e10b8ef4a05cfbe690186471489ec23eb57ecceb5933beb38df85e7448dafb39",
+      "extractedSaveBytes": 34,
+      "extractedSaveSha256": "86bef4e96b96b157857587afe9bc5d9d5f69e4849320affe5b867a19e6627784",
+      "extractedSaveValidation": "PASS",
+      "finishedAtUtc": "2026-09-22T23:40:07.331079+00:00",
+      "fullAcceptance": false,
+      "javaOracle": "PASS",
+      "mountedD81Filename": "R0FHOST2.D81",
+      "physical": "NOT RUN",
+      "postRunD81Sha256": "d673d99e055bd8fbbebf14b6c9c9fab8e699170168ce23cf0c29ae959ea088f0",
+      "postRunStructureAndContent": "PASS",
+      "preRunByteIdenticalToCanonical": true,
+      "preRunD81Sha256": "49e8c104e6def9f0557bd55ce1149b8e1d0fe111b3454e022e06642dcff5c2bd",
+      "preRunStructure": {
+        "bytes": 819200,
+        "entries": [
+          {
+            "blocks": 2,
+            "chain": [
+              {
+                "sector": 0,
+                "track": 39
+              },
+              {
+                "sector": 1,
+                "track": 39
+              }
+            ],
+            "firstSector": {
+              "sector": 0,
+              "track": 39
+            },
+            "name": "autoboot.c65",
+            "payloadBytes": 464,
+            "payloadSha256": "9bdf352c44c411965229f68b2d92c358f08f0e6ef6486142115b53c9da246cc7",
+            "type": 130
+          },
+          {
+            "blocks": 87,
+            "chain": [
+              {
+                "sector": 2,
+                "track": 39
+              },
+              {
+                "sector": 3,
+                "track": 39
+              },
+              {
+                "sector": 4,
+                "track": 39
+              },
+              {
+                "sector": 5,
+                "track": 39
+              },
+              {
+                "sector": 6,
+                "track": 39
+              },
+              {
+                "sector": 7,
+                "track": 39
+              },
+              {
+                "sector": 8,
+                "track": 39
+              },
+              {
+                "sector": 9,
+                "track": 39
+              },
+              {
+                "sector": 10,
+                "track": 39
+              },
+              {
+                "sector": 11,
+                "track": 39
+              },
+              {
+                "sector": 12,
+                "track": 39
+              },
+              {
+                "sector": 13,
+                "track": 39
+              },
+              {
+                "sector": 14,
+                "track": 39
+              },
+              {
+                "sector": 15,
+                "track": 39
+              },
+              {
+                "sector": 16,
+                "track": 39
+              },
+              {
+                "sector": 17,
+                "track": 39
+              },
+              {
+                "sector": 18,
+                "track": 39
+              },
+              {
+                "sector": 19,
+                "track": 39
+              },
+              {
+                "sector": 20,
+                "track": 39
+              },
+              {
+                "sector": 21,
+                "track": 39
+              },
+              {
+                "sector": 22,
+                "track": 39
+              },
+              {
+                "sector": 23,
+                "track": 39
+              },
+              {
+                "sector": 24,
+                "track": 39
+              },
+              {
+                "sector": 25,
+                "track": 39
+              },
+              {
+                "sector": 26,
+                "track": 39
+              },
+              {
+                "sector": 27,
+                "track": 39
+              },
+              {
+                "sector": 28,
+                "track": 39
+              },
+              {
+                "sector": 29,
+                "track": 39
+              },
+              {
+                "sector": 30,
+                "track": 39
+              },
+              {
+                "sector": 31,
+                "track": 39
+              },
+              {
+                "sector": 32,
+                "track": 39
+              },
+              {
+                "sector": 33,
+                "track": 39
+              },
+              {
+                "sector": 34,
+                "track": 39
+              },
+              {
+                "sector": 35,
+                "track": 39
+              },
+              {
+                "sector": 36,
+                "track": 39
+              },
+              {
+                "sector": 37,
+                "track": 39
+              },
+              {
+                "sector": 38,
+                "track": 39
+              },
+              {
+                "sector": 39,
+                "track": 39
+              },
+              {
+                "sector": 0,
+                "track": 38
+              },
+              {
+                "sector": 1,
+                "track": 38
+              },
+              {
+                "sector": 2,
+                "track": 38
+              },
+              {
+                "sector": 3,
+                "track": 38
+              },
+              {
+                "sector": 4,
+                "track": 38
+              },
+              {
+                "sector": 5,
+                "track": 38
+              },
+              {
+                "sector": 6,
+                "track": 38
+              },
+              {
+                "sector": 7,
+                "track": 38
+              },
+              {
+                "sector": 8,
+                "track": 38
+              },
+              {
+                "sector": 9,
+                "track": 38
+              },
+              {
+                "sector": 10,
+                "track": 38
+              },
+              {
+                "sector": 11,
+                "track": 38
+              },
+              {
+                "sector": 12,
+                "track": 38
+              },
+              {
+                "sector": 13,
+                "track": 38
+              },
+              {
+                "sector": 14,
+                "track": 38
+              },
+              {
+                "sector": 15,
+                "track": 38
+              },
+              {
+                "sector": 16,
+                "track": 38
+              },
+              {
+                "sector": 17,
+                "track": 38
+              },
+              {
+                "sector": 18,
+                "track": 38
+              },
+              {
+                "sector": 19,
+                "track": 38
+              },
+              {
+                "sector": 20,
+                "track": 38
+              },
+              {
+                "sector": 21,
+                "track": 38
+              },
+              {
+                "sector": 22,
+                "track": 38
+              },
+              {
+                "sector": 23,
+                "track": 38
+              },
+              {
+                "sector": 24,
+                "track": 38
+              },
+              {
+                "sector": 25,
+                "track": 38
+              },
+              {
+                "sector": 26,
+                "track": 38
+              },
+              {
+                "sector": 27,
+                "track": 38
+              },
+              {
+                "sector": 28,
+                "track": 38
+              },
+              {
+                "sector": 29,
+                "track": 38
+              },
+              {
+                "sector": 30,
+                "track": 38
+              },
+              {
+                "sector": 31,
+                "track": 38
+              },
+              {
+                "sector": 32,
+                "track": 38
+              },
+              {
+                "sector": 33,
+                "track": 38
+              },
+              {
+                "sector": 34,
+                "track": 38
+              },
+              {
+                "sector": 35,
+                "track": 38
+              },
+              {
+                "sector": 36,
+                "track": 38
+              },
+              {
+                "sector": 37,
+                "track": 38
+              },
+              {
+                "sector": 38,
+                "track": 38
+              },
+              {
+                "sector": 39,
+                "track": 38
+              },
+              {
+                "sector": 0,
+                "track": 37
+              },
+              {
+                "sector": 1,
+                "track": 37
+              },
+              {
+                "sector": 2,
+                "track": 37
+              },
+              {
+                "sector": 3,
+                "track": 37
+              },
+              {
+                "sector": 4,
+                "track": 37
+              },
+              {
+                "sector": 5,
+                "track": 37
+              },
+              {
+                "sector": 6,
+                "track": 37
+              },
+              {
+                "sector": 7,
+                "track": 37
+              },
+              {
+                "sector": 8,
+                "track": 37
+              }
+            ],
+            "firstSector": {
+              "sector": 2,
+              "track": 39
+            },
+            "name": "r0fsucc",
+            "payloadBytes": 21921,
+            "payloadSha256": "3ce9aeb1029676465d47755145ec31d6b30ab2ca0c8ae95dc88e9703dd99446b",
+            "type": 130
+          },
+          {
+            "blocks": 1,
+            "chain": [
+              {
+                "sector": 0,
+                "track": 41
+              }
+            ],
+            "firstSector": {
+              "sector": 0,
+              "track": 41
+            },
+            "name": "token",
+            "payloadBytes": 34,
+            "payloadSha256": "0e8d0ac2ce727ba51285be0173ea784b52b56fdc4729a1f7c0d2d7271005b572",
+            "type": 130
+          }
+        ],
+        "freeBlocks": 3106,
+        "identifier": "65",
+        "label": "R0FHOST2",
+        "path": "/Users/slice/Developer/f65-megawing/build/r0f/d81-workflow/R0FHOST2/carrier-source-freeze/pal-2/R0FHOST2.D81",
+        "sha256": "49e8c104e6def9f0557bd55ce1149b8e1d0fe111b3454e022e06642dcff5c2bd"
+      },
+      "prgSha256": "3ce9aeb1029676465d47755145ec31d6b30ab2ca0c8ae95dc88e9703dd99446b",
+      "processReturnCode": 0,
+      "result": {
+        "audioAfter": 36,
+        "audioBefore": 18,
+        "canonicalBasePage": 2,
+        "canonicalCpuPort": 53,
+        "checksumAfter": "307A70D6",
+        "checksumBefore": "D9EEAB81",
+        "contextCrc32": "DE9D7429",
+        "contextInvalidated": 1,
+        "dmaAfter": 492,
+        "dmaBefore": 241,
+        "dosAfterCrc32": "D5C268FC",
+        "dosBeforeCrc32": "D5C268FC",
+        "fault": 0,
+        "identity": "RSI1",
+        "independentCrc32": "C31FB577",
+        "inputAfter": 36,
+        "inputBefore": 18,
+        "irqAfter": 52,
+        "irqBefore": 35,
+        "lifecycle": 9,
+        "lowAfterCrc32": "BD959A63",
+        "lowBeforeCrc32": "BD959A63",
+        "nmiSticky": 0,
+        "reserveAfterCrc32": "3C7D60D8",
+        "reserveBeforeCrc32": "3C7D60D8",
+        "restoredRomCrc32": "967A5200",
+        "resultCrc32": "C31FB577",
+        "resumedServiceMask": 31,
+        "romCrc32": "967A5200",
+        "snapshotsAfter": 66,
+        "snapshotsBefore": 33,
+        "stage": 127,
+        "storageDenied": 0,
+        "storageError": 0,
+        "storagePhase": 5,
+        "storageReturned": 1,
+        "tickAfter": 66,
+        "tickBefore": 33,
+        "version": 1
+      },
+      "resultReduction": "PASS",
+      "resultSha256": "f6e4f03c164d0dd1083fd9b7f025c4579b2eca6977fc7c02dc45621362627fad",
+      "rom": {
+        "path": "/Users/slice/Documents/Codex/f65-megawing/MEGA65.ROM",
+        "sha256": "af3c447f791a2fdc48cb21e1bd3fab015e32641228d9d30d21259b9e878c6fa0"
+      },
+      "run": "pal-2",
+      "screenIdentity": "PASS",
+      "screenshotSha256": "5a96e459278db541ae1055859f7cc4f56077b05cd5f8c42a166cb405918f5084",
+      "sd": "NOT RUN",
+      "sourceBranch": "codex/r0f-successor-physical-exact-carrier",
+      "sourceCommit": "ae2b397698cc7197d03349e57cd058b4fb9f3987",
+      "startedAtUtc": "2026-09-22T23:38:27.179873+00:00",
+      "tier": "EXACT_CANONICAL_CARRIER_COPY",
+      "timedTerminationAfterSeconds": 100,
+      "videoArgument": "0",
+      "videoMode": "PAL",
+      "xemu": {
+        "path": "toolchain/xemu/xmega65",
+        "sha256": "dd37baf7846b9696adcb662ffe5da040031b07214c66aef9a7f48cc30040b738",
+        "sourceCommit": "40dfef0d1d5f56be2469492715c12bdb32c75b67",
+        "version": "20260129235930"
+      }
+    }
+  ],
+  "sd": "NOT RUN",
+  "sourceBranch": "codex/r0f-successor-physical-exact-carrier",
+  "sourceCommit": "ae2b397698cc7197d03349e57cd058b4fb9f3987"
+}

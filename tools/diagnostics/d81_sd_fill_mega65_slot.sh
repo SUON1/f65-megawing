@@ -3,8 +3,8 @@ set -eu
 
 root=$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)
 
-if test "$#" -ne 3; then
-  echo "usage: d81_sd_fill_mega65_slot.sh SOURCE.D81 /Volumes/MEGA65FDISK EXPECTED_SHA256" >&2
+if test "$#" -lt 3 || test "$#" -gt 4; then
+  echo "usage: d81_sd_fill_mega65_slot.sh SOURCE.D81 /Volumes/MEGA65FDISK EXPECTED_SHA256 [EXPECTED_BLANK_SHA256]" >&2
   exit 2
 fi
 
@@ -18,6 +18,7 @@ fi
 source_image=$1
 requested_mount=$2
 expected_sha=$3
+expected_blank_sha=${4-}
 filename=$(basename -- "$source_image")
 test -d "$requested_mount" || { echo "SD mount is absent" >&2; exit 2; }
 sd_mount=$(CDPATH= cd -- "$requested_mount" && pwd -P)
@@ -53,6 +54,9 @@ test -f "$source_image" || { echo "source D81 is absent" >&2; exit 2; }
 test "$(stat -f '%z' "$source_image")" = "819200" || { echo "source D81 is not exactly 819200 bytes" >&2; exit 2; }
 printf '%s\n' "$filename" | grep -Eq '^[A-Z0-9][A-Z0-9]{0,7}\.D81$' || { echo "source filename is not an uppercase FAT 8.3 .D81 slot name" >&2; exit 2; }
 printf '%s\n' "$expected_sha" | grep -Eq '^[0-9a-f]{64}$' || { echo "expected SHA-256 is not 64 lowercase hexadecimal characters" >&2; exit 2; }
+if test -n "$expected_blank_sha"; then
+  printf '%s\n' "$expected_blank_sha" | grep -Eq '^[0-9a-f]{64}$' || { echo "expected blank SHA-256 is not 64 lowercase hexadecimal characters" >&2; exit 2; }
+fi
 test "$(dirname -- "$target")" = "$sd_mount" || { echo "slot target is not at the SD root" >&2; exit 2; }
 test -f "$target" || { echo "matching MEGA65-created root slot is absent: $target" >&2; exit 2; }
 test ! -L "$target" || { echo "slot target must not be a symbolic link" >&2; exit 2; }
@@ -61,6 +65,9 @@ test "$(stat -f '%z' "$target")" = "819200" || { echo "MEGA65-created slot is no
 actual_sha=$(shasum -a 256 "$source_image" | awk '{print $1}')
 test "$actual_sha" = "$expected_sha" || { echo "source SHA-256 does not match the authorized identity" >&2; exit 2; }
 preimage_sha=$(shasum -a 256 "$target" | awk '{print $1}')
+if test -n "$expected_blank_sha"; then
+  test "$preimage_sha" = "$expected_blank_sha" || { echo "MEGA65-created blank identity changed; refusing in-place fill" >&2; exit 2; }
+fi
 test "$preimage_sha" != "$expected_sha" || { echo "slot already contains the authorized image; refusing an unnecessary rewrite" >&2; exit 2; }
 
 mkdir -p "$backup_dir"
@@ -101,6 +108,16 @@ python3 "$root/tools/diagnostics/d81_sd_contiguity.py" "$target" \
 sync
 /usr/sbin/diskutil eject "$sd_mount"
 slot_modified=0
+python3 - "$report_dir/$filename.slot-post.json" <<'PY'
+import json
+from pathlib import Path
+import sys
+path = Path(sys.argv[1])
+report = json.loads(path.read_text())
+report.update(SD_SAFE_EJECT_RESULT='PASS', SD_TRANSFER_METHOD='verified MEGA65 native slot, exact-size in-place fill',
+              D81_STATE='AWAITING_PHYSICAL_CHOOSER_VERIFICATION', PHYSICAL_CHOOSER_RESULT='AWAITING HUMAN')
+path.write_text(json.dumps(report, indent=2, sort_keys=True) + '\n')
+PY
 
 printf '%s\n' \
   "D81 MEGA65 SLOT FILL PASS" \

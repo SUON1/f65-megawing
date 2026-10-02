@@ -217,6 +217,86 @@ int main(void)
         R0FS_S_SERVICES_RESUMED, 0u, 0u, 30u, 31u));
     checks += 4u;
 
+    assert(r0fs_final_fault(
+        R0FS_S_SERVICES_RESUMED, 0u, 0u, 31u, 31u, 1u, 1u) == 0u);
+    assert(r0fs_final_fault(
+        R0FS_S_SERVICES_RESUMED, 0u, 77u, 31u, 31u, 1u, 1u) == 77u);
+    assert(r0fs_final_fault(
+        R0FS_S_SERVICES_RESUMED, 0u, 0u, 31u, 31u, 0u, 1u)
+        == R0FSI_FAULT_FINAL_RESERVE);
+    assert(r0fs_final_fault(
+        R0FS_S_APPLICATION_RESTORED, 0u, 0u, 31u, 31u, 1u, 1u)
+        == R0FSI_FAULT_FINAL_LIFECYCLE);
+    assert(r0fs_final_fault(
+        R0FS_S_SERVICES_RESUMED, 1u, 0u, 31u, 31u, 1u, 1u)
+        == R0FSI_FAULT_FINAL_NMI);
+    assert(r0fs_final_fault(
+        R0FS_S_SERVICES_RESUMED, 0u, 0u, 30u, 31u, 1u, 1u)
+        == R0FSI_FAULT_FINAL_DISPLAY);
+    assert(r0fs_final_fault(
+        R0FS_S_SERVICES_RESUMED, 0u, 0u, 29u, 31u, 1u, 1u)
+        == R0FSI_FAULT_FINAL_AUDIO);
+    assert(r0fs_final_fault(
+        R0FS_S_SERVICES_RESUMED, 0u, 0u, 27u, 31u, 1u, 1u)
+        == R0FSI_FAULT_FINAL_INPUT);
+    assert(r0fs_final_fault(
+        R0FS_S_SERVICES_RESUMED, 0u, 0u, 23u, 31u, 1u, 1u)
+        == R0FSI_FAULT_FINAL_IRQ);
+    assert(r0fs_final_fault(
+        R0FS_S_SERVICES_RESUMED, 0u, 0u, 15u, 31u, 1u, 1u)
+        == R0FSI_FAULT_FINAL_DMA);
+    assert(r0fs_final_fault(
+        R0FS_S_SERVICES_RESUMED, 0u, 0u, 63u, 31u, 1u, 1u)
+        == R0FSI_FAULT_FINAL_SERVICE_MASK);
+    assert(r0fs_final_fault(
+        R0FS_S_SERVICES_RESUMED, 0u, 0u, 31u, 31u, 1u, 0u)
+        == R0FSI_FAULT_FINAL_TICK);
+    checks += 12u;
+
+    assert(r0fs_post_storage_tick_fault(0u)
+        == R0FSI_FAULT_POST_STORAGE_TICK);
+    assert(r0fs_post_storage_tick_fault(70u) == 70u);
+    assert(r0fs_post_storage_tick_fault(89u) == 89u);
+    assert(r0fs_post_storage_tick_fault(91u) == 91u);
+    checks += 4u;
+
+    for (state = 0u; state <= R0FS_S_LOCKOUT; state++)
+    {
+        uint8_t fault;
+        uint8_t mask;
+        uint8_t nmi;
+        uint8_t reserve_equal;
+        uint8_t ticks_equal;
+
+        for (fault = 0u; fault <= 1u; fault++)
+        {
+            for (mask = 0u; mask < 64u; mask++)
+            {
+                for (nmi = 0u; nmi <= 1u; nmi++)
+                {
+                    for (reserve_equal = 0u; reserve_equal <= 1u;
+                         reserve_equal++)
+                    {
+                        for (ticks_equal = 0u; ticks_equal <= 1u;
+                             ticks_equal++)
+                        {
+                            uint8_t split = r0fs_final_fault(
+                                (uint8_t)state, nmi, fault, mask, 31u,
+                                reserve_equal, ticks_equal);
+                            uint8_t aggregate = (uint8_t)(
+                                reserve_equal && ticks_equal
+                                && r0fs_completion_allowed(
+                                    (uint8_t)state, nmi, fault, mask, 31u));
+
+                            assert((split == 0u) == (aggregate != 0u));
+                            checks++;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     printf("R0-F successor T03 lifecycle/continuation/fault checks PASS: %lu\n",
            (unsigned long)checks);
     printf("T03 deterministic lineage: tick %u %08lx -> tick %u %08lx\n",

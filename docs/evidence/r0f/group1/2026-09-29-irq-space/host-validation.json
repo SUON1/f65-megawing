@@ -1,0 +1,28 @@
+{
+  "result": "PASS",
+  "command": [
+    "/usr/bin/clang",
+    "-std=c11",
+    "-Wall",
+    "-Wextra",
+    "-Wconversion",
+    "-Werror",
+    "-fsanitize=address,undefined",
+    "-DR0FG1_INTEGRATION",
+    "-Iinterfaces/generated",
+    "-Isrc/diagnostics/r0f",
+    "src/diagnostics/r0f/combined_model.c",
+    "src/diagnostics/r0f/group1_workload.c",
+    "src/diagnostics/r0f/successor_lifecycle.c",
+    "tools/diagnostics/r0f_group1_workload_host_test.c",
+    "-o",
+    "/Users/slice/Developer/f65-megawing/build/r0f/group1/integration/workload-host-test"
+  ],
+  "output": "lineage 1600 6B765FDB\nlineage 3200 607348BD\nsidecar 71A7DF9E 1600 640 320\nStage/input/AI causality and 1025 streaming CRC lengths PASS\n",
+  "independentLineage": [
+    "6B765FDB",
+    "607348BD"
+  ],
+  "independentSidecar": "71A7DF9E",
+  "scope": "stage order, stage-2 input latch, held-intent causality, complete fixture lineage, streaming CRC"
+}

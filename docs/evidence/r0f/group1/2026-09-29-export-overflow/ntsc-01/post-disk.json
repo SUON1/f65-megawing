@@ -1,0 +1,51 @@
+{
+  "bamAllocatedSectors": 6,
+  "bamFreeSectors": 3194,
+  "bytes": 819200,
+  "c1541Listing": "D81 disk image recognised: /Users/slice/Developer/f65-megawing/build/r0f/group1/export-overflow/ntsc-01/G1OVR01.D81, 80 tracks.\nUnit 8 drive 0: D81 disk image attached: /Users/slice/Developer/f65-megawing/build/r0f/group1/export-overflow/ntsc-01/G1OVR01.D81.\n0 \"G1 EXP PROBE    \" 65 3d\n1    \"token\"            prg \n1    \"rsstate\"          prg \n3158 blocks free.\nUnit 8 drive 0: D81 disk image detached: /Users/slice/Developer/f65-megawing/build/r0f/group1/export-overflow/ntsc-01/G1OVR01.D81.\n",
+  "entries": [
+    {
+      "blocks": 1,
+      "chain": [
+        {
+          "sector": 0,
+          "track": 39
+        }
+      ],
+      "firstSector": {
+        "sector": 0,
+        "track": 39
+      },
+      "name": "token",
+      "payloadBytes": 34,
+      "payloadSha256": "0e8d0ac2ce727ba51285be0173ea784b52b56fdc4729a1f7c0d2d7271005b572",
+      "type": 130
+    },
+    {
+      "blocks": 1,
+      "chain": [
+        {
+          "sector": 1,
+          "track": 39
+        }
+      ],
+      "firstSector": {
+        "sector": 1,
+        "track": 39
+      },
+      "name": "rsstate",
+      "payloadBytes": 34,
+      "payloadSha256": "18b5fa8420d40b1b21ab9c8cf4cacaa7d53195ffc69840e97c597ef6877b1e64",
+      "type": 130
+    }
+  ],
+  "extracted": {
+    "rsstate": "/Users/slice/Developer/f65-megawing/build/r0f/group1/export-overflow/ntsc-01/post-extracted/rsstate",
+    "token": "/Users/slice/Developer/f65-megawing/build/r0f/group1/export-overflow/ntsc-01/post-extracted/token"
+  },
+  "freeBlocks": 3194,
+  "identifier": "65",
+  "label": "G1 EXP PROBE",
+  "path": "/Users/slice/Developer/f65-megawing/build/r0f/group1/export-overflow/ntsc-01/G1OVR01.D81",
+  "sha256": "a6487f090f98bf8d1974dd29be4668cbdecf55b986948410e482cb1dbdd359eb"
+}
