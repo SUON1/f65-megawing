@@ -6,16 +6,12 @@ authority. Its status is one of ACTIVE, BLOCKED, READY FOR REVIEW or NONE.
 ## Current status
 
 - **Status:** `READY FOR REVIEW`
-- **Task:** Publish the Group 1 closeout checkpoint; PR/merge review remains.
+- **Task:** Review/publication preparation for Group 1 campaign closeout.
 - **Branch:** `codex/r0f-successor-physical-exact-carrier`.
 - **Existing published checkpoint:** `2d9a42e110cdd9066031e28e83662ce4fdec6219`.
 - **Owner intent:** Analyze the returned data, close this work unit and retain
   a compact handoff; publication/merge precede a new chat for remaining R0-F.
   No new implementation, SD write or hardware run is part of closeout.
-- **Publication authority (2026-10-01):** Owner explicitly requested "commit
-  and push" for this closeout. Preserve the frozen packet unchanged and publish
-  only the named Group 1 scope. No merge, SD write or new target/hardware run
-  is authorized by this step.
 - **Outcome:** Development campaign closed as a preserved checkpoint **with a
   physical blocker**, not a Group 1/R0-F PASS. Local fit/host/four exact-name
   Xemu runs pass. P05 SD hash, one extent, safe eject and physical entry pass.
@@ -38,9 +34,8 @@ authority. Its status is one of ACTIVE, BLOCKED, READY FOR REVIEW or NONE.
   original PRGs and P05 inputs match; four existing version-7 Xemu traces
   independently re-reduce. Actual returned structure/payload/SAVE checks pass.
   No new target build, Xemu launch or physical test. Hardware/ABI impact none.
-- **Next:** After this authorized commit/push, review/open the focused PR and
-  separately approve merge with fresh branch/remote/CI review. Leave unrelated
-  dirty local backup,
+- **Next:** Owner review, then separately authorized focused commit/push/PR and
+  merge with fresh branch/remote/CI review. Leave unrelated dirty local backup,
   mirror tools/reports and older physical directories unstaged and intact.
   After merge, move to a fresh chat using the closeout handoff. First remaining
   R0-F task is the physical display-resume subfault/clock-order diagnostic;

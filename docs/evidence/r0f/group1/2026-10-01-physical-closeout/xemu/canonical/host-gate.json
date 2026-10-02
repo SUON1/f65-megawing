@@ -1,0 +1,1151 @@
+{
+  "D81_BYTES": 819200,
+  "D81_FILENAME": "R0FG1P05.D81",
+  "D81_SHA256": "046198fc400988abd7e92d384db9efbb13d0ef0f0c77ede346d6942cf75ee4ff",
+  "D81_STATE": "XEMU_BOOT_VERIFIED",
+  "XEMU_EVIDENCE": [
+    {
+      "D81_FILENAME": "R0FG1P05.D81",
+      "actualExport": "PASS",
+      "actualSave": "PASS",
+      "canonicalSha256": "046198fc400988abd7e92d384db9efbb13d0ef0f0c77ede346d6942cf75ee4ff",
+      "canonicalUnchanged": true,
+      "cleanAutoloadNoPrgInjection": true,
+      "corruptionChecks": "102 rejects",
+      "nominalTiming": "WITHIN_OBSERVED_BOUNDS",
+      "physical": "NOT RUN",
+      "postRunSha256": "84b809650306c09e975a372a87bba581b53a7cd7c8ac87d2f3b372207aca4e33",
+      "preRunSha256": "046198fc400988abd7e92d384db9efbb13d0ef0f0c77ede346d6942cf75ee4ff",
+      "prgSha256": "c068cc532dc820845d8c0649b1c2ea7dfc0bda394b32f7c186088a04d0dc048b",
+      "records": 3200,
+      "result": "PASS",
+      "run": "ntsc-01",
+      "sd": "NOT RUN",
+      "structureAndContent": "PASS",
+      "testEligible": false,
+      "traceSha256": "aa9752de8358d51b91dcb29b469fb63b0823802048dbc2573c0ec37b65950655",
+      "worldPairs": 955
+    },
+    {
+      "D81_FILENAME": "R0FG1P05.D81",
+      "actualExport": "PASS",
+      "actualSave": "PASS",
+      "canonicalSha256": "046198fc400988abd7e92d384db9efbb13d0ef0f0c77ede346d6942cf75ee4ff",
+      "canonicalUnchanged": true,
+      "cleanAutoloadNoPrgInjection": true,
+      "corruptionChecks": "102 rejects",
+      "nominalTiming": "WITHIN_OBSERVED_BOUNDS",
+      "physical": "NOT RUN",
+      "postRunSha256": "5478c431ccf06b1a0f6078b0c0170f3c542a75d4d1027aa5cbd7a2c9dc921b1d",
+      "preRunSha256": "046198fc400988abd7e92d384db9efbb13d0ef0f0c77ede346d6942cf75ee4ff",
+      "prgSha256": "c068cc532dc820845d8c0649b1c2ea7dfc0bda394b32f7c186088a04d0dc048b",
+      "records": 3200,
+      "result": "PASS",
+      "run": "ntsc-02",
+      "sd": "NOT RUN",
+      "structureAndContent": "PASS",
+      "testEligible": false,
+      "traceSha256": "03d6ee0a3a4747a19682f895a087b3644a2f12b3e459037ef54879deb975693c",
+      "worldPairs": 955
+    },
+    {
+      "D81_FILENAME": "R0FG1P05.D81",
+      "actualExport": "PASS",
+      "actualSave": "PASS",
+      "canonicalSha256": "046198fc400988abd7e92d384db9efbb13d0ef0f0c77ede346d6942cf75ee4ff",
+      "canonicalUnchanged": true,
+      "cleanAutoloadNoPrgInjection": true,
+      "corruptionChecks": "102 rejects",
+      "nominalTiming": "WITHIN_OBSERVED_BOUNDS",
+      "physical": "NOT RUN",
+      "postRunSha256": "3415ca95450083edf47855bfecc15c5bceb78586167dfd3c4135252abcc09fd2",
+      "preRunSha256": "046198fc400988abd7e92d384db9efbb13d0ef0f0c77ede346d6942cf75ee4ff",
+      "prgSha256": "c068cc532dc820845d8c0649b1c2ea7dfc0bda394b32f7c186088a04d0dc048b",
+      "records": 3200,
+      "result": "PASS",
+      "run": "pal-01",
+      "sd": "NOT RUN",
+      "structureAndContent": "PASS",
+      "testEligible": false,
+      "traceSha256": "13c693698335209b823a4882da801398e1aad390655386e97759822e253ab0eb",
+      "worldPairs": 807
+    },
+    {
+      "D81_FILENAME": "R0FG1P05.D81",
+      "actualExport": "PASS",
+      "actualSave": "PASS",
+      "canonicalSha256": "046198fc400988abd7e92d384db9efbb13d0ef0f0c77ede346d6942cf75ee4ff",
+      "canonicalUnchanged": true,
+      "cleanAutoloadNoPrgInjection": true,
+      "corruptionChecks": "102 rejects",
+      "nominalTiming": "WITHIN_OBSERVED_BOUNDS",
+      "physical": "NOT RUN",
+      "postRunSha256": "5810aae4c1f64fba47fc62c16fde8274c65a8d0c5e5ff0695e99c8089c331828",
+      "preRunSha256": "046198fc400988abd7e92d384db9efbb13d0ef0f0c77ede346d6942cf75ee4ff",
+      "prgSha256": "c068cc532dc820845d8c0649b1c2ea7dfc0bda394b32f7c186088a04d0dc048b",
+      "records": 3200,
+      "result": "PASS",
+      "run": "pal-02",
+      "sd": "NOT RUN",
+      "structureAndContent": "PASS",
+      "testEligible": false,
+      "traceSha256": "6bfbfe43047ef3f70eb0769fb731178695fcde76656ff9b47370e604e67c53aa",
+      "worldPairs": 807
+    }
+  ],
+  "build": {
+    "addedVersusPredecessor": 34,
+    "carrier": "NOT BUILT",
+    "command": [
+      "/Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/mos-mega65-clang",
+      "-mcpu=mos45gs02",
+      "-mlto-zp=0",
+      "-Oz",
+      "-fno-inline-functions",
+      "-DR0FS_INTEGRATION",
+      "-DR0FG1_INTEGRATION",
+      "-finline-functions",
+      "-DR0FG1_PROBE_BYTES=33025ul",
+      "-Wall",
+      "-Wextra",
+      "-Wconversion",
+      "-Werror",
+      "-Iinterfaces/generated",
+      "-Isrc/diagnostics/r0f",
+      "src/diagnostics/r0f/successor_integration.c",
+      "src/diagnostics/r0f/successor_capture.c",
+      "src/diagnostics/r0f/successor_irq.c",
+      "src/diagnostics/r0f/successor_lifecycle.c",
+      "src/diagnostics/r0f/combined_model.c",
+      "src/diagnostics/r0f/combined_platform.c",
+      "src/platform/r0f/successor_admission_45gs02.s",
+      "src/platform/r0f/successor_integration_45gs02.s",
+      "src/platform/r0f/combined_45gs02.s",
+      "src/platform/r0f/group1_irq_45gs02.s",
+      "src/platform/r0a_platform_45gs02.s",
+      "src/diagnostics/r0f/group1_export.c",
+      "src/diagnostics/r0f/group1_transport.c",
+      "src/platform/r0f/group1_export_capture_45gs02.s",
+      "src/platform/r0f/group1_terminal_export_45gs02.s",
+      "src/diagnostics/r0f/group1_capture.c",
+      "src/diagnostics/r0f/group1_timing.c",
+      "src/diagnostics/r0f/group1_workload.c",
+      "src/diagnostics/r0f/group1_presentation.c",
+      "src/diagnostics/r0f/group1_scene.c",
+      "-Wl,-T,src/platform/r0f/startup.ld",
+      "-Wl,-T,src/platform/r0f/successor_integration.ld",
+      "-Wl,-Map,/Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-02/runtime-01/GROUP1.map",
+      "-o",
+      "/Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-02/runtime-01/GROUP1.prg",
+      "src/diagnostics/r0f/group1_pool.c",
+      "src/diagnostics/r0f/group1_pool_owners.c",
+      "src/diagnostics/r0f/group1_geometry_fixture.c"
+    ],
+    "executed": false,
+    "fit": "PASS",
+    "hardware": "NOT RUN",
+    "inputs": {
+      "docs/plans/R0-F_GROUP1_BUILD_INTENT.md": "691b18d88878a4a4e0a8ee9a4cc1ea911b0b58b587e20c3a0e56aca6d651740a",
+      "interfaces/generated/r0a_interfaces.h": "7a8ad3dce5f8f20fcdd2adfd293273117eee6ff27dce65fccff3522b8080aece",
+      "interfaces/generated/r0a_interfaces.inc": "cb52c1f90a6a4ba4619f67784f51dbd2c53e41d23bb9e5bac84e292d1f05306c",
+      "interfaces/generated/r0b_interfaces.h": "a31d5f860e8e76ac9795016531b396d7bc02a515957362ed25ed75a2af13bb6d",
+      "interfaces/generated/r0b_interfaces.inc": "6368650b814a6dde4ed190a3e98f86608269e026b5d77c743a1c2c077e7612c1",
+      "interfaces/generated/r0c_interfaces.h": "e69adb558aac7e3142d1b8396d047c70445d9906ece6389d4b9763e67c31d63f",
+      "interfaces/generated/r0d_interfaces.h": "a00a18cf593ac7d51e055522992f946eed0873006f69e0c8a650a0fdc43c6e97",
+      "interfaces/generated/r0e_interfaces.h": "29609c64855e4ac98cf28e05ece7d9a5bb46957e3c087a1ba4676cde80526bea",
+      "interfaces/generated/r0f_combined.h": "a728d596e43163e28d1de7d2e17ee366b6df4970be8924bff9f64ca2e4a0d4f2",
+      "interfaces/generated/r0f_group1_crc_table.inc": "3f27799f89b5caa2198f4d8ceb3eb19d32f181280eb63601617ba0caf5e5dfe3",
+      "interfaces/generated/r0f_group1_export.h": "e86f3dcb16fb8a204b6411329a661853db113725d8138212dff2bcb8c266ff3d",
+      "interfaces/generated/r0f_group1_export.inc": "4b4439f6f7f2235776bb5f54114971bd19dd3ce0b86e1edcc2d465decac0326e",
+      "interfaces/generated/r0f_group1_pool.h": "3bffc649d595572a165a6ad8f5ff076f89d29d0e15a26ef4302e4bc687da7f62",
+      "interfaces/generated/r0f_group1_presentation.h": "23047406e0bce233021203ffd58ed21e5519f47d064205df9251bf004ea1592b",
+      "interfaces/generated/r0f_group1_trace.h": "6e47c54a1e46b4c790c0631f54dcd8467dab88a21ae2a8faed917e084258bb8f",
+      "interfaces/generated/r0f_group1_trace.inc": "de70e34e4fbfd0f4fcbcbb89df5d408aad3f1a9ac23859bcc54e058fafa238c5",
+      "interfaces/generated/r0f_interfaces.h": "a1c0c55cf73e0aae634e2c4267496f700f90959d5529b25ac5a02652337bc995",
+      "interfaces/generated/r0f_platform.h": "e9067d9be6ddf5d78ad4a771e18f3199cb6e7256912bc6bbf29dfec923874363",
+      "interfaces/generated/r0f_resume.h": "55ba5146aa0c008590f18eab49c1cdb42b0e42dd67015963bbf85034ced57805",
+      "interfaces/generated/r0f_successor.h": "dd1fbd6fc50bffed153f50fce5975359300f472f998f67c65fa7fffc3eb59db1",
+      "interfaces/generated/r0f_successor.inc": "1853d8b29c59ee0804998e6b5a8e5f07675304232c2caa537d896b99e3c37153",
+      "interfaces/generated/r0f_successor_integration.h": "412e7ec4ab655b9905a83babd185c1a10b23f2e6bea34cdc4f08ef824f679a91",
+      "interfaces/generated/r0f_successor_integration.inc": "911716fa1aa943543be3aa4085e50d4201d5dac15a61d36fb6f5a6cde64f4928",
+      "interfaces/r0f_combined_contract.json": "c9f78e5baa820b977253155e2bd0aefac840de97d89f1bd0a63310849ef08b69",
+      "interfaces/r0f_group1_export_contract.json": "fa16f94d86095156ea67968cce3af4617a2fd5d768bc95f3a7820fc09d98998f",
+      "interfaces/r0f_group1_pool_contract.json": "3a9d20abcac4ab9d4bfc70ef9a44fe8922fe79f134935bb10df3a08b1778a166",
+      "interfaces/r0f_group1_presentation_contract.json": "21f1dbd27c9c73f07f1c4826c6f4cfeb90de0abb693fd854fd6be90759f048e1",
+      "interfaces/r0f_group1_trace_contract.json": "6334b589dce9c382fad87af8954b38e3c0d5570b3b3453ac2c30e97faa1fdbee",
+      "interfaces/r0f_platform_contract.json": "787d58238cbe7acb716cde9bd712c36e45264004bf57ca1fc445d055255f1862",
+      "interfaces/r0f_proof_contract.json": "772883b946fb8cb5a8a311bd054d584ea1eb0b2d4f721a786ccbeba5b4f0b085",
+      "interfaces/r0f_resume_contract.json": "b70173e936a8ac70d9ec85493a910f738f0bf181ec4c4def3a406beadc8b3b87",
+      "interfaces/r0f_successor_contract.json": "35f4bae25a531d776feae7038d481162df3c3de4535f19d682278eea5d14f845",
+      "interfaces/r0f_successor_integration_contract.json": "5f7ea9e982f3297444c44548ce3193cdfd58de6e2707e0c9ecb803b14dfc0b5b",
+      "memory/r0f-group1-export-memory-ledger.json": "6b828d121150e27c56a2677077dd860dd9151a37623295a2911045e9f6616206",
+      "memory/r0f-memory-ledger.json": "a4f29d27d7d744db4dee5a3ef5ca1c107233ba010c72b58704e5bc80df97f4ac",
+      "memory/r0f-resume-memory-ledger.json": "e6f3308b653a8fdcba1a7bdd8f38d7056e832b63b6dda8843787c88f8bf048f4",
+      "memory/r0f-successor-integration-memory-ledger.json": "47cd44becad4cbf46cd7708cd30789ed7543c44a1b184d65d114357338a683c8",
+      "memory/r0f-successor-memory-ledger.json": "600498ab613b3619d371432b08400b0c2cf18cc56e5ef1e5fee972fbabef3adc",
+      "spec/core/F65_Main_Concept_v1.6_FINAL_HUMAN_REVIEWED.md": "e7d8ed40ce630d82e707e2a9c7f29995fac6f4281849c2c7ef5261d420c2c425",
+      "src/diagnostics/r0f/combined_model.c": "00fed181cd67df8293653b962c481cf7c14a68d3a3e3938f13d74fe78500cd9f",
+      "src/diagnostics/r0f/combined_model.h": "0931d1e42914903d61d073be597910575a941171c6592b45d4a81649123113df",
+      "src/diagnostics/r0f/combined_platform.c": "47e547a89e57b7806f6afde6881740a4062ecae4f18d26acc7c5704f28596aa7",
+      "src/diagnostics/r0f/combined_platform.h": "4d83f75144d74dca6d9442daee528d59e97672d50b8aa41d9f810d4a27436736",
+      "src/diagnostics/r0f/group1_capture.c": "9802833124a0a046c7cfd8191f7f538b01359906281c2584106a563936184c0f",
+      "src/diagnostics/r0f/group1_capture.h": "2082534cb82bbd36fcca164846749026ffab79b2b01e91e4d75be22edf7a8b0f",
+      "src/diagnostics/r0f/group1_export.c": "905dd8001cb7a765f7c8b51fbe50971e859f1dbd35c491415e5cbd0f9ae0e162",
+      "src/diagnostics/r0f/group1_export.h": "a419aa2496fb30ab76dccde87eaf4bdfd5d9957be5618f0fa16b77e883cce168",
+      "src/diagnostics/r0f/group1_geometry_fixture.c": "c060fe72eaad522f68a009edbfc944e0a775cca875a09d0fe39ef5cde93abd19",
+      "src/diagnostics/r0f/group1_geometry_fixture.h": "c30dc6bd08413de9f39457f56204a0872970ef305279a63b2a05b04970f341d4",
+      "src/diagnostics/r0f/group1_pool.c": "b10b5df16978d25e22e13d7f5982014d85108548380b164297f008976f68ac55",
+      "src/diagnostics/r0f/group1_pool.h": "ed1a6ccf581e3985ead6a7fe8a324238ff88b4e55b30558f058903deb37b645e",
+      "src/diagnostics/r0f/group1_pool_owners.c": "e2e341f39bb8523230b029951b814ca22df9217ac855ad04a3eb474c98337203",
+      "src/diagnostics/r0f/group1_pool_owners.h": "4cc9457d1bcab126768ccc087cba4e50c31f8e4d9faac15a594ead89bf494c6d",
+      "src/diagnostics/r0f/group1_presentation.c": "9c17c3805d3ea56fa8bbe785ba91e4a107f2165f77065ac70a96e8b552297d30",
+      "src/diagnostics/r0f/group1_presentation.h": "ff5c576734a893cf7f2e156b2c54457c0b2324ef51b5fa02ffb8478db6bc300a",
+      "src/diagnostics/r0f/group1_scene.c": "f0adf0960dfd17a1f6f43c49895455b7c85a74dc55a9648f4ccd3ad451c0424c",
+      "src/diagnostics/r0f/group1_scene.h": "a621fca30042136d6b152c9cc799782616e1c1c4126fd808fb9ca476bd4daf10",
+      "src/diagnostics/r0f/group1_timing.c": "0afb867a2ae9437badd0c5969156d1792c05d411696f1e09dee2ac1747d4b865",
+      "src/diagnostics/r0f/group1_timing.h": "b2e8a54fa58836a5c87e8abc860fa3d66b433b924d290b28975c48fc9732bd19",
+      "src/diagnostics/r0f/group1_transport.c": "55184dbc1d972963eab0b0181b19bb8fb8c21979d6718c98f25f71b1475f2e6a",
+      "src/diagnostics/r0f/group1_transport.h": "4791323db21777634796cbab4dc7d3bc37bab0bef95220f80c7fbd8cc4a7d5a0",
+      "src/diagnostics/r0f/group1_workload.c": "1f9e34457385d6d7b54ddbe64e9c49a304f0ca87f3d7c5ed57e9c73376cfe432",
+      "src/diagnostics/r0f/group1_workload.h": "76129ad092877528f7114f6f484225dac7101a2873a2e83f4cc4c0f6148bd41a",
+      "src/diagnostics/r0f/resume_model.h": "a9b80f303261868e41420612edf06ebb8800dc60abb36bda7478b73c53366458",
+      "src/diagnostics/r0f/successor_capture.c": "e44f03bab72e3b946cd5753a1a5608a84f65eb31f13d95b951e34742ba14d1db",
+      "src/diagnostics/r0f/successor_capture.h": "181ff142b1525430911c35c2b7244eb540e05229c80cdd2db18ecb31ec79a484",
+      "src/diagnostics/r0f/successor_integration.c": "543377d2e2695e76993a6e40678e9e8e938ce541e195a360860438f5aa1026dc",
+      "src/diagnostics/r0f/successor_irq.c": "a91fd9aef7e92964db4632a79027809e5cfe82c27804b7e4b0dbc22c4c00238a",
+      "src/diagnostics/r0f/successor_irq.h": "adb0619bb19a91c775f304aa8d71b7798e22c9f0a0f48eee6a437fdb629e86e6",
+      "src/diagnostics/r0f/successor_lifecycle.c": "f80f46aa837599c0609d5ef956e4c7ca14933cd50d72e9f0ed1c8023002daa26",
+      "src/diagnostics/r0f/successor_lifecycle.h": "9e237288be6af030628c883086e6a1d62bbf891c6a19eff0fabe772c205d226a",
+      "src/platform/r0a_platform_45gs02.s": "a0c9504763c44eb10cc7f38dcb77f2961beabd3ac506c5cc78a26a33552b97ca",
+      "src/platform/r0f/combined.ld": "0ffa54c02ee31907142f7362fa101a87e426e5d57084568b1adfbda733f6d941",
+      "src/platform/r0f/combined_45gs02.s": "f57927e7b4177adb68a72c3f98d4d76b96257c3940c4bd96f9799effa7fbae11",
+      "src/platform/r0f/group1_export_capture_45gs02.s": "6f581721bd55fcc62c01c7cc9314cca78773bb6fbd0b56729622270c6a7de260",
+      "src/platform/r0f/group1_irq_45gs02.s": "6f8bdd09fcce8aec96d98f9275397ff28e21bbbd70b23cacf43230486be23ad3",
+      "src/platform/r0f/group1_terminal_export_45gs02.s": "36d64a45a281df4f94c5271d11ea7b3ff9fbc8401fd53e71f1579fc89ee468d0",
+      "src/platform/r0f/kernal_call.inc": "7c3f9a2a183a4b1bdc3bd2c3ab37cbbbb767d8b977711fbc0a90c681580862ba",
+      "src/platform/r0f/opaque_context_capture.inc": "9f39bfb7f90112a4ecc1e596d48f596d504d4d813dc6ba1a5a0b8f93a4215871",
+      "src/platform/r0f/qualification_45gs02.s": "c2ee3a522bd20795074b04a1a1a317baf80a420eebfd3aa1cb2c5f9a1fb9e600",
+      "src/platform/r0f/startup.ld": "96d85939b28b4b24d0e251164b2abe9c5e950096482334517cbc4e57fcb6b60f",
+      "src/platform/r0f/successor_admission.ld": "c31a9d032edc833d283e27471662d3180d0bbcda2d36857a78fb6c0e80a842b2",
+      "src/platform/r0f/successor_admission_45gs02.s": "18127a9fed3b6d3e6a3188a529f08d2ffdac2486050836369713cab79090bcd5",
+      "src/platform/r0f/successor_integration.ld": "1319c0ce22989dfe0e5a8b2d7aa295af7a5dfe4ca81dc46334b579c23a9f20a4",
+      "src/platform/r0f/successor_integration_45gs02.s": "eb0cc2b91371aa512e85b8a88f111dfd99fef270e68910a2a78f9c590995b900",
+      "toolchain/f65_toolchain.lock.json": "0de4864a0665f04cab26f67bdd533697d8006460142dcb7e8e5ce0ecb72d742b",
+      "tools/diagnostics/d81_delivery.py": "a3524ad7ad92f95e69e1c4aef5ea5ac3791c0a7e2aa46b6e61926c91a6cea50b",
+      "tools/diagnostics/d81_foundation_compare.py": "c58c46d8cd857bbb695a3fb3f22f3f7b52feda2d1bcd53343464d5ad7e0d5012",
+      "tools/diagnostics/r0f_combined_host_test.c": "b542e0c01e54b54cc39f361f3acb46266e18d73e0f4909b7b3ea3f1f8b92faf3",
+      "tools/diagnostics/r0f_group1_audio_owner_host_test.c": "c8c057a5961c831bcd692b23eb1786b98239c72f97e59080ff6db29aac11be0f",
+      "tools/diagnostics/r0f_group1_capacity_check.py": "da4faef0e9e4fd6bd9fb0ffd7a5e53f31d0c1dbeb295e8291b4218f563d05f72",
+      "tools/diagnostics/r0f_group1_capture_owner_host_test.c": "90c834e4367820f5ca240756187833312aacd05a5afdd6dda126b903ffeb97c2",
+      "tools/diagnostics/r0f_group1_contract.py": "f110a1562c6be666a5612c0e0ea80fbc72deaedfa1f3b570ab9febe26221d462",
+      "tools/diagnostics/r0f_group1_crc_host_test.c": "4ff2298739934b5f4293725c7d2570612ea75b17b6ea9c071c79efb76b8143b8",
+      "tools/diagnostics/r0f_group1_display_owner_host_test.c": "26d6f6d7baaa84e2933269f2d7601ba95bb989fd3bcf2044a3a5cee8156e2cef",
+      "tools/diagnostics/r0f_group1_export_admission.py": "8af0a886cfaf2e4f9a2dde09005c0de86a3e3df18380ed80401e5cb7c66e4f32",
+      "tools/diagnostics/r0f_group1_export_probe.py": "4c6cbc062ad14c925bc6775ae3b21701daf53e4723a867367a6523c5280489ab",
+      "tools/diagnostics/r0f_group1_host_validate.py": "c32fa97e6708a74bd060e820279da8ffaa3730b6f9c0b9c94d3d0b552141fe64",
+      "tools/diagnostics/r0f_group1_integration.py": "cabfd6d79cbf107a989bb0b6cbc6d62fe0910260930983e4a0eea941514d21e3",
+      "tools/diagnostics/r0f_group1_owners_host_test.c": "4250d90f5caa807e5390c789f6931f138d57284feb257429f0db762774bbb051",
+      "tools/diagnostics/r0f_group1_owners_validate.py": "7bd5ac9f7b086c1586f359b3c4c4246890280c81e7b702933d3a77ab1f0473b6",
+      "tools/diagnostics/r0f_group1_pool_adapter_host_test.c": "04b87015d37f5783e18ae9cf64dc5c9f1dd37e9d87fda574fc97343df02ad714",
+      "tools/diagnostics/r0f_group1_pool_adapter_probe.c": "1a2c791264c43e7b4b2f484f19fd4deb4c6e35c5218b1d227778ebf026de8975",
+      "tools/diagnostics/r0f_group1_pool_build.py": "cb074afbf9d13e45a217d24d6c608786a3681d539471cbc3c44e5a6763ebe768",
+      "tools/diagnostics/r0f_group1_pool_contract.py": "5523648de309f0d0099895305a16b29ca6c34cda12a7355e1f80ac2c827e27d6",
+      "tools/diagnostics/r0f_group1_pool_host_test.c": "393397237dd57d9d640c2f723e9746216e0a6f2b0048a152c9c492eaa22ada35",
+      "tools/diagnostics/r0f_group1_pool_shape.c": "f9b1926ba8736c17a9268d02faa468965f1931046901e9e1656beb21391a3602",
+      "tools/diagnostics/r0f_group1_presentation_contract.py": "9a6ebf6a6e9429719370414314fc8789d3b1184939cec5d01db140925cedcc31",
+      "tools/diagnostics/r0f_group1_recovery_equivalence_test.c": "35b8787a844284e075808fdbf34d7511e692e7f17569d49575df74a648e5af5a",
+      "tools/diagnostics/r0f_group1_reduce.py": "65d87c3cfabfe45741588a1d70476c1eeb6d30346c691fe1a9a7f28cb663d110",
+      "tools/diagnostics/r0f_group1_run.py": "ffc5a9b720084dd34e6358c1b1b90da0b911d80ab9ac760c8d5414cefe8652c1",
+      "tools/diagnostics/r0f_group1_scene_host_test.c": "7b3284f4973c638b2083eec9ecce170a81ec258f3bf0664df512b725bdb5ef2a",
+      "tools/diagnostics/r0f_group1_scene_validate.py": "390d982492021537f8e0084feee6605711eec9b28310aac7b768324ae4e46825",
+      "tools/diagnostics/r0f_group1_workload_host_test.c": "b1038465ac35c8fb4db1c229ec61a7baab19aa0cc4dff922ad19ea4f69dfe067",
+      "tools/diagnostics/r0f_platform_build.py": "451c0c7140422b9a9fa63a5649f3debf33f29771a3549fbc6ecd2a3ac52dfc30",
+      "tools/diagnostics/r0f_successor_carrier_loader.ld": "f540ea08662cd882f7ba5c20bc91dc2e45c63860fd803e18f3095d28f4bf46e4",
+      "tools/diagnostics/r0f_successor_carrier_loader.s": "704cfeae5852b48721fda817ccaf838e6248ef13ae0aa61d28184f5a716c7fa2",
+      "tools/diagnostics/r0f_successor_emulator.py": "a6f8c0545ea3fdb368038f03e8d63b56156e8cb32d99a817747156d7514d976c",
+      "tools/diagnostics/r0f_successor_integration.py": "5e9c8d4ae5c635e8403752cc130fe1c7586899ac0459b1441aebcebad6dfd374",
+      "tools/diagnostics/test_r0f_group1_contract.py": "d9575d205b3b62c8d6353a9bac2272f31bbc790dabac5fae4a516c124389001a",
+      "tools/diagnostics/test_r0f_group1_pool_contract.py": "ff728b505e4ed3efaa27be89af98c89d00213afcf1fd3acc5cc282073ace488e",
+      "tools/diagnostics/test_r0f_group1_presentation_contract.py": "a5802d5f9c2102e2b339605b95c3e58972943092a29ed8f6cc3e6e9c56f42c3d",
+      "tools/diagnostics/test_r0f_group1_reduce.py": "a589728db7812abc642d6b8ae0b20833ade6dcd1480a011e5ed1d11d23ca13b8",
+      "tools/diagnostics/test_r0f_group1_terminal.py": "893f3fbd6677c32dca280b130a3bc9abe0acae13d0428915685faac34cbc7820"
+    },
+    "irqTerminalProtectedStatic": "PASS",
+    "prgBytes": 37517,
+    "prgSha256": "c068cc532dc820845d8c0649b1c2ea7dfc0bda394b32f7c186088a04d0dc048b",
+    "residentEndExclusive": 49149,
+    "residentFreeBytes": 3,
+    "sections": {
+      ".basic_header": {
+        "bytes": 22,
+        "start": 8193
+      },
+      ".bss": {
+        "bytes": 3405,
+        "start": 45708
+      },
+      ".comment": {
+        "bytes": 204,
+        "start": 0
+      },
+      ".data": {
+        "bytes": 23,
+        "start": 45685
+      },
+      ".llvm_sympart": {
+        "bytes": 15,
+        "start": 0
+      },
+      ".noinit": {
+        "bytes": 36,
+        "start": 49113
+      },
+      ".r0fs_protected": {
+        "bytes": 4495,
+        "start": 8215
+      },
+      ".rodata": {
+        "bytes": 518,
+        "start": 45167
+      },
+      ".shstrtab": {
+        "bytes": 130,
+        "start": 0
+      },
+      ".strtab": {
+        "bytes": 13293,
+        "start": 0
+      },
+      ".symtab": {
+        "bytes": 12288,
+        "start": 0
+      },
+      ".text": {
+        "bytes": 32457,
+        "start": 12710
+      },
+      ".zp.bss": {
+        "bytes": 0,
+        "start": 34
+      },
+      ".zp.data": {
+        "bytes": 0,
+        "start": 34
+      }
+    },
+    "sourceRoot": "/Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-02/source-inputs"
+  },
+  "canonicalMountedWritable": false,
+  "entryAddress": 12710,
+  "experiment": "/Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-02",
+  "fullGroup1Acceptance": false,
+  "generatedLoaderSha256": "576618ba911012120b4e66a4ba7da2b27277c4000a6a0bd5af7e86357d1f86e6",
+  "generatedLoaderSourceSha256": "9dc6fbcd26d15fd38c46ad010565960ec99f04e0d933d4e37971980595b9962c",
+  "image": {
+    "bamAllocatedSectors": 155,
+    "bamFreeSectors": 3045,
+    "bytes": 819200,
+    "c1541Listing": "D81 disk image recognised: /Users/slice/Developer/f65-megawing/build/r0f/group1/carriers/R0FG1P05/canonical/R0FG1P05.D81, 80 tracks.\nUnit 8 drive 0: D81 disk image attached: /Users/slice/Developer/f65-megawing/build/r0f/group1/carriers/R0FG1P05/canonical/R0FG1P05.D81.\n0 \"R0FG1P05        \" 65 3d\n2    \"autoboot.c65\"     prg \n148  \"r0fsucc\"          prg \n1    \"token\"            prg \n3009 blocks free.\nUnit 8 drive 0: D81 disk image detached: /Users/slice/Developer/f65-megawing/build/r0f/group1/carriers/R0FG1P05/canonical/R0FG1P05.D81.\n",
+    "entries": [
+      {
+        "blocks": 2,
+        "chain": [
+          {
+            "sector": 0,
+            "track": 39
+          },
+          {
+            "sector": 1,
+            "track": 39
+          }
+        ],
+        "firstSector": {
+          "sector": 0,
+          "track": 39
+        },
+        "name": "autoboot.c65",
+        "payloadBytes": 466,
+        "payloadSha256": "32ef6c98a4bc54c3107751e1300684d11ffe6435f55a7e9e467b428b83c2810f",
+        "type": 130
+      },
+      {
+        "blocks": 148,
+        "chain": [
+          {
+            "sector": 2,
+            "track": 39
+          },
+          {
+            "sector": 3,
+            "track": 39
+          },
+          {
+            "sector": 4,
+            "track": 39
+          },
+          {
+            "sector": 5,
+            "track": 39
+          },
+          {
+            "sector": 6,
+            "track": 39
+          },
+          {
+            "sector": 7,
+            "track": 39
+          },
+          {
+            "sector": 8,
+            "track": 39
+          },
+          {
+            "sector": 9,
+            "track": 39
+          },
+          {
+            "sector": 10,
+            "track": 39
+          },
+          {
+            "sector": 11,
+            "track": 39
+          },
+          {
+            "sector": 12,
+            "track": 39
+          },
+          {
+            "sector": 13,
+            "track": 39
+          },
+          {
+            "sector": 14,
+            "track": 39
+          },
+          {
+            "sector": 15,
+            "track": 39
+          },
+          {
+            "sector": 16,
+            "track": 39
+          },
+          {
+            "sector": 17,
+            "track": 39
+          },
+          {
+            "sector": 18,
+            "track": 39
+          },
+          {
+            "sector": 19,
+            "track": 39
+          },
+          {
+            "sector": 20,
+            "track": 39
+          },
+          {
+            "sector": 21,
+            "track": 39
+          },
+          {
+            "sector": 22,
+            "track": 39
+          },
+          {
+            "sector": 23,
+            "track": 39
+          },
+          {
+            "sector": 24,
+            "track": 39
+          },
+          {
+            "sector": 25,
+            "track": 39
+          },
+          {
+            "sector": 26,
+            "track": 39
+          },
+          {
+            "sector": 27,
+            "track": 39
+          },
+          {
+            "sector": 28,
+            "track": 39
+          },
+          {
+            "sector": 29,
+            "track": 39
+          },
+          {
+            "sector": 30,
+            "track": 39
+          },
+          {
+            "sector": 31,
+            "track": 39
+          },
+          {
+            "sector": 32,
+            "track": 39
+          },
+          {
+            "sector": 33,
+            "track": 39
+          },
+          {
+            "sector": 34,
+            "track": 39
+          },
+          {
+            "sector": 35,
+            "track": 39
+          },
+          {
+            "sector": 36,
+            "track": 39
+          },
+          {
+            "sector": 37,
+            "track": 39
+          },
+          {
+            "sector": 38,
+            "track": 39
+          },
+          {
+            "sector": 39,
+            "track": 39
+          },
+          {
+            "sector": 0,
+            "track": 38
+          },
+          {
+            "sector": 1,
+            "track": 38
+          },
+          {
+            "sector": 2,
+            "track": 38
+          },
+          {
+            "sector": 3,
+            "track": 38
+          },
+          {
+            "sector": 4,
+            "track": 38
+          },
+          {
+            "sector": 5,
+            "track": 38
+          },
+          {
+            "sector": 6,
+            "track": 38
+          },
+          {
+            "sector": 7,
+            "track": 38
+          },
+          {
+            "sector": 8,
+            "track": 38
+          },
+          {
+            "sector": 9,
+            "track": 38
+          },
+          {
+            "sector": 10,
+            "track": 38
+          },
+          {
+            "sector": 11,
+            "track": 38
+          },
+          {
+            "sector": 12,
+            "track": 38
+          },
+          {
+            "sector": 13,
+            "track": 38
+          },
+          {
+            "sector": 14,
+            "track": 38
+          },
+          {
+            "sector": 15,
+            "track": 38
+          },
+          {
+            "sector": 16,
+            "track": 38
+          },
+          {
+            "sector": 17,
+            "track": 38
+          },
+          {
+            "sector": 18,
+            "track": 38
+          },
+          {
+            "sector": 19,
+            "track": 38
+          },
+          {
+            "sector": 20,
+            "track": 38
+          },
+          {
+            "sector": 21,
+            "track": 38
+          },
+          {
+            "sector": 22,
+            "track": 38
+          },
+          {
+            "sector": 23,
+            "track": 38
+          },
+          {
+            "sector": 24,
+            "track": 38
+          },
+          {
+            "sector": 25,
+            "track": 38
+          },
+          {
+            "sector": 26,
+            "track": 38
+          },
+          {
+            "sector": 27,
+            "track": 38
+          },
+          {
+            "sector": 28,
+            "track": 38
+          },
+          {
+            "sector": 29,
+            "track": 38
+          },
+          {
+            "sector": 30,
+            "track": 38
+          },
+          {
+            "sector": 31,
+            "track": 38
+          },
+          {
+            "sector": 32,
+            "track": 38
+          },
+          {
+            "sector": 33,
+            "track": 38
+          },
+          {
+            "sector": 34,
+            "track": 38
+          },
+          {
+            "sector": 35,
+            "track": 38
+          },
+          {
+            "sector": 36,
+            "track": 38
+          },
+          {
+            "sector": 37,
+            "track": 38
+          },
+          {
+            "sector": 38,
+            "track": 38
+          },
+          {
+            "sector": 39,
+            "track": 38
+          },
+          {
+            "sector": 0,
+            "track": 37
+          },
+          {
+            "sector": 1,
+            "track": 37
+          },
+          {
+            "sector": 2,
+            "track": 37
+          },
+          {
+            "sector": 3,
+            "track": 37
+          },
+          {
+            "sector": 4,
+            "track": 37
+          },
+          {
+            "sector": 5,
+            "track": 37
+          },
+          {
+            "sector": 6,
+            "track": 37
+          },
+          {
+            "sector": 7,
+            "track": 37
+          },
+          {
+            "sector": 8,
+            "track": 37
+          },
+          {
+            "sector": 9,
+            "track": 37
+          },
+          {
+            "sector": 10,
+            "track": 37
+          },
+          {
+            "sector": 11,
+            "track": 37
+          },
+          {
+            "sector": 12,
+            "track": 37
+          },
+          {
+            "sector": 13,
+            "track": 37
+          },
+          {
+            "sector": 14,
+            "track": 37
+          },
+          {
+            "sector": 15,
+            "track": 37
+          },
+          {
+            "sector": 16,
+            "track": 37
+          },
+          {
+            "sector": 17,
+            "track": 37
+          },
+          {
+            "sector": 18,
+            "track": 37
+          },
+          {
+            "sector": 19,
+            "track": 37
+          },
+          {
+            "sector": 20,
+            "track": 37
+          },
+          {
+            "sector": 21,
+            "track": 37
+          },
+          {
+            "sector": 22,
+            "track": 37
+          },
+          {
+            "sector": 23,
+            "track": 37
+          },
+          {
+            "sector": 24,
+            "track": 37
+          },
+          {
+            "sector": 25,
+            "track": 37
+          },
+          {
+            "sector": 26,
+            "track": 37
+          },
+          {
+            "sector": 27,
+            "track": 37
+          },
+          {
+            "sector": 28,
+            "track": 37
+          },
+          {
+            "sector": 29,
+            "track": 37
+          },
+          {
+            "sector": 30,
+            "track": 37
+          },
+          {
+            "sector": 31,
+            "track": 37
+          },
+          {
+            "sector": 32,
+            "track": 37
+          },
+          {
+            "sector": 33,
+            "track": 37
+          },
+          {
+            "sector": 34,
+            "track": 37
+          },
+          {
+            "sector": 35,
+            "track": 37
+          },
+          {
+            "sector": 36,
+            "track": 37
+          },
+          {
+            "sector": 37,
+            "track": 37
+          },
+          {
+            "sector": 38,
+            "track": 37
+          },
+          {
+            "sector": 39,
+            "track": 37
+          },
+          {
+            "sector": 0,
+            "track": 36
+          },
+          {
+            "sector": 1,
+            "track": 36
+          },
+          {
+            "sector": 2,
+            "track": 36
+          },
+          {
+            "sector": 3,
+            "track": 36
+          },
+          {
+            "sector": 4,
+            "track": 36
+          },
+          {
+            "sector": 5,
+            "track": 36
+          },
+          {
+            "sector": 6,
+            "track": 36
+          },
+          {
+            "sector": 7,
+            "track": 36
+          },
+          {
+            "sector": 8,
+            "track": 36
+          },
+          {
+            "sector": 9,
+            "track": 36
+          },
+          {
+            "sector": 10,
+            "track": 36
+          },
+          {
+            "sector": 11,
+            "track": 36
+          },
+          {
+            "sector": 12,
+            "track": 36
+          },
+          {
+            "sector": 13,
+            "track": 36
+          },
+          {
+            "sector": 14,
+            "track": 36
+          },
+          {
+            "sector": 15,
+            "track": 36
+          },
+          {
+            "sector": 16,
+            "track": 36
+          },
+          {
+            "sector": 17,
+            "track": 36
+          },
+          {
+            "sector": 18,
+            "track": 36
+          },
+          {
+            "sector": 19,
+            "track": 36
+          },
+          {
+            "sector": 20,
+            "track": 36
+          },
+          {
+            "sector": 21,
+            "track": 36
+          },
+          {
+            "sector": 22,
+            "track": 36
+          },
+          {
+            "sector": 23,
+            "track": 36
+          },
+          {
+            "sector": 24,
+            "track": 36
+          },
+          {
+            "sector": 25,
+            "track": 36
+          },
+          {
+            "sector": 26,
+            "track": 36
+          },
+          {
+            "sector": 27,
+            "track": 36
+          },
+          {
+            "sector": 28,
+            "track": 36
+          },
+          {
+            "sector": 29,
+            "track": 36
+          }
+        ],
+        "firstSector": {
+          "sector": 2,
+          "track": 39
+        },
+        "name": "r0fsucc",
+        "payloadBytes": 37517,
+        "payloadSha256": "c068cc532dc820845d8c0649b1c2ea7dfc0bda394b32f7c186088a04d0dc048b",
+        "type": 130
+      },
+      {
+        "blocks": 1,
+        "chain": [
+          {
+            "sector": 0,
+            "track": 41
+          }
+        ],
+        "firstSector": {
+          "sector": 0,
+          "track": 41
+        },
+        "name": "token",
+        "payloadBytes": 34,
+        "payloadSha256": "0e8d0ac2ce727ba51285be0173ea784b52b56fdc4729a1f7c0d2d7271005b572",
+        "type": 130
+      }
+    ],
+    "extracted": {
+      "autoboot.c65": "/Users/slice/Developer/f65-megawing/build/r0f/group1/carriers/R0FG1P05/canonical/pre-extracted/autoboot.c65",
+      "r0fsucc": "/Users/slice/Developer/f65-megawing/build/r0f/group1/carriers/R0FG1P05/canonical/pre-extracted/r0fsucc",
+      "token": "/Users/slice/Developer/f65-megawing/build/r0f/group1/carriers/R0FG1P05/canonical/pre-extracted/token"
+    },
+    "freeBlocks": 3045,
+    "identifier": "65",
+    "label": "R0FG1P05",
+    "path": "/Users/slice/Developer/f65-megawing/build/r0f/group1/carriers/R0FG1P05/canonical/R0FG1P05.D81",
+    "sha256": "046198fc400988abd7e92d384db9efbb13d0ef0f0c77ede346d6942cf75ee4ff"
+  },
+  "inputs": {
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/docs/plans/R0-F_GROUP1_BUILD_INTENT.md": "691b18d88878a4a4e0a8ee9a4cc1ea911b0b58b587e20c3a0e56aca6d651740a",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/interfaces/generated/r0a_interfaces.h": "7a8ad3dce5f8f20fcdd2adfd293273117eee6ff27dce65fccff3522b8080aece",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/interfaces/generated/r0a_interfaces.inc": "cb52c1f90a6a4ba4619f67784f51dbd2c53e41d23bb9e5bac84e292d1f05306c",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/interfaces/generated/r0b_interfaces.h": "a31d5f860e8e76ac9795016531b396d7bc02a515957362ed25ed75a2af13bb6d",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/interfaces/generated/r0b_interfaces.inc": "6368650b814a6dde4ed190a3e98f86608269e026b5d77c743a1c2c077e7612c1",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/interfaces/generated/r0c_interfaces.h": "e69adb558aac7e3142d1b8396d047c70445d9906ece6389d4b9763e67c31d63f",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/interfaces/generated/r0d_interfaces.h": "a00a18cf593ac7d51e055522992f946eed0873006f69e0c8a650a0fdc43c6e97",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/interfaces/generated/r0e_interfaces.h": "29609c64855e4ac98cf28e05ece7d9a5bb46957e3c087a1ba4676cde80526bea",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/interfaces/generated/r0f_combined.h": "a728d596e43163e28d1de7d2e17ee366b6df4970be8924bff9f64ca2e4a0d4f2",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/interfaces/generated/r0f_group1_crc_table.inc": "3f27799f89b5caa2198f4d8ceb3eb19d32f181280eb63601617ba0caf5e5dfe3",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/interfaces/generated/r0f_group1_export.h": "e86f3dcb16fb8a204b6411329a661853db113725d8138212dff2bcb8c266ff3d",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/interfaces/generated/r0f_group1_export.inc": "4b4439f6f7f2235776bb5f54114971bd19dd3ce0b86e1edcc2d465decac0326e",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/interfaces/generated/r0f_group1_pool.h": "3bffc649d595572a165a6ad8f5ff076f89d29d0e15a26ef4302e4bc687da7f62",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/interfaces/generated/r0f_group1_presentation.h": "23047406e0bce233021203ffd58ed21e5519f47d064205df9251bf004ea1592b",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/interfaces/generated/r0f_group1_trace.h": "6e47c54a1e46b4c790c0631f54dcd8467dab88a21ae2a8faed917e084258bb8f",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/interfaces/generated/r0f_group1_trace.inc": "de70e34e4fbfd0f4fcbcbb89df5d408aad3f1a9ac23859bcc54e058fafa238c5",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/interfaces/generated/r0f_interfaces.h": "a1c0c55cf73e0aae634e2c4267496f700f90959d5529b25ac5a02652337bc995",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/interfaces/generated/r0f_platform.h": "e9067d9be6ddf5d78ad4a771e18f3199cb6e7256912bc6bbf29dfec923874363",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/interfaces/generated/r0f_resume.h": "55ba5146aa0c008590f18eab49c1cdb42b0e42dd67015963bbf85034ced57805",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/interfaces/generated/r0f_successor.h": "dd1fbd6fc50bffed153f50fce5975359300f472f998f67c65fa7fffc3eb59db1",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/interfaces/generated/r0f_successor.inc": "1853d8b29c59ee0804998e6b5a8e5f07675304232c2caa537d896b99e3c37153",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/interfaces/generated/r0f_successor_integration.h": "412e7ec4ab655b9905a83babd185c1a10b23f2e6bea34cdc4f08ef824f679a91",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/interfaces/generated/r0f_successor_integration.inc": "911716fa1aa943543be3aa4085e50d4201d5dac15a61d36fb6f5a6cde64f4928",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/interfaces/r0f_combined_contract.json": "c9f78e5baa820b977253155e2bd0aefac840de97d89f1bd0a63310849ef08b69",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/interfaces/r0f_group1_export_contract.json": "fa16f94d86095156ea67968cce3af4617a2fd5d768bc95f3a7820fc09d98998f",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/interfaces/r0f_group1_pool_contract.json": "3a9d20abcac4ab9d4bfc70ef9a44fe8922fe79f134935bb10df3a08b1778a166",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/interfaces/r0f_group1_presentation_contract.json": "21f1dbd27c9c73f07f1c4826c6f4cfeb90de0abb693fd854fd6be90759f048e1",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/interfaces/r0f_group1_trace_contract.json": "6334b589dce9c382fad87af8954b38e3c0d5570b3b3453ac2c30e97faa1fdbee",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/interfaces/r0f_platform_contract.json": "787d58238cbe7acb716cde9bd712c36e45264004bf57ca1fc445d055255f1862",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/interfaces/r0f_proof_contract.json": "772883b946fb8cb5a8a311bd054d584ea1eb0b2d4f721a786ccbeba5b4f0b085",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/interfaces/r0f_resume_contract.json": "b70173e936a8ac70d9ec85493a910f738f0bf181ec4c4def3a406beadc8b3b87",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/interfaces/r0f_successor_contract.json": "35f4bae25a531d776feae7038d481162df3c3de4535f19d682278eea5d14f845",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/interfaces/r0f_successor_integration_contract.json": "5f7ea9e982f3297444c44548ce3193cdfd58de6e2707e0c9ecb803b14dfc0b5b",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/memory/r0f-group1-export-memory-ledger.json": "6b828d121150e27c56a2677077dd860dd9151a37623295a2911045e9f6616206",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/memory/r0f-memory-ledger.json": "a4f29d27d7d744db4dee5a3ef5ca1c107233ba010c72b58704e5bc80df97f4ac",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/memory/r0f-resume-memory-ledger.json": "e6f3308b653a8fdcba1a7bdd8f38d7056e832b63b6dda8843787c88f8bf048f4",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/memory/r0f-successor-integration-memory-ledger.json": "47cd44becad4cbf46cd7708cd30789ed7543c44a1b184d65d114357338a683c8",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/memory/r0f-successor-memory-ledger.json": "600498ab613b3619d371432b08400b0c2cf18cc56e5ef1e5fee972fbabef3adc",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/spec/core/F65_Main_Concept_v1.6_FINAL_HUMAN_REVIEWED.md": "e7d8ed40ce630d82e707e2a9c7f29995fac6f4281849c2c7ef5261d420c2c425",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/src/diagnostics/r0f/combined_model.c": "00fed181cd67df8293653b962c481cf7c14a68d3a3e3938f13d74fe78500cd9f",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/src/diagnostics/r0f/combined_model.h": "0931d1e42914903d61d073be597910575a941171c6592b45d4a81649123113df",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/src/diagnostics/r0f/combined_platform.c": "47e547a89e57b7806f6afde6881740a4062ecae4f18d26acc7c5704f28596aa7",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/src/diagnostics/r0f/combined_platform.h": "4d83f75144d74dca6d9442daee528d59e97672d50b8aa41d9f810d4a27436736",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/src/diagnostics/r0f/group1_capture.c": "9802833124a0a046c7cfd8191f7f538b01359906281c2584106a563936184c0f",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/src/diagnostics/r0f/group1_capture.h": "2082534cb82bbd36fcca164846749026ffab79b2b01e91e4d75be22edf7a8b0f",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/src/diagnostics/r0f/group1_export.c": "905dd8001cb7a765f7c8b51fbe50971e859f1dbd35c491415e5cbd0f9ae0e162",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/src/diagnostics/r0f/group1_export.h": "a419aa2496fb30ab76dccde87eaf4bdfd5d9957be5618f0fa16b77e883cce168",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/src/diagnostics/r0f/group1_geometry_fixture.c": "c060fe72eaad522f68a009edbfc944e0a775cca875a09d0fe39ef5cde93abd19",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/src/diagnostics/r0f/group1_geometry_fixture.h": "c30dc6bd08413de9f39457f56204a0872970ef305279a63b2a05b04970f341d4",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/src/diagnostics/r0f/group1_pool.c": "b10b5df16978d25e22e13d7f5982014d85108548380b164297f008976f68ac55",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/src/diagnostics/r0f/group1_pool.h": "ed1a6ccf581e3985ead6a7fe8a324238ff88b4e55b30558f058903deb37b645e",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/src/diagnostics/r0f/group1_pool_owners.c": "e2e341f39bb8523230b029951b814ca22df9217ac855ad04a3eb474c98337203",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/src/diagnostics/r0f/group1_pool_owners.h": "4cc9457d1bcab126768ccc087cba4e50c31f8e4d9faac15a594ead89bf494c6d",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/src/diagnostics/r0f/group1_presentation.c": "9c17c3805d3ea56fa8bbe785ba91e4a107f2165f77065ac70a96e8b552297d30",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/src/diagnostics/r0f/group1_presentation.h": "ff5c576734a893cf7f2e156b2c54457c0b2324ef51b5fa02ffb8478db6bc300a",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/src/diagnostics/r0f/group1_scene.c": "f0adf0960dfd17a1f6f43c49895455b7c85a74dc55a9648f4ccd3ad451c0424c",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/src/diagnostics/r0f/group1_scene.h": "a621fca30042136d6b152c9cc799782616e1c1c4126fd808fb9ca476bd4daf10",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/src/diagnostics/r0f/group1_timing.c": "0afb867a2ae9437badd0c5969156d1792c05d411696f1e09dee2ac1747d4b865",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/src/diagnostics/r0f/group1_timing.h": "b2e8a54fa58836a5c87e8abc860fa3d66b433b924d290b28975c48fc9732bd19",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/src/diagnostics/r0f/group1_transport.c": "55184dbc1d972963eab0b0181b19bb8fb8c21979d6718c98f25f71b1475f2e6a",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/src/diagnostics/r0f/group1_transport.h": "4791323db21777634796cbab4dc7d3bc37bab0bef95220f80c7fbd8cc4a7d5a0",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/src/diagnostics/r0f/group1_workload.c": "1f9e34457385d6d7b54ddbe64e9c49a304f0ca87f3d7c5ed57e9c73376cfe432",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/src/diagnostics/r0f/group1_workload.h": "76129ad092877528f7114f6f484225dac7101a2873a2e83f4cc4c0f6148bd41a",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/src/diagnostics/r0f/resume_model.h": "a9b80f303261868e41420612edf06ebb8800dc60abb36bda7478b73c53366458",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/src/diagnostics/r0f/successor_capture.c": "e44f03bab72e3b946cd5753a1a5608a84f65eb31f13d95b951e34742ba14d1db",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/src/diagnostics/r0f/successor_capture.h": "181ff142b1525430911c35c2b7244eb540e05229c80cdd2db18ecb31ec79a484",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/src/diagnostics/r0f/successor_integration.c": "543377d2e2695e76993a6e40678e9e8e938ce541e195a360860438f5aa1026dc",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/src/diagnostics/r0f/successor_irq.c": "a91fd9aef7e92964db4632a79027809e5cfe82c27804b7e4b0dbc22c4c00238a",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/src/diagnostics/r0f/successor_irq.h": "adb0619bb19a91c775f304aa8d71b7798e22c9f0a0f48eee6a437fdb629e86e6",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/src/diagnostics/r0f/successor_lifecycle.c": "f80f46aa837599c0609d5ef956e4c7ca14933cd50d72e9f0ed1c8023002daa26",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/src/diagnostics/r0f/successor_lifecycle.h": "9e237288be6af030628c883086e6a1d62bbf891c6a19eff0fabe772c205d226a",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/src/platform/r0a_platform_45gs02.s": "a0c9504763c44eb10cc7f38dcb77f2961beabd3ac506c5cc78a26a33552b97ca",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/src/platform/r0f/combined.ld": "0ffa54c02ee31907142f7362fa101a87e426e5d57084568b1adfbda733f6d941",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/src/platform/r0f/combined_45gs02.s": "f57927e7b4177adb68a72c3f98d4d76b96257c3940c4bd96f9799effa7fbae11",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/src/platform/r0f/group1_export_capture_45gs02.s": "6f581721bd55fcc62c01c7cc9314cca78773bb6fbd0b56729622270c6a7de260",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/src/platform/r0f/group1_irq_45gs02.s": "6f8bdd09fcce8aec96d98f9275397ff28e21bbbd70b23cacf43230486be23ad3",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/src/platform/r0f/group1_terminal_export_45gs02.s": "36d64a45a281df4f94c5271d11ea7b3ff9fbc8401fd53e71f1579fc89ee468d0",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/src/platform/r0f/kernal_call.inc": "7c3f9a2a183a4b1bdc3bd2c3ab37cbbbb767d8b977711fbc0a90c681580862ba",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/src/platform/r0f/opaque_context_capture.inc": "9f39bfb7f90112a4ecc1e596d48f596d504d4d813dc6ba1a5a0b8f93a4215871",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/src/platform/r0f/qualification_45gs02.s": "c2ee3a522bd20795074b04a1a1a317baf80a420eebfd3aa1cb2c5f9a1fb9e600",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/src/platform/r0f/startup.ld": "96d85939b28b4b24d0e251164b2abe9c5e950096482334517cbc4e57fcb6b60f",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/src/platform/r0f/successor_admission.ld": "c31a9d032edc833d283e27471662d3180d0bbcda2d36857a78fb6c0e80a842b2",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/src/platform/r0f/successor_admission_45gs02.s": "18127a9fed3b6d3e6a3188a529f08d2ffdac2486050836369713cab79090bcd5",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/src/platform/r0f/successor_integration.ld": "1319c0ce22989dfe0e5a8b2d7aa295af7a5dfe4ca81dc46334b579c23a9f20a4",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/src/platform/r0f/successor_integration_45gs02.s": "eb0cc2b91371aa512e85b8a88f111dfd99fef270e68910a2a78f9c590995b900",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/toolchain/f65_toolchain.lock.json": "0de4864a0665f04cab26f67bdd533697d8006460142dcb7e8e5ce0ecb72d742b",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/tools/diagnostics/d81_delivery.py": "a3524ad7ad92f95e69e1c4aef5ea5ac3791c0a7e2aa46b6e61926c91a6cea50b",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/tools/diagnostics/d81_foundation_compare.py": "c58c46d8cd857bbb695a3fb3f22f3f7b52feda2d1bcd53343464d5ad7e0d5012",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/tools/diagnostics/r0f_combined_host_test.c": "b542e0c01e54b54cc39f361f3acb46266e18d73e0f4909b7b3ea3f1f8b92faf3",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/tools/diagnostics/r0f_group1_audio_owner_host_test.c": "c8c057a5961c831bcd692b23eb1786b98239c72f97e59080ff6db29aac11be0f",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/tools/diagnostics/r0f_group1_capacity_check.py": "da4faef0e9e4fd6bd9fb0ffd7a5e53f31d0c1dbeb295e8291b4218f563d05f72",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/tools/diagnostics/r0f_group1_capture_owner_host_test.c": "90c834e4367820f5ca240756187833312aacd05a5afdd6dda126b903ffeb97c2",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/tools/diagnostics/r0f_group1_contract.py": "f110a1562c6be666a5612c0e0ea80fbc72deaedfa1f3b570ab9febe26221d462",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/tools/diagnostics/r0f_group1_crc_host_test.c": "4ff2298739934b5f4293725c7d2570612ea75b17b6ea9c071c79efb76b8143b8",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/tools/diagnostics/r0f_group1_display_owner_host_test.c": "26d6f6d7baaa84e2933269f2d7601ba95bb989fd3bcf2044a3a5cee8156e2cef",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/tools/diagnostics/r0f_group1_export_admission.py": "8af0a886cfaf2e4f9a2dde09005c0de86a3e3df18380ed80401e5cb7c66e4f32",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/tools/diagnostics/r0f_group1_export_probe.py": "4c6cbc062ad14c925bc6775ae3b21701daf53e4723a867367a6523c5280489ab",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/tools/diagnostics/r0f_group1_host_validate.py": "c32fa97e6708a74bd060e820279da8ffaa3730b6f9c0b9c94d3d0b552141fe64",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/tools/diagnostics/r0f_group1_integration.py": "cabfd6d79cbf107a989bb0b6cbc6d62fe0910260930983e4a0eea941514d21e3",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/tools/diagnostics/r0f_group1_owners_host_test.c": "4250d90f5caa807e5390c789f6931f138d57284feb257429f0db762774bbb051",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/tools/diagnostics/r0f_group1_owners_validate.py": "7bd5ac9f7b086c1586f359b3c4c4246890280c81e7b702933d3a77ab1f0473b6",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/tools/diagnostics/r0f_group1_pool_adapter_host_test.c": "04b87015d37f5783e18ae9cf64dc5c9f1dd37e9d87fda574fc97343df02ad714",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/tools/diagnostics/r0f_group1_pool_adapter_probe.c": "1a2c791264c43e7b4b2f484f19fd4deb4c6e35c5218b1d227778ebf026de8975",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/tools/diagnostics/r0f_group1_pool_build.py": "cb074afbf9d13e45a217d24d6c608786a3681d539471cbc3c44e5a6763ebe768",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/tools/diagnostics/r0f_group1_pool_contract.py": "5523648de309f0d0099895305a16b29ca6c34cda12a7355e1f80ac2c827e27d6",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/tools/diagnostics/r0f_group1_pool_host_test.c": "393397237dd57d9d640c2f723e9746216e0a6f2b0048a152c9c492eaa22ada35",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/tools/diagnostics/r0f_group1_pool_shape.c": "f9b1926ba8736c17a9268d02faa468965f1931046901e9e1656beb21391a3602",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/tools/diagnostics/r0f_group1_presentation_contract.py": "9a6ebf6a6e9429719370414314fc8789d3b1184939cec5d01db140925cedcc31",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/tools/diagnostics/r0f_group1_recovery_equivalence_test.c": "35b8787a844284e075808fdbf34d7511e692e7f17569d49575df74a648e5af5a",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/tools/diagnostics/r0f_group1_reduce.py": "65d87c3cfabfe45741588a1d70476c1eeb6d30346c691fe1a9a7f28cb663d110",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/tools/diagnostics/r0f_group1_run.py": "ffc5a9b720084dd34e6358c1b1b90da0b911d80ab9ac760c8d5414cefe8652c1",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/tools/diagnostics/r0f_group1_scene_host_test.c": "7b3284f4973c638b2083eec9ecce170a81ec258f3bf0664df512b725bdb5ef2a",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/tools/diagnostics/r0f_group1_scene_validate.py": "390d982492021537f8e0084feee6605711eec9b28310aac7b768324ae4e46825",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/tools/diagnostics/r0f_group1_workload_host_test.c": "b1038465ac35c8fb4db1c229ec61a7baab19aa0cc4dff922ad19ea4f69dfe067",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/tools/diagnostics/r0f_platform_build.py": "451c0c7140422b9a9fa63a5649f3debf33f29771a3549fbc6ecd2a3ac52dfc30",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/tools/diagnostics/r0f_successor_carrier_loader.ld": "f540ea08662cd882f7ba5c20bc91dc2e45c63860fd803e18f3095d28f4bf46e4",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/tools/diagnostics/r0f_successor_carrier_loader.s": "704cfeae5852b48721fda817ccaf838e6248ef13ae0aa61d28184f5a716c7fa2",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/tools/diagnostics/r0f_successor_emulator.py": "a6f8c0545ea3fdb368038f03e8d63b56156e8cb32d99a817747156d7514d976c",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/tools/diagnostics/r0f_successor_integration.py": "5e9c8d4ae5c635e8403752cc130fe1c7586899ac0459b1441aebcebad6dfd374",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/tools/diagnostics/test_r0f_group1_contract.py": "d9575d205b3b62c8d6353a9bac2272f31bbc790dabac5fae4a516c124389001a",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/tools/diagnostics/test_r0f_group1_pool_contract.py": "ff728b505e4ed3efaa27be89af98c89d00213afcf1fd3acc5cc282073ace488e",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/tools/diagnostics/test_r0f_group1_presentation_contract.py": "a5802d5f9c2102e2b339605b95c3e58972943092a29ed8f6cc3e6e9c56f42c3d",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/tools/diagnostics/test_r0f_group1_reduce.py": "a589728db7812abc642d6b8ae0b20833ade6dcd1480a011e5ed1d11d23ca13b8",
+    "build/r0f/group1/capacity-summary/integrated-02/source-inputs/tools/diagnostics/test_r0f_group1_terminal.py": "893f3fbd6677c32dca280b130a3bc9abe0acae13d0428915685faac34cbc7820",
+    "tools/diagnostics/r0f_group1_carrier.py": "b337a6d9525dfce186e5c24ff2e03960734827d984c260b8f54a7d24406cbf8f",
+    "tools/diagnostics/r0f_group1_display_recovery.py": "f27870d6bfafb5da1375396ae7ab4bad67c1704cda067b6867a5f06ee8c9592d",
+    "tools/diagnostics/r0f_group1_export_probe.py": "6cc15c2db123229f2227e9266ff6258d0824b6ccc0d248e325b11990c11e0ad7",
+    "tools/diagnostics/r0f_group1_owner_carrier.py": "c9cfa0663fb6fa0ff69aabff6877b1c25271ae53287c76d9bf1c9679845225a6",
+    "tools/diagnostics/r0f_group1_owner_recovery.py": "08f2099d8638ab054e4d0e130ceffd38dd381eaf6cdd05e4e79adb0a8c6ec88f",
+    "tools/diagnostics/r0f_group1_pool_trace_negative.py": "9322c566e01f83872d440230c197c84c49227001e396b128a37a0994025df277",
+    "tools/diagnostics/r0f_successor_carrier_loader.ld": "f540ea08662cd882f7ba5c20bc91dc2e45c63860fd803e18f3095d28f4bf46e4",
+    "tools/diagnostics/r0f_successor_carrier_loader.s": "704cfeae5852b48721fda817ccaf838e6248ef13ae0aa61d28184f5a716c7fa2",
+    "tools/diagnostics/r0f_successor_emulator.py": "a6f8c0545ea3fdb368038f03e8d63b56156e8cb32d99a817747156d7514d976c",
+    "tools/diagnostics/test_r0f_group1_owner_carrier.py": "eff30e3696669f9dde1d438f9ee63a5d41db2e0b4aba6d9c9201b4d3094ba466"
+  },
+  "label": "R0FG1P05",
+  "physical": "NOT RUN",
+  "sd": "NOT RUN",
+  "sourceBranch": "codex/r0f-successor-physical-exact-carrier",
+  "sourceCommit": "2d9a42e110cdd9066031e28e83662ce4fdec6219",
+  "testEligible": false,
+  "timingEvidence": [
+    "/Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-02/ntsc-01",
+    "/Users/slice/Developer/f65-megawing/build/r0f/group1/capacity-summary/integrated-02/pal-01"
+  ]
+}

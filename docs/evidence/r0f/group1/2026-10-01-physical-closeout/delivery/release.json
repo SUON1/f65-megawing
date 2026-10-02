@@ -1,0 +1,216 @@
+{
+  "identity": "R0F-GROUP1-P05-DELIVERY",
+  "date": "2026-10-01",
+  "D81_STATE": "XEMU_BOOT_VERIFIED",
+  "D81_FILENAME": "R0FG1P05.D81",
+  "D81_SHA256": "046198fc400988abd7e92d384db9efbb13d0ef0f0c77ede346d6942cf75ee4ff",
+  "D81_BYTES": 819200,
+  "DISK_LABEL": "R0FG1P05",
+  "DISK_ID": "65",
+  "ENTRY_FILENAME": "AUTOBOOT.C65 loads R0FSUCC on device 8; entry $31A6",
+  "SOURCE_BRANCH": "codex/r0f-successor-physical-exact-carrier",
+  "SOURCE_COMMIT": "2d9a42e110cdd9066031e28e83662ce4fdec6219",
+  "PRG_SHA256": "c068cc532dc820845d8c0649b1c2ea7dfc0bda394b32f7c186088a04d0dc048b",
+  "PRG_BYTES": 37517,
+  "FIT_RESULT": "PASS",
+  "RESIDENT_END_EXCLUSIVE": 49149,
+  "RESIDENT_FREE_BYTES": 3,
+  "CARRIER_LOADER_SHA256": "576618ba911012120b4e66a4ba7da2b27277c4000a6a0bd5af7e86357d1f86e6",
+  "CARRIER_LOADER_SOURCE_SHA256": "9dc6fbcd26d15fd38c46ad010565960ec99f04e0d933d4e37971980595b9962c",
+  "HOST_GATE_PATH": "build/r0f/group1/carriers/R0FG1P05/canonical/host-gate.json",
+  "HOST_GATE_SHA256": "9e0f8a318a21024da8b718d9dfa1eedcb9789437f2c739ec9112736700803ed2",
+  "CAPACITY_ADMISSION_SHA256": "017b3ae3ab5c31f32aab4dc08dd256dac84d20641b0cb8c91bd95b21db95585d",
+  "SOURCE_INPUTS_COUNT": 134,
+  "BUILDER_IDENTITY": {
+    "path": "toolchain/vice-clean/bin/c1541",
+    "version": "3.10",
+    "sha256": "73235289aca30a7e2e8067e521bf604743156cc1d7499c888a3894d6e46fcb3c",
+    "realdevice": "disabled"
+  },
+  "STRUCTURAL_VALIDATOR_IDENTITY": {
+    "tools/diagnostics/d81_foundation_compare.py": "c58c46d8cd857bbb695a3fb3f22f3f7b52feda2d1bcd53343464d5ad7e0d5012",
+    "tools/diagnostics/r0f_successor_emulator.py": "a6f8c0545ea3fdb368038f03e8d63b56156e8cb32d99a817747156d7514d976c"
+  },
+  "HOST_STRUCTURAL_RESULT": "PASS",
+  "HOST_CONTENT_RESULT": "PASS",
+  "XEMU_RESULT": "PASS",
+  "XEMU_EVIDENCE": [
+    {
+      "run": "ntsc-1",
+      "group1Run": "ntsc-01",
+      "mountedD81Filename": "R0FG1P05.D81",
+      "preRunD81Sha256": "046198fc400988abd7e92d384db9efbb13d0ef0f0c77ede346d6942cf75ee4ff",
+      "postRunD81Sha256": "84b809650306c09e975a372a87bba581b53a7cd7c8ac87d2f3b372207aca4e33",
+      "evidenceDirectory": "build/r0f/group1/carriers/R0FG1P05/ntsc-01",
+      "validationSha256": "47dfcdbbdd18efab6709a779ea923441909e006971ce2962d94ad0dabc1dde4c",
+      "executionSha256": "57b1b50d4586e2a41a7bf8b9308433d132c7c614bad348bce4f13e3057b036ee",
+      "operatorScreenReviewSha256": "9ed5bd274ece9b77b80a895a5527c304ea8cec5b9803adc2df0abefa4e3d3c6f",
+      "screenSha256": "5dcaf85575e9abdb9197f40f0688d33b9d72cde1097e6f0c2bb87a9e5462d925",
+      "traceSha256": "aa9752de8358d51b91dcb29b469fb63b0823802048dbc2573c0ec37b65950655",
+      "savedPrgSha256": "7d2f63b8e8e970bb35c351174fae1ca365245f14acf35db0d3cf9016ba8ba5bd",
+      "records": 3200,
+      "worldPairs": 955,
+      "actualSave": "PASS",
+      "actualExport": "PASS",
+      "nominalTiming": "WITHIN_OBSERVED_BOUNDS",
+      "corruptionRejections": 114,
+      "xemu": {
+        "path": "toolchain/xemu/xmega65",
+        "sha256": "dd37baf7846b9696adcb662ffe5da040031b07214c66aef9a7f48cc30040b738",
+        "sourceCommit": "40dfef0d1d5f56be2469492715c12bdb32c75b67",
+        "version": "20260129235930"
+      },
+      "rom": {
+        "path": "/Users/slice/Documents/Codex/f65-megawing/MEGA65.ROM",
+        "sha256": "af3c447f791a2fdc48cb21e1bd3fab015e32641228d9d30d21259b9e878c6fa0"
+      },
+      "sourceCommit": "2d9a42e110cdd9066031e28e83662ce4fdec6219",
+      "startedAtUtc": "2026-10-02T02:16:30.701097+00:00",
+      "finishedAtUtc": "2026-10-02T02:18:30.838417+00:00",
+      "captureAllowanceSeconds": 120
+    },
+    {
+      "run": "ntsc-2",
+      "group1Run": "ntsc-02",
+      "mountedD81Filename": "R0FG1P05.D81",
+      "preRunD81Sha256": "046198fc400988abd7e92d384db9efbb13d0ef0f0c77ede346d6942cf75ee4ff",
+      "postRunD81Sha256": "5478c431ccf06b1a0f6078b0c0170f3c542a75d4d1027aa5cbd7a2c9dc921b1d",
+      "evidenceDirectory": "build/r0f/group1/carriers/R0FG1P05/ntsc-02",
+      "validationSha256": "1b63f98feb7efd6b568779ef8c175f81162c91b65a8c75348c6e1175f67b8f8b",
+      "executionSha256": "cfa64e88075cc7a4183fb7df83adf20f17876a0cb9f4509b99b3d1b99de63c4b",
+      "operatorScreenReviewSha256": "20440997d59a54a6c3dac5f534b06d4166cd8c38556b6bcce16f0eada7bee5de",
+      "screenSha256": "5dcaf85575e9abdb9197f40f0688d33b9d72cde1097e6f0c2bb87a9e5462d925",
+      "traceSha256": "03d6ee0a3a4747a19682f895a087b3644a2f12b3e459037ef54879deb975693c",
+      "savedPrgSha256": "7d2f63b8e8e970bb35c351174fae1ca365245f14acf35db0d3cf9016ba8ba5bd",
+      "records": 3200,
+      "worldPairs": 955,
+      "actualSave": "PASS",
+      "actualExport": "PASS",
+      "nominalTiming": "WITHIN_OBSERVED_BOUNDS",
+      "corruptionRejections": 114,
+      "xemu": {
+        "path": "toolchain/xemu/xmega65",
+        "sha256": "dd37baf7846b9696adcb662ffe5da040031b07214c66aef9a7f48cc30040b738",
+        "sourceCommit": "40dfef0d1d5f56be2469492715c12bdb32c75b67",
+        "version": "20260129235930"
+      },
+      "rom": {
+        "path": "/Users/slice/Documents/Codex/f65-megawing/MEGA65.ROM",
+        "sha256": "af3c447f791a2fdc48cb21e1bd3fab015e32641228d9d30d21259b9e878c6fa0"
+      },
+      "sourceCommit": "2d9a42e110cdd9066031e28e83662ce4fdec6219",
+      "startedAtUtc": "2026-10-02T02:19:53.187699+00:00",
+      "finishedAtUtc": "2026-10-02T02:21:53.349309+00:00",
+      "captureAllowanceSeconds": 120
+    },
+    {
+      "run": "pal-1",
+      "group1Run": "pal-01",
+      "mountedD81Filename": "R0FG1P05.D81",
+      "preRunD81Sha256": "046198fc400988abd7e92d384db9efbb13d0ef0f0c77ede346d6942cf75ee4ff",
+      "postRunD81Sha256": "3415ca95450083edf47855bfecc15c5bceb78586167dfd3c4135252abcc09fd2",
+      "evidenceDirectory": "build/r0f/group1/carriers/R0FG1P05/pal-01",
+      "validationSha256": "ade08931d9d8f1a5957af22734b18665fd49bd2fcd262f776ce3ad752af32400",
+      "executionSha256": "5100fb31b735ab5c22fbc175a05a82ae816a5b6b5ab35662666089bb91dacfd4",
+      "operatorScreenReviewSha256": "82574a793af8a6da000db8a2e1546f18b844826169e5a75052c63a6355101601",
+      "screenSha256": "e48361f59b390c5009ce42d9ede74b430e593823841081f0078150031a293d0c",
+      "traceSha256": "13c693698335209b823a4882da801398e1aad390655386e97759822e253ab0eb",
+      "savedPrgSha256": "7d2f63b8e8e970bb35c351174fae1ca365245f14acf35db0d3cf9016ba8ba5bd",
+      "records": 3200,
+      "worldPairs": 807,
+      "actualSave": "PASS",
+      "actualExport": "PASS",
+      "nominalTiming": "WITHIN_OBSERVED_BOUNDS",
+      "corruptionRejections": 114,
+      "xemu": {
+        "path": "toolchain/xemu/xmega65",
+        "sha256": "dd37baf7846b9696adcb662ffe5da040031b07214c66aef9a7f48cc30040b738",
+        "sourceCommit": "40dfef0d1d5f56be2469492715c12bdb32c75b67",
+        "version": "20260129235930"
+      },
+      "rom": {
+        "path": "/Users/slice/Documents/Codex/f65-megawing/MEGA65.ROM",
+        "sha256": "af3c447f791a2fdc48cb21e1bd3fab015e32641228d9d30d21259b9e878c6fa0"
+      },
+      "sourceCommit": "2d9a42e110cdd9066031e28e83662ce4fdec6219",
+      "startedAtUtc": "2026-10-02T02:22:20.504973+00:00",
+      "finishedAtUtc": "2026-10-02T02:24:20.646283+00:00",
+      "captureAllowanceSeconds": 120
+    },
+    {
+      "run": "pal-2",
+      "group1Run": "pal-02",
+      "mountedD81Filename": "R0FG1P05.D81",
+      "preRunD81Sha256": "046198fc400988abd7e92d384db9efbb13d0ef0f0c77ede346d6942cf75ee4ff",
+      "postRunD81Sha256": "5810aae4c1f64fba47fc62c16fde8274c65a8d0c5e5ff0695e99c8089c331828",
+      "evidenceDirectory": "build/r0f/group1/carriers/R0FG1P05/pal-02",
+      "validationSha256": "1ef53c1b84ffb961200ae854bca58498c91dd93bb84ae5b911025de8a6034c9b",
+      "executionSha256": "06c8b1d77c0cd9ab7f373ef4637f503e9ff8520e26c42d9148da04695d20ab1f",
+      "operatorScreenReviewSha256": "5b463d59ebb36a5f52be1c684880b88dbf76b5809bcfcdd1ed7bd922df57b112",
+      "screenSha256": "e48361f59b390c5009ce42d9ede74b430e593823841081f0078150031a293d0c",
+      "traceSha256": "6bfbfe43047ef3f70eb0769fb731178695fcde76656ff9b47370e604e67c53aa",
+      "savedPrgSha256": "7d2f63b8e8e970bb35c351174fae1ca365245f14acf35db0d3cf9016ba8ba5bd",
+      "records": 3200,
+      "worldPairs": 807,
+      "actualSave": "PASS",
+      "actualExport": "PASS",
+      "nominalTiming": "WITHIN_OBSERVED_BOUNDS",
+      "corruptionRejections": 114,
+      "xemu": {
+        "path": "toolchain/xemu/xmega65",
+        "sha256": "dd37baf7846b9696adcb662ffe5da040031b07214c66aef9a7f48cc30040b738",
+        "sourceCommit": "40dfef0d1d5f56be2469492715c12bdb32c75b67",
+        "version": "20260129235930"
+      },
+      "rom": {
+        "path": "/Users/slice/Documents/Codex/f65-megawing/MEGA65.ROM",
+        "sha256": "af3c447f791a2fdc48cb21e1bd3fab015e32641228d9d30d21259b9e878c6fa0"
+      },
+      "sourceCommit": "2d9a42e110cdd9066031e28e83662ce4fdec6219",
+      "startedAtUtc": "2026-10-02T02:24:42.326729+00:00",
+      "finishedAtUtc": "2026-10-02T02:26:42.468547+00:00",
+      "captureAllowanceSeconds": 120
+    }
+  ],
+  "PAYLOADS": {
+    "autoboot.c65": {
+      "bytes": 466,
+      "sha256": "32ef6c98a4bc54c3107751e1300684d11ffe6435f55a7e9e467b428b83c2810f"
+    },
+    "r0fsucc": {
+      "bytes": 37517,
+      "sha256": "c068cc532dc820845d8c0649b1c2ea7dfc0bda394b32f7c186088a04d0dc048b"
+    },
+    "token": {
+      "bytes": 34,
+      "sha256": "0e8d0ac2ce727ba51285be0173ea784b52b56fdc4729a1f7c0d2d7271005b572"
+    }
+  },
+  "ALLOCATOR_QUALIFICATION_PATH": "build/r0f/cap14-allocator-qualification-1.json",
+  "ALLOCATOR_QUALIFICATION_SHA256": "ae9703e2f4e3aa833043e24a383803f63ec2dfe73ad46055c8b444b762aca193",
+  "ALLOCATOR_INPUTS": {
+    "tools/diagnostics/d81_direct_delivery.py": "d76d1d361a19ef965724b072fde2d5bf001b7a83cdc956731a7f3104848f100a",
+    "toolchain/d81_delivery.lock.json": "d0172470ca8312a6f254369195aadb4a96bbc13f7b4e61dd45d4831d6979ec8b",
+    "tools/diagnostics/test_d81_direct_delivery.py": "615b07447277652f25ac7f24860fed6274041e890373084138518d65e7656024",
+    "tools/diagnostics/d81_fat32_audit.py": "d65ded34c37d86e3ebe43fc73047172e7f35bacc2b8c103185b52a3c12adf817",
+    "tools/diagnostics/d81_delivery.py": "a3524ad7ad92f95e69e1c4aef5ea5ac3791c0a7e2aa46b6e61926c91a6cea50b",
+    "tools/diagnostics/d81_foundation_compare.py": "c58c46d8cd857bbb695a3fb3f22f3f7b52feda2d1bcd53343464d5ad7e0d5012",
+    "tools/diagnostics/d81_sd_contiguity.py": "7c97d0fd58535c26b05872a4a10010f86b2a966d3b7158b9b6e22213759f2e5e",
+    "build/tools/m65tools-develo-966-23186d-macos/mega65_ftp.osx": "d7acf00fa056b5a8a8bd3756a3a411798bfb6f9b7414bb2c0796a51eeae14580"
+  },
+  "SD_COPY_SHA256": null,
+  "SD_FILESYSTEM": null,
+  "SD_TRANSFER_METHOD": "PLANNED owner-run pinned allocator on unmounted FAT32 partition",
+  "SD_CONTIGUITY_RESULT": "NOT RUN",
+  "SD_EXTENT_COUNT": null,
+  "SD_EXTENT_EVIDENCE": null,
+  "SD_SAFE_EJECT_RESULT": "NOT RUN",
+  "PHYSICAL_CHOOSER_RESULT": "NOT RUN",
+  "PHYSICAL_EVIDENCE": null,
+  "physical": "NOT RUN",
+  "testEligible": false,
+  "fullGroup1Acceptance": false,
+  "canonicalMountedWritable": false,
+  "preservation": "P04 retired after ten SD extents; preserve it and all prior passing/failed artifacts",
+  "scope": "New delivery identity and owner-run allocation correction only; unchanged PRG and payloads"
+}

@@ -1,0 +1,19 @@
+{
+  "D81_FILENAME": "R0FG1P04.D81",
+  "canonicalSha256": "2519af02741197fb8851dccc26ab1379591d5340f1cae3b68cb243844c3730d4",
+  "date": "2026-10-01",
+  "state": "RETIRED_AFTER_SD_ALLOCATION_FAILURE",
+  "failedGate": "SD_CONTIGUITY",
+  "failure": "Matching raw bytes occupy 10 FAT32 extents, not one",
+  "failedCopy": "/Volumes/MEGA65FDISK/R0FG1P04.D81",
+  "audit": "build/r0f/group1/physical/R0FG1P04/sd-copy-01.json",
+  "auditSha256": "ecab0a4e2cb67eff92c2b9ad1de998b787a643545d28f42df9dbe29ffb6b2a69",
+  "SD_EXTENT_COUNT": 10,
+  "canonicalBytesUnchanged": true,
+  "programCorrectionIndicated": false,
+  "preservation": "Retain canonical, PRG, failed SD copy and audit; no overwrite, rename, delete or retry",
+  "agentSdWrites": "NONE",
+  "safeEject": "NOT RUN",
+  "physical": "NOT RUN",
+  "testEligible": false
+}
