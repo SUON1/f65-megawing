@@ -37,7 +37,23 @@ functional-proxy and raster-observation scope.
 
 R0-F contains substantial bounded development and physical evidence. CF001 demonstrated a reset-only combined diagnostic with ROM backup/recovery, synthetic workload, IRQ/DMA/display/PCM/input activity, physical capture reduction, and retained SD integrity evidence. RH001 separately demonstrates a same-run ROM/storage lifecycle continuation in NTSC/PAL Xemu.
 
-Full R0-F remains open. The CF001 and RH001 proofs are not co-resident; the documented MemoryAccessABI-compatible integration boundary, remaining parent-scope workload/phase/latency/IRQ coverage, complete evidence review, and named owner acceptance remain outstanding. Measured limits are not approved. Formal Phase 1 integrated 65Aero implementation has not started.
+The private co-resident successor and Group 1 development checkpoint are now
+integrated through [PR #10](https://github.com/SUON1/f65-megawing/pull/10), with
+evidence-bearing history preserved. Local fit/host and four exact-carrier Xemu
+observations pass. The latest qualified version-7 source is an immutable
+isolated snapshot, not the earlier root working variant. See the
+[Group 1 closeout and handoff](docs/reports/R0-F_GROUP1_CLOSEOUT.md).
+
+The Group 1 campaign is administratively closed with a physical blocker,
+not accepted: P05 SD allocation and physical entry pass, but post-storage
+display resume fails `5D/0A/0640/00/00` after tick 1600. Actual returned SAVE
+matches the independent golden; no physical trace was exported. P05 is
+retired and must not be repaired, renamed, overwritten or retested.
+
+Full R0-F remains open. The physical resumed-workload correction/proof,
+original remaining campaign scope (including Groups 2/3), complete evidence
+review and named owner acceptance remain outstanding. Measured limits are
+not approved. Formal Phase 1 integrated 65Aero implementation has not started.
 
 ## What currently exists in code
 
