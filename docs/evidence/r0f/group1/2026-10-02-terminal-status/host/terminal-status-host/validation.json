@@ -1,0 +1,39 @@
+{
+  "result": "PASS",
+  "commands": [
+    {
+      "command": [
+        "/usr/bin/clang",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Wconversion",
+        "-Werror",
+        "-fsanitize=address,undefined",
+        "-DR0FG1_INTEGRATION",
+        "-I/Users/slice/Developer/f65-megawing/build/r0f/group1/terminal-recovery/status-02/terminal-status-host",
+        "-I/Users/slice/Developer/f65-megawing/build/r0f/group1/terminal-recovery/status-02/source-inputs/interfaces/generated",
+        "-I/Users/slice/Developer/f65-megawing/build/r0f/group1/terminal-recovery/status-02/source-inputs/src/diagnostics/r0f",
+        "/Users/slice/Developer/f65-megawing/tools/diagnostics/r0f_group1_terminal_status_host_test.c",
+        "/Users/slice/Developer/f65-megawing/build/r0f/group1/terminal-recovery/status-02/source-inputs/src/diagnostics/r0f/group1_export.c",
+        "/Users/slice/Developer/f65-megawing/build/r0f/group1/terminal-recovery/status-02/source-inputs/src/diagnostics/r0f/successor_lifecycle.c",
+        "-o",
+        "/Users/slice/Developer/f65-megawing/build/r0f/group1/terminal-recovery/status-02/terminal-status-host/transport-host"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/Users/slice/Developer/f65-megawing/build/r0f/group1/terminal-recovery/status-02/terminal-status-host/transport-host"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "guardTokenEquivalence": "PASS",
+  "targetAbsoluteIncrements": 4,
+  "initialMarker": "6B",
+  "prgSha256": "35f51114c5016b0e29962e038c48d7f48b9e8abca2136bdb0fe889f4c7570bae",
+  "physicalCause": "UNKNOWN",
+  "hardwareEdges": "MOCKED",
+  "sdWrites": false
+}

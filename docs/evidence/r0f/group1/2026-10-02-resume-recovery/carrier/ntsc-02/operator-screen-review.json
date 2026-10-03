@@ -1,0 +1,9 @@
+{
+  "result": "PASS",
+  "screenSha256": "5dcaf85575e9abdb9197f40f0688d33b9d72cde1097e6f0c2bb87a9e5462d925",
+  "observation": "G1 EXPORT S:4 E:00 F:14; 4=OK 5=FAIL / E,F HEX; REDUCE FOR TIMING; NOT ACCEPTANCE; RESET",
+  "review": "Actual indexed PNG independently decoded without pixel changes to RGB and viewed; identical original bytes to ntsc-01",
+  "supersedes": "operator-screen-review-initial.json",
+  "decode": "PNG 2-bit palette, no transparency, all filter-zero scanlines; 3172 foreground pixels in inspected header region",
+  "decodedSha256": "e26ea244334d69bb0b40c4ed235121dc38b71fff9161b46e1ccd2d2fd59c4bf9"
+}

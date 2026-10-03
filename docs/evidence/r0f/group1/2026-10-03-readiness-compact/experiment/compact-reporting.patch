@@ -1,0 +1,8 @@
+--- a/src/diagnostics/r0f/successor_integration.c
++++ b/src/diagnostics/r0f/successor_integration.c
+@@ -1448 +1448 @@
+-    cfline(5u, "GROUP 1 LOCKOUT - NO ACCEPTANCE");
++    cfline(5u, "G1 FAIL - NO ACCEPTANCE");
+@@ -1455 +1455 @@
+-    cfline(11u, "RESET TO EXIT - RETAIN FAILURE");
++    cfline(11u, "PHOTO THEN RESET");

@@ -1,0 +1,49 @@
+{
+  "result": "PASS_READ_ONLY_STRUCTURE_PAYLOAD_AND_SAVE",
+  "scope": "Not physical runtime or timing acceptance",
+  "snapshotPath": "docs/evidence/r0f/group1/2026-10-02-p06-physical/returned/R0FG1P06.D81",
+  "postRunD81Sha256": "6401290b6ae86abb3147d943419403e00b834941656e4685cdc98b9838e7a0f2",
+  "bytes": 819200,
+  "mountedVolumeUUID": "83FFC12E-67E1-307F-91AD-E584C2E01E87",
+  "device": "disk4s1",
+  "cardComparedBeforeAfter": "PASS",
+  "independentChainBamAndPinnedExtraction": "PASS",
+  "originalPayloads": "PASS",
+  "entries": [
+    {
+      "name": "autoboot.c65",
+      "bytes": 466,
+      "sha256": "32ef6c98a4bc54c3107751e1300684d11ffe6435f55a7e9e467b428b83c2810f"
+    },
+    {
+      "name": "r0fsucc",
+      "bytes": 37505,
+      "sha256": "9654d336deefe8dae0bd3b26986e00fbea45b8f3dcd8cfe0b1c73ac3f479ef7e"
+    },
+    {
+      "name": "token",
+      "bytes": 34,
+      "sha256": "0e8d0ac2ce727ba51285be0173ea784b52b56fdc4729a1f7c0d2d7271005b572"
+    },
+    {
+      "name": "rsstate",
+      "bytes": 34,
+      "sha256": "7d2f63b8e8e970bb35c351174fae1ca365245f14acf35db0d3cf9016ba8ba5bd"
+    }
+  ],
+  "rsstate": {
+    "bytes": 34,
+    "loadAddress": 12387,
+    "tick": 1600,
+    "checksumGolden": "6B765FDB",
+    "sha256": "7d2f63b8e8e970bb35c351174fae1ca365245f14acf35db0d3cf9016ba8ba5bd",
+    "hex": "6330db5e7468df5a706cd3567c60d7527864cb4e6478cf4a607cc3466c70c7426874",
+    "independentGoldenAndSavePattern": "PASS"
+  },
+  "traceChunks": [],
+  "physicalRuntime": "FAIL_6B_AT_TICK_3200",
+  "physicalTiming": "UNAVAILABLE_NO_TRACE",
+  "sdWrites": false,
+  "freshRawExtentAudit": "NOT_RUN",
+  "fullGroup1Acceptance": false
+}

@@ -1,0 +1,48 @@
+{
+  "result": "PASS_READ_ONLY_STRUCTURE_PAYLOAD_AND_SAVE",
+  "snapshotPath": "build/r0f/group1/carriers/R0FG1P08/returned-01/R0FG1P08.D81",
+  "postRunD81Sha256": "2b2998e344ff5d2639cd65a7b9beb4f5cf52ecb30bce22f9bda196e7a3d7d0a5",
+  "bytes": 819200,
+  "mountedVolumeUUID": "83FFC12E-67E1-307F-91AD-E584C2E01E87",
+  "device": "disk4s1",
+  "cardComparedBeforeAfter": "PASS",
+  "independentChainBamAndPinnedExtraction": "PASS",
+  "originalPayloads": "PASS",
+  "entries": [
+    {
+      "name": "autoboot.c65",
+      "bytes": 466,
+      "sha256": "32ef6c98a4bc54c3107751e1300684d11ffe6435f55a7e9e467b428b83c2810f"
+    },
+    {
+      "name": "r0fsucc",
+      "bytes": 37516,
+      "sha256": "1c842e345a3d5ec15b3eb167535a776da5e78eaf26a0d0d6239f7073f5a3b468"
+    },
+    {
+      "name": "token",
+      "bytes": 34,
+      "sha256": "0e8d0ac2ce727ba51285be0173ea784b52b56fdc4729a1f7c0d2d7271005b572"
+    },
+    {
+      "name": "rsstate",
+      "bytes": 34,
+      "sha256": "7d2f63b8e8e970bb35c351174fae1ca365245f14acf35db0d3cf9016ba8ba5bd"
+    }
+  ],
+  "rsstate": {
+    "bytes": 34,
+    "loadAddress": 12387,
+    "tick": 1600,
+    "checksumGolden": "6B765FDB",
+    "sha256": "7d2f63b8e8e970bb35c351174fae1ca365245f14acf35db0d3cf9016ba8ba5bd",
+    "hex": "6330db5e7468df5a706cd3567c60d7527864cb4e6478cf4a607cc3466c70c7426874",
+    "independentGoldenAndSavePattern": "PASS"
+  },
+  "traceChunks": [],
+  "physicalRuntime": "FAIL_75_AT_TICK_3200",
+  "physicalTiming": "UNAVAILABLE_NO_TRACE",
+  "sdWrites": false,
+  "freshRawExtentAudit": "NOT_RUN",
+  "fullGroup1Acceptance": false
+}

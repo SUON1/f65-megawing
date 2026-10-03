@@ -1,0 +1,17 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "/Users/slice/Developer/f65-megawing/build/r0f/group1/terminal-recovery/status-02/source-inputs/tools/diagnostics/r0f_group1_reduce.py",
+    "/Users/slice/Developer/f65-megawing/build/r0f/group1/terminal-recovery/status-02/ntsc-01/trace.bin",
+    "--saved",
+    "/Users/slice/Developer/f65-megawing/build/r0f/group1/terminal-recovery/status-02/ntsc-01/saved.prg",
+    "--payload-address",
+    "0x3063",
+    "--out",
+    "/Users/slice/Developer/f65-megawing/build/r0f/group1/carriers/R0FG1P07/ntsc-01-admission/independent-reduction.json"
+  ],
+  "exitCode": 0,
+  "stderr": "",
+  "stdout": "Group 1 acquisition/reduction PASS; nominal timing observations retained separately\n"
+}

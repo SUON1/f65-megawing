@@ -1,0 +1,18 @@
+{
+  "result": "PASS_REVIEWED_LINKED_ORDER",
+  "prgSha256": "9654d336deefe8dae0bd3b26986e00fbea45b8f3dcd8cfe0b1c73ac3f479ef7e",
+  "disassembly": "runtime-01-disassembly.txt",
+  "observations": {
+    "contextInvalidationRecord": "0x4f24",
+    "reclaimOwnership": "0x4f78",
+    "clockBeginCall": "0x4f7b",
+    "displayStateFault93": "0x4f92",
+    "stagingSeedCall": "0x4fb5",
+    "displayDmaCall": "0x4fe5",
+    "displayConfigureCall": "0x4ffc",
+    "rasterLine128Write": "0x5012",
+    "clockIrqStartCall": "0x9267"
+  },
+  "review": "Linked disassembly inspected in this task; original handler independent of display/DMA/audio; acquisition epoch zero at boundary",
+  "boundary": "Static control-flow evidence only; physical IRQ timing not established"
+}

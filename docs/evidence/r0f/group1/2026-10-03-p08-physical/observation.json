@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-03",
+  "reportedCarrier": "R0FG1P08.D81",
+  "carrierAttribution": "Photo follows P08 delivery; new compact text matches candidate; actual returned P08 PRG matches; explicit filename confirmation pending",
+  "photoSha256": "d600f3249ef0b223123b9b9fb71dbca673a94fe682d5ec257f9abd516d3c7e1d",
+  "fault": "75",
+  "state": "0A",
+  "tickHex": "0C80",
+  "tickDecimal": 3200,
+  "mask": "1F",
+  "nmi": "00",
+  "physicalEntry": "Execution visible",
+  "physicalRuntime": "FAIL",
+  "videoMode": "NOT RECORDED",
+  "freshPlatformIdentities": "NOT RECORDED",
+  "failedPredicate": "audio_stopped != 1",
+  "predicateDefinition": "D720 == 0 && D730 == 0 && D740 == 0 && D750 == 0",
+  "rawChannelValues": "NOT CAPTURED",
+  "whichChannel": "UNKNOWN",
+  "playbackStillActive": "NOT ESTABLISHED",
+  "laterReadinessPredicates": "NOT PROVEN by first-rejection code",
+  "acceptance": false
+}

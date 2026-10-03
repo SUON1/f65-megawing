@@ -1,0 +1,21 @@
+--- a/src/diagnostics/r0f/successor_integration.c
++++ b/src/diagnostics/r0f/successor_integration.c
+@@ -757,0 +758,2 @@
++        // Every rejecting path supplies its cause to the resume caller.
++        cffault = 93u;
+@@ -1101,8 +1103,7 @@
+-    if (!display_resume())
+-    {
+-        lockout(93u);
+-        return 0u;
+-    }
+-    if (!cfclock_begin())
+-    {
+-        lockout(82u);
++    // Display-clear DMA reads CIA time. Restart only after canonical restore
++    // and reclaim. The IRQ handler owns no display/DMA state; acquisition is
++    // inactive here. Keep raster-line selection after display configuration.
++    if (!cfclock_begin() || !display_resume())
++    {
++        // Clock and every display rejection already record the first cause.
++        lockout(cffault);

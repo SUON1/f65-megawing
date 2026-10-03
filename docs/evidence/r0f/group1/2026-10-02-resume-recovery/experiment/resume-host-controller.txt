@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/Users/slice/Developer/f65-megawing/tools/diagnostics/r0f_group1_resume_validate.py", line 75, in <module>
+    validate(args.source.resolve(), args.baseline.resolve(), args.out.resolve())
+  File "/Users/slice/Developer/f65-megawing/tools/diagnostics/r0f_group1_resume_validate.py", line 57, in validate
+    result.check_returncode()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/subprocess.py", line 460, in check_returncode
+    raise CalledProcessError(self.returncode, self.args, self.stdout,
+subprocess.CalledProcessError: Command '['/usr/bin/clang', '-std=c11', '-Wall', '-Wextra', '-Werror', '-fsanitize=address,undefined', '-DR0FG1_INTEGRATION', '-DTEST_BASELINE=1', '-I/Users/slice/Developer/f65-megawing/build/r0f/group1/resume-recovery/clock-03/resume-host/baseline', '-I/Users/slice/Developer/f65-megawing/docs/evidence/r0f/group1/2026-10-01-capacity-summary/experiment/runtime-01/source-checkpoint/interfaces/generated', '-I/Users/slice/Developer/f65-megawing/docs/evidence/r0f/group1/2026-10-01-capacity-summary/experiment/runtime-01/source-checkpoint/src/diagnostics/r0f', '/Users/slice/Developer/f65-megawing/tools/diagnostics/r0f_group1_resume_host_test.c', '/Users/slice/Developer/f65-megawing/docs/evidence/r0f/group1/2026-10-01-capacity-summary/experiment/runtime-01/source-checkpoint/src/diagnostics/r0f/successor_lifecycle.c', '-o', '/Users/slice/Developer/f65-megawing/build/r0f/group1/resume-recovery/clock-03/resume-host/baseline/resume-host']' returned non-zero exit status 1.

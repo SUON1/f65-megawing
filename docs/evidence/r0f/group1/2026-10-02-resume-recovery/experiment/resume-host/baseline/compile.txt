@@ -1,0 +1,8 @@
+In file included from /Users/slice/Developer/f65-megawing/tools/diagnostics/r0f_group1_resume_host_test.c:160:
+/Users/slice/Developer/f65-megawing/build/r0f/group1/resume-recovery/clock-03/resume-host/baseline/resume_under_test.inc:93:13: error: function 'lockout' has internal linkage but is not defined [-Werror,-Wundefined-internal]
+   93 | static void lockout(uint8_t fault);
+      |             ^
+/Users/slice/Developer/f65-megawing/build/r0f/group1/resume-recovery/clock-03/resume-host/baseline/resume_under_test.inc:106:9: note: used here
+  106 |         lockout(71u);
+      |         ^
+1 error generated.

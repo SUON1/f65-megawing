@@ -1,5 +1,5 @@
 {
-  "authority": "Owner-approved exact-path SHA-256 exception for retained R0-F evidence; no blanket directory exception.",
+  "authority": "Owner-approved exact-path SHA-256 exceptions for retained R0-F evidence; no blanket directory exception. P06 returned D81 and original loader listing added for owner-authorized 2026-10-03 recovery publication.",
   "d81": {
     "docs/evidence/r0f/combined/F65BLK02.D81": "b13853a7ddaf3bf26dfcaceb7e4466ab2d58702b96bfcbe9ae62c7db56ed3d82",
     "docs/evidence/r0f/group1/2026-09-29-display-pixel-audit/label-probe-01/G1LAB01.D81": "f8943f689c3a18621b8e66d4f7d62a7cf80df52f1271c6fce6991ece77772167",
@@ -117,9 +117,10 @@
     "docs/evidence/r0f/group1/2026-10-01-physical-closeout/xemu/ntsc-02/R0FG1P05.D81": "5478c431ccf06b1a0f6078b0c0170f3c542a75d4d1027aa5cbd7a2c9dc921b1d",
     "docs/evidence/r0f/group1/2026-10-01-physical-closeout/xemu/pal-01/R0FG1P05.D81": "3415ca95450083edf47855bfecc15c5bceb78586167dfd3c4135252abcc09fd2",
     "docs/evidence/r0f/group1/2026-10-01-physical-closeout/xemu/pal-02/R0FG1P05.D81": "5810aae4c1f64fba47fc62c16fde8274c65a8d0c5e5ff0695e99c8089c331828",
+    "docs/evidence/r0f/group1/2026-10-02-p06-physical/returned/R0FG1P06.D81": "6401290b6ae86abb3147d943419403e00b834941656e4685cdc98b9838e7a0f2",
     "docs/evidence/r0f/successor/2026-09-22-forensics/R0FDIAG3-native-blank.D81": "357078cd97a9aae0bf676ed844e5a01bfcafd32994309cf0d657f53e2a590018"
   },
-  "reviewed_commit": "6c037188ad5971515d1bc3490d665df6343ecf82",
+  "reviewed_commit": "c27d89787d1d5c4472e24262e0181c47943d46be",
   "schema": 1,
   "whitespace": {
     "docs/evidence/r0f/group1/2026-09-29-display-pixel-audit/label-probe-01/construction.log": "f6f3cbc9465a6104c7669fdb7d7897db0698425e012b14a5058b3f76538eaed2",
@@ -314,6 +315,7 @@
     "docs/evidence/r0f/group1/2026-10-01-capacity-summary/experiment/runtime-01/source-checkpoint/spec/core/F65_Main_Concept_v1.6_FINAL_HUMAN_REVIEWED.md": "e7d8ed40ce630d82e707e2a9c7f29995fac6f4281849c2c7ef5261d420c2c425",
     "docs/evidence/r0f/group1/2026-10-01-capacity-summary/experiment/source-inputs/spec/core/F65_Main_Concept_v1.6_FINAL_HUMAN_REVIEWED.md": "e7d8ed40ce630d82e707e2a9c7f29995fac6f4281849c2c7ef5261d420c2c425",
     "docs/evidence/r0f/group1/2026-10-01-physical-closeout/xemu/canonical/AUTOBOOT.C65.listing": "16cad9323785d01efb72fe1e91988a24fc6e2907d410389573b5208559de7b08",
-    "docs/evidence/r0f/group1/2026-10-01-physical-closeout/xemu/canonical/construction.log": "015f965ffea47b88d5d1be3c07fe6f1d89ed568796d3d118b8c27bc99f7c6b89"
+    "docs/evidence/r0f/group1/2026-10-01-physical-closeout/xemu/canonical/construction.log": "015f965ffea47b88d5d1be3c07fe6f1d89ed568796d3d118b8c27bc99f7c6b89",
+    "docs/evidence/r0f/group1/2026-10-02-resume-recovery/carrier/canonical/AUTOBOOT.C65.listing": "b3ae6dfd75f8697104fa190e5973a60df85b33daba59938b1a50ce0ca5cd1287"
   }
 }
