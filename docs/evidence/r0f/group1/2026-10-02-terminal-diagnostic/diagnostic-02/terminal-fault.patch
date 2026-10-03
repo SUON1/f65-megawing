@@ -1,0 +1,140 @@
+--- a/src/diagnostics/r0f/group1_capture.c
++++ b/src/diagnostics/r0f/group1_capture.c
+@@ -319 +319,4 @@
+-uint8_t r0fg1_capture_finish(void)
++// Terminal work is outside acquisition. Keep its frame separate from main
++// so diagnostic rejection paths do not inflate the active resident caller.
++__attribute__((noinline))
++uint8_t r0fg1_capture_finish_fault(void)
+@@ -323 +326 @@
+-        return 0u;
++        return 0x70u;
+@@ -353 +356 @@
+-        return 0u;
++        return 0x71u;
+@@ -365 +368 @@
+-            return 0u;
++            return 0x72u;
+@@ -402 +405 @@
+-                return 0u;
++                return 0x73u;
+@@ -412 +415 @@
+-            return 0u;
++            return (uint8_t)(0x74u + region);
+@@ -430 +433 @@
+-            return 0u;
++            return 0x79u;
+@@ -437 +440 @@
+-                return 0u;
++                return 0x7au;
+@@ -447 +450 @@
+-        return 0u;
++        return 0x7bu;
+@@ -450,2 +453,2 @@
+-    return r0fg1_transport_prepare(trace_bytes, 0x2144df1cul);
+-}
++    return r0fg1_transport_prepare_fault(trace_bytes, 0x2144df1cul);
++}
+--- a/src/diagnostics/r0f/group1_capture.h
++++ b/src/diagnostics/r0f/group1_capture.h
+@@ -28 +28,2 @@
+-uint8_t r0fg1_capture_finish(void);
++// Terminal only: zero on success, otherwise a private rejection code.
++uint8_t r0fg1_capture_finish_fault(void);
+--- a/src/diagnostics/r0f/group1_transport.c
++++ b/src/diagnostics/r0f/group1_transport.c
+@@ -115 +115 @@
+-uint8_t r0fg1_transport_prepare(uint32_t bytes, uint32_t expected_crc)
++uint8_t r0fg1_transport_prepare_fault(uint32_t bytes, uint32_t expected_crc)
+@@ -120 +120 @@
+-        return 0u;
++        return 0x80u;
+@@ -128 +128 @@
+-            return 0u;
++            return 0x81u;
+@@ -135 +135 @@
+-        return 0u;
++        return 0x82u;
+@@ -150 +150 @@
+-        return 0u;
++        return 0x83u;
+@@ -154 +154 @@
+-    return 1u;
++    return 0u;
+--- a/src/diagnostics/r0f/group1_transport.h
++++ b/src/diagnostics/r0f/group1_transport.h
+@@ -10 +10,2 @@
+-uint8_t r0fg1_transport_prepare(uint32_t bytes, uint32_t expected_crc);
++// Terminal only: zero on success, otherwise a private rejection code.
++uint8_t r0fg1_transport_prepare_fault(uint32_t bytes, uint32_t expected_crc);
+--- a/src/diagnostics/r0f/successor_integration.c
++++ b/src/diagnostics/r0f/successor_integration.c
+@@ -1397,11 +1397,14 @@
+-        if (dos_copy(KERNAL_BACKUP_TO_DOS)
+-#ifdef R0FG1_INTEGRATION
+-            && r0fg1_capture_finish()
+-#else
+-            && r0fg1_export_probe_prepare()
+-#endif
+-            )
+-        {
+-            r0fg1_terminal_export();
+-        }
+-        lockout(107u);
++        uint8_t terminal_fault = 107u;
++        if (dos_copy(KERNAL_BACKUP_TO_DOS))
++        {
++#ifdef R0FG1_INTEGRATION
++            terminal_fault = r0fg1_capture_finish_fault();
++#else
++            terminal_fault = r0fg1_export_probe_prepare() ? 0u : 107u;
++#endif
++            if (terminal_fault == 0u)
++            {
++                r0fg1_terminal_export();
++            }
++        }
++        lockout(terminal_fault);
+--- a/tools/diagnostics/r0f_group1_capture_owner_host_test.c
++++ b/tools/diagnostics/r0f_group1_capture_owner_host_test.c
+@@ -62 +62 @@
+-static uint8_t r0fg1_transport_prepare(uint32_t length, uint32_t residue)
++static uint8_t r0fg1_transport_prepare_fault(uint32_t length, uint32_t residue)
+@@ -72 +72 @@
+-        return 0u;
++        return 0x82u;
+@@ -75 +75 @@
+-    return 1u;
++    return 0u;
+@@ -110 +110 @@
+-    assert(r0fg1_capture_finish() && prepared);
++    assert(r0fg1_capture_finish_fault() == 0u && prepared);
+@@ -125 +125 @@
+-        assert(!r0fg1_capture_finish() && !prepared);
++        assert(r0fg1_capture_finish_fault() != 0u && !prepared);
+@@ -128 +128 @@
+-        assert(!r0fg1_capture_finish() && !prepared);
++        assert(r0fg1_capture_finish_fault() != 0u && !prepared);
+@@ -139 +139 @@
+-        assert(!r0fg1_capture_finish() && !prepared);
++        assert(r0fg1_capture_finish_fault() != 0u && !prepared);
+@@ -142 +142 @@
+-        assert(!r0fg1_capture_finish() && !prepared);
++        assert(r0fg1_capture_finish_fault() != 0u && !prepared);
+@@ -145 +145 @@
+-        assert(!r0fg1_capture_finish() && !prepared);
++        assert(r0fg1_capture_finish_fault() != 0u && !prepared);
+@@ -148 +148 @@
+-        assert(!r0fg1_capture_finish() && !prepared);
++        assert(r0fg1_capture_finish_fault() != 0u && !prepared);
+@@ -157 +157 @@
+-        assert(!r0fg1_capture_finish() && !prepared);
++        assert(r0fg1_capture_finish_fault() != 0u && !prepared);
+@@ -160 +160 @@
+-    assert(r0fg1_capture_finish() && prepared);
++    assert(r0fg1_capture_finish_fault() == 0u && prepared);
+--- a/tools/diagnostics/r0f_group1_owners_validate.py
++++ b/tools/diagnostics/r0f_group1_owners_validate.py
+@@ -96 +96 @@
+-    finish = capture[capture.index("uint8_t r0fg1_capture_finish("):]
++    finish = capture[capture.index("uint8_t r0fg1_capture_finish_fault("):]

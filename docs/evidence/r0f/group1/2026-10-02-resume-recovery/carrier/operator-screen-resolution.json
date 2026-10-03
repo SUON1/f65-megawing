@@ -1,0 +1,7 @@
+{
+  "result": "RESOLVED_REVIEW_DISCREPANCY_NO_TARGET_FAILURE",
+  "initialObservation": "operator-screen-failure.json",
+  "proof": "ntsc-02/operator-screen-review.json",
+  "pal01Capture": "Exact owned Xemu process was sent SIGTERM during review. It had completed acquisition/export; fresh dump passed all 3200-record, actual SAVE, 20-chunk, timing and capacity gates. This was early capture, not a repeated boot.",
+  "pal02": "Fresh remaining required copy; not a repeat of a failed artifact"
+}

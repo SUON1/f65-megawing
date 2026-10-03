@@ -1,0 +1,71 @@
+{
+  "result": "PASS",
+  "commands": [
+    {
+      "command": [
+        "/usr/bin/clang",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Wconversion",
+        "-Werror",
+        "-fsanitize=address,undefined",
+        "-DR0FG1_INTEGRATION",
+        "-I/Users/slice/Developer/f65-megawing/build/r0f/group1/terminal-recovery/readiness-compact-01/readiness-host-02",
+        "-I/Users/slice/Developer/f65-megawing/build/r0f/group1/terminal-recovery/readiness-compact-01/source-inputs/interfaces/generated",
+        "-I/Users/slice/Developer/f65-megawing/build/r0f/group1/terminal-recovery/readiness-compact-01/source-inputs/src/diagnostics/r0f",
+        "/Users/slice/Developer/f65-megawing/tools/diagnostics/r0f_group1_readiness_host_test.c",
+        "/Users/slice/Developer/f65-megawing/build/r0f/group1/terminal-recovery/readiness-compact-01/source-inputs/src/diagnostics/r0f/group1_export.c",
+        "/Users/slice/Developer/f65-megawing/build/r0f/group1/terminal-recovery/readiness-compact-01/source-inputs/src/diagnostics/r0f/successor_lifecycle.c",
+        "-o",
+        "/Users/slice/Developer/f65-megawing/build/r0f/group1/terminal-recovery/readiness-compact-01/readiness-host-02/transport"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/Users/slice/Developer/f65-megawing/build/r0f/group1/terminal-recovery/readiness-compact-01/readiness-host-02/transport"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/usr/bin/clang",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Wconversion",
+        "-Werror",
+        "-fsanitize=address,undefined",
+        "-DR0FG1_INTEGRATION",
+        "-I/Users/slice/Developer/f65-megawing/build/r0f/group1/terminal-recovery/readiness-compact-01/readiness-host-02",
+        "-I/Users/slice/Developer/f65-megawing/build/r0f/group1/terminal-recovery/readiness-compact-01/source-inputs/interfaces/generated",
+        "-I/Users/slice/Developer/f65-megawing/build/r0f/group1/terminal-recovery/readiness-compact-01/source-inputs/src/diagnostics/r0f",
+        "/Users/slice/Developer/f65-megawing/tools/diagnostics/r0f_group1_readiness_policy_test.c",
+        "/Users/slice/Developer/f65-megawing/build/r0f/group1/terminal-recovery/readiness-compact-01/source-inputs/src/diagnostics/r0f/group1_export.c",
+        "-o",
+        "/Users/slice/Developer/f65-megawing/build/r0f/group1/terminal-recovery/readiness-compact-01/readiness-host-02/policy"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/Users/slice/Developer/f65-megawing/build/r0f/group1/terminal-recovery/readiness-compact-01/readiness-host-02/policy"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "captureTransportGuardEquivalence": "PASS",
+  "onlyTwoReportingStringsChanged": "PASS",
+  "prgSha256": "1c842e345a3d5ec15b3eb167535a776da5e78eaf26a0d0d6239f7073f5a3b468",
+  "physicalCause": "UNKNOWN",
+  "hardwareEdges": "MOCKED",
+  "policyCases": 2624256,
+  "transportCases": 18,
+  "validatorInputs": {
+    "tools/diagnostics/r0f_group1_readiness_validate.py": "b107a73630a6193c1ea1daec2c1875cc5478354c82d0cd9caa595def60ecf381",
+    "tools/diagnostics/r0f_group1_readiness_host_test.c": "acd42e9d8b443338c05ff1797efec9b3c893a938f612ae949cdfc6b6a6a546bf",
+    "tools/diagnostics/r0f_group1_readiness_policy_test.c": "42eac79e5adf6979149245ab03690194c01ebbe4cd18905c6f39a44d35b5df56"
+  },
+  "sdWrites": false
+}

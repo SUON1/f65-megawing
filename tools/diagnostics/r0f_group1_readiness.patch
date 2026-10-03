@@ -1,0 +1,152 @@
+--- a/src/diagnostics/r0f/group1_capture.c
++++ b/src/diagnostics/r0f/group1_capture.c
+@@ -321,2 +320,0 @@
+-    // 6C: preconditions and header/result writes. No acquisition runs here.
+-    r0fg1_terminal_checkpoint();
+@@ -371,2 +368,0 @@
+-    // 6D: acquired-region CRCs, capacity tail and final CRC write.
+-    r0fg1_terminal_checkpoint();
+--- a/src/diagnostics/r0f/group1_export.c
++++ b/src/diagnostics/r0f/group1_export.c
+@@ -47,0 +48,62 @@
++uint8_t r0fg1_export_begin_diagnostic(r0fg1_export *export,
++                                     const r0fg1_export_readiness *readiness)
++{
++    if (export == 0 || export->state != R0FG1X_S_FROZEN)
++    {
++        return 0x70u;
++    }
++    uint8_t reason = 0u;
++    if (readiness == 0)
++    {
++        reason = 0x71u;
++    }
++    else if (readiness->acquisition_stopped != 1u)
++    {
++        reason = 0x72u;
++    }
++    else if (readiness->dma_empty != 1u)
++    {
++        reason = 0x73u;
++    }
++    else if (readiness->display_stopped != 1u)
++    {
++        reason = 0x74u;
++    }
++    else if (readiness->audio_stopped != 1u)
++    {
++        reason = 0x75u;
++    }
++    else if (readiness->irq_masked != 1u)
++    {
++        reason = 0x76u;
++    }
++    else if (readiness->rom_verified != 1u)
++    {
++        reason = 0x77u;
++    }
++    else if (readiness->capsule_verified != 1u)
++    {
++        reason = 0x78u;
++    }
++    else if (readiness->nmi_seen != 0u)
++    {
++        reason = 0x79u;
++    }
++    else if (export->bytes == 0u)
++    {
++        reason = 0x7au;
++    }
++    else if (export->bytes > R0FG1X_TRACE_CAPACITY)
++    {
++        reason = 0x7bu;
++    }
++    if (reason != 0u)
++    {
++        export->state = R0FG1X_S_FAILED;
++        return reason;
++    }
++    // Consumed before storage, including when transport later fails.
++    export->state = R0FG1X_S_EXPORTING;
++    return 0u;
++}
++
+@@ -51,17 +113 @@
+-    if (export == 0 || export->state != R0FG1X_S_FROZEN)
+-    {
+-        return 0u;
+-    }
+-    if (readiness == 0 || readiness->acquisition_stopped != 1u
+-        || readiness->dma_empty != 1u || readiness->display_stopped != 1u
+-        || readiness->audio_stopped != 1u || readiness->irq_masked != 1u
+-        || readiness->rom_verified != 1u || readiness->capsule_verified != 1u
+-        || readiness->nmi_seen != 0u || export->bytes == 0u
+-        || export->bytes > R0FG1X_TRACE_CAPACITY)
+-    {
+-        export->state = R0FG1X_S_FAILED;
+-        return 0u;
+-    }
+-    // Consumed before storage, including when transport later fails.
+-    export->state = R0FG1X_S_EXPORTING;
+-    return 1u;
++    return (uint8_t)(r0fg1_export_begin_diagnostic(export, readiness) == 0u);
+--- a/src/diagnostics/r0f/group1_export.h
++++ b/src/diagnostics/r0f/group1_export.h
+@@ -32,0 +33,4 @@
++// Pure terminal diagnostic: zero means admitted; 70-7B identify rejection.
++// The existing boolean entry interface retains exactly its prior semantics.
++uint8_t r0fg1_export_begin_diagnostic(r0fg1_export *export,
++                                     const r0fg1_export_readiness *readiness);
+--- a/src/diagnostics/r0f/group1_transport.c
++++ b/src/diagnostics/r0f/group1_transport.c
+@@ -117,2 +116,0 @@
+-    // 6E: transport preconditions, complete readback and freeze.
+-    r0fg1_terminal_checkpoint();
+@@ -139,2 +136,0 @@
+-    // 6F: stopped-service, capsule and terminal-entry readiness.
+-    r0fg1_terminal_checkpoint();
+@@ -152 +148,2 @@
+-    if (!r0fg1_export_begin(&export, &readiness))
++    uint8_t rejection = r0fg1_export_begin_diagnostic(&export, &readiness);
++    if (rejection != 0u)
+@@ -153,0 +151 @@
++        r0fg1_export_status = rejection;
+--- a/src/diagnostics/r0f/group1_transport.h
++++ b/src/diagnostics/r0f/group1_transport.h
+@@ -7,2 +7,2 @@
+-// Before terminal ownership this byte is a monotonic preparation marker.
+-// Only the stopped terminal path advances it; the exporter replaces it.
++// Before entry: 6B is generic preparation; 70-7B are readiness rejections.
++// The exporter takes ownership on successful terminal entry.
+@@ -10,12 +9,0 @@
+-
+-// Measured MOS volatile C increment costs seven bytes; INC absolute costs
+-// three. Terminal IRQs are stopped. Preserve A/X/Y/Z/B and declare flags and
+-// memory clobbered; no MAP, base-page, DMA or hardware-register access.
+-static inline void r0fg1_terminal_checkpoint(void)
+-{
+-#ifdef __mos__
+-    __asm__ volatile ("inc r0fg1_export_status" : : : "cc", "memory");
+-#else
+-    r0fg1_export_status++;
+-#endif
+-}
+--- a/src/diagnostics/r0f/successor_integration.c
++++ b/src/diagnostics/r0f/successor_integration.c
+@@ -1448 +1448 @@
+-    cfline(5u, "GROUP 1 LOCKOUT - NO ACCEPTANCE");
++    cfline(5u, "G1 FAIL - NO ACCEPTANCE");
+@@ -1455 +1455 @@
+-    cfline(11u, "RESET TO EXIT - RETAIN FAILURE");
++    cfline(11u, "PHOTO THEN RESET");
+--- a/src/platform/r0f/group1_terminal_export_45gs02.s
++++ b/src/platform/r0f/group1_terminal_export_45gs02.s
+@@ -358 +358 @@
+-// Pre-entry marker: 6B means DOS copy; C advances only after acquisition.
++// Pre-entry marker: 6B means preparation; C records readiness rejection.
+--- a/tools/diagnostics/r0f_group1_capture_owner_host_test.c
++++ b/tools/diagnostics/r0f_group1_capture_owner_host_test.c
+@@ -66,2 +66 @@
+-    assert(r0fg1_export_status == 0x6du);
+-    r0fg1_export_status++;
++    assert(r0fg1_export_status == 0x6bu);

@@ -1,0 +1,19 @@
+{
+  "reportedCarrier": "R0FG1P06.D81",
+  "filenameConfirmation": "PENDING; supplied in response to P06 run instructions, filename not visible in photographs",
+  "photo2": {
+    "faultHex": "6B",
+    "stateHex": "0A",
+    "tickHex": "0C80",
+    "tickDecimal": 3200,
+    "maskHex": "1F",
+    "nmiHex": "00"
+  },
+  "photo1": "Multicolored patterned display; no legible diagnostic fields. Does not independently prove rendering correctness.",
+  "interpretation": "P06 source maps final tick 6B to terminal preparation rejection: DOS copy or capture_finish; inner path not recoverable from photo. All five resumed-service advancement bits set.",
+  "returnedCard": "NOT AVAILABLE; not mounted at observation",
+  "physicalRuntime": "FAIL",
+  "fullGroup1Acceptance": false,
+  "videoMode": "UNRECORDED",
+  "coreRomHyppoFreezer": "UNRECORDED"
+}

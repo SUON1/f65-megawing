@@ -1,0 +1,16 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "tools/diagnostics/r0f_group1_pool_trace_negative.py",
+    "--source",
+    "/Users/slice/Developer/f65-megawing/build/r0f/group1/terminal-recovery/readiness-compact-01/source-inputs",
+    "--trace",
+    "/Users/slice/Developer/f65-megawing/build/r0f/group1/carriers/R0FG1P08/pal-02/trace.bin",
+    "--out",
+    "/Users/slice/Developer/f65-megawing/build/r0f/group1/carriers/R0FG1P08/pal-02/negatives.json"
+  ],
+  "exitCode": 0,
+  "stderr": "",
+  "stdout": "Independent reducer rejected 30 corruption cases: truncated, crc, tick-order, epoch, phase, release-drift, stage-overflow, snapshot-overflow, future-world, capture-cost, ai-causality, domain-state, world-capacity, world-source, world-event-time, presentation-view, presentation-tier, presentation-buffer, presentation-anchor, presentation-registration, presentation-high-water, presentation-cancel, presentation-valid-flag, irq-error, irq-empty, irq-total, service-phase-empty, service-phase-incomplete, service-order-missing, service-post-order-missing\nActual version-6 trace: 30 existing and 72 pool corruption cases rejected\n"
+}

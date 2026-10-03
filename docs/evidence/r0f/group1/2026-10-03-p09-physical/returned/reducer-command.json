@@ -1,0 +1,20 @@
+{
+  "command": [
+    "/Library/Developer/CommandLineTools/usr/bin/python3",
+    "-B",
+    "/Users/slice/Developer/f65-megawing/build/r0f/group1/terminal-recovery/audio-readback-01/source-inputs/tools/diagnostics/r0f_group1_reduce.py",
+    "/Users/slice/Developer/f65-megawing/docs/evidence/r0f/group1/2026-10-03-p09-physical/returned/trace.bin",
+    "--saved",
+    "/Users/slice/Developer/f65-megawing/docs/evidence/r0f/group1/2026-10-03-p09-physical/returned/saved.prg",
+    "--payload-address",
+    "0x3063",
+    "--out",
+    "/Users/slice/Developer/f65-megawing/docs/evidence/r0f/group1/2026-10-03-p09-physical/returned/reduction.json"
+  ],
+  "cwd": "/Users/slice/Developer/f65-megawing/build/r0f/group1/terminal-recovery/audio-readback-01/source-inputs",
+  "exitCode": 0,
+  "stdout": "Group 1 acquisition/reduction PASS; nominal timing observations retained separately\n",
+  "stderr": "",
+  "decoderSha256": "65d87c3cfabfe45741588a1d70476c1eeb6d30346c691fe1a9a7f28cb663d110",
+  "prgSha256": "acc735f280f9d4e86b3b2040e5b2bed987908331f7899a87f5382c6cd23cd4d8"
+}

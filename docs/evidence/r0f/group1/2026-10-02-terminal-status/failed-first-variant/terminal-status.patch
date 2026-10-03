@@ -1,0 +1,81 @@
+--- a/src/diagnostics/r0f/group1_capture.c
++++ b/src/diagnostics/r0f/group1_capture.c
+@@ -320,0 +321,2 @@
++    // 6C: preconditions and header/result writes. No acquisition runs here.
++    r0fg1_export_status++;
+@@ -368,0 +371,2 @@
++    // 6D: acquired-region CRCs, capacity tail and final CRC write.
++    r0fg1_export_status++;
+--- a/src/diagnostics/r0f/group1_transport.c
++++ b/src/diagnostics/r0f/group1_transport.c
+@@ -116,0 +117,2 @@
++    // 6E: transport preconditions, complete readback and freeze.
++    r0fg1_export_status++;
+@@ -136,0 +139,2 @@
++    // 6F: stopped-service, capsule and terminal-entry readiness.
++    r0fg1_export_status++;
+--- a/src/diagnostics/r0f/group1_transport.h
++++ b/src/diagnostics/r0f/group1_transport.h
+@@ -6,0 +7,3 @@
++// Before terminal ownership this byte is a monotonic preparation marker.
++// Only the stopped terminal path advances it; the exporter replaces it.
++extern volatile uint8_t r0fg1_export_status;
+--- a/src/diagnostics/r0f/successor_integration.c
++++ b/src/diagnostics/r0f/successor_integration.c
+@@ -16,0 +17 @@
++#include "group1_transport.h"
+@@ -1406,0 +1408,3 @@
++#ifdef R0FG1_INTEGRATION
++        lockout(r0fg1_export_status);
++#else
+@@ -1407,0 +1412 @@
++#endif
+--- a/src/platform/r0f/group1_terminal_export_45gs02.s
++++ b/src/platform/r0f/group1_terminal_export_45gs02.s
+@@ -358 +358,3 @@
+-r0fg1_export_status: .byte 0
++// Pre-entry marker: 6B means DOS copy; C advances only after acquisition.
++// Terminal entry replaces this with the existing EXPORTING state.
++r0fg1_export_status: .byte $6b
+--- a/tools/diagnostics/r0f_group1_capture_owner_host_test.c
++++ b/tools/diagnostics/r0f_group1_capture_owner_host_test.c
+@@ -11,0 +12 @@
++volatile uint8_t r0fg1_export_status;
+@@ -63,0 +65,2 @@
++    assert(r0fg1_export_status == 0x6du);
++    r0fg1_export_status++;
+@@ -78,0 +82,7 @@
++
++static uint8_t finish_capture(void)
++{
++    // Each injection models a fresh one-shot terminal attempt.
++    r0fg1_export_status = 0x6bu;
++    return r0fg1_capture_finish();
++}
+@@ -110 +120 @@
+-    assert(r0fg1_capture_finish() && prepared);
++    assert(finish_capture() && prepared);
+@@ -125 +135 @@
+-        assert(!r0fg1_capture_finish() && !prepared);
++        assert(!finish_capture() && !prepared);
+@@ -128 +138 @@
+-        assert(!r0fg1_capture_finish() && !prepared);
++        assert(!finish_capture() && !prepared);
+@@ -139 +149 @@
+-        assert(!r0fg1_capture_finish() && !prepared);
++        assert(!finish_capture() && !prepared);
+@@ -142 +152 @@
+-        assert(!r0fg1_capture_finish() && !prepared);
++        assert(!finish_capture() && !prepared);
+@@ -145 +155 @@
+-        assert(!r0fg1_capture_finish() && !prepared);
++        assert(!finish_capture() && !prepared);
+@@ -148 +158 @@
+-        assert(!r0fg1_capture_finish() && !prepared);
++        assert(!finish_capture() && !prepared);
+@@ -157 +167 @@
+-        assert(!r0fg1_capture_finish() && !prepared);
++        assert(!finish_capture() && !prepared);
+@@ -160 +170 @@
+-    assert(r0fg1_capture_finish() && prepared);
++    assert(finish_capture() && prepared);

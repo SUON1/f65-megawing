@@ -1,0 +1,16 @@
+{
+  "baseline": "/Users/slice/Developer/f65-megawing/docs/evidence/r0f/group1/2026-10-01-capacity-summary/experiment/runtime-01",
+  "baselinePrgSha256": "c068cc532dc820845d8c0649b1c2ea7dfc0bda394b32f7c186088a04d0dc048b",
+  "command": [
+    "patch",
+    "--batch",
+    "--fuzz=0",
+    "-p1",
+    "-i",
+    "/Users/slice/Developer/f65-megawing/tools/diagnostics/r0f_group1_resume_clock.patch"
+  ],
+  "exitCode": 2,
+  "patchSha256": "d9d5099470005012dc57e3cb162adf82842cb44a856da880e58e8f0e39c5d889",
+  "stderr": "patch: **** malformed patch at line 26:  \n",
+  "stdout": "patching file 'src/diagnostics/r0f/successor_integration.c'\n"
+}

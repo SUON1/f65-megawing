@@ -1,0 +1,39 @@
+{
+  "url": "https://github.com/MEGA65/mega65-core/blob/bc7a3ece8aaee3d4d9f5df09cd71c70b1225a827/src/vhdl/gs4510.vhdl",
+  "commit": "bc7a3ece8aaee3d4d9f5df09cd71c70b1225a827",
+  "fileSha256": "1437fbd99c0fd9ecf1c4ce73ec9f0b81e3671aac8421fd60b128a1e93c8ecf1c",
+  "observedInstalledCore": "UNRECORDED",
+  "excerpts": [
+    {
+      "firstLine": 2643,
+      "lastLine": 2644,
+      "text": "            when x\"20\" => return audio_dma_enables(0) & audio_dma_repeat(0) & audio_dma_signed(0) &\n                            audio_dma_sine_wave(0) & audio_dma_stop(0) & audio_dma_sample_valid(0) & audio_dma_sample_width(0);"
+    },
+    {
+      "firstLine": 2661,
+      "lastLine": 2662,
+      "text": "            when x\"30\" => return audio_dma_enables(1) & audio_dma_repeat(1) & audio_dma_signed(1) &\n                            audio_dma_sine_wave(1) & audio_dma_stop(1) & audio_dma_sample_valid(1) & audio_dma_sample_width(1);"
+    },
+    {
+      "firstLine": 2679,
+      "lastLine": 2680,
+      "text": "            when x\"40\" => return audio_dma_enables(2) & audio_dma_repeat(2) & audio_dma_signed(2) &\n                            audio_dma_sine_wave(2) & audio_dma_stop(2) & audio_dma_sample_valid(2) & audio_dma_sample_width(2);"
+    },
+    {
+      "firstLine": 2697,
+      "lastLine": 2698,
+      "text": "            when x\"50\" => return audio_dma_enables(3) & audio_dma_repeat(3) & audio_dma_signed(3) &\n                            audio_dma_sine_wave(3) & audio_dma_stop(3) & audio_dma_sample_valid(3) & audio_dma_sample_width(3);"
+    },
+    {
+      "firstLine": 3492,
+      "lastLine": 3497,
+      "text": "            when x\"0\" => audio_dma_enables(to_integer(long_address(7 downto 4)-2)) <= value(7);\n                        audio_dma_repeat(to_integer(long_address(7 downto 4)-2)) <= value(6);\n                        audio_dma_signed(to_integer(long_address(7 downto 4)-2)) <= value(5);\n                        audio_dma_sine_wave(to_integer(long_address(7 downto 4)-2)) <= value(4);\n                        audio_dma_stop(to_integer(long_address(7 downto 4)-2)) <= value(3);\n                        audio_dma_sample_width(to_integer(long_address(7 downto 4)-2)) <= value(1 downto 0);"
+    },
+    {
+      "firstLine": 4681,
+      "lastLine": 4696,
+      "text": "        if audio_dma_current_addr(i)(15 downto 0) = audio_dma_top_addr(i) then\n          if audio_dma_repeat(i)='1' then\n            audio_dma_current_addr(i) <= audio_dma_base_addr(i);\n          else\n            audio_dma_stop(i) <= '1';\n          end if;\n        end if;\n        if audio_dma_stop(i)='1' then\n          audio_dma_enables(i) <= '0';\n          if audio_dma_enables(i) = '1' then\n            report \"Stopping Audio DMA channel #\" & integer'image(i);\n          end if;\n        end if;\n\n        if audio_dma_enables(i)='0' then\n          -- report \"Audio DMA channel \" & integer'image(i) & \" disabled.\";"
+    }
+  ],
+  "decision": "Require bits 7,6,5,4,1,0 clear; permit only hardware status bits 3,2. Preserve stop writes and every other predicate. Actual physical rejected bits unknown."
+}

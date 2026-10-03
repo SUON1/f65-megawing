@@ -1,0 +1,30 @@
+{
+  "result": "PASS",
+  "scope": "Pure policy equivalence only; target fit FAIL; no execution admission",
+  "commands": [
+    {
+      "command": [
+        "/usr/bin/clang",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Wconversion",
+        "-Werror",
+        "-fsanitize=address,undefined",
+        "-I/Users/slice/Developer/f65-megawing/build/r0f/group1/terminal-recovery/readiness-01/source-inputs/interfaces/generated",
+        "-I/Users/slice/Developer/f65-megawing/build/r0f/group1/terminal-recovery/readiness-01/source-inputs/src/diagnostics/r0f",
+        "/Users/slice/Developer/f65-megawing/build/r0f/group1/terminal-recovery/readiness-01/policy-equivalence/policy-test.c",
+        "/Users/slice/Developer/f65-megawing/build/r0f/group1/terminal-recovery/readiness-01/source-inputs/src/diagnostics/r0f/group1_export.c",
+        "-o",
+        "/Users/slice/Developer/f65-megawing/build/r0f/group1/terminal-recovery/readiness-01/policy-equivalence/policy-test"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/Users/slice/Developer/f65-megawing/build/r0f/group1/terminal-recovery/readiness-01/policy-equivalence/policy-test"
+      ],
+      "exitCode": 0
+    }
+  ]
+}

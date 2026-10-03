@@ -1,0 +1,14 @@
+--- a/src/diagnostics/r0f/group1_transport.c
++++ b/src/diagnostics/r0f/group1_transport.c
+@@ -12,0 +13,6 @@
++
++// CHx control readback includes sample-valid (bit 2) and stopped (bit 3).
++// Neither status bit denotes enabled playback. Require all other bits zero,
++// retaining enable, loop, sign, sine and sample-width shutdown verification.
++// Terminal-only reads; cfaudio_stop and all other admission checks are unchanged.
++#define AUDIO_CHANNEL_CONTROL_MASK 0xf3u
+@@ -141,2 +147,2 @@
+-        .audio_stopped = (uint8_t)(CFREG(0xd720u) == 0u && CFREG(0xd730u) == 0u
+-                                   && CFREG(0xd740u) == 0u && CFREG(0xd750u) == 0u),
++        .audio_stopped = (uint8_t)(((CFREG(0xd720u) | CFREG(0xd730u)
++            | CFREG(0xd740u) | CFREG(0xd750u)) & AUDIO_CHANNEL_CONTROL_MASK) == 0u),

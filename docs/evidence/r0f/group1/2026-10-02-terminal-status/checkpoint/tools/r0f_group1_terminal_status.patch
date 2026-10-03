@@ -1,0 +1,105 @@
+--- a/src/diagnostics/r0f/group1_capture.c
++++ b/src/diagnostics/r0f/group1_capture.c
+@@ -320,0 +321,2 @@
++    // 6C: preconditions and header/result writes. No acquisition runs here.
++    r0fg1_terminal_checkpoint();
+@@ -368,0 +371,2 @@
++    // 6D: acquired-region CRCs, capacity tail and final CRC write.
++    r0fg1_terminal_checkpoint();
+--- a/src/diagnostics/r0f/group1_transport.c
++++ b/src/diagnostics/r0f/group1_transport.c
+@@ -116,0 +117,2 @@
++    // 6E: transport preconditions, complete readback and freeze.
++    r0fg1_terminal_checkpoint();
+@@ -136,0 +139,2 @@
++    // 6F: stopped-service, capsule and terminal-entry readiness.
++    r0fg1_terminal_checkpoint();
+--- a/src/diagnostics/r0f/group1_transport.h
++++ b/src/diagnostics/r0f/group1_transport.h
+@@ -6,0 +7,16 @@
++// Before terminal ownership this byte is a monotonic preparation marker.
++// Only the stopped terminal path advances it; the exporter replaces it.
++extern volatile uint8_t r0fg1_export_status;
++
++// Measured MOS volatile C increment costs seven bytes; INC absolute costs
++// three. Terminal IRQs are stopped. Preserve A/X/Y/Z/B and declare flags and
++// memory clobbered; no MAP, base-page, DMA or hardware-register access.
++static inline void r0fg1_terminal_checkpoint(void)
++{
++#ifdef __mos__
++    __asm__ volatile ("inc r0fg1_export_status" : : : "cc", "memory");
++#else
++    r0fg1_export_status++;
++#endif
++}
++
+--- a/src/diagnostics/r0f/successor_integration.c
++++ b/src/diagnostics/r0f/successor_integration.c
+@@ -16,0 +17 @@
++#include "group1_transport.h"
+@@ -1406,0 +1408,3 @@
++#ifdef R0FG1_INTEGRATION
++        lockout(r0fg1_export_status);
++#else
+@@ -1407,0 +1412 @@
++#endif
+--- a/src/platform/r0f/group1_terminal_export_45gs02.s
++++ b/src/platform/r0f/group1_terminal_export_45gs02.s
+@@ -358 +358,3 @@
+-r0fg1_export_status: .byte 0
++// Pre-entry marker: 6B means DOS copy; C advances only after acquisition.
++// Terminal entry replaces this with the existing EXPORTING state.
++r0fg1_export_status: .byte $6b
+--- a/tools/diagnostics/r0f_group1_capture_owner_host_test.c
++++ b/tools/diagnostics/r0f_group1_capture_owner_host_test.c
+@@ -6,0 +7 @@
++#include "group1_transport.h"
+@@ -11,0 +13 @@
++volatile uint8_t r0fg1_export_status;
+@@ -32 +34 @@
+-static uint8_t r0fg1_trace_write(uint32_t offset, const uint8_t *bytes, uint8_t length)
++uint8_t r0fg1_trace_write(uint32_t offset, const uint8_t *bytes, uint8_t length)
+@@ -47 +49 @@
+-static uint8_t r0fg1_trace_read(uint32_t offset, uint8_t *bytes, uint8_t length)
++uint8_t r0fg1_trace_read(uint32_t offset, uint8_t *bytes, uint8_t length)
+@@ -62 +64 @@
+-static uint8_t r0fg1_transport_prepare(uint32_t length, uint32_t residue)
++uint8_t r0fg1_transport_prepare(uint32_t length, uint32_t residue)
+@@ -63,0 +66,2 @@
++    assert(r0fg1_export_status == 0x6du);
++    r0fg1_export_status++;
+@@ -78,0 +83,7 @@
++
++static uint8_t finish_capture(void)
++{
++    // Each injection models a fresh one-shot terminal attempt.
++    r0fg1_export_status = 0x6bu;
++    return r0fg1_capture_finish();
++}
+@@ -110 +121 @@
+-    assert(r0fg1_capture_finish() && prepared);
++    assert(finish_capture() && prepared);
+@@ -125 +136 @@
+-        assert(!r0fg1_capture_finish() && !prepared);
++        assert(!finish_capture() && !prepared);
+@@ -128 +139 @@
+-        assert(!r0fg1_capture_finish() && !prepared);
++        assert(!finish_capture() && !prepared);
+@@ -139 +150 @@
+-        assert(!r0fg1_capture_finish() && !prepared);
++        assert(!finish_capture() && !prepared);
+@@ -142 +153 @@
+-        assert(!r0fg1_capture_finish() && !prepared);
++        assert(!finish_capture() && !prepared);
+@@ -145 +156 @@
+-        assert(!r0fg1_capture_finish() && !prepared);
++        assert(!finish_capture() && !prepared);
+@@ -148 +159 @@
+-        assert(!r0fg1_capture_finish() && !prepared);
++        assert(!finish_capture() && !prepared);
+@@ -157 +168 @@
+-        assert(!r0fg1_capture_finish() && !prepared);
++        assert(!finish_capture() && !prepared);
+@@ -160 +171 @@
+-    assert(r0fg1_capture_finish() && prepared);
++    assert(finish_capture() && prepared);
