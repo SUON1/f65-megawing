@@ -37,23 +37,30 @@ functional-proxy and raster-observation scope.
 
 R0-F contains substantial bounded development and physical evidence. CF001 demonstrated a reset-only combined diagnostic with ROM backup/recovery, synthetic workload, IRQ/DMA/display/PCM/input activity, physical capture reduction, and retained SD integrity evidence. RH001 separately demonstrates a same-run ROM/storage lifecycle continuation in NTSC/PAL Xemu.
 
-The private co-resident successor and Group 1 development checkpoint are now
-integrated through [PR #10](https://github.com/SUON1/f65-megawing/pull/10), with
-evidence-bearing history preserved. Local fit/host and four exact-carrier Xemu
-observations pass. The latest qualified version-7 source is an immutable
-isolated snapshot, not the earlier root working variant. See the
-[Group 1 closeout and handoff](docs/reports/R0-F_GROUP1_CLOSEOUT.md).
+The original Group 1 development checkpoint is integrated through
+[PR #10](https://github.com/SUON1/f65-megawing/pull/10). Its preserved P05 failure
+and campaign history remain in the [original closeout](docs/reports/R0-F_GROUP1_CLOSEOUT.md).
+The subsequent physical recovery and evidence are now integrated through
+[PR #12](https://github.com/SUON1/f65-megawing/pull/12), merge
+`7e4a3c81dc9122433c4ce36ba616bdfe4cc1b98b`, with evidence history preserved.
 
-The Group 1 campaign is administratively closed with a physical blocker,
-not accepted: P05 SD allocation and physical entry pass, but post-storage
-display resume fails `5D/0A/0640/00/00` after tick 1600. Actual returned SAVE
-matches the independent golden; no physical trace was exported. P05 is
-retired and must not be repaired, renamed, overwritten or retested.
+P09 resolves the bounded physical resume/export blocker: the actual returned
+card supplies all 3200 records, both storage-separated epochs, the correct
+returning SAVE and twenty trace chunks. Independent version-7 reduction
+validates 955 world pairs, all five resumed services and integrity checks.
+Nominal timing is WITHIN_OBSERVED_BOUNDS, with zero deadline misses, below-20-Hz
+cohorts or uncertain boundaries. See the
+[physical proof](docs/evidence/r0f/group1/2026-10-03-p09-physical/README.md).
 
-Full R0-F remains open. The physical resumed-workload correction/proof,
-original remaining campaign scope (including Groups 2/3), complete evidence
-review and named owner acceptance remain outstanding. Measured limits are
-not approved. Formal Phase 1 integrated 65Aero implementation has not started.
+The qualified source is the [frozen P09 snapshot](docs/evidence/r0f/group1/2026-10-03-audio-readback/README.md),
+not the earlier root working target. P09 is preserved as a successfully tested
+identity; P08/P07/P06/P05 and earlier failures remain unchanged. Do not repair,
+rename, overwrite or rerun any tested carrier.
+
+Full Group 1/R0-F acceptance remains separate. The original remaining campaign
+scope, including Groups 2/3 and existing admission/matrix boundaries, complete
+evidence review and named owner acceptance remain outstanding. Measured limits
+are not approved. Formal Phase 1 integrated 65Aero implementation has not started.
 
 ## What currently exists in code
 
