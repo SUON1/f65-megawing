@@ -1,0 +1,16 @@
+{
+  "id": "R0F-GROUP2-SCRATCH-DELTA-1",
+  "baseLedger": "memory/r0f-group1-export-memory-ledger.json",
+  "contract": "interfaces/r0f_group2_scratch_contract.json",
+  "allocation": {
+    "symbol": "r0fg2_foreground_scratch",
+    "region": "ordinary resident BSS; linker assigned below $C000",
+    "bytesFrom": "contract.bytes",
+    "replaces": ["combined_platform.cfworkspace", "successor_integration.transfer", "group1_transport.buffer"],
+    "ownership": "exclusive synchronous foreground call lifetime"
+  },
+  "protectedAllocationChange": 0,
+  "reserveChange": 0,
+  "publicAbiChange": false,
+  "newPhysicalRange": false
+}

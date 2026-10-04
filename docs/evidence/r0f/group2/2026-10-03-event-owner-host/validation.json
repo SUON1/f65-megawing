@@ -1,0 +1,61 @@
+{
+  "result": "PASS",
+  "scope": "isolated actual r0fc_event/reset host API",
+  "integrationMacro": false,
+  "target": "NOT RUN",
+  "xemu": "NOT RUN",
+  "physical": "NOT RUN",
+  "inputs": {
+    "docs/evidence/r0f/group1/2026-10-03-audio-readback/source/src/diagnostics/r0f/combined_model.c": "00fed181cd67df8293653b962c481cf7c14a68d3a3e3938f13d74fe78500cd9f",
+    "docs/evidence/r0f/group1/2026-10-03-audio-readback/source/src/diagnostics/r0f/combined_model.h": "0931d1e42914903d61d073be597910575a941171c6592b45d4a81649123113df",
+    "docs/evidence/r0f/group1/2026-10-03-audio-readback/source/interfaces/generated/r0f_combined.h": "a728d596e43163e28d1de7d2e17ee366b6df4970be8924bff9f64ca2e4a0d4f2",
+    "tools/diagnostics/r0f_group2_event_owner_host_test.c": "7a9c75805f574659de0a9b4a96d8a74dec977c41c16f3731090eb18988748cdd",
+    "tools/diagnostics/r0f_group2_event_owner_host.py": "ddf6e4aebecd515861194ec02ad6ea3fdcbfe84a897c963bfb0f47b69811c3c1"
+  },
+  "commands": [
+    {
+      "command": [
+        "/usr/bin/clang",
+        "--version"
+      ],
+      "exitCode": 0,
+      "log": "compiler.txt"
+    },
+    {
+      "command": [
+        "/usr/bin/clang",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-fsanitize=address,undefined",
+        "-fno-sanitize-recover=all",
+        "-g",
+        "-I/Users/slice/Developer/f65-megawing/docs/evidence/r0f/group1/2026-10-03-audio-readback/source/interfaces/generated",
+        "-I/Users/slice/Developer/f65-megawing/docs/evidence/r0f/group1/2026-10-03-audio-readback/source/src/diagnostics/r0f",
+        "/Users/slice/Developer/f65-megawing/docs/evidence/r0f/group1/2026-10-03-audio-readback/source/src/diagnostics/r0f/combined_model.c",
+        "/Users/slice/Developer/f65-megawing/tools/diagnostics/r0f_group2_event_owner_host_test.c",
+        "-o",
+        "/Users/slice/Developer/f65-megawing/build/r0f/group2/event-owner/host-b1vjyx7w/event-owner"
+      ],
+      "exitCode": 0,
+      "log": "compile.txt"
+    },
+    {
+      "command": [
+        "/Users/slice/Developer/f65-megawing/build/r0f/group2/event-owner/host-b1vjyx7w/event-owner"
+      ],
+      "exitCode": 0,
+      "log": "run.txt"
+    }
+  ],
+  "compilerSha256": "5b1ddb7e9c11b87a034fc88b212e8ac243cfe2b4db696d767aa44c79595fc09a",
+  "sourceCommit": "abd3a0803b96090654db5dbdda43ad42d7b29a5a",
+  "branch": "codex/r0f-group2-preparation",
+  "sanitizers": {
+    "ASAN_OPTIONS": "halt_on_error=1",
+    "UBSAN_OPTIONS": "halt_on_error=1:print_stacktrace=1"
+  },
+  "executableSha256": "b45ca25797683492324a2b1b0768e2e5433565469be9dcd9f37307222152d4bb",
+  "inputsUnchanged": true
+}

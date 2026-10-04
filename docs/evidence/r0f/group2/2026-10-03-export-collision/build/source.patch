@@ -1,0 +1,30 @@
+--- r2/src/diagnostics/r0f/combined_platform.c
++++ control/src/diagnostics/r0f/combined_platform.c
+@@ -57,7 +57,7 @@
+ void cfhex(uint8_t row,uint8_t col,uint32_t v,uint8_t digits){static const char a[]="0123456789ABCDEF";
+   while(digits){uint8_t c=(uint8_t)a[v&15u];screen_byte((uint16_t)(80u*row+col+--digits),c>='A'?(uint8_t)(c&31u):c);v>>=4u;}}
+ void cfscreen(void){uint16_t i;for(i=0u;i<2000u;++i)screen_byte(i,32u);
+-  cfline(1u,"R0-F COMBINED EXPERIMENT CF001 / F65BLK02");cfline(3u,"DEVELOPMENT EVIDENCE - NOT R0-F ACCEPTANCE");}
++  cfline(1u,"R0-F GROUP 2 CONTROL / R0FG2C1");cfline(3u,"DEVELOPMENT EVIDENCE - NOT R0-F ACCEPTANCE");}
+ // One PF request encoder. Ordinary C ABI; canonical B=2; no MAP/DMA.
+ // Foreground only. PF owns synchronous physical access and register restoration.
+ __attribute__((noinline))
+--- r2/src/diagnostics/r0f/successor_integration.c
++++ control/src/diagnostics/r0f/successor_integration.c
+@@ -83,8 +83,6 @@
+     PROTECTED_DATA;
+ 
+ static r0fc_model model;
+-extern uint8_t r0fg2_queue_probe(r0fc_model *model);
+-static volatile uint8_t group2_admission_result;
+ static r0fc_snapshots snapshots;
+ 
+ #ifdef R0FG1_INTEGRATION
+@@ -1198,7 +1196,6 @@
+     r0fg1_calibration(0u);
+ #endif
+     r0fc_reset(&model);
+-    group2_admission_result = r0fg2_queue_probe(&model);
+     r0fc_snap_reset(&snapshots);
+     display_begin();
+     r0fsi_irq_select_line();

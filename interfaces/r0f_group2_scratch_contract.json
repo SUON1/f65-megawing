@@ -1,0 +1,15 @@
+{
+  "id": "R0F-GROUP2-FOREGROUND-SCRATCH-1",
+  "status": "private R1 experiment; not target-qualified",
+  "symbol": "r0fg2_foreground_scratch",
+  "bytes": 255,
+  "owners": ["ROM readback", "DOS/display/terminal initialization", "capsule/trace transport"],
+  "rules": [
+    "Synchronous foreground only; no IRQ/NMI borrower or nested callback",
+    "Ownership ends after the last copy/compare/CRC in the caller; no bytes survive a handoff",
+    "Trace caller data must not alias scratch; record/header remain independent",
+    "ROM block remains separate because source and readback are simultaneously live",
+    "Every borrower initializes or reads all bytes it consumes; failure exits abandon contents",
+    "Existing physical-range checks, copy failures, capacities and checksums are unchanged"
+  ]
+}

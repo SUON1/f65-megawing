@@ -1,0 +1,575 @@
+     VMA      LMA     Size Align Out     In      Symbol
+       0        0        0     1 
+       0        0        0     1 
+       0        0        0     1 __basic_zp_start = 0x0002
+       0        0        0     1 __basic_zp_end = 0x0090
+       0        0        0     1 __rc0 = __basic_zp_start
+       0        0        0     1 __rc1 = __rc0 + 1
+       0        0        0     1 PROVIDE(__rc2 = __rc1 + 1)
+       0        0        0     1 __rc3 = __rc2 + 1
+       0        0        0     1 PROVIDE(__rc4 = __rc3 + 1)
+       0        0        0     1 __rc5 = __rc4 + 1
+       0        0        0     1 PROVIDE(__rc6 = __rc5 + 1)
+       0        0        0     1 __rc7 = __rc6 + 1
+       0        0        0     1 PROVIDE(__rc8 = __rc7 + 1)
+       0        0        0     1 __rc9 = __rc8 + 1
+       0        0        0     1 PROVIDE(__rc10 = __rc9 + 1)
+       0        0        0     1 __rc11 = __rc10 + 1
+       0        0        0     1 PROVIDE(__rc12 = __rc11 + 1)
+       0        0        0     1 __rc13 = __rc12 + 1
+       0        0        0     1 PROVIDE(__rc14 = __rc13 + 1)
+       0        0        0     1 __rc15 = __rc14 + 1
+       0        0        0     1 PROVIDE(__rc16 = __rc15 + 1)
+       0        0        0     1 __rc17 = __rc16 + 1
+       0        0        0     1 PROVIDE(__rc18 = __rc17 + 1)
+       0        0        0     1 __rc19 = __rc18 + 1
+       0        0        0     1 PROVIDE(__rc20 = __rc19 + 1)
+       0        0        0     1 __rc21 = __rc20 + 1
+       0        0        0     1 PROVIDE(__rc22 = __rc21 + 1)
+       0        0        0     1 __rc23 = __rc22 + 1
+       0        0        0     1 PROVIDE(__rc24 = __rc23 + 1)
+       0        0        0     1 __rc25 = __rc24 + 1
+       0        0        0     1 PROVIDE(__rc26 = __rc25 + 1)
+       0        0        0     1 __rc27 = __rc26 + 1
+       0        0        0     1 PROVIDE(__rc28 = __rc27 + 1)
+       0        0        0     1 __rc29 = __rc28 + 1
+       0        0        0     1 PROVIDE(__rc30 = __rc29 + 1)
+       0        0        0     1 __rc31 = __rc30 + 1
+       0        0        0     1 __basic_zp_size = __basic_zp_end - __basic_zp_start
+    2001     2001       16     1 .basic_header
+    2001     2001       16     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/basic-header.o:(.basic_header)
+    2015     2015        0     1                 next_line
+      22       22        0     1 .zp.data
+      22       22        0     1         __zp_data_start = .
+      22       22        0     1 __zp_data_load_start = LOADADDR(.zp.data)
+      22       22        0     1 __zp_data_size = SIZEOF(.zp.data)
+      22       22        0     1 .zp.bss
+      22       22        0     1         __zp_bss_start = .
+      22       22        0     1 __zp_bss_size = SIZEOF(.zp.bss)
+    2017     2017     118f     1 .r0fs_protected
+    2017     2017        9     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/successor_admission_45gs02-fc6164.o:(.text.r0fs_protected)
+    2017     2017        0     1                 r0fs_quiesce_marker
+    2019     2019        0     1                 r0fs_context_restore_marker
+    201b     201b        0     1                 r0fs_canonical_restore_marker
+    201f     201f        0     1                 r0fs_resume_marker
+    2020     2020      81b     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/successor_integration_45gs02-c5fa48.o:(.text.r0fs_protected)
+    2020     2020        0     1                 r0fs_context_read
+    20df     20df        0     1                 r0fs_context_invalidate
+    211b     211b        0     1                 r0fs_storage
+    282f     282f        0     1                 r0fs_storage_end
+    283b     283b      616     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/group1_terminal_export_45gs02-6def37.o:(.text.r0fs_protected)
+    283b     283b        0     1                 r0fg1_terminal_export
+    2d01     2d01        0     1                 r0fg1_terminal_export_end
+    2d01     2d01        0     1                 r0fg1_terminal_file_setup
+    2dd0     2dd0        0     1                 r0fg1_terminal_summary
+    2dd0     2dd0        0     1                 r0fg1_terminal_file_setup_end
+    2e39     2e39        0     1                 r0fg1_terminal_summary_end
+    2e39     2e39        0     1                 r0fg1_terminal_summary_hex
+    2e51     2e51        0     1                 r0fg1_terminal_summary_hex_end
+    2e51     2e51      146     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/group1_irq_45gs02-9f6446.o:(.text.r0f_pf)
+    2e51     2e51        0     1                 r0f_pf_enter
+    2eb1     2eb1        0     1                 r0f_pf_start_irq
+    2ec8     2ec8        0     1                 r0f_pf_stop_irq
+    2ed4     2ed4        0     1                 r0f_pf_irq
+    2f06     2f06        0     1                 r0f_pf_nmi
+    2f0e     2f0e        0     1                 r0f_pf_flat_copy
+    2f4b     2f4b        0     1                 r0f_pf_register_probe
+    2f97     2f97       83     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/group1_terminal_export_45gs02-6def37.o:(.r0fs_protected_data)
+    2f97     2f97        0     1                 r0fg1_export_permit
+    2f98     2f98        0     1                 r0fg1_export_status
+    2f99     2f99        0     1                 r0fg1_export_error
+    2f9a     2f9a        0     1                 r0fg1_export_files
+    2f9b     2f9b        0     1                 r0fg1_export_bytes
+    2f9f     2f9f        0     1                 r0fg1_export_remaining
+    2fa3     2fa3        0     1                 r0fg1_export_source
+    2fa7     2fa7        0     1                 r0fg1_export_chunk
+    2fa9     2fa9        0     1                 r0fg1_export_copy_left
+    2fab     2fab        0     1                 r0fg1_export_filename
+    2fb0     2fb0        0     1                 r0fg1_export_initialize
+    2fb2     2fb2        0     1                 r0fg1_export_secondary
+    2fb3     2fb3        0     1                 r0fg1_operator_hex
+    2fc3     2fc3        0     1                 r0fg1_operator_text
+    2fd0     2fd0        0     1                 r0fg1_operator_status
+    2fd4     2fd4        0     1                 r0fg1_operator_error
+    2fd9     2fd9        0     1                 r0fg1_operator_files
+    301a     301a        0     1                 r0fg1_operator_text_end
+    301a     301a      18c     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.r0fs_protected_data)
+    301a     301a        1     1                 r0fsi_storage_phase
+    301b     301b        1     1                 r0fsi_storage_error
+    301c     301c        1     1                 r0fsi_storage_returned
+    301d     301d        1     1                 r0fsi_storage_denied
+    301e     301e        1     1                 r0fsi_permit
+    301f     301f        1     1                 r0fsi_input
+    3020     3020        1     1                 r0fsi_output
+    3021     3021        1     1                 r0fsi_input_end
+    3022     3022        1     1                 r0fsi_output_end
+    3023     3023       20     1                 r0fsi_token
+    3043     3043       20     1                 r0fsi_read
+    3063     3063       20     1                 r0fsi_payload
+    3083     3083        4     1                 r0fsi_end
+    3087     3087        1     1                 r0fsi_app_sp
+    3088     3088        2     1                 r0fsi_context_offset
+    308a     308a        1     1                 r0fsi_context_length
+    308b     308b        1     1                 r0fsi_context_region
+    308c     308c        1     1                 r0fsi_context_copy_ok
+    308d     308d       ff     1                 r0fsi_context_buffer
+    318c     318c        1     1                 r0f_pf_cpu_port
+    318d     318d        2     1                 r0f_pf_irq_count
+    318f     318f        1     1                 r0f_pf_irq_seq
+    3190     3190        1     1                 r0f_pf_irq_seen
+    3191     3191        7     1                 r0f_pf_probe_regs
+    3198     3198        1     1                 r0f_pf_copy_ok
+    3199     3199        2     1                 r0f_pf_probe_timeout
+    319b     319b        1     1                 r0f_pf_nmi_seen
+    319c     319c        9     1                 r0f_pf_copy_request
+    31a5     31a5        1     1                 r0f_pf_stack_high
+    31a6     31a6     8243     1 .text
+    31a6     31a6        0     1         _init = .
+    31a6     31a6        0     1         _start = .
+    31a6     31a6       c5     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/successor_admission_45gs02-fc6164.o:(.init.005)
+    31a6     31a6        0     1                 r0fs_pre_c_capture
+    326b     326b        0     1                 r0fs_pre_c_capture_end
+    326b     326b       c5     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/group1_export_capture_45gs02-c59b8c.o:(.init.006)
+    326b     326b        0     1                 r0fg1_export_capture
+    3330     3330        0     1                 r0fg1_export_capture_end
+    3330     3330        e     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/unmap-basic.o:(.init.010)
+    333e     333e        3     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/r0a_platform_45gs02-e630e2.o:(.init.011)
+    333e     333e        0     1                 f65_basepage_enter
+    3341     3341        8     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(init-stack.S.obj):(.init.100)
+    3341     3341        0     1                 __do_init_stack
+    3349     3349        3     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(zero-bss.c.obj):(.init.200)
+    3349     3349        0     1                 __do_zero_bss
+    334c     334c        3     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/common/lib/crt0.o:(.call_main)
+    334f     334f        3     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(exit-custom.S.obj):(.after_main)
+    334f     334f        0     1                 __after_main
+    3352     3352        0     1         _fini = .
+    3352     3352        3     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/r0a_platform_45gs02-e630e2.o:(.fini.989)
+    3352     3352        0     1                 f65_basepage_leave
+    3355     3355        a     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/unmap-basic.o:(.fini.990)
+    335f     335f        1     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/common/lib/crt0.o:(.fini_rts)
+    3360     3360        3     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/successor_integration_45gs02-c5fa48.o:(.text.r0fsi_status)
+    3360     3360        0     1                 r0fsi_irq_cpu_status
+    3363     3363       b4     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/combined_45gs02-ed3664.o:(.text.r0fc_platform)
+    3363     3363        0     1                 r0fc_rom_toggle
+    3386     3386        0     1                 r0fc_stack_seed
+    33cd     33cd        0     1                 r0fc_stack_measure
+    3417     3417       fa     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/group1_irq_45gs02-9f6446.o:(.text.r0fg1_irq)
+    3417     3417        0     1                 r0fg1_irq_begin
+    342f     342f        0     1                 r0fg1_irq_end
+    34c2     34c2        0     1                 r0fg1_irq_read
+    3511     3511        0     1                 r0fg1_irq_timing_end
+    3511     3511       13     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(zero-bss.c.obj):(.text.__zero_bss)
+    3511     3511       13     1                 __zero_bss
+    3524     3524     24c0     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.main)
+    3524     3524     24c0     1                 main
+    59e4     59e4       14     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.lockout)
+    59e4     59e4       14     1                 lockout
+    59f8     59f8      10b     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.context_crc)
+    59f8     59f8      10b     1                 context_crc
+    5b03     5b03       94     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.context_valid)
+    5b03     5b03       94     1                 context_valid
+    5b97     5b97      109     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.dos_copy)
+    5b97     5b97      109     1                 dos_copy
+    5ca0     5ca0      1c7     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.dos_crc)
+    5ca0     5ca0      1c7     1                 dos_crc
+    5e67     5e67       23     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.transition)
+    5e67     5e67       23     1                 transition
+    5e8a     5e8a       c7     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.display_seed_staging)
+    5e8a     5e8a       c7     1                 display_seed_staging
+    5f51     5f51       41     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.display_configure)
+    5f51     5f51       41     1                 display_configure
+    5f92     5f92     122d     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.run_ticks)
+    5f92     5f92     122d     1                 run_ticks
+    71bf     71bf      ebe     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.display_quantum)
+    71bf     71bf      ebe     1                 display_quantum
+    807d     807d      319     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.restore_rom_after_display_suspend)
+    807d     807d      319     1                 restore_rom_after_display_suspend
+    8396     8396       bd     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.low_application_copy)
+    8396     8396       bd     1                 low_application_copy
+    8453     8453      34f     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.application_dma)
+    8453     8453      34f     1                 application_dma
+    87a2     87a2       2a     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.result_u32)
+    87a2     87a2       2a     1                 result_u32
+    87cc     87cc      102     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.group1_service_sweep)
+    87cc     87cc      102     1                 group1_service_sweep
+    88ce     88ce       ef     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.fixed_physical_copy)
+    88ce     88ce       ef     1                 fixed_physical_copy
+    89bd     89bd       27     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.r0fsi_prepare_rom_toggle)
+    89bd     89bd       27     1                 r0fsi_prepare_rom_toggle
+    89e4     89e4       39     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.r0fsi_irq_snapshot)
+    89e4     89e4       39     1                 r0fsi_irq_snapshot
+    8a1d     8a1d       2b     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.r0fs_crc32)
+    8a1d     8a1d       2b     1                 r0fs_crc32
+    8a48     8a48       c1     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.r0fs_crc32_update)
+    8a48     8a48       c1     1                 r0fs_crc32_update
+    8b09     8b09       2e     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.r0fc_edge_sample)
+    8b09     8b09       2e     1                 r0fc_edge_sample
+    8b37     8b37       12     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.bits)
+    8b37     8b37       12     1                 bits
+    8b49     8b49       52     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.r0fc_edge_consume)
+    8b49     8b49       52     1                 r0fc_edge_consume
+    8b9b     8b9b      2c6     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.cfratio)
+    8b9b     8b9b      2c6     1                 cfratio
+    8e61     8e61       34     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.r0fc_event)
+    8e61     8e61       34     1                 r0fc_event
+    8e95     8e95       ba     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.inside)
+    8e95     8e95       ba     1                 inside
+    8f4f     8f4f       2a     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.cfput32)
+    8f4f     8f4f       2a     1                 cfput32
+    8f79     8f79       2c     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.cfget32)
+    8f79     8f79       2c     1                 cfget32
+    8fa5     8fa5       6a     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.cfadd)
+    8fa5     8fa5       6a     1                 cfadd
+    900f     900f       b0     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.cfline)
+    900f     900f       b0     1                 cfline
+    90bf     90bf       3c     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.screen_byte)
+    90bf     90bf       3c     1                 screen_byte
+    90fb     90fb      2e3     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.cfcopy)
+    90fb     90fb      2e3     1                 cfcopy
+    93de     93de       be     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.cfhex)
+    93de     93de       be     1                 cfhex
+    949c     949c       54     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.cfscreen)
+    949c     949c       54     1                 cfscreen
+    94f0     94f0      1aa     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.cfphysical_crc)
+    94f0     94f0      1aa     1                 cfphysical_crc
+    969a     969a       33     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.cfclock_begin)
+    969a     969a       33     1                 cfclock_begin
+    96cd     96cd       8e     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.cfnow)
+    96cd     96cd       8e     1                 cfnow
+    975b     975b       a1     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.cfframe_wait)
+    975b     975b       a1     1                 cfframe_wait
+    97fc     97fc       a1     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.cfinput)
+    97fc     97fc       a1     1                 cfinput
+    989d     989d      144     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.cfaudio_service)
+    989d     989d      144     1                 cfaudio_service
+    99e1     99e1      637     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.cfcalibrate)
+    99e1     99e1      637     1                 cfcalibrate
+    a018     a018       21     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.cfaudio_stop)
+    a018     a018       21     1                 cfaudio_stop
+    a039     a039       e5     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.cfaudio_begin)
+    a039     a039       e5     1                 cfaudio_begin
+    a11e     a11e      1c9     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.validate_capsule)
+    a11e     a11e      1c9     1                 validate_capsule
+    a2e7     a2e7      1c2     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.transfer.110)
+    a2e7     a2e7      1c2     1                 transfer.110
+    a4a9     a4a9       48     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.r0fg1_trace_write)
+    a4a9     a4a9       48     1                 r0fg1_trace_write
+    a4f1     a4f1       48     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.r0fg1_trace_read)
+    a4f1     a4f1       48     1                 r0fg1_trace_read
+    a539     a539      29b     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.r0fg1_calibration)
+    a539     a539      29b     1                 r0fg1_calibration
+    a7d4     a7d4       17     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.put32)
+    a7d4     a7d4       17     1                 put32
+    a7eb     a7eb       e0     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.r0fg1_phase_end)
+    a7eb     a7eb       e0     1                 r0fg1_phase_end
+    a8cb     a8cb       1e     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.r0fg1_stage_begin)
+    a8cb     a8cb       1e     1                 r0fg1_stage_begin
+    a8e9     a8e9       7f     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.r0fg1_stage_end)
+    a8e9     a8e9       7f     1                 r0fg1_stage_end
+    a968     a968      1e0     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.r0fg1_service)
+    a968     a968      1e0     1                 r0fg1_service
+    ab48     ab48      133     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.r0fg1_occlusion_clip)
+    ab48     ab48      133     1                 r0fg1_occlusion_clip
+    ac7b     ac7b       27     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.r0fg1_lod_select)
+    ac7b     ac7b       27     1                 r0fg1_lod_select
+    aca2     aca2      1d5     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.r0fg1_owner_sample)
+    aca2     aca2      1d5     1                 r0fg1_owner_sample
+    ae77     ae77        5     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.exit)
+    ae77     ae77        5     1                 exit
+    ae7c     ae7c       24     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.memcpy)
+    ae7c     ae7c       24     1                 memcpy
+    aea0     aea0       1c     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.__memset)
+    aea0     aea0       1c     1                 __memset
+    aebc     aebc        b     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.__ashlqi3)
+    aebc     aebc        b     1                 __ashlqi3
+    aec7     aec7       13     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.__ashlhi3)
+    aec7     aec7       13     1                 __ashlhi3
+    aeda     aeda       17     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.__lshrsi3)
+    aeda     aeda       17     1                 __lshrsi3
+    aef1     aef1       bd     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.__udivhi3)
+    aef1     aef1       bd     1                 __udivhi3
+    afae     afae       45     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.__umodqi3)
+    afae     afae       45     1                 __umodqi3
+    aff3     aff3       a6     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.__umodhi3)
+    aff3     aff3       a6     1                 __umodhi3
+    b099     b099       d8     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.__udivmodhi4)
+    b099     b099       d8     1                 __udivmodhi4
+    b171     b171      1b2     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.__udivmodsi4)
+    b171     b171      1b2     1                 __udivmodsi4
+    b323     b323       1b     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.__mulqi3)
+    b323     b323       1b     1                 __mulqi3
+    b33e     b33e       32     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.__mulhi3)
+    b33e     b33e       32     1                 __mulhi3
+    b370     b370       79     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.text.__mulsi3)
+    b370     b370       79     1                 __mulsi3
+    b3e9     b3e9        0     1         __init_array_start = .
+    b3e9     b3e9        0     1         __init_array_end = .
+    b3e9     b3e9        0     1         __fini_array_start = .
+    b3e9     b3e9        0     1         __fini_array_end = .
+    b3e9     b3e9      1f1     1 .rodata
+    b3e9     b3e9        1     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/common/lib/libcrt.a(const.S.obj):(.rodata)
+    b3e9     b3e9        0     1                 __set_v
+    b3ea     b3ea        8     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.rodata.dos_copy)
+    b3f2     b3f2       1c     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.rodata.run_ticks)
+    b40e     b40e       f7     1         <internal>:(.rodata.str1.1)
+    b505     b505       1e     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.rodata.display_registers)
+    b505     b505       1e     1                 display_registers
+    b523     b523       12     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.rodata.group1_orders)
+    b523     b523       12     1                 group1_orders
+    b535     b535       40     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.rodata.r0fs_crc32_update.crc_table)
+    b535     b535       40     1                 r0fs_crc32_update.crc_table
+    b575     b575       38     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.rodata.r0fc_range.ranges)
+    b575     b575       38     1                 r0fc_range.ranges
+    b5ad     b5ad        8     1         <internal>:(.rodata.cst8)
+    b5b5     b5b5        3     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.rodata.r0fg1_workload_stage.cadence)
+    b5b5     b5b5        3     1                 r0fg1_workload_stage.cadence
+    b5b8     b5b8        6     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.rodata.r0fg1_scene_encode.priorities)
+    b5b8     b5b8        6     1                 r0fg1_scene_encode.priorities
+    b5be     b5be       10     1         <internal>:(.rodata.cst16)
+    b5ce     b5ce        8     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.rodata.r0fg1_geometry_fixture.buffers)
+    b5ce     b5ce        8     1                 r0fg1_geometry_fixture.buffers
+    b5d6     b5d6        4     1         <internal>:(.rodata.cst4)
+    b5da     b5da       17     1 .data
+    b5da     b5da        0     1         __data_start = .
+    b5da     b5da        8     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.data.irq_observation)
+    b5da     b5da        8     1                 irq_observation
+    b5e2     b5e2        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.data.iec_before_record)
+    b5e2     b5e2        1     1                 iec_before_record
+    b5e3     b5e3        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.data.iec_after_record)
+    b5e3     b5e3        1     1                 iec_after_record
+    b5e4     b5e4        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.data.reclaim_features_record)
+    b5e4     b5e4        1     1                 reclaim_features_record
+    b5e5     b5e5        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.data.pools_crc)
+    b5e5     b5e5        4     1                 pools_crc
+    b5e9     b5e9        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.data.worlds_crc)
+    b5e9     b5e9        4     1                 worlds_crc
+    b5ed     b5ed        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.data.records_crc)
+    b5ed     b5ed        4     1                 records_crc
+    b5f1     b5f1        0     1         __data_end = .
+    b5f1     b5f1        0     1 __data_load_start = LOADADDR(.data)
+    b5f1     b5f1        0     1 __data_size = SIZEOF(.data)
+    b5f1     b5f1      d4e     1 .bss
+    b5f1     b5f1        0     1         __bss_start = .
+    b5f1     b5f1       1b     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/group1_irq_45gs02-9f6446.o:(.bss.r0fg1_irq)
+    b5f1     b5f1        0     1                 r0fg1_irq_epoch
+    b5f2     b5f2        0     1                 r0fg1_irq_error
+    b5f3     b5f3        0     1                 r0fg1_irq_summary
+    b603     b603        0     1                 r0fg1_irq_entered
+    b604     b604        0     1                 r0fg1_irq_start
+    b608     b608        0     1                 r0fg1_irq_now
+    b60c     b60c       7d     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.display_presentation)
+    b60c     b60c       7d     1                 display_presentation
+    b689     b689        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.display_requests)
+    b689     b689        2     1                 display_requests
+    b68b     b68b        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.display_cancels)
+    b68b     b68b        2     1                 display_cancels
+    b68d     b68d        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.display_views)
+    b68d     b68d        1     1                 display_views
+    b68e     b68e        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.display_tiers)
+    b68e     b68e        1     1                 display_tiers
+    b68f     b68f        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.lifecycle_state)
+    b68f     b68f        1     1                 lifecycle_state
+    b690     b690        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.context_crc_expected)
+    b690     b690        4     1                 context_crc_expected
+    b694     b694      3d1     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.model)
+    b694     b694      3d1     1                 model
+    ba65     ba65        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.group2_admission_result)
+    ba65     ba65        1     1                 group2_admission_result
+    ba66     ba66       cb     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.snapshots)
+    ba66     ba66       cb     1                 snapshots
+    bb31     bb31        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.next_deadline)
+    bb31     bb31        4     1                 next_deadline
+    bb35     bb35        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.display_services)
+    bb35     bb35        2     1                 display_services
+    bb37     bb37        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.capture_epoch)
+    bb37     bb37        1     1                 capture_epoch
+    bb38     bb38        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.display_started)
+    bb38     bb38        1     1                 display_started
+    bb39     bb39        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.tick_before_record)
+    bb39     bb39        2     1                 tick_before_record
+    bb3b     bb3b        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.checksum_before_record)
+    bb3b     bb3b        4     1                 checksum_before_record
+    bb3f     bb3f        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.low_before_record)
+    bb3f     bb3f        4     1                 low_before_record
+    bb43     bb43        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.low_after_record)
+    bb43     bb43        4     1                 low_after_record
+    bb47     bb47        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.dos_before_record)
+    bb47     bb47        4     1                 dos_before_record
+    bb4b     bb4b        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.dos_after_record)
+    bb4b     bb4b        4     1                 dos_after_record
+    bb4f     bb4f        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.context_invalidated_record)
+    bb4f     bb4f        1     1                 context_invalidated_record
+    bb50     bb50       ff     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.transfer)
+    bb50     bb50       ff     1                 transfer
+    bc4f     bc4f        f     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.display_saved)
+    bc4f     bc4f        f     1                 display_saved
+    bc5e     bc5e        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.display_front)
+    bc5e     bc5e        1     1                 display_front
+    bc5f     bc5f        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.display_ready)
+    bc5f     bc5f        1     1                 display_ready
+    bc60     bc60        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.display_slot)
+    bc60     bc60        1     1                 display_slot
+    bc61     bc61        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.display_clear_at)
+    bc61     bc61        2     1                 display_clear_at
+    bc63     bc63        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.display_suspended)
+    bc63     bc63        1     1                 display_suspended
+    bc64     bc64        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.application_dma_outstanding)
+    bc64     bc64        1     1                 application_dma_outstanding
+    bc65     bc65        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.display_frame)
+    bc65     bc65        1     1                 display_frame
+    bc66     bc66        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.group1_order)
+    bc66     bc66        1     1                 group1_order
+    bc67     bc67        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.display_request_tick)
+    bc67     bc67        2     1                 display_request_tick
+    bc69     bc69        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.display_registration_crc)
+    bc69     bc69        4     1                 display_registration_crc
+    bc6d     bc6d        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.display_snapshot_crc)
+    bc6d     bc6d        4     1                 display_snapshot_crc
+    bc71     bc71       45     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.display_pixels)
+    bc71     bc71       45     1                 display_pixels
+    bcb6     bcb6        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.display_suspended_d011)
+    bcb6     bcb6        1     1                 display_suspended_d011
+    bcb7     bcb7        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.r0fsi_iec_before)
+    bcb7     bcb7        1     1                 r0fsi_iec_before
+    bcb8     bcb8        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.r0fsi_iec_after)
+    bcb8     bcb8        1     1                 r0fsi_iec_after
+    bcb9     bcb9        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.r0fsi_irq_fault)
+    bcb9     bcb9        1     1                 r0fsi_irq_fault
+    bcba     bcba        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.final_screen)
+    bcba     bcba        1     1                 final_screen
+    bcbb     bcbb        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.backup_valid)
+    bcbb     bcbb        1     1                 backup_valid
+    bcbc     bcbc       ff     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.block)
+    bcbc     bcbc       ff     1                 block
+    bdbb     bdbb       ff     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.cfworkspace)
+    bdbb     bdbb       ff     1                 cfworkspace
+    beba     beba        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.features_open)
+    beba     beba        1     1                 features_open
+    bebb     bebb        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.r0fc_trap_flags)
+    bebb     bebb        1     1                 r0fc_trap_flags
+    bebc     bebc        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.r0fc_trap_base)
+    bebc     bebc        1     1                 r0fc_trap_base
+    bebd     bebd       11     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.list)
+    bebd     bebd       11     1                 list
+    bece     bece        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.pcm_on)
+    bece     bece        1     1                 pcm_on
+    becf     becf        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.pcm_last)
+    becf     becf        1     1                 pcm_last
+    bed0     bed0        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.service_last)
+    bed0     bed0        4     1                 service_last
+    bed4     bed4        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.audio_frame)
+    bed4     bed4        1     1                 audio_frame
+    bed5     bed5        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.keys_valid)
+    bed5     bed5        1     1                 keys_valid
+    bed6     bed6        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.input_frame)
+    bed6     bed6        1     1                 input_frame
+    bed7     bed7       18     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.keys)
+    bed7     bed7       18     1                 keys
+    beef     beef        3     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.scripted)
+    beef     beef        3     1                 scripted
+    bef2     bef2        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.r0fc_features)
+    bef2     bef2        1     1                 r0fc_features
+    bef3     bef3        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.r0fc_hardware_seed)
+    bef3     bef3        1     1                 r0fc_hardware_seed
+    bef4     bef4        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.r0fc_software_seed)
+    bef4     bef4        2     1                 r0fc_software_seed
+    bef6     bef6        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.export.0)
+    bef6     bef6        4     1                 export.0
+    befa     befa        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.export.2)
+    befa     befa        1     1                 export.2
+    befb     befb       ff     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.buffer)
+    befb     befb       ff     1                 buffer
+    bffa     bffa        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.cfreclaimed)
+    bffa     bffa        1     1                 cfreclaimed
+    bffb     bffb        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.capsule_crc)
+    bffb     bffb        4     1                 capsule_crc
+    bfff     bfff      100     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.header)
+    bfff     bfff      100     1                 header
+    c0ff     c0ff        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.cfperiod)
+    c0ff     c0ff        4     1                 cfperiod
+    c103     c103        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.cfcia_frame)
+    c103     c103        4     1                 cfcia_frame
+    c107     c107        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.cfcycles_frame)
+    c107     c107        4     1                 cfcycles_frame
+    c10b     c10b        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.epoch)
+    c10b     c10b        1     1                 epoch
+    c10c     c10c        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.phase)
+    c10c     c10c        1     1                 phase
+    c10d     c10d        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.clock.0)
+    c10d     c10d        4     1                 clock.0
+    c111     c111        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.clock.1)
+    c111     c111        4     1                 clock.1
+    c115     c115        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.clock.2)
+    c115     c115        2     1                 clock.2
+    c117     c117       1e     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.phase_edges)
+    c117     c117       1e     1                 phase_edges
+    c135     c135       5c     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.record)
+    c135     c135       5c     1                 record
+    c191     c191        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.previous_capture)
+    c191     c191        4     1                 previous_capture
+    c195     c195        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.next_stage)
+    c195     c195        1     1                 next_stage
+    c196     c196        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.active)
+    c196     c196        1     1                 active
+    c197     c197        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.stage_start)
+    c197     c197        4     1                 stage_start
+    c19b     c19b        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.world_generation)
+    c19b     c19b        2     1                 world_generation
+    c19d     c19d        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.world_tick)
+    c19d     c19d        2     1                 world_tick
+    c19f     c19f        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.records)
+    c19f     c19f        2     1                 records
+    c1a1     c1a1        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.capture_max)
+    c1a1     c1a1        4     1                 capture_max
+    c1a5     c1a5        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.r0fc_hardware_low)
+    c1a5     c1a5        1     1                 r0fc_hardware_low
+    c1a6     c1a6        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.r0fc_software_low)
+    c1a6     c1a6        2     1                 r0fc_software_low
+    c1a8     c1a8       12     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.eligible)
+    c1a8     c1a8       12     1                 eligible
+    c1ba     c1ba        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.causality_errors)
+    c1ba     c1ba        2     1                 causality_errors
+    c1bc     c1bc       12     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.pending)
+    c1bc     c1bc       12     1                 pending
+    c1ce     c1ce       12     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.intent)
+    c1ce     c1ce       12     1                 intent
+    c1e0     c1e0       48     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.full)
+    c1e0     c1e0       48     1                 full
+    c228     c228       12     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.reduced)
+    c228     c228       12     1                 reduced
+    c23a     c23a       60     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.tracks)
+    c23a     c23a       60     1                 tracks
+    c29a     c29a        2     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.populated)
+    c29a     c29a        2     1                 populated
+    c29c     c29c        6     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.runs)
+    c29c     c29c        6     1                 runs
+    c2a2     c2a2       40     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.observations)
+    c2a2     c2a2       40     1                 observations
+    c2e2     c2e2        1     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.cffault)
+    c2e2     c2e2        1     1                 cffault
+    c2e3     c2e3       10     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.faces)
+    c2e3     c2e3       10     1                 faces
+    c2f3     c2f3       20     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.vertices)
+    c2f3     c2f3       20     1                 vertices
+    c313     c313       20     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.spans)
+    c313     c313       20     1                 spans
+    c333     c333        8     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.buckets)
+    c333     c333        8     1                 buckets
+    c33b     c33b        4     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.bss.live)
+    c33b     c33b        4     1                 live
+    c33f     c33f        0     1         __bss_end = .
+    c33f     c33f        0     1 __bss_size = SIZEOF(.bss)
+    c33f     c33f       27     1 .noinit
+    c33f     c33f       27     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.noinit..Lstatic_stack)
+    c366     c366        0     1         __heap_start = ALIGN(., 2)
+    c366     c366        0     1 __stack = 0xd000
+       0        0       cc     1 .comment
+       0        0       cc     1         <internal>:(.comment)
+       0        0        f     1 .llvm_sympart
+       0        0        f     1         /Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65/ADMISSION.prg.lto.o:(.llvm_sympart)
+       0        0     3050     4 .symtab
+       0        0     3050     4         <internal>:(.symtab)
+       0        0       82     1 .shstrtab
+       0        0       82     1         <internal>:(.shstrtab)
+       0        0     342d     1 .strtab
+       0        0     342d     1         <internal>:(.strtab)

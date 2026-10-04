@@ -1,0 +1,42 @@
+{
+  "result": "BLOCKED_NO_SPACE_RECOVERED",
+  "baselineEnd": "0xc16f",
+  "baselineOverBytes": 367,
+  "trials": [
+    {
+      "helper": "frame-wait",
+      "recordedResult": "FIT_FAIL",
+      "residentEndExclusive": "0xc16f",
+      "overBytes": 367,
+      "recoveredBytes": 0,
+      "staticStackBytes": 36,
+      "protectedUnchanged": true,
+      "onlyAttributeChanged": true,
+      "changedInputs": [
+        "src/diagnostics/r0f/combined_platform.c"
+      ],
+      "baselineUnchanged": true,
+      "prgSha256": "f00e05c5addc810d7d6a3dcae2603b013750a53a1caf0ea350d35cffb027cf20",
+      "output": "/Users/slice/Developer/f65-megawing/build/r0f/group2/outline/frame-wait-tu7riemk"
+    },
+    {
+      "helper": "ratio",
+      "recordedResult": "FAIL",
+      "residentEndExclusive": "0xc366",
+      "overBytes": 870,
+      "recoveredBytes": -503,
+      "staticStackBytes": 39,
+      "protectedUnchanged": true,
+      "onlyAttributeChanged": true,
+      "changedInputs": [
+        "src/diagnostics/r0f/combined_model.c"
+      ],
+      "baselineUnchanged": true,
+      "prgSha256": "a7b61687f93eb9a665beb2ea2a0c2b12237352d37ab37a372f0006a074ec6255",
+      "output": "/Users/slice/Developer/f65-megawing/build/r0f/group2/outline/ratio-hzx3qf65"
+    }
+  ],
+  "targetExecution": "NOT RUN",
+  "carrier": "NOT BUILT",
+  "hardware": "NOT RUN"
+}

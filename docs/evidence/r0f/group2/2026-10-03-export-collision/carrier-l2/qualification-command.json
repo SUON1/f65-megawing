@@ -1,0 +1,11 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "-"
+  ],
+  "cwd": "/Users/slice/Developer/f65-megawing",
+  "stdin": "from pathlib import Path\nimport sys\nsys.path.insert(0,str(Path.cwd()/'tools/diagnostics'))\nimport r0f_group2_control as control\nexperiment=Path('build/r0f/group2/control/trial-jnt4dplw').resolve()\nfor mode in ('1','0'):\n    for number in (1,2):\n        control.boot(experiment,mode,number)\ncontrol.finish_carrier(experiment)\n",
+  "exitCode": 0,
+  "scope": "Four clean exact-name Xemu disk boots, no physical SD access"
+}

@@ -1,0 +1,94 @@
+{
+  "result": "PASS_RETAINED_XEMU_SAVE_PATH_LOCATED",
+  "case": "G2-L-EXPORT-COLLISION",
+  "scope": "Read-only inspection of existing L2 artifacts; no replay or new execution",
+  "programSha256": "46491ef275863dd89edd2af420092e7baff733b5b5e54064ea52cfcfbbb09f92",
+  "linkedSymbolsSha256": "f65727d432210f6566654c754213f2145562a38af71f8161bf98ba68846f035a",
+  "ownerSource": "build/r0f/group2/control/trial-jnt4dplw/source-inputs/src/platform/r0f/group1_terminal_export_45gs02.s",
+  "ownerSourceSha256": "a9d2647d44fe953e84352f60c8b3b56b11e5b691546a3ee1789c041525942e40",
+  "fieldAddressesDerivedFromLinkedSymbols": {
+    "status": "0x2f98",
+    "error": "0x2f99",
+    "files": "0x2f9a",
+    "permit": "0x2f97",
+    "secondary": "0x2fb2",
+    "chunk": "0x2fa7",
+    "remaining": "0x2f9f",
+    "filename": "0x2fab"
+  },
+  "sourceReasoning": "Secondary initializes to 15 and becomes 1 only after successful OPEN/CLOSE of I0. SAVE is the only subsequent error branch. Retained secondary=1, first filename G1T00, zero successful files, full remaining bytes and staged first chunk distinguish the first SAVE failure from initialization failure in these Xemu dumps.",
+  "runs": [
+    {
+      "run": "ntsc-01",
+      "memorySha256": "c5b95c8c5fab716244a0824414a7cafc291a0d61e3d2fd783a32befc49a7f3a8",
+      "existingValidationSha256": "3ff8992030384563a79bba4c18d98af95078e7bb2c6a0bcf27df54d49be0a3fa",
+      "observed": {
+        "status": 5,
+        "error": 3,
+        "files": 0,
+        "permit": 0,
+        "secondary": 1,
+        "chunk": 16384,
+        "remaining": 327680,
+        "filename": "G1T00"
+      }
+    },
+    {
+      "run": "ntsc-02",
+      "memorySha256": "7b56f8d828dc8b4551235a9ca95671a08c38c6118a3633554e32532b3bc3304f",
+      "existingValidationSha256": "3ff8992030384563a79bba4c18d98af95078e7bb2c6a0bcf27df54d49be0a3fa",
+      "observed": {
+        "status": 5,
+        "error": 3,
+        "files": 0,
+        "permit": 0,
+        "secondary": 1,
+        "chunk": 16384,
+        "remaining": 327680,
+        "filename": "G1T00"
+      }
+    },
+    {
+      "run": "pal-01",
+      "memorySha256": "b9eef577294f24df41bfe15d2718819b137e56bf758706c087a064b5dde55eef",
+      "existingValidationSha256": "3ff8992030384563a79bba4c18d98af95078e7bb2c6a0bcf27df54d49be0a3fa",
+      "observed": {
+        "status": 5,
+        "error": 3,
+        "files": 0,
+        "permit": 0,
+        "secondary": 1,
+        "chunk": 16384,
+        "remaining": 327680,
+        "filename": "G1T00"
+      }
+    },
+    {
+      "run": "pal-02",
+      "memorySha256": "b0d25d395001abc669b3842fd4560ad4d00a46cfdfb3088f45f621731becef4e",
+      "existingValidationSha256": "3ff8992030384563a79bba4c18d98af95078e7bb2c6a0bcf27df54d49be0a3fa",
+      "observed": {
+        "status": 5,
+        "error": 3,
+        "files": 0,
+        "permit": 0,
+        "secondary": 1,
+        "chunk": 16384,
+        "remaining": 327680,
+        "filename": "G1T00"
+      }
+    }
+  ],
+  "physicalBoundary": "Terminal S5/E03/F00 and returned files alone do not expose secondary/chunk/remaining or identify which KERNAL call failed. No physical SAVE-branch or DOS-status-channel provenance is added.",
+  "retryBoundary": "No automatic retry follows the admitted owner control flow; the terminal halt is observable. The carrier contains no physical retry counter or call log.",
+  "evidenceClassification": {
+    "existingEvidenceLocated": "Four retained exact-name Xemu memory dumps distinguish first SAVE failure",
+    "missingPhysicalProof": "KERNAL call-stage/DOS cause and attempt count are not carried by the existing photo/SAVE",
+    "ownerDecision": "Fresh delivery identity and raw allocator route; strict physical call-stage capture only if required for later closure"
+  },
+  "newBuild": false,
+  "newXemuRun": false,
+  "sdWrite": false,
+  "physicalRun": false,
+  "group2Complete": false
+}

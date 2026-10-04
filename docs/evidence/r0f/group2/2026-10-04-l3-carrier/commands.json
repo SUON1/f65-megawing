@@ -1,0 +1,94 @@
+{
+  "commands": [
+    [
+      "/usr/bin/python3",
+      "-B",
+      "tools/diagnostics/r0f_group2_control.py",
+      "carrier-build",
+      "--experiment",
+      "build/r0f/group2/control/trial-jnt4dplw"
+    ],
+    [
+      "/usr/bin/python3",
+      "-B",
+      "tools/diagnostics/r0f_group2_control.py",
+      "boot",
+      "--experiment",
+      "build/r0f/group2/control/trial-jnt4dplw",
+      "--mode",
+      "1",
+      "--number",
+      "1"
+    ],
+    [
+      "/usr/bin/python3",
+      "-B",
+      "tools/diagnostics/r0f_group2_control.py",
+      "boot",
+      "--experiment",
+      "build/r0f/group2/control/trial-jnt4dplw",
+      "--mode",
+      "0",
+      "--number",
+      "1"
+    ],
+    [
+      "/usr/bin/python3",
+      "-B",
+      "tools/diagnostics/r0f_group2_control.py",
+      "boot",
+      "--experiment",
+      "build/r0f/group2/control/trial-jnt4dplw",
+      "--mode",
+      "1",
+      "--number",
+      "2"
+    ],
+    [
+      "/usr/bin/python3",
+      "-B",
+      "tools/diagnostics/r0f_group2_control.py",
+      "boot",
+      "--experiment",
+      "build/r0f/group2/control/trial-jnt4dplw",
+      "--mode",
+      "0",
+      "--number",
+      "2"
+    ],
+    [
+      "/usr/bin/python3",
+      "-B",
+      "tools/diagnostics/r0f_group2_control.py",
+      "carrier-finish",
+      "--experiment",
+      "build/r0f/group2/control/trial-jnt4dplw"
+    ],
+    [
+      "/usr/bin/python3",
+      "-B",
+      "tools/diagnostics/r0f_group2_collision_return.py",
+      "--image",
+      "build/r0f/group2/control/trial-jnt4dplw/carrier-l3/pal-01/R0FG2L3.D81",
+      "--release",
+      "build/r0f/group2/control/trial-jnt4dplw/carrier-l3/canonical/release.json",
+      "--out",
+      "build/r0f/group2/control/trial-jnt4dplw/carrier-l3/returned-file-check-01"
+    ]
+  ],
+  "bootScheduling": "One independent NTSC/PAL pair per repetition; each process uses separate fresh D81 and disposable SD copies, logs and captures",
+  "scope": "New L3 artifact qualification, no timing/calibration claims; no old carrier or passing target test rerun",
+  "newTargetCompile": false,
+  "sdWrite": false,
+  "physical": false,
+  "newTargetCompileFieldScope": "Combined fixture PRG only; unchanged bootstrap loader was freshly assembled during carrier construction.",
+  "exitCodes": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ]
+}

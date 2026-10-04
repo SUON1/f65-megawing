@@ -1,0 +1,16 @@
+{
+  "command": [
+    "/usr/bin/python3",
+    "-B",
+    "tools/diagnostics/r0f_group2_collision_return.py",
+    "--image",
+    "build/r0f/group2/control/trial-jnt4dplw/carrier-l3/physical-return-01/snapshot/R0FG2L3.D81",
+    "--release",
+    "build/r0f/group2/control/trial-jnt4dplw/carrier-l3/canonical/release.json",
+    "--out",
+    "build/r0f/group2/control/trial-jnt4dplw/carrier-l3/physical-return-01/checks"
+  ],
+  "exitCode": 0,
+  "targetExecution": false,
+  "sdWrite": false
+}

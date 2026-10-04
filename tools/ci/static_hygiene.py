@@ -13,6 +13,7 @@ import sys
 MANIFEST = "tools/ci/retained_evidence_sha256.json"
 EVIDENCE_ROOTS = (
     "docs/evidence/r0f/group1/",
+    "docs/evidence/r0f/group2/",
     "docs/evidence/r0f/successor/",
 )
 LEGACY_D81 = "docs/evidence/r0f/combined/F65BLK02.D81"

@@ -1,0 +1,94 @@
+--- a/src/diagnostics/r0f/combined_platform.c
++++ b/src/diagnostics/r0f/combined_platform.c
+@@ -1,3 +1,4 @@
++#include "group2_copy.h"
+ #include "r0f_group2_scratch.h"
+ #ifdef R0FG1_INTEGRATION
+ #include "group1_capture.h"
+@@ -57,11 +58,23 @@
+   while(digits){uint8_t c=(uint8_t)a[v&15u];screen_byte((uint16_t)(80u*row+col+--digits),c>='A'?(uint8_t)(c&31u):c);v>>=4u;}}
+ void cfscreen(void){uint16_t i;for(i=0u;i<2000u;++i)screen_byte(i,32u);
+   cfline(1u,"R0-F COMBINED EXPERIMENT CF001 / F65BLK02");cfline(3u,"DEVELOPMENT EVIDENCE - NOT R0-F ACCEPTANCE");}
+-uint8_t cfcopy(uint32_t physical,uint8_t *local,uint8_t n,uint8_t to_chip){uint32_t a,b;uint8_t i;
++// One PF request encoder. Ordinary C ABI; canonical B=2; no MAP/DMA.
++// Foreground only. PF owns synchronous physical access and register restoration.
++__attribute__((noinline))
++uint8_t r0fg2_copy(uint32_t source, uint32_t destination, uint8_t bytes)
++{
++    for (uint8_t index = 0u; index < 4u; index++)
++    {
++        r0f_pf_copy_request[index] = (uint8_t)(source >> (index * 8u));
++        r0f_pf_copy_request[4u + index] = (uint8_t)(destination >> (index * 8u));
++    }
++    r0f_pf_copy_request[8] = bytes;
++    return r0f_pf_flat_copy();
++}
++uint8_t cfcopy(uint32_t physical,uint8_t *local,uint8_t n,uint8_t to_chip){uint32_t a,b;
+   if(!r0fc_range(physical,n,to_chip,cfreclaimed)||(to_chip&&physical>=R0FC_BACKUP&&physical<R0FC_BACKUP+R0FC_ROM_BYTES&&backup_valid)) {cffault=21u;return 0u;}
+   a=to_chip?(uint32_t)(uintptr_t)local:physical;b=to_chip?physical:(uint32_t)(uintptr_t)local;
+-  for(i=0u;i<4u;++i){r0f_pf_copy_request[i]=(uint8_t)(a>>(i*8u));r0f_pf_copy_request[4u+i]=(uint8_t)(b>>(i*8u));}
+-  r0f_pf_copy_request[8]=n;if(!r0f_pf_flat_copy()){cffault=22u;return 0u;}return 1u;
++  if(!r0fg2_copy(a,b,n)){cffault=22u;return 0u;}return 1u;
+ }
+ uint32_t cfphysical_crc(uint32_t start,uint32_t bytes){uint32_t h=0xfffffffful;
+   while(bytes){uint8_t n=bytes>255u?255u:(uint8_t)bytes;
+--- a/src/diagnostics/r0f/group1_transport.c
++++ b/src/diagnostics/r0f/group1_transport.c
+@@ -1,3 +1,4 @@
++#include "group2_copy.h"
+ #include "r0f_group2_scratch.h"
+ #include <stdint.h>
+ 
+@@ -37,16 +38,8 @@
+     {
+         return 0u;
+     }
+-    for (uint8_t index = 0u; index < 4u; index++)
+-    {
+-        uint32_t source = write ? local : base + offset;
+-        uint32_t destination = write ? base + offset : local;
+-
+-        r0f_pf_copy_request[index] = (uint8_t)(source >> (index * 8u));
+-        r0f_pf_copy_request[4u + index] = (uint8_t)(destination >> (index * 8u));
+-    }
+-    r0f_pf_copy_request[8] = bytes;
+-    return r0f_pf_flat_copy();
++    return r0fg2_copy(write ? local : base + offset,
++                      write ? base + offset : local, bytes);
+ }
+ 
+ static uint8_t validate_capsule(uint8_t initial)
+--- a/src/diagnostics/r0f/group2_copy.h
++++ b/src/diagnostics/r0f/group2_copy.h
+@@ -0,0 +1,6 @@
++// Private synchronous foreground PF encoder; callers retain admission policy.
++#ifndef R0FG2_COPY_H
++#define R0FG2_COPY_H
++#include <stdint.h>
++uint8_t r0fg2_copy(uint32_t source, uint32_t destination, uint8_t bytes);
++#endif
+--- a/src/diagnostics/r0f/successor_integration.c
++++ b/src/diagnostics/r0f/successor_integration.c
+@@ -1,3 +1,4 @@
++#include "group2_copy.h"
+ #include "r0f_group2_scratch.h"
+ #include <stdint.h>
+ 
+@@ -226,16 +227,7 @@
+ static uint8_t fixed_physical_copy(uint32_t source, uint32_t destination,
+                                    uint8_t length)
+ {
+-    uint8_t index;
+-
+-    for (index = 0u; index < 4u; index++)
+-    {
+-        r0f_pf_copy_request[index] = (uint8_t)(source >> (index * 8u));
+-        r0f_pf_copy_request[4u + index] =
+-            (uint8_t)(destination >> (index * 8u));
+-    }
+-    r0f_pf_copy_request[8] = length;
+-    return r0f_pf_flat_copy();
++    return r0fg2_copy(source, destination, length);
+ }
+ 
+ static uint8_t dos_copy(uint8_t action)

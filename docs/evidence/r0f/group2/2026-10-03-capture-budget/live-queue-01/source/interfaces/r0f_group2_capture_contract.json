@@ -1,0 +1,29 @@
+{
+  "id": "R0FG2-CASES-1",
+  "traceVersion": 8,
+  "caseId": 1,
+  "family": 1,
+  "subcase": 1,
+  "blockBytes": 352,
+  "headerBytes": 28,
+  "recordBytes": 40,
+  "slots": 8,
+  "observations": 2,
+  "payloadBytes": 12,
+  "unusedPattern": 165,
+  "checkMask": 15,
+  "harnessFault": 114,
+  "payloadOffsets": {
+    "TICK": 0,
+    "STATUS": 2,
+    "CHECKS": 3,
+    "BEFORE": 4,
+    "AFTER": 8
+  },
+  "ticks": [
+    1,
+    1601
+  ],
+  "inputDigest": "d55dddb32f4c0f27fe53f907863292067e8b3995d82fe1e449edff9e7eedbf7a",
+  "semantics": "Full queue stage 13; reject entity 0,9,255 with only sticky flag change; restore injected flag; model CRC unchanged."
+}

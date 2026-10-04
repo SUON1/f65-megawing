@@ -1,0 +1,260 @@
+{
+  "state": "READ_ONLY_FORENSICS_NOT_RELEASE",
+  "device": {
+    "Bootable": false,
+    "BusProtocol": "Secure Digital",
+    "CanBeMadeBootable": false,
+    "CanBeMadeBootableRequiresDestroy": false,
+    "Content": "Windows_FAT_32",
+    "DeviceBlockSize": 512,
+    "DeviceIdentifier": "disk4s1",
+    "DeviceNode": "/dev/disk4s1",
+    "DeviceTreePath": "IODeviceTree:/arm-io@10F00000/apcie0@B0000000/pci-bridge1@1/pcie-sdreader@0",
+    "Ejectable": true,
+    "EjectableMediaAutomaticUnderSoftwareControl": true,
+    "EjectableOnly": true,
+    "FilesystemName": "MS-DOS FAT32",
+    "FilesystemType": "msdos",
+    "FilesystemUserVisibleName": "MS-DOS (FAT32)",
+    "FreeSpace": 29051678720,
+    "GlobalPermissionsEnabled": false,
+    "IOKitSize": 29118954496,
+    "IORegistryEntryName": "Untitled 1",
+    "Internal": true,
+    "MediaName": "",
+    "MediaType": "Generic",
+    "MountPoint": "/Volumes/MEGA65FDISK",
+    "OSInternalMedia": false,
+    "ParentWholeDisk": "disk4",
+    "PartitionMapPartition": true,
+    "PartitionMapPartitionOffset": 1048576,
+    "RAIDMaster": false,
+    "RAIDSlice": false,
+    "Removable": true,
+    "RemovableMedia": true,
+    "RemovableMediaOrExternalDevice": true,
+    "SMARTDeviceSpecificKeysMayVaryNotGuaranteed": {},
+    "SMARTStatus": "Not Supported",
+    "Size": 29118954496,
+    "SupportsGlobalPermissionsDisable": false,
+    "SystemImage": false,
+    "TotalSize": 29061902336,
+    "VolumeAllocationBlockSize": 4096,
+    "VolumeName": "MEGA65FDISK",
+    "VolumeSize": 29061902336,
+    "VolumeUUID": "83FFC12E-67E1-307F-91AD-E584C2E01E87",
+    "WholeDisk": false,
+    "Writable": true,
+    "WritableMedia": true,
+    "WritableVolume": true
+  },
+  "inspectorSha256": "d65ded34c37d86e3ebe43fc73047172e7f35bacc2b8c103185b52a3c12adf817",
+  "files": [
+    {
+      "name": "R0FG2L2.D81",
+      "shortName": "R0FG2L2.D81",
+      "attributes": 32,
+      "firstCluster": 112,
+      "bytes": 819200,
+      "sha256": "3a2a90c21e10fb7c753ef48d3e6307f45c98aeab26de55694f4709a1d795a134",
+      "extentCount": 39,
+      "extents": [
+        {
+          "logicalOffset": 0,
+          "bytes": 36864,
+          "deviceOffset": 57503744
+        },
+        {
+          "logicalOffset": 36864,
+          "bytes": 4096,
+          "deviceOffset": 57573376
+        },
+        {
+          "logicalOffset": 40960,
+          "bytes": 4096,
+          "deviceOffset": 57585664
+        },
+        {
+          "logicalOffset": 45056,
+          "bytes": 12288,
+          "deviceOffset": 57602048
+        },
+        {
+          "logicalOffset": 57344,
+          "bytes": 4096,
+          "deviceOffset": 57618432
+        },
+        {
+          "logicalOffset": 61440,
+          "bytes": 4096,
+          "deviceOffset": 57630720
+        },
+        {
+          "logicalOffset": 65536,
+          "bytes": 8192,
+          "deviceOffset": 57638912
+        },
+        {
+          "logicalOffset": 73728,
+          "bytes": 12288,
+          "deviceOffset": 57655296
+        },
+        {
+          "logicalOffset": 86016,
+          "bytes": 4096,
+          "deviceOffset": 57671680
+        },
+        {
+          "logicalOffset": 90112,
+          "bytes": 8192,
+          "deviceOffset": 57683968
+        },
+        {
+          "logicalOffset": 98304,
+          "bytes": 57344,
+          "deviceOffset": 57729024
+        },
+        {
+          "logicalOffset": 155648,
+          "bytes": 4096,
+          "deviceOffset": 57790464
+        },
+        {
+          "logicalOffset": 159744,
+          "bytes": 4096,
+          "deviceOffset": 58122240
+        },
+        {
+          "logicalOffset": 163840,
+          "bytes": 16384,
+          "deviceOffset": 58163200
+        },
+        {
+          "logicalOffset": 180224,
+          "bytes": 24576,
+          "deviceOffset": 58355712
+        },
+        {
+          "logicalOffset": 204800,
+          "bytes": 12288,
+          "deviceOffset": 58396672
+        },
+        {
+          "logicalOffset": 217088,
+          "bytes": 4096,
+          "deviceOffset": 58425344
+        },
+        {
+          "logicalOffset": 221184,
+          "bytes": 4096,
+          "deviceOffset": 58462208
+        },
+        {
+          "logicalOffset": 225280,
+          "bytes": 8192,
+          "deviceOffset": 58478592
+        },
+        {
+          "logicalOffset": 233472,
+          "bytes": 12288,
+          "deviceOffset": 60657664
+        },
+        {
+          "logicalOffset": 245760,
+          "bytes": 4096,
+          "deviceOffset": 60706816
+        },
+        {
+          "logicalOffset": 249856,
+          "bytes": 20480,
+          "deviceOffset": 62214144
+        },
+        {
+          "logicalOffset": 270336,
+          "bytes": 36864,
+          "deviceOffset": 62238720
+        },
+        {
+          "logicalOffset": 307200,
+          "bytes": 131072,
+          "deviceOffset": 63094784
+        },
+        {
+          "logicalOffset": 438272,
+          "bytes": 49152,
+          "deviceOffset": 63229952
+        },
+        {
+          "logicalOffset": 487424,
+          "bytes": 16384,
+          "deviceOffset": 63283200
+        },
+        {
+          "logicalOffset": 503808,
+          "bytes": 28672,
+          "deviceOffset": 63303680
+        },
+        {
+          "logicalOffset": 532480,
+          "bytes": 4096,
+          "deviceOffset": 63565824
+        },
+        {
+          "logicalOffset": 536576,
+          "bytes": 12288,
+          "deviceOffset": 63574016
+        },
+        {
+          "logicalOffset": 548864,
+          "bytes": 4096,
+          "deviceOffset": 63680512
+        },
+        {
+          "logicalOffset": 552960,
+          "bytes": 24576,
+          "deviceOffset": 63688704
+        },
+        {
+          "logicalOffset": 577536,
+          "bytes": 8192,
+          "deviceOffset": 63717376
+        },
+        {
+          "logicalOffset": 585728,
+          "bytes": 8192,
+          "deviceOffset": 63729664
+        },
+        {
+          "logicalOffset": 593920,
+          "bytes": 8192,
+          "deviceOffset": 63741952
+        },
+        {
+          "logicalOffset": 602112,
+          "bytes": 61440,
+          "deviceOffset": 63758336
+        },
+        {
+          "logicalOffset": 663552,
+          "bytes": 4096,
+          "deviceOffset": 63889408
+        },
+        {
+          "logicalOffset": 667648,
+          "bytes": 4096,
+          "deviceOffset": 63897600
+        },
+        {
+          "logicalOffset": 671744,
+          "bytes": 16384,
+          "deviceOffset": 63909888
+        },
+        {
+          "logicalOffset": 688128,
+          "bytes": 131072,
+          "deviceOffset": 67203072
+        }
+      ]
+    }
+  ]
+}

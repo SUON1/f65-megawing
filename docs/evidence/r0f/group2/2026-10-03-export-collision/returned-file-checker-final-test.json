@@ -1,0 +1,18 @@
+{
+  "result": "PASS",
+  "cases": 10,
+  "rejections": [
+    "changed-autoboot.c65",
+    "changed-r0fsucc",
+    "changed-token",
+    "changed-g1t00",
+    "missing-rsstate",
+    "missing-g1t00",
+    "save-address",
+    "save-payload",
+    "extra-trace"
+  ],
+  "positiveSource": "Actual new L2 extracted bytes",
+  "toolSha256": "9495e1a64402d5213aeb711516690636411f2339128dd270905b68e615e780ae",
+  "scope": "Checker only; actual target proof is in boot execution/validation."
+}

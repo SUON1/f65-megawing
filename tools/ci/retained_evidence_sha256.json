@@ -1,5 +1,5 @@
 {
-  "authority": "Owner-approved exact-path SHA-256 exceptions for retained R0-F evidence; no blanket directory exception. P06 returned D81 and original loader listing added for owner-authorized 2026-10-03 recovery publication.",
+  "authority": "Owner-approved exact-path SHA-256 exceptions for retained R0-F evidence; no blanket directory exception. P06 returned D81 and original loader listing added for owner-authorized 2026-10-03 recovery publication. Group 2 original whitespace pins added for owner-authorized 2026-10-04 bounded-closeout publication; missing broader-suite proof remains carried forward.",
   "d81": {
     "docs/evidence/r0f/combined/F65BLK02.D81": "b13853a7ddaf3bf26dfcaceb7e4466ab2d58702b96bfcbe9ae62c7db56ed3d82",
     "docs/evidence/r0f/group1/2026-09-29-display-pixel-audit/label-probe-01/G1LAB01.D81": "f8943f689c3a18621b8e66d4f7d62a7cf80df52f1271c6fce6991ece77772167",
@@ -316,6 +316,34 @@
     "docs/evidence/r0f/group1/2026-10-01-capacity-summary/experiment/source-inputs/spec/core/F65_Main_Concept_v1.6_FINAL_HUMAN_REVIEWED.md": "e7d8ed40ce630d82e707e2a9c7f29995fac6f4281849c2c7ef5261d420c2c425",
     "docs/evidence/r0f/group1/2026-10-01-physical-closeout/xemu/canonical/AUTOBOOT.C65.listing": "16cad9323785d01efb72fe1e91988a24fc6e2907d410389573b5208559de7b08",
     "docs/evidence/r0f/group1/2026-10-01-physical-closeout/xemu/canonical/construction.log": "015f965ffea47b88d5d1be3c07fe6f1d89ed568796d3d118b8c27bc99f7c6b89",
-    "docs/evidence/r0f/group1/2026-10-02-resume-recovery/carrier/canonical/AUTOBOOT.C65.listing": "b3ae6dfd75f8697104fa190e5973a60df85b33daba59938b1a50ce0ca5cd1287"
+    "docs/evidence/r0f/group1/2026-10-02-resume-recovery/carrier/canonical/AUTOBOOT.C65.listing": "b3ae6dfd75f8697104fa190e5973a60df85b33daba59938b1a50ce0ca5cd1287",
+    "docs/evidence/r0f/group2/2026-10-03-capture-budget/integrated-empty/CANDIDATE.map": "3a629534e0bef0f4ff64293452071023c207fc7c90eac9ee797f05b15845fac9",
+    "docs/evidence/r0f/group2/2026-10-03-capture-budget/integrated-empty/source.patch": "cf30c55d14dca79e0aef562582bc07d59dd669490fe3d6adebc5a7a5eadef2b5",
+    "docs/evidence/r0f/group2/2026-10-03-capture-budget/live-queue-01/CANDIDATE.map": "844c41fce101da1438ac074410a240c46c63204f1c76f63f862939bf1ea5258b",
+    "docs/evidence/r0f/group2/2026-10-03-capture-budget/live-queue-01/source.patch": "6293a871370ca5e0d4829f30f0bbec1d927f2d70e3cd82d87920d834623be129",
+    "docs/evidence/r0f/group2/2026-10-03-capture-budget/live-queue-02/CANDIDATE.map": "4d4e4f1779ab4b9e419d3bd893d0984b57fa549e35277ecb7ec2cb7b18009dd2",
+    "docs/evidence/r0f/group2/2026-10-03-capture-budget/live-queue-02/source.patch": "615ebb675a43cdfb7759e2e9b13fc691f139b4d3b27eaf7b08789be311736301",
+    "docs/evidence/r0f/group2/2026-10-03-capture-budget/live-queue-03/CANDIDATE.map": "3649a6689655f1e264d37b09f84521bf94f2fdcb42f4a9b827f60c5b3d666205",
+    "docs/evidence/r0f/group2/2026-10-03-capture-budget/live-queue-03/source.patch": "fedd4bb538783020aee486e2eaef9491c9c815711d8f698e0d9c6b3f5db88666",
+    "docs/evidence/r0f/group2/2026-10-03-encoder-capture/capture/EMPTY.map": "091c8dbff67b40ad95dc046878b2d0e428e5ac2296048fac4fbeee951806d58f",
+    "docs/evidence/r0f/group2/2026-10-03-encoder-capture/capture/source.patch": "30a8d73caeede7b56cccc74f11425cab1c9b4994a408e8867278687882868255",
+    "docs/evidence/r0f/group2/2026-10-03-encoder-capture/r2/R2.map": "19843ea19f65da02e0eecdbb71a4e923fc779c284277b8076d45dd6adee40961",
+    "docs/evidence/r0f/group2/2026-10-03-encoder-capture/r2/source.patch": "3f81289a7bb7a2647e9592a3e833dc933d874c1bf19b4feb26e5be0b9164a238",
+    "docs/evidence/r0f/group2/2026-10-03-export-collision/build/CANDIDATE.map": "ecbac4c4963c4543df0bd24e76536c89840826c604b7862d32ec9aa1387160e4",
+    "docs/evidence/r0f/group2/2026-10-03-export-collision/build/source-inputs/spec/core/F65_Main_Concept_v1.6_FINAL_HUMAN_REVIEWED.md": "e7d8ed40ce630d82e707e2a9c7f29995fac6f4281849c2c7ef5261d420c2c425",
+    "docs/evidence/r0f/group2/2026-10-03-export-collision/build/source.patch": "274667efa012426259e69d7b873b5817f7213e4be3b59e4ff43c2e1a7ac3262f",
+    "docs/evidence/r0f/group2/2026-10-03-export-collision/carrier-l2/canonical/construction.log": "1f60b1f7a26985ee636f49f0997a0fad1e96d8b592b4d90357b8566dd53ef720",
+    "docs/evidence/r0f/group2/2026-10-03-export-collision/carrier/canonical/construction.log": "5783eab92828824f7695ff12b8489ea4e15c09916b6c7a58b720c25e76be14be",
+    "docs/evidence/r0f/group2/2026-10-03-export-collision/export-collision/construction.log": "5b4d55716386da275f176e7a740821ba53974abe6e7a0f40f0254e039d729973",
+    "docs/evidence/r0f/group2/2026-10-03-export-collision/ntsc-focused-02/construction.log": "0f57e7fe1c687e30da7e2cc18888968f5e35038103b95ed10d160b0c2e0a5cfc",
+    "docs/evidence/r0f/group2/2026-10-03-export-collision/ntsc-focused/construction.log": "55e2d358d3bbff8ff37f1b3b07f0776755edf519be3e0414016bad783204e106",
+    "docs/evidence/r0f/group2/2026-10-03-export-collision/pal-focused/construction.log": "24d71f1453f17afc0ed3f8e585711572ad31bcbcaf65860ec1e03e1b0e499692",
+    "docs/evidence/r0f/group2/2026-10-03-outline-trials/frame-wait/ADMISSION.map": "7b828cc1561250fc8685d750c0379132aa34b412f488401cf03cfd369b724c2a",
+    "docs/evidence/r0f/group2/2026-10-03-outline-trials/ratio/ADMISSION.map": "91fa3dbe667a976bd2f0d752749443a76e8582673f876d20ebb75077fc87d13f",
+    "docs/evidence/r0f/group2/2026-10-03-scratch-sharing/R1.map": "39d5944f37a46cbb9c2fbf67f8eb1437b336cfe50ef60fd2bd8dc04bfff8fab1",
+    "docs/evidence/r0f/group2/2026-10-03-scratch-sharing/source.patch": "73646ce9a760c3252bd517795b1d623a862aba521556dd066ae4cfb4000c27ba",
+    "docs/evidence/r0f/group2/2026-10-03-target-admission/ADMISSION.map": "ab9e740ed948d77db269944106f4632f54ac1ba0d066d1a8964cd50047c68a20",
+    "docs/evidence/r0f/group2/2026-10-04-l3-carrier/AUTOBOOT.C65.listing": "106ce8ae6ca3119903dac02c32c294d2786ff3b5bd820fa7c07c8034e08922bb",
+    "docs/evidence/r0f/group2/2026-10-04-l3-carrier/construction.log": "f48d6c9bd6e172068b8e90f81c30fb5065f9efd4086116dc9a491e0d030364cb"
   }
 }

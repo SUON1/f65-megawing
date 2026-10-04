@@ -1,0 +1,18 @@
+{
+  "result": "PASS",
+  "scope": "Host retention and gate bookkeeping; no build, Xemu, SD write or hardware execution",
+  "rawAuditSha256": "dfb94bc13dc64d23bd68d40b623ca4e66b563a6bcd7503f72e79a2695bc9ebdc",
+  "allocationFailureSha256": "868ce9bf0d72cdee368c36b236417ecbb3f15ba939c0ca25599e8f561e181dda",
+  "originalCanonicalReleaseSha256": "40eff1f5e9b69089dc0671c90edf76b0b7586c0c33b8cca41f0246c507696572",
+  "checks": [
+    "owner audit copied byte-for-byte",
+    "derived record matches local evidence",
+    "original host/Xemu release unchanged",
+    "all prior packet files except edited README unchanged",
+    "SD failure and physical NOT RUN flags correct",
+    "no replacement constructed",
+    "changed Markdown local links and whitespace pass"
+  ],
+  "priorPacketFilesChecked": 311,
+  "currentAllocatorQualification": "PASS, retained eight-input identity reused"
+}

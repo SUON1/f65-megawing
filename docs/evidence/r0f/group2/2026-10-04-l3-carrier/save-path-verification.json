@@ -1,0 +1,39 @@
+{
+  "result": "PASS_L3_SAVE_PATH_XEMU_ONLY",
+  "programSha256": "46491ef275863dd89edd2af420092e7baff733b5b5e54064ea52cfcfbbb09f92",
+  "sourceBuild": "/Users/slice/Developer/f65-megawing/build/r0f/group2/control/trial-jnt4dplw",
+  "runs": [
+    {
+      "run": "ntsc-01",
+      "result": "PASS",
+      "secondary": 1,
+      "firstChunkBytes": 16384,
+      "memorySha256": "ade8f9482cce3fade191520fcd3d9018add7e114cc28a7719b5c44f991560cc9"
+    },
+    {
+      "run": "ntsc-02",
+      "result": "PASS",
+      "secondary": 1,
+      "firstChunkBytes": 16384,
+      "memorySha256": "46c27066ca5a3ff74947fa0ee6137dd7066433e7e18a7c26e3c62692ba7d06c7"
+    },
+    {
+      "run": "pal-01",
+      "result": "PASS",
+      "secondary": 1,
+      "firstChunkBytes": 16384,
+      "memorySha256": "0537e45707ad3f4af7fc96f5be0de0235d465076db61c4ad5aa1bef170f21f1e"
+    },
+    {
+      "run": "pal-02",
+      "result": "PASS",
+      "secondary": 1,
+      "firstChunkBytes": 16384,
+      "memorySha256": "184f47e2e8cbff99e233aa4c1225e359e3c10bf8e3758d01a8931f58b750b162"
+    }
+  ],
+  "physicalCallStage": "NOT PROVEN",
+  "physical": "NOT RUN",
+  "sd": "NOT RUN",
+  "scope": "First SAVE failure after initialization; unchanged owner source and linked field addresses"
+}

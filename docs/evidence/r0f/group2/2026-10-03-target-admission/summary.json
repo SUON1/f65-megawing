@@ -1,0 +1,38 @@
+{
+  "result": "BLOCKED_RESIDENT_FIT",
+  "sectionChanges": {
+    ".r0fs_protected": {
+      "before": 4495,
+      "after": 4495
+    },
+    ".text": {
+      "before": 32470,
+      "after": 32847
+    },
+    ".rodata": {
+      "before": 497,
+      "after": 497
+    },
+    ".data": {
+      "before": 23,
+      "after": 23
+    },
+    ".bss": {
+      "before": 3405,
+      "after": 3406
+    },
+    ".noinit": {
+      "before": 36,
+      "after": 36
+    }
+  },
+  "residentEndExclusive": "0xc16f",
+  "overBytes": 367,
+  "scope": "minimal G2-Q admission, not complete suite",
+  "sourceRoot": "/Users/slice/Developer/f65-megawing/build/r0f/group2/target-admission/queue-ceu0y7ys/source-inputs",
+  "prgSha256": "f00e05c5addc810d7d6a3dcae2603b013750a53a1caf0ea350d35cffb027cf20",
+  "preservedBaseline": "acc735f280f9d4e86b3b2040e5b2bed987908331f7899a87f5382c6cd23cd4d8",
+  "hardware": "NOT RUN",
+  "xemu": "NOT RUN",
+  "initialPreparationIssue": "Packet source omits indexed local-only spec input; resolved using exact complete frozen sourceRoot and verifying every baseline input before copying."
+}
