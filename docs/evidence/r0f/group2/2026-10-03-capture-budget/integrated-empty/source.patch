@@ -1,0 +1,94 @@
+--- baseline/interfaces/generated/r0f_group2_capture.h
++++ candidate/interfaces/generated/r0f_group2_capture.h
+@@ -0,0 +1,10 @@
++// Generated empty skeleton; no successful observation implied.
++#ifndef R0FG2_CAPTURE_H
++#define R0FG2_CAPTURE_H
++#include <stdint.h>
++#define R0FG2_HEADER_BYTES 28u
++#define R0FG2_CRC_AT 348u
++#define R0FG2_BLOCK_BYTES 352u
++#define R0FG2_UNUSED 165u
++static const uint8_t r0fg2_empty_identity[] = {71,50,67,49,1,40,8,0,213,93,221,179,47,76,15,39,254,83,249,7,134,50,146,6,0,0,0,0,192,199,211,49};
++#endif
+--- baseline/interfaces/r0f_group2_capture_skeleton.json
++++ candidate/interfaces/r0f_group2_capture_skeleton.json
+@@ -0,0 +1,12 @@
++{
++  "id": "R0FG2-EMPTY-CAPTURE-2",
++  "blockBytes": 352,
++  "headerBytes": 28,
++  "slots": 8,
++  "recordBytes": 40,
++  "crcBytes": 4,
++  "unusedPattern": 165,
++  "used": 0,
++  "inputDigest": "d55dddb32f4c0f27fe53f907863292067e8b3995d82fe1e449edff9e7eedbf7a",
++  "status": "COMPILE_ONLY_NOT_AN_ADMITTED_TRACE_VERSION"
++}
+--- baseline/src/diagnostics/r0f/group1_capture.c
++++ candidate/src/diagnostics/r0f/group1_capture.c
+@@ -1,3 +1,4 @@
++#include "r0f_group2_capture.h"
+ #include <stdint.h>
+ 
+ #include "combined_platform.h"
+@@ -314,6 +315,25 @@
+ {
+     r0fg1_clock_advance(&clock);
+     return clock.release_counts;
++}
++
++// Case encoding shares the existing tail traversal and byte readback check.
++// CRC is generated for an empty immutable block only; no live case is claimed.
++static uint8_t case_tail_byte(uint16_t position, uint8_t absolute)
++{
++    if (position < R0FG2_HEADER_BYTES)
++    {
++        return r0fg2_empty_identity[position];
++    }
++    if (position < R0FG2_CRC_AT)
++    {
++        return R0FG2_UNUSED;
++    }
++    if (position < R0FG2_BLOCK_BYTES)
++    {
++        return r0fg2_empty_identity[R0FG2_HEADER_BYTES + position - R0FG2_CRC_AT];
++    }
++    return absolute ^ R0FG1_CAPACITY_PATTERN_XOR;
+ }
+ 
+ uint8_t r0fg1_capture_finish(void)
+@@ -415,6 +435,7 @@
+     // Capacity coverage is terminal diagnostic data, never an invented event.
+     // All real acquisition CRC comparisons above remain intact. Check each
+     // written tail chunk against its independent readback before freezing.
++    uint16_t case_at = 0u;
+     uint16_t tail_left = (uint16_t)(R0FG1_TRACE_BYTES - 4u - offset);
+     while (tail_left)
+     {
+@@ -422,7 +443,7 @@
+         uint8_t value = (uint8_t)offset;
+         for (uint8_t index = 0u; index < bytes; index++)
+         {
+-            record[index] = value++ ^ R0FG1_CAPACITY_PATTERN_XOR;
++            record[index] = case_tail_byte((uint16_t)(case_at + index), value++);
+         }
+         if (!r0fg1_trace_write(offset, record, bytes)
+             || !r0fg1_trace_read(offset, record, bytes))
+@@ -432,13 +453,14 @@
+         value = (uint8_t)offset;
+         for (uint8_t index = 0u; index < bytes; index++)
+         {
+-            if (record[index] != (uint8_t)(value++ ^ R0FG1_CAPACITY_PATTERN_XOR))
++            if (record[index] != case_tail_byte((uint16_t)(case_at + index), value++))
+             {
+                 return 0u;
+             }
+         }
+         crc = r0fs_crc32_update(crc, record, bytes);
+         offset += bytes;
++        case_at = (uint16_t)(case_at + bytes);
+         tail_left = (uint16_t)(tail_left - bytes);
+     }
+     put32(record, ~crc);

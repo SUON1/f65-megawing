@@ -1,0 +1,29 @@
+[
+  {
+    "command": [
+      "/usr/bin/clang",
+      "-std=c11",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-fsanitize=address,undefined",
+      "-fno-sanitize-recover=all",
+      "-Iinterfaces/generated",
+      "-Isrc/diagnostics/r0f/",
+      "-I/Users/slice/Developer/f65-megawing/build/r0f/group2/scratch/r1-j52fobh4/host-review-gp_pkrwi",
+      "/Users/slice/Developer/f65-megawing/build/r0f/group2/scratch/r1-j52fobh4/host-review-gp_pkrwi/host_test.c",
+      "src/diagnostics/r0f/combined_model.c",
+      "src/diagnostics/r0f/successor_lifecycle.c",
+      "src/diagnostics/r0f/group1_export.c",
+      "-o",
+      "/Users/slice/Developer/f65-megawing/build/r0f/group2/scratch/r1-j52fobh4/host-review-gp_pkrwi/host"
+    ],
+    "exitCode": 0
+  },
+  {
+    "command": [
+      "/Users/slice/Developer/f65-megawing/build/r0f/group2/scratch/r1-j52fobh4/host-review-gp_pkrwi/host"
+    ],
+    "exitCode": 0
+  }
+]

@@ -1,0 +1,36 @@
+{
+  "state": "PHYSICAL_TERMINAL_OBSERVED_IDENTITY_AND_RETURN_CHECKS_PENDING",
+  "source": "Owner-supplied physical monitor photograph in the ongoing L3 test handoff",
+  "originalAttachmentName": "Photo 1.jpg",
+  "photo": "terminal-photo.jpg",
+  "photoBytes": 73722,
+  "photoSha256": "7af019452086614f01b921f89561314355fea51f698a4831c46bcb51f2e6f3b1",
+  "transcription": [
+    "G1 EXPORT S:5 E:03 F:00",
+    "4=OK 5=FAIL / E,F HEX",
+    "REDUCE FOR TIMING",
+    "NOT ACCEPTANCE",
+    "RESET"
+  ],
+  "visibleBorder": "RED",
+  "screenMatchesExpectedCollisionDisposition": true,
+  "carrierFilenameVisible": false,
+  "buildIdentityVisible": false,
+  "physicalVideoMode": "UNKNOWN",
+  "coreIdentity": "UNKNOWN",
+  "hyppoIdentity": "UNKNOWN",
+  "romIdentity": "UNKNOWN",
+  "freezerIdentity": "UNKNOWN",
+  "safeEjectConfirmation": "PENDING",
+  "chooserDirectoryAndOrdinaryEntryConfirmation": "PENDING",
+  "oneRunNoRestartConfirmation": "PENDING",
+  "actualReturnedCardChecks": "NOT_RUN",
+  "testEligible": false,
+  "group2Complete": false,
+  "proofLimits": [
+    "Photo does not identify exact carrier or entry path",
+    "Photo does not establish successful SAVE or unchanged input files",
+    "Photo does not uniquely identify failed KERNAL call, DOS status or attempt count",
+    "No physical full lifecycle or timing claim"
+  ]
+}

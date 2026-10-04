@@ -1,0 +1,11 @@
+Undefined symbols for architecture arm64:
+  "_cfinput_tick", referenced from:
+      _r0fc_tick in combined_model-bb8135.o
+  "_r0fg1_stage_begin", referenced from:
+      _r0fc_tick in combined_model-bb8135.o
+  "_r0fg1_stage_end", referenced from:
+      _r0fc_tick in combined_model-bb8135.o
+  "_r0fg1_workload_stage", referenced from:
+      _r0fc_tick in combined_model-bb8135.o
+ld: symbol(s) not found for architecture arm64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)

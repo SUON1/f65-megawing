@@ -1,0 +1,20 @@
+{
+  "controllerSha256": "f09204bd27b3a6cfa43699626ce253a9748f51d56ede78fd077ae4c199f6f7c0",
+  "reason": "Fresh G2-L export-collision carrier, exact disk boots and candidate-only release; no target change/recompile.",
+  "supportInputs": {
+    "tools/diagnostics/r0f_group1_owner_recovery.py": "08f2099d8638ab054e4d0e130ceffd38dd381eaf6cdd05e4e79adb0a8c6ec88f",
+    "tools/diagnostics/r0f_group1_export_probe.py": "6cc15c2db123229f2227e9266ff6258d0824b6ccc0d248e325b11990c11e0ad7",
+    "tools/diagnostics/r0f_successor_emulator.py": "a6f8c0545ea3fdb368038f03e8d63b56156e8cb32d99a817747156d7514d976c",
+    "tools/diagnostics/r0f_successor_integration.py": "5e9c8d4ae5c635e8403752cc130fe1c7586899ac0459b1441aebcebad6dfd374",
+    "tools/diagnostics/r0f_platform_build.py": "451c0c7140422b9a9fa63a5649f3debf33f29771a3549fbc6ecd2a3ac52dfc30",
+    "tools/diagnostics/d81_foundation_compare.py": "c58c46d8cd857bbb695a3fb3f22f3f7b52feda2d1bcd53343464d5ad7e0d5012",
+    "tools/diagnostics/d81_delivery.py": "a3524ad7ad92f95e69e1c4aef5ea5ac3791c0a7e2aa46b6e61926c91a6cea50b",
+    "tools/diagnostics/r0f_group2_experiment.py": "781f76477af983548652b974fc4dc9e3fcc8e5227274a547b6af0196949ddb13",
+    "tools/diagnostics/r0f_group2_target_admission.py": "0a7782de7014145d8c9ef729376a62675d8ac94da3694956daeb8f66d06cfa6f",
+    "tools/diagnostics/r0f_group2_scratch.py": "8ddedfb9a57ebd09e7d81ff2c51af28b8f4a0276c9e1efc0c99443465bbce23d",
+    "toolchain/f65_toolchain.lock.json": "0de4864a0665f04cab26f67bdd533697d8006460142dcb7e8e5ce0ecb72d742b",
+    "tools/diagnostics/r0f_successor_carrier_loader.s": "704cfeae5852b48721fda817ccaf838e6248ef13ae0aa61d28184f5a716c7fa2",
+    "tools/diagnostics/r0f_successor_carrier_loader.ld": "f540ea08662cd882f7ba5c20bc91dc2e45c63860fd803e18f3095d28f4bf46e4"
+  },
+  "scope": "One bounded export-collision case; Group 2 incomplete; no SD writes"
+}

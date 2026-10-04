@@ -1,0 +1,46 @@
+{
+  "tier": "GROUP2_L_EXPORT_COLLISION",
+  "startedAtUtc": "2026-10-04T03:43:42.240253+00:00",
+  "finishedAtUtc": "2026-10-04T03:45:42.375596+00:00",
+  "videoMode": "PAL",
+  "videoArgument": "0",
+  "timedTerminationAfterSeconds": 120,
+  "processReturnCode": 0,
+  "command": [
+    "/Users/slice/Developer/f65-megawing/toolchain/xemu/xmega65",
+    "-skipconfigfile",
+    "-headless",
+    "-fastboot",
+    "-videostd",
+    "0",
+    "-fastclock",
+    "40.5",
+    "-rom",
+    "/Users/slice/Documents/Codex/f65-megawing/MEGA65.ROM",
+    "-sdimg",
+    "/Users/slice/Developer/f65-megawing/build/r0f/group2/control/trial-jnt4dplw/carrier-l2/pal-01/disposable-sd.img",
+    "-8",
+    "/Users/slice/Developer/f65-megawing/build/r0f/group2/control/trial-jnt4dplw/carrier-l2/pal-01/R0FG2L2.D81",
+    "-autoload",
+    "-dumpscreen",
+    "/Users/slice/Developer/f65-megawing/build/r0f/group2/control/trial-jnt4dplw/carrier-l2/pal-01/screen.txt",
+    "-dumpmem",
+    "/Users/slice/Developer/f65-megawing/build/r0f/group2/control/trial-jnt4dplw/carrier-l2/pal-01/memory.bin",
+    "-screenshot",
+    "/Users/slice/Developer/f65-megawing/build/r0f/group2/control/trial-jnt4dplw/carrier-l2/pal-01/screen.png"
+  ],
+  "sourceBranch": "codex/r0f-group2-preparation",
+  "sourceCommit": "abd3a0803b96090654db5dbdda43ad42d7b29a5a",
+  "mountedD81Filename": "R0FG2L2.D81",
+  "xemu": {
+    "path": "toolchain/xemu/xmega65",
+    "sha256": "dd37baf7846b9696adcb662ffe5da040031b07214c66aef9a7f48cc30040b738",
+    "version": "20260129235930",
+    "sourceCommit": "40dfef0d1d5f56be2469492715c12bdb32c75b67"
+  },
+  "rom": {
+    "path": "/Users/slice/Documents/Codex/f65-megawing/MEGA65.ROM",
+    "sha256": "af3c447f791a2fdc48cb21e1bd3fab015e32641228d9d30d21259b9e878c6fa0"
+  },
+  "disposableSdSha256": "e10b8ef4a05cfbe690186471489ec23eb57ecceb5933beb38df85e7448dafb39"
+}

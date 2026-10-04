@@ -1,0 +1,23 @@
+{
+  "result": "READ_ONLY_MOUNTED_IDENTITY_PASS_RAW_GATES_PENDING",
+  "checkedAtUtc": "2026-10-04T15:43:01.631154+00:00",
+  "sourceCommand": "/usr/sbin/diskutil info -plist /Volumes/MEGA65FDISK (read-only unsandboxed metadata query)",
+  "volume": {
+    "MountPoint": "/Volumes/MEGA65FDISK",
+    "VolumeUUID": "83FFC12E-67E1-307F-91AD-E584C2E01E87",
+    "DeviceNode": "/dev/disk4s1",
+    "FilesystemType": "msdos",
+    "FilesystemName": "MS-DOS FAT32",
+    "RemovableMedia": true,
+    "VolumeAllocationBlockSize": 4096
+  },
+  "firstSandboxedQuery": "Could not identify volume; exit 1 retained separately, not evidence of an unmounted card",
+  "mountedDestinationOrStagingNamesObserved": [],
+  "rawAliasAndFreeRun": "NOT CHECKED",
+  "filesystemHealth": "NOT CHECKED",
+  "safeEject": "NOT RUN",
+  "failedL2MountedBytesHash": "PASS_UNCHANGED",
+  "authorizesWrite": false,
+  "sdWrite": false,
+  "deviceNumberNotReusableAuthority": true
+}

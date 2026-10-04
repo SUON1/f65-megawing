@@ -1,0 +1,18 @@
+{
+  "command": [
+    "sudo",
+    "-n",
+    "/usr/bin/python3",
+    "-B",
+    "tools/diagnostics/d81_fat32_audit.py",
+    "/Volumes/MEGA65FDISK",
+    "R0FG2L2.D81",
+    "--json",
+    "build/r0f/group2/control/trial-jnt4dplw/carrier-l2/sd-finder-eirsk93l/raw-audit.json"
+  ],
+  "exitCode": 1,
+  "stderr": "sudo: a password is required",
+  "classification": "Administrator authentication required; raw audit not started",
+  "carrierFailure": false,
+  "sdModified": false
+}

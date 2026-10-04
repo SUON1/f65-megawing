@@ -1,29 +1,31 @@
 # Work in Progress
 
-This is the sole routine active-work record, not project history or design
-authority. Status is ACTIVE, BLOCKED, READY FOR REVIEW or NONE.
+This is the sole routine active-work record, not history or design authority.
+Status is ACTIVE, BLOCKED, READY FOR REVIEW or NONE.
 
 ## Current status
 
-- **Status:** `NONE`
-- **Completed checkpoint:** Bounded Group 1 physical resume/export proof is
-  integrated via [PR #12](https://github.com/SUON1/f65-megawing/pull/12), merge
-  `7e4a3c81dc9122433c4ce36ba616bdfe4cc1b98b`. GitHub static CI passed before
-  the owner-authorized merge. Full Group 1/R0-F acceptance remains separate.
-- **Handoff:** [Physical proof](docs/evidence/r0f/group1/2026-10-03-p09-physical/README.md),
-  [correction report](docs/reports/R0-F_GROUP1_AUDIO_READBACK.md), and original
-  [Build Intent](docs/plans/R0-F_GROUP1_BUILD_INTENT.md). Actual card data passes
-  3200 records, correct SAVE, twenty chunks, resumed services and integrity;
-  nominal timing has zero misses, below-20-Hz cohorts or uncertain boundaries.
-- **Qualified source:** [Frozen P09 packet](docs/evidence/r0f/group1/2026-10-03-audio-readback/README.md).
-  PRG SHA-256 `acc735f280f9d4e86b3b2040e5b2bed987908331f7899a87f5382c6cd23cd4d8`;
-  37509 bytes, resident end $BFF5, 11 bytes free. Root working source is older.
-- **Next task, not started:** Prepare the originally approved remaining R0-F
-  Groups 2-3 under their applicable Build Intent and existing admission/matrix
-  boundaries. Do not reconstruct the full campaign or replay passing tests.
-  Owner acceptance, measured-limit approval and Phase 1 remain separate.
-- **Preservation:** P09 is protected as a successful tested identity. P08/P07/
-  P06/P05 and earlier evidence remain unchanged. Never rerun, overwrite, rename
-  or repair tested carriers. Unrelated SD backup/mirror work and older physical
-  directories remain local and untouched. No SD/hardware action is authorized
-  by this navigation record.
+- **Status:** `NONE` — Group 2 work package closed under the owner's approved
+  bounded closeout on 2026-10-04. [Closeout and carry-forward](docs/reports/R0-F_GROUP2_CLOSEOUT_REVIEW.md);
+  [explicit approval](docs/evidence/r0f/group2/2026-10-04-closeout-review/owner-disposition-01/decision.json).
+- **Publication / baseline:** owner authorized commit and push on 2026-10-04
+  for `codex/r0f-group2-preparation`, based on freshly fetched `origin/main`
+  `abd3a0803b96090654db5dbdda43ad42d7b29a5a`. Focused branch publication is
+  authorized; main integration remains a separate review/merge decision.
+- **Retained results:** actual queue host rejection/state preservation; located
+  historical snapshot host proof; existing owner/readiness/resume evidence;
+  L3 expected physical screen and actual returned-card preservation/SAVE checks.
+  Each keeps its recorded tier and limitations. P09 and all tested carriers,
+  failed drafts, unrelated SD backup/mirror work and older evidence are preserved.
+- **Carry-forward:** six case rows' missing combined-load/tier proof, audio
+  continuation, live capture fit/schema/reducer and L3 operator/configuration
+  gaps belong to the forthcoming flight-supplement/development-plan review.
+  They are NOT PROVEN, not satisfied or assigned to Group 3. Successor admission
+  remains open as recorded in the closeout. No more campaign work in this package.
+- **Next task, not started:** ingest the new flight simulation supplement when
+  supplied, then review the development plan, remaining R0-F dispositions,
+  Phase 0 exit/Phase 1 entry and the first gameplay increment. No new supplement
+  has been supplied/ingested; Phase 1 has not begun.
+- **Separate decisions:** full R0-F acceptance, measured limits, Phase 0 exit/
+  Phase 1 entry and main integration remain owner-held. No
+  capacity/reserve/threshold/integrity change.

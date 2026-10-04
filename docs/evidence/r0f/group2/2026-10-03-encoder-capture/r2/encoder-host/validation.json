@@ -1,0 +1,23 @@
+[
+  {
+    "command": [
+      "/usr/bin/clang",
+      "-std=c11",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-fsanitize=address,undefined",
+      "-fno-sanitize-recover=all",
+      "/Users/slice/Developer/f65-megawing/build/r0f/group2/copy-encoder/r2-b4wd7lrc/encoder-host/test.c",
+      "-o",
+      "/Users/slice/Developer/f65-megawing/build/r0f/group2/copy-encoder/r2-b4wd7lrc/encoder-host/test"
+    ],
+    "exitCode": 0
+  },
+  {
+    "command": [
+      "/Users/slice/Developer/f65-megawing/build/r0f/group2/copy-encoder/r2-b4wd7lrc/encoder-host/test"
+    ],
+    "exitCode": 0
+  }
+]

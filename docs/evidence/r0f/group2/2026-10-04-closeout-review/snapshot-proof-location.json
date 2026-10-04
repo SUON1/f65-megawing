@@ -1,0 +1,59 @@
+{
+  "result": "RETAINED_HOST_PROOF_LOCATED_SOURCE_BODY_EQUIVALENCE_PASS",
+  "historicalSource": "docs/evidence/r0f/group1/2026-09-30-foreground-memory-experiment/experiment/source-inputs",
+  "p09Source": "docs/evidence/r0f/group1/2026-10-03-audio-readback/source",
+  "functions": [
+    {
+      "name": "r0fc_snap_reset",
+      "bodyIdentical": true,
+      "sha256": "58312c00b5504c1126b416f7b86ac4063a43b69c45b31aafcddf082ce1400038"
+    },
+    {
+      "name": "r0fc_publish",
+      "bodyIdentical": true,
+      "sha256": "d08071d6f03d5e7985e13a33ecbace9cb0fa58b93157bf48fa3c926d63824f1d"
+    },
+    {
+      "name": "r0fc_acquire",
+      "bodyIdentical": true,
+      "sha256": "e559f4c5fea453275628e7956a0242dcf62471003f9dc1789d80830283f7ed09"
+    },
+    {
+      "name": "r0fc_release",
+      "bodyIdentical": true,
+      "sha256": "1bb34d7d86f0fc01df04d6f2d9c86ab12d4f2e6e5e9a2e1fe194c077d12feb28"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "src/diagnostics/r0f/combined_model.h",
+      "identical": true,
+      "sha256": "0931d1e42914903d61d073be597910575a941171c6592b45d4a81649123113df"
+    },
+    {
+      "path": "interfaces/generated/r0f_combined.h",
+      "identical": true,
+      "sha256": "a728d596e43163e28d1de7d2e17ee366b6df4970be8924bff9f64ca2e4a0d4f2"
+    }
+  ],
+  "historicalCommand": {
+    "command": [
+      "/usr/bin/clang",
+      "-std=c11",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-fsanitize=address,undefined",
+      "-Iinterfaces/generated",
+      "-Isrc/diagnostics/r0f",
+      "src/diagnostics/r0f/combined_model.c",
+      "tools/diagnostics/r0f_combined_host_test.c",
+      "-o",
+      "/Users/slice/Developer/f65-megawing/build/r0f/group1/foreground-recovery/shared-bounds-01/bounds-host-test"
+    ],
+    "output": "10000 short/held/repeated edge pairs and simultaneous bitmask PASS (not semantic-command corpus)\nCF001 33-tick golden: d9eeab81\nExact ratio vectors PASS: 6092\nCF001 native model/snapshot/range/DMA boundary tests PASS\n",
+    "scope": "shared helper logic; Group 1 outlining checked in target disassembly"
+  },
+  "newExecution": false,
+  "claim": "Reuse named isolated host snapshot assertions only; no live starvation/timing/physical claim"
+}

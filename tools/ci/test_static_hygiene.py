@@ -108,6 +108,17 @@ class GitFixtureTests(unittest.TestCase):
         empty = self.run_git("hash-object", "-t", "tree", "/dev/null").decode().strip()
         hygiene.check(self.root, empty, self.head)
 
+    def test_group2_exact_pin_passes_but_changed_bytes_fail(self):
+        path = "docs/evidence/r0f/group2/fixture/original.log"
+        manifest = fixture_manifest()
+        manifest["whitespace"][path] = hashlib.sha256(TEXT).hexdigest()
+        self.write(path, TEXT)
+        self.write(hygiene.MANIFEST, json.dumps(manifest).encode())
+        hygiene.check(self.root, self.base, self.commit(), merge_base=True)
+        self.write(path, b"normalized\n")
+        with self.assertRaisesRegex(ValueError, "SHA-256 mismatch"):
+            hygiene.check(self.root, self.base, self.commit())
+
     def test_changed_pinned_text_or_media_fails(self):
         for path, data in ((TEXT_PATH, b"normalized\n"), (D81_PATH, MEDIA + b"changed")):
             with self.subTest(path=path):
@@ -126,10 +137,15 @@ class GitFixtureTests(unittest.TestCase):
             hygiene.check(self.root, self.base, self.commit())
 
     def test_unlisted_live_and_evidence_whitespace_fails(self):
-        for path in ("live.txt", "docs/evidence/r0f/group1/fixture/new.log"):
+        paths = (
+            "live.txt",
+            "docs/evidence/r0f/group1/fixture/new.log",
+            "docs/evidence/r0f/group2/fixture/new.log",
+        )
+        for path in paths:
             with self.subTest(path=path):
-                self.write("live.txt", b"clean\n")
-                self.write("docs/evidence/r0f/group1/fixture/new.log", b"clean\n")
+                for clean_path in paths:
+                    self.write(clean_path, b"clean\n")
                 self.write(path, b"new trailing whitespace \n")
                 with self.assertRaisesRegex(ValueError, "Changed-range whitespace"):
                     hygiene.check(self.root, self.base, self.commit())

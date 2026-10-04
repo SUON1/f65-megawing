@@ -1,0 +1,35 @@
+{
+  "result": "PASS",
+  "trace": "/Users/slice/Developer/f65-megawing/build/r0f/group2/control/trial-jnt4dplw/pal-focused/trace.bin",
+  "scope": "ACTUAL_EXPORTED_VERSION_7",
+  "capacity": {
+    "result": "PASS",
+    "allocationBytes": 327680,
+    "realEvidenceBytesIncludingCrc": 308212,
+    "diagnosticTailBytes": 19468,
+    "outsideAcquisitionTiming": true
+  },
+  "capacityRejections": [
+    "tail-first",
+    "tail-page",
+    "tail-chunk",
+    "tail-last",
+    "tail-zero",
+    "tail-shift",
+    "extra-byte",
+    "truncated-tail",
+    "short-declaration",
+    "version-six",
+    "fake-extra-world",
+    "dropped-world"
+  ],
+  "outerCrcRepairedForCapacityCases": true,
+  "terminalStaticRejections": [
+    "return-to-c",
+    "summary-return",
+    "hex-application-memory",
+    "hex-rom-call",
+    "unknown-screen-call"
+  ],
+  "physical": "NOT RUN"
+}

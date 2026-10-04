@@ -1,0 +1,18 @@
+{
+  "result": "PASS",
+  "positive": "Actual L1 Xemu extracted input/SAVE bytes",
+  "rejectedCases": [
+    "changed-autoboot.c65",
+    "changed-r0fsucc",
+    "changed-token",
+    "changed-g1t00",
+    "missing-rsstate",
+    "missing-g1t00",
+    "save-address",
+    "save-payload",
+    "extra-trace"
+  ],
+  "cases": 10,
+  "scope": "Focused returned-file checker validation; no physical evidence or owner behavior claim",
+  "toolSha256": "44d56240ea03be0b792f2620361e8ff2339dac7214cd189513878b29ec8a64e0"
+}

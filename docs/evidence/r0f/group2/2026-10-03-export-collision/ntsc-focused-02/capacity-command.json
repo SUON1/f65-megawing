@@ -1,0 +1,20 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "tools/diagnostics/r0f_group1_capacity_check.py",
+    "--trace",
+    "/Users/slice/Developer/f65-megawing/build/r0f/group2/control/trial-jnt4dplw/ntsc-focused-02/trace.bin",
+    "--out",
+    "/Users/slice/Developer/f65-megawing/build/r0f/group2/control/trial-jnt4dplw/ntsc-focused-02/capacity.json",
+    "--disassembly",
+    "/Users/slice/Developer/f65-megawing/build/r0f/group2/control/trial-jnt4dplw/disassembly.txt",
+    "--symbols",
+    "/Users/slice/Developer/f65-megawing/build/r0f/group2/control/trial-jnt4dplw/symbols.txt",
+    "--support-tools",
+    "/Users/slice/Developer/f65-megawing/tools/diagnostics"
+  ],
+  "exitCode": 0,
+  "stdout": "Capacity/terminal checks PASS: 12 repaired-CRC and 5 static rejects; synthetic=False\n",
+  "stderr": ""
+}

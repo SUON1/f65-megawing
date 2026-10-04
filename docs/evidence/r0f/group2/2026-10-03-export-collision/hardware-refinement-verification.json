@@ -1,0 +1,26 @@
+{
+  "result": "PASS_REFINEMENT_CHECKS",
+  "checkedAtUtc": "2026-10-04T07:04:10.254209+00:00",
+  "scope": "Plan/host evidence refinement only; no implementation or execution",
+  "checks": {
+    "currentFrozenSourceInputHashes": 129,
+    "savePathSourceMatchesBuiltFreeze": "PASS",
+    "retainedSavePathInspections": 4,
+    "previousPacketFilesUnchangedExceptEditedReadme": 314,
+    "originalReleaseAndOwnerAuditUnchanged": "PASS",
+    "allocatorQualificationInputsStillMatch": 8,
+    "changedMarkdownLinksAndWhitespace": "PASS",
+    "packetJson": "PASS",
+    "replacementNotCreated": "PASS"
+  },
+  "hardwarePlan": "docs/plans/R0-F_GROUP2_HARDWARE_TEST.md",
+  "hardwarePlanSha256": "2a86a7a09fd35d96760603799f835e2404d3784b69a984aae24e3d492837676a",
+  "retainedSavePathSha256": "cccf99a172f17946538abd401e91c73841c604c57b9d8783c8ea9bfcde2e47b3",
+  "newBuild": false,
+  "newXemuRun": false,
+  "sdWrite": false,
+  "physicalRun": false,
+  "commit": false,
+  "push": false,
+  "group2Complete": false
+}

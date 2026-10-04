@@ -1,0 +1,99 @@
+--- a/interfaces/generated/r0f_group2_capture.h
++++ b/interfaces/generated/r0f_group2_capture.h
+@@ -0,0 +1,11 @@
++// Generated from r0f_group2_capture_skeleton.json.
++#ifndef R0FG2_CAPTURE_H
++#define R0FG2_CAPTURE_H
++#include <stdint.h>
++#define R0FG2_BLOCK_BYTES 352u
++#define R0FG2_CRC_OFFSET 348u
++#define R0FG2_WORK_BYTES 92u
++#define R0FG2_UNUSED 165u
++static const uint8_t r0fg2_case_header[] = {71,50,67,49,1,40,8,0,213,93,221,179,47,76,15,39,254,83,249,7,134,50,146,6,0,0,0,0};
++uint8_t r0fg2_capture_empty(uint32_t *, uint32_t *, uint8_t *);
++#endif
+--- a/interfaces/r0f_group2_capture_skeleton.json
++++ b/interfaces/r0f_group2_capture_skeleton.json
+@@ -0,0 +1,13 @@
++{
++  "id": "R0FG2-CAPTURE-SKELETON-1",
++  "blockBytes": 352,
++  "headerBytes": 28,
++  "slots": 8,
++  "recordBytes": 40,
++  "crcBytes": 4,
++  "used": 0,
++  "unusedPattern": 165,
++  "workBytes": 92,
++  "status": "COMPILE_ONLY_NOT_AN_ADMITTED_TRACE_VERSION",
++  "inputDigest": "d55dddb32f4c0f27fe53f907863292067e8b3995d82fe1e449edff9e7eedbf7a"
++}
+--- a/src/diagnostics/r0f/group1_capture.c
++++ b/src/diagnostics/r0f/group1_capture.c
+@@ -1,3 +1,4 @@
++#include "r0f_group2_capture.h"
+ #include <stdint.h>
+ 
+ #include "combined_platform.h"
+@@ -415,6 +416,10 @@
+     // Capacity coverage is terminal diagnostic data, never an invented event.
+     // All real acquisition CRC comparisons above remain intact. Check each
+     // written tail chunk against its independent readback before freezing.
++    if (!r0fg2_capture_empty(&offset, &crc, record))
++    {
++        return 0u;
++    }
+     uint16_t tail_left = (uint16_t)(R0FG1_TRACE_BYTES - 4u - offset);
+     while (tail_left)
+     {
+--- a/tools/diagnostics/r0f_group2_capture_skeleton.c
++++ b/tools/diagnostics/r0f_group2_capture_skeleton.c
+@@ -0,0 +1,48 @@
++// Compile-only empty case block. No injected observation or acceptance claim.
++#include <stdint.h>
++#include "group1_transport.h"
++#include "successor_lifecycle.h"
++#include "r0f_group2_capture.h"
++
++static uint8_t case_byte(uint16_t index)
++{
++    return index < sizeof(r0fg2_case_header)
++        ? r0fg2_case_header[index] : R0FG2_UNUSED;
++}
++
++// Runs after acquisition region comparisons, with the existing record workspace.
++// Every chunk is independently read back before entering the outer CRC.
++uint8_t r0fg2_capture_empty(uint32_t *offset, uint32_t *outer_crc, uint8_t *record)
++{
++    uint32_t crc = 0xfffffffful;
++    uint16_t at = 0u;
++    while (at < R0FG2_BLOCK_BYTES)
++    {
++        uint8_t bytes = R0FG2_BLOCK_BYTES - at > R0FG2_WORK_BYTES
++            ? R0FG2_WORK_BYTES : (uint8_t)(R0FG2_BLOCK_BYTES - at);
++        for (uint8_t index = 0u; index < bytes; index++)
++        {
++            uint16_t position = at + index;
++            if (position < R0FG2_CRC_OFFSET)
++            {
++                record[index] = case_byte(position);
++                crc = r0fs_crc32_update(crc, record + index, 1u);
++            }
++            else
++            {
++                record[index] = (uint8_t)(~crc >> ((position - R0FG2_CRC_OFFSET) * 8u));
++            }
++        }
++        uint32_t expected = r0fs_crc32(record, bytes);
++        if (!r0fg1_trace_write(*offset, record, bytes)
++            || !r0fg1_trace_read(*offset, record, bytes)
++            || r0fs_crc32(record, bytes) != expected)
++        {
++            return 0u;
++        }
++        *outer_crc = r0fs_crc32_update(*outer_crc, record, bytes);
++        *offset += bytes;
++        at += bytes;
++    }
++    return 1u;
++}
