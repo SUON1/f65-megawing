@@ -24,24 +24,20 @@ reorganization. Current durable project state is recorded in
 
 ## 2. Current specification authority
 
-The exact machine-readable record is [`spec/manifests/spec-corpus.json`](spec/manifests/spec-corpus.json). It separates the current design family from candidate, provenance, supporting-reference, and project-control records.
+Founder-directed local adoption on 4 October 2026: [decision](docs/decisions/PHYSICS_V4_ADOPTION_2026-10-04.md). The exact identities are in [the corpus manifest](spec/manifests/spec-corpus.json).
 
-| Current order | Document | Status | Repository location |
+| Order | Document | Status | Repository location |
 |---|---|---|---|
-| 1 | F65 Main Concept v1.6 | FINAL - HUMAN-REVIEWED; active master product and architecture authority | `spec/core/F65_Main_Concept_v1.6_FINAL_HUMAN_REVIEWED.md` |
-| 2 | F65 Gameplay and Simulation Supplement v1 | FINAL - HUMAN-REVIEWED; active player-facing authority | `spec/core/F65_Gameplay_and_Simulation_Supplement_v1_FINAL_HUMAN_REVIEWED.md` |
-| 3 | F65 65Aero Engine Runtime and Technical Supplement v1 | APPROVED CANDIDATE DESIGN - NOT FINAL; generated freeze-package closure remains required | `spec/core/F65_65Aero_Engine_Runtime_and_Technical_Supplement_v1_HUMAN_APPROVED_CANDIDATE_DESIGN.pdf` |
-| 4 | Flight Physics and Simulation Engineering White Paper v3.3 | FROZEN current detailed physics baseline; retained exactly as supplied, with modernization and re-rendering deferred | `spec/subsystems/MEGA65_Flight_Simulation_Physics_6DOF_Atmosphere_White_Paper.pdf` |
-| 5 | Graphics Engineering White Paper v2.1 | Current detailed graphics baseline; retained exactly as supplied | `spec/subsystems/F-65_Megawing_Graphics_White_Paper_v2.1.pdf` |
-| 6 | Audio, Sound Effects and Music Engineering White Paper v1.0 | FINAL - HUMAN-REVIEWED detailed audio baseline | `spec/subsystems/F-65_Megawing_Audio_Sound_Effects_and_Music_Engineering_White_Paper_v1.0_FINAL.pdf` |
-| 7 | Radar, Sensors and Track Engineering White Paper v1.0 | Current publication artifact for the human-reviewed SensorAndTrackEngine Phase-3 v1.0 baseline | `spec/subsystems/F-65_Megawing_SensorAndTrackEngine_Engineering_Model_Phase-3_v1.0.pdf` |
-| 8 | AI Behavior and Decision Architecture White Paper v1.0 | Human-reviewed detailed AI engineering baseline | `spec/subsystems/F-65_Megawing_AI_Behavior_and_Decision_Architecture_White_Paper_v1.0.pdf` |
+| 1 | main-concept-v1.7 | HUMAN-APPROVED - CURRENT BASELINE | `spec/core/F65_Main_Concept_v1.7_HUMAN_APPROVED.md` |
+| 2 | gameplay-v1.1 | HUMAN-APPROVED - CURRENT BASELINE | `spec/core/F65_Gameplay_and_Simulation_Supplement_v1.1_HUMAN_APPROVED.md` |
+| 3 | runtime-v1.1-candidate | APPROVED CANDIDATE DESIGN - NOT FINAL | `spec/core/F65_Runtime_v1.1_APPROVED_CANDIDATE_AMENDMENT.md` |
+| 4 | physics-v4.0 | APPROVED ENGINEERING BASELINE | `spec/subsystems/F65_Flight_Physics_and_Simulation_Engineering_v4.0.md` |
+| 5 | graphics-v2.1 | Architecture-review candidate under F65-GAD-001 | `spec/subsystems/F-65_Megawing_Graphics_White_Paper_v2.1.pdf` |
+| 6 | audio-v1.0 | FINAL - HUMAN-REVIEWED v1.0 | `spec/subsystems/F-65_Megawing_Audio_Sound_Effects_and_Music_Engineering_White_Paper_v1.0_FINAL.pdf` |
+| 7 | radar-sensors-track-v1.0 | Human-reviewed engineering baseline / approved rewrite input | `spec/subsystems/F-65_Megawing_SensorAndTrackEngine_Engineering_Model_Phase-3_v1.0.pdf` |
+| 8 | ai-behavior-decision-v1.1 | HUMAN-APPROVED - CURRENT BASELINE | `spec/subsystems/F65_AI_Behavior_v1.1_APPROVED_AMENDMENT.md` |
 
-Main Concept v1.6 controls product and architecture. Gameplay v1 controls player-visible behavior within Main Concept. Runtime v1 controls implementation architecture only within those controlling documents and remains a candidate, not FINAL. The white papers provide detailed subsystem engineering depth and do not independently override the core set.
-
-Read-First / Technical Alignment, Architecture 1.5.1 and earlier, Gameplay Draft 0.2, and Engine Runtime Drafts 0.2 and 0.1 remain preserved provenance at their existing paths. They are not current authority. Existing R0 approvals, decisions, evidence, handoffs, and historical change-log entries retain their original historical meaning.
-
-The current GitHub repository visibility is public. The historical bootstrap entry below records the earlier private-repository state and is retained as history; repository-visibility control remains a separate deliberate housekeeping concern.
+Main v1.7 > Gameplay v1.1 > Runtime v1.1 candidate > detailed subsystem engineering. Runtime and AI current revisions incorporate their unchanged original PDFs plus the identified amendments. Physics v4.0 is current; v3.3 and superseded standalone revisions remain provenance. Historical records below retain their original authority and evidence meanings. Adoption does not close implementation, measured limits or phase gates.
 
 ## 3. Current engineering state
 

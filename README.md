@@ -4,6 +4,10 @@ F-65 Megawing is a cockpit-primary combat-flight simulator for the MEGA65.
 
 LLVM-MOS C is the primary MEGA65 target language. Selective handwritten 45GS02 assembly is retained for platform-critical or measured low-level work. Java and Python provide host engineering, generators, oracles, and validation tooling; they are not the production MEGA65 game runtime.
 
+## Current specification baseline
+
+[Physics v4.0](spec/subsystems/F65_Flight_Physics_and_Simulation_Engineering_v4.0.md) is the current detailed physics baseline, under Main v1.7, Gameplay v1.1 and Runtime v1.1 candidate. The [corpus manifest](spec/manifests/spec-corpus.json) records the complete hierarchy and hashes. [Adoption record](docs/decisions/PHYSICS_V4_ADOPTION_2026-10-04.md). Physics v3.3 remains historical provenance.
+
 ## Current development state
 
 `main` contains the integrated R0-A through current R0-F engineering lineage. Retained R0-A through R0-E proof history, substantial R0-F development, and bounded R0-F physical evidence are present.
