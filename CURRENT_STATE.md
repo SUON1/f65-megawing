@@ -57,10 +57,25 @@ not the earlier root working target. P09 is preserved as a successfully tested
 identity; P08/P07/P06/P05 and earlier failures remain unchanged. Do not repair,
 rename, overwrite or rerun any tested carrier.
 
-Full Group 1/R0-F acceptance remains separate. The original remaining campaign
-scope, including Groups 2/3 and existing admission/matrix boundaries, complete
-evidence review and named owner acceptance remain outstanding. Measured limits
-are not approved. Formal Phase 1 integrated 65Aero implementation has not started.
+The Group 2 work package is integrated through
+[PR #14](https://github.com/SUON1/f65-megawing/pull/14), merge
+`23a38eb0984dbef487dc5641c9130de7ddf01f0f`, under the owner's approved
+[bounded closeout](docs/reports/R0-F_GROUP2_CLOSEOUT_REVIEW.md). Retained results
+include actual event-owner queue host proof, located historical snapshot proof,
+private resident-size experiments and L3 physical export-collision/returned-card
+preservation and SAVE checks. Each retains its stated tier and limitations.
+
+The broader six-case suite is not marked PASS. Missing combined-load/tier proof,
+audio continuation, live capture fit/schema/reducer and L3 operator/configuration
+gaps are carried into the forthcoming flight-supplement/development-plan review.
+The historical Group 2 allocation was not recovered; its grouping was approved
+prospectively. Group 3 is not defined or assigned by this closeout. Successor
+admission remains open under its existing requirements.
+
+Full Group 1/R0-F acceptance, complete evidence review and named owner acceptance
+remain separate. Measured limits and Phase 0 exit/Phase 1 entry are not approved.
+The new flight simulation supplement has not been supplied or ingested. Formal
+Phase 1 integrated 65Aero implementation has not started.
 
 ## What currently exists in code
 
