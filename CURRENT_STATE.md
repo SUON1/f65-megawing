@@ -104,7 +104,12 @@ flight behavior and full-harness acceptance remain outside this increment.
 ## Durable technical sequence
 
 M1 visible-foundation implementation and its three P2 corrections are complete.
-Any M2 work requires its own approved Build Intent. Carry remaining obligations to the exact
+M2 PR1 implements the approved bounded runway/camera geometry, independent
+oracle and registration contracts, including the near/far clipping correction.
+Host/oracle and target compile/link checks pass; generated development identity
+is `65AERO-M2-PR1-2`. See the [correction handoff](docs/reports/M2_PR1_CLIPPING_P2.md)
+for exact evidence and memory accounting. PR2 display activation and integrated
+fit remain unresolved and unauthorized; no M2 target execution is claimed. Carry remaining obligations to the exact
 owner gates approved in the entry plan. Establish actual measured limits and
 full integrated-harness acceptance at their gates; bounded program closeout
 does not relabel historical evidence or approve production capacity.

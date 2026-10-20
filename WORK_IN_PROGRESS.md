@@ -1,6 +1,5 @@
 # Work in Progress
 
-- **Status: NONE.** M1 implementation and its three P2 review corrections are complete. Founder authorized commit, push, PR and merge after passing checks, followed by main verification and stop.
-- **Handoff:** [M1 correction report](docs/reports/M1_P2_CORRECTIONS.md) and [evidence packet](docs/evidence/m1/2026-10-20-p2-corrections/README.md). The reports and packets preserve their original pre-publication status and evidence identities.
-- **Validation:** Five admission tests, sanitizer-backed host checks, three target builds, generated-byte consistency and four PAL/NTSC direct-PRG Xemu checks passed. Checkpoint checksum `DE675132`; four screenshots inspected. All 417 preservation fingerprints and 20 unrelated untracked entries matched before publication.
-- **Boundaries:** No D81, SD or physical testing; no flight or full R0-F acceptance claim. Historical evidence and unrelated paths are preserved. No next implementation task is authorized.
+- **Status: NONE.** M2 PR1 publication and merge are founder-authorized after checks pass; this closeout accompanies that integration.
+- **Completed scope:** Approved runway/camera geometry and registration, clipping P2 correction, independent host/oracle regressions and target compile/link checks. See the [handoff](docs/reports/M2_PR1_CLIPPING_P2.md) and [evidence](docs/evidence/flight-demo/2026-10-20-m2-pr1-clipping-p2/README.md). Historical reports retain their prepublication status as provenance.
+- **Boundary:** Stop after verifying main. PR2 display/resource and integrated-fit decisions remain unresolved. No PR2, Xemu, D81, SD or physical testing is authorized. Historical evidence and unrelated local paths remain preserved.

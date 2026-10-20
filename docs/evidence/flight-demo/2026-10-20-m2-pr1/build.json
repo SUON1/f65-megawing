@@ -1,0 +1,229 @@
+{
+  "identity": "65AERO-M2-PR1-1",
+  "base": "2acd30c21a4be0996cd1a2dd3ce74da6deb6c84d",
+  "commands": [
+    [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests/flight_demo/m2",
+      "-p",
+      "test_*.py",
+      "-v"
+    ],
+    [
+      "/usr/bin/clang",
+      "-std=c11",
+      "-Wall",
+      "-Wextra",
+      "-Wconversion",
+      "-Werror",
+      "-fsanitize=address,undefined",
+      "-Iinterfaces/generated",
+      "-Isrc/environment",
+      "-Isrc/graphics",
+      "-Isrc/core",
+      "-Isrc/input",
+      "-Isrc/presentation",
+      "src/environment/m2_fixture.c",
+      "src/graphics/m2_geometry.c",
+      "interfaces/generated/m2_tables.c",
+      "src/core/m1_runtime.c",
+      "src/input/m1_input.c",
+      "src/presentation/m1_snapshot.c",
+      "tests/flight_demo/m2/host.c",
+      "-o",
+      "/Users/slice/Developer/f65-megawing/build/flight-demo/m2-pr1-1792534579771485000/host"
+    ],
+    [
+      "/Users/slice/Developer/f65-megawing/build/flight-demo/m2-pr1-1792534579771485000/host"
+    ],
+    [
+      "/usr/bin/clang",
+      "-std=c11",
+      "-Wall",
+      "-Wextra",
+      "-Wconversion",
+      "-Werror",
+      "-shared",
+      "-fPIC",
+      "-Iinterfaces/generated",
+      "-Isrc/environment",
+      "-Isrc/graphics",
+      "-Isrc/core",
+      "-Isrc/input",
+      "-Isrc/presentation",
+      "src/environment/m2_fixture.c",
+      "src/graphics/m2_geometry.c",
+      "interfaces/generated/m2_tables.c",
+      "-o",
+      "/Users/slice/Developer/f65-megawing/build/flight-demo/m2-pr1-1792534579771485000/geometry.dylib"
+    ],
+    [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "tests/flight_demo/m2/oracle.py",
+      "/Users/slice/Developer/f65-megawing/build/flight-demo/m2-pr1-1792534579771485000/geometry.dylib"
+    ],
+    [
+      "/Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/mos-mega65-clang",
+      "-mcpu=mos45gs02",
+      "-mlto-zp=0",
+      "-Os",
+      "-fno-jump-tables",
+      "-std=c11",
+      "-Wall",
+      "-Wextra",
+      "-Wconversion",
+      "-Werror",
+      "-Iinterfaces/generated",
+      "-Isrc/environment",
+      "-Isrc/graphics",
+      "-Isrc/core",
+      "-Isrc/input",
+      "-Isrc/presentation",
+      "src/environment/m2_fixture.c",
+      "src/graphics/m2_geometry.c",
+      "interfaces/generated/m2_tables.c",
+      "tests/flight_demo/m2/target.c",
+      "-Wl,-T,src/platform/r0f/startup.ld",
+      "-Wl,-Map,/Users/slice/Developer/f65-megawing/build/flight-demo/m2-pr1-1792534579771485000/M2.map",
+      "-o",
+      "/Users/slice/Developer/f65-megawing/build/flight-demo/m2-pr1-1792534579771485000/M2.prg"
+    ],
+    [
+      "/Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/llvm-objdump",
+      "-d",
+      "/Users/slice/Developer/f65-megawing/build/flight-demo/m2-pr1-1792534579771485000/M2.prg.elf"
+    ],
+    [
+      "/Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/llvm-nm",
+      "-S",
+      "/Users/slice/Developer/f65-megawing/build/flight-demo/m2-pr1-1792534579771485000/M2.prg.elf"
+    ]
+  ],
+  "host": "M2 HOST PASS: negative/identity/capacity checks; 600 per-tick replay comparisons DE675132",
+  "oracle": {
+    "oracle": "Decimal 60-digit independent quaternion and parametric clipping",
+    "cases": 3857,
+    "visible": 1278,
+    "raster_points": 119736,
+    "max_projection_error_pixels": "0.0331513832034361169556642401518791622849127289262794074622",
+    "projection_limit": 0.5,
+    "raster_limit_pixels": 1,
+    "status": "PASS"
+  },
+  "sections": {
+    ".text": {
+      "start": 8215,
+      "bytes": 17480
+    },
+    ".rodata": {
+      "start": 25695,
+      "bytes": 1449
+    },
+    ".data": {
+      "start": 27144,
+      "bytes": 22
+    },
+    ".bss": {
+      "start": 27166,
+      "bytes": 1420
+    },
+    ".noinit": {
+      "start": 28586,
+      "bytes": 275
+    }
+  },
+  "owner_symbols": {
+    "m2_probe_camera": {
+      "address": 27144,
+      "bytes": 22
+    },
+    "m2_probe_count": {
+      "address": 28497,
+      "bytes": 2
+    },
+    "m2_probe_digest": {
+      "address": 28582,
+      "bytes": 4
+    },
+    "m2_probe_first": {
+      "address": 27167,
+      "bytes": 12
+    },
+    "m2_probe_index": {
+      "address": 27166,
+      "bytes": 1
+    },
+    "m2_probe_last": {
+      "address": 27179,
+      "bytes": 12
+    },
+    "m2_probe_line": {
+      "address": 27201,
+      "bytes": 16
+    },
+    "m2_probe_pixels": {
+      "address": 27217,
+      "bytes": 1280
+    },
+    "m2_probe_record": {
+      "address": 28499,
+      "bytes": 83
+    },
+    "m2_probe_status": {
+      "address": 27191,
+      "bytes": 1
+    },
+    "m2_probe_surface": {
+      "address": 27192,
+      "bytes": 9
+    }
+  },
+  "stack": {
+    "hardware_bytes_main_including_entry_return": 22,
+    "software_dynamic_pointer_adjustments": 0,
+    "call_entries_checked": 14,
+    "scope": "direct-call probe; no IRQ/NMI or executed high-water claim",
+    "compiler_static_stack_bytes": 275
+  },
+  "target_sha256": "62f85fda019146ec64c1f7236a1d58441b22a87cf3a4504074f3332558bb656a",
+  "target_bytes": 18975,
+  "inputs": {
+    "interfaces/generated/m1_development.h": "9f9f3d28933cd585fac1f4efaaa53a1d32ed63565739dfba66e252faf835a272",
+    "interfaces/generated/m2_pr1.h": "075a2419790c7b781911bd15874da6b28acca27460d427ca6a7a64cff8adc536",
+    "interfaces/generated/m2_tables.c": "30dd5425721a2f9ed2b2758dc97f86ee646196159db4db03da9c85ab3e2b5c22",
+    "interfaces/m2_pr1.json": "0ecc1434c590a6a37d8e92406d89343ce14ff566d11890a31eb0873280073623",
+    "memory/m2-pr1-ledger.json": "b62b01194e0ffcf2a9a770903eeea7cf74f38f55effcb84c6ccbe67fa60e4391",
+    "src/core/m1_runtime.c": "7a6e816ad70e4d5c0859e768ff69109cac4c16c14deff328934a3b2c6d12111c",
+    "src/core/m1_runtime.h": "dea575f388825684fc341a869d2c55e746a6fa4188a8a624d369f7dfcc1c41bd",
+    "src/environment/m2_fixture.c": "bbf33786a0a3a20dbb7e45f87186406b36bcf89fd940ef496ec4a3103b5fdce1",
+    "src/environment/m2_fixture.h": "b648aacefa74936f5dd0825f7c2012265c50c86db196b8cca5a07b90d7fb3926",
+    "src/graphics/m2_geometry.c": "8822afae19c8dc2056c08663e5aa8687f1560e692608086d3310ad2bde478b19",
+    "src/graphics/m2_geometry.h": "ee4a42121e91c9a0e7228d5ffbd3b5616778a52a908e8a5210d79841413a213f",
+    "src/input/m1_input.c": "9a6f763a41615d58287b9d6b68560f961766648223e1a0af7a4b1e0964211e05",
+    "src/input/m1_input.h": "92652343774a66a65d16bcec4a13a401215305958c7ed4c283d078086eb3cbae",
+    "src/platform/r0f/startup.ld": "96d85939b28b4b24d0e251164b2abe9c5e950096482334517cbc4e57fcb6b60f",
+    "src/presentation/m1_snapshot.c": "0bc27b247f8b9a678c09c68afa158831477ade48949b8bc9b3631ecc11ca7191",
+    "src/presentation/m1_snapshot.h": "964af7bf654b102d5db67eccf8104e224916b7ac40da6a3540d1271c6dc1abe6",
+    "tests/flight_demo/m2/ORACLE.md": "6889ff4f5252cbf30d5cebec60890bac4d5a8f4e7d02b711f49cfb741540fd83",
+    "tests/flight_demo/m2/host.c": "32e6e631dc2db7a7eaa95b1825180206ac3bffddc0ad2b59dda5b7bef5864925",
+    "tests/flight_demo/m2/oracle.py": "467b21dcdc94484253d88a81cf67030122382b28ca5b0b57aac0f2afda84285a",
+    "tests/flight_demo/m2/target.c": "b7def77d8baae7bf5df6b0f9332331d3c838863692497e59e02c7bad4a71aa4c",
+    "tests/flight_demo/m2/test_contract.py": "3b0128d5f7cf40dc08d25e11ba9ac8cb5b86c74d8458f65faf8759cb15632ff0",
+    "toolchain/f65_toolchain.lock.json": "0de4864a0665f04cab26f67bdd533697d8006460142dcb7e8e5ce0ecb72d742b",
+    "tools/flight_demo/m2/build.py": "e07db3252b0aa3cd52e159615d835ea9889d65ade0899d5275bb7dd95b990ffc",
+    "tools/flight_demo/m2/generate.py": "54f2e0b30bdc20ad617d2c13b7e9fa8ad550f34c76b1605edbc32dc22eec9ad7",
+    "tools/flight_demo/m2/stack_check.py": "4fcf1ae361fd76bd8770ec3a64c688ea30045e66d0d1e7cb1faa572d3a33f65d"
+  },
+  "compiler_sha256": "cc557ae99a68ed36e098062b0f5376a878e94ac187b87446c8e603e4fb45a906",
+  "objdump_sha256": "5327f031a741bfcd4104317fbad3d1e45275d70b49821f0da52391120848a8e9",
+  "clang_sha256": "5b1ddb7e9c11b87a034fc88b212e8ac243cfe2b4db696d767aa44c79595fc09a",
+  "target_execution": "NOT RUN; SDK-linked probe is not platform-admitted",
+  "pr2_xemu_d81_sd_physical": "NOT RUN",
+  "reserve_allocation": 0
+}
