@@ -6,13 +6,13 @@ LLVM-MOS C is the primary MEGA65 target language. Selective handwritten 45GS02 a
 
 ## Current specification baseline
 
-The approved successor family is Main v1.8, Gameplay v1.2, Runtime v1.2 candidate (NOT FINAL), and [Physics v4.1](spec/subsystems/F65_Physics_v4.1_APPROVED_AMENDMENT.md). Each incorporates its unchanged predecessor plus the approved Phase 1 entry amendments. The [corpus manifest](spec/manifests/spec-corpus.json) records hierarchy, dependencies and hashes. [20 October adoption](docs/decisions/PHASE1_ENTRY_ADOPTION_2026-10-20.md) is prepared locally; integration is pending. Historical specifications and evidence remain preserved.
+The approved successor family is Main v1.8, Gameplay v1.2, Runtime v1.2 candidate (NOT FINAL), and [Physics v4.1](spec/subsystems/F65_Physics_v4.1_APPROVED_AMENDMENT.md). Each incorporates its unchanged predecessor plus the approved Phase 1 entry amendments. The [corpus manifest](spec/manifests/spec-corpus.json) records hierarchy, dependencies and hashes. [20 October adoption](docs/decisions/PHASE1_ENTRY_ADOPTION_2026-10-20.md) is integrated through [PR #17](https://github.com/SUON1/f65-megawing/pull/17). Historical specifications and evidence remain preserved.
 
 ## Current development state
 
 `main` contains the integrated R0-A through current R0-F engineering lineage. Retained R0-A through R0-E proof history, substantial R0-F development, and bounded R0-F physical evidence are present.
 
-The founder approved bounded Phase 0 program closeout and named remaining-obligation destinations in the [entry plan](docs/plans/65AERO_PHASE1_ENTRY_AND_DEVELOPER_FLIGHT_PLAN.md). Full R0-F technical PASS and measured limits are not approved. M1 visible-foundation implementation, including direct-PRG PAL/NTSC Xemu, is authorized after adoption is integrated into verified main. Implementation has not started; no D81, SD or physical testing is authorized.
+The founder approved bounded Phase 0 program closeout and named remaining-obligation destinations in the [entry plan](docs/plans/65AERO_PHASE1_ENTRY_AND_DEVELOPER_FLIGHT_PLAN.md). Full R0-F technical PASS and measured limits are not approved. M1 visible-foundation implementation, including direct-PRG PAL/NTSC Xemu, provides the development-only non-flight foundation; see the [correction handoff](docs/reports/M1_P2_CORRECTIONS.md) for validation and preserved evidence. No D81, SD or physical testing was performed.
 
 ## Where to start
 

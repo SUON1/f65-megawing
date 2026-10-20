@@ -1,0 +1,53 @@
+{
+  "command": [
+    "/Users/slice/Developer/f65-megawing/build/flight-demo/m1-p2/xemu-replay-1-1792519106692801000/M1Xemu.app/Contents/MacOS/xmega65",
+    "-skipconfigfile",
+    "-fastboot",
+    "-besure",
+    "-videostd",
+    "1",
+    "-rom",
+    "/Users/slice/Documents/Codex/f65-megawing/MEGA65.ROM",
+    "-virtsd",
+    "-sdimg",
+    "/Users/slice/Developer/f65-megawing/build/flight-demo/m1-p2/xemu-replay-1-1792519106692801000/empty-virtual-media",
+    "-prg",
+    "/Users/slice/Developer/f65-megawing/build/flight-demo/m1-p2/replay/M1.prg",
+    "-dumpscreen",
+    "/Users/slice/Developer/f65-megawing/build/flight-demo/m1-p2/xemu-replay-1-1792519106692801000/screen.txt",
+    "-dumpmem",
+    "/Users/slice/Developer/f65-megawing/build/flight-demo/m1-p2/xemu-replay-1-1792519106692801000/memory.bin",
+    "-screenshot",
+    "/Users/slice/Developer/f65-megawing/build/flight-demo/m1-p2/xemu-replay-1-1792519106692801000/screen.png"
+  ],
+  "exit": 0,
+  "prg_sha256": "dbfa0417498ee2d7a1377bd84ea02814b52bf5bf882edd6e1c9477f3f5d3febc",
+  "physical": "NOT RUN",
+  "i2c_seed_sha256": "15aaba90eece687188711b0d1f9bc012f8c7d6ae73ee2fe87ae1e130de6d7d38",
+  "xemu_sha256": "dd37baf7846b9696adcb662ffe5da040031b07214c66aef9a7f48cc30040b738",
+  "sdl_sha256": "4338adca59bfc6bad6ff44d0df03a9cd59c83a8916c478ae5d91e06b5d090761",
+  "tier": "direct PRG, virtual in-memory media only",
+  "status": "FAIL",
+  "values": {
+    "m1_status": 0,
+    "m1_replay_checksum": 0,
+    "m1_replay_tick": 0,
+    "m1_debt_max": 0,
+    "m1_display_age": 0,
+    "m1_current_tick": 0,
+    "m1_display_generation": 0,
+    "m1_source_tick": 0,
+    "m1_display_store": 0
+  },
+  "expected_checksum": 3731312946,
+  "stack_bytes": {
+    "hardware": 0,
+    "software": 0
+  },
+  "preferences_isolated": true,
+  "artifacts": {
+    "xemu.log": "c6c4b4b69358f4f98d07db968517275546ac9387314a419670e3783245ff0749",
+    "screen.png": "5442c38d226a6e25d8c60e02b04407d19023d7d6f85ae672e1a5b66dd5f133b9",
+    "memory.bin": "aae2c6b4b5273bfe2e3326a7cb3ab4a73f7ec33c626cd67b8679f0e5ae7bdb64"
+  }
+}

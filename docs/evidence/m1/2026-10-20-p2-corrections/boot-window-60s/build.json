@@ -1,0 +1,397 @@
+{
+  "base": "df1347b663c960e307870268f0b08ceaa6988d5c",
+  "profile": "65AERO-M1-DEV-2",
+  "host": "M1 HOST PASS: colors, stages, queue, input edges, held reader, rejection, cancellation, replay DE675132",
+  "physical": "NOT RUN",
+  "inputs": {
+    "src/core/m1_runtime.c": "7a6e816ad70e4d5c0859e768ff69109cac4c16c14deff328934a3b2c6d12111c",
+    "src/presentation/m1_snapshot.c": "0bc27b247f8b9a678c09c68afa158831477ade48949b8bc9b3631ecc11ca7191",
+    "src/input/m1_input.c": "9a6f763a41615d58287b9d6b68560f961766648223e1a0af7a4b1e0964211e05",
+    "src/graphics/m1_graphics.c": "97c687978420644ad5caacd17a4a06782c3c2dd232f2448a9b8159a00ddb3726",
+    "src/platform/m1/m1_platform.c": "e321f14c79eb0c8516e04a00b949cb7fcacc90a20624bdbfc89f34c49882f08e",
+    "src/diagnostics/r0f/combined_platform.c": "428d54c3274c4c71f64c5c880337a3f2de8d9810518ea9caaa0ce5a99909d47a",
+    "src/diagnostics/r0f/combined_model.c": "9aaf2f9b7002c69297be58ff969f57d5e0c034c40659bec9b496f7e8c2ace861",
+    "src/platform/r0f/qualification_45gs02.s": "c2ee3a522bd20795074b04a1a1a317baf80a420eebfd3aa1cb2c5f9a1fb9e600",
+    "src/platform/r0f/combined_45gs02.s": "f57927e7b4177adb68a72c3f98d4d76b96257c3940c4bd96f9799effa7fbae11",
+    "src/platform/r0a_platform_45gs02.s": "a0c9504763c44eb10cc7f38dcb77f2961beabd3ac506c5cc78a26a33552b97ca",
+    "interfaces/generated/m1_development.h": "9f9f3d28933cd585fac1f4efaaa53a1d32ed63565739dfba66e252faf835a272",
+    "interfaces/generated/r0a_interfaces.h": "7a8ad3dce5f8f20fcdd2adfd293273117eee6ff27dce65fccff3522b8080aece",
+    "interfaces/generated/r0b_interfaces.h": "a31d5f860e8e76ac9795016531b396d7bc02a515957362ed25ed75a2af13bb6d",
+    "interfaces/generated/r0c_interfaces.h": "e69adb558aac7e3142d1b8396d047c70445d9906ece6389d4b9763e67c31d63f",
+    "interfaces/generated/r0d_interfaces.h": "a00a18cf593ac7d51e055522992f946eed0873006f69e0c8a650a0fdc43c6e97",
+    "interfaces/generated/r0e_interfaces.h": "29609c64855e4ac98cf28e05ece7d9a5bb46957e3c087a1ba4676cde80526bea",
+    "interfaces/generated/r0f_combined.h": "a728d596e43163e28d1de7d2e17ee366b6df4970be8924bff9f64ca2e4a0d4f2",
+    "interfaces/generated/r0f_group1_export.h": "e86f3dcb16fb8a204b6411329a661853db113725d8138212dff2bcb8c266ff3d",
+    "interfaces/generated/r0f_group1_pool.h": "2e4dd7b2805cb62fa936c1ba52231b7092fe762e8332a2aee7fe37be11a57455",
+    "interfaces/generated/r0f_group1_presentation.h": "0bb9fbe4add169446e6f713524b82c7368efa319dc092611537ff4e9087b3f45",
+    "interfaces/generated/r0f_group1_trace.h": "63e342c6fce691550541ca8b21bc82b42fb893f9366b95ac43b4adebcee413d6",
+    "interfaces/generated/r0f_interfaces.h": "a1c0c55cf73e0aae634e2c4267496f700f90959d5529b25ac5a02652337bc995",
+    "interfaces/generated/r0f_platform.h": "e9067d9be6ddf5d78ad4a771e18f3199cb6e7256912bc6bbf29dfec923874363",
+    "interfaces/generated/r0f_resume.h": "55ba5146aa0c008590f18eab49c1cdb42b0e42dd67015963bbf85034ced57805",
+    "interfaces/generated/r0f_successor.h": "dd1fbd6fc50bffed153f50fce5975359300f472f998f67c65fa7fffc3eb59db1",
+    "interfaces/generated/r0f_successor_integration.h": "412e7ec4ab655b9905a83babd185c1a10b23f2e6bea34cdc4f08ef824f679a91",
+    "src/core/m1_runtime.h": "dea575f388825684fc341a869d2c55e746a6fa4188a8a624d369f7dfcc1c41bd",
+    "src/diagnostics/r0f/combined_model.h": "0931d1e42914903d61d073be597910575a941171c6592b45d4a81649123113df",
+    "src/diagnostics/r0f/combined_platform.h": "4d83f75144d74dca6d9442daee528d59e97672d50b8aa41d9f810d4a27436736",
+    "src/diagnostics/r0f/group1_capture.h": "2082534cb82bbd36fcca164846749026ffab79b2b01e91e4d75be22edf7a8b0f",
+    "src/diagnostics/r0f/group1_export.h": "a419aa2496fb30ab76dccde87eaf4bdfd5d9957be5618f0fa16b77e883cce168",
+    "src/diagnostics/r0f/group1_pool.h": "ed1a6ccf581e3985ead6a7fe8a324238ff88b4e55b30558f058903deb37b645e",
+    "src/diagnostics/r0f/group1_presentation.h": "ff5c576734a893cf7f2e156b2c54457c0b2324ef51b5fa02ffb8478db6bc300a",
+    "src/diagnostics/r0f/group1_scene.h": "a621fca30042136d6b152c9cc799782616e1c1c4126fd808fb9ca476bd4daf10",
+    "src/diagnostics/r0f/group1_timing.h": "b2e8a54fa58836a5c87e8abc860fa3d66b433b924d290b28975c48fc9732bd19",
+    "src/diagnostics/r0f/group1_transport.h": "4791323db21777634796cbab4dc7d3bc37bab0bef95220f80c7fbd8cc4a7d5a0",
+    "src/diagnostics/r0f/group1_workload.h": "76129ad092877528f7114f6f484225dac7101a2873a2e83f4cc4c0f6148bd41a",
+    "src/diagnostics/r0f/resume_model.h": "a9b80f303261868e41420612edf06ebb8800dc60abb36bda7478b73c53366458",
+    "src/diagnostics/r0f/successor_capture.h": "181ff142b1525430911c35c2b7244eb540e05229c80cdd2db18ecb31ec79a484",
+    "src/diagnostics/r0f/successor_irq.h": "adb0619bb19a91c775f304aa8d71b7798e22c9f0a0f48eee6a437fdb629e86e6",
+    "src/diagnostics/r0f/successor_lifecycle.h": "622681480cf001f90d9e5ff49a20d136248192796cc73568b466ec931c563546",
+    "src/graphics/m1_graphics.h": "aba7047213e7b7a0d8ba7a926128e81eabc4862506698a64f684b7c4135d153f",
+    "src/input/m1_input.h": "92652343774a66a65d16bcec4a13a401215305958c7ed4c283d078086eb3cbae",
+    "src/platform/m1/m1_platform.h": "00211a594d0b43ab1163c9025abd2f83ac4d25311e2f7227e942e1eb85e1f119",
+    "src/presentation/m1_snapshot.h": "964af7bf654b102d5db67eccf8104e224916b7ac40da6a3540d1271c6dc1abe6",
+    "tools/flight_demo/admission.py": "f8b38cde21c46acda978ec8d809f6b50aa858eb4fd741d93b355408d1e1e4d78",
+    "tools/flight_demo/build.py": "daad2174274a3bcc59916320538dee146cfbca6486ecace6a68a79165e05518a",
+    "tools/flight_demo/generate.py": "bf3c8090f3b661988cb3e003cdae80aa35f9b33869d19f336153576133b9609e",
+    "tools/flight_demo/xemu.py": "ee98c2106e8da65460d3ec11d0eea3bef0bcb0b72f0d57c81bb4da30869e03fd",
+    "tests/flight_demo/m1_host.c": "d9ca71aa22ca66e068dcdf0bb61db739e6ab42ef6329272113ac58c5de08c1e4",
+    "tests/flight_demo/test_admission.py": "a1786f09304125d0ecedb1a2badb3273ab42fec690af90abdd19b8e233dc6438",
+    "toolchain/f65_toolchain.lock.json": "0de4864a0665f04cab26f67bdd533697d8006460142dcb7e8e5ce0ecb72d742b",
+    "src/diagnostics/flight_demo/main.c": "bcab36e9a4e2f55186f3b64d635c76556a5119b12d3541dd1ae0ee7c294ff2e0",
+    "interfaces/m1_development.json": "942a639d5e5325f41618b458525b5fb79bb1c99ca3fafa960271e1ab7673214e",
+    "memory/m1-development-ledger.json": "35b6e512ca0711f61f1ac7d7b669155ebd142302a55198e162d3df4598c8bc12",
+    "src/platform/r0f/startup.ld": "96d85939b28b4b24d0e251164b2abe9c5e950096482334517cbc4e57fcb6b60f"
+  },
+  "targets": {
+    "interactive": {
+      "sha256": "48f84fb8c10f7043cfb67b5fd3faab438424a47476ec9ef5efa9ce95f07e2e2a",
+      "bytes": 9330,
+      "sections": {
+        ".text": {
+          "start": 8215,
+          "bytes": 8847
+        },
+        ".rodata": {
+          "start": 17062,
+          "bytes": 459
+        },
+        ".data": {
+          "start": 17521,
+          "bytes": 0
+        },
+        ".bss": {
+          "start": 17521,
+          "bytes": 813
+        },
+        ".noinit": {
+          "start": 18334,
+          "bytes": 7
+        }
+      },
+      "command": [
+        "/Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/mos-mega65-clang",
+        "-mcpu=mos45gs02",
+        "-mlto-zp=0",
+        "-Os",
+        "-Wall",
+        "-Wextra",
+        "-Wconversion",
+        "-Werror",
+        "-Iinterfaces/generated",
+        "-Isrc/core",
+        "-Isrc/presentation",
+        "-Isrc/input",
+        "-Isrc/graphics",
+        "-Isrc/platform/m1",
+        "-Isrc/diagnostics/r0f",
+        "-DM1_REPLAY=0",
+        "-DM1_RENDER_DIVISOR=1",
+        "src/core/m1_runtime.c",
+        "src/presentation/m1_snapshot.c",
+        "src/input/m1_input.c",
+        "src/graphics/m1_graphics.c",
+        "src/platform/m1/m1_platform.c",
+        "src/diagnostics/r0f/combined_platform.c",
+        "src/diagnostics/r0f/combined_model.c",
+        "src/platform/r0f/qualification_45gs02.s",
+        "src/platform/r0f/combined_45gs02.s",
+        "src/platform/r0a_platform_45gs02.s",
+        "src/diagnostics/flight_demo/main.c",
+        "-Wl,-T,src/platform/r0f/startup.ld",
+        "-Wl,-Map,/Users/slice/Developer/f65-megawing/build/flight-demo/m1-p2/interactive/M1.map",
+        "-o",
+        "/Users/slice/Developer/f65-megawing/build/flight-demo/m1-p2/interactive/M1.prg"
+      ],
+      "owner_symbols": {
+        "m1_core": {
+          "address": 18156,
+          "bytes": 64
+        },
+        "m1_current_tick": {
+          "address": 18271,
+          "bytes": 4
+        },
+        "m1_debt_max": {
+          "address": 18220,
+          "bytes": 4
+        },
+        "m1_display_age": {
+          "address": 18330,
+          "bytes": 4
+        },
+        "m1_display_generation": {
+          "address": 18321,
+          "bytes": 4
+        },
+        "m1_display_store": {
+          "address": 18329,
+          "bytes": 1
+        },
+        "m1_graphics": {
+          "address": 18283,
+          "bytes": 38
+        },
+        "m1_replay_checksum": {
+          "address": 18275,
+          "bytes": 4
+        },
+        "m1_replay_tick": {
+          "address": 18279,
+          "bytes": 4
+        },
+        "m1_snapshots": {
+          "address": 18225,
+          "bytes": 46
+        },
+        "m1_source_tick": {
+          "address": 18325,
+          "bytes": 4
+        },
+        "m1_status": {
+          "address": 18075,
+          "bytes": 1
+        }
+      }
+    },
+    "replay": {
+      "sha256": "dbfa0417498ee2d7a1377bd84ea02814b52bf5bf882edd6e1c9477f3f5d3febc",
+      "bytes": 9672,
+      "sections": {
+        ".text": {
+          "start": 8215,
+          "bytes": 9189
+        },
+        ".rodata": {
+          "start": 17404,
+          "bytes": 459
+        },
+        ".data": {
+          "start": 17863,
+          "bytes": 0
+        },
+        ".bss": {
+          "start": 17863,
+          "bytes": 813
+        },
+        ".noinit": {
+          "start": 18676,
+          "bytes": 7
+        }
+      },
+      "command": [
+        "/Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/mos-mega65-clang",
+        "-mcpu=mos45gs02",
+        "-mlto-zp=0",
+        "-Os",
+        "-Wall",
+        "-Wextra",
+        "-Wconversion",
+        "-Werror",
+        "-Iinterfaces/generated",
+        "-Isrc/core",
+        "-Isrc/presentation",
+        "-Isrc/input",
+        "-Isrc/graphics",
+        "-Isrc/platform/m1",
+        "-Isrc/diagnostics/r0f",
+        "-DM1_REPLAY=1",
+        "-DM1_RENDER_DIVISOR=1",
+        "src/core/m1_runtime.c",
+        "src/presentation/m1_snapshot.c",
+        "src/input/m1_input.c",
+        "src/graphics/m1_graphics.c",
+        "src/platform/m1/m1_platform.c",
+        "src/diagnostics/r0f/combined_platform.c",
+        "src/diagnostics/r0f/combined_model.c",
+        "src/platform/r0f/qualification_45gs02.s",
+        "src/platform/r0f/combined_45gs02.s",
+        "src/platform/r0a_platform_45gs02.s",
+        "src/diagnostics/flight_demo/main.c",
+        "-Wl,-T,src/platform/r0f/startup.ld",
+        "-Wl,-Map,/Users/slice/Developer/f65-megawing/build/flight-demo/m1-p2/replay/M1.map",
+        "-o",
+        "/Users/slice/Developer/f65-megawing/build/flight-demo/m1-p2/replay/M1.prg"
+      ],
+      "owner_symbols": {
+        "m1_core": {
+          "address": 18498,
+          "bytes": 64
+        },
+        "m1_current_tick": {
+          "address": 18613,
+          "bytes": 4
+        },
+        "m1_debt_max": {
+          "address": 18562,
+          "bytes": 4
+        },
+        "m1_display_age": {
+          "address": 18672,
+          "bytes": 4
+        },
+        "m1_display_generation": {
+          "address": 18663,
+          "bytes": 4
+        },
+        "m1_display_store": {
+          "address": 18671,
+          "bytes": 1
+        },
+        "m1_graphics": {
+          "address": 18625,
+          "bytes": 38
+        },
+        "m1_replay_checksum": {
+          "address": 18617,
+          "bytes": 4
+        },
+        "m1_replay_tick": {
+          "address": 18621,
+          "bytes": 4
+        },
+        "m1_snapshots": {
+          "address": 18567,
+          "bytes": 46
+        },
+        "m1_source_tick": {
+          "address": 18667,
+          "bytes": 4
+        },
+        "m1_status": {
+          "address": 18417,
+          "bytes": 1
+        }
+      }
+    },
+    "slow-render": {
+      "sha256": "6401307c4545c902489268165f9eb0d37fb0a006ca6aeba0daf5d480729352f4",
+      "bytes": 9733,
+      "sections": {
+        ".text": {
+          "start": 8215,
+          "bytes": 9250
+        },
+        ".rodata": {
+          "start": 17465,
+          "bytes": 459
+        },
+        ".data": {
+          "start": 17924,
+          "bytes": 0
+        },
+        ".bss": {
+          "start": 17924,
+          "bytes": 813
+        },
+        ".noinit": {
+          "start": 18737,
+          "bytes": 7
+        }
+      },
+      "command": [
+        "/Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/mos-mega65-clang",
+        "-mcpu=mos45gs02",
+        "-mlto-zp=0",
+        "-Os",
+        "-Wall",
+        "-Wextra",
+        "-Wconversion",
+        "-Werror",
+        "-Iinterfaces/generated",
+        "-Isrc/core",
+        "-Isrc/presentation",
+        "-Isrc/input",
+        "-Isrc/graphics",
+        "-Isrc/platform/m1",
+        "-Isrc/diagnostics/r0f",
+        "-DM1_REPLAY=1",
+        "-DM1_RENDER_DIVISOR=17",
+        "src/core/m1_runtime.c",
+        "src/presentation/m1_snapshot.c",
+        "src/input/m1_input.c",
+        "src/graphics/m1_graphics.c",
+        "src/platform/m1/m1_platform.c",
+        "src/diagnostics/r0f/combined_platform.c",
+        "src/diagnostics/r0f/combined_model.c",
+        "src/platform/r0f/qualification_45gs02.s",
+        "src/platform/r0f/combined_45gs02.s",
+        "src/platform/r0a_platform_45gs02.s",
+        "src/diagnostics/flight_demo/main.c",
+        "-Wl,-T,src/platform/r0f/startup.ld",
+        "-Wl,-Map,/Users/slice/Developer/f65-megawing/build/flight-demo/m1-p2/slow-render/M1.map",
+        "-o",
+        "/Users/slice/Developer/f65-megawing/build/flight-demo/m1-p2/slow-render/M1.prg"
+      ],
+      "owner_symbols": {
+        "m1_core": {
+          "address": 18559,
+          "bytes": 64
+        },
+        "m1_current_tick": {
+          "address": 18674,
+          "bytes": 4
+        },
+        "m1_debt_max": {
+          "address": 18623,
+          "bytes": 4
+        },
+        "m1_display_age": {
+          "address": 18733,
+          "bytes": 4
+        },
+        "m1_display_generation": {
+          "address": 18724,
+          "bytes": 4
+        },
+        "m1_display_store": {
+          "address": 18732,
+          "bytes": 1
+        },
+        "m1_graphics": {
+          "address": 18686,
+          "bytes": 38
+        },
+        "m1_replay_checksum": {
+          "address": 18678,
+          "bytes": 4
+        },
+        "m1_replay_tick": {
+          "address": 18682,
+          "bytes": 4
+        },
+        "m1_snapshots": {
+          "address": 18628,
+          "bytes": 46
+        },
+        "m1_source_tick": {
+          "address": 18728,
+          "bytes": 4
+        },
+        "m1_status": {
+          "address": 18478,
+          "bytes": 1
+        }
+      }
+    }
+  },
+  "admission": "test_admitted_profile (test_admission.AdmissionTests) ... ok\ntest_each_allocation_is_bound_to_platform (test_admission.AdmissionTests) ... ok\ntest_startup_write_cannot_escape_ledger (test_admission.AdmissionTests) ... ok\ntest_uninspected_retained_implementation_is_rejected (test_admission.AdmissionTests) ... ok\ntest_unsupported_runtime_configuration (test_admission.AdmissionTests) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.002s\n\nOK"
+}

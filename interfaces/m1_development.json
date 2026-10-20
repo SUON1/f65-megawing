@@ -1,0 +1,79 @@
+{
+  "identity": "65AERO-M1-DEV-2",
+  "status": "development-only; not Runtime FINAL or a production ABI",
+  "tick_hz": 100,
+  "stages": 21,
+  "queue_capacity": 8,
+  "snapshot_slots": 3,
+  "columns": 80,
+  "rows": 25,
+  "render_rows_per_service": 1,
+  "memory": {
+    "display_a": 131072,
+    "display_b": 196608,
+    "color": 267911168,
+    "rom_backup": 134217728,
+    "rom_backup_bytes": 131072,
+    "resident_start": 8193,
+    "resident_end_exclusive": 32768,
+    "software_stack_start": 49152,
+    "software_stack_end_exclusive": 53248,
+    "reserve_start": 360448,
+    "reserve_end_exclusive": 393216,
+    "hardware_stack_start": 256,
+    "hardware_stack_end_exclusive": 512,
+    "base_page_start": 512,
+    "base_page_end_exclusive": 768,
+    "platform_result_start": 6400,
+    "platform_result_end_exclusive": 8192
+  },
+  "records": {
+    "M1Command": [
+      [
+        "tick",
+        "uint32_t"
+      ],
+      [
+        "pressed",
+        "uint8_t"
+      ],
+      [
+        "released",
+        "uint8_t"
+      ]
+    ],
+    "M1Snapshot": [
+      [
+        "tick",
+        "uint32_t"
+      ],
+      [
+        "commands",
+        "uint32_t"
+      ],
+      [
+        "checksum",
+        "uint32_t"
+      ],
+      [
+        "fault",
+        "uint8_t"
+      ]
+    ]
+  },
+  "owners": {
+    "tick_queue_checksum": "CoreRuntime",
+    "hardware_edges": "InputEngine",
+    "immutable_snapshots": "CoreRuntime publication; PresentationExtractor values",
+    "world_generation": "GraphicsEngine",
+    "hardware": "M1 development Platform adapter only"
+  },
+  "inherited_initialization": {
+    "owner": "Retained CF001 cfrom_begin -> cfline -> screen_byte",
+    "start": 2528,
+    "end_exclusive": 2581,
+    "access": "CPU-visible write during initialization only; retains the original ROM-backup message",
+    "source": "src/diagnostics/r0f/combined_platform.c",
+    "source_sha256": "428d54c3274c4c71f64c5c880337a3f2de8d9810518ea9caaa0ce5a99909d47a"
+  }
+}
