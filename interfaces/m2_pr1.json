@@ -1,0 +1,161 @@
+{
+  "identity": "65AERO-M2-PR1-2",
+  "fixture": "M2-RWY-TEST-1",
+  "camera": "M2-CAMERA-TEST-1",
+  "units": "ft",
+  "frame": "NED",
+  "constants": {
+    "fixture_revision": 1,
+    "projection_revision": 2,
+    "composition_revision": 1,
+    "width": 320,
+    "height": 128,
+    "focal": 160,
+    "position_scale": 4096,
+    "rotation_scale": 70368744177664,
+    "screen_scale": 65536,
+    "near_ft": 10,
+    "far_ft": 40000,
+    "world_limit_ft": 65536,
+    "north_limit_ft": 12000,
+    "east_limit_ft": 6000,
+    "height_min_ft": 10,
+    "height_max_ft": 3000,
+    "tilt_limit_deg": 60,
+    "runway_half_length_ft": 3000,
+    "runway_half_width_ft": 75,
+    "threshold_north_ft": 2900,
+    "mark_first_ft": -2500,
+    "mark_last_ft": 2500,
+    "mark_step_ft": 500,
+    "mark_half_length_ft": 50,
+    "segment_count": 17,
+    "clip_planes": 6,
+    "raster_points": 320,
+    "clip_scale": 16777216
+  },
+  "memory": {
+    "resident_start": 8193,
+    "resident_end_exclusive": 32768,
+    "software_stack_start": 49152,
+    "software_stack_end_exclusive": 53248,
+    "hardware_stack_start": 256,
+    "hardware_stack_end_exclusive": 512,
+    "base_page_start": 512,
+    "base_page_end_exclusive": 768,
+    "reserve_start": 360448,
+    "reserve_end_exclusive": 393216
+  },
+  "records": {
+    "M2Point": [
+      [
+        "v[3]",
+        "int32_t"
+      ]
+    ],
+    "M2Camera": [
+      [
+        "position",
+        "M2Point"
+      ],
+      [
+        "yaw",
+        "int16_t"
+      ],
+      [
+        "pitch",
+        "int16_t"
+      ],
+      [
+        "roll",
+        "int16_t"
+      ],
+      [
+        "revision",
+        "uint32_t"
+      ]
+    ],
+    "M2Transform": [
+      [
+        "m[9]",
+        "int64_t"
+      ]
+    ],
+    "M2Line": [
+      [
+        "x[2]",
+        "int32_t"
+      ],
+      [
+        "y[2]",
+        "int32_t"
+      ]
+    ],
+    "M2Pixel": [
+      [
+        "x",
+        "uint16_t"
+      ],
+      [
+        "y",
+        "uint16_t"
+      ]
+    ],
+    "M2Surface": [
+      [
+        "fixture_revision",
+        "uint32_t"
+      ],
+      [
+        "down",
+        "int32_t"
+      ],
+      [
+        "inside",
+        "uint8_t"
+      ]
+    ],
+    "M2Registration": [
+      [
+        "camera",
+        "M2Camera"
+      ],
+      [
+        "transform",
+        "M2Transform"
+      ],
+      [
+        "generation",
+        "uint32_t"
+      ],
+      [
+        "source_tick",
+        "uint32_t"
+      ],
+      [
+        "fixture_revision",
+        "uint32_t"
+      ],
+      [
+        "projection_revision",
+        "uint32_t"
+      ],
+      [
+        "composition_revision",
+        "uint32_t"
+      ],
+      [
+        "view_id",
+        "uint16_t"
+      ],
+      [
+        "tier_id",
+        "uint16_t"
+      ],
+      [
+        "store",
+        "uint8_t"
+      ]
+    ]
+  }
+}

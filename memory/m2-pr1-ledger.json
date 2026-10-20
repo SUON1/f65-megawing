@@ -1,0 +1,28 @@
+{
+  "identity": "65AERO-M2-PR1-2",
+  "source_sha256": "4832867688dc11c98cf816ae00254778f82a69dfb2b13af0e63d5db7ce36cda6",
+  "ranges": {
+    "resident_start": 8193,
+    "resident_end_exclusive": 32768,
+    "software_stack_start": 49152,
+    "software_stack_end_exclusive": 53248,
+    "hardware_stack_start": 256,
+    "hardware_stack_end_exclusive": 512,
+    "base_page_start": 512,
+    "base_page_end_exclusive": 768,
+    "reserve_start": 360448,
+    "reserve_end_exclusive": 393216
+  },
+  "physical_allocations": [],
+  "dma_lists": [],
+  "reserve_allocation": 0,
+  "status": "compile/link-only PR1; no target execution",
+  "owners": {
+    "fixture": "Environment",
+    "transform_clipping_registration": "Graphics",
+    "camera": "caller-owned diagnostic presentation state"
+  },
+  "runtime_abi_admission": "NONE: SDK-linked compile-only probe, logical rc0..rc31 at $0002..$0021; no executed B/MAP contract. The base-page range is reserved for later reviewed integration, not used or tested here.",
+  "numeric": "public positions signed Q12 feet; private clipping signed Q24 feet; rotations signed Q46; screen signed Q16 pixels; widened int64 intermediates",
+  "stack": "no recursion or dynamic allocation; static compiler accounting in build evidence; no exercised target high-water"
+}
