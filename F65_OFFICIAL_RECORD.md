@@ -24,20 +24,27 @@ reorganization. Current durable project state is recorded in
 
 ## 2. Current specification authority
 
-Founder-directed local adoption on 4 October 2026: [decision](docs/decisions/PHYSICS_V4_ADOPTION_2026-10-04.md). The exact identities are in [the corpus manifest](spec/manifests/spec-corpus.json).
+Founder-approved local adoption on 20 October 2026, integration pending:
+[decision](docs/decisions/PHASE1_ENTRY_ADOPTION_2026-10-20.md). The exact identities
+and unchanged incorporated dependencies are in [the corpus manifest](spec/manifests/spec-corpus.json).
 
 | Order | Document | Status | Repository location |
 |---|---|---|---|
-| 1 | main-concept-v1.7 | HUMAN-APPROVED - CURRENT BASELINE | `spec/core/F65_Main_Concept_v1.7_HUMAN_APPROVED.md` |
-| 2 | gameplay-v1.1 | HUMAN-APPROVED - CURRENT BASELINE | `spec/core/F65_Gameplay_and_Simulation_Supplement_v1.1_HUMAN_APPROVED.md` |
-| 3 | runtime-v1.1-candidate | APPROVED CANDIDATE DESIGN - NOT FINAL | `spec/core/F65_Runtime_v1.1_APPROVED_CANDIDATE_AMENDMENT.md` |
-| 4 | physics-v4.0 | APPROVED ENGINEERING BASELINE | `spec/subsystems/F65_Flight_Physics_and_Simulation_Engineering_v4.0.md` |
+| 1 | main-concept-v1.8 | HUMAN-APPROVED - CURRENT BASELINE | `spec/core/F65_Main_Concept_v1.8_APPROVED_AMENDMENT.md` |
+| 2 | gameplay-v1.2 | HUMAN-APPROVED - CURRENT BASELINE | `spec/core/F65_Gameplay_v1.2_APPROVED_AMENDMENT.md` |
+| 3 | runtime-v1.2-candidate | APPROVED CANDIDATE DESIGN - NOT FINAL | `spec/core/F65_Runtime_v1.2_APPROVED_CANDIDATE_AMENDMENT.md` |
+| 4 | physics-v4.1 | HUMAN-APPROVED - CURRENT BASELINE | `spec/subsystems/F65_Physics_v4.1_APPROVED_AMENDMENT.md` |
 | 5 | graphics-v2.1 | Architecture-review candidate under F65-GAD-001 | `spec/subsystems/F-65_Megawing_Graphics_White_Paper_v2.1.pdf` |
 | 6 | audio-v1.0 | FINAL - HUMAN-REVIEWED v1.0 | `spec/subsystems/F-65_Megawing_Audio_Sound_Effects_and_Music_Engineering_White_Paper_v1.0_FINAL.pdf` |
 | 7 | radar-sensors-track-v1.0 | Human-reviewed engineering baseline / approved rewrite input | `spec/subsystems/F-65_Megawing_SensorAndTrackEngine_Engineering_Model_Phase-3_v1.0.pdf` |
 | 8 | ai-behavior-decision-v1.1 | HUMAN-APPROVED - CURRENT BASELINE | `spec/subsystems/F65_AI_Behavior_v1.1_APPROVED_AMENDMENT.md` |
 
-Main v1.7 > Gameplay v1.1 > Runtime v1.1 candidate > detailed subsystem engineering. Runtime and AI current revisions incorporate their unchanged original PDFs plus the identified amendments. Physics v4.0 is current; v3.3 and superseded standalone revisions remain provenance. Historical records below retain their original authority and evidence meanings. Adoption does not close implementation, measured limits or phase gates.
+Main v1.8 > Gameplay v1.2 > Runtime v1.2 candidate > detailed subsystem
+engineering, including Physics v4.1. Controlled successors incorporate their
+unchanged bases; predecessor bytes and historical records below retain their
+original identities and meanings. Bounded Phase 0 program closeout and obligation
+reassignments are approved. Full technical acceptance and measured limits are
+not implied; M1 waits for adoption integrated into verified main.
 
 ## 3. Current engineering state
 

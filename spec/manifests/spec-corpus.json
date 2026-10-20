@@ -1,8 +1,8 @@
 {
   "schema_version": 3,
-  "manifest_date": "2026-10-04",
+  "manifest_date": "2026-10-20",
   "project": "F-65 Megawing",
-  "authority_note": "This manifest records exact document identities, lifecycle classifications, statuses, and authority roles. Inclusion never approves a candidate, passes a gate, freezes a measured value, or authorizes production gameplay.",
+  "authority_note": "This manifest records exact document identities, lifecycle classifications, statuses, and authority roles. Inclusion never approves a candidate, passes a gate, freezes a measured value, or authorizes production gameplay. Founder-approved bounded Phase 0 closeout and A1-A6 phase-entry amendments are recorded in docs/decisions/PHASE1_ENTRY_ADOPTION_2026-10-20.md. M1 remains conditional on integration into verified main.",
   "lifecycle_classes": [
     "ACTIVE",
     "CANDIDATE",
@@ -11,10 +11,10 @@
     "PROJECT_CONTROL"
   ],
   "current_authority_order": [
-    "main-concept-v1.7",
-    "gameplay-v1.1",
-    "runtime-v1.1-candidate",
-    "physics-v4.0",
+    "main-concept-v1.8",
+    "gameplay-v1.2",
+    "runtime-v1.2-candidate",
+    "physics-v4.1",
     "graphics-v2.1",
     "audio-v1.0",
     "radar-sensors-track-v1.0",
@@ -255,10 +255,11 @@
       "relative_path": "spec/core/F65_Main_Concept_v1.7_HUMAN_APPROVED.md",
       "version": "1.7",
       "declared_status": "HUMAN-APPROVED - CURRENT BASELINE",
-      "lifecycle_classification": "ACTIVE",
+      "lifecycle_classification": "PROVENANCE",
       "sha256": "65fbec43e3b9138557393fa6a05e9ba44ca70db1b84164f1b0011b39c65c229e",
-      "authority_role": "current master product and architecture authority",
-      "present": true
+      "authority_role": "unchanged incorporated base of main-concept-v1.8; superseded as standalone current authority",
+      "present": true,
+      "preservation_note": "Original bytes and historical declared status retained; required incorporated dependency of the approved successor."
     },
     {
       "document_key": "gameplay-v1.1",
@@ -266,10 +267,11 @@
       "relative_path": "spec/core/F65_Gameplay_and_Simulation_Supplement_v1.1_HUMAN_APPROVED.md",
       "version": "1.1",
       "declared_status": "HUMAN-APPROVED - CURRENT BASELINE",
-      "lifecycle_classification": "ACTIVE",
+      "lifecycle_classification": "PROVENANCE",
       "sha256": "7b2d1fb7cec551a245780db994f0e60a02d8ee50de971b03dd805996d5a7b325",
-      "authority_role": "current player-facing authority subordinate to Main v1.7",
-      "present": true
+      "authority_role": "unchanged incorporated base of gameplay-v1.2; superseded as standalone current authority",
+      "present": true,
+      "preservation_note": "Original bytes and historical declared status retained; required incorporated dependency of the approved successor."
     },
     {
       "document_key": "runtime-v1.1-candidate",
@@ -277,13 +279,14 @@
       "relative_path": "spec/core/F65_Runtime_v1.1_APPROVED_CANDIDATE_AMENDMENT.md",
       "version": "1.1",
       "declared_status": "APPROVED CANDIDATE DESIGN - NOT FINAL",
-      "lifecycle_classification": "CANDIDATE",
+      "lifecycle_classification": "PROVENANCE",
       "sha256": "779a319fb317a3e2b7657cbf91767d10fa540f1e019b81735ae0e0f7fa4c3207",
-      "authority_role": "current core implementation-architecture candidate, composed of base PDF plus this amendment",
+      "authority_role": "unchanged incorporated base of runtime-v1.2-candidate; superseded as standalone current authority",
       "present": true,
       "incorporates_document_keys": [
         "runtime-v1-candidate"
-      ]
+      ],
+      "preservation_note": "Original bytes and historical declared status retained; required incorporated dependency of the approved successor."
     },
     {
       "document_key": "physics-v4.0",
@@ -291,10 +294,11 @@
       "relative_path": "spec/subsystems/F65_Flight_Physics_and_Simulation_Engineering_v4.0.md",
       "version": "4.0",
       "declared_status": "APPROVED ENGINEERING BASELINE",
-      "lifecycle_classification": "ACTIVE",
+      "lifecycle_classification": "PROVENANCE",
       "sha256": "0612f9e2a5b1733e798037d4c9c01b8dd929f1c4d5517de09dc4a98930cebec4",
-      "authority_role": "current detailed physics and aircraft-data engineering baseline",
-      "present": true
+      "authority_role": "unchanged incorporated base of physics-v4.1; superseded as standalone current authority",
+      "present": true,
+      "preservation_note": "Original bytes and historical declared status retained; required incorporated dependency of the approved successor."
     },
     {
       "document_key": "ai-behavior-decision-v1.1",
@@ -322,6 +326,62 @@
       "present": true,
       "generated_from_document_key": "physics-v4.0",
       "source_sha256": "0612f9e2a5b1733e798037d4c9c01b8dd929f1c4d5517de09dc4a98930cebec4"
+    },
+    {
+      "document_key": "main-concept-v1.8",
+      "filename": "F65_Main_Concept_v1.8_APPROVED_AMENDMENT.md",
+      "relative_path": "spec/core/F65_Main_Concept_v1.8_APPROVED_AMENDMENT.md",
+      "version": "1.8",
+      "declared_status": "HUMAN-APPROVED - CURRENT BASELINE",
+      "lifecycle_classification": "ACTIVE",
+      "sha256": "32bb79981e432021c815444513874c32b99fc3804edd1f766930e7bf5d663921",
+      "authority_role": "current Main Concept v1.8 authority composed of unchanged incorporated base plus approved entry amendment",
+      "present": true,
+      "incorporates_document_keys": [
+        "main-concept-v1.7"
+      ]
+    },
+    {
+      "document_key": "gameplay-v1.2",
+      "filename": "F65_Gameplay_v1.2_APPROVED_AMENDMENT.md",
+      "relative_path": "spec/core/F65_Gameplay_v1.2_APPROVED_AMENDMENT.md",
+      "version": "1.2",
+      "declared_status": "HUMAN-APPROVED - CURRENT BASELINE",
+      "lifecycle_classification": "ACTIVE",
+      "sha256": "f7d8f5c4be07ff09237b89a8c7f4260131eb53a12ddc1360c946bc5125f60283",
+      "authority_role": "current Gameplay v1.2 authority composed of unchanged incorporated base plus approved entry amendment",
+      "present": true,
+      "incorporates_document_keys": [
+        "gameplay-v1.1"
+      ]
+    },
+    {
+      "document_key": "runtime-v1.2-candidate",
+      "filename": "F65_Runtime_v1.2_APPROVED_CANDIDATE_AMENDMENT.md",
+      "relative_path": "spec/core/F65_Runtime_v1.2_APPROVED_CANDIDATE_AMENDMENT.md",
+      "version": "1.2",
+      "declared_status": "APPROVED CANDIDATE DESIGN - NOT FINAL",
+      "lifecycle_classification": "CANDIDATE",
+      "sha256": "34fa3a4c9422f6fcad92a2e716587a01c257db1c1c606f53612db100f6b3f354",
+      "authority_role": "current 65Aero Runtime v1.2 authority composed of unchanged incorporated base plus approved entry amendment",
+      "present": true,
+      "incorporates_document_keys": [
+        "runtime-v1.1-candidate"
+      ]
+    },
+    {
+      "document_key": "physics-v4.1",
+      "filename": "F65_Physics_v4.1_APPROVED_AMENDMENT.md",
+      "relative_path": "spec/subsystems/F65_Physics_v4.1_APPROVED_AMENDMENT.md",
+      "version": "4.1",
+      "declared_status": "HUMAN-APPROVED - CURRENT BASELINE",
+      "lifecycle_classification": "ACTIVE",
+      "sha256": "8443d89b3b409503dabe2a4480cb311eea6d276a8b8015b35d50dad21afae2c8",
+      "authority_role": "current Physics v4.1 authority composed of unchanged incorporated base plus approved entry amendment",
+      "present": true,
+      "incorporates_document_keys": [
+        "physics-v4.0"
+      ]
     }
   ]
 }

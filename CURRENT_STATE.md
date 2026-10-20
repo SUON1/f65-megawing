@@ -13,6 +13,15 @@ recorded here only when it changes enduring project reality.
 
 ## Current specification baseline
 
+**Approved successor adoption pending integration:** on 20 October the founder
+approved bounded Phase 0 program closeout, named obligation reassignments and
+A1–A6. The local manifest identifies Main v1.8, Gameplay v1.2, Runtime v1.2
+candidate and Physics v4.1, each composed from its unchanged predecessor plus
+the approved amendment. See the [decision](docs/decisions/PHASE1_ENTRY_ADOPTION_2026-10-20.md).
+M1 is authorized after adoption is integrated into verified main; implementation
+has not started. The integrated baseline below remains the 4 October family
+until merge; WIP tracks the local adoption.
+
 Founder directed coordinated Physics v4 adoption on 4 October 2026. The current specification set contains that adoption. See [adoption authority](docs/decisions/PHYSICS_V4_ADOPTION_2026-10-04.md) and the exact [corpus manifest](spec/manifests/spec-corpus.json).
 
 1. Main Concept v1.7 - master product and architecture authority.
@@ -69,15 +78,19 @@ preservation and SAVE checks. Each retains its stated tier and limitations.
 
 The broader six-case suite is not marked PASS. Missing combined-load/tier proof,
 audio continuation, live capture fit/schema/reducer and L3 operator/configuration
-gaps are carried into the forthcoming flight-supplement/development-plan review.
+gaps retain their historical evidence limitations. Their new owner-gate
+destinations were approved in the 20 October entry decision.
 The historical Group 2 allocation was not recovered; its grouping was approved
-prospectively. Group 3 is not defined or assigned by this closeout. Successor
-admission remains open under its existing requirements.
+prospectively. Group 3 is not defined or assigned by this closeout. Missing
+successor proof is not marked PASS; the approved row-specific reassignment
+changes when and where its obligations must be closed.
 
-Full Group 1/R0-F acceptance, complete evidence review and named owner acceptance
-remain separate. Measured limits and Phase 0 exit/Phase 1 entry are not approved.
-Physics v4 has been supplied, corrected and adopted as the detailed engineering baseline. The downstream development-plan and remaining R0-F/phase-entry decisions remain open. Formal
-Phase 1 integrated 65Aero implementation has not started.
+Full Group 1/R0-F technical acceptance and measured limits remain unapproved.
+The 20 October founder decision closes the bounded Phase 0 work program and
+assigns remaining obligations to their named implementation/acceptance gates;
+it does not mark missing proof PASS. Phase 1 M1 entry is authorized conditionally
+on adoption integrated into verified main. Formal Phase 1 implementation has
+not started.
 
 ## What currently exists in code
 
@@ -90,7 +103,11 @@ Phase 1 integrated 65Aero implementation has not started.
 
 ## Durable technical sequence
 
-Complete and reconcile the remaining R0-F closure work without relabeling bounded evidence as full acceptance. Then establish measured limits through the applicable evidence and approval process. The integrated 65Aero Phase 1 harness follows only when its governing gates and contracts are ready.
+Integrate and verify the approved entry adoption, then execute the authorized
+M1 visible-foundation Build Intent. Carry remaining obligations to the exact
+owner gates approved in the entry plan. Establish actual measured limits and
+full integrated-harness acceptance at their gates; bounded program closeout
+does not relabel historical evidence or approve production capacity.
 
 ## Project-truth debt
 
