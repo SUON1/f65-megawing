@@ -1,0 +1,53 @@
+{
+  "generated_bytes": "PASS temporary regeneration",
+  "current_input_hashes": 56,
+  "preserved_file_hashes": 417,
+  "preserved_unrelated_entries": 20,
+  "retained_r0_tracked_diff": "empty",
+  "raw_artifact_and_symbol_decode": "PASS all four runs",
+  "startup_write_bytes": 53,
+  "runs": {
+    "pal-replay": {
+      "run": "xemu-replay-0-1792519000865347000",
+      "status": "PASS",
+      "checkpoint_checksum": "DE675132",
+      "stack_bytes": {
+        "hardware": 31,
+        "software": 28
+      },
+      "source_manifest": "boot-window-60s/build.json"
+    },
+    "ntsc-replay": {
+      "run": "xemu-replay-1-1792519226249679000",
+      "status": "PASS",
+      "checkpoint_checksum": "DE675132",
+      "stack_bytes": {
+        "hardware": 31,
+        "software": 28
+      },
+      "source_manifest": "build.json"
+    },
+    "pal-slow-render": {
+      "run": "xemu-slow-render-0-1792519354742110000",
+      "status": "PASS",
+      "checkpoint_checksum": "DE675132",
+      "stack_bytes": {
+        "hardware": 31,
+        "software": 27
+      },
+      "source_manifest": "build.json"
+    },
+    "ntsc-slow-render": {
+      "run": "xemu-slow-render-1-1792519524571103000",
+      "status": "PASS",
+      "checkpoint_checksum": "DE675132",
+      "stack_bytes": {
+        "hardware": 31,
+        "software": 27
+      },
+      "source_manifest": "build.json"
+    }
+  },
+  "visual_inspection": "PASS four screenshots: complete sky/ground, readable counters, altitude and airspeed NOT IMPLEMENTED",
+  "physical": "NOT RUN"
+}

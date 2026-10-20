@@ -13,21 +13,19 @@ recorded here only when it changes enduring project reality.
 
 ## Current specification baseline
 
-**Approved successor adoption pending integration:** on 20 October the founder
-approved bounded Phase 0 program closeout, named obligation reassignments and
-A1–A6. The local manifest identifies Main v1.8, Gameplay v1.2, Runtime v1.2
-candidate and Physics v4.1, each composed from its unchanged predecessor plus
-the approved amendment. See the [decision](docs/decisions/PHASE1_ENTRY_ADOPTION_2026-10-20.md).
-M1 is authorized after adoption is integrated into verified main; implementation
-has not started. The integrated baseline below remains the 4 October family
-until merge; WIP tracks the local adoption.
+**Integrated Phase 1 entry adoption:** [PR #17](https://github.com/SUON1/f65-megawing/pull/17)
+merged on 20 October as `df1347b663c960e307870268f0b08ceaa6988d5c`.
+The founder approved bounded Phase 0 program closeout, named obligation
+reassignments and amendments A1–A6. Historical specifications and evidence remain
+unchanged; full R0-F technical PASS and measured limits are not implied.
+See the [decision](docs/decisions/PHASE1_ENTRY_ADOPTION_2026-10-20.md) and
+[corpus manifest](spec/manifests/spec-corpus.json). The M1 visible foundation supplies a development-only non-flight executable;
+see the [M1 correction handoff](docs/reports/M1_P2_CORRECTIONS.md).
 
-Founder directed coordinated Physics v4 adoption on 4 October 2026. The current specification set contains that adoption. See [adoption authority](docs/decisions/PHYSICS_V4_ADOPTION_2026-10-04.md) and the exact [corpus manifest](spec/manifests/spec-corpus.json).
-
-1. Main Concept v1.7 - master product and architecture authority.
-2. Gameplay v1.1 - player-facing authority.
-3. Runtime v1.1 approved candidate amendment - NOT FINAL; base v1 PDF plus amendment, pending independent freeze closure.
-4. Physics v4.0 - current detailed physical model and aircraft-data engineering baseline.
+1. Main Concept v1.8 - predecessor v1.7 plus approved A1–A3.
+2. Gameplay v1.2 - predecessor v1.1 plus approved A4.
+3. Runtime v1.2 candidate - predecessor v1.1 candidate plus A5; NOT FINAL.
+4. Physics v4.1 - predecessor v4.0 plus approved A6.
 5. Graphics v2.1.
 6. Audio v1.0.
 7. SensorAndTrack v1.0.
@@ -88,9 +86,11 @@ changes when and where its obligations must be closed.
 Full Group 1/R0-F technical acceptance and measured limits remain unapproved.
 The 20 October founder decision closes the bounded Phase 0 work program and
 assigns remaining obligations to their named implementation/acceptance gates;
-it does not mark missing proof PASS. Phase 1 M1 entry is authorized conditionally
-on adoption integrated into verified main. Formal Phase 1 implementation has
-not started.
+it does not mark missing proof PASS. Phase 1 M1 implementation followed verification of integrated adoption.
+The development-only foundation includes generated contracts, ordered runtime,
+semantic input, immutable snapshots and complete sky/ground rendering. Host,
+target-build and PAL/NTSC direct-PRG Xemu checks pass; physical acceptance,
+flight behavior and full-harness acceptance remain outside this increment.
 
 ## What currently exists in code
 
@@ -103,8 +103,8 @@ not started.
 
 ## Durable technical sequence
 
-Integrate and verify the approved entry adoption, then execute the authorized
-M1 visible-foundation Build Intent. Carry remaining obligations to the exact
+M1 visible-foundation implementation and its three P2 corrections are complete.
+Any M2 work requires its own approved Build Intent. Carry remaining obligations to the exact
 owner gates approved in the entry plan. Establish actual measured limits and
 full integrated-harness acceptance at their gates; bounded program closeout
 does not relabel historical evidence or approve production capacity.

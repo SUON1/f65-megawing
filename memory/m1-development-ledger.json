@@ -1,0 +1,55 @@
+{
+  "identity": "65AERO-M1-DEV-2",
+  "status": "development allocation; actual linked sizes in build report",
+  "ranges": {
+    "display_a": 131072,
+    "display_b": 196608,
+    "color": 267911168,
+    "rom_backup": 134217728,
+    "rom_backup_bytes": 131072,
+    "resident_start": 8193,
+    "resident_end_exclusive": 32768,
+    "software_stack_start": 49152,
+    "software_stack_end_exclusive": 53248,
+    "reserve_start": 360448,
+    "reserve_end_exclusive": 393216,
+    "hardware_stack_start": 256,
+    "hardware_stack_end_exclusive": 512,
+    "base_page_start": 512,
+    "base_page_end_exclusive": 768,
+    "platform_result_start": 6400,
+    "platform_result_end_exclusive": 8192
+  },
+  "display_bytes_each": 2000,
+  "hardware_stack": [
+    256,
+    512
+  ],
+  "base_page": [
+    512,
+    768
+  ],
+  "proof_platform_result": [
+    6400,
+    8192
+  ],
+  "reserve_allocation": 0,
+  "inherited_initialization": {
+    "owner": "Retained CF001 cfrom_begin -> cfline -> screen_byte",
+    "start": 2528,
+    "end_exclusive": 2581,
+    "access": "CPU-visible write during initialization only; retains the original ROM-backup message",
+    "source": "src/diagnostics/r0f/combined_platform.c",
+    "source_sha256": "428d54c3274c4c71f64c5c880337a3f2de8d9810518ea9caaa0ce5a99909d47a"
+  },
+  "owners": {
+    "tick_queue_checksum": "CoreRuntime",
+    "hardware_edges": "InputEngine",
+    "immutable_snapshots": "CoreRuntime publication; PresentationExtractor values",
+    "world_generation": "GraphicsEngine",
+    "hardware": "M1 development Platform adapter only"
+  },
+  "dma_lists": [],
+  "state": "Core/input/snapshot/render owner objects linked in resident bank 0; charged by symbols, not full production state",
+  "stack": "4096-byte software envelope; dynamic high-water required, not inferred from allocation"
+}
