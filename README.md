@@ -6,13 +6,13 @@ LLVM-MOS C is the primary MEGA65 target language. Selective handwritten 45GS02 a
 
 ## Current specification baseline
 
-[Physics v4.0](spec/subsystems/F65_Flight_Physics_and_Simulation_Engineering_v4.0.md) is the current detailed physics baseline, under Main v1.7, Gameplay v1.1 and Runtime v1.1 candidate. The [corpus manifest](spec/manifests/spec-corpus.json) records the complete hierarchy and hashes. [Adoption record](docs/decisions/PHYSICS_V4_ADOPTION_2026-10-04.md). Physics v3.3 remains historical provenance.
+The approved successor family is Main v1.8, Gameplay v1.2, Runtime v1.2 candidate (NOT FINAL), and [Physics v4.1](spec/subsystems/F65_Physics_v4.1_APPROVED_AMENDMENT.md). Each incorporates its unchanged predecessor plus the approved Phase 1 entry amendments. The [corpus manifest](spec/manifests/spec-corpus.json) records hierarchy, dependencies and hashes. [20 October adoption](docs/decisions/PHASE1_ENTRY_ADOPTION_2026-10-20.md) is prepared locally; integration is pending. Historical specifications and evidence remain preserved.
 
 ## Current development state
 
 `main` contains the integrated R0-A through current R0-F engineering lineage. Retained R0-A through R0-E proof history, substantial R0-F development, and bounded R0-F physical evidence are present.
 
-R0-F is not silently declared complete: remaining closure and integration obligations, including the integrated no-restart lifecycle boundary and wider parent-scope coverage, remain open. Measured limits are not approved. The R0 proof and diagnostic code is not equivalent to a completed production 65Aero engine; formal Phase 1 integrated 65Aero implementation has not started.
+The founder approved bounded Phase 0 program closeout and named remaining-obligation destinations in the [entry plan](docs/plans/65AERO_PHASE1_ENTRY_AND_DEVELOPER_FLIGHT_PLAN.md). Full R0-F technical PASS and measured limits are not approved. M1 visible-foundation implementation, including direct-PRG PAL/NTSC Xemu, is authorized after adoption is integrated into verified main. Implementation has not started; no D81, SD or physical testing is authorized.
 
 ## Where to start
 
