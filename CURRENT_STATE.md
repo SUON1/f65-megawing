@@ -113,6 +113,12 @@ and a size-focused integrated probe. Its provisional resident extent is `$7E85`
 (379 bytes below `$8000`); precision and memory limits are unchanged. See the
 [size-reduction handoff](docs/reports/M2_PR2_SIZE_REDUCTION.md). The founder
 approved this increment only, not complete PR2 runtime/display admission.
+The subsequent bounded prepared-context/overrun increment preserves the public
+geometry API and adds private captured camera/transform reuse. Its initial
+`$8014` failed gate is retained; removing the redundant registration temporary
+restores the regression probe to `$7FDC`, 36 bytes below `$8000`, with precision
+and memory ceilings unchanged. The founder approved this bounded correction
+and publication. See the [overrun correction](docs/reports/M2_PR2_FIT_OVERRUN_FIX.md).
 Full-renderer fit, integrated stack/timing and high-resolution output mapping
 remain open; no M2 target execution is claimed. Carry remaining obligations to the exact
 owner gates approved in the entry plan. Establish actual measured limits and

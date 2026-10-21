@@ -1,0 +1,17 @@
+{
+  "command": [
+    "toolchain/runtime/llvm-mos/bin/mos-mega65-clang",
+    "-mcpu=mos45gs02",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-fsyntax-only",
+    "-Iinterfaces/generated",
+    "-x",
+    "c",
+    "-"
+  ],
+  "stdin": "#include \"m2_full.h\"\n",
+  "exit": 0,
+  "output": ""
+}

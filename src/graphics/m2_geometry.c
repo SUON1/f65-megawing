@@ -3,6 +3,7 @@
 #include "m2_fixture.h"
 #include "m2_geometry.h"
 #include "m2_raster_private.h"
+#include "m2_prepared_private.h"
 
 // All callers bound magnitudes below INT64_MAX, including the rounding bias.
 static int32_t rounded_ratio(int64_t value, int64_t divisor)
@@ -173,17 +174,43 @@ static int32_t project_axis(int64_t component, int64_t forward, int32_t extent)
     return projected > maximum ? maximum : projected;
 }
 
+uint8_t m2_prepare(struct M2Prepared *prepared, const M2Camera *camera)
+{
+    if (prepared == 0)
+    {
+        return 0u;
+    }
+    prepared->ready = 0u;
+    if (!m2_transform(camera, &prepared->rotation))
+    {
+        return 0u;
+    }
+    prepared->camera = *camera;
+    prepared->ready = 1u;
+    return 1u;
+}
+
 int8_t m2_project_segment(const M2Camera *camera, const M2Point *first,
                           const M2Point *last, M2Line *line)
 {
-    M2Transform rotation;
-    if (line == 0 || !m2_point_valid(first) || !m2_point_valid(last)
-        || !m2_transform(camera, &rotation))
+    struct M2Prepared prepared;
+    if (!m2_prepare(&prepared, camera))
     {
         return -1;
     }
-    ClipPoint a = to_camera(camera, &rotation, first);
-    ClipPoint b = to_camera(camera, &rotation, last);
+    return m2_project_prepared(&prepared, first, last, line);
+}
+
+int8_t m2_project_prepared(const struct M2Prepared *prepared,
+                          const M2Point *first, const M2Point *last, M2Line *line)
+{
+    if (prepared == 0 || prepared->ready != 1u || line == 0
+        || !m2_point_valid(first) || !m2_point_valid(last))
+    {
+        return -1;
+    }
+    ClipPoint a = to_camera(&prepared->camera, &prepared->rotation, first);
+    ClipPoint b = to_camera(&prepared->camera, &prepared->rotation, last);
     for (uint8_t plane = 0u; plane < M2_CLIP_PLANES; ++plane)
     {
         int64_t da = plane_distance(&a, plane);
@@ -315,14 +342,24 @@ uint8_t m2_raster_line(const M2Line *line, M2Pixel *pixels,
 
 int8_t m2_ground_sample(const M2Camera *camera, uint16_t x, uint16_t y)
 {
-    M2Transform rotation;
-    if (x >= M2_WIDTH || y >= M2_HEIGHT || !m2_transform(camera, &rotation))
+    struct M2Prepared prepared;
+    if (!m2_prepare(&prepared, camera))
     {
         return -1;
     }
-    int64_t down = (int64_t)rotation.m[2] * (2L * M2_FOCAL)
-        + (int64_t)rotation.m[5] * (2L * x - (M2_WIDTH - 1))
-        + (int64_t)rotation.m[8] * (2L * y - (M2_HEIGHT - 1));
+    return m2_ground_prepared(&prepared, x, y);
+}
+
+int8_t m2_ground_prepared(const struct M2Prepared *prepared, uint16_t x, uint16_t y)
+{
+    if (prepared == 0 || prepared->ready != 1u || x >= M2_WIDTH || y >= M2_HEIGHT)
+    {
+        return -1;
+    }
+    const M2Transform *rotation = &prepared->rotation;
+    int64_t down = rotation->m[2] * (2L * M2_FOCAL)
+        + rotation->m[5] * (2L * x - (M2_WIDTH - 1))
+        + rotation->m[8] * (2L * y - (M2_HEIGHT - 1));
     return (int8_t)(down > 0);
 }
 
@@ -330,22 +367,35 @@ uint8_t m2_registration(const M2Camera *camera, uint32_t generation,
                          uint32_t source_tick, uint8_t store,
                          M2Registration *record)
 {
-    if (record == 0 || generation == 0u || store > 1u || !m2_camera_valid(camera))
+    struct M2Prepared prepared;
+    if (!m2_prepare(&prepared, camera))
     {
         return 0u;
     }
-    M2Registration result = {0};
-    result.camera = *camera;
-    (void)m2_transform(camera, &result.transform);
-    result.generation = generation;
-    result.source_tick = source_tick;
-    result.fixture_revision = M2_FIXTURE_REVISION;
-    result.projection_revision = M2_PROJECTION_REVISION;
-    result.composition_revision = M2_COMPOSITION_REVISION;
-    result.view_id = 0u;
-    result.tier_id = 0u;
-    result.store = store;
-    *record = result;
+    return m2_registration_prepared(&prepared, generation, source_tick, store, record);
+}
+
+uint8_t m2_registration_prepared(const struct M2Prepared *prepared,
+                                 uint32_t generation, uint32_t tick, uint8_t store,
+                                 M2Registration *record)
+{
+    if (prepared == 0 || prepared->ready != 1u || record == 0
+        || generation == 0u || store > 1u)
+    {
+        return 0u;
+    }
+    // All validation precedes output writes. Every generated field is assigned;
+    // avoid a second full registration record and the final structure copy.
+    record->camera = prepared->camera;
+    record->transform = prepared->rotation;
+    record->generation = generation;
+    record->source_tick = tick;
+    record->fixture_revision = M2_FIXTURE_REVISION;
+    record->projection_revision = M2_PROJECTION_REVISION;
+    record->composition_revision = M2_COMPOSITION_REVISION;
+    record->view_id = 0u;
+    record->tier_id = 0u;
+    record->store = store;
     return 1u;
 }
 

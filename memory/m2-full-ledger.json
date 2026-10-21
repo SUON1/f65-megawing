@@ -1,0 +1,47 @@
+{
+  "identity": "65AERO-M2-FULL-1",
+  "source_sha256": "ff6e66962f9c58ff92d3186586287e9a96f12a1393b43ac4c8bc80c852545848",
+  "resident": [
+    8193,
+    32768
+  ],
+  "hardware_stack": [
+    256,
+    512
+  ],
+  "base_page": [
+    512,
+    768
+  ],
+  "software_stack": [
+    49152,
+    53248
+  ],
+  "displays": [
+    {
+      "start": 131072,
+      "bytes": 63552,
+      "owner": "Graphics"
+    },
+    {
+      "start": 196608,
+      "bytes": 63552,
+      "owner": "Graphics"
+    }
+  ],
+  "color": {
+    "start": 267911168,
+    "bytes": 2000,
+    "immutable_after_init": true
+  },
+  "reserve_allocation": 0,
+  "objects": {
+    "Core/Input/Presentation": "linked existing owner objects",
+    "Graphics": "two bundles, prepared context, snapshot, cursor, line, tile[64], text[320], counters",
+    "Diagnostics": "requested camera and prior semantic command bits",
+    "font": "owned 8x8 bitmap constants, charged in rodata",
+    "Platform": "existing lifecycle/copy objects plus static compiler scratch"
+  },
+  "alias_policy": "no overlapping object lifetimes or reused owner bands",
+  "status": "actual sizes required from complete link; no execution admission"
+}
