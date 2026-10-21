@@ -2,6 +2,7 @@
 
 #include "m2_fixture.h"
 #include "m2_geometry.h"
+#include "m2_raster_private.h"
 
 // All callers bound magnitudes below INT64_MAX, including the rounding bias.
 static int32_t rounded_ratio(int64_t value, int64_t divisor)
@@ -233,10 +234,9 @@ static int16_t raster_coordinate(int32_t value, int32_t extent)
     return (int16_t)(sample >= extent ? extent - 1 : sample);
 }
 
-uint8_t m2_raster_line(const M2Line *line, M2Pixel *pixels,
-                        uint16_t capacity, uint16_t *count)
+uint8_t m2_raster_begin(const M2Line *line, struct M2RasterCursor *cursor)
 {
-    if (line == 0 || pixels == 0 || count == 0)
+    if (line == 0 || cursor == 0)
     {
         return 0u;
     }
@@ -250,35 +250,64 @@ uint8_t m2_raster_line(const M2Line *line, M2Pixel *pixels,
             return 0u;
         }
     }
-    int16_t x = raster_coordinate(line->x[0], M2_WIDTH);
-    int16_t y = raster_coordinate(line->y[0], M2_HEIGHT);
+    struct M2RasterCursor result;
+    result.x = raster_coordinate(line->x[0], M2_WIDTH);
+    result.y = raster_coordinate(line->y[0], M2_HEIGHT);
     int16_t end_x = raster_coordinate(line->x[1], M2_WIDTH);
     int16_t end_y = raster_coordinate(line->y[1], M2_HEIGHT);
-    int16_t dx = (int16_t)(end_x > x ? end_x - x : x - end_x);
-    int16_t dy = (int16_t)(end_y > y ? end_y - y : y - end_y);
-    uint16_t needed = (uint16_t)((dx > dy ? dx : dy) + 1);
-    if (capacity < needed || needed > M2_RASTER_POINTS)
+    result.dx = (int16_t)(end_x > result.x ? end_x - result.x : result.x - end_x);
+    result.dy = (int16_t)(end_y > result.y ? end_y - result.y : result.y - end_y);
+    result.remaining = (uint16_t)((result.dx > result.dy ? result.dx : result.dy) + 1);
+    if (result.remaining > M2_RASTER_POINTS)
     {
         return 0u;
     }
-    int16_t step_x = end_x > x ? 1 : -1;
-    int16_t step_y = end_y > y ? 1 : -1;
-    int16_t error = (int16_t)(dx - dy);
+    result.step_x = end_x > result.x ? 1 : -1;
+    result.step_y = end_y > result.y ? 1 : -1;
+    result.error = (int16_t)(result.dx - result.dy);
+    *cursor = result;
+    return 1u;
+}
+
+uint8_t m2_raster_next(struct M2RasterCursor *cursor, M2Pixel *pixel)
+{
+    if (cursor == 0 || pixel == 0 || cursor->remaining == 0u)
+    {
+        return 0u;
+    }
+    pixel->x = (uint16_t)cursor->x;
+    pixel->y = (uint16_t)cursor->y;
+    --cursor->remaining;
+    if (cursor->remaining != 0u)
+    {
+        int16_t twice = (int16_t)(2 * cursor->error);
+        if (twice > -cursor->dy)
+        {
+            cursor->error = (int16_t)(cursor->error - cursor->dy);
+            cursor->x = (int16_t)(cursor->x + cursor->step_x);
+        }
+        if (twice < cursor->dx)
+        {
+            cursor->error = (int16_t)(cursor->error + cursor->dx);
+            cursor->y = (int16_t)(cursor->y + cursor->step_y);
+        }
+    }
+    return 1u;
+}
+
+uint8_t m2_raster_line(const M2Line *line, M2Pixel *pixels,
+                        uint16_t capacity, uint16_t *count)
+{
+    struct M2RasterCursor cursor;
+    if (pixels == 0 || count == 0 || !m2_raster_begin(line, &cursor)
+        || capacity < cursor.remaining)
+    {
+        return 0u;
+    }
+    uint16_t needed = cursor.remaining;
     for (uint16_t i = 0u; i < needed; ++i)
     {
-        pixels[i].x = (uint16_t)x;
-        pixels[i].y = (uint16_t)y;
-        int16_t twice = (int16_t)(2 * error);
-        if (twice > -dy)
-        {
-            error = (int16_t)(error - dy);
-            x = (int16_t)(x + step_x);
-        }
-        if (twice < dx)
-        {
-            error = (int16_t)(error + dx);
-            y = (int16_t)(y + step_y);
-        }
+        (void)m2_raster_next(&cursor, &pixels[i]);
     }
     *count = needed;
     return 1u;
