@@ -86,6 +86,7 @@ def build():
     assert owners['m2_probe_record']['bytes']>0 and owners['m2_probe_surface']['bytes']>0
     paths=set(PURE+M1+['interfaces/m2_pr1.json','interfaces/generated/m2_pr1.h',
               'memory/m2-pr1-ledger.json','src/environment/m2_fixture.h','src/graphics/m2_geometry.h',
+              'src/graphics/m2_raster_private.h',
               'src/platform/r0f/startup.ld','toolchain/f65_toolchain.lock.json',
               'interfaces/generated/m1_development.h','src/core/m1_runtime.h',
               'src/input/m1_input.h','src/presentation/m1_snapshot.h'])

@@ -1,0 +1,3644 @@
+{
+  "identity": "65AERO-M2-PR1-2",
+  "base": "a9d3f796291f2941002b4d1f4c8fc48a9dba3c89",
+  "commands": [
+    [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests/flight_demo/m2",
+      "-p",
+      "test_*.py",
+      "-v"
+    ],
+    [
+      "/usr/bin/clang",
+      "-std=c11",
+      "-Wall",
+      "-Wextra",
+      "-Wconversion",
+      "-Werror",
+      "-fsanitize=address,undefined",
+      "-Iinterfaces/generated",
+      "-Isrc/environment",
+      "-Isrc/graphics",
+      "-Isrc/core",
+      "-Isrc/input",
+      "-Isrc/presentation",
+      "src/environment/m2_fixture.c",
+      "src/graphics/m2_geometry.c",
+      "interfaces/generated/m2_tables.c",
+      "src/core/m1_runtime.c",
+      "src/input/m1_input.c",
+      "src/presentation/m1_snapshot.c",
+      "tests/flight_demo/m2/host.c",
+      "-o",
+      "/Users/slice/Developer/f65-megawing/build/flight-demo/m2-pr1-1792542041697467000/host"
+    ],
+    [
+      "/Users/slice/Developer/f65-megawing/build/flight-demo/m2-pr1-1792542041697467000/host"
+    ],
+    [
+      "/usr/bin/clang",
+      "-std=c11",
+      "-Wall",
+      "-Wextra",
+      "-Wconversion",
+      "-Werror",
+      "-shared",
+      "-fPIC",
+      "-Iinterfaces/generated",
+      "-Isrc/environment",
+      "-Isrc/graphics",
+      "-Isrc/core",
+      "-Isrc/input",
+      "-Isrc/presentation",
+      "src/environment/m2_fixture.c",
+      "src/graphics/m2_geometry.c",
+      "interfaces/generated/m2_tables.c",
+      "-o",
+      "/Users/slice/Developer/f65-megawing/build/flight-demo/m2-pr1-1792542041697467000/geometry.dylib"
+    ],
+    [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "tests/flight_demo/m2/oracle.py",
+      "/Users/slice/Developer/f65-megawing/build/flight-demo/m2-pr1-1792542041697467000/geometry.dylib"
+    ],
+    [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "tests/flight_demo/m2/clip_regressions.py",
+      "/Users/slice/Developer/f65-megawing/build/flight-demo/m2-pr1-1792542041697467000/geometry.dylib"
+    ],
+    [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "tests/flight_demo/m2/clip_regressions.py",
+      "--emit-c",
+      "/Users/slice/Developer/f65-megawing/build/flight-demo/m2-pr1-1792542041697467000/clip_vectors.h"
+    ],
+    [
+      "/usr/bin/clang",
+      "-std=c11",
+      "-Wall",
+      "-Wextra",
+      "-Wconversion",
+      "-Werror",
+      "-fsanitize=address,undefined",
+      "-Iinterfaces/generated",
+      "-Isrc/environment",
+      "-Isrc/graphics",
+      "-Isrc/core",
+      "-Isrc/input",
+      "-Isrc/presentation",
+      "-I/Users/slice/Developer/f65-megawing/build/flight-demo/m2-pr1-1792542041697467000",
+      "src/environment/m2_fixture.c",
+      "src/graphics/m2_geometry.c",
+      "interfaces/generated/m2_tables.c",
+      "tests/flight_demo/m2/clip_host.c",
+      "-o",
+      "/Users/slice/Developer/f65-megawing/build/flight-demo/m2-pr1-1792542041697467000/clip-host"
+    ],
+    [
+      "/Users/slice/Developer/f65-megawing/build/flight-demo/m2-pr1-1792542041697467000/clip-host"
+    ],
+    [
+      "/Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/mos-mega65-clang",
+      "-mcpu=mos45gs02",
+      "-mlto-zp=0",
+      "-Os",
+      "-fno-jump-tables",
+      "-std=c11",
+      "-Wall",
+      "-Wextra",
+      "-Wconversion",
+      "-Werror",
+      "-Iinterfaces/generated",
+      "-Isrc/environment",
+      "-Isrc/graphics",
+      "-Isrc/core",
+      "-Isrc/input",
+      "-Isrc/presentation",
+      "src/environment/m2_fixture.c",
+      "src/graphics/m2_geometry.c",
+      "interfaces/generated/m2_tables.c",
+      "tests/flight_demo/m2/target.c",
+      "-Wl,-T,src/platform/r0f/startup.ld",
+      "-Wl,-Map,/Users/slice/Developer/f65-megawing/build/flight-demo/m2-pr1-1792542041697467000/M2.map",
+      "-o",
+      "/Users/slice/Developer/f65-megawing/build/flight-demo/m2-pr1-1792542041697467000/M2.prg"
+    ],
+    [
+      "/Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/llvm-objdump",
+      "-d",
+      "/Users/slice/Developer/f65-megawing/build/flight-demo/m2-pr1-1792542041697467000/M2.prg.elf"
+    ],
+    [
+      "/Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/llvm-nm",
+      "-S",
+      "/Users/slice/Developer/f65-megawing/build/flight-demo/m2-pr1-1792542041697467000/M2.prg.elf"
+    ]
+  ],
+  "host": "M2 HOST PASS: negative/identity/capacity checks; 600 per-tick replay comparisons DE675132",
+  "oracle": {
+    "oracle": "Decimal 60-digit independent quaternion and parametric clipping",
+    "cases": 3857,
+    "visible": 1278,
+    "raster_points": 119735,
+    "max_projection_error_pixels": "0.0000212242184388830443357598481208377150872710737205925378",
+    "projection_limit": 0.5,
+    "raster_limit_pixels": 1,
+    "status": "PASS"
+  },
+  "clipping_regressions": {
+    "cases": 841,
+    "max_error_pixels": "0.035136324727656707280273201338725030267032921933582318184",
+    "worst_case": "40000-yaw89-pitch0-roll0-epsilon.0001",
+    "failures": [],
+    "status": "PASS",
+    "results": [
+      {
+        "case": "reported-P2",
+        "error_pixels": "0.000092738432360076059177945750216417446804447842337834722"
+      },
+      {
+        "case": "10-yaw1-pitch0-roll0-epsilon.0001",
+        "error_pixels": "0.003524940028405584666233429304391790995275767103346359598"
+      },
+      {
+        "case": "10-yaw1-pitch0-roll0-epsilon.0001-reversed",
+        "error_pixels": "0.003524940028405584666233429304391790995275767103346359598"
+      },
+      {
+        "case": "10-yaw1-pitch0-roll0-epsilon.0003",
+        "error_pixels": "0.007259639752581288716342879580974162539864261007083868174"
+      },
+      {
+        "case": "10-yaw1-pitch0-roll0-epsilon.0003-reversed",
+        "error_pixels": "0.007259639752581288716342879580974162539864261007083868174"
+      },
+      {
+        "case": "10-yaw1-pitch0-roll0-epsilon.001",
+        "error_pixels": "0.001791570683519613739050652604200001538363641173103454931"
+      },
+      {
+        "case": "10-yaw1-pitch0-roll0-epsilon.001-reversed",
+        "error_pixels": "0.001791570683519613739050652604200001538363641173103454931"
+      },
+      {
+        "case": "10-yaw1-pitch0-roll0-epsilon.002",
+        "error_pixels": "0.000092738432360076059177945750216417446804447842337834722"
+      },
+      {
+        "case": "10-yaw1-pitch0-roll0-epsilon.002-reversed",
+        "error_pixels": "0.000092738432360076059177945750216417446804447842337834722"
+      },
+      {
+        "case": "10-yaw1-pitch0-roll0-epsilon.01",
+        "error_pixels": "0.000052982995855227072808272229110510272193872221779566428"
+      },
+      {
+        "case": "10-yaw1-pitch0-roll0-epsilon.01-reversed",
+        "error_pixels": "0.000052982995855227072808272229110510272193872221779566428"
+      },
+      {
+        "case": "10-yaw1-pitch0-roll0-epsilon.1",
+        "error_pixels": "0.000027756529262656951601239137995838351592193433470323948"
+      },
+      {
+        "case": "10-yaw1-pitch0-roll0-epsilon.1-reversed",
+        "error_pixels": "0.000027756529262656951601239137995838351592193433470323948"
+      },
+      {
+        "case": "10-yaw1-pitch-60-roll0-epsilon.0001",
+        "error_pixels": "0.018418117917532416534251568360561051264223854784940621219"
+      },
+      {
+        "case": "10-yaw1-pitch-60-roll0-epsilon.0001-reversed",
+        "error_pixels": "0.018418117917532416534251568360561051264223854784940621219"
+      },
+      {
+        "case": "10-yaw1-pitch-60-roll0-epsilon.0003",
+        "error_pixels": "0.008134246316695706822420952776081045755095670522898697258"
+      },
+      {
+        "case": "10-yaw1-pitch-60-roll0-epsilon.0003-reversed",
+        "error_pixels": "0.008134246316695706822420952776081045755095670522898697258"
+      },
+      {
+        "case": "10-yaw1-pitch-60-roll0-epsilon.001",
+        "error_pixels": "0.000419093994105371179552872130052261233537550882004939190"
+      },
+      {
+        "case": "10-yaw1-pitch-60-roll0-epsilon.001-reversed",
+        "error_pixels": "0.000419093994105371179552872130052261233537550882004939190"
+      },
+      {
+        "case": "10-yaw1-pitch-60-roll0-epsilon.002",
+        "error_pixels": "0.000984083274334762781371930080500796801234913505361750423"
+      },
+      {
+        "case": "10-yaw1-pitch-60-roll0-epsilon.002-reversed",
+        "error_pixels": "0.000984083274334762781371930080500796801234913505361750423"
+      },
+      {
+        "case": "10-yaw1-pitch-60-roll0-epsilon.01",
+        "error_pixels": "0.000196202622615054802925450613937903282266642221413299624"
+      },
+      {
+        "case": "10-yaw1-pitch-60-roll0-epsilon.01-reversed",
+        "error_pixels": "0.000196202622615054802925450613937903282266642221413299624"
+      },
+      {
+        "case": "10-yaw1-pitch-60-roll0-epsilon.1",
+        "error_pixels": "0.000003772854359966594884140697069592569855900833769290437"
+      },
+      {
+        "case": "10-yaw1-pitch-60-roll0-epsilon.1-reversed",
+        "error_pixels": "0.000003772854359966594884140697069592569855900833769290438"
+      },
+      {
+        "case": "10-yaw1-pitch60-roll0-epsilon.0001",
+        "error_pixels": "0.018418117917532416534251568360561051264223854784941338574"
+      },
+      {
+        "case": "10-yaw1-pitch60-roll0-epsilon.0001-reversed",
+        "error_pixels": "0.018418117917532416534251568360561051264223854784941338574"
+      },
+      {
+        "case": "10-yaw1-pitch60-roll0-epsilon.0003",
+        "error_pixels": "0.008134246316695706822420952776081045755095670522899123869"
+      },
+      {
+        "case": "10-yaw1-pitch60-roll0-epsilon.0003-reversed",
+        "error_pixels": "0.008134246316695706822420952776081045755095670522899123869"
+      },
+      {
+        "case": "10-yaw1-pitch60-roll0-epsilon.001",
+        "error_pixels": "0.000419093994105371179552872130052261233537550882005046979"
+      },
+      {
+        "case": "10-yaw1-pitch60-roll0-epsilon.001-reversed",
+        "error_pixels": "0.000419093994105371179552872130052261233537550882005046979"
+      },
+      {
+        "case": "10-yaw1-pitch60-roll0-epsilon.002",
+        "error_pixels": "0.000984083274334762781371930080500796801234913505361697038"
+      },
+      {
+        "case": "10-yaw1-pitch60-roll0-epsilon.002-reversed",
+        "error_pixels": "0.000984083274334762781371930080500796801234913505361697037"
+      },
+      {
+        "case": "10-yaw1-pitch60-roll0-epsilon.01",
+        "error_pixels": "0.000196202622615054802925450613937903282266642221413288384"
+      },
+      {
+        "case": "10-yaw1-pitch60-roll0-epsilon.01-reversed",
+        "error_pixels": "0.000196202622615054802925450613937903282266642221413288384"
+      },
+      {
+        "case": "10-yaw1-pitch60-roll0-epsilon.1",
+        "error_pixels": "0.000003772854359966594884140697069592569855900833769289320"
+      },
+      {
+        "case": "10-yaw1-pitch60-roll0-epsilon.1-reversed",
+        "error_pixels": "0.000003772854359966594884140697069592569855900833769289321"
+      },
+      {
+        "case": "10-yaw1-pitch0-roll-60-epsilon.0001",
+        "error_pixels": null
+      },
+      {
+        "case": "10-yaw1-pitch0-roll-60-epsilon.0001-reversed",
+        "error_pixels": null
+      },
+      {
+        "case": "10-yaw1-pitch0-roll-60-epsilon.0003",
+        "error_pixels": "0.001814392708501451529475397779219740758014547717952083426"
+      },
+      {
+        "case": "10-yaw1-pitch0-roll-60-epsilon.0003-reversed",
+        "error_pixels": "0.001814392708501451529475397779219740758014547717952083426"
+      },
+      {
+        "case": "10-yaw1-pitch0-roll-60-epsilon.001",
+        "error_pixels": "0.000567766910106264363996889614557781733635562026260813258"
+      },
+      {
+        "case": "10-yaw1-pitch0-roll-60-epsilon.001-reversed",
+        "error_pixels": "0.000567766910106264363996889614557781733635562026260813258"
+      },
+      {
+        "case": "10-yaw1-pitch0-roll-60-epsilon.002",
+        "error_pixels": "0.000246932750086643314334406834210835756715347485667708731"
+      },
+      {
+        "case": "10-yaw1-pitch0-roll-60-epsilon.002-reversed",
+        "error_pixels": "0.000246932750086643314334406834210835756715347485667708731"
+      },
+      {
+        "case": "10-yaw1-pitch0-roll-60-epsilon.01",
+        "error_pixels": "0.000258002638759508427591590430802592199034475816362424311"
+      },
+      {
+        "case": "10-yaw1-pitch0-roll-60-epsilon.01-reversed",
+        "error_pixels": "0.000258002638759508427591590430802592199034475816362424311"
+      },
+      {
+        "case": "10-yaw1-pitch0-roll-60-epsilon.1",
+        "error_pixels": "0.000014216926740559062144743040356248520783088704196356566"
+      },
+      {
+        "case": "10-yaw1-pitch0-roll-60-epsilon.1-reversed",
+        "error_pixels": "0.000014216926740559062144743040356248520783088704196356566"
+      },
+      {
+        "case": "10-yaw1-pitch0-roll60-epsilon.0001",
+        "error_pixels": null
+      },
+      {
+        "case": "10-yaw1-pitch0-roll60-epsilon.0001-reversed",
+        "error_pixels": null
+      },
+      {
+        "case": "10-yaw1-pitch0-roll60-epsilon.0003",
+        "error_pixels": "0.001814392708501451529475397779219740758014547717952471985"
+      },
+      {
+        "case": "10-yaw1-pitch0-roll60-epsilon.0003-reversed",
+        "error_pixels": "0.001814392708501451529475397779219740758014547717952471985"
+      },
+      {
+        "case": "10-yaw1-pitch0-roll60-epsilon.001",
+        "error_pixels": "0.000567766910106264363996889614557781733635562026260921781"
+      },
+      {
+        "case": "10-yaw1-pitch0-roll60-epsilon.001-reversed",
+        "error_pixels": "0.000567766910106264363996889614557781733635562026260921781"
+      },
+      {
+        "case": "10-yaw1-pitch0-roll60-epsilon.002",
+        "error_pixels": "0.000246932750086643314334406834210835756715347485667764398"
+      },
+      {
+        "case": "10-yaw1-pitch0-roll60-epsilon.002-reversed",
+        "error_pixels": "0.000246932750086643314334406834210835756715347485667764398"
+      },
+      {
+        "case": "10-yaw1-pitch0-roll60-epsilon.01",
+        "error_pixels": "0.000258002638759508427591590430802592199034475816362435537"
+      },
+      {
+        "case": "10-yaw1-pitch0-roll60-epsilon.01-reversed",
+        "error_pixels": "0.000258002638759508427591590430802592199034475816362435537"
+      },
+      {
+        "case": "10-yaw1-pitch0-roll60-epsilon.1",
+        "error_pixels": "0.000014216926740559062144743040356248520783088704196357681"
+      },
+      {
+        "case": "10-yaw1-pitch0-roll60-epsilon.1-reversed",
+        "error_pixels": "0.000014216926740559062144743040356248520783088704196357681"
+      },
+      {
+        "case": "10-yaw1-pitch-60-roll60-epsilon.0001",
+        "error_pixels": "0.004783228658349200104830436003492349854628696676754936949"
+      },
+      {
+        "case": "10-yaw1-pitch-60-roll60-epsilon.0001-reversed",
+        "error_pixels": "0.004783228658349200104830436003492349854628696676754936949"
+      },
+      {
+        "case": "10-yaw1-pitch-60-roll60-epsilon.0003",
+        "error_pixels": "0.000977659728078286644148849352570104499576969317622599892"
+      },
+      {
+        "case": "10-yaw1-pitch-60-roll60-epsilon.0003-reversed",
+        "error_pixels": "0.000977659728078286644148849352570104499576969317622599892"
+      },
+      {
+        "case": "10-yaw1-pitch-60-roll60-epsilon.001",
+        "error_pixels": "0.000363426076479784222491223174209760809658908051836040696"
+      },
+      {
+        "case": "10-yaw1-pitch-60-roll60-epsilon.001-reversed",
+        "error_pixels": "0.000363426076479784222491223174209760809658908051836040696"
+      },
+      {
+        "case": "10-yaw1-pitch-60-roll60-epsilon.002",
+        "error_pixels": "0.000958048291832023681348762841782804311003673549834427497"
+      },
+      {
+        "case": "10-yaw1-pitch-60-roll60-epsilon.002-reversed",
+        "error_pixels": "0.000958048291832023681348762841782804311003673549834427497"
+      },
+      {
+        "case": "10-yaw1-pitch-60-roll60-epsilon.01",
+        "error_pixels": "0.000199460467323988217442347589490204071488107014654955148"
+      },
+      {
+        "case": "10-yaw1-pitch-60-roll60-epsilon.01-reversed",
+        "error_pixels": "0.000199460467323988217442347589490204071488107014654955148"
+      },
+      {
+        "case": "10-yaw1-pitch-60-roll60-epsilon.1",
+        "error_pixels": "0.000024038520620849489996706304952005762465933696744112068"
+      },
+      {
+        "case": "10-yaw1-pitch-60-roll60-epsilon.1-reversed",
+        "error_pixels": "0.000024038520620849489996706304952005762465933696744112068"
+      },
+      {
+        "case": "10-yaw1-pitch60-roll-60-epsilon.0001",
+        "error_pixels": "0.004783228658349200104830436003492349854628696676754988583"
+      },
+      {
+        "case": "10-yaw1-pitch60-roll-60-epsilon.0001-reversed",
+        "error_pixels": "0.004783228658349200104830436003492349854628696676754988583"
+      },
+      {
+        "case": "10-yaw1-pitch60-roll-60-epsilon.0003",
+        "error_pixels": "0.000977659728078286644148849352570104499576969317622603206"
+      },
+      {
+        "case": "10-yaw1-pitch60-roll-60-epsilon.0003-reversed",
+        "error_pixels": "0.000977659728078286644148849352570104499576969317622603206"
+      },
+      {
+        "case": "10-yaw1-pitch60-roll-60-epsilon.001",
+        "error_pixels": "0.000363426076479784222491223174209760809658908051836043170"
+      },
+      {
+        "case": "10-yaw1-pitch60-roll-60-epsilon.001-reversed",
+        "error_pixels": "0.000363426076479784222491223174209760809658908051836043170"
+      },
+      {
+        "case": "10-yaw1-pitch60-roll-60-epsilon.002",
+        "error_pixels": "0.000958048291832023681348762841782804311003673549834426344"
+      },
+      {
+        "case": "10-yaw1-pitch60-roll-60-epsilon.002-reversed",
+        "error_pixels": "0.000958048291832023681348762841782804311003673549834426344"
+      },
+      {
+        "case": "10-yaw1-pitch60-roll-60-epsilon.01",
+        "error_pixels": "0.000199460467323988217442347589490204071488107014654954949"
+      },
+      {
+        "case": "10-yaw1-pitch60-roll-60-epsilon.01-reversed",
+        "error_pixels": "0.000199460467323988217442347589490204071488107014654954949"
+      },
+      {
+        "case": "10-yaw1-pitch60-roll-60-epsilon.1",
+        "error_pixels": "0.000024038520620849489996706304952005762465933696744112077"
+      },
+      {
+        "case": "10-yaw1-pitch60-roll-60-epsilon.1-reversed",
+        "error_pixels": "0.000024038520620849489996706304952005762465933696744112077"
+      },
+      {
+        "case": "10-yaw17-pitch0-roll0-epsilon.0001",
+        "error_pixels": "0.023198956934492603730208668442645859738026826737822650169"
+      },
+      {
+        "case": "10-yaw17-pitch0-roll0-epsilon.0001-reversed",
+        "error_pixels": "0.023198956934492603730208668442645859738026826737822650170"
+      },
+      {
+        "case": "10-yaw17-pitch0-roll0-epsilon.0003",
+        "error_pixels": "0.001980671669632345150424458754465971854644808017629603104"
+      },
+      {
+        "case": "10-yaw17-pitch0-roll0-epsilon.0003-reversed",
+        "error_pixels": "0.001980671669632345150424458754465971854644808017629603104"
+      },
+      {
+        "case": "10-yaw17-pitch0-roll0-epsilon.001",
+        "error_pixels": "0.000034578654267362805554584151564185859527993555916253541"
+      },
+      {
+        "case": "10-yaw17-pitch0-roll0-epsilon.001-reversed",
+        "error_pixels": "0.000034578654267362805554584151564185859527993555916253541"
+      },
+      {
+        "case": "10-yaw17-pitch0-roll0-epsilon.002",
+        "error_pixels": "0.000001725428604775243778590635462725354128310964425136734"
+      },
+      {
+        "case": "10-yaw17-pitch0-roll0-epsilon.002-reversed",
+        "error_pixels": "0.000001725428604775243778590635462725354128310964425136734"
+      },
+      {
+        "case": "10-yaw17-pitch0-roll0-epsilon.01",
+        "error_pixels": "0.000224552795767840242511795714186995595989318829093229221"
+      },
+      {
+        "case": "10-yaw17-pitch0-roll0-epsilon.01-reversed",
+        "error_pixels": "0.000224552795767840242511795714186995595989318829093229222"
+      },
+      {
+        "case": "10-yaw17-pitch0-roll0-epsilon.1",
+        "error_pixels": "6.07421650382222236849815115318116995108312506603078E-7"
+      },
+      {
+        "case": "10-yaw17-pitch0-roll0-epsilon.1-reversed",
+        "error_pixels": "6.07421650382222236849815115318116995108312506603078E-7"
+      },
+      {
+        "case": "10-yaw17-pitch-60-roll0-epsilon.0001",
+        "error_pixels": "0.002360321137777722416036910350122014262222641738472193268"
+      },
+      {
+        "case": "10-yaw17-pitch-60-roll0-epsilon.0001-reversed",
+        "error_pixels": "0.002360321137777722416036910350122014262222641738472193268"
+      },
+      {
+        "case": "10-yaw17-pitch-60-roll0-epsilon.0003",
+        "error_pixels": "0.003324344021736014124908861212656385724044585551390072716"
+      },
+      {
+        "case": "10-yaw17-pitch-60-roll0-epsilon.0003-reversed",
+        "error_pixels": "0.003324344021736014124908861212656385724044585551390072717"
+      },
+      {
+        "case": "10-yaw17-pitch-60-roll0-epsilon.001",
+        "error_pixels": "0.000646369486281746643747652820381855504037293592345295014"
+      },
+      {
+        "case": "10-yaw17-pitch-60-roll0-epsilon.001-reversed",
+        "error_pixels": "0.000646369486281746643747652820381855504037293592345295014"
+      },
+      {
+        "case": "10-yaw17-pitch-60-roll0-epsilon.002",
+        "error_pixels": "0.000579835412355513445354356956776685932124383291261687226"
+      },
+      {
+        "case": "10-yaw17-pitch-60-roll0-epsilon.002-reversed",
+        "error_pixels": "0.000579835412355513445354356956776685932124383291261687225"
+      },
+      {
+        "case": "10-yaw17-pitch-60-roll0-epsilon.01",
+        "error_pixels": "0.000116882464101289572380209357858286719036061336502453528"
+      },
+      {
+        "case": "10-yaw17-pitch-60-roll0-epsilon.01-reversed",
+        "error_pixels": "0.000116882464101289572380209357858286719036061336502453528"
+      },
+      {
+        "case": "10-yaw17-pitch-60-roll0-epsilon.1",
+        "error_pixels": "0.000012964412798209543417017787887190138117917335801752542"
+      },
+      {
+        "case": "10-yaw17-pitch-60-roll0-epsilon.1-reversed",
+        "error_pixels": "0.000012964412798209543417017787887190138117917335801752542"
+      },
+      {
+        "case": "10-yaw17-pitch60-roll0-epsilon.0001",
+        "error_pixels": "0.002360321137777722416036910350122014262222641738471347742"
+      },
+      {
+        "case": "10-yaw17-pitch60-roll0-epsilon.0001-reversed",
+        "error_pixels": "0.002360321137777722416036910350122014262222641738471347742"
+      },
+      {
+        "case": "10-yaw17-pitch60-roll0-epsilon.0003",
+        "error_pixels": "0.003324344021736014124908861212656385724044585551390427298"
+      },
+      {
+        "case": "10-yaw17-pitch60-roll0-epsilon.0003-reversed",
+        "error_pixels": "0.003324344021736014124908861212656385724044585551390427299"
+      },
+      {
+        "case": "10-yaw17-pitch60-roll0-epsilon.001",
+        "error_pixels": "0.000646369486281746643747652820381855504037293592345178402"
+      },
+      {
+        "case": "10-yaw17-pitch60-roll0-epsilon.001-reversed",
+        "error_pixels": "0.000646369486281746643747652820381855504037293592345178402"
+      },
+      {
+        "case": "10-yaw17-pitch60-roll0-epsilon.002",
+        "error_pixels": "0.000579835412355513445354356956776685932124383291261632505"
+      },
+      {
+        "case": "10-yaw17-pitch60-roll0-epsilon.002-reversed",
+        "error_pixels": "0.000579835412355513445354356956776685932124383291261632504"
+      },
+      {
+        "case": "10-yaw17-pitch60-roll0-epsilon.01",
+        "error_pixels": "0.000116882464101289572380209357858286719036061336502442354"
+      },
+      {
+        "case": "10-yaw17-pitch60-roll0-epsilon.01-reversed",
+        "error_pixels": "0.000116882464101289572380209357858286719036061336502442354"
+      },
+      {
+        "case": "10-yaw17-pitch60-roll0-epsilon.1",
+        "error_pixels": "0.000012964412798209543417017787887190138117917335801753655"
+      },
+      {
+        "case": "10-yaw17-pitch60-roll0-epsilon.1-reversed",
+        "error_pixels": "0.000012964412798209543417017787887190138117917335801753654"
+      },
+      {
+        "case": "10-yaw17-pitch0-roll-60-epsilon.0001",
+        "error_pixels": "0.018584644666090269856201178333029851282858590997512265925"
+      },
+      {
+        "case": "10-yaw17-pitch0-roll-60-epsilon.0001-reversed",
+        "error_pixels": "0.018584644666090269856201178333029851282858590997512265925"
+      },
+      {
+        "case": "10-yaw17-pitch0-roll-60-epsilon.0003",
+        "error_pixels": "0.006972542092454345370409620454402467892545784540357658576"
+      },
+      {
+        "case": "10-yaw17-pitch0-roll-60-epsilon.0003-reversed",
+        "error_pixels": "0.006972542092454345370409620454402467892545784540357658576"
+      },
+      {
+        "case": "10-yaw17-pitch0-roll-60-epsilon.001",
+        "error_pixels": "0.000175008940617213499388732817179768052895477585817652036"
+      },
+      {
+        "case": "10-yaw17-pitch0-roll-60-epsilon.001-reversed",
+        "error_pixels": "0.000175008940617213499388732817179768052895477585817652036"
+      },
+      {
+        "case": "10-yaw17-pitch0-roll-60-epsilon.002",
+        "error_pixels": "0.000501913360755226190639554467045501422158283718613024907"
+      },
+      {
+        "case": "10-yaw17-pitch0-roll-60-epsilon.002-reversed",
+        "error_pixels": "0.000501913360755226190639554467045501422158283718613024907"
+      },
+      {
+        "case": "10-yaw17-pitch0-roll-60-epsilon.01",
+        "error_pixels": "0.000007228522857782808704205594537508341164467007206328365"
+      },
+      {
+        "case": "10-yaw17-pitch0-roll-60-epsilon.01-reversed",
+        "error_pixels": "0.000007228522857782808704205594537508341164467007206328365"
+      },
+      {
+        "case": "10-yaw17-pitch0-roll-60-epsilon.1",
+        "error_pixels": "0.000006017233763100876230176719195606402580482424653836043"
+      },
+      {
+        "case": "10-yaw17-pitch0-roll-60-epsilon.1-reversed",
+        "error_pixels": "0.000006017233763100876230176719195606402580482424653836043"
+      },
+      {
+        "case": "10-yaw17-pitch0-roll60-epsilon.0001",
+        "error_pixels": "0.018584644666090269856201178333029851282858590997513562811"
+      },
+      {
+        "case": "10-yaw17-pitch0-roll60-epsilon.0001-reversed",
+        "error_pixels": "0.018584644666090269856201178333029851282858590997513562811"
+      },
+      {
+        "case": "10-yaw17-pitch0-roll60-epsilon.0003",
+        "error_pixels": "0.006972542092454345370409620454402467892545784540358032893"
+      },
+      {
+        "case": "10-yaw17-pitch0-roll60-epsilon.0003-reversed",
+        "error_pixels": "0.006972542092454345370409620454402467892545784540358032893"
+      },
+      {
+        "case": "10-yaw17-pitch0-roll60-epsilon.001",
+        "error_pixels": "0.000175008940617213499388732817179768052895477585817766593"
+      },
+      {
+        "case": "10-yaw17-pitch0-roll60-epsilon.001-reversed",
+        "error_pixels": "0.000175008940617213499388732817179768052895477585817766593"
+      },
+      {
+        "case": "10-yaw17-pitch0-roll60-epsilon.002",
+        "error_pixels": "0.000501913360755226190639554467045501422158283718612971735"
+      },
+      {
+        "case": "10-yaw17-pitch0-roll60-epsilon.002-reversed",
+        "error_pixels": "0.000501913360755226190639554467045501422158283718612971735"
+      },
+      {
+        "case": "10-yaw17-pitch0-roll60-epsilon.01",
+        "error_pixels": "0.000007228522857782808704205594537508341164467007206339868"
+      },
+      {
+        "case": "10-yaw17-pitch0-roll60-epsilon.01-reversed",
+        "error_pixels": "0.000007228522857782808704205594537508341164467007206339868"
+      },
+      {
+        "case": "10-yaw17-pitch0-roll60-epsilon.1",
+        "error_pixels": "0.000006017233763100876230176719195606402580482424653834931"
+      },
+      {
+        "case": "10-yaw17-pitch0-roll60-epsilon.1-reversed",
+        "error_pixels": "0.000006017233763100876230176719195606402580482424653834931"
+      },
+      {
+        "case": "10-yaw17-pitch-60-roll60-epsilon.0001",
+        "error_pixels": "0.032702503746406707327506194968054869857498394911256657140"
+      },
+      {
+        "case": "10-yaw17-pitch-60-roll60-epsilon.0001-reversed",
+        "error_pixels": "0.032702503746406707327506194968054869857498394911256657140"
+      },
+      {
+        "case": "10-yaw17-pitch-60-roll60-epsilon.0003",
+        "error_pixels": "0.003171319680799904847758681673162865566504834777224764666"
+      },
+      {
+        "case": "10-yaw17-pitch-60-roll60-epsilon.0003-reversed",
+        "error_pixels": "0.003171319680799904847758681673162865566504834777224764666"
+      },
+      {
+        "case": "10-yaw17-pitch-60-roll60-epsilon.001",
+        "error_pixels": "0.001861661273610253226832754090620591791977831446510434005"
+      },
+      {
+        "case": "10-yaw17-pitch-60-roll60-epsilon.001-reversed",
+        "error_pixels": "0.001861661273610253226832754090620591791977831446510434006"
+      },
+      {
+        "case": "10-yaw17-pitch-60-roll60-epsilon.002",
+        "error_pixels": "0.000605484620479806982778700072079985966023036206988910347"
+      },
+      {
+        "case": "10-yaw17-pitch-60-roll60-epsilon.002-reversed",
+        "error_pixels": "0.000605484620479806982778700072079985966023036206988910347"
+      },
+      {
+        "case": "10-yaw17-pitch-60-roll60-epsilon.01",
+        "error_pixels": "0.000058466817526423595448754652339181548314877496683352689"
+      },
+      {
+        "case": "10-yaw17-pitch-60-roll60-epsilon.01-reversed",
+        "error_pixels": "0.000058466817526423595448754652339181548314877496683352689"
+      },
+      {
+        "case": "10-yaw17-pitch-60-roll60-epsilon.1",
+        "error_pixels": "0.000025391493736646500998391573276553701596506370176853723"
+      },
+      {
+        "case": "10-yaw17-pitch-60-roll60-epsilon.1-reversed",
+        "error_pixels": "0.000025391493736646500998391573276553701596506370176853723"
+      },
+      {
+        "case": "10-yaw17-pitch60-roll-60-epsilon.0001",
+        "error_pixels": "0.032702503746406707327506194968054869857498394911256799337"
+      },
+      {
+        "case": "10-yaw17-pitch60-roll-60-epsilon.0001-reversed",
+        "error_pixels": "0.032702503746406707327506194968054869857498394911256799337"
+      },
+      {
+        "case": "10-yaw17-pitch60-roll-60-epsilon.0003",
+        "error_pixels": "0.003171319680799904847758681673162865566504834777224772331"
+      },
+      {
+        "case": "10-yaw17-pitch60-roll-60-epsilon.0003-reversed",
+        "error_pixels": "0.003171319680799904847758681673162865566504834777224772331"
+      },
+      {
+        "case": "10-yaw17-pitch60-roll-60-epsilon.001",
+        "error_pixels": "0.001861661273610253226832754090620591791977831446510431789"
+      },
+      {
+        "case": "10-yaw17-pitch60-roll-60-epsilon.001-reversed",
+        "error_pixels": "0.001861661273610253226832754090620591791977831446510431788"
+      },
+      {
+        "case": "10-yaw17-pitch60-roll-60-epsilon.002",
+        "error_pixels": "0.000605484620479806982778700072079985966023036206988911604"
+      },
+      {
+        "case": "10-yaw17-pitch60-roll-60-epsilon.002-reversed",
+        "error_pixels": "0.000605484620479806982778700072079985966023036206988911604"
+      },
+      {
+        "case": "10-yaw17-pitch60-roll-60-epsilon.01",
+        "error_pixels": "0.000058466817526423595448754652339181548314877496683352941"
+      },
+      {
+        "case": "10-yaw17-pitch60-roll-60-epsilon.01-reversed",
+        "error_pixels": "0.000058466817526423595448754652339181548314877496683352941"
+      },
+      {
+        "case": "10-yaw17-pitch60-roll-60-epsilon.1",
+        "error_pixels": "0.000025391493736646500998391573276553701596506370176853724"
+      },
+      {
+        "case": "10-yaw17-pitch60-roll-60-epsilon.1-reversed",
+        "error_pixels": "0.000025391493736646500998391573276553701596506370176853724"
+      },
+      {
+        "case": "10-yaw45-pitch0-roll0-epsilon.0001",
+        "error_pixels": "0.001181373387364790614960681581729870729577141445240426812"
+      },
+      {
+        "case": "10-yaw45-pitch0-roll0-epsilon.0001-reversed",
+        "error_pixels": "0.001181373387364790614960681581729870729577141445240426812"
+      },
+      {
+        "case": "10-yaw45-pitch0-roll0-epsilon.0003",
+        "error_pixels": "0.000797424397902959185279862504846833896768935603946620602"
+      },
+      {
+        "case": "10-yaw45-pitch0-roll0-epsilon.0003-reversed",
+        "error_pixels": "0.000797424397902959185279862504846833896768935603946620602"
+      },
+      {
+        "case": "10-yaw45-pitch0-roll0-epsilon.001",
+        "error_pixels": "0.000358085826585347034127019938870112006442511969252521542"
+      },
+      {
+        "case": "10-yaw45-pitch0-roll0-epsilon.001-reversed",
+        "error_pixels": "0.000358085826585347034127019938870112006442511969252521542"
+      },
+      {
+        "case": "10-yaw45-pitch0-roll0-epsilon.002",
+        "error_pixels": "0.000229467893169526419541880143793624611779740131385494237"
+      },
+      {
+        "case": "10-yaw45-pitch0-roll0-epsilon.002-reversed",
+        "error_pixels": "0.000229467893169526419541880143793624611779740131385494237"
+      },
+      {
+        "case": "10-yaw45-pitch0-roll0-epsilon.01",
+        "error_pixels": "0.000105918518912349328140175455133343069769094494968478459"
+      },
+      {
+        "case": "10-yaw45-pitch0-roll0-epsilon.01-reversed",
+        "error_pixels": "0.000105918518912349328140175455133343069769094494968478459"
+      },
+      {
+        "case": "10-yaw45-pitch0-roll0-epsilon.1",
+        "error_pixels": "0.000005585282758284548329202632253653533885992650200837534"
+      },
+      {
+        "case": "10-yaw45-pitch0-roll0-epsilon.1-reversed",
+        "error_pixels": "0.000005585282758284548329202632253653533885992650200837534"
+      },
+      {
+        "case": "10-yaw45-pitch-60-roll0-epsilon.0001",
+        "error_pixels": "0.023558132065036086425705958607880191857713435547501954547"
+      },
+      {
+        "case": "10-yaw45-pitch-60-roll0-epsilon.0001-reversed",
+        "error_pixels": "0.023558132065036086425705958607880191857713435547501954547"
+      },
+      {
+        "case": "10-yaw45-pitch-60-roll0-epsilon.0003",
+        "error_pixels": "0.010418147773256446062710484105493559738391312746531071262"
+      },
+      {
+        "case": "10-yaw45-pitch-60-roll0-epsilon.0003-reversed",
+        "error_pixels": "0.010418147773256446062710484105493559738391312746531071263"
+      },
+      {
+        "case": "10-yaw45-pitch-60-roll0-epsilon.001",
+        "error_pixels": "0.000656391171548210457257815368887491697895304478948917709"
+      },
+      {
+        "case": "10-yaw45-pitch-60-roll0-epsilon.001-reversed",
+        "error_pixels": "0.000656391171548210457257815368887491697895304478948917708"
+      },
+      {
+        "case": "10-yaw45-pitch-60-roll0-epsilon.002",
+        "error_pixels": "0.001327825462247164349151683981160330186640748994732688614"
+      },
+      {
+        "case": "10-yaw45-pitch-60-roll0-epsilon.002-reversed",
+        "error_pixels": "0.001327825462247164349151683981160330186640748994732688614"
+      },
+      {
+        "case": "10-yaw45-pitch-60-roll0-epsilon.01",
+        "error_pixels": "0.000191314875482660609311379883909950102696255923270477251"
+      },
+      {
+        "case": "10-yaw45-pitch-60-roll0-epsilon.01-reversed",
+        "error_pixels": "0.000191314875482660609311379883909950102696255923270477252"
+      },
+      {
+        "case": "10-yaw45-pitch-60-roll0-epsilon.1",
+        "error_pixels": "0.0000078641042841768694211010527074235800931100933269573240"
+      },
+      {
+        "case": "10-yaw45-pitch-60-roll0-epsilon.1-reversed",
+        "error_pixels": "0.0000078641042841768694211010527074235800931100933269573240"
+      },
+      {
+        "case": "10-yaw45-pitch60-roll0-epsilon.0001",
+        "error_pixels": "0.023558132065036086425705958607880191857713435547503018234"
+      },
+      {
+        "case": "10-yaw45-pitch60-roll0-epsilon.0001-reversed",
+        "error_pixels": "0.023558132065036086425705958607880191857713435547503018234"
+      },
+      {
+        "case": "10-yaw45-pitch60-roll0-epsilon.0003",
+        "error_pixels": "0.010418147773256446062710484105493559738391312746531512453"
+      },
+      {
+        "case": "10-yaw45-pitch60-roll0-epsilon.0003-reversed",
+        "error_pixels": "0.010418147773256446062710484105493559738391312746531512454"
+      },
+      {
+        "case": "10-yaw45-pitch60-roll0-epsilon.001",
+        "error_pixels": "0.000656391171548210457257815368887491697895304478949034447"
+      },
+      {
+        "case": "10-yaw45-pitch60-roll0-epsilon.001-reversed",
+        "error_pixels": "0.000656391171548210457257815368887491697895304478949034446"
+      },
+      {
+        "case": "10-yaw45-pitch60-roll0-epsilon.002",
+        "error_pixels": "0.001327825462247164349151683981160330186640748994732632366"
+      },
+      {
+        "case": "10-yaw45-pitch60-roll0-epsilon.002-reversed",
+        "error_pixels": "0.001327825462247164349151683981160330186640748994732632366"
+      },
+      {
+        "case": "10-yaw45-pitch60-roll0-epsilon.01",
+        "error_pixels": "0.000191314875482660609311379883909950102696255923270466094"
+      },
+      {
+        "case": "10-yaw45-pitch60-roll0-epsilon.01-reversed",
+        "error_pixels": "0.000191314875482660609311379883909950102696255923270466093"
+      },
+      {
+        "case": "10-yaw45-pitch60-roll0-epsilon.1",
+        "error_pixels": "0.0000078641042841768694211010527074235800931100933269573109"
+      },
+      {
+        "case": "10-yaw45-pitch60-roll0-epsilon.1-reversed",
+        "error_pixels": "0.0000078641042841768694211010527074235800931100933269573109"
+      },
+      {
+        "case": "10-yaw45-pitch0-roll-60-epsilon.0001",
+        "error_pixels": "0.012731257337878764289395789173019688349719220161873024531"
+      },
+      {
+        "case": "10-yaw45-pitch0-roll-60-epsilon.0001-reversed",
+        "error_pixels": "0.012731257337878764289395789173019688349719220161873024531"
+      },
+      {
+        "case": "10-yaw45-pitch0-roll-60-epsilon.0003",
+        "error_pixels": "0.001884228481558083617517817246912459883905149104357312176"
+      },
+      {
+        "case": "10-yaw45-pitch0-roll-60-epsilon.0003-reversed",
+        "error_pixels": "0.001884228481558083617517817246912459883905149104357312176"
+      },
+      {
+        "case": "10-yaw45-pitch0-roll-60-epsilon.001",
+        "error_pixels": "0.000485660795936027872505939082304153294635049701452435352"
+      },
+      {
+        "case": "10-yaw45-pitch0-roll-60-epsilon.001-reversed",
+        "error_pixels": "0.000485660795936027872505939082304153294635049701452435352"
+      },
+      {
+        "case": "10-yaw45-pitch0-roll-60-epsilon.002",
+        "error_pixels": "0.0000952203523070229611938878734846918387844538064588433"
+      },
+      {
+        "case": "10-yaw45-pitch0-roll-60-epsilon.002-reversed",
+        "error_pixels": "0.0000952203523070229611938878734846918387844538064588433"
+      },
+      {
+        "case": "10-yaw45-pitch0-roll-60-epsilon.01",
+        "error_pixels": "0.000050240771993382193707510939548705513238108589805424468"
+      },
+      {
+        "case": "10-yaw45-pitch0-roll-60-epsilon.01-reversed",
+        "error_pixels": "0.000050240771993382193707510939548705513238108589805424468"
+      },
+      {
+        "case": "10-yaw45-pitch0-roll-60-epsilon.1",
+        "error_pixels": "0.0000076850825082240930528894783931299040252987025781057802"
+      },
+      {
+        "case": "10-yaw45-pitch0-roll-60-epsilon.1-reversed",
+        "error_pixels": "0.0000076850825082240930528894783931299040252987025781057802"
+      },
+      {
+        "case": "10-yaw45-pitch0-roll60-epsilon.0001",
+        "error_pixels": "0.012731257337878764289395789173019688349719220161871736839"
+      },
+      {
+        "case": "10-yaw45-pitch0-roll60-epsilon.0001-reversed",
+        "error_pixels": "0.012731257337878764289395789173019688349719220161871736839"
+      },
+      {
+        "case": "10-yaw45-pitch0-roll60-epsilon.0003",
+        "error_pixels": "0.001884228481558083617517817246912459883905149104356974070"
+      },
+      {
+        "case": "10-yaw45-pitch0-roll60-epsilon.0003-reversed",
+        "error_pixels": "0.001884228481558083617517817246912459883905149104356974070"
+      },
+      {
+        "case": "10-yaw45-pitch0-roll60-epsilon.001",
+        "error_pixels": "0.000485660795936027872505939082304153294635049701452327224"
+      },
+      {
+        "case": "10-yaw45-pitch0-roll60-epsilon.001-reversed",
+        "error_pixels": "0.000485660795936027872505939082304153294635049701452327224"
+      },
+      {
+        "case": "10-yaw45-pitch0-roll60-epsilon.002",
+        "error_pixels": "0.000095220352307022961193887873484691838784453806458899715"
+      },
+      {
+        "case": "10-yaw45-pitch0-roll60-epsilon.002-reversed",
+        "error_pixels": "0.000095220352307022961193887873484691838784453806458899715"
+      },
+      {
+        "case": "10-yaw45-pitch0-roll60-epsilon.01",
+        "error_pixels": "0.000050240771993382193707510939548705513238108589805412921"
+      },
+      {
+        "case": "10-yaw45-pitch0-roll60-epsilon.01-reversed",
+        "error_pixels": "0.000050240771993382193707510939548705513238108589805412921"
+      },
+      {
+        "case": "10-yaw45-pitch0-roll60-epsilon.1",
+        "error_pixels": "0.0000076850825082240930528894783931299040252987025781057865"
+      },
+      {
+        "case": "10-yaw45-pitch0-roll60-epsilon.1-reversed",
+        "error_pixels": "0.0000076850825082240930528894783931299040252987025781057865"
+      },
+      {
+        "case": "10-yaw45-pitch-60-roll60-epsilon.0001",
+        "error_pixels": "0.023844522894931539439900474186568614211013588091098204019"
+      },
+      {
+        "case": "10-yaw45-pitch-60-roll60-epsilon.0001-reversed",
+        "error_pixels": "0.023844522894931539439900474186568614211013588091098204019"
+      },
+      {
+        "case": "10-yaw45-pitch-60-roll60-epsilon.0003",
+        "error_pixels": "0.006174126278085296232522445371254368817126664354559362035"
+      },
+      {
+        "case": "10-yaw45-pitch-60-roll60-epsilon.0003-reversed",
+        "error_pixels": "0.006174126278085296232522445371254368817126664354559362034"
+      },
+      {
+        "case": "10-yaw45-pitch-60-roll60-epsilon.001",
+        "error_pixels": "0.000151041545166033318938555519125460888745695954777117790"
+      },
+      {
+        "case": "10-yaw45-pitch-60-roll60-epsilon.001-reversed",
+        "error_pixels": "0.000151041545166033318938555519125460888745695954777117790"
+      },
+      {
+        "case": "10-yaw45-pitch-60-roll60-epsilon.002",
+        "error_pixels": "0.000907670530931698141845063462381063736297379230226151068"
+      },
+      {
+        "case": "10-yaw45-pitch-60-roll60-epsilon.002-reversed",
+        "error_pixels": "0.000907670530931698141845063462381063736297379230226151067"
+      },
+      {
+        "case": "10-yaw45-pitch-60-roll60-epsilon.01",
+        "error_pixels": "0.000017242258726656129610644903439228687085003131286872435"
+      },
+      {
+        "case": "10-yaw45-pitch-60-roll60-epsilon.01-reversed",
+        "error_pixels": "0.000017242258726656129610644903439228687085003131286872435"
+      },
+      {
+        "case": "10-yaw45-pitch-60-roll60-epsilon.1",
+        "error_pixels": "0.000032639439707778092726560573970551651706206420078637693"
+      },
+      {
+        "case": "10-yaw45-pitch-60-roll60-epsilon.1-reversed",
+        "error_pixels": "0.000032639439707778092726560573970551651706206420078637694"
+      },
+      {
+        "case": "10-yaw45-pitch60-roll-60-epsilon.0001",
+        "error_pixels": "0.023844522894931539439900474186568614211013588091098236895"
+      },
+      {
+        "case": "10-yaw45-pitch60-roll-60-epsilon.0001-reversed",
+        "error_pixels": "0.023844522894931539439900474186568614211013588091098236895"
+      },
+      {
+        "case": "10-yaw45-pitch60-roll-60-epsilon.0003",
+        "error_pixels": "0.006174126278085296232522445371254368817126664354559354421"
+      },
+      {
+        "case": "10-yaw45-pitch60-roll-60-epsilon.0003-reversed",
+        "error_pixels": "0.006174126278085296232522445371254368817126664354559354421"
+      },
+      {
+        "case": "10-yaw45-pitch60-roll-60-epsilon.001",
+        "error_pixels": "0.000151041545166033318938555519125460888745695954777114159"
+      },
+      {
+        "case": "10-yaw45-pitch60-roll-60-epsilon.001-reversed",
+        "error_pixels": "0.000151041545166033318938555519125460888745695954777114159"
+      },
+      {
+        "case": "10-yaw45-pitch60-roll-60-epsilon.002",
+        "error_pixels": "0.000907670530931698141845063462381063736297379230226148776"
+      },
+      {
+        "case": "10-yaw45-pitch60-roll-60-epsilon.002-reversed",
+        "error_pixels": "0.000907670530931698141845063462381063736297379230226148776"
+      },
+      {
+        "case": "10-yaw45-pitch60-roll-60-epsilon.01",
+        "error_pixels": "0.000017242258726656129610644903439228687085003131286872467"
+      },
+      {
+        "case": "10-yaw45-pitch60-roll-60-epsilon.01-reversed",
+        "error_pixels": "0.000017242258726656129610644903439228687085003131286872467"
+      },
+      {
+        "case": "10-yaw45-pitch60-roll-60-epsilon.1",
+        "error_pixels": "0.000032639439707778092726560573970551651706206420078637642"
+      },
+      {
+        "case": "10-yaw45-pitch60-roll-60-epsilon.1-reversed",
+        "error_pixels": "0.000032639439707778092726560573970551651706206420078637642"
+      },
+      {
+        "case": "10-yaw89-pitch0-roll0-epsilon.0001",
+        "error_pixels": "0.000695350984007991448233903432545145672903875375886072696"
+      },
+      {
+        "case": "10-yaw89-pitch0-roll0-epsilon.0001-reversed",
+        "error_pixels": "0.000695350984007991448233903432545145672903875375886072695"
+      },
+      {
+        "case": "10-yaw89-pitch0-roll0-epsilon.0003",
+        "error_pixels": "0.005845905862232476235680850727655895453736724121806638544"
+      },
+      {
+        "case": "10-yaw89-pitch0-roll0-epsilon.0003-reversed",
+        "error_pixels": "0.005845905862232476235680850727655895453736724121806638544"
+      },
+      {
+        "case": "10-yaw89-pitch0-roll0-epsilon.001",
+        "error_pixels": "0.001714870795149218320591127995244584992826579375542791839"
+      },
+      {
+        "case": "10-yaw89-pitch0-roll0-epsilon.001-reversed",
+        "error_pixels": "0.001714870795149218320591127995244584992826579375542791839"
+      },
+      {
+        "case": "10-yaw89-pitch0-roll0-epsilon.002",
+        "error_pixels": "0.000337552512511447742205525232995869921946536999242715969"
+      },
+      {
+        "case": "10-yaw89-pitch0-roll0-epsilon.002-reversed",
+        "error_pixels": "0.000337552512511447742205525232995869921946536999242715970"
+      },
+      {
+        "case": "10-yaw89-pitch0-roll0-epsilon.01",
+        "error_pixels": "0.000068328902464790307019136426063465920514495218042626217"
+      },
+      {
+        "case": "10-yaw89-pitch0-roll0-epsilon.01-reversed",
+        "error_pixels": "0.000068328902464790307019136426063465920514495218042626217"
+      },
+      {
+        "case": "10-yaw89-pitch0-roll0-epsilon.1",
+        "error_pixels": "0.000022905847330683849768709421654461415078426466604937708"
+      },
+      {
+        "case": "10-yaw89-pitch0-roll0-epsilon.1-reversed",
+        "error_pixels": "0.000022905847330683849768709421654461415078426466604937708"
+      },
+      {
+        "case": "10-yaw89-pitch-60-roll0-epsilon.0001",
+        "error_pixels": "0.015101070198001094309452752989571103394104512475586806181"
+      },
+      {
+        "case": "10-yaw89-pitch-60-roll0-epsilon.0001-reversed",
+        "error_pixels": "0.015101070198001094309452752989571103394104512475586806181"
+      },
+      {
+        "case": "10-yaw89-pitch-60-roll0-epsilon.0003",
+        "error_pixels": "0.008446482094705396554146314828655436214569809172800178301"
+      },
+      {
+        "case": "10-yaw89-pitch-60-roll0-epsilon.0003-reversed",
+        "error_pixels": "0.008446482094705396554146314828655436214569809172800178301"
+      },
+      {
+        "case": "10-yaw89-pitch-60-roll0-epsilon.001",
+        "error_pixels": "0.001073877104781735881485672896153860639852904477156980664"
+      },
+      {
+        "case": "10-yaw89-pitch-60-roll0-epsilon.001-reversed",
+        "error_pixels": "0.001073877104781735881485672896153860639852904477156980664"
+      },
+      {
+        "case": "10-yaw89-pitch-60-roll0-epsilon.002",
+        "error_pixels": "0.000849258131287831931017299423175872166081104521118467458"
+      },
+      {
+        "case": "10-yaw89-pitch-60-roll0-epsilon.002-reversed",
+        "error_pixels": "0.000849258131287831931017299423175872166081104521118467458"
+      },
+      {
+        "case": "10-yaw89-pitch-60-roll0-epsilon.01",
+        "error_pixels": "0.000199836000910536999258602259276198121120509310879743805"
+      },
+      {
+        "case": "10-yaw89-pitch-60-roll0-epsilon.01-reversed",
+        "error_pixels": "0.000199836000910536999258602259276198121120509310879743805"
+      },
+      {
+        "case": "10-yaw89-pitch-60-roll0-epsilon.1",
+        "error_pixels": "0.000009405886357953047874725986618557601527483082915936330"
+      },
+      {
+        "case": "10-yaw89-pitch-60-roll0-epsilon.1-reversed",
+        "error_pixels": "0.000009405886357953047874725986618557601527483082915936331"
+      },
+      {
+        "case": "10-yaw89-pitch60-roll0-epsilon.0001",
+        "error_pixels": "0.015101070198001094309452752989571103394104512475587440114"
+      },
+      {
+        "case": "10-yaw89-pitch60-roll0-epsilon.0001-reversed",
+        "error_pixels": "0.015101070198001094309452752989571103394104512475587440114"
+      },
+      {
+        "case": "10-yaw89-pitch60-roll0-epsilon.0003",
+        "error_pixels": "0.008446482094705396554146314828655436214569809172800574909"
+      },
+      {
+        "case": "10-yaw89-pitch60-roll0-epsilon.0003-reversed",
+        "error_pixels": "0.008446482094705396554146314828655436214569809172800574909"
+      },
+      {
+        "case": "10-yaw89-pitch60-roll0-epsilon.001",
+        "error_pixels": "0.001073877104781735881485672896153860639852904477157093332"
+      },
+      {
+        "case": "10-yaw89-pitch60-roll0-epsilon.001-reversed",
+        "error_pixels": "0.001073877104781735881485672896153860639852904477157093332"
+      },
+      {
+        "case": "10-yaw89-pitch60-roll0-epsilon.002",
+        "error_pixels": "0.000849258131287831931017299423175872166081104521118410841"
+      },
+      {
+        "case": "10-yaw89-pitch60-roll0-epsilon.002-reversed",
+        "error_pixels": "0.000849258131287831931017299423175872166081104521118410841"
+      },
+      {
+        "case": "10-yaw89-pitch60-roll0-epsilon.01",
+        "error_pixels": "0.000199836000910536999258602259276198121120509310879732625"
+      },
+      {
+        "case": "10-yaw89-pitch60-roll0-epsilon.01-reversed",
+        "error_pixels": "0.000199836000910536999258602259276198121120509310879732625"
+      },
+      {
+        "case": "10-yaw89-pitch60-roll0-epsilon.1",
+        "error_pixels": "0.000009405886357953047874725986618557601527483082915937447"
+      },
+      {
+        "case": "10-yaw89-pitch60-roll0-epsilon.1-reversed",
+        "error_pixels": "0.000009405886357953047874725986618557601527483082915937447"
+      },
+      {
+        "case": "10-yaw89-pitch0-roll-60-epsilon.0001",
+        "error_pixels": "0.0177680543043428937746840494030051383557475234707102737768"
+      },
+      {
+        "case": "10-yaw89-pitch0-roll-60-epsilon.0001-reversed",
+        "error_pixels": "0.0177680543043428937746840494030051383557475234707102737768"
+      },
+      {
+        "case": "10-yaw89-pitch0-roll-60-epsilon.0003",
+        "error_pixels": "0.004228552219040524001994120896134812155632675812634084585"
+      },
+      {
+        "case": "10-yaw89-pitch0-roll-60-epsilon.0003-reversed",
+        "error_pixels": "0.004228552219040524001994120896134812155632675812634084585"
+      },
+      {
+        "case": "10-yaw89-pitch0-roll-60-epsilon.001",
+        "error_pixels": "0.001358807856332131153840552105150657472103836998149621100"
+      },
+      {
+        "case": "10-yaw89-pitch0-roll-60-epsilon.001-reversed",
+        "error_pixels": "0.001358807856332131153840552105150657472103836998149621100"
+      },
+      {
+        "case": "10-yaw89-pitch0-roll-60-epsilon.002",
+        "error_pixels": "0.001060880048807660539908586390835621729249991753589091950"
+      },
+      {
+        "case": "10-yaw89-pitch0-roll-60-epsilon.002-reversed",
+        "error_pixels": "0.001060880048807660539908586390835621729249991753589091950"
+      },
+      {
+        "case": "10-yaw89-pitch0-roll-60-epsilon.01",
+        "error_pixels": "0.000066910101782285045167212709011696662789546327928247567"
+      },
+      {
+        "case": "10-yaw89-pitch0-roll-60-epsilon.01-reversed",
+        "error_pixels": "0.000066910101782285045167212709011696662789546327928247567"
+      },
+      {
+        "case": "10-yaw89-pitch0-roll-60-epsilon.1",
+        "error_pixels": "0.000029133729585101841640816432688409358580204672786286407"
+      },
+      {
+        "case": "10-yaw89-pitch0-roll-60-epsilon.1-reversed",
+        "error_pixels": "0.000029133729585101841640816432688409358580204672786286407"
+      },
+      {
+        "case": "10-yaw89-pitch0-roll60-epsilon.0001",
+        "error_pixels": "0.0177680543043428937746840494030051383557475234707086609203"
+      },
+      {
+        "case": "10-yaw89-pitch0-roll60-epsilon.0001-reversed",
+        "error_pixels": "0.0177680543043428937746840494030051383557475234707086609205"
+      },
+      {
+        "case": "10-yaw89-pitch0-roll60-epsilon.0003",
+        "error_pixels": "0.004228552219040524001994120896134812155632675812633727891"
+      },
+      {
+        "case": "10-yaw89-pitch0-roll60-epsilon.0003-reversed",
+        "error_pixels": "0.004228552219040524001994120896134812155632675812633727891"
+      },
+      {
+        "case": "10-yaw89-pitch0-roll60-epsilon.001",
+        "error_pixels": "0.001358807856332131153840552105150657472103836998149727741"
+      },
+      {
+        "case": "10-yaw89-pitch0-roll60-epsilon.001-reversed",
+        "error_pixels": "0.001358807856332131153840552105150657472103836998149727741"
+      },
+      {
+        "case": "10-yaw89-pitch0-roll60-epsilon.002",
+        "error_pixels": "0.001060880048807660539908586390835621729249991753589036637"
+      },
+      {
+        "case": "10-yaw89-pitch0-roll60-epsilon.002-reversed",
+        "error_pixels": "0.001060880048807660539908586390835621729249991753589036637"
+      },
+      {
+        "case": "10-yaw89-pitch0-roll60-epsilon.01",
+        "error_pixels": "0.000066910101782285045167212709011696662789546327928236280"
+      },
+      {
+        "case": "10-yaw89-pitch0-roll60-epsilon.01-reversed",
+        "error_pixels": "0.000066910101782285045167212709011696662789546327928236280"
+      },
+      {
+        "case": "10-yaw89-pitch0-roll60-epsilon.1",
+        "error_pixels": "0.000029133729585101841640816432688409358580204672786287523"
+      },
+      {
+        "case": "10-yaw89-pitch0-roll60-epsilon.1-reversed",
+        "error_pixels": "0.000029133729585101841640816432688409358580204672786287523"
+      },
+      {
+        "case": "10-yaw89-pitch-60-roll60-epsilon.0001",
+        "error_pixels": "0.029897824002084951679256482279399400730313175286381402833"
+      },
+      {
+        "case": "10-yaw89-pitch-60-roll60-epsilon.0001-reversed",
+        "error_pixels": "0.029897824002084951679256482279399400730313175286381402832"
+      },
+      {
+        "case": "10-yaw89-pitch-60-roll60-epsilon.0003",
+        "error_pixels": "0.006526629103949936357132095714558351727202201867859503245"
+      },
+      {
+        "case": "10-yaw89-pitch-60-roll60-epsilon.0003-reversed",
+        "error_pixels": "0.006526629103949936357132095714558351727202201867859503245"
+      },
+      {
+        "case": "10-yaw89-pitch-60-roll60-epsilon.001",
+        "error_pixels": "0.002172312214229488474171371568280498997033417052154595758"
+      },
+      {
+        "case": "10-yaw89-pitch-60-roll60-epsilon.001-reversed",
+        "error_pixels": "0.002172312214229488474171371568280498997033417052154595758"
+      },
+      {
+        "case": "10-yaw89-pitch-60-roll60-epsilon.002",
+        "error_pixels": "0.000166248231804348411042308443089888345981987290501703572"
+      },
+      {
+        "case": "10-yaw89-pitch-60-roll60-epsilon.002-reversed",
+        "error_pixels": "0.000166248231804348411042308443089888345981987290501703572"
+      },
+      {
+        "case": "10-yaw89-pitch-60-roll60-epsilon.01",
+        "error_pixels": "0.000123225223039558149847137159983660601033103814424267005"
+      },
+      {
+        "case": "10-yaw89-pitch-60-roll60-epsilon.01-reversed",
+        "error_pixels": "0.000123225223039558149847137159983660601033103814424267005"
+      },
+      {
+        "case": "10-yaw89-pitch-60-roll60-epsilon.1",
+        "error_pixels": "0.000006644473921268374327110420529324465791835672134841313"
+      },
+      {
+        "case": "10-yaw89-pitch-60-roll60-epsilon.1-reversed",
+        "error_pixels": "0.000006644473921268374327110420529324465791835672134841313"
+      },
+      {
+        "case": "10-yaw89-pitch60-roll-60-epsilon.0001",
+        "error_pixels": "0.029897824002084951679256482279399400730313175286381602645"
+      },
+      {
+        "case": "10-yaw89-pitch60-roll-60-epsilon.0001-reversed",
+        "error_pixels": "0.029897824002084951679256482279399400730313175286381602645"
+      },
+      {
+        "case": "10-yaw89-pitch60-roll-60-epsilon.0003",
+        "error_pixels": "0.006526629103949936357132095714558351727202201867859496253"
+      },
+      {
+        "case": "10-yaw89-pitch60-roll-60-epsilon.0003-reversed",
+        "error_pixels": "0.006526629103949936357132095714558351727202201867859496253"
+      },
+      {
+        "case": "10-yaw89-pitch60-roll-60-epsilon.001",
+        "error_pixels": "0.002172312214229488474171371568280498997033417052154595821"
+      },
+      {
+        "case": "10-yaw89-pitch60-roll-60-epsilon.001-reversed",
+        "error_pixels": "0.002172312214229488474171371568280498997033417052154595820"
+      },
+      {
+        "case": "10-yaw89-pitch60-roll-60-epsilon.002",
+        "error_pixels": "0.000166248231804348411042308443089888345981987290501703169"
+      },
+      {
+        "case": "10-yaw89-pitch60-roll-60-epsilon.002-reversed",
+        "error_pixels": "0.000166248231804348411042308443089888345981987290501703169"
+      },
+      {
+        "case": "10-yaw89-pitch60-roll-60-epsilon.01",
+        "error_pixels": "0.000123225223039558149847137159983660601033103814424267142"
+      },
+      {
+        "case": "10-yaw89-pitch60-roll-60-epsilon.01-reversed",
+        "error_pixels": "0.000123225223039558149847137159983660601033103814424267142"
+      },
+      {
+        "case": "10-yaw89-pitch60-roll-60-epsilon.1",
+        "error_pixels": "0.000006644473921268374327110420529324465791835672134841300"
+      },
+      {
+        "case": "10-yaw89-pitch60-roll-60-epsilon.1-reversed",
+        "error_pixels": "0.000006644473921268374327110420529324465791835672134841300"
+      },
+      {
+        "case": "10-yaw137-pitch0-roll0-epsilon.0001",
+        "error_pixels": "0.006391645121470942535522160795537199496546597164986586597"
+      },
+      {
+        "case": "10-yaw137-pitch0-roll0-epsilon.0001-reversed",
+        "error_pixels": "0.006391645121470942535522160795537199496546597164986586597"
+      },
+      {
+        "case": "10-yaw137-pitch0-roll0-epsilon.0003",
+        "error_pixels": "0.004733207131688766068203278745337884169826913700356638010"
+      },
+      {
+        "case": "10-yaw137-pitch0-roll0-epsilon.0003-reversed",
+        "error_pixels": "0.004733207131688766068203278745337884169826913700356638010"
+      },
+      {
+        "case": "10-yaw137-pitch0-roll0-epsilon.001",
+        "error_pixels": "0.000629526476502304080247233211650092219609668813831440550"
+      },
+      {
+        "case": "10-yaw137-pitch0-roll0-epsilon.001-reversed",
+        "error_pixels": "0.000629526476502304080247233211650092219609668813831440551"
+      },
+      {
+        "case": "10-yaw137-pitch0-roll0-epsilon.002",
+        "error_pixels": "0.000891910192964831547756464423898477811578956758286537617"
+      },
+      {
+        "case": "10-yaw137-pitch0-roll0-epsilon.002-reversed",
+        "error_pixels": "0.000891910192964831547756464423898477811578956758286537617"
+      },
+      {
+        "case": "10-yaw137-pitch0-roll0-epsilon.01",
+        "error_pixels": "0.000185113933898120796875184579297804127905440278273878825"
+      },
+      {
+        "case": "10-yaw137-pitch0-roll0-epsilon.01-reversed",
+        "error_pixels": "0.000185113933898120796875184579297804127905440278273878825"
+      },
+      {
+        "case": "10-yaw137-pitch0-roll0-epsilon.1",
+        "error_pixels": "0.000013559778833269939290162769524298200453189082667209763"
+      },
+      {
+        "case": "10-yaw137-pitch0-roll0-epsilon.1-reversed",
+        "error_pixels": "0.000013559778833269939290162769524298200453189082667209763"
+      },
+      {
+        "case": "10-yaw137-pitch-60-roll0-epsilon.0001",
+        "error_pixels": "0.030895352120078093476146456301729979615108531617194587546"
+      },
+      {
+        "case": "10-yaw137-pitch-60-roll0-epsilon.0001-reversed",
+        "error_pixels": "0.030895352120078093476146456301729979615108531617194587545"
+      },
+      {
+        "case": "10-yaw137-pitch-60-roll0-epsilon.0003",
+        "error_pixels": "0.004608733344121498731307940154845081047239872167713433284"
+      },
+      {
+        "case": "10-yaw137-pitch-60-roll0-epsilon.0003-reversed",
+        "error_pixels": "0.004608733344121498731307940154845081047239872167713433284"
+      },
+      {
+        "case": "10-yaw137-pitch-60-roll0-epsilon.001",
+        "error_pixels": "0.000834247023186760088485014626863673200723062635772085486"
+      },
+      {
+        "case": "10-yaw137-pitch-60-roll0-epsilon.001-reversed",
+        "error_pixels": "0.000834247023186760088485014626863673200723062635772085486"
+      },
+      {
+        "case": "10-yaw137-pitch-60-roll0-epsilon.002",
+        "error_pixels": "0.000687853356765194561895068600260984756888938284243891807"
+      },
+      {
+        "case": "10-yaw137-pitch-60-roll0-epsilon.002-reversed",
+        "error_pixels": "0.000687853356765194561895068600260984756888938284243891807"
+      },
+      {
+        "case": "10-yaw137-pitch-60-roll0-epsilon.01",
+        "error_pixels": "0.000257435158135857373755940084105624474662665384317974501"
+      },
+      {
+        "case": "10-yaw137-pitch-60-roll0-epsilon.01-reversed",
+        "error_pixels": "0.000257435158135857373755940084105624474662665384317974501"
+      },
+      {
+        "case": "10-yaw137-pitch-60-roll0-epsilon.1",
+        "error_pixels": "0.000039534430678996140423214454091456375968604931196803435"
+      },
+      {
+        "case": "10-yaw137-pitch-60-roll0-epsilon.1-reversed",
+        "error_pixels": "0.000039534430678996140423214454091456375968604931196803435"
+      },
+      {
+        "case": "10-yaw137-pitch60-roll0-epsilon.0001",
+        "error_pixels": "0.030895352120078093476146456301729979615108531617195457507"
+      },
+      {
+        "case": "10-yaw137-pitch60-roll0-epsilon.0001-reversed",
+        "error_pixels": "0.030895352120078093476146456301729979615108531617195457506"
+      },
+      {
+        "case": "10-yaw137-pitch60-roll0-epsilon.0003",
+        "error_pixels": "0.004608733344121498731307940154845081047239872167713774865"
+      },
+      {
+        "case": "10-yaw137-pitch60-roll0-epsilon.0003-reversed",
+        "error_pixels": "0.004608733344121498731307940154845081047239872167713774865"
+      },
+      {
+        "case": "10-yaw137-pitch60-roll0-epsilon.001",
+        "error_pixels": "0.000834247023186760088485014626863673200723062635771978175"
+      },
+      {
+        "case": "10-yaw137-pitch60-roll0-epsilon.001-reversed",
+        "error_pixels": "0.000834247023186760088485014626863673200723062635771978175"
+      },
+      {
+        "case": "10-yaw137-pitch60-roll0-epsilon.002",
+        "error_pixels": "0.000687853356765194561895068600260984756888938284243833002"
+      },
+      {
+        "case": "10-yaw137-pitch60-roll0-epsilon.002-reversed",
+        "error_pixels": "0.000687853356765194561895068600260984756888938284243833002"
+      },
+      {
+        "case": "10-yaw137-pitch60-roll0-epsilon.01",
+        "error_pixels": "0.000257435158135857373755940084105624474662665384317963532"
+      },
+      {
+        "case": "10-yaw137-pitch60-roll0-epsilon.01-reversed",
+        "error_pixels": "0.000257435158135857373755940084105624474662665384317963532"
+      },
+      {
+        "case": "10-yaw137-pitch60-roll0-epsilon.1",
+        "error_pixels": "0.000039534430678996140423214454091456375968604931196804548"
+      },
+      {
+        "case": "10-yaw137-pitch60-roll0-epsilon.1-reversed",
+        "error_pixels": "0.000039534430678996140423214454091456375968604931196804548"
+      },
+      {
+        "case": "10-yaw137-pitch0-roll-60-epsilon.0001",
+        "error_pixels": "0.005021859808198657078435837585883883752960291898985478268"
+      },
+      {
+        "case": "10-yaw137-pitch0-roll-60-epsilon.0001-reversed",
+        "error_pixels": "0.005021859808198657078435837585883883752960291898985478268"
+      },
+      {
+        "case": "10-yaw137-pitch0-roll-60-epsilon.0003",
+        "error_pixels": "0.001768947696650466709084585258761326423059130936346718350"
+      },
+      {
+        "case": "10-yaw137-pitch0-roll-60-epsilon.0003-reversed",
+        "error_pixels": "0.001768947696650466709084585258761326423059130936346718350"
+      },
+      {
+        "case": "10-yaw137-pitch0-roll-60-epsilon.001",
+        "error_pixels": "0.001938860434367333159848071326129735994356721495912615206"
+      },
+      {
+        "case": "10-yaw137-pitch0-roll-60-epsilon.001-reversed",
+        "error_pixels": "0.001938860434367333159848071326129735994356721495912615206"
+      },
+      {
+        "case": "10-yaw137-pitch0-roll-60-epsilon.002",
+        "error_pixels": "0.001489794525238277949546627914395756085897314587234454864"
+      },
+      {
+        "case": "10-yaw137-pitch0-roll-60-epsilon.002-reversed",
+        "error_pixels": "0.001489794525238277949546627914395756085897314587234454864"
+      },
+      {
+        "case": "10-yaw137-pitch0-roll-60-epsilon.01",
+        "error_pixels": "0.000159576106656069799497861106667349869800222220638224287"
+      },
+      {
+        "case": "10-yaw137-pitch0-roll-60-epsilon.01-reversed",
+        "error_pixels": "0.000159576106656069799497861106667349869800222220638224287"
+      },
+      {
+        "case": "10-yaw137-pitch0-roll-60-epsilon.1",
+        "error_pixels": "0.000014582443144969829261655114894844521198345908590081858"
+      },
+      {
+        "case": "10-yaw137-pitch0-roll-60-epsilon.1-reversed",
+        "error_pixels": "0.000014582443144969829261655114894844521198345908590081858"
+      },
+      {
+        "case": "10-yaw137-pitch0-roll60-epsilon.0001",
+        "error_pixels": "0.005021859808198657078435837585883883752960291898984749564"
+      },
+      {
+        "case": "10-yaw137-pitch0-roll60-epsilon.0001-reversed",
+        "error_pixels": "0.005021859808198657078435837585883883752960291898984749564"
+      },
+      {
+        "case": "10-yaw137-pitch0-roll60-epsilon.0003",
+        "error_pixels": "0.001768947696650466709084585258761326423059130936347179308"
+      },
+      {
+        "case": "10-yaw137-pitch0-roll60-epsilon.0003-reversed",
+        "error_pixels": "0.001768947696650466709084585258761326423059130936347179308"
+      },
+      {
+        "case": "10-yaw137-pitch0-roll60-epsilon.001",
+        "error_pixels": "0.001938860434367333159848071326129735994356721495912494737"
+      },
+      {
+        "case": "10-yaw137-pitch0-roll60-epsilon.001-reversed",
+        "error_pixels": "0.001938860434367333159848071326129735994356721495912494737"
+      },
+      {
+        "case": "10-yaw137-pitch0-roll60-epsilon.002",
+        "error_pixels": "0.001489794525238277949546627914395756085897314587234511972"
+      },
+      {
+        "case": "10-yaw137-pitch0-roll60-epsilon.002-reversed",
+        "error_pixels": "0.001489794525238277949546627914395756085897314587234511972"
+      },
+      {
+        "case": "10-yaw137-pitch0-roll60-epsilon.01",
+        "error_pixels": "0.000159576106656069799497861106667349869800222220638235528"
+      },
+      {
+        "case": "10-yaw137-pitch0-roll60-epsilon.01-reversed",
+        "error_pixels": "0.000159576106656069799497861106667349869800222220638235528"
+      },
+      {
+        "case": "10-yaw137-pitch0-roll60-epsilon.1",
+        "error_pixels": "0.000014582443144969829261655114894844521198345908590080746"
+      },
+      {
+        "case": "10-yaw137-pitch0-roll60-epsilon.1-reversed",
+        "error_pixels": "0.000014582443144969829261655114894844521198345908590080746"
+      },
+      {
+        "case": "10-yaw137-pitch-60-roll60-epsilon.0001",
+        "error_pixels": "0.022525297535787695873972670801793677974705163928534084133"
+      },
+      {
+        "case": "10-yaw137-pitch-60-roll60-epsilon.0001-reversed",
+        "error_pixels": "0.022525297535787695873972670801793677974705163928534084132"
+      },
+      {
+        "case": "10-yaw137-pitch-60-roll60-epsilon.0003",
+        "error_pixels": "0.004741385067152293779815359377123135213593046012423360219"
+      },
+      {
+        "case": "10-yaw137-pitch-60-roll60-epsilon.0003-reversed",
+        "error_pixels": "0.004741385067152293779815359377123135213593046012423360220"
+      },
+      {
+        "case": "10-yaw137-pitch-60-roll60-epsilon.001",
+        "error_pixels": "0.000718220776959936965346736428854998181264792801823207318"
+      },
+      {
+        "case": "10-yaw137-pitch-60-roll60-epsilon.001-reversed",
+        "error_pixels": "0.000718220776959936965346736428854998181264792801823207318"
+      },
+      {
+        "case": "10-yaw137-pitch-60-roll60-epsilon.002",
+        "error_pixels": "0.001550479081045690519771344248319646593617883865697776014"
+      },
+      {
+        "case": "10-yaw137-pitch-60-roll60-epsilon.002-reversed",
+        "error_pixels": "0.001550479081045690519771344248319646593617883865697776014"
+      },
+      {
+        "case": "10-yaw137-pitch-60-roll60-epsilon.01",
+        "error_pixels": "0.000151543177884721193707608988086312877310839841612437160"
+      },
+      {
+        "case": "10-yaw137-pitch-60-roll60-epsilon.01-reversed",
+        "error_pixels": "0.000151543177884721193707608988086312877310839841612437160"
+      },
+      {
+        "case": "10-yaw137-pitch-60-roll60-epsilon.1",
+        "error_pixels": "0.000027697935129005897559285950071178310809736482225117143"
+      },
+      {
+        "case": "10-yaw137-pitch-60-roll60-epsilon.1-reversed",
+        "error_pixels": "0.000027697935129005897559285950071178310809736482225117143"
+      },
+      {
+        "case": "10-yaw137-pitch60-roll-60-epsilon.0001",
+        "error_pixels": "0.022525297535787695873972670801793677974705163928534194208"
+      },
+      {
+        "case": "10-yaw137-pitch60-roll-60-epsilon.0001-reversed",
+        "error_pixels": "0.022525297535787695873972670801793677974705163928534194209"
+      },
+      {
+        "case": "10-yaw137-pitch60-roll-60-epsilon.0003",
+        "error_pixels": "0.004741385067152293779815359377123135213593046012423360634"
+      },
+      {
+        "case": "10-yaw137-pitch60-roll-60-epsilon.0003-reversed",
+        "error_pixels": "0.004741385067152293779815359377123135213593046012423360635"
+      },
+      {
+        "case": "10-yaw137-pitch60-roll-60-epsilon.001",
+        "error_pixels": "0.000718220776959936965346736428854998181264792801823205374"
+      },
+      {
+        "case": "10-yaw137-pitch60-roll-60-epsilon.001-reversed",
+        "error_pixels": "0.000718220776959936965346736428854998181264792801823205374"
+      },
+      {
+        "case": "10-yaw137-pitch60-roll-60-epsilon.002",
+        "error_pixels": "0.001550479081045690519771344248319646593617883865697775112"
+      },
+      {
+        "case": "10-yaw137-pitch60-roll-60-epsilon.002-reversed",
+        "error_pixels": "0.001550479081045690519771344248319646593617883865697775112"
+      },
+      {
+        "case": "10-yaw137-pitch60-roll-60-epsilon.01",
+        "error_pixels": "0.000151543177884721193707608988086312877310839841612437356"
+      },
+      {
+        "case": "10-yaw137-pitch60-roll-60-epsilon.01-reversed",
+        "error_pixels": "0.000151543177884721193707608988086312877310839841612437356"
+      },
+      {
+        "case": "10-yaw137-pitch60-roll-60-epsilon.1",
+        "error_pixels": "0.000027697935129005897559285950071178310809736482225117148"
+      },
+      {
+        "case": "10-yaw137-pitch60-roll-60-epsilon.1-reversed",
+        "error_pixels": "0.000027697935129005897559285950071178310809736482225117148"
+      },
+      {
+        "case": "40000-yaw1-pitch0-roll0-epsilon.0001",
+        "error_pixels": "0.000438300601076847741764132971916494423361779737450145487"
+      },
+      {
+        "case": "40000-yaw1-pitch0-roll0-epsilon.0001-reversed",
+        "error_pixels": "0.000438300601076847741764132971916494423361779737450145487"
+      },
+      {
+        "case": "40000-yaw1-pitch0-roll0-epsilon.0003",
+        "error_pixels": "0.005700461354485297599052460645049796507557753331780838034"
+      },
+      {
+        "case": "40000-yaw1-pitch0-roll0-epsilon.0003-reversed",
+        "error_pixels": "0.005700461354485297599052460645049796507557753331780838034"
+      },
+      {
+        "case": "40000-yaw1-pitch0-roll0-epsilon.001",
+        "error_pixels": "0.000012922924764614526347560184892644855792465975233654005"
+      },
+      {
+        "case": "40000-yaw1-pitch0-roll0-epsilon.001-reversed",
+        "error_pixels": "0.000012922924764614526347560184892644855792465975233654005"
+      },
+      {
+        "case": "40000-yaw1-pitch0-roll0-epsilon.002",
+        "error_pixels": "0.000061473148695855948217272107218818478274952179045134758"
+      },
+      {
+        "case": "40000-yaw1-pitch0-roll0-epsilon.002-reversed",
+        "error_pixels": "0.000061473148695855948217272107218818478274952179045134758"
+      },
+      {
+        "case": "40000-yaw1-pitch0-roll0-epsilon.01",
+        "error_pixels": "0.00020183816854096242059901415109355166053820678071502981"
+      },
+      {
+        "case": "40000-yaw1-pitch0-roll0-epsilon.01-reversed",
+        "error_pixels": "0.00020183816854096242059901415109355166053820678071502981"
+      },
+      {
+        "case": "40000-yaw1-pitch0-roll0-epsilon.1",
+        "error_pixels": "0.000016108597908288583591291060744330365705543393481069617"
+      },
+      {
+        "case": "40000-yaw1-pitch0-roll0-epsilon.1-reversed",
+        "error_pixels": "0.000016108597908288583591291060744330365705543393481069617"
+      },
+      {
+        "case": "40000-yaw1-pitch-60-roll0-epsilon.0001",
+        "error_pixels": "0.02300021551410630236134663340238119785621599242984972087"
+      },
+      {
+        "case": "40000-yaw1-pitch-60-roll0-epsilon.0001-reversed",
+        "error_pixels": "0.02300021551410630236134663340238119785621599242984972087"
+      },
+      {
+        "case": "40000-yaw1-pitch-60-roll0-epsilon.0003",
+        "error_pixels": "0.002373190847752076654332202927581140213770251767607641340"
+      },
+      {
+        "case": "40000-yaw1-pitch-60-roll0-epsilon.0003-reversed",
+        "error_pixels": "0.002373190847752076654332202927581140213770251767607641340"
+      },
+      {
+        "case": "40000-yaw1-pitch-60-roll0-epsilon.001",
+        "error_pixels": "0.001804461882998512526073185010412058066390966759623556019"
+      },
+      {
+        "case": "40000-yaw1-pitch-60-roll0-epsilon.001-reversed",
+        "error_pixels": "0.001804461882998512526073185010412058066390966759623556019"
+      },
+      {
+        "case": "40000-yaw1-pitch-60-roll0-epsilon.002",
+        "error_pixels": "0.000478091474616337907718990362350029716745188273356528607"
+      },
+      {
+        "case": "40000-yaw1-pitch-60-roll0-epsilon.002-reversed",
+        "error_pixels": "0.000478091474616337907718990362350029716745188273356528607"
+      },
+      {
+        "case": "40000-yaw1-pitch-60-roll0-epsilon.01",
+        "error_pixels": "0.000050934277390009325520865156241593033052011031981305228"
+      },
+      {
+        "case": "40000-yaw1-pitch-60-roll0-epsilon.01-reversed",
+        "error_pixels": "0.000050934277390009325520865156241593033052011031981305228"
+      },
+      {
+        "case": "40000-yaw1-pitch-60-roll0-epsilon.1",
+        "error_pixels": "0.000008756871606733776655942138475966390002068924456303653"
+      },
+      {
+        "case": "40000-yaw1-pitch-60-roll0-epsilon.1-reversed",
+        "error_pixels": "0.000008756871606733776655942138475966390002068924456303653"
+      },
+      {
+        "case": "40000-yaw1-pitch60-roll0-epsilon.0001",
+        "error_pixels": "0.023000215514106302361346633402381197856215992433480604826"
+      },
+      {
+        "case": "40000-yaw1-pitch60-roll0-epsilon.0001-reversed",
+        "error_pixels": "0.023000215514106302361346633402381197856215992433480604826"
+      },
+      {
+        "case": "40000-yaw1-pitch60-roll0-epsilon.0003",
+        "error_pixels": "0.002373190847752076654332202927581140213770251769146456588"
+      },
+      {
+        "case": "40000-yaw1-pitch60-roll0-epsilon.0003-reversed",
+        "error_pixels": "0.002373190847752076654332202927581140213770251769146456588"
+      },
+      {
+        "case": "40000-yaw1-pitch60-roll0-epsilon.001",
+        "error_pixels": "0.001804461882998512526073185010412058066390966760063056011"
+      },
+      {
+        "case": "40000-yaw1-pitch60-roll0-epsilon.001-reversed",
+        "error_pixels": "0.001804461882998512526073185010412058066390966760063056011"
+      },
+      {
+        "case": "40000-yaw1-pitch60-roll0-epsilon.002",
+        "error_pixels": "0.000478091474616337907718990362350029716745188273136752361"
+      },
+      {
+        "case": "40000-yaw1-pitch60-roll0-epsilon.002-reversed",
+        "error_pixels": "0.000478091474616337907718990362350029716745188273136752361"
+      },
+      {
+        "case": "40000-yaw1-pitch60-roll0-epsilon.01",
+        "error_pixels": "0.000050934277390009325520865156241593033052011032025984258"
+      },
+      {
+        "case": "40000-yaw1-pitch60-roll0-epsilon.01-reversed",
+        "error_pixels": "0.000050934277390009325520865156241593033052011032025984258"
+      },
+      {
+        "case": "40000-yaw1-pitch60-roll0-epsilon.1",
+        "error_pixels": "0.000008756871606733776655942138475966390002068924460781742"
+      },
+      {
+        "case": "40000-yaw1-pitch60-roll0-epsilon.1-reversed",
+        "error_pixels": "0.000008756871606733776655942138475966390002068924460781742"
+      },
+      {
+        "case": "40000-yaw1-pitch0-roll-60-epsilon.0001",
+        "error_pixels": null
+      },
+      {
+        "case": "40000-yaw1-pitch0-roll-60-epsilon.0001-reversed",
+        "error_pixels": null
+      },
+      {
+        "case": "40000-yaw1-pitch0-roll-60-epsilon.0003",
+        "error_pixels": "0.004754307985908589539620092558363842790423309955019887265"
+      },
+      {
+        "case": "40000-yaw1-pitch0-roll-60-epsilon.0003-reversed",
+        "error_pixels": "0.004754307985908589539620092558363842790423309955019887265"
+      },
+      {
+        "case": "40000-yaw1-pitch0-roll-60-epsilon.001",
+        "error_pixels": "0.000932173414319886770310356835981486429243719295393843472"
+      },
+      {
+        "case": "40000-yaw1-pitch0-roll-60-epsilon.001-reversed",
+        "error_pixels": "0.000932173414319886770310356835981486429243719295393843472"
+      },
+      {
+        "case": "40000-yaw1-pitch0-roll-60-epsilon.002",
+        "error_pixels": "0.000427347774237357067642272721924196203553215727674186998"
+      },
+      {
+        "case": "40000-yaw1-pitch0-roll-60-epsilon.002-reversed",
+        "error_pixels": "0.000427347774237357067642272721924196203553215727674186998"
+      },
+      {
+        "case": "40000-yaw1-pitch0-roll-60-epsilon.01",
+        "error_pixels": "0.000081211120143315381586858097791933557135863591268353469"
+      },
+      {
+        "case": "40000-yaw1-pitch0-roll-60-epsilon.01-reversed",
+        "error_pixels": "0.000081211120143315381586858097791933557135863591268353469"
+      },
+      {
+        "case": "40000-yaw1-pitch0-roll-60-epsilon.1",
+        "error_pixels": "0.000005614488153045582478034904565922420678944368167186435"
+      },
+      {
+        "case": "40000-yaw1-pitch0-roll-60-epsilon.1-reversed",
+        "error_pixels": "0.000005614488153045582478034904565922420678944368167186435"
+      },
+      {
+        "case": "40000-yaw1-pitch0-roll60-epsilon.0001",
+        "error_pixels": null
+      },
+      {
+        "case": "40000-yaw1-pitch0-roll60-epsilon.0001-reversed",
+        "error_pixels": null
+      },
+      {
+        "case": "40000-yaw1-pitch0-roll60-epsilon.0003",
+        "error_pixels": "0.004754307985908589539620092558363842790423309956741485214"
+      },
+      {
+        "case": "40000-yaw1-pitch0-roll60-epsilon.0003-reversed",
+        "error_pixels": "0.004754307985908589539620092558363842790423309956741485214"
+      },
+      {
+        "case": "40000-yaw1-pitch0-roll60-epsilon.001",
+        "error_pixels": "0.000932173414319886770310356835981486429243719295845470412"
+      },
+      {
+        "case": "40000-yaw1-pitch0-roll60-epsilon.001-reversed",
+        "error_pixels": "0.000932173414319886770310356835981486429243719295845470412"
+      },
+      {
+        "case": "40000-yaw1-pitch0-roll60-epsilon.002",
+        "error_pixels": "0.000427347774237357067642272721924196203553215727901785007"
+      },
+      {
+        "case": "40000-yaw1-pitch0-roll60-epsilon.002-reversed",
+        "error_pixels": "0.000427347774237357067642272721924196203553215727901785007"
+      },
+      {
+        "case": "40000-yaw1-pitch0-roll60-epsilon.01",
+        "error_pixels": "0.000081211120143315381586858097791933557135863591312628009"
+      },
+      {
+        "case": "40000-yaw1-pitch0-roll60-epsilon.01-reversed",
+        "error_pixels": "0.000081211120143315381586858097791933557135863591312628009"
+      },
+      {
+        "case": "40000-yaw1-pitch0-roll60-epsilon.1",
+        "error_pixels": "0.000005614488153045582478034904565922420678944368162586689"
+      },
+      {
+        "case": "40000-yaw1-pitch0-roll60-epsilon.1-reversed",
+        "error_pixels": "0.000005614488153045582478034904565922420678944368162586689"
+      },
+      {
+        "case": "40000-yaw1-pitch-60-roll60-epsilon.0001",
+        "error_pixels": "0.003147386412920937305430487239236457251774455567743678516"
+      },
+      {
+        "case": "40000-yaw1-pitch-60-roll60-epsilon.0001-reversed",
+        "error_pixels": "0.003147386412920937305430487239236457251774455567743678516"
+      },
+      {
+        "case": "40000-yaw1-pitch-60-roll60-epsilon.0003",
+        "error_pixels": "0.007958326786718781053782734756610360168359493352358296180"
+      },
+      {
+        "case": "40000-yaw1-pitch-60-roll60-epsilon.0003-reversed",
+        "error_pixels": "0.007958326786718781053782734756610360168359493352358296180"
+      },
+      {
+        "case": "40000-yaw1-pitch-60-roll60-epsilon.001",
+        "error_pixels": "0.000965381614046203098856698881207535530405415793999679922"
+      },
+      {
+        "case": "40000-yaw1-pitch-60-roll60-epsilon.001-reversed",
+        "error_pixels": "0.000965381614046203098856698881207535530405415793999679922"
+      },
+      {
+        "case": "40000-yaw1-pitch-60-roll60-epsilon.002",
+        "error_pixels": "0.001006018062811632729756731779340553010640500005892675190"
+      },
+      {
+        "case": "40000-yaw1-pitch-60-roll60-epsilon.002-reversed",
+        "error_pixels": "0.001006018062811632729756731779340553010640500005892675190"
+      },
+      {
+        "case": "40000-yaw1-pitch-60-roll60-epsilon.01",
+        "error_pixels": "0.000061463767601988043799581657973260190246784240322908937"
+      },
+      {
+        "case": "40000-yaw1-pitch-60-roll60-epsilon.01-reversed",
+        "error_pixels": "0.000061463767601988043799581657973260190246784240322908937"
+      },
+      {
+        "case": "40000-yaw1-pitch-60-roll60-epsilon.1",
+        "error_pixels": "0.000018067958779985506990256447846050908515196375319848461"
+      },
+      {
+        "case": "40000-yaw1-pitch-60-roll60-epsilon.1-reversed",
+        "error_pixels": "0.000018067958779985506990256447846050908515196375319848461"
+      },
+      {
+        "case": "40000-yaw1-pitch60-roll-60-epsilon.0001",
+        "error_pixels": "0.00314738641292093730543048723923645725177445556703231271"
+      },
+      {
+        "case": "40000-yaw1-pitch60-roll-60-epsilon.0001-reversed",
+        "error_pixels": "0.00314738641292093730543048723923645725177445556703231271"
+      },
+      {
+        "case": "40000-yaw1-pitch60-roll-60-epsilon.0003",
+        "error_pixels": "0.007958326786718781053782734756610360168359493352564031613"
+      },
+      {
+        "case": "40000-yaw1-pitch60-roll-60-epsilon.0003-reversed",
+        "error_pixels": "0.007958326786718781053782734756610360168359493352564031613"
+      },
+      {
+        "case": "40000-yaw1-pitch60-roll-60-epsilon.001",
+        "error_pixels": "0.000965381614046203098856698881207535530405415794014579893"
+      },
+      {
+        "case": "40000-yaw1-pitch60-roll-60-epsilon.001-reversed",
+        "error_pixels": "0.000965381614046203098856698881207535530405415794014579893"
+      },
+      {
+        "case": "40000-yaw1-pitch60-roll-60-epsilon.002",
+        "error_pixels": "0.001006018062811632729756731779340553010640500005894127616"
+      },
+      {
+        "case": "40000-yaw1-pitch60-roll-60-epsilon.002-reversed",
+        "error_pixels": "0.001006018062811632729756731779340553010640500005894127616"
+      },
+      {
+        "case": "40000-yaw1-pitch60-roll-60-epsilon.01",
+        "error_pixels": "0.000061463767601988043799581657973260190246784240324114808"
+      },
+      {
+        "case": "40000-yaw1-pitch60-roll-60-epsilon.01-reversed",
+        "error_pixels": "0.000061463767601988043799581657973260190246784240324114808"
+      },
+      {
+        "case": "40000-yaw1-pitch60-roll-60-epsilon.1",
+        "error_pixels": "0.000018067958779985506990256447846050908515196375319887856"
+      },
+      {
+        "case": "40000-yaw1-pitch60-roll-60-epsilon.1-reversed",
+        "error_pixels": "0.000018067958779985506990256447846050908515196375319887856"
+      },
+      {
+        "case": "40000-yaw17-pitch0-roll0-epsilon.0001",
+        "error_pixels": "0.005490365111053408005981915022760887329363602877262083847"
+      },
+      {
+        "case": "40000-yaw17-pitch0-roll0-epsilon.0001-reversed",
+        "error_pixels": "0.005490365111053408005981915022760887329363602877262083847"
+      },
+      {
+        "case": "40000-yaw17-pitch0-roll0-epsilon.0003",
+        "error_pixels": "0.006503575574663529453116804685271627120185830826110905587"
+      },
+      {
+        "case": "40000-yaw17-pitch0-roll0-epsilon.0003-reversed",
+        "error_pixels": "0.006503575574663529453116804685271627120185830826110905587"
+      },
+      {
+        "case": "40000-yaw17-pitch0-roll0-epsilon.001",
+        "error_pixels": "0.000827833533041525771811995128757035411602672401348640224"
+      },
+      {
+        "case": "40000-yaw17-pitch0-roll0-epsilon.001-reversed",
+        "error_pixels": "0.000827833533041525771811995128757035411602672401348640224"
+      },
+      {
+        "case": "40000-yaw17-pitch0-roll0-epsilon.002",
+        "error_pixels": "0.000717841977928370161207560007615419889420040183603894997"
+      },
+      {
+        "case": "40000-yaw17-pitch0-roll0-epsilon.002-reversed",
+        "error_pixels": "0.000717841977928370161207560007615419889420040183603894997"
+      },
+      {
+        "case": "40000-yaw17-pitch0-roll0-epsilon.01",
+        "error_pixels": "0.000013690851939888061434348308689337196689784614020315858"
+      },
+      {
+        "case": "40000-yaw17-pitch0-roll0-epsilon.01-reversed",
+        "error_pixels": "0.000013690851939888061434348308689337196689784614020315858"
+      },
+      {
+        "case": "40000-yaw17-pitch0-roll0-epsilon.1",
+        "error_pixels": "0.000005347163127377729157629981358914393888064832069752103"
+      },
+      {
+        "case": "40000-yaw17-pitch0-roll0-epsilon.1-reversed",
+        "error_pixels": "0.000005347163127377729157629981358914393888064832069752103"
+      },
+      {
+        "case": "40000-yaw17-pitch-60-roll0-epsilon.0001",
+        "error_pixels": "0.004740922086830203967722351408370476996742262597139738933"
+      },
+      {
+        "case": "40000-yaw17-pitch-60-roll0-epsilon.0001-reversed",
+        "error_pixels": "0.004740922086830203967722351408370476996742262597139738933"
+      },
+      {
+        "case": "40000-yaw17-pitch-60-roll0-epsilon.0003",
+        "error_pixels": "0.008890270383417613501277960942720984401254879764609526372"
+      },
+      {
+        "case": "40000-yaw17-pitch-60-roll0-epsilon.0003-reversed",
+        "error_pixels": "0.008890270383417613501277960942720984401254879764609526372"
+      },
+      {
+        "case": "40000-yaw17-pitch-60-roll0-epsilon.001",
+        "error_pixels": "0.000437542570438905378294073099975907643241625818170038803"
+      },
+      {
+        "case": "40000-yaw17-pitch-60-roll0-epsilon.001-reversed",
+        "error_pixels": "0.000437542570438905378294073099975907643241625818170038803"
+      },
+      {
+        "case": "40000-yaw17-pitch-60-roll0-epsilon.002",
+        "error_pixels": "0.001307989204547571162316501138060155075836437932510322186"
+      },
+      {
+        "case": "40000-yaw17-pitch-60-roll0-epsilon.002-reversed",
+        "error_pixels": "0.001307989204547571162316501138060155075836437932510322186"
+      },
+      {
+        "case": "40000-yaw17-pitch-60-roll0-epsilon.01",
+        "error_pixels": "0.000066101999879154190905093927525890811436482890387098244"
+      },
+      {
+        "case": "40000-yaw17-pitch-60-roll0-epsilon.01-reversed",
+        "error_pixels": "0.000066101999879154190905093927525890811436482890387098244"
+      },
+      {
+        "case": "40000-yaw17-pitch-60-roll0-epsilon.1",
+        "error_pixels": "0.0000013912939861079375756100131563866130958467674712423445"
+      },
+      {
+        "case": "40000-yaw17-pitch-60-roll0-epsilon.1-reversed",
+        "error_pixels": "0.0000013912939861079375756100131563866130958467674712423445"
+      },
+      {
+        "case": "40000-yaw17-pitch60-roll0-epsilon.0001",
+        "error_pixels": "0.004740922086830203967722351408370476996742262594704922026"
+      },
+      {
+        "case": "40000-yaw17-pitch60-roll0-epsilon.0001-reversed",
+        "error_pixels": "0.004740922086830203967722351408370476996742262594704922026"
+      },
+      {
+        "case": "40000-yaw17-pitch60-roll0-epsilon.0003",
+        "error_pixels": "0.00889027038341761350127796094272098440125487976306317056"
+      },
+      {
+        "case": "40000-yaw17-pitch60-roll0-epsilon.0003-reversed",
+        "error_pixels": "0.00889027038341761350127796094272098440125487976306317056"
+      },
+      {
+        "case": "40000-yaw17-pitch60-roll0-epsilon.001",
+        "error_pixels": "0.000437542570438905378294073099975907643241625817720006772"
+      },
+      {
+        "case": "40000-yaw17-pitch60-roll0-epsilon.001-reversed",
+        "error_pixels": "0.000437542570438905378294073099975907643241625817720006772"
+      },
+      {
+        "case": "40000-yaw17-pitch60-roll0-epsilon.002",
+        "error_pixels": "0.0013079892045475711623165011380601550758364379327408511"
+      },
+      {
+        "case": "40000-yaw17-pitch60-roll0-epsilon.002-reversed",
+        "error_pixels": "0.0013079892045475711623165011380601550758364379327408511"
+      },
+      {
+        "case": "40000-yaw17-pitch60-roll0-epsilon.01",
+        "error_pixels": "0.000066101999879154190905093927525890811436482890432619629"
+      },
+      {
+        "case": "40000-yaw17-pitch60-roll0-epsilon.01-reversed",
+        "error_pixels": "0.000066101999879154190905093927525890811436482890432619629"
+      },
+      {
+        "case": "40000-yaw17-pitch60-roll0-epsilon.1",
+        "error_pixels": "0.0000013912939861079375756100131563866130958467674712423447"
+      },
+      {
+        "case": "40000-yaw17-pitch60-roll0-epsilon.1-reversed",
+        "error_pixels": "0.0000013912939861079375756100131563866130958467674712423447"
+      },
+      {
+        "case": "40000-yaw17-pitch0-roll-60-epsilon.0001",
+        "error_pixels": "0.005572208546566458333039124007372900488320667078773073663"
+      },
+      {
+        "case": "40000-yaw17-pitch0-roll-60-epsilon.0001-reversed",
+        "error_pixels": "0.005572208546566458333039124007372900488320667078773073663"
+      },
+      {
+        "case": "40000-yaw17-pitch0-roll-60-epsilon.0003",
+        "error_pixels": "0.004062575140897929556221410723127723756868595009039871419"
+      },
+      {
+        "case": "40000-yaw17-pitch0-roll-60-epsilon.0003-reversed",
+        "error_pixels": "0.004062575140897929556221410723127723756868595009039871419"
+      },
+      {
+        "case": "40000-yaw17-pitch0-roll-60-epsilon.001",
+        "error_pixels": "0.001374697475544214632820005460373466614406735139439244072"
+      },
+      {
+        "case": "40000-yaw17-pitch0-roll-60-epsilon.001-reversed",
+        "error_pixels": "0.001374697475544214632820005460373466614406735139439244072"
+      },
+      {
+        "case": "40000-yaw17-pitch0-roll-60-epsilon.002",
+        "error_pixels": "0.000478390164336414552667501959983490077354063780992383486"
+      },
+      {
+        "case": "40000-yaw17-pitch0-roll-60-epsilon.002-reversed",
+        "error_pixels": "0.000478390164336414552667501959983490077354063780992383486"
+      },
+      {
+        "case": "40000-yaw17-pitch0-roll-60-epsilon.01",
+        "error_pixels": "0.000153768115462786281939785800408494830726683836139860250"
+      },
+      {
+        "case": "40000-yaw17-pitch0-roll-60-epsilon.01-reversed",
+        "error_pixels": "0.000153768115462786281939785800408494830726683836139860250"
+      },
+      {
+        "case": "40000-yaw17-pitch0-roll-60-epsilon.1",
+        "error_pixels": "0.000001913247279407162770131976092283760144449666546583122"
+      },
+      {
+        "case": "40000-yaw17-pitch0-roll-60-epsilon.1-reversed",
+        "error_pixels": "0.000001913247279407162770131976092283760144449666546583122"
+      },
+      {
+        "case": "40000-yaw17-pitch0-roll60-epsilon.0001",
+        "error_pixels": "0.005572208546566458333039124007372900488320667082093401369"
+      },
+      {
+        "case": "40000-yaw17-pitch0-roll60-epsilon.0001-reversed",
+        "error_pixels": "0.005572208546566458333039124007372900488320667082093401369"
+      },
+      {
+        "case": "40000-yaw17-pitch0-roll60-epsilon.0003",
+        "error_pixels": "0.004062575140897929556221410723127723756868595010807924564"
+      },
+      {
+        "case": "40000-yaw17-pitch0-roll60-epsilon.0003-reversed",
+        "error_pixels": "0.004062575140897929556221410723127723756868595010807924564"
+      },
+      {
+        "case": "40000-yaw17-pitch0-roll60-epsilon.001",
+        "error_pixels": "0.001374697475544214632820005460373466614406735138990764752"
+      },
+      {
+        "case": "40000-yaw17-pitch0-roll60-epsilon.001-reversed",
+        "error_pixels": "0.001374697475544214632820005460373466614406735138990764752"
+      },
+      {
+        "case": "40000-yaw17-pitch0-roll60-epsilon.002",
+        "error_pixels": "0.000478390164336414552667501959983490077354063781211109825"
+      },
+      {
+        "case": "40000-yaw17-pitch0-roll60-epsilon.002-reversed",
+        "error_pixels": "0.000478390164336414552667501959983490077354063781211109825"
+      },
+      {
+        "case": "40000-yaw17-pitch0-roll60-epsilon.01",
+        "error_pixels": "0.000153768115462786281939785800408494830726683836095377467"
+      },
+      {
+        "case": "40000-yaw17-pitch0-roll60-epsilon.01-reversed",
+        "error_pixels": "0.000153768115462786281939785800408494830726683836095377467"
+      },
+      {
+        "case": "40000-yaw17-pitch0-roll60-epsilon.1",
+        "error_pixels": "0.000001913247279407162770131976092283760144449666542061023"
+      },
+      {
+        "case": "40000-yaw17-pitch0-roll60-epsilon.1-reversed",
+        "error_pixels": "0.000001913247279407162770131976092283760144449666542061023"
+      },
+      {
+        "case": "40000-yaw17-pitch-60-roll60-epsilon.0001",
+        "error_pixels": "0.008667030005436385791715183424268186210971370232404677546"
+      },
+      {
+        "case": "40000-yaw17-pitch-60-roll60-epsilon.0001-reversed",
+        "error_pixels": "0.008667030005436385791715183424268186210971370232404677546"
+      },
+      {
+        "case": "40000-yaw17-pitch-60-roll60-epsilon.0003",
+        "error_pixels": "0.003237131981603291741295082702507100332862944733553377045"
+      },
+      {
+        "case": "40000-yaw17-pitch-60-roll60-epsilon.0003-reversed",
+        "error_pixels": "0.003237131981603291741295082702507100332862944733553377045"
+      },
+      {
+        "case": "40000-yaw17-pitch-60-roll60-epsilon.001",
+        "error_pixels": "0.000302951372576297977021056442252117583393581214219749373"
+      },
+      {
+        "case": "40000-yaw17-pitch-60-roll60-epsilon.001-reversed",
+        "error_pixels": "0.000302951372576297977021056442252117583393581214219749373"
+      },
+      {
+        "case": "40000-yaw17-pitch-60-roll60-epsilon.002",
+        "error_pixels": "0.000043102708094853504797124455740161153693275141130427171"
+      },
+      {
+        "case": "40000-yaw17-pitch-60-roll60-epsilon.002-reversed",
+        "error_pixels": "0.000043102708094853504797124455740161153693275141130427171"
+      },
+      {
+        "case": "40000-yaw17-pitch-60-roll60-epsilon.01",
+        "error_pixels": "0.000019799585137267822774807493451135317698343397763994529"
+      },
+      {
+        "case": "40000-yaw17-pitch-60-roll60-epsilon.01-reversed",
+        "error_pixels": "0.000019799585137267822774807493451135317698343397763994529"
+      },
+      {
+        "case": "40000-yaw17-pitch-60-roll60-epsilon.1",
+        "error_pixels": "0.000002486969230414902349619591475229602834814079098051136"
+      },
+      {
+        "case": "40000-yaw17-pitch-60-roll60-epsilon.1-reversed",
+        "error_pixels": "0.000002486969230414902349619591475229602834814079098051136"
+      },
+      {
+        "case": "40000-yaw17-pitch60-roll-60-epsilon.0001",
+        "error_pixels": "0.008667030005436385791715183424268186210971370232312463915"
+      },
+      {
+        "case": "40000-yaw17-pitch60-roll-60-epsilon.0001-reversed",
+        "error_pixels": "0.008667030005436385791715183424268186210971370232312463915"
+      },
+      {
+        "case": "40000-yaw17-pitch60-roll-60-epsilon.0003",
+        "error_pixels": "0.003237131981603291741295082702507100332862944733654429485"
+      },
+      {
+        "case": "40000-yaw17-pitch60-roll-60-epsilon.0003-reversed",
+        "error_pixels": "0.003237131981603291741295082702507100332862944733654429485"
+      },
+      {
+        "case": "40000-yaw17-pitch60-roll-60-epsilon.001",
+        "error_pixels": "0.000302951372576297977021056442252117583393581214210021358"
+      },
+      {
+        "case": "40000-yaw17-pitch60-roll-60-epsilon.001-reversed",
+        "error_pixels": "0.000302951372576297977021056442252117583393581214210021358"
+      },
+      {
+        "case": "40000-yaw17-pitch60-roll-60-epsilon.002",
+        "error_pixels": "0.000043102708094853504797124455740161153693275141130695094"
+      },
+      {
+        "case": "40000-yaw17-pitch60-roll-60-epsilon.002-reversed",
+        "error_pixels": "0.000043102708094853504797124455740161153693275141130695094"
+      },
+      {
+        "case": "40000-yaw17-pitch60-roll-60-epsilon.01",
+        "error_pixels": "0.000019799585137267822774807493451135317698343397763539737"
+      },
+      {
+        "case": "40000-yaw17-pitch60-roll-60-epsilon.01-reversed",
+        "error_pixels": "0.000019799585137267822774807493451135317698343397763539737"
+      },
+      {
+        "case": "40000-yaw17-pitch60-roll-60-epsilon.1",
+        "error_pixels": "0.000002486969230414902349619591475229602834814079097930522"
+      },
+      {
+        "case": "40000-yaw17-pitch60-roll-60-epsilon.1-reversed",
+        "error_pixels": "0.000002486969230414902349619591475229602834814079097930522"
+      },
+      {
+        "case": "40000-yaw45-pitch0-roll0-epsilon.0001",
+        "error_pixels": "0.000123948650614709267913647004674925947723022862508044916"
+      },
+      {
+        "case": "40000-yaw45-pitch0-roll0-epsilon.0001-reversed",
+        "error_pixels": "0.000123948650614709267913647004674925947723022862508044916"
+      },
+      {
+        "case": "40000-yaw45-pitch0-roll0-epsilon.0003",
+        "error_pixels": "0.000123948650614709267913647004674925947723022862508044916"
+      },
+      {
+        "case": "40000-yaw45-pitch0-roll0-epsilon.0003-reversed",
+        "error_pixels": "0.000123948650614709267913647004674925947723022862508044916"
+      },
+      {
+        "case": "40000-yaw45-pitch0-roll0-epsilon.001",
+        "error_pixels": "0.000091928401997941853582729400934985189544604572500730984"
+      },
+      {
+        "case": "40000-yaw45-pitch0-roll0-epsilon.001-reversed",
+        "error_pixels": "0.000091928401997941853582729400934985189544604572500730984"
+      },
+      {
+        "case": "40000-yaw45-pitch0-roll0-epsilon.002",
+        "error_pixels": "0.000030688336135428115264877000424993267974820260229668316"
+      },
+      {
+        "case": "40000-yaw45-pitch0-roll0-epsilon.002-reversed",
+        "error_pixels": "0.000030688336135428115264877000424993267974820260229668316"
+      },
+      {
+        "case": "40000-yaw45-pitch0-roll0-epsilon.01",
+        "error_pixels": "0.00015820542671129799595269729486060695656137810072025951"
+      },
+      {
+        "case": "40000-yaw45-pitch0-roll0-epsilon.01-reversed",
+        "error_pixels": "0.00015820542671129799595269729486060695656137810072025951"
+      },
+      {
+        "case": "40000-yaw45-pitch0-roll0-epsilon.1",
+        "error_pixels": "0.000017258425730263887274760540579145205617058682448221805"
+      },
+      {
+        "case": "40000-yaw45-pitch0-roll0-epsilon.1-reversed",
+        "error_pixels": "0.000017258425730263887274760540579145205617058682448221805"
+      },
+      {
+        "case": "40000-yaw45-pitch-60-roll0-epsilon.0001",
+        "error_pixels": "0.021700536803878240993722158011296430204750447557185483552"
+      },
+      {
+        "case": "40000-yaw45-pitch-60-roll0-epsilon.0001-reversed",
+        "error_pixels": "0.021700536803878240993722158011296430204750447557185483552"
+      },
+      {
+        "case": "40000-yaw45-pitch-60-roll0-epsilon.0003",
+        "error_pixels": "0.001466123349766878207666081346097327594296675652780826587"
+      },
+      {
+        "case": "40000-yaw45-pitch-60-roll0-epsilon.0003-reversed",
+        "error_pixels": "0.001466123349766878207666081346097327594296675652780826587"
+      },
+      {
+        "case": "40000-yaw45-pitch-60-roll0-epsilon.001",
+        "error_pixels": "0.000936362247548901791357392931175730230650439415719657276"
+      },
+      {
+        "case": "40000-yaw45-pitch-60-roll0-epsilon.001-reversed",
+        "error_pixels": "0.000936362247548901791357392931175730230650439415719657276"
+      },
+      {
+        "case": "40000-yaw45-pitch-60-roll0-epsilon.002",
+        "error_pixels": "0.000914178142226904294209783931203481592015254601527972608"
+      },
+      {
+        "case": "40000-yaw45-pitch-60-roll0-epsilon.002-reversed",
+        "error_pixels": "0.000914178142226904294209783931203481592015254601527972608"
+      },
+      {
+        "case": "40000-yaw45-pitch-60-roll0-epsilon.01",
+        "error_pixels": "0.000142286758463244238687575247344752984720820211889417231"
+      },
+      {
+        "case": "40000-yaw45-pitch-60-roll0-epsilon.01-reversed",
+        "error_pixels": "0.000142286758463244238687575247344752984720820211889417231"
+      },
+      {
+        "case": "40000-yaw45-pitch-60-roll0-epsilon.1",
+        "error_pixels": "0.000015903583887683667477165980935194825820996290924449239"
+      },
+      {
+        "case": "40000-yaw45-pitch-60-roll0-epsilon.1-reversed",
+        "error_pixels": "0.000015903583887683667477165980935194825820996290924449239"
+      },
+      {
+        "case": "40000-yaw45-pitch60-roll0-epsilon.0001",
+        "error_pixels": "0.021700536803878240993722158011296430204750447561423253010"
+      },
+      {
+        "case": "40000-yaw45-pitch60-roll0-epsilon.0001-reversed",
+        "error_pixels": "0.021700536803878240993722158011296430204750447561423253010"
+      },
+      {
+        "case": "40000-yaw45-pitch60-roll0-epsilon.0003",
+        "error_pixels": "0.00146612334976687820766608134609732759429667565489971131"
+      },
+      {
+        "case": "40000-yaw45-pitch60-roll0-epsilon.0003-reversed",
+        "error_pixels": "0.00146612334976687820766608134609732759429667565489971131"
+      },
+      {
+        "case": "40000-yaw45-pitch60-roll0-epsilon.001",
+        "error_pixels": "0.000936362247548901791357392931175730230650439416214583835"
+      },
+      {
+        "case": "40000-yaw45-pitch60-roll0-epsilon.001-reversed",
+        "error_pixels": "0.000936362247548901791357392931175730230650439416214583835"
+      },
+      {
+        "case": "40000-yaw45-pitch60-roll0-epsilon.002",
+        "error_pixels": "0.000914178142226904294209783931203481592015254601303739895"
+      },
+      {
+        "case": "40000-yaw45-pitch60-roll0-epsilon.002-reversed",
+        "error_pixels": "0.000914178142226904294209783931203481592015254601303739895"
+      },
+      {
+        "case": "40000-yaw45-pitch60-roll0-epsilon.01",
+        "error_pixels": "0.000142286758463244238687575247344752984720820211934767497"
+      },
+      {
+        "case": "40000-yaw45-pitch60-roll0-epsilon.01-reversed",
+        "error_pixels": "0.000142286758463244238687575247344752984720820211934767497"
+      },
+      {
+        "case": "40000-yaw45-pitch60-roll0-epsilon.1",
+        "error_pixels": "0.000015903583887683667477165980935194825820996290919933298"
+      },
+      {
+        "case": "40000-yaw45-pitch60-roll0-epsilon.1-reversed",
+        "error_pixels": "0.000015903583887683667477165980935194825820996290919933298"
+      },
+      {
+        "case": "40000-yaw45-pitch0-roll-60-epsilon.0001",
+        "error_pixels": "0.012876526410323169875141224878306810030817136152414534980"
+      },
+      {
+        "case": "40000-yaw45-pitch0-roll-60-epsilon.0001-reversed",
+        "error_pixels": "0.012876526410323169875141224878306810030817136152414534980"
+      },
+      {
+        "case": "40000-yaw45-pitch0-roll-60-epsilon.0003",
+        "error_pixels": "0.000260334972010657351624385220397482492669980049635437485"
+      },
+      {
+        "case": "40000-yaw45-pitch0-roll-60-epsilon.0003-reversed",
+        "error_pixels": "0.000260334972010657351624385220397482492669980049635437485"
+      },
+      {
+        "case": "40000-yaw45-pitch0-roll-60-epsilon.001",
+        "error_pixels": "0.002237643876517280882791871593200839169110006650121673268"
+      },
+      {
+        "case": "40000-yaw45-pitch0-roll-60-epsilon.001-reversed",
+        "error_pixels": "0.002237643876517280882791871593200839169110006650121673268"
+      },
+      {
+        "case": "40000-yaw45-pitch0-roll-60-epsilon.002",
+        "error_pixels": "0.000040846030491359558604064203399580415444996674939144312"
+      },
+      {
+        "case": "40000-yaw45-pitch0-roll-60-epsilon.002-reversed",
+        "error_pixels": "0.000040846030491359558604064203399580415444996674939144312"
+      },
+      {
+        "case": "40000-yaw45-pitch0-roll-60-epsilon.01",
+        "error_pixels": "0.000229901905598770436150883268262155776114828274150522546"
+      },
+      {
+        "case": "40000-yaw45-pitch0-roll-60-epsilon.01-reversed",
+        "error_pixels": "0.000229901905598770436150883268262155776114828274150522546"
+      },
+      {
+        "case": "40000-yaw45-pitch0-roll-60-epsilon.1",
+        "error_pixels": "0.000028517964290244957037752634061646269376827053277305239"
+      },
+      {
+        "case": "40000-yaw45-pitch0-roll-60-epsilon.1-reversed",
+        "error_pixels": "0.000028517964290244957037752634061646269376827053277305239"
+      },
+      {
+        "case": "40000-yaw45-pitch0-roll60-epsilon.0001",
+        "error_pixels": "0.012876526410323169875141224878306810030817136149822185538"
+      },
+      {
+        "case": "40000-yaw45-pitch0-roll60-epsilon.0001-reversed",
+        "error_pixels": "0.012876526410323169875141224878306810030817136149822185538"
+      },
+      {
+        "case": "40000-yaw45-pitch0-roll60-epsilon.0003",
+        "error_pixels": "0.000260334972010657351624385220397482492669980050944226355"
+      },
+      {
+        "case": "40000-yaw45-pitch0-roll60-epsilon.0003-reversed",
+        "error_pixels": "0.000260334972010657351624385220397482492669980050944226355"
+      },
+      {
+        "case": "40000-yaw45-pitch0-roll60-epsilon.001",
+        "error_pixels": "0.002237643876517280882791871593200839169110006649685334097"
+      },
+      {
+        "case": "40000-yaw45-pitch0-roll60-epsilon.001-reversed",
+        "error_pixels": "0.002237643876517280882791871593200839169110006649685334097"
+      },
+      {
+        "case": "40000-yaw45-pitch0-roll60-epsilon.002",
+        "error_pixels": "0.000040846030491359558604064203399580415444996675155402080"
+      },
+      {
+        "case": "40000-yaw45-pitch0-roll60-epsilon.002-reversed",
+        "error_pixels": "0.000040846030491359558604064203399580415444996675155402080"
+      },
+      {
+        "case": "40000-yaw45-pitch0-roll60-epsilon.01",
+        "error_pixels": "0.000229901905598770436150883268262155776114828274105379660"
+      },
+      {
+        "case": "40000-yaw45-pitch0-roll60-epsilon.01-reversed",
+        "error_pixels": "0.000229901905598770436150883268262155776114828274105379660"
+      },
+      {
+        "case": "40000-yaw45-pitch0-roll60-epsilon.1",
+        "error_pixels": "0.000028517964290244957037752634061646269376827053281827279"
+      },
+      {
+        "case": "40000-yaw45-pitch0-roll60-epsilon.1-reversed",
+        "error_pixels": "0.000028517964290244957037752634061646269376827053281827279"
+      },
+      {
+        "case": "40000-yaw45-pitch-60-roll60-epsilon.0001",
+        "error_pixels": "0.003510537545091811432782700585805186807363629681667280668"
+      },
+      {
+        "case": "40000-yaw45-pitch-60-roll60-epsilon.0001-reversed",
+        "error_pixels": "0.003510537545091811432782700585805186807363629681667280668"
+      },
+      {
+        "case": "40000-yaw45-pitch-60-roll60-epsilon.0003",
+        "error_pixels": "0.002780985601865454602823404965133147011215313797581208611"
+      },
+      {
+        "case": "40000-yaw45-pitch-60-roll60-epsilon.0003-reversed",
+        "error_pixels": "0.002780985601865454602823404965133147011215313797581208611"
+      },
+      {
+        "case": "40000-yaw45-pitch-60-roll60-epsilon.001",
+        "error_pixels": "0.000534106385499045606147811857138446457772139636001729250"
+      },
+      {
+        "case": "40000-yaw45-pitch-60-roll60-epsilon.001-reversed",
+        "error_pixels": "0.000534106385499045606147811857138446457772139636001729250"
+      },
+      {
+        "case": "40000-yaw45-pitch-60-roll60-epsilon.002",
+        "error_pixels": "0.000511279039042813686540081687975803288191804399013789774"
+      },
+      {
+        "case": "40000-yaw45-pitch-60-roll60-epsilon.002-reversed",
+        "error_pixels": "0.000511279039042813686540081687975803288191804399013789774"
+      },
+      {
+        "case": "40000-yaw45-pitch-60-roll60-epsilon.01",
+        "error_pixels": "0.000044307419653126630401339516427417757679104778177304931"
+      },
+      {
+        "case": "40000-yaw45-pitch-60-roll60-epsilon.01-reversed",
+        "error_pixels": "0.000044307419653126630401339516427417757679104778177304931"
+      },
+      {
+        "case": "40000-yaw45-pitch-60-roll60-epsilon.1",
+        "error_pixels": "0.000010168420719735479575857645291570514203609252229975904"
+      },
+      {
+        "case": "40000-yaw45-pitch-60-roll60-epsilon.1-reversed",
+        "error_pixels": "0.000010168420719735479575857645291570514203609252229975904"
+      },
+      {
+        "case": "40000-yaw45-pitch60-roll-60-epsilon.0001",
+        "error_pixels": "0.003510537545091811432782700585805186807363629681461321613"
+      },
+      {
+        "case": "40000-yaw45-pitch60-roll-60-epsilon.0001-reversed",
+        "error_pixels": "0.003510537545091811432782700585805186807363629681461321613"
+      },
+      {
+        "case": "40000-yaw45-pitch60-roll-60-epsilon.0003",
+        "error_pixels": "0.002780985601865454602823404965133147011215313797661428225"
+      },
+      {
+        "case": "40000-yaw45-pitch60-roll-60-epsilon.0003-reversed",
+        "error_pixels": "0.002780985601865454602823404965133147011215313797661428225"
+      },
+      {
+        "case": "40000-yaw45-pitch60-roll-60-epsilon.001",
+        "error_pixels": "0.000534106385499045606147811857138446457772139635985888573"
+      },
+      {
+        "case": "40000-yaw45-pitch60-roll-60-epsilon.001-reversed",
+        "error_pixels": "0.000534106385499045606147811857138446457772139635985888573"
+      },
+      {
+        "case": "40000-yaw45-pitch60-roll-60-epsilon.002",
+        "error_pixels": "0.000511279039042813686540081687975803288191804399017785017"
+      },
+      {
+        "case": "40000-yaw45-pitch60-roll-60-epsilon.002-reversed",
+        "error_pixels": "0.000511279039042813686540081687975803288191804399017785017"
+      },
+      {
+        "case": "40000-yaw45-pitch60-roll-60-epsilon.01",
+        "error_pixels": "0.000044307419653126630401339516427417757679104778177262469"
+      },
+      {
+        "case": "40000-yaw45-pitch60-roll-60-epsilon.01-reversed",
+        "error_pixels": "0.000044307419653126630401339516427417757679104778177262469"
+      },
+      {
+        "case": "40000-yaw45-pitch60-roll-60-epsilon.1",
+        "error_pixels": "0.000010168420719735479575857645291570514203609252229975466"
+      },
+      {
+        "case": "40000-yaw45-pitch60-roll-60-epsilon.1-reversed",
+        "error_pixels": "0.000010168420719735479575857645291570514203609252229975466"
+      },
+      {
+        "case": "40000-yaw89-pitch0-roll0-epsilon.0001",
+        "error_pixels": "0.035136324727656707280273201338725030267032921933582318184"
+      },
+      {
+        "case": "40000-yaw89-pitch0-roll0-epsilon.0001-reversed",
+        "error_pixels": "0.035136324727656707280273201338725030267032921933582318184"
+      },
+      {
+        "case": "40000-yaw89-pitch0-roll0-epsilon.0003",
+        "error_pixels": "0.00115324218908854116874310150291504048687865740656882556"
+      },
+      {
+        "case": "40000-yaw89-pitch0-roll0-epsilon.0003-reversed",
+        "error_pixels": "0.00115324218908854116874310150291504048687865740656882556"
+      },
+      {
+        "case": "40000-yaw89-pitch0-roll0-epsilon.001",
+        "error_pixels": "0.000330777767528201318888172362399024182666357290001542976"
+      },
+      {
+        "case": "40000-yaw89-pitch0-roll0-epsilon.001-reversed",
+        "error_pixels": "0.000330777767528201318888172362399024182666357290001542976"
+      },
+      {
+        "case": "40000-yaw89-pitch0-roll0-epsilon.002",
+        "error_pixels": "0.001324484699685913560875563217597941446686159665991760906"
+      },
+      {
+        "case": "40000-yaw89-pitch0-roll0-epsilon.002-reversed",
+        "error_pixels": "0.001324484699685913560875563217597941446686159665991760906"
+      },
+      {
+        "case": "40000-yaw89-pitch0-roll0-epsilon.01",
+        "error_pixels": "0.000007253251445418437076215411519862541151749782903119051"
+      },
+      {
+        "case": "40000-yaw89-pitch0-roll0-epsilon.01-reversed",
+        "error_pixels": "0.000007253251445418437076215411519862541151749782903119051"
+      },
+      {
+        "case": "40000-yaw89-pitch0-roll0-epsilon.1",
+        "error_pixels": "0.000010622964760757544899239958228548241242123301724634737"
+      },
+      {
+        "case": "40000-yaw89-pitch0-roll0-epsilon.1-reversed",
+        "error_pixels": "0.000010622964760757544899239958228548241242123301724634737"
+      },
+      {
+        "case": "40000-yaw89-pitch-60-roll0-epsilon.0001",
+        "error_pixels": "0.019332468733722352102860950898650292086353804228978487398"
+      },
+      {
+        "case": "40000-yaw89-pitch-60-roll0-epsilon.0001-reversed",
+        "error_pixels": "0.019332468733722352102860950898650292086353804228978487398"
+      },
+      {
+        "case": "40000-yaw89-pitch-60-roll0-epsilon.0003",
+        "error_pixels": "0.003004491852649791772035976383501624043096533821913681966"
+      },
+      {
+        "case": "40000-yaw89-pitch-60-roll0-epsilon.0003-reversed",
+        "error_pixels": "0.003004491852649791772035976383501624043096533821913681966"
+      },
+      {
+        "case": "40000-yaw89-pitch-60-roll0-epsilon.001",
+        "error_pixels": "0.000506825380309457426455343879146262775372396708315996086"
+      },
+      {
+        "case": "40000-yaw89-pitch-60-roll0-epsilon.001-reversed",
+        "error_pixels": "0.000506825380309457426455343879146262775372396708315996086"
+      },
+      {
+        "case": "40000-yaw89-pitch-60-roll0-epsilon.002",
+        "error_pixels": "0.000707741347525476135372051852598525281997076292056525720"
+      },
+      {
+        "case": "40000-yaw89-pitch-60-roll0-epsilon.002-reversed",
+        "error_pixels": "0.000707741347525476135372051852598525281997076292056525720"
+      },
+      {
+        "case": "40000-yaw89-pitch-60-roll0-epsilon.01",
+        "error_pixels": "0.000123467368362279355709908923392542385237607675174205101"
+      },
+      {
+        "case": "40000-yaw89-pitch-60-roll0-epsilon.01-reversed",
+        "error_pixels": "0.000123467368362279355709908923392542385237607675174205101"
+      },
+      {
+        "case": "40000-yaw89-pitch-60-roll0-epsilon.1",
+        "error_pixels": "0.000014333083647898168342105704509885836912926577215487867"
+      },
+      {
+        "case": "40000-yaw89-pitch-60-roll0-epsilon.1-reversed",
+        "error_pixels": "0.000014333083647898168342105704509885836912926577215487867"
+      },
+      {
+        "case": "40000-yaw89-pitch60-roll0-epsilon.0001",
+        "error_pixels": "0.019332468733722352102860950898650292086353804231959876101"
+      },
+      {
+        "case": "40000-yaw89-pitch60-roll0-epsilon.0001-reversed",
+        "error_pixels": "0.019332468733722352102860950898650292086353804231959876101"
+      },
+      {
+        "case": "40000-yaw89-pitch60-roll0-epsilon.0003",
+        "error_pixels": "0.003004491852649791772035976383501624043096533823340144192"
+      },
+      {
+        "case": "40000-yaw89-pitch60-roll0-epsilon.0003-reversed",
+        "error_pixels": "0.003004491852649791772035976383501624043096533823340144192"
+      },
+      {
+        "case": "40000-yaw89-pitch60-roll0-epsilon.001",
+        "error_pixels": "0.000506825380309457426455343879146262775372396707849263426"
+      },
+      {
+        "case": "40000-yaw89-pitch60-roll0-epsilon.001-reversed",
+        "error_pixels": "0.000506825380309457426455343879146262775372396707849263426"
+      },
+      {
+        "case": "40000-yaw89-pitch60-roll0-epsilon.002",
+        "error_pixels": "0.000707741347525476135372051852598525281997076292283795066"
+      },
+      {
+        "case": "40000-yaw89-pitch60-roll0-epsilon.002-reversed",
+        "error_pixels": "0.000707741347525476135372051852598525281997076292283795066"
+      },
+      {
+        "case": "40000-yaw89-pitch60-roll0-epsilon.01",
+        "error_pixels": "0.000123467368362279355709908923392542385237607675219446738"
+      },
+      {
+        "case": "40000-yaw89-pitch60-roll0-epsilon.01-reversed",
+        "error_pixels": "0.000123467368362279355709908923392542385237607675219446738"
+      },
+      {
+        "case": "40000-yaw89-pitch60-roll0-epsilon.1",
+        "error_pixels": "0.000014333083647898168342105704509885836912926577211051008"
+      },
+      {
+        "case": "40000-yaw89-pitch60-roll0-epsilon.1-reversed",
+        "error_pixels": "0.000014333083647898168342105704509885836912926577211051008"
+      },
+      {
+        "case": "40000-yaw89-pitch0-roll-60-epsilon.0001",
+        "error_pixels": "0.008754760707858094142087567708365754909052478464217841516"
+      },
+      {
+        "case": "40000-yaw89-pitch0-roll-60-epsilon.0001-reversed",
+        "error_pixels": "0.008754760707858094142087567708365754909052478464217841516"
+      },
+      {
+        "case": "40000-yaw89-pitch0-roll-60-epsilon.0003",
+        "error_pixels": "0.002457564476589892429639779553554275127704866862742037739"
+      },
+      {
+        "case": "40000-yaw89-pitch0-roll-60-epsilon.0003-reversed",
+        "error_pixels": "0.002457564476589892429639779553554275127704866862742037739"
+      },
+      {
+        "case": "40000-yaw89-pitch0-roll-60-epsilon.001",
+        "error_pixels": "0.000787363200190775497687819176860169895781299522899973544"
+      },
+      {
+        "case": "40000-yaw89-pitch0-roll-60-epsilon.001-reversed",
+        "error_pixels": "0.000787363200190775497687819176860169895781299522899973544"
+      },
+      {
+        "case": "40000-yaw89-pitch0-roll-60-epsilon.002",
+        "error_pixels": "0.000428900330617800631323219101179044911011301436998641398"
+      },
+      {
+        "case": "40000-yaw89-pitch0-roll-60-epsilon.002-reversed",
+        "error_pixels": "0.000428900330617800631323219101179044911011301436998641398"
+      },
+      {
+        "case": "40000-yaw89-pitch0-roll-60-epsilon.01",
+        "error_pixels": "0.000207409747764577538817852350328852390618969103960396658"
+      },
+      {
+        "case": "40000-yaw89-pitch0-roll-60-epsilon.01-reversed",
+        "error_pixels": "0.000207409747764577538817852350328852390618969103960396658"
+      },
+      {
+        "case": "40000-yaw89-pitch0-roll-60-epsilon.1",
+        "error_pixels": "0.0000018402797784866156732605654725939793750638945075427468"
+      },
+      {
+        "case": "40000-yaw89-pitch0-roll-60-epsilon.1-reversed",
+        "error_pixels": "0.0000018402797784866156732605654725939793750638945075427468"
+      },
+      {
+        "case": "40000-yaw89-pitch0-roll60-epsilon.0001",
+        "error_pixels": "0.008754760707858094142087567708365754909052478468441448489"
+      },
+      {
+        "case": "40000-yaw89-pitch0-roll60-epsilon.0001-reversed",
+        "error_pixels": "0.008754760707858094142087567708365754909052478468441448489"
+      },
+      {
+        "case": "40000-yaw89-pitch0-roll60-epsilon.0003",
+        "error_pixels": "0.002457564476589892429639779553554275127704866864702223536"
+      },
+      {
+        "case": "40000-yaw89-pitch0-roll60-epsilon.0003-reversed",
+        "error_pixels": "0.002457564476589892429639779553554275127704866864702223536"
+      },
+      {
+        "case": "40000-yaw89-pitch0-roll60-epsilon.001",
+        "error_pixels": "0.000787363200190775497687819176860169895781299523375102600"
+      },
+      {
+        "case": "40000-yaw89-pitch0-roll60-epsilon.001-reversed",
+        "error_pixels": "0.000787363200190775497687819176860169895781299523375102600"
+      },
+      {
+        "case": "40000-yaw89-pitch0-roll60-epsilon.002",
+        "error_pixels": "0.000428900330617800631323219101179044911011301437232060901"
+      },
+      {
+        "case": "40000-yaw89-pitch0-roll60-epsilon.002-reversed",
+        "error_pixels": "0.000428900330617800631323219101179044911011301437232060901"
+      },
+      {
+        "case": "40000-yaw89-pitch0-roll60-epsilon.01",
+        "error_pixels": "0.000207409747764577538817852350328852390618969104006022885"
+      },
+      {
+        "case": "40000-yaw89-pitch0-roll60-epsilon.01-reversed",
+        "error_pixels": "0.000207409747764577538817852350328852390618969104006022885"
+      },
+      {
+        "case": "40000-yaw89-pitch0-roll60-epsilon.1",
+        "error_pixels": "0.0000018402797784866156732605654725939793750638945075427473"
+      },
+      {
+        "case": "40000-yaw89-pitch0-roll60-epsilon.1-reversed",
+        "error_pixels": "0.0000018402797784866156732605654725939793750638945075427473"
+      },
+      {
+        "case": "40000-yaw89-pitch-60-roll60-epsilon.0001",
+        "error_pixels": "0.000017448541540252158464572837380376771968626837502997097"
+      },
+      {
+        "case": "40000-yaw89-pitch-60-roll60-epsilon.0001-reversed",
+        "error_pixels": "0.000017448541540252158464572837380376771968626837502997097"
+      },
+      {
+        "case": "40000-yaw89-pitch-60-roll60-epsilon.0003",
+        "error_pixels": "0.004166323399506244097400778322738021941243396041376528687"
+      },
+      {
+        "case": "40000-yaw89-pitch-60-roll60-epsilon.0003-reversed",
+        "error_pixels": "0.004166323399506244097400778322738021941243396041376528687"
+      },
+      {
+        "case": "40000-yaw89-pitch-60-roll60-epsilon.001",
+        "error_pixels": "0.001419776270938381037947211298969545758886662494706161543"
+      },
+      {
+        "case": "40000-yaw89-pitch-60-roll60-epsilon.001-reversed",
+        "error_pixels": "0.001419776270938381037947211298969545758886662494706161543"
+      },
+      {
+        "case": "40000-yaw89-pitch-60-roll60-epsilon.002",
+        "error_pixels": "0.000657674993018111813757411353524544021613759887689360872"
+      },
+      {
+        "case": "40000-yaw89-pitch-60-roll60-epsilon.002-reversed",
+        "error_pixels": "0.000657674993018111813757411353524544021613759887689360872"
+      },
+      {
+        "case": "40000-yaw89-pitch-60-roll60-epsilon.01",
+        "error_pixels": "0.000063589664817759178729400301901342633528126184149512577"
+      },
+      {
+        "case": "40000-yaw89-pitch-60-roll60-epsilon.01-reversed",
+        "error_pixels": "0.000063589664817759178729400301901342633528126184149512577"
+      },
+      {
+        "case": "40000-yaw89-pitch-60-roll60-epsilon.1",
+        "error_pixels": "0.000004564453739601972820919237593550152237959002285477210"
+      },
+      {
+        "case": "40000-yaw89-pitch-60-roll60-epsilon.1-reversed",
+        "error_pixels": "0.000004564453739601972820919237593550152237959002285477210"
+      },
+      {
+        "case": "40000-yaw89-pitch60-roll-60-epsilon.0001",
+        "error_pixels": "0.000017448541540252158464572837380376771968626837686238304"
+      },
+      {
+        "case": "40000-yaw89-pitch60-roll-60-epsilon.0001-reversed",
+        "error_pixels": "0.000017448541540252158464572837380376771968626837686238304"
+      },
+      {
+        "case": "40000-yaw89-pitch60-roll-60-epsilon.0003",
+        "error_pixels": "0.004166323399506244097400778322738021941243396041453502396"
+      },
+      {
+        "case": "40000-yaw89-pitch60-roll-60-epsilon.0003-reversed",
+        "error_pixels": "0.004166323399506244097400778322738021941243396041453502396"
+      },
+      {
+        "case": "40000-yaw89-pitch60-roll-60-epsilon.001",
+        "error_pixels": "0.001419776270938381037947211298969545758886662494704551551"
+      },
+      {
+        "case": "40000-yaw89-pitch60-roll-60-epsilon.001-reversed",
+        "error_pixels": "0.001419776270938381037947211298969545758886662494704551551"
+      },
+      {
+        "case": "40000-yaw89-pitch60-roll-60-epsilon.002",
+        "error_pixels": "0.000657674993018111813757411353524544021613759887699125877"
+      },
+      {
+        "case": "40000-yaw89-pitch60-roll-60-epsilon.002-reversed",
+        "error_pixels": "0.000657674993018111813757411353524544021613759887699125877"
+      },
+      {
+        "case": "40000-yaw89-pitch60-roll-60-epsilon.01",
+        "error_pixels": "0.000063589664817759178729400301901342633528126184150319759"
+      },
+      {
+        "case": "40000-yaw89-pitch60-roll-60-epsilon.01-reversed",
+        "error_pixels": "0.000063589664817759178729400301901342633528126184150319759"
+      },
+      {
+        "case": "40000-yaw89-pitch60-roll-60-epsilon.1",
+        "error_pixels": "0.000004564453739601972820919237593550152237959002285437809"
+      },
+      {
+        "case": "40000-yaw89-pitch60-roll-60-epsilon.1-reversed",
+        "error_pixels": "0.000004564453739601972820919237593550152237959002285437809"
+      },
+      {
+        "case": "40000-yaw137-pitch0-roll0-epsilon.0001",
+        "error_pixels": "3.966562576196983463364361782856137264921355647897291E-7"
+      },
+      {
+        "case": "40000-yaw137-pitch0-roll0-epsilon.0001-reversed",
+        "error_pixels": "3.966562576196983463364361782856137264921355647897291E-7"
+      },
+      {
+        "case": "40000-yaw137-pitch0-roll0-epsilon.0003",
+        "error_pixels": "0.000679787655607937335577557655742010727459103665295470662"
+      },
+      {
+        "case": "40000-yaw137-pitch0-roll0-epsilon.0003-reversed",
+        "error_pixels": "0.000679787655607937335577557655742010727459103665295470662"
+      },
+      {
+        "case": "40000-yaw137-pitch0-roll0-epsilon.001",
+        "error_pixels": "0.000404672708288517437028128843832827870223787499768050280"
+      },
+      {
+        "case": "40000-yaw137-pitch0-roll0-epsilon.001-reversed",
+        "error_pixels": "0.000404672708288517437028128843832827870223787499768050280"
+      },
+      {
+        "case": "40000-yaw137-pitch0-roll0-epsilon.002",
+        "error_pixels": "0.0002088857837133434110097961074796464996266218462861989"
+      },
+      {
+        "case": "40000-yaw137-pitch0-roll0-epsilon.002-reversed",
+        "error_pixels": "0.0002088857837133434110097961074796464996266218462861989"
+      },
+      {
+        "case": "40000-yaw137-pitch0-roll0-epsilon.01",
+        "error_pixels": "0.000202342287931752523496491369440448299926152490176219799"
+      },
+      {
+        "case": "40000-yaw137-pitch0-roll0-epsilon.01-reversed",
+        "error_pixels": "0.000202342287931752523496491369440448299926152490176219799"
+      },
+      {
+        "case": "40000-yaw137-pitch0-roll0-epsilon.1",
+        "error_pixels": "0.000020590972592436843996566333849866437332761496814397320"
+      },
+      {
+        "case": "40000-yaw137-pitch0-roll0-epsilon.1-reversed",
+        "error_pixels": "0.000020590972592436843996566333849866437332761496814397320"
+      },
+      {
+        "case": "40000-yaw137-pitch-60-roll0-epsilon.0001",
+        "error_pixels": "0.008331775969442818410470512118943707958866743379521678988"
+      },
+      {
+        "case": "40000-yaw137-pitch-60-roll0-epsilon.0001-reversed",
+        "error_pixels": "0.008331775969442818410470512118943707958866743379521678988"
+      },
+      {
+        "case": "40000-yaw137-pitch-60-roll0-epsilon.0003",
+        "error_pixels": "0.005105787945690126421370058430827008645560648748574176023"
+      },
+      {
+        "case": "40000-yaw137-pitch-60-roll0-epsilon.0003-reversed",
+        "error_pixels": "0.005105787945690126421370058430827008645560648748574176023"
+      },
+      {
+        "case": "40000-yaw137-pitch-60-roll0-epsilon.001",
+        "error_pixels": "0.001410051617421088449885455577719442468093575709176454349"
+      },
+      {
+        "case": "40000-yaw137-pitch-60-roll0-epsilon.001-reversed",
+        "error_pixels": "0.001410051617421088449885455577719442468093575709176454349"
+      },
+      {
+        "case": "40000-yaw137-pitch-60-roll0-epsilon.002",
+        "error_pixels": "0.000956686072927369439361824571621887675512144658672353328"
+      },
+      {
+        "case": "40000-yaw137-pitch-60-roll0-epsilon.002-reversed",
+        "error_pixels": "0.000956686072927369439361824571621887675512144658672353328"
+      },
+      {
+        "case": "40000-yaw137-pitch-60-roll0-epsilon.01",
+        "error_pixels": "0.000105919644051471467301901145691717642741439824685003405"
+      },
+      {
+        "case": "40000-yaw137-pitch-60-roll0-epsilon.01-reversed",
+        "error_pixels": "0.000105919644051471467301901145691717642741439824685003405"
+      },
+      {
+        "case": "40000-yaw137-pitch-60-roll0-epsilon.1",
+        "error_pixels": "0.000006587841947806026177659786393691136319159974115560693"
+      },
+      {
+        "case": "40000-yaw137-pitch-60-roll0-epsilon.1-reversed",
+        "error_pixels": "0.000006587841947806026177659786393691136319159974115560693"
+      },
+      {
+        "case": "40000-yaw137-pitch60-roll0-epsilon.0001",
+        "error_pixels": "0.008331775969442818410470512118943707958866743376690505640"
+      },
+      {
+        "case": "40000-yaw137-pitch60-roll0-epsilon.0001-reversed",
+        "error_pixels": "0.008331775969442818410470512118943707958866743376690505640"
+      },
+      {
+        "case": "40000-yaw137-pitch60-roll0-epsilon.0003",
+        "error_pixels": "0.005105787945690126421370058430827008645560648747097778660"
+      },
+      {
+        "case": "40000-yaw137-pitch60-roll0-epsilon.0003-reversed",
+        "error_pixels": "0.005105787945690126421370058430827008645560648747097778660"
+      },
+      {
+        "case": "40000-yaw137-pitch60-roll0-epsilon.001",
+        "error_pixels": "0.001410051617421088449885455577719442468093575709634523934"
+      },
+      {
+        "case": "40000-yaw137-pitch60-roll0-epsilon.001-reversed",
+        "error_pixels": "0.001410051617421088449885455577719442468093575709634523934"
+      },
+      {
+        "case": "40000-yaw137-pitch60-roll0-epsilon.002",
+        "error_pixels": "0.000956686072927369439361824571621887675512144658445998897"
+      },
+      {
+        "case": "40000-yaw137-pitch60-roll0-epsilon.002-reversed",
+        "error_pixels": "0.000956686072927369439361824571621887675512144658445998897"
+      },
+      {
+        "case": "40000-yaw137-pitch60-roll0-epsilon.01",
+        "error_pixels": "0.000105919644051471467301901145691717642741439824729115326"
+      },
+      {
+        "case": "40000-yaw137-pitch60-roll0-epsilon.01-reversed",
+        "error_pixels": "0.000105919644051471467301901145691717642741439824729115326"
+      },
+      {
+        "case": "40000-yaw137-pitch60-roll0-epsilon.1",
+        "error_pixels": "0.000006587841947806026177659786393691136319159974120077558"
+      },
+      {
+        "case": "40000-yaw137-pitch60-roll0-epsilon.1-reversed",
+        "error_pixels": "0.000006587841947806026177659786393691136319159974120077558"
+      },
+      {
+        "case": "40000-yaw137-pitch0-roll-60-epsilon.0001",
+        "error_pixels": "0.000472906234609587109811420069137508742209227877481750965"
+      },
+      {
+        "case": "40000-yaw137-pitch0-roll-60-epsilon.0001-reversed",
+        "error_pixels": "0.000472906234609587109811420069137508742209227877481750965"
+      },
+      {
+        "case": "40000-yaw137-pitch0-roll-60-epsilon.0003",
+        "error_pixels": "0.001492884445661068648111940160165570102433281490561929164"
+      },
+      {
+        "case": "40000-yaw137-pitch0-roll-60-epsilon.0003-reversed",
+        "error_pixels": "0.001492884445661068648111940160165570102433281490561929164"
+      },
+      {
+        "case": "40000-yaw137-pitch0-roll-60-epsilon.001",
+        "error_pixels": "0.001657609138914065737570556887106635842156638095655014298"
+      },
+      {
+        "case": "40000-yaw137-pitch0-roll-60-epsilon.001-reversed",
+        "error_pixels": "0.001657609138914065737570556887106635842156638095655014298"
+      },
+      {
+        "case": "40000-yaw137-pitch0-roll-60-epsilon.002",
+        "error_pixels": "0.000421373434347486252105167370588568459981192768739096342"
+      },
+      {
+        "case": "40000-yaw137-pitch0-roll-60-epsilon.002-reversed",
+        "error_pixels": "0.000421373434347486252105167370588568459981192768739096342"
+      },
+      {
+        "case": "40000-yaw137-pitch0-roll-60-epsilon.01",
+        "error_pixels": "0.000048500071534218733387238813936831762763172313170384868"
+      },
+      {
+        "case": "40000-yaw137-pitch0-roll-60-epsilon.01-reversed",
+        "error_pixels": "0.000048500071534218733387238813936831762763172313170384868"
+      },
+      {
+        "case": "40000-yaw137-pitch0-roll-60-epsilon.1",
+        "error_pixels": "0.000015519560300083273966692552241301710504005212228508979"
+      },
+      {
+        "case": "40000-yaw137-pitch0-roll-60-epsilon.1-reversed",
+        "error_pixels": "0.000015519560300083273966692552241301710504005212228508979"
+      },
+      {
+        "case": "40000-yaw137-pitch0-roll60-epsilon.0001",
+        "error_pixels": "0.000472906234609587109811420069137508742209227880704291634"
+      },
+      {
+        "case": "40000-yaw137-pitch0-roll60-epsilon.0001-reversed",
+        "error_pixels": "0.000472906234609587109811420069137508742209227880704291634"
+      },
+      {
+        "case": "40000-yaw137-pitch0-roll60-epsilon.0003",
+        "error_pixels": "0.001492884445661068648111940160165570102433281489072529205"
+      },
+      {
+        "case": "40000-yaw137-pitch0-roll60-epsilon.0003-reversed",
+        "error_pixels": "0.001492884445661068648111940160165570102433281489072529205"
+      },
+      {
+        "case": "40000-yaw137-pitch0-roll60-epsilon.001",
+        "error_pixels": "0.001657609138914065737570556887106635842156638095173099849"
+      },
+      {
+        "case": "40000-yaw137-pitch0-roll60-epsilon.001-reversed",
+        "error_pixels": "0.001657609138914065737570556887106635842156638095173099849"
+      },
+      {
+        "case": "40000-yaw137-pitch0-roll60-epsilon.002",
+        "error_pixels": "0.000421373434347486252105167370588568459981192768964946412"
+      },
+      {
+        "case": "40000-yaw137-pitch0-roll60-epsilon.002-reversed",
+        "error_pixels": "0.000421373434347486252105167370588568459981192768964946412"
+      },
+      {
+        "case": "40000-yaw137-pitch0-roll60-epsilon.01",
+        "error_pixels": "0.000048500071534218733387238813936831762763172313125089044"
+      },
+      {
+        "case": "40000-yaw137-pitch0-roll60-epsilon.01-reversed",
+        "error_pixels": "0.000048500071534218733387238813936831762763172313125089044"
+      },
+      {
+        "case": "40000-yaw137-pitch0-roll60-epsilon.1",
+        "error_pixels": "0.000015519560300083273966692552241301710504005212233029799"
+      },
+      {
+        "case": "40000-yaw137-pitch0-roll60-epsilon.1-reversed",
+        "error_pixels": "0.000015519560300083273966692552241301710504005212233029799"
+      },
+      {
+        "case": "40000-yaw137-pitch-60-roll60-epsilon.0001",
+        "error_pixels": "0.004254214817614920944254358291126987350124915951360816601"
+      },
+      {
+        "case": "40000-yaw137-pitch-60-roll60-epsilon.0001-reversed",
+        "error_pixels": "0.004254214817614920944254358291126987350124915951360816601"
+      },
+      {
+        "case": "40000-yaw137-pitch-60-roll60-epsilon.0003",
+        "error_pixels": "0.004965179669623628560538789112101943221208121258494236868"
+      },
+      {
+        "case": "40000-yaw137-pitch-60-roll60-epsilon.0003-reversed",
+        "error_pixels": "0.004965179669623628560538789112101943221208121258494236868"
+      },
+      {
+        "case": "40000-yaw137-pitch-60-roll60-epsilon.001",
+        "error_pixels": "0.001047109576740504527482780586265408872890152234456135270"
+      },
+      {
+        "case": "40000-yaw137-pitch-60-roll60-epsilon.001-reversed",
+        "error_pixels": "0.001047109576740504527482780586265408872890152234456135270"
+      },
+      {
+        "case": "40000-yaw137-pitch-60-roll60-epsilon.002",
+        "error_pixels": "0.000304850032110951142308771318834989172010665537463991276"
+      },
+      {
+        "case": "40000-yaw137-pitch-60-roll60-epsilon.002-reversed",
+        "error_pixels": "0.000304850032110951142308771318834989172010665537463991276"
+      },
+      {
+        "case": "40000-yaw137-pitch-60-roll60-epsilon.01",
+        "error_pixels": "0.000018212553842539958712038805919984190774958666528076046"
+      },
+      {
+        "case": "40000-yaw137-pitch-60-roll60-epsilon.01-reversed",
+        "error_pixels": "0.000018212553842539958712038805919984190774958666528076046"
+      },
+      {
+        "case": "40000-yaw137-pitch-60-roll60-epsilon.1",
+        "error_pixels": "0.000012922606130515677421914948913810865638875951505457856"
+      },
+      {
+        "case": "40000-yaw137-pitch-60-roll60-epsilon.1-reversed",
+        "error_pixels": "0.000012922606130515677421914948913810865638875951505457856"
+      },
+      {
+        "case": "40000-yaw137-pitch60-roll-60-epsilon.0001",
+        "error_pixels": "0.004254214817614920944254358291126987350124915951200810578"
+      },
+      {
+        "case": "40000-yaw137-pitch60-roll-60-epsilon.0001-reversed",
+        "error_pixels": "0.004254214817614920944254358291126987350124915951200810578"
+      },
+      {
+        "case": "40000-yaw137-pitch60-roll-60-epsilon.0003",
+        "error_pixels": "0.004965179669623628560538789112101943221208121258550562071"
+      },
+      {
+        "case": "40000-yaw137-pitch60-roll-60-epsilon.0003-reversed",
+        "error_pixels": "0.004965179669623628560538789112101943221208121258550562071"
+      },
+      {
+        "case": "40000-yaw137-pitch60-roll-60-epsilon.001",
+        "error_pixels": "0.001047109576740504527482780586265408872890152234444105196"
+      },
+      {
+        "case": "40000-yaw137-pitch60-roll-60-epsilon.001-reversed",
+        "error_pixels": "0.001047109576740504527482780586265408872890152234444105196"
+      },
+      {
+        "case": "40000-yaw137-pitch60-roll-60-epsilon.002",
+        "error_pixels": "0.000304850032110951142308771318834989172010665537465647301"
+      },
+      {
+        "case": "40000-yaw137-pitch60-roll-60-epsilon.002-reversed",
+        "error_pixels": "0.000304850032110951142308771318834989172010665537465647301"
+      },
+      {
+        "case": "40000-yaw137-pitch60-roll-60-epsilon.01",
+        "error_pixels": "0.000018212553842539958712038805919984190774958666527655373"
+      },
+      {
+        "case": "40000-yaw137-pitch60-roll-60-epsilon.01-reversed",
+        "error_pixels": "0.000018212553842539958712038805919984190774958666527655373"
+      },
+      {
+        "case": "40000-yaw137-pitch60-roll-60-epsilon.1",
+        "error_pixels": "0.000012922606130515677421914948913810865638875951505457092"
+      },
+      {
+        "case": "40000-yaw137-pitch60-roll-60-epsilon.1-reversed",
+        "error_pixels": "0.000012922606130515677421914948913810865638875951505457092"
+      }
+    ]
+  },
+  "sections": {
+    ".text": {
+      "start": 8215,
+      "bytes": 18892
+    },
+    ".rodata": {
+      "start": 27112,
+      "bytes": 737
+    },
+    ".data": {
+      "start": 27849,
+      "bytes": 22
+    },
+    ".bss": {
+      "start": 27871,
+      "bytes": 1456
+    },
+    ".noinit": {
+      "start": 29327,
+      "bytes": 471
+    }
+  },
+  "owner_symbols": {
+    "m2_probe_camera": {
+      "address": 27849,
+      "bytes": 22
+    },
+    "m2_probe_count": {
+      "address": 29202,
+      "bytes": 2
+    },
+    "m2_probe_digest": {
+      "address": 29323,
+      "bytes": 4
+    },
+    "m2_probe_first": {
+      "address": 27872,
+      "bytes": 12
+    },
+    "m2_probe_index": {
+      "address": 27871,
+      "bytes": 1
+    },
+    "m2_probe_last": {
+      "address": 27884,
+      "bytes": 12
+    },
+    "m2_probe_line": {
+      "address": 27906,
+      "bytes": 16
+    },
+    "m2_probe_pixels": {
+      "address": 27922,
+      "bytes": 1280
+    },
+    "m2_probe_record": {
+      "address": 29204,
+      "bytes": 119
+    },
+    "m2_probe_status": {
+      "address": 27896,
+      "bytes": 1
+    },
+    "m2_probe_surface": {
+      "address": 27897,
+      "bytes": 9
+    }
+  },
+  "stack": {
+    "hardware_bytes_main_including_entry_return": 25,
+    "software_dynamic_bytes": 16,
+    "software_constant_adjustments": 4,
+    "call_entries_checked": 16,
+    "scope": "direct-call probe; no IRQ/NMI or executed high-water claim",
+    "compiler_static_stack_bytes": 471
+  },
+  "target_sha256": "4b338b0d745900532416a40ad3e9732ca412ddb009ff3a85546a9f1c14a0e15c",
+  "target_bytes": 19680,
+  "inputs": {
+    "interfaces/generated/m1_development.h": "9f9f3d28933cd585fac1f4efaaa53a1d32ed63565739dfba66e252faf835a272",
+    "interfaces/generated/m2_pr1.h": "bdb2825313c4b95df37de895db5479b36fae72bc6be6325b2437d6b3d78e44c3",
+    "interfaces/generated/m2_tables.c": "dd23e7167eb442a80157c2e40101075f5f517e7bd57f6de5673eca1db4cb399f",
+    "interfaces/m2_pr1.json": "4832867688dc11c98cf816ae00254778f82a69dfb2b13af0e63d5db7ce36cda6",
+    "memory/m2-pr1-ledger.json": "8675e743c587882582a8527168783a7b4101ecf34295f2eed6f7247a249e5ea8",
+    "src/core/m1_runtime.c": "7a6e816ad70e4d5c0859e768ff69109cac4c16c14deff328934a3b2c6d12111c",
+    "src/core/m1_runtime.h": "dea575f388825684fc341a869d2c55e746a6fa4188a8a624d369f7dfcc1c41bd",
+    "src/environment/m2_fixture.c": "bbf33786a0a3a20dbb7e45f87186406b36bcf89fd940ef496ec4a3103b5fdce1",
+    "src/environment/m2_fixture.h": "b648aacefa74936f5dd0825f7c2012265c50c86db196b8cca5a07b90d7fb3926",
+    "src/graphics/m2_geometry.c": "36d4173a50431556ae72dde9eadba86cf490ac698f8c9c1784aaa44824f2a0e7",
+    "src/graphics/m2_geometry.h": "ee4a42121e91c9a0e7228d5ffbd3b5616778a52a908e8a5210d79841413a213f",
+    "src/input/m1_input.c": "9a6f763a41615d58287b9d6b68560f961766648223e1a0af7a4b1e0964211e05",
+    "src/input/m1_input.h": "92652343774a66a65d16bcec4a13a401215305958c7ed4c283d078086eb3cbae",
+    "src/platform/r0f/startup.ld": "96d85939b28b4b24d0e251164b2abe9c5e950096482334517cbc4e57fcb6b60f",
+    "src/presentation/m1_snapshot.c": "0bc27b247f8b9a678c09c68afa158831477ade48949b8bc9b3631ecc11ca7191",
+    "src/presentation/m1_snapshot.h": "964af7bf654b102d5db67eccf8104e224916b7ac40da6a3540d1271c6dc1abe6",
+    "tests/flight_demo/m2/CLIP_REGRESSIONS.md": "d3d510234f24e5aed0510e16ec40122c328c67fada30e72e1486a7cbc0623679",
+    "tests/flight_demo/m2/ORACLE.md": "6889ff4f5252cbf30d5cebec60890bac4d5a8f4e7d02b711f49cfb741540fd83",
+    "tests/flight_demo/m2/clip_host.c": "c13786cc6b38aadd824a7b594e06c384a3977be94bfb8ec5e708c83f6cc2f080",
+    "tests/flight_demo/m2/clip_regressions.py": "642831fe61ad60cc20362c91067d101b9cf063df72bde7243aed4f392f36ba53",
+    "tests/flight_demo/m2/host.c": "32e6e631dc2db7a7eaa95b1825180206ac3bffddc0ad2b59dda5b7bef5864925",
+    "tests/flight_demo/m2/oracle.py": "15dfd00577f0d808d37f0dcab11fa99051c20734ece029c679d99f4d2134b19e",
+    "tests/flight_demo/m2/target.c": "b7def77d8baae7bf5df6b0f9332331d3c838863692497e59e02c7bad4a71aa4c",
+    "tests/flight_demo/m2/test_contract.py": "0b2d6efe6c6cf2801f79b20a518043092ddacbb06231d4d0ee303faadd64463b",
+    "toolchain/f65_toolchain.lock.json": "0de4864a0665f04cab26f67bdd533697d8006460142dcb7e8e5ce0ecb72d742b",
+    "tools/flight_demo/m2/build.py": "e2c662c28ec9f453ae8061c66445d29614fd736e407f0cd46c455bf43a3f8959",
+    "tools/flight_demo/m2/generate.py": "2294894ff2c5f14ed256d6d9212e91a6597850f7d0bf072e4ce083a7fde9883e",
+    "tools/flight_demo/m2/stack_check.py": "4d344f815d246859b621caac01f2c9e27f1501ecec32c7f9491d7f2e427522ef"
+  },
+  "compiler_sha256": "cc557ae99a68ed36e098062b0f5376a878e94ac187b87446c8e603e4fb45a906",
+  "objdump_sha256": "5327f031a741bfcd4104317fbad3d1e45275d70b49821f0da52391120848a8e9",
+  "clang_sha256": "5b1ddb7e9c11b87a034fc88b212e8ac243cfe2b4db696d767aa44c79595fc09a",
+  "target_execution": "NOT RUN; SDK-linked probe is not platform-admitted",
+  "pr2_xemu_d81_sd_physical": "NOT RUN",
+  "reserve_allocation": 0
+}

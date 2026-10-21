@@ -21,3 +21,12 @@ uint8_t m2_registration(const M2Camera *camera, uint32_t generation,
 uint8_t m2_pair_eligible(const M2Registration *world,
                           const M2Registration *record,
                           uint32_t wanted_camera_revision, uint8_t complete);
+
+// Graphics-private transient cursor, not a generated/public record layout.
+// Callers retain exclusive ownership; only begin/next may mutate it.
+struct M2RasterCursor;
+// Failed begin leaves the cursor unchanged; do not consume a failed attempt.
+uint8_t m2_raster_begin(const M2Line *line, struct M2RasterCursor *cursor);
+// Requires a successfully initialized, unmodified cursor. At most one pixel.
+// Empty/null leaves the output unchanged; exhausted cursors remain exhausted.
+uint8_t m2_raster_next(struct M2RasterCursor *cursor, M2Pixel *pixel);
