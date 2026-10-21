@@ -1,0 +1,35 @@
+[
+  [
+    "python3",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests/flight_demo/m2_full",
+    "-p",
+    "test_*.py",
+    "-v"
+  ],
+  [
+    "/usr/bin/clang",
+    "-std=c11",
+    "-Wall",
+    "-Wextra",
+    "-Wconversion",
+    "-Werror",
+    "-fsanitize=address,undefined",
+    "-Iinterfaces/generated",
+    "-Isrc/graphics",
+    "-Isrc/environment",
+    "src/graphics/m2_geometry.c",
+    "src/environment/m2_fixture.c",
+    "interfaces/generated/m2_tables.c",
+    "tests/flight_demo/m2_full/prepared_host.c",
+    "-o",
+    "build/flight-demo/m2-full-host-1792582371186260000/prepared-host"
+  ],
+  [
+    "build/flight-demo/m2-full-host-1792582371186260000/prepared-host"
+  ]
+]

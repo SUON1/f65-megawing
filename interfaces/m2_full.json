@@ -1,0 +1,71 @@
+{
+  "identity": "65AERO-M2-FULL-1",
+  "parent": "65AERO-M2-PR1-2",
+  "composition_revision": 2,
+  "width": 320,
+  "height": 200,
+  "world_height": 128,
+  "tile_bytes": 64,
+  "tiles": 960,
+  "screen_bytes": 2000,
+  "tile_offset": 2048,
+  "blank_offset": 63488,
+  "store_bytes": 63552,
+  "stores": [
+    131072,
+    196608
+  ],
+  "color_base": 267911168,
+  "resident_start": 8193,
+  "resident_end": 32768,
+  "software_stack_start": 49152,
+  "software_stack_end": 53248,
+  "reserve_allocation": 0,
+  "anchor_count": 4,
+  "optional_labels": 2,
+  "sample_quantum": 8,
+  "output_ntsc": [
+    720,
+    480,
+    40,
+    40,
+    2
+  ],
+  "output_pal": [
+    720,
+    572,
+    40,
+    86,
+    2
+  ],
+  "records": {
+    "M2Anchor": [
+      [
+        "pixel",
+        "M2Pixel"
+      ],
+      [
+        "visible",
+        "uint8_t"
+      ]
+    ],
+    "M2Bundle": [
+      [
+        "registration",
+        "M2Registration"
+      ],
+      [
+        "anchors",
+        "M2Anchor[4]"
+      ],
+      [
+        "labels",
+        "uint8_t[2]"
+      ],
+      [
+        "composition_revision",
+        "uint32_t"
+      ]
+    ]
+  }
+}
