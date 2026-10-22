@@ -1,0 +1,55 @@
+{
+  "status": "BOUNDED SIZE SAVING; full resident fit FAIL; implementation stopped after candidate relink",
+  "baseline_main": "b3406ed8b9e141b50ca7ea7d3b5edd169c1ae310",
+  "branch": "codex/65aero-m2-transform-experiment",
+  "function_bytes": {
+    "before": 3112,
+    "after": 985,
+    "saved": 2127
+  },
+  "descriptor_bytes": {
+    "before": 0,
+    "after": 56
+  },
+  "text_bytes": {
+    "before": 32933,
+    "after": 30806
+  },
+  "rodata_bytes": {
+    "before": 1505,
+    "after": 1561
+  },
+  "resident_bytes": {
+    "before": 36293,
+    "after": 34221,
+    "saved": 2072
+  },
+  "end_exclusive": {
+    "before": 44486,
+    "after": 42414
+  },
+  "deficit_bytes": {
+    "before": 11718,
+    "after": 9646
+  },
+  "compiler_scratch": {
+    "before": 216,
+    "after": 216
+  },
+  "data_bytes": 2,
+  "bss_bytes": 1611,
+  "header_bytes": 22,
+  "alignment_gap_bytes": {
+    "before": 4,
+    "after": 3
+  },
+  "target_sha256": {
+    "before": "1d4605236b408b1273fee14c915ae85e1779c6b9bc752dbbb1b9f0a0f15940a9",
+    "after": "98822933724ec7b373622445723fb18be2ebac7ca74947e9a046f8b41acb9c51"
+  },
+  "candidate_elf_sha256": "64faaa880f4eed9faa1a5efcdda03be2180d77184d551169c832004cbc9cf9ae",
+  "tools_and_recipe": "exact after fresh output directory normalization",
+  "target_execution": false,
+  "runtime_display_admission": "NOT REACHED",
+  "reserve_allocation": 0
+}

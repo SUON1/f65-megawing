@@ -1,0 +1,67 @@
+[
+  {
+    "argv": [
+      "/usr/bin/clang",
+      "-std=c11",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-Wconversion",
+      "-Werror",
+      "-Iinterfaces/generated",
+      "-Isrc/graphics",
+      "-Isrc/environment",
+      "-DM2_TRANSFORM_REFERENCE=\"/private/tmp/f65-m2-transform-publication/docs/evidence/flight-demo/2026-10-21-m2-transform-sequence/reference_transform.inc\"",
+      "-fsanitize=address,undefined",
+      "-DM2_TRANSFORM_EQUIVALENCE_MAIN=1",
+      "tests/flight_demo/m2_full/transform_sequence.c",
+      "src/environment/m2_fixture.c",
+      "interfaces/generated/m2_tables.c",
+      "-o",
+      "/private/tmp/f65-m2-transform-publication/build/flight-demo/transform-publication-proof-1792638562204186000/equivalence"
+    ],
+    "exit": 0,
+    "log": "0.txt"
+  },
+  {
+    "argv": [
+      "/private/tmp/f65-m2-transform-publication/build/flight-demo/transform-publication-proof-1792638562204186000/equivalence"
+    ],
+    "exit": 0,
+    "log": "1.txt"
+  },
+  {
+    "argv": [
+      "/usr/bin/clang",
+      "-std=c11",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-Wconversion",
+      "-Werror",
+      "-Iinterfaces/generated",
+      "-Isrc/graphics",
+      "-Isrc/environment",
+      "-DM2_TRANSFORM_REFERENCE=\"/private/tmp/f65-m2-transform-publication/docs/evidence/flight-demo/2026-10-21-m2-transform-sequence/reference_transform.inc\"",
+      "-shared",
+      "-fPIC",
+      "tests/flight_demo/m2_full/transform_sequence.c",
+      "src/environment/m2_fixture.c",
+      "interfaces/generated/m2_tables.c",
+      "-o",
+      "/private/tmp/f65-m2-transform-publication/build/flight-demo/transform-publication-proof-1792638562204186000/transform.dylib"
+    ],
+    "exit": 0,
+    "log": "2.txt"
+  },
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "tests/flight_demo/m2_full/transform_oracle.py",
+      "/private/tmp/f65-m2-transform-publication/build/flight-demo/transform-publication-proof-1792638562204186000/transform.dylib"
+    ],
+    "exit": 0,
+    "log": "3.txt"
+  }
+]

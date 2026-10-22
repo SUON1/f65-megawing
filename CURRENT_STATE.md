@@ -126,6 +126,13 @@ The retained experiment saves 101 resident bytes in that failed composition,
 which still exceeds its unchanged resident ceiling by 11,718 bytes. See the
 [publication scope](docs/reports/M2_PR2_Q46_PUBLICATION.md) and
 [exact experiment](docs/reports/M2_PR2_Q46_LIMB16_EXPERIMENT.md).
+The founder also approved the bounded transform-sequence experiment for
+publication. Its exact matrix-building function is integrated independently of
+the unmerged renderer/cache work. In the retained complete-development
+composition it saves another 2,072 resident bytes, leaving a 9,646-byte deficit
+under the unchanged memory limit. See the
+[transform publication scope](docs/reports/M2_PR2_TRANSFORM_PUBLICATION.md) and
+[experiment evidence](docs/reports/M2_PR2_TRANSFORM_SEQUENCE_EXPERIMENT.md).
 Full-renderer fit, integrated stack/timing and high-resolution output mapping
 remain open; no M2 target execution is claimed. Carry remaining obligations to the exact
 owner gates approved in the entry plan. Establish actual measured limits and

@@ -1,0 +1,30 @@
+{
+  "base": "b3406ed8b9e141b50ca7ea7d3b5edd169c1ae310",
+  "scope": "only the exact reviewed transform function installed into production; renderer/cache restoration remains evidence",
+  "inputs": {
+    "src/graphics/m2_geometry.c": "c3e5742954713723c818d96e692bb8a89f58212884f3f1044041f9f5b2bf593d",
+    "src/graphics/m2_q46_private.h": "a39cec23b356a09e99a451650b68f72a62d7ba3a1c43e550cccd23356fa50f2d",
+    "src/graphics/m2_prepared_private.h": "36e823c4eb20fc638f21553184b78328c40a96fea072ed14d7e2bbe509d6acb1",
+    "tests/flight_demo/m2_full/transform_sequence.c": "27962de8a56c658274283ced2576c5a05314f4d35bc0181a26fee1b6ed7efde9",
+    "tests/flight_demo/m2_full/transform_oracle.py": "b7ff43a045bdb7a929b9448d8c7cd4fd455b8fb2b2c4606b5267dca398390be0",
+    "docs/evidence/flight-demo/2026-10-21-m2-transform-sequence/reference_transform.inc": "c6d7e5caa03c9e51ae82fdb396701d09703f720ca9e198b533ada957dca06891"
+  },
+  "exhaustive_angle_triples": 5270760,
+  "boundary_cases": 33,
+  "independent_matrix_cases": 63560,
+  "decimal_oracle_cases": 3857,
+  "near_far_cases": 841,
+  "ci_fixture_tests": 15,
+  "standalone_target_sha256": "c97ed09bd328d3ad8b2e88876791266cd3cb6dfb68917799b6ce0f9dcb8962b6",
+  "standalone_matches_reviewed_probe": "byte-identical PRG; sections and stack exact",
+  "standard_command": [
+    "python3",
+    "-B",
+    "tools/flight_demo/m2/build.py"
+  ],
+  "full_renderer_deficit": 9646,
+  "full_renderer_evidence": "retained unchanged; no new composed build",
+  "generated_contracts": "unchanged",
+  "target_execution": "NOT RUN",
+  "xemu_d81_sd_physical": "NOT RUN"
+}
