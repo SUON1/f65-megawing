@@ -1,0 +1,71 @@
+[
+  {
+    "argv": [
+      "/usr/bin/clang",
+      "-std=c11",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-Wconversion",
+      "-Werror",
+      "-Iinterfaces/generated",
+      "-Isrc/graphics",
+      "-Isrc/environment",
+      "-DM2_TRANSFORM_REFERENCE=\"/private/tmp/f65-m2-transform-experiment/docs/evidence/flight-demo/2026-10-21-m2-transform-sequence/reference_transform.inc\"",
+      "-fsanitize=address,undefined",
+      "-DM2_TRANSFORM_EQUIVALENCE_MAIN=1",
+      "tests/flight_demo/m2_full/transform_sequence.c",
+      "src/environment/m2_fixture.c",
+      "interfaces/generated/m2_tables.c",
+      "-o",
+      "/private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-proof-1792637272036964000/equivalence"
+    ],
+    "exit": 0,
+    "log": "0.txt",
+    "elapsed_seconds": 0.37177158299999996
+  },
+  {
+    "argv": [
+      "/private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-proof-1792637272036964000/equivalence"
+    ],
+    "exit": 0,
+    "log": "1.txt",
+    "elapsed_seconds": 1.856252708
+  },
+  {
+    "argv": [
+      "/usr/bin/clang",
+      "-std=c11",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-Wconversion",
+      "-Werror",
+      "-Iinterfaces/generated",
+      "-Isrc/graphics",
+      "-Isrc/environment",
+      "-DM2_TRANSFORM_REFERENCE=\"/private/tmp/f65-m2-transform-experiment/docs/evidence/flight-demo/2026-10-21-m2-transform-sequence/reference_transform.inc\"",
+      "-shared",
+      "-fPIC",
+      "tests/flight_demo/m2_full/transform_sequence.c",
+      "src/environment/m2_fixture.c",
+      "interfaces/generated/m2_tables.c",
+      "-o",
+      "/private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-proof-1792637272036964000/transform.dylib"
+    ],
+    "exit": 0,
+    "log": "2.txt",
+    "elapsed_seconds": 0.12726158300000012
+  },
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "tests/flight_demo/m2_full/transform_oracle.py",
+      "/private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-proof-1792637272036964000/transform.dylib"
+    ],
+    "exit": 0,
+    "log": "3.txt",
+    "elapsed_seconds": 0.9577599590000001
+  }
+]

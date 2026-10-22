@@ -1,0 +1,378 @@
+     VMA      LMA     Size Align Out     In      Symbol
+       0        0        0     1 __basic_zp_start = 0x0002
+       0        0        0     1 __basic_zp_end = 0x0090
+       0        0        0     1 __rc0 = __basic_zp_start
+       0        0        0     1 __rc1 = __rc0 + 1
+       0        0        0     1 PROVIDE(__rc2 = __rc1 + 1)
+       0        0        0     1 __rc3 = __rc2 + 1
+       0        0        0     1 PROVIDE(__rc4 = __rc3 + 1)
+       0        0        0     1 __rc5 = __rc4 + 1
+       0        0        0     1 PROVIDE(__rc6 = __rc5 + 1)
+       0        0        0     1 __rc7 = __rc6 + 1
+       0        0        0     1 PROVIDE(__rc8 = __rc7 + 1)
+       0        0        0     1 __rc9 = __rc8 + 1
+       0        0        0     1 PROVIDE(__rc10 = __rc9 + 1)
+       0        0        0     1 __rc11 = __rc10 + 1
+       0        0        0     1 PROVIDE(__rc12 = __rc11 + 1)
+       0        0        0     1 __rc13 = __rc12 + 1
+       0        0        0     1 PROVIDE(__rc14 = __rc13 + 1)
+       0        0        0     1 __rc15 = __rc14 + 1
+       0        0        0     1 PROVIDE(__rc16 = __rc15 + 1)
+       0        0        0     1 __rc17 = __rc16 + 1
+       0        0        0     1 PROVIDE(__rc18 = __rc17 + 1)
+       0        0        0     1 __rc19 = __rc18 + 1
+       0        0        0     1 PROVIDE(__rc20 = __rc19 + 1)
+       0        0        0     1 __rc21 = __rc20 + 1
+       0        0        0     1 PROVIDE(__rc22 = __rc21 + 1)
+       0        0        0     1 __rc23 = __rc22 + 1
+       0        0        0     1 PROVIDE(__rc24 = __rc23 + 1)
+       0        0        0     1 __rc25 = __rc24 + 1
+       0        0        0     1 PROVIDE(__rc26 = __rc25 + 1)
+       0        0        0     1 __rc27 = __rc26 + 1
+       0        0        0     1 PROVIDE(__rc28 = __rc27 + 1)
+       0        0        0     1 __rc29 = __rc28 + 1
+       0        0        0     1 PROVIDE(__rc30 = __rc29 + 1)
+       0        0        0     1 __rc31 = __rc30 + 1
+       0        0        0     1 __basic_zp_size = __basic_zp_end - __basic_zp_start
+    2001     2001       16     1 .basic_header
+    2001     2001       16     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/basic-header.o:(.basic_header)
+    2015     2015        0     1                 next_line
+      22       22        0     1 .zp.data
+      22       22        0     1         __zp_data_start = .
+      22       22        0     1 __zp_data_load_start = LOADADDR(.zp.data)
+      22       22        0     1 __zp_data_size = SIZEOF(.zp.data)
+      22       22        0     1 .zp.bss
+      22       22        0     1         __zp_bss_start = .
+      22       22        0     1 __zp_bss_size = SIZEOF(.zp.bss)
+    2017     2017     7856     1 .text
+    2017     2017        0     1         _init = .
+    2017     2017        0     1         _start = .
+    2017     2017        e     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/unmap-basic.o:(.init.010)
+    2025     2025        3     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/r0a_platform_45gs02-379b17.o:(.init.011)
+    2025     2025        0     1                 f65_basepage_enter
+    2028     2028        8     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(init-stack.S.obj):(.init.100)
+    2028     2028        0     1                 __do_init_stack
+    2030     2030        3     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(zero-bss.c.obj):(.init.200)
+    2030     2030        0     1                 __do_zero_bss
+    2033     2033        3     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/common/lib/crt0.o:(.call_main)
+    2036     2036        3     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(exit-custom.S.obj):(.after_main)
+    2036     2036        0     1                 __after_main
+    2039     2039        0     1         _fini = .
+    2039     2039        3     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/r0a_platform_45gs02-379b17.o:(.fini.989)
+    2039     2039        0     1                 f65_basepage_leave
+    203c     203c        a     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/unmap-basic.o:(.fini.990)
+    2046     2046        1     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/common/lib/crt0.o:(.fini_rts)
+    2047     2047      140     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/qualification_45gs02-75f0b4.o:(.text.r0f_pf)
+    2047     2047        0     1                 r0f_pf_enter
+    20a7     20a7        0     1                 r0f_pf_start_irq
+    20be     20be        0     1                 r0f_pf_stop_irq
+    20ca     20ca        0     1                 r0f_pf_irq
+    20f6     20f6        0     1                 r0f_pf_nmi
+    20fe     20fe        0     1                 r0f_pf_flat_copy
+    213b     213b        0     1                 r0f_pf_register_probe
+    2187     2187       b4     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/combined_45gs02-de3671.o:(.text.r0fc_platform)
+    2187     2187        0     1                 r0fc_rom_toggle
+    21aa     21aa        0     1                 r0fc_stack_seed
+    21f1     21f1        0     1                 r0fc_stack_measure
+    223b     223b        7     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/backend.o:(.text.m2_fit_camera_keys)
+    223b     223b        7     1                 m2_fit_camera_keys
+    2242     2242       1d     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/backend.o:(.text.m2_backend_tile)
+    2242     2242       1d     1                 m2_backend_tile
+    225f     225f        7     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/backend.o:(.text.m2_backend_activate)
+    225f     225f        7     1                 m2_backend_activate
+    2266     2266       16     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/backend.o:(.text.m2_fit_service_bound)
+    2266     2266       16     1                 m2_fit_service_bound
+    227c     227c       16     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/backend.o:(.text.m2_fit_return_margin)
+    227c     227c       16     1                 m2_fit_return_margin
+    2292     2292       13     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(zero-bss.c.obj):(.text.__zero_bss)
+    2292     2292       13     1                 __zero_bss
+    22a5     22a5       77     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.m2_point_valid)
+    22a5     22a5       77     1                 m2_point_valid
+    231c     231c      2cf     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.m2_fixture_segment)
+    231c     231c      2cf     1                 m2_fixture_segment
+    25eb     25eb      213     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.m2_camera_valid)
+    25eb     25eb      213     1                 m2_camera_valid
+    27fe     27fe      3d9     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.m2_transform)
+    27fe     27fe      3d9     1                 m2_transform
+    2bd7     2bd7       e8     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.sine)
+    2bd7     2bd7       e8     1                 sine
+    2cbf     2cbf        3     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.multiply_rotation)
+    2cbf     2cbf        3     1                 multiply_rotation
+    2cc2     2cc2      41e     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.m2_multiply_q46)
+    2cc2     2cc2      41e     1                 m2_multiply_q46
+    30e0     30e0       78     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.m2_prepare)
+    30e0     30e0       78     1                 m2_prepare
+    3158     3158      7a7     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.m2_project_prepared)
+    3158     3158      7a7     1                 m2_project_prepared
+    38ff     38ff      28b     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.to_camera)
+    38ff     38ff      28b     1                 to_camera
+    3b8a     3b8a      3b2     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.plane_distance)
+    3b8a     3b8a      3b2     1                 plane_distance
+    3f3c     3f3c      645     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.interpolate_delta)
+    3f3c     3f3c      645     1                 interpolate_delta
+    4581     4581      218     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.project_axis)
+    4581     4581      218     1                 project_axis
+    4799     4799       ff     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.rounded_ratio)
+    4799     4799       ff     1                 rounded_ratio
+    4898     4898      3b1     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.m2_raster_begin)
+    4898     4898      3b1     1                 m2_raster_begin
+    4c49     4c49       76     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.raster_coordinate)
+    4c49     4c49       76     1                 raster_coordinate
+    4cbf     4cbf      1db     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.m2_raster_next)
+    4cbf     4cbf      1db     1                 m2_raster_next
+    4e9a     4e9a      318     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.m2_ground_prepared)
+    4e9a     4e9a      318     1                 m2_ground_prepared
+    51b2     51b2      195     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.m2_registration_prepared)
+    51b2     51b2      195     1                 m2_registration_prepared
+    5347     5347      401     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.m2_registration_matches_prepared)
+    5347     5347      401     1                 m2_registration_matches_prepared
+    5748     5748       24     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.m1_core_init)
+    5748     5748       24     1                 m1_core_init
+    576c     576c      12c     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.m1_command)
+    576c     576c      12c     1                 m1_command
+    5898     5898      32d     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.m1_tick)
+    5898     5898      32d     1                 m1_tick
+    5bc5     5bc5       6d     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.m1_input_sample)
+    5bc5     5bc5       6d     1                 m1_input_sample
+    5c32     5c32       6c     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.m1_extract)
+    5c32     5c32       6c     1                 m1_extract
+    5c9e     5c9e       95     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.m1_publish)
+    5c9e     5c9e       95     1                 m1_publish
+    5d33     5d33      104     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.m1_acquire)
+    5d33     5d33      104     1                 m1_acquire
+    5e37     5e37        c     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.m1_release)
+    5e37     5e37        c     1                 m1_release
+    5e43     5e43       13     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.m2_renderer_init)
+    5e43     5e43       13     1                 m2_renderer_init
+    5e56     5e56       66     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.m2_label_offer)
+    5e56     5e56       66     1                 m2_label_offer
+    5ebc     5ebc      15d     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.m2_renderer_begin)
+    5ebc     5ebc      15d     1                 m2_renderer_begin
+    6019     6019       b8     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.fail)
+    6019     6019       b8     1                 fail
+    60d1     60d1       c7     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.m2_renderer_cancel)
+    60d1     60d1       c7     1                 m2_renderer_cancel
+    6198     6198      248     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.m2_renderer_service)
+    6198     6198      248     1                 m2_renderer_service
+    63e0     63e0      14c     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.registration)
+    63e0     63e0      14c     1                 registration
+    652c     652c      1b7     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.anchor)
+    652c     652c      1b7     1                 anchor
+    66e3     66e3      3fc     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.telemetry)
+    66e3     66e3      3fc     1                 telemetry
+    6adf     6adf      1b5     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.cache_segment)
+    6adf     6adf      1b5     1                 cache_segment
+    6c94     6c94      270     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.background)
+    6c94     6c94      270     1                 background
+    6f04     6f04      198     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.segment)
+    6f04     6f04      198     1                 segment
+    709c     709c       c5     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.paint)
+    709c     709c       c5     1                 paint
+    7161     7161      450     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.overlay)
+    7161     7161      450     1                 overlay
+    75b1     75b1       53     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.put_text)
+    75b1     75b1       53     1                 put_text
+    7604     7604       4a     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.hex)
+    7604     7604       4a     1                 hex
+    764e     764e      24c     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.m2_renderer_commit)
+    764e     764e      24c     1                 m2_renderer_commit
+    789a     789a       51     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.m2_font_row)
+    789a     789a       51     1                 m2_font_row
+    78eb     78eb       1f     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.m2_camera_pressed)
+    78eb     78eb       1f     1                 m2_camera_pressed
+    790a     790a        f     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.m2_camera_reset)
+    790a     790a        f     1                 m2_camera_reset
+    7919     7919      412     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.m2_camera_command)
+    7919     7919      412     1                 m2_camera_command
+    7d2b     7d2b       51     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.direction)
+    7d2b     7d2b       51     1                 direction
+    7d7c     7d7c       f2     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.m2_dispatch_allows)
+    7d7c     7d7c       f2     1                 m2_dispatch_allows
+    7e6e     7e6e       9c     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.m2_dispatch_next)
+    7e6e     7e6e       9c     1                 m2_dispatch_next
+    7f0a     7f0a      262     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.m1_platform_begin)
+    7f0a     7f0a      262     1                 m1_platform_begin
+    816c     816c        3     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.m1_platform_now)
+    816c     816c        3     1                 m1_platform_now
+    816f     816f       16     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.m1_platform_period)
+    816f     816f       16     1                 m1_platform_period
+    8185     8185       11     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.m1_platform_key)
+    8185     8185       11     1                 m1_platform_key
+    8196     8196       12     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.m1_platform_fault)
+    8196     8196       12     1                 m1_platform_fault
+    81a8     81a8       3a     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.m1_platform_measure)
+    81a8     81a8       3a     1                 m1_platform_measure
+    81e2     81e2        6     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.m1_platform_alarm)
+    81e2     81e2        6     1                 m1_platform_alarm
+    81e8     81e8       1e     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.cfput16)
+    81e8     81e8       1e     1                 cfput16
+    8206     8206       1d     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.cfput32)
+    8206     8206       1d     1                 cfput32
+    8223     8223       38     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.cfline)
+    8223     8223       38     1                 cfline
+    825b     825b        c     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.screen_byte)
+    825b     825b        c     1                 screen_byte
+    8267     8267      1cf     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.cfcopy)
+    8267     8267      1cf     1                 cfcopy
+    8436     8436      1bd     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.cfphysical_crc)
+    8436     8436      1bd     1                 cfphysical_crc
+    85f3     85f3       54     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.crc_byte)
+    85f3     85f3       54     1                 crc_byte
+    8647     8647       7a     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.cfentry)
+    8647     8647       7a     1                 cfentry
+    86c1     86c1      227     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.cfrom_begin)
+    86c1     86c1      227     1                 cfrom_begin
+    88e8     88e8       33     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.cfclock_begin)
+    88e8     88e8       33     1                 cfclock_begin
+    891b     891b       8e     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.cfnow)
+    891b     891b       8e     1                 cfnow
+    89a9     89a9      285     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.cfratio)
+    89a9     89a9      285     1                 cfratio
+    8c2e     8c2e      15f     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.r0fc_range)
+    8c2e     8c2e      15f     1                 r0fc_range
+    8d8d     8d8d       ba     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.inside)
+    8d8d     8d8d       ba     1                 inside
+    8e47     8e47      282     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.main)
+    8e47     8e47      282     1                 main
+    90c9     90c9        5     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.exit)
+    90c9     90c9        5     1                 exit
+    90ce     90ce       24     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.memcpy)
+    90ce     90ce       24     1                 memcpy
+    90f2     90f2       1c     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.__memset)
+    90f2     90f2       1c     1                 __memset
+    910e     910e       1f     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.__ashldi3)
+    910e     910e       1f     1                 __ashldi3
+    912d     912d       13     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.__lshrhi3)
+    912d     912d       13     1                 __lshrhi3
+    9140     9140       17     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.__lshrsi3)
+    9140     9140       17     1                 __lshrsi3
+    9157     9157      357     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.__udivdi3)
+    9157     9157      357     1                 __udivdi3
+    94ae     94ae       a6     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.__umodhi3)
+    94ae     94ae       a6     1                 __umodhi3
+    9554     9554       d8     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.__udivmodhi4)
+    9554     9554       d8     1                 __udivmodhi4
+    962c     962c       6e     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.__modhi3)
+    962c     962c       6e     1                 __modhi3
+    969a     969a       32     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.__mulhi3)
+    969a     969a       32     1                 __mulhi3
+    96cc     96cc       79     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.__mulsi3)
+    96cc     96cc       79     1                 __mulsi3
+    9745     9745      128     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.text.__muldi3)
+    9745     9745      128     1                 __muldi3
+    986d     986d        0     1         __init_array_start = .
+    986d     986d        0     1         __init_array_end = .
+    986d     986d        0     1         __fini_array_start = .
+    986d     986d        0     1         __fini_array_end = .
+    9870     9870      619     8 .rodata
+    9870     9870      2d8     8         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.rodata.m2_sine_q46)
+    9870     9870      2d8     1                 m2_sine_q46
+    9b48     9b48        1     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/common/lib/libcrt.a(const.S.obj):(.rodata)
+    9b48     9b48        0     1                 __set_v
+    9b49     9b49       38     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.rodata.m2_transform.products)
+    9b49     9b49       38     1                 m2_transform.products
+    9b81     9b81       e2     1         <internal>:(.rodata.str1.1)
+    9c63     9c63      1d8     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.rodata.glyphs)
+    9c63     9c63      1d8     1                 glyphs
+    9e3b     9e3b       16     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.rodata..L__const.m2_camera_reset.reset)
+    9e51     9e51       38     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.rodata.r0fc_range.ranges)
+    9e51     9e51       38     1                 r0fc_range.ranges
+    9e89     9e89        2     1 .data
+    9e89     9e89        0     1         __data_start = .
+    9e89     9e89        1     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/backend.o:(.data.m2_fit_copy_ok)
+    9e89     9e89        1     1                 m2_fit_copy_ok
+    9e8a     9e8a        1     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/backend.o:(.data.m2_fit_activate_ok)
+    9e8a     9e8a        1     1                 m2_fit_activate_ok
+    9e8b     9e8b        0     1         __data_end = .
+    9e8b     9e8b        0     1 __data_load_start = LOADADDR(.data)
+    9e8b     9e8b        0     1 __data_size = SIZEOF(.data)
+    9e8b     9e8b      64b     1 .bss
+    9e8b     9e8b        0     1         __bss_start = .
+    9e8b     9e8b        2     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/backend.o:(.bss.m2_fit_camera_down)
+    9e8b     9e8b        2     1                 m2_fit_camera_down
+    9e8d     9e8d        1     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/backend.o:(.bss.m2_fit_store)
+    9e8d     9e8d        1     1                 m2_fit_store
+    9e8e     9e8e        2     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/backend.o:(.bss.m2_fit_tile)
+    9e8e     9e8e        2     1                 m2_fit_tile
+    9e90     9e90       40     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/backend.o:(.bss.m2_fit_staging)
+    9e90     9e90       40     1                 m2_fit_staging
+    9ed0     9ed0        4     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/backend.o:(.bss.m2_fit_service_ticks)
+    9ed0     9ed0        4     1                 m2_fit_service_ticks
+    9ed4     9ed4        4     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/backend.o:(.bss.m2_fit_return_ticks)
+    9ed4     9ed4        4     1                 m2_fit_return_ticks
+    9ed8     9ed8        4     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.bss.period_q16)
+    9ed8     9ed8        4     1                 period_q16
+    9edc     9edc        1     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.bss.cfreclaimed)
+    9edc     9edc        1     1                 cfreclaimed
+    9edd     9edd        1     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.bss.backup_valid)
+    9edd     9edd        1     1                 backup_valid
+    9ede     9ede        1     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.bss.cffault)
+    9ede     9ede        1     1                 cffault
+    9edf     9edf        9     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.bss.r0f_pf_copy_request)
+    9edf     9edf        9     1                 r0f_pf_copy_request
+    9ee8     9ee8       ff     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.bss.block)
+    9ee8     9ee8       ff     1                 block
+    9fe7     9fe7        1     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.bss.r0f_pf_cpu_port)
+    9fe7     9fe7        1     1                 r0f_pf_cpu_port
+    9fe8     9fe8        1     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.bss.r0f_pf_stack_high)
+    9fe8     9fe8        1     1                 r0f_pf_stack_high
+    9fe9     9fe9       ff     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.bss.cfworkspace)
+    9fe9     9fe9       ff     1                 cfworkspace
+    a0e8     a0e8        1     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.bss.features_open)
+    a0e8     a0e8        1     1                 features_open
+    a0e9     a0e9        1     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.bss.r0fc_trap_flags)
+    a0e9     a0e9        1     1                 r0fc_trap_flags
+    a0ea     a0ea        1     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.bss.r0fc_trap_base)
+    a0ea     a0ea        1     1                 r0fc_trap_base
+    a0eb     a0eb        1     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.bss.r0f_pf_nmi_seen)
+    a0eb     a0eb        1     1                 r0f_pf_nmi_seen
+    a0ec     a0ec        2     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.bss.r0f_pf_irq_count)
+    a0ec     a0ec        2     1                 r0f_pf_irq_count
+    a0ee     a0ee        1     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.bss.r0fc_hardware_low)
+    a0ee     a0ee        1     1                 r0fc_hardware_low
+    a0ef     a0ef        2     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.bss.r0fc_software_low)
+    a0ef     a0ef        2     1                 r0fc_software_low
+    a0f1     a0f1        1     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.bss.r0f_pf_irq_seq)
+    a0f1     a0f1        1     1                 r0f_pf_irq_seq
+    a0f2     a0f2        1     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.bss.r0f_pf_irq_seen)
+    a0f2     a0f2        1     1                 r0f_pf_irq_seen
+    a0f3     a0f3        7     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.bss.r0f_pf_probe_regs)
+    a0f3     a0f3        7     1                 r0f_pf_probe_regs
+    a0fa     a0fa        1     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.bss.r0f_pf_copy_ok)
+    a0fa     a0fa        1     1                 r0f_pf_copy_ok
+    a0fb     a0fb        2     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.bss.r0f_pf_probe_timeout)
+    a0fb     a0fb        2     1                 r0f_pf_probe_timeout
+    a0fd     a0fd        1     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.bss.r0fc_features)
+    a0fd     a0fd        1     1                 r0fc_features
+    a0fe     a0fe        1     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.bss.r0fc_hardware_seed)
+    a0fe     a0fe        1     1                 r0fc_hardware_seed
+    a0ff     a0ff        2     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.bss.r0fc_software_seed)
+    a0ff     a0ff        2     1                 r0fc_software_seed
+    a101     a101       40     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.bss.core)
+    a101     a101       40     1                 core
+    a141     a141       16     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.bss.requested)
+    a141     a141       16     1                 requested
+    a157     a157      34e     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.bss.renderer)
+    a157     a157      34e     1                 renderer
+    a4a5     a4a5        1     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.bss.input.0)
+    a4a5     a4a5        1     1                 input.0
+    a4a6     a4a6       2e     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.bss.snapshots)
+    a4a6     a4a6       2e     1                 snapshots
+    a4d4     a4d4        2     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.bss.previous_camera_keys)
+    a4d4     a4d4        2     1                 previous_camera_keys
+    a4d6     a4d6        0     1         __bss_end = .
+    a4d6     a4d6        0     1 __bss_size = SIZEOF(.bss)
+    a4d6     a4d6       d8     1 .noinit
+    a4d6     a4d6       d8     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.noinit..Lstatic_stack)
+    a5ae     a5ae        0     1         __heap_start = ALIGN(., 2)
+    a5ae     a5ae        0     1 __stack = 0xd000
+       0        0       cc     1 .comment
+       0        0       cc     1         <internal>:(.comment)
+       0        0        f     1 .llvm_sympart
+       0        0        f     1         /private/tmp/f65-m2-transform-experiment/build/flight-demo/m2-transform-candidate-1792637412752996000/RENDER.prg.lto.o:(.llvm_sympart)
+       0        0     12c0     4 .symtab
+       0        0     12c0     4         <internal>:(.symtab)
+       0        0       72     1 .shstrtab
+       0        0       72     1         <internal>:(.shstrtab)
+       0        0      d18     1 .strtab
+       0        0      d18     1         <internal>:(.strtab)

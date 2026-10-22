@@ -21,6 +21,10 @@ Q46_FONT_SNAPSHOT = (
     "docs/evidence/flight-demo/2026-10-21-m2-renderer-fit/"
     "source/src/graphics/m2_font.c"
 )
+TRANSFORM_REFERENCE = (
+    "docs/evidence/flight-demo/2026-10-21-m2-transform-sequence/"
+    "reference_transform.inc"
+)
 BLOCKED_PREFIXES = (
     "toolchain/runtime/",
     "toolchain/downloads/",
@@ -64,7 +68,7 @@ def load_manifest(data):
                 or ".." in parts
                 or str(PurePosixPath(path)) != path
                 or not (path.startswith(EVIDENCE_ROOTS)
-                        or path in (LEGACY_D81, Q46_FONT_SNAPSHOT))
+                        or path in (LEGACY_D81, Q46_FONT_SNAPSHOT, TRANSFORM_REFERENCE))
                 or not isinstance(digest, str)
                 or not re.fullmatch(r"[0-9a-f]{64}", digest)
             ):

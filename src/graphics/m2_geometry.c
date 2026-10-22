@@ -95,24 +95,66 @@ uint8_t m2_transform(const M2Camera *camera, M2Transform *transform)
     {
         return 0u;
     }
-    int64_t sy = sine(camera->yaw);
-    int64_t cy = sine((int16_t)(camera->yaw + 90));
-    int64_t sp = sine(camera->pitch);
-    int64_t cp = sine((int16_t)(camera->pitch + 90));
-    int64_t sr = sine(camera->roll);
-    int64_t cr = sine((int16_t)(camera->roll + 90));
-    int64_t sr_sp = multiply_rotation(sr, sp);
-    int64_t cr_sp = multiply_rotation(cr, sp);
-    // Transpose of Rz(yaw) Ry(pitch) Rx(roll): NED to camera.
-    M2Transform result = {{
-        multiply_rotation(cp, cy), multiply_rotation(cp, sy), -sp,
-        multiply_rotation(sr_sp, cy) - multiply_rotation(cr, sy),
-        multiply_rotation(sr_sp, sy) + multiply_rotation(cr, cy),
-        multiply_rotation(sr, cp),
-        multiply_rotation(cr_sp, cy) + multiply_rotation(sr, sy),
-        multiply_rotation(cr_sp, sy) - multiply_rotation(sr, cy),
-        multiply_rotation(cr, cp)
-    }};
+    enum
+    {
+        YAW_SIN, YAW_COS, PITCH_SIN, PITCH_COS, ROLL_SIN, ROLL_COS,
+        ROLL_SIN_PITCH_SIN, ROLL_COS_PITCH_SIN
+    };
+    enum { SAVE_OPERAND, SET_COEFFICIENT, ADD_COEFFICIENT, SUB_COEFFICIENT };
+    // Fixed evaluation of transpose(Rz(yaw) Ry(pitch) Rx(roll)).
+    // Keep both rounded pitch/roll intermediates and all fourteen products.
+    static const struct
+    {
+        uint8_t first;
+        uint8_t second;
+        uint8_t destination;
+        uint8_t operation;
+    } products[] = {
+        {ROLL_SIN, PITCH_SIN, ROLL_SIN_PITCH_SIN, SAVE_OPERAND},
+        {ROLL_COS, PITCH_SIN, ROLL_COS_PITCH_SIN, SAVE_OPERAND},
+        {PITCH_COS, YAW_COS, 0u, SET_COEFFICIENT},
+        {PITCH_COS, YAW_SIN, 1u, SET_COEFFICIENT},
+        {ROLL_SIN_PITCH_SIN, YAW_COS, 3u, SET_COEFFICIENT},
+        {ROLL_COS, YAW_SIN, 3u, SUB_COEFFICIENT},
+        {ROLL_SIN_PITCH_SIN, YAW_SIN, 4u, SET_COEFFICIENT},
+        {ROLL_COS, YAW_COS, 4u, ADD_COEFFICIENT},
+        {ROLL_SIN, PITCH_COS, 5u, SET_COEFFICIENT},
+        {ROLL_COS_PITCH_SIN, YAW_COS, 6u, SET_COEFFICIENT},
+        {ROLL_SIN, YAW_SIN, 6u, ADD_COEFFICIENT},
+        {ROLL_COS_PITCH_SIN, YAW_SIN, 7u, SET_COEFFICIENT},
+        {ROLL_SIN, YAW_COS, 7u, SUB_COEFFICIENT},
+        {ROLL_COS, PITCH_COS, 8u, SET_COEFFICIENT}
+    };
+    const int16_t angles[3] = {camera->yaw, camera->pitch, camera->roll};
+    int64_t operands[8];
+    for (uint8_t i = 0u; i < 6u; ++i)
+    {
+        int16_t angle = (int16_t)(angles[i / 2u] + (i % 2u != 0u ? 90 : 0));
+        operands[i] = sine(angle);
+    }
+    M2Transform result;
+    result.m[2] = -operands[PITCH_SIN];
+    for (uint8_t i = 0u; i < sizeof(products) / sizeof(products[0]); ++i)
+    {
+        int64_t product = multiply_rotation(operands[products[i].first],
+                                             operands[products[i].second]);
+        uint8_t destination = products[i].destination;
+        switch (products[i].operation)
+        {
+            case SAVE_OPERAND:
+                operands[destination] = product;
+                break;
+            case SET_COEFFICIENT:
+                result.m[destination] = product;
+                break;
+            case ADD_COEFFICIENT:
+                result.m[destination] += product;
+                break;
+            case SUB_COEFFICIENT:
+                result.m[destination] -= product;
+                break;
+        }
+    }
     *transform = result;
     return 1u;
 }

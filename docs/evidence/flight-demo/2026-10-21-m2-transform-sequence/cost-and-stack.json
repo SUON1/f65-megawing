@@ -1,0 +1,94 @@
+{
+  "before": {
+    "stack": {
+      "hardware_bytes_main_including_entry_return": 15,
+      "software_dynamic_bytes": 0,
+      "software_constant_adjustments": 0,
+      "call_entries_checked": 8,
+      "scope": "direct-call probe; no IRQ/NMI or executed high-water claim"
+    },
+    "closure": [
+      "__memset",
+      "__modhi3",
+      "__mulsi3",
+      "__umodhi3",
+      "m2_camera_valid",
+      "m2_multiply_q46",
+      "m2_transform",
+      "multiply_rotation",
+      "sine"
+    ],
+    "instruction_inventory": {
+      "multiply_rotation": 1,
+      "__mulsi3": 64,
+      "m2_camera_valid": 278,
+      "m2_multiply_q46": 526,
+      "m2_transform": 1345,
+      "__umodhi3": 91,
+      "__modhi3": 60,
+      "__memset": 15,
+      "sine": 124
+    },
+    "q46_callee_instruction_bound": 16299,
+    "sine_callee_instruction_bound": 3187,
+    "own_instruction_bound": 1345,
+    "final_copy_instruction_bound": 0,
+    "conservative_transform_instruction_bound": 248945,
+    "formula": "1345 + 278 + 6*(124+60+91*33) + 14*(1+16299)",
+    "call_multiplicities": {
+      "validation": 1,
+      "sine": 6,
+      "Q46": 14,
+      "memcpy_72_bytes": 0
+    }
+  },
+  "after": {
+    "stack": {
+      "hardware_bytes_main_including_entry_return": 15,
+      "software_dynamic_bytes": 0,
+      "software_constant_adjustments": 0,
+      "call_entries_checked": 9,
+      "scope": "direct-call probe; no IRQ/NMI or executed high-water claim"
+    },
+    "closure": [
+      "__memset",
+      "__modhi3",
+      "__mulsi3",
+      "__umodhi3",
+      "m2_camera_valid",
+      "m2_multiply_q46",
+      "m2_transform",
+      "memcpy",
+      "multiply_rotation",
+      "sine"
+    ],
+    "instruction_inventory": {
+      "multiply_rotation": 1,
+      "__mulsi3": 64,
+      "m2_camera_valid": 278,
+      "m2_multiply_q46": 526,
+      "m2_transform": 506,
+      "__umodhi3": 91,
+      "__modhi3": 60,
+      "memcpy": 22,
+      "__memset": 15,
+      "sine": 124
+    },
+    "q46_callee_instruction_bound": 16299,
+    "sine_callee_instruction_bound": 3187,
+    "own_instruction_bound": 7590,
+    "final_copy_instruction_bound": 1606,
+    "conservative_transform_instruction_bound": 256796,
+    "formula": "506*15 + 278 + 6*(124+60+91*33) + 14*(1+16299) + 22*73",
+    "call_multiplicities": {
+      "validation": 1,
+      "sine": 6,
+      "Q46": 14,
+      "memcpy_72_bytes": 1
+    }
+  },
+  "scope": "transform entry return and reachable callees; excludes callers and IRQ/NMI",
+  "compiler_scratch": "216 resident bytes in each composed link; charged once",
+  "limitations": "Loose structural instruction bounds; no actual speed or CPU-cycle WCET comparison. No wait-state, platform, interrupt or scheduler admission.",
+  "stack_checker_sha256": "4d344f815d246859b621caac01f2c9e27f1501ecec32c7f9491d7f2e427522ef"
+}
