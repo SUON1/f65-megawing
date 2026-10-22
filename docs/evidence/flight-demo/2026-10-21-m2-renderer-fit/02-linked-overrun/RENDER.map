@@ -1,0 +1,358 @@
+     VMA      LMA     Size Align Out     In      Symbol
+       0        0        0     1 __basic_zp_start = 0x0002
+       0        0        0     1 __basic_zp_end = 0x0090
+       0        0        0     1 __rc0 = __basic_zp_start
+       0        0        0     1 __rc1 = __rc0 + 1
+       0        0        0     1 PROVIDE(__rc2 = __rc1 + 1)
+       0        0        0     1 __rc3 = __rc2 + 1
+       0        0        0     1 PROVIDE(__rc4 = __rc3 + 1)
+       0        0        0     1 __rc5 = __rc4 + 1
+       0        0        0     1 PROVIDE(__rc6 = __rc5 + 1)
+       0        0        0     1 __rc7 = __rc6 + 1
+       0        0        0     1 PROVIDE(__rc8 = __rc7 + 1)
+       0        0        0     1 __rc9 = __rc8 + 1
+       0        0        0     1 PROVIDE(__rc10 = __rc9 + 1)
+       0        0        0     1 __rc11 = __rc10 + 1
+       0        0        0     1 PROVIDE(__rc12 = __rc11 + 1)
+       0        0        0     1 __rc13 = __rc12 + 1
+       0        0        0     1 PROVIDE(__rc14 = __rc13 + 1)
+       0        0        0     1 __rc15 = __rc14 + 1
+       0        0        0     1 PROVIDE(__rc16 = __rc15 + 1)
+       0        0        0     1 __rc17 = __rc16 + 1
+       0        0        0     1 PROVIDE(__rc18 = __rc17 + 1)
+       0        0        0     1 __rc19 = __rc18 + 1
+       0        0        0     1 PROVIDE(__rc20 = __rc19 + 1)
+       0        0        0     1 __rc21 = __rc20 + 1
+       0        0        0     1 PROVIDE(__rc22 = __rc21 + 1)
+       0        0        0     1 __rc23 = __rc22 + 1
+       0        0        0     1 PROVIDE(__rc24 = __rc23 + 1)
+       0        0        0     1 __rc25 = __rc24 + 1
+       0        0        0     1 PROVIDE(__rc26 = __rc25 + 1)
+       0        0        0     1 __rc27 = __rc26 + 1
+       0        0        0     1 PROVIDE(__rc28 = __rc27 + 1)
+       0        0        0     1 __rc29 = __rc28 + 1
+       0        0        0     1 PROVIDE(__rc30 = __rc29 + 1)
+       0        0        0     1 __rc31 = __rc30 + 1
+       0        0        0     1 __basic_zp_size = __basic_zp_end - __basic_zp_start
+    2001     2001       16     1 .basic_header
+    2001     2001       16     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/basic-header.o:(.basic_header)
+    2015     2015        0     1                 next_line
+      22       22        0     1 .zp.data
+      22       22        0     1         __zp_data_start = .
+      22       22        0     1 __zp_data_load_start = LOADADDR(.zp.data)
+      22       22        0     1 __zp_data_size = SIZEOF(.zp.data)
+      22       22        0     1 .zp.bss
+      22       22        0     1         __zp_bss_start = .
+      22       22        0     1 __zp_bss_size = SIZEOF(.zp.bss)
+    2017     2017     7707     1 .text
+    2017     2017        0     1         _init = .
+    2017     2017        0     1         _start = .
+    2017     2017        e     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/unmap-basic.o:(.init.010)
+    2025     2025        3     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/r0a_platform_45gs02-38c1f6.o:(.init.011)
+    2025     2025        0     1                 f65_basepage_enter
+    2028     2028        8     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(init-stack.S.obj):(.init.100)
+    2028     2028        0     1                 __do_init_stack
+    2030     2030        3     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(zero-bss.c.obj):(.init.200)
+    2030     2030        0     1                 __do_zero_bss
+    2033     2033        3     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/common/lib/crt0.o:(.call_main)
+    2036     2036        3     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(exit-custom.S.obj):(.after_main)
+    2036     2036        0     1                 __after_main
+    2039     2039        0     1         _fini = .
+    2039     2039        3     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/r0a_platform_45gs02-38c1f6.o:(.fini.989)
+    2039     2039        0     1                 f65_basepage_leave
+    203c     203c        a     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/unmap-basic.o:(.fini.990)
+    2046     2046        1     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/common/lib/crt0.o:(.fini_rts)
+    2047     2047      140     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/qualification_45gs02-ce9942.o:(.text.r0f_pf)
+    2047     2047        0     1                 r0f_pf_enter
+    20a7     20a7        0     1                 r0f_pf_start_irq
+    20be     20be        0     1                 r0f_pf_stop_irq
+    20ca     20ca        0     1                 r0f_pf_irq
+    20f6     20f6        0     1                 r0f_pf_nmi
+    20fe     20fe        0     1                 r0f_pf_flat_copy
+    213b     213b        0     1                 r0f_pf_register_probe
+    2187     2187       b4     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/combined_45gs02-618d17.o:(.text.r0fc_platform)
+    2187     2187        0     1                 r0fc_rom_toggle
+    21aa     21aa        0     1                 r0fc_stack_seed
+    21f1     21f1        0     1                 r0fc_stack_measure
+    223b     223b        7     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/backend.o:(.text.m2_fit_camera_keys)
+    223b     223b        7     1                 m2_fit_camera_keys
+    2242     2242       1d     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/backend.o:(.text.m2_backend_tile)
+    2242     2242       1d     1                 m2_backend_tile
+    225f     225f        7     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/backend.o:(.text.m2_backend_activate)
+    225f     225f        7     1                 m2_backend_activate
+    2266     2266       13     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(zero-bss.c.obj):(.text.__zero_bss)
+    2266     2266       13     1                 __zero_bss
+    2279     2279       77     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.m2_point_valid)
+    2279     2279       77     1                 m2_point_valid
+    22f0     22f0      2cf     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.m2_fixture_segment)
+    22f0     22f0      2cf     1                 m2_fixture_segment
+    25bf     25bf      213     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.m2_camera_valid)
+    25bf     25bf      213     1                 m2_camera_valid
+    27d2     27d2      c28     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.m2_transform)
+    27d2     27d2      c28     1                 m2_transform
+    33fa     33fa       e8     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.sine)
+    33fa     33fa       e8     1                 sine
+    34e2     34e2       c6     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.multiply_rotation)
+    34e2     34e2       c6     1                 multiply_rotation
+    35a8     35a8      645     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.interpolate_delta)
+    35a8     35a8      645     1                 interpolate_delta
+    3bed     3bed       60     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.m2_prepare)
+    3bed     3bed       60     1                 m2_prepare
+    3c4d     3c4d      7a7     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.m2_project_prepared)
+    3c4d     3c4d      7a7     1                 m2_project_prepared
+    43f4     43f4      28b     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.to_camera)
+    43f4     43f4      28b     1                 to_camera
+    467f     467f      3b2     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.plane_distance)
+    467f     467f      3b2     1                 plane_distance
+    4a31     4a31      218     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.project_axis)
+    4a31     4a31      218     1                 project_axis
+    4c49     4c49       ff     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.rounded_ratio)
+    4c49     4c49       ff     1                 rounded_ratio
+    4d48     4d48      3b1     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.m2_raster_begin)
+    4d48     4d48      3b1     1                 m2_raster_begin
+    50f9     50f9       76     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.raster_coordinate)
+    50f9     50f9       76     1                 raster_coordinate
+    516f     516f      1db     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.m2_raster_next)
+    516f     516f      1db     1                 m2_raster_next
+    534a     534a      318     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.m2_ground_prepared)
+    534a     534a      318     1                 m2_ground_prepared
+    5662     5662      195     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.m2_registration_prepared)
+    5662     5662      195     1                 m2_registration_prepared
+    57f7     57f7      358     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.m2_pair_eligible)
+    57f7     57f7      358     1                 m2_pair_eligible
+    5b4f     5b4f      229     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.record_valid)
+    5b4f     5b4f      229     1                 record_valid
+    5d78     5d78       24     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.m1_core_init)
+    5d78     5d78       24     1                 m1_core_init
+    5d9c     5d9c      12c     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.m1_command)
+    5d9c     5d9c      12c     1                 m1_command
+    5ec8     5ec8      32d     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.m1_tick)
+    5ec8     5ec8      32d     1                 m1_tick
+    61f5     61f5       6d     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.m1_input_sample)
+    61f5     61f5       6d     1                 m1_input_sample
+    6262     6262       6c     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.m1_extract)
+    6262     6262       6c     1                 m1_extract
+    62ce     62ce       95     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.m1_publish)
+    62ce     62ce       95     1                 m1_publish
+    6363     6363      104     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.m1_acquire)
+    6363     6363      104     1                 m1_acquire
+    6467     6467        c     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.m1_release)
+    6467     6467        c     1                 m1_release
+    6473     6473       13     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.m2_renderer_init)
+    6473     6473       13     1                 m2_renderer_init
+    6486     6486       66     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.m2_label_offer)
+    6486     6486       66     1                 m2_label_offer
+    64ec     64ec      32e     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.m2_renderer_begin)
+    64ec     64ec      32e     1                 m2_renderer_begin
+    681a     681a       67     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.fail)
+    681a     681a       67     1                 fail
+    6881     6881      3fc     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.telemetry)
+    6881     6881      3fc     1                 telemetry
+    6c7d     6c7d       53     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.put_text)
+    6c7d     6c7d       53     1                 put_text
+    6cd0     6cd0       4a     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.hex)
+    6cd0     6cd0       4a     1                 hex
+    6d1a     6d1a       8a     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.m2_renderer_cancel)
+    6d1a     6d1a       8a     1                 m2_renderer_cancel
+    6da4     6da4      194     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.m2_renderer_service)
+    6da4     6da4      194     1                 m2_renderer_service
+    6f38     6f38      270     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.background)
+    6f38     6f38      270     1                 background
+    71a8     71a8      117     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.segment)
+    71a8     71a8      117     1                 segment
+    72bf     72bf       c5     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.paint)
+    72bf     72bf       c5     1                 paint
+    7384     7384      450     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.overlay)
+    7384     7384      450     1                 overlay
+    77d4     77d4      1d8     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.m2_renderer_commit)
+    77d4     77d4      1d8     1                 m2_renderer_commit
+    79ac     79ac       51     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.m2_font_row)
+    79ac     79ac       51     1                 m2_font_row
+    79fd     79fd       1f     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.m2_camera_pressed)
+    79fd     79fd       1f     1                 m2_camera_pressed
+    7a1c     7a1c        f     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.m2_camera_reset)
+    7a1c     7a1c        f     1                 m2_camera_reset
+    7a2b     7a2b      412     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.m2_camera_command)
+    7a2b     7a2b      412     1                 m2_camera_command
+    7e3d     7e3d       51     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.direction)
+    7e3d     7e3d       51     1                 direction
+    7e8e     7e8e      262     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.m1_platform_begin)
+    7e8e     7e8e      262     1                 m1_platform_begin
+    80f0     80f0        3     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.m1_platform_now)
+    80f0     80f0        3     1                 m1_platform_now
+    80f3     80f3       16     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.m1_platform_period)
+    80f3     80f3       16     1                 m1_platform_period
+    8109     8109       11     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.m1_platform_key)
+    8109     8109       11     1                 m1_platform_key
+    811a     811a       12     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.m1_platform_fault)
+    811a     811a       12     1                 m1_platform_fault
+    812c     812c       3a     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.m1_platform_measure)
+    812c     812c       3a     1                 m1_platform_measure
+    8166     8166        6     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.m1_platform_alarm)
+    8166     8166        6     1                 m1_platform_alarm
+    816c     816c       1e     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.cfput16)
+    816c     816c       1e     1                 cfput16
+    818a     818a       1d     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.cfput32)
+    818a     818a       1d     1                 cfput32
+    81a7     81a7       38     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.cfline)
+    81a7     81a7       38     1                 cfline
+    81df     81df        c     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.screen_byte)
+    81df     81df        c     1                 screen_byte
+    81eb     81eb      1cf     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.cfcopy)
+    81eb     81eb      1cf     1                 cfcopy
+    83ba     83ba      1bd     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.cfphysical_crc)
+    83ba     83ba      1bd     1                 cfphysical_crc
+    8577     8577       54     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.crc_byte)
+    8577     8577       54     1                 crc_byte
+    85cb     85cb       7a     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.cfentry)
+    85cb     85cb       7a     1                 cfentry
+    8645     8645      227     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.cfrom_begin)
+    8645     8645      227     1                 cfrom_begin
+    886c     886c       33     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.cfclock_begin)
+    886c     886c       33     1                 cfclock_begin
+    889f     889f       8e     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.cfnow)
+    889f     889f       8e     1                 cfnow
+    892d     892d      285     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.cfratio)
+    892d     892d      285     1                 cfratio
+    8bb2     8bb2      15f     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.r0fc_range)
+    8bb2     8bb2      15f     1                 r0fc_range
+    8d11     8d11       ba     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.inside)
+    8d11     8d11       ba     1                 inside
+    8dcb     8dcb      1af     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.main)
+    8dcb     8dcb      1af     1                 main
+    8f7a     8f7a        5     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.exit)
+    8f7a     8f7a        5     1                 exit
+    8f7f     8f7f       24     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.memcpy)
+    8f7f     8f7f       24     1                 memcpy
+    8fa3     8fa3       1c     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.__memset)
+    8fa3     8fa3       1c     1                 __memset
+    8fbf     8fbf       1f     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.__ashldi3)
+    8fbf     8fbf       1f     1                 __ashldi3
+    8fde     8fde       13     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.__lshrhi3)
+    8fde     8fde       13     1                 __lshrhi3
+    8ff1     8ff1       17     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.__lshrsi3)
+    8ff1     8ff1       17     1                 __lshrsi3
+    9008     9008      357     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.__udivdi3)
+    9008     9008      357     1                 __udivdi3
+    935f     935f       a6     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.__umodhi3)
+    935f     935f       a6     1                 __umodhi3
+    9405     9405       d8     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.__udivmodhi4)
+    9405     9405       d8     1                 __udivmodhi4
+    94dd     94dd       6e     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.__modhi3)
+    94dd     94dd       6e     1                 __modhi3
+    954b     954b       32     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.__mulhi3)
+    954b     954b       32     1                 __mulhi3
+    957d     957d       79     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.__mulsi3)
+    957d     957d       79     1                 __mulsi3
+    95f6     95f6      128     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.text.__muldi3)
+    95f6     95f6      128     1                 __muldi3
+    971e     971e        0     1         __init_array_start = .
+    971e     971e        0     1         __init_array_end = .
+    971e     971e        0     1         __fini_array_start = .
+    971e     971e        0     1         __fini_array_end = .
+    9720     9720      5e1     8 .rodata
+    9720     9720      2d8     8         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.rodata.m2_sine_q46)
+    9720     9720      2d8     1                 m2_sine_q46
+    99f8     99f8        1     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/common/lib/libcrt.a(const.S.obj):(.rodata)
+    99f8     99f8        0     1                 __set_v
+    99f9     99f9       e2     1         <internal>:(.rodata.str1.1)
+    9adb     9adb      1d8     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.rodata.glyphs)
+    9adb     9adb      1d8     1                 glyphs
+    9cb3     9cb3       16     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.rodata..L__const.m2_camera_reset.reset)
+    9cc9     9cc9       38     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.rodata.r0fc_range.ranges)
+    9cc9     9cc9       38     1                 r0fc_range.ranges
+    9d01     9d01        2     1 .data
+    9d01     9d01        0     1         __data_start = .
+    9d01     9d01        1     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/backend.o:(.data.m2_fit_copy_ok)
+    9d01     9d01        1     1                 m2_fit_copy_ok
+    9d02     9d02        1     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/backend.o:(.data.m2_fit_activate_ok)
+    9d02     9d02        1     1                 m2_fit_activate_ok
+    9d03     9d03        0     1         __data_end = .
+    9d03     9d03        0     1 __data_load_start = LOADADDR(.data)
+    9d03     9d03        0     1 __data_size = SIZEOF(.data)
+    9d03     9d03      637     1 .bss
+    9d03     9d03        0     1         __bss_start = .
+    9d03     9d03        2     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/backend.o:(.bss.m2_fit_camera_down)
+    9d03     9d03        2     1                 m2_fit_camera_down
+    9d05     9d05        1     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/backend.o:(.bss.m2_fit_store)
+    9d05     9d05        1     1                 m2_fit_store
+    9d06     9d06        2     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/backend.o:(.bss.m2_fit_tile)
+    9d06     9d06        2     1                 m2_fit_tile
+    9d08     9d08       40     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/backend.o:(.bss.m2_fit_staging)
+    9d08     9d08       40     1                 m2_fit_staging
+    9d48     9d48        4     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.bss.period_q16)
+    9d48     9d48        4     1                 period_q16
+    9d4c     9d4c        1     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.bss.cfreclaimed)
+    9d4c     9d4c        1     1                 cfreclaimed
+    9d4d     9d4d        1     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.bss.backup_valid)
+    9d4d     9d4d        1     1                 backup_valid
+    9d4e     9d4e        1     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.bss.cffault)
+    9d4e     9d4e        1     1                 cffault
+    9d4f     9d4f        9     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.bss.r0f_pf_copy_request)
+    9d4f     9d4f        9     1                 r0f_pf_copy_request
+    9d58     9d58       ff     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.bss.block)
+    9d58     9d58       ff     1                 block
+    9e57     9e57        1     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.bss.r0f_pf_cpu_port)
+    9e57     9e57        1     1                 r0f_pf_cpu_port
+    9e58     9e58        1     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.bss.r0f_pf_stack_high)
+    9e58     9e58        1     1                 r0f_pf_stack_high
+    9e59     9e59       ff     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.bss.cfworkspace)
+    9e59     9e59       ff     1                 cfworkspace
+    9f58     9f58        1     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.bss.features_open)
+    9f58     9f58        1     1                 features_open
+    9f59     9f59        1     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.bss.r0fc_trap_flags)
+    9f59     9f59        1     1                 r0fc_trap_flags
+    9f5a     9f5a        1     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.bss.r0fc_trap_base)
+    9f5a     9f5a        1     1                 r0fc_trap_base
+    9f5b     9f5b        1     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.bss.r0f_pf_nmi_seen)
+    9f5b     9f5b        1     1                 r0f_pf_nmi_seen
+    9f5c     9f5c        2     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.bss.r0f_pf_irq_count)
+    9f5c     9f5c        2     1                 r0f_pf_irq_count
+    9f5e     9f5e        1     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.bss.r0fc_hardware_low)
+    9f5e     9f5e        1     1                 r0fc_hardware_low
+    9f5f     9f5f        2     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.bss.r0fc_software_low)
+    9f5f     9f5f        2     1                 r0fc_software_low
+    9f61     9f61        1     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.bss.r0f_pf_irq_seq)
+    9f61     9f61        1     1                 r0f_pf_irq_seq
+    9f62     9f62        1     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.bss.r0f_pf_irq_seen)
+    9f62     9f62        1     1                 r0f_pf_irq_seen
+    9f63     9f63        7     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.bss.r0f_pf_probe_regs)
+    9f63     9f63        7     1                 r0f_pf_probe_regs
+    9f6a     9f6a        1     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.bss.r0f_pf_copy_ok)
+    9f6a     9f6a        1     1                 r0f_pf_copy_ok
+    9f6b     9f6b        2     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.bss.r0f_pf_probe_timeout)
+    9f6b     9f6b        2     1                 r0f_pf_probe_timeout
+    9f6d     9f6d        1     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.bss.r0fc_features)
+    9f6d     9f6d        1     1                 r0fc_features
+    9f6e     9f6e        1     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.bss.r0fc_hardware_seed)
+    9f6e     9f6e        1     1                 r0fc_hardware_seed
+    9f6f     9f6f        2     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.bss.r0fc_software_seed)
+    9f6f     9f6f        2     1                 r0fc_software_seed
+    9f71     9f71       40     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.bss.core)
+    9f71     9f71       40     1                 core
+    9fb1     9fb1       16     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.bss.requested)
+    9fb1     9fb1       16     1                 requested
+    9fc7     9fc7      342     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.bss.renderer)
+    9fc7     9fc7      342     1                 renderer
+    a309     a309        1     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.bss.input.0)
+    a309     a309        1     1                 input.0
+    a30a     a30a       2e     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.bss.snapshots)
+    a30a     a30a       2e     1                 snapshots
+    a338     a338        2     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.bss.previous_camera_keys)
+    a338     a338        2     1                 previous_camera_keys
+    a33a     a33a        0     1         __bss_end = .
+    a33a     a33a        0     1 __bss_size = SIZEOF(.bss)
+    a33a     a33a       e5     1 .noinit
+    a33a     a33a       e5     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.noinit..Lstatic_stack)
+    a41f     a41f        0     1         __heap_start = ALIGN(., 2)
+    a41f     a41f        0     1 __stack = 0xd000
+       0        0       cc     1 .comment
+       0        0       cc     1         <internal>:(.comment)
+       0        0        f     1 .llvm_sympart
+       0        0        f     1         /Users/slice/Developer/f65-megawing/build/flight-demo/m2-renderer-1792599384707283000/RENDER.prg.lto.o:(.llvm_sympart)
+       0        0     1220     4 .symtab
+       0        0     1220     4         <internal>:(.symtab)
+       0        0       72     1 .shstrtab
+       0        0       72     1         <internal>:(.shstrtab)
+       0        0      c56     1 .strtab
+       0        0      c56     1         <internal>:(.strtab)

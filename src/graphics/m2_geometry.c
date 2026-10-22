@@ -4,6 +4,7 @@
 #include "m2_geometry.h"
 #include "m2_raster_private.h"
 #include "m2_prepared_private.h"
+#include "m2_q46_private.h"
 
 // All callers bound magnitudes below INT64_MAX, including the rounding bias.
 static int32_t rounded_ratio(int64_t value, int64_t divisor)
@@ -51,9 +52,7 @@ static int64_t interpolate_delta(int64_t delta, int64_t numerator,
 
 static int64_t multiply_rotation(int64_t value, int64_t coefficient)
 {
-    int64_t magnitude = coefficient < 0 ? -coefficient : coefficient;
-    int64_t product = interpolate_delta(value, magnitude, M2_ROTATION_SCALE);
-    return coefficient < 0 ? -product : product;
+    return m2_multiply_q46(value, coefficient);
 }
 
 static int64_t sine(int16_t angle)

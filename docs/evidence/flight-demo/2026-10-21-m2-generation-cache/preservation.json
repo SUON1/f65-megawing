@@ -1,0 +1,64 @@
+{
+  "baseline_files": 15606,
+  "unchanged_current_files": 15598,
+  "authorized_modified_originals": {
+    "src/graphics/m2_geometry.c": {
+      "snapshot": "before/src/graphics/m2_geometry.c",
+      "sha256": "c1a10f7cc776d3223bd33f44c0c63562769dae1fed01da2a1681164b9f8490a5"
+    },
+    "src/graphics/m2_prepared_private.h": {
+      "snapshot": "before/src/graphics/m2_prepared_private.h",
+      "sha256": "36e823c4eb20fc638f21553184b78328c40a96fea072ed14d7e2bbe509d6acb1"
+    },
+    "src/graphics/m2_renderer.c": {
+      "snapshot": "before/src/graphics/m2_renderer.c",
+      "sha256": "2237db9d37aebe9edd43cf3694cadf9a33b44d9f41a3da28f241b081a58cd274"
+    },
+    "src/graphics/m2_renderer.h": {
+      "snapshot": "before/src/graphics/m2_renderer.h",
+      "sha256": "0fe9b7e104cfaddee3875e5b1b2b8807e4385c0284eaf0ef5bd1e342d54e3e3a"
+    },
+    "tests/flight_demo/m2_full/fit_backend.c": {
+      "snapshot": "before/tests/flight_demo/m2_full/fit_backend.c",
+      "sha256": "ceef2ca75899360eb364e2ad5e5c7c71a7590d50abeae553406a2715d4236ec0"
+    },
+    "tests/flight_demo/m2_full/fit_root.c": {
+      "snapshot": "before/tests/flight_demo/m2_full/fit_root.c",
+      "sha256": "b240e9145072f17e2693b3cfe0d059c5068a20bab40d3a66e41c48bc0e8cfe2d"
+    },
+    "tests/flight_demo/m2_full/renderer_host.c": {
+      "snapshot": "before/tests/flight_demo/m2_full/renderer_host.c",
+      "sha256": "6b8223f0a96d4170aa64be53ca692cb882c4c4bdb4a720c58eeecc6ed1806cf2"
+    },
+    "tools/flight_demo/m2_full/renderer_build.py": {
+      "snapshot": "before/tools/flight_demo/m2_full/renderer_build.py",
+      "sha256": "c6faab8864dc7d022d6074b6200e9d40b1fc4b387913e855251c33e92881c001"
+    }
+  },
+  "unrelated_entries": [
+    "docs/evidence/r0f/successor/2026-09-22-workflow/R0FCAP13/",
+    "docs/evidence/r0f/successor/2026-09-22-workflow/R0FCAP14/",
+    "docs/evidence/r0f/successor/2026-09-22-workflow/R0FCLK08/",
+    "docs/evidence/r0f/successor/2026-09-22-workflow/R0FCLK09/",
+    "docs/evidence/r0f/successor/2026-09-22-workflow/R0FIRQ10/",
+    "docs/evidence/r0f/successor/2026-09-22-workflow/R0FIRQ11/",
+    "docs/evidence/r0f/successor/2026-09-25-r0fdbg07-physical/",
+    "docs/evidence/r0f/successor/2026-09-26-irq-handoff/",
+    "docs/evidence/r0f/successor/2026-09-26-r0fclk09-physical/",
+    "docs/evidence/r0f/successor/2026-09-26-r0firq10-physical/",
+    "docs/evidence/r0f/successor/2026-09-26-raster-irq/",
+    "docs/evidence/r0f/successor/2026-09-28-cap13-viewer/",
+    "docs/evidence/r0f/successor/2026-09-28-cap14-physical/",
+    "docs/evidence/r0f/successor/2026-09-28-r0firq11-physical/",
+    "docs/reports/R0-F_CAP14_DELIVERY_PREPARATION.md",
+    "docs/reports/SD_BACKUP_2026-09-28.md",
+    "tools/diagnostics/d81_fat_mirror_diagnostic.py",
+    "tools/diagnostics/mega65_sd_readonly_backup.py",
+    "tools/diagnostics/test_d81_fat_mirror_diagnostic.py",
+    "tools/diagnostics/test_mega65_sd_readonly_backup.py"
+  ],
+  "historical_flight_packet_inventories_checked": 7,
+  "generated_interfaces": "unchanged, consistency tests passed",
+  "target_input_hashes": "PASS",
+  "regression_extra_inputs": "supplemental manifest binds new private Q46 header without editing old report"
+}

@@ -1,0 +1,25 @@
+{
+  "identity": "M2-RENDERER-CASES-1",
+  "frozen_before_renderer": true,
+  "poses": [
+    {"name":"reset","yaw":0,"pitch":-5,"roll":0},
+    {"name":"all_sky","yaw":0,"pitch":60,"roll":0},
+    {"name":"all_ground","yaw":0,"pitch":-60,"roll":0},
+    {"name":"bank_right","yaw":0,"pitch":0,"roll":60},
+    {"name":"south","yaw":180,"pitch":-5,"roll":0}
+  ],
+  "expected": {
+    "all_sky_world_palette":6,
+    "all_ground_background_palette":5,
+    "footer_palette":0,
+    "hidden_only":true,
+    "sample_quantum_max":8,
+    "copy_quantum_max":64,
+    "core_600_tick_checksum":"DE675132",
+    "text_left":"ALTITUDE",
+    "text_right":"AIRSPEED",
+    "missing_state":"NOT IMPLEMENTED"
+  },
+  "fault_cases":["cancel_background","cancel_raster","cancel_ready","copy_failure","activation_failure","generation_exhaustion","stale_revision","full_snapshot_pool","held_snapshot"],
+  "independence":"Analytic horizon sign and frozen text/transaction requirements; legacy Decimal oracle remains numeric reference. Raster replay comparison is an equivalence check, not the independent oracle."
+}

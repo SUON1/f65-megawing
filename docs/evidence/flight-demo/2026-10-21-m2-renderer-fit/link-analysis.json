@@ -1,0 +1,225 @@
+{
+  "status": "FAIL early renderer fit",
+  "resident_end": 42015,
+  "resident_ceiling": 32768,
+  "excess_bytes": 9247,
+  "resident_extent": 33822,
+  "sections": {
+    ".basic_header": {
+      "start": 8193,
+      "bytes": 22,
+      "end_exclusive": 8215
+    },
+    ".text": {
+      "start": 8215,
+      "bytes": 30471,
+      "end_exclusive": 38686
+    },
+    ".rodata": {
+      "start": 38688,
+      "bytes": 1505,
+      "end_exclusive": 40193
+    },
+    ".data": {
+      "start": 40193,
+      "bytes": 2,
+      "end_exclusive": 40195
+    },
+    ".bss": {
+      "start": 40195,
+      "bytes": 1591,
+      "end_exclusive": 41786
+    },
+    ".noinit": {
+      "start": 41786,
+      "bytes": 229,
+      "end_exclusive": 42015
+    }
+  },
+  "section_gap_bytes": 2,
+  "owners": {
+    "core": {
+      "name": "core",
+      "start": 40817,
+      "bytes": 64,
+      "kind": "b"
+    },
+    "glyphs": {
+      "name": "glyphs",
+      "start": 39643,
+      "bytes": 472,
+      "kind": "r"
+    },
+    "input.0": {
+      "name": "input.0",
+      "start": 41737,
+      "bytes": 1,
+      "kind": "b"
+    },
+    "m2_fit_activate_ok": {
+      "name": "m2_fit_activate_ok",
+      "start": 40194,
+      "bytes": 1,
+      "kind": "D"
+    },
+    "m2_fit_camera_down": {
+      "name": "m2_fit_camera_down",
+      "start": 40195,
+      "bytes": 2,
+      "kind": "B"
+    },
+    "m2_fit_copy_ok": {
+      "name": "m2_fit_copy_ok",
+      "start": 40193,
+      "bytes": 1,
+      "kind": "D"
+    },
+    "m2_fit_staging": {
+      "name": "m2_fit_staging",
+      "start": 40200,
+      "bytes": 64,
+      "kind": "B"
+    },
+    "m2_fit_store": {
+      "name": "m2_fit_store",
+      "start": 40197,
+      "bytes": 1,
+      "kind": "B"
+    },
+    "m2_fit_tile": {
+      "name": "m2_fit_tile",
+      "start": 40198,
+      "bytes": 2,
+      "kind": "B"
+    },
+    "previous_camera_keys": {
+      "name": "previous_camera_keys",
+      "start": 41784,
+      "bytes": 2,
+      "kind": "b"
+    },
+    "renderer": {
+      "name": "renderer",
+      "start": 40903,
+      "bytes": 834,
+      "kind": "b"
+    },
+    "requested": {
+      "name": "requested",
+      "start": 40881,
+      "bytes": 22,
+      "kind": "b"
+    },
+    "snapshots": {
+      "name": "snapshots",
+      "start": 41738,
+      "bytes": 46,
+      "kind": "b"
+    }
+  },
+  "compiler_static_scratch_bytes": 229,
+  "largest_text_symbols": [
+    {
+      "name": "m2_transform",
+      "start": 10194,
+      "bytes": 3112,
+      "kind": "t"
+    },
+    {
+      "name": "m2_project_prepared",
+      "start": 15437,
+      "bytes": 1959,
+      "kind": "t"
+    },
+    {
+      "name": "interpolate_delta",
+      "start": 13736,
+      "bytes": 1605,
+      "kind": "t"
+    },
+    {
+      "name": "overlay",
+      "start": 29572,
+      "bytes": 1104,
+      "kind": "t"
+    },
+    {
+      "name": "m2_camera_command",
+      "start": 31275,
+      "bytes": 1042,
+      "kind": "t"
+    },
+    {
+      "name": "telemetry",
+      "start": 26753,
+      "bytes": 1020,
+      "kind": "t"
+    },
+    {
+      "name": "plane_distance",
+      "start": 18047,
+      "bytes": 946,
+      "kind": "t"
+    },
+    {
+      "name": "m2_raster_begin",
+      "start": 19784,
+      "bytes": 945,
+      "kind": "t"
+    },
+    {
+      "name": "m2_pair_eligible",
+      "start": 22519,
+      "bytes": 856,
+      "kind": "t"
+    },
+    {
+      "name": "__udivdi3",
+      "start": 36872,
+      "bytes": 855,
+      "kind": "t"
+    },
+    {
+      "name": "m2_renderer_begin",
+      "start": 25836,
+      "bytes": 814,
+      "kind": "t"
+    },
+    {
+      "name": "m1_tick",
+      "start": 24264,
+      "bytes": 813,
+      "kind": "t"
+    },
+    {
+      "name": "m2_ground_prepared",
+      "start": 21322,
+      "bytes": 792,
+      "kind": "t"
+    },
+    {
+      "name": "m2_fixture_segment",
+      "start": 8944,
+      "bytes": 719,
+      "kind": "t"
+    },
+    {
+      "name": "to_camera",
+      "start": 17396,
+      "bytes": 651,
+      "kind": "t"
+    }
+  ],
+  "optimized_objects": {
+    "input": "scalarized to input.0, 1 byte",
+    "stages": "unobserved array eliminated in this early root; zero allocated bytes, not timeline validation"
+  },
+  "accounting_limitation": "Original runner asserted expected unsplit input/stages symbols before serializing sections. This additive analysis reads the retained completed map/symbols without rerunning or changing the artifact.",
+  "backend": "Opaque separately compiled non-LTO test backend. No display registers or physical store copies. Its data costs are explicit; this is not real adapter fit.",
+  "abi_dynamic_stack_service": "UNPROVEN; not reached after size failure",
+  "display_admission": "NOT STARTED; no mapping or activation proof",
+  "reserve_allocation": 0,
+  "target_sha256": "ac3f212bac05a58cbb994adc8c2ac52433e2667c2f60d1c0fcd7165306b748d3",
+  "raw_output": "build/flight-demo/m2-renderer-1792599384707283000",
+  "target_executed": false
+}

@@ -1,0 +1,4 @@
+tests/flight_demo/m2_full/renderer_host.c:142:20: error: call to undeclared function 'm2_fixture_segment'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+  142 |             assert(m2_fixture_segment(M2_FIXTURE_REVISION, segment, &first, &last));
+      |                    ^
+1 error generated.
