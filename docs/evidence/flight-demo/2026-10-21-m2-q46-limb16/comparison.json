@@ -1,0 +1,41 @@
+{
+  "base": "8ee5214ea9c63b86e92ca9bc4fa0779115dbd57f",
+  "compiler_and_flags": "byte-identical recipe after normalizing fresh output paths",
+  "function_bytes": {
+    "before": 1157,
+    "after": 1054,
+    "saved": 103
+  },
+  "code_bytes": {
+    "before": 33036,
+    "after": 32933,
+    "saved": 103
+  },
+  "resident_bytes": {
+    "before": 36394,
+    "after": 36293,
+    "saved": 101
+  },
+  "resident_end": {
+    "before": 44587,
+    "after": 44486
+  },
+  "compiler_scratch": {
+    "before": 213,
+    "after": 216
+  },
+  "section_gap_bytes": {
+    "before": 5,
+    "after": 4
+  },
+  "unchanged_sections": [
+    ".rodata",
+    ".data",
+    ".bss"
+  ],
+  "ceiling": 32768,
+  "remaining_deficit": 11718,
+  "target_sha256": "1d4605236b408b1273fee14c915ae85e1779c6b9bc752dbbb1b9f0a0f15940a9",
+  "host_images": "five byte-identical to prior artifact",
+  "target_execution": false
+}

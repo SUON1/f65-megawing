@@ -1,0 +1,62 @@
+[
+  {
+    "argv": [
+      "/usr/bin/clang",
+      "-std=c11",
+      "-Wall",
+      "-Wextra",
+      "-Wconversion",
+      "-Werror",
+      "-Iinterfaces/generated",
+      "-Isrc/graphics",
+      "-Isrc/environment",
+      "-fsanitize=address,undefined",
+      "-DM2_BASELINE_SOURCE=\"/Users/slice/Developer/f65-megawing/docs/evidence/flight-demo/2026-10-21-m2-generation-cache/before/src/graphics/m2_geometry.c\"",
+      "-DM2_Q46_PREVIOUS_HEADER=\"/Users/slice/Developer/f65-megawing/docs/evidence/flight-demo/2026-10-21-m2-q46-limb16/before/src/graphics/m2_q46_private.h\"",
+      "tests/flight_demo/m2_full/q46_equivalence.c",
+      "src/environment/m2_fixture.c",
+      "interfaces/generated/m2_tables.c",
+      "-o",
+      "build/flight-demo/m2-limb16-proof-1792626239681145000/equivalence"
+    ],
+    "exit": 0,
+    "log": "0.txt"
+  },
+  {
+    "argv": [
+      "build/flight-demo/m2-limb16-proof-1792626239681145000/equivalence"
+    ],
+    "exit": 0,
+    "log": "1.txt"
+  },
+  {
+    "argv": [
+      "/usr/bin/clang",
+      "-std=c11",
+      "-Wall",
+      "-Wextra",
+      "-Wconversion",
+      "-Werror",
+      "-Iinterfaces/generated",
+      "-Isrc/graphics",
+      "-Isrc/environment",
+      "-shared",
+      "-fPIC",
+      "tests/flight_demo/m2_full/q46_binding.c",
+      "-o",
+      "build/flight-demo/m2-limb16-proof-1792626239681145000/q46.dylib"
+    ],
+    "exit": 0,
+    "log": "2.txt"
+  },
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "tests/flight_demo/m2_full/q46_oracle.py",
+      "build/flight-demo/m2-limb16-proof-1792626239681145000/q46.dylib"
+    ],
+    "exit": 0,
+    "log": "3.txt"
+  }
+]

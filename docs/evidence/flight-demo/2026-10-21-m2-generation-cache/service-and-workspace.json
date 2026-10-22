@@ -1,0 +1,32 @@
+{
+  "gate_order": "Early resident fit FAIL; target cycle/ABI admission not reached.",
+  "admitted_target_service_bounds": null,
+  "default_backend_service_bound": 0,
+  "default_return_margin": 0,
+  "dispatch_policy": "No action grant for zero/unknown bound, zero margin, due/overdue release, insufficient remaining time, or addition overflow. Latest clock sampled before action; Q16 release fractions retained.",
+  "actions": {
+    "capture": "bounded validation/copy; no transform",
+    "prepare": "one matrix preparation, still needs composed target WCET",
+    "register": "one bundle/record construction",
+    "anchor": "one corner projection; four actions per generation",
+    "cache": "one canonical segment projection; exactly seventeen actions per generation",
+    "background": "at most eight samples",
+    "raster": "at most eight cursor samples; cursor replay per tile remains",
+    "overlay": "at most eight output pixels with protected anchors",
+    "transfer": "one 64-byte synchronous copy",
+    "ready": "private prepared-record comparison and selector; no reconstruction"
+  },
+  "unproven": "Phases containing projection/clipping and preparation are still synchronous internally. They must be split further if their conservative target bound exceeds the available service budget. No such bound is admitted by this artifact.",
+  "workspace": {
+    "target_cache_bytes": 289,
+    "line_bytes": 272,
+    "visibility_bytes": 17,
+    "union_bytes": 320,
+    "native_cache_bytes": "may include padding, bounded by static_assert <=320",
+    "renderer_bytes": 846,
+    "prior_renderer_bytes": 834,
+    "additional_identity_and_capture_bytes": 12,
+    "new_cache_allocation_bytes": 0
+  },
+  "remaining": "Full-raster per-tile replay, service/return/interrupt bounds, actual display adapter/activation, integrated stack/ABI, nominal cadence and Xemu. Xemu conditional authorization does not admit a failed-fit artifact."
+}

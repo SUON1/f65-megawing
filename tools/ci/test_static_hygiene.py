@@ -128,6 +128,17 @@ class GitFixtureTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, "SHA-256 mismatch"):
                     hygiene.check(self.root, self.base, self.commit())
 
+    def test_q46_exact_snapshot_pin_passes_but_changed_bytes_fail(self):
+        path = hygiene.Q46_FONT_SNAPSHOT
+        manifest = fixture_manifest()
+        manifest["whitespace"][path] = hashlib.sha256(TEXT).hexdigest()
+        self.write(path, TEXT)
+        self.write(hygiene.MANIFEST, json.dumps(manifest).encode())
+        hygiene.check(self.root, self.base, self.commit(), merge_base=True)
+        self.write(path, b"normalized\n")
+        with self.assertRaisesRegex(ValueError, "SHA-256 mismatch"):
+            hygiene.check(self.root, self.base, self.commit())
+
     def test_missing_renamed_or_symlink_pin_fails(self):
         (self.root / D81_PATH).rename(self.root / (D81_PATH + ".renamed"))
         with self.assertRaisesRegex(ValueError, "missing or not a regular file"):
@@ -141,6 +152,7 @@ class GitFixtureTests(unittest.TestCase):
             "live.txt",
             "docs/evidence/r0f/group1/fixture/new.log",
             "docs/evidence/r0f/group2/fixture/new.log",
+            "docs/evidence/flight-demo/2026-10-21-m2-renderer-fit/source/new.log",
         )
         for path in paths:
             with self.subTest(path=path):

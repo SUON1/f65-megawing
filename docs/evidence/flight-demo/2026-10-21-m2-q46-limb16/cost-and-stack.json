@@ -1,0 +1,52 @@
+{
+  "before": {
+    "helper_stack": {
+      "hardware_bytes_main_including_entry_return": 13,
+      "software_dynamic_bytes": 0,
+      "software_constant_adjustments": 0,
+      "call_entries_checked": 2,
+      "scope": "direct-call probe; no IRQ/NMI or executed high-water claim"
+    },
+    "instruction_inventory": {
+      "m2_multiply_q46": 562,
+      "__muldi3": 150
+    },
+    "conservative_instruction_bound": 15562,
+    "formula": "562 + 4*150*25",
+    "assumptions": [
+      "own helper acyclic",
+      "four __muldi3 calls",
+      "both factors per call have at most 24 significant bits",
+      "library multiplication shifts one bit per iteration"
+    ],
+    "cost_limitations": "Counts include calls and bounded callee instructions, not cycle timings. Uniform inventory multipliers overcount paths; bound comparison does not establish a speed improvement/regression. No platform/interrupt/wait-state or dispatcher WCET admission."
+  },
+  "after": {
+    "helper_stack": {
+      "hardware_bytes_main_including_entry_return": 9,
+      "software_dynamic_bytes": 0,
+      "software_constant_adjustments": 0,
+      "call_entries_checked": 3,
+      "scope": "direct-call probe; no IRQ/NMI or executed high-water claim"
+    },
+    "instruction_inventory": {
+      "__memset": 15,
+      "m2_multiply_q46": 526,
+      "__mulsi3": 64
+    },
+    "conservative_instruction_bound": 16299,
+    "formula": "526*12 + 9*64*17 + 15*13",
+    "assumptions": [
+      "three extraction iterations",
+      "three rows x three product cells",
+      "inner guard visited at most 12 times",
+      "nine 16x16 products",
+      "one 12-byte zero-fill",
+      "library multiplication shifts one bit per iteration"
+    ],
+    "cost_limitations": "Counts include calls and bounded callee instructions, not cycle timings. Uniform inventory multipliers overcount paths; bound comparison does not establish a speed improvement/regression. No platform/interrupt/wait-state or dispatcher WCET admission."
+  },
+  "stack_checker_sha256": "4d344f815d246859b621caac01f2c9e27f1501ecec32c7f9491d7f2e427522ef",
+  "hardware_stack_scope": "helper entry return address plus reachable helper calls only; excludes callers and IRQ/NMI",
+  "target_cycles": "UNPROVEN; structural instruction bounds are not cycle bounds"
+}

@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "domain": "all integer yaw 0..359 and pitch/roll -60..60; all generated transform coefficients <= 2^46",
+  "roll_pitch_pairs_checked": 14641,
+  "yaw_norm_cases": 360,
+  "method": "exact integer Cauchy bound on paired terms plus <=1 rounding error; zero-roll cardinal case exact",
+  "point_translation_bound": 1300838219776,
+  "rotation_bound": 70368744177664,
+  "limb_base": 8388608,
+  "cross_bound_exclusive": 140737488355328,
+  "rounded_low_bound_exclusive": 281474976710656,
+  "proof": "For nonnegative magnitudes a=a1*B+a0, b=b1*B+b0, product=a1*b1*B^2+cross*B+a0*b0. Divide by B^2=2^46 and add half before shifting. All discarded bits contribute to the same exact low sum; apply product sign last. This equals nearest/ties-away for every domain input.",
+  "proof_before_replacement": "216706 archived-general comparisons and 101729 unbounded-integer cases completed before m2_geometry.c replacement",
+  "precision": "No fractional bits, matrix/clipping/output layouts or public validation changed"
+}

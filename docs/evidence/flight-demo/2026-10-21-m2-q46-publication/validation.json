@@ -1,0 +1,20 @@
+{
+  "baseline": "8ee5214ea9c63b86e92ca9bc4fa0779115dbd57f",
+  "scope": "approved Q46 helper, production rotation call-site, focused tests, reports and immutable provenance only",
+  "inputs": {
+    "src/graphics/m2_geometry.c": "2208464b8fb2c27b8c91c80a4bfb545a961871e520ce1089ba81f5afba2bb978",
+    "src/graphics/m2_q46_private.h": "a39cec23b356a09e99a451650b68f72a62d7ba3a1c43e550cccd23356fa50f2d",
+    "tests/flight_demo/m2_full/q46_binding.c": "08ce760e7a9773844d2057d1968e3fe345f3763e080a8e24809c8fedf690a2cd",
+    "tests/flight_demo/m2_full/q46_equivalence.c": "e9e6440f4f6fc0d42839760cf17a014e8cddffcc4dc8867e5f94a5acb8d394d2",
+    "tests/flight_demo/m2_full/q46_oracle.py": "9b52ee81e103f7010dcf432c5ca5f6f7239bc7e04ca250fb77bcb33671e892df",
+    "docs/reports/M2_PR2_Q46_LIMB16_EXPERIMENT.md": "b57b7b9592f678587b1fb9e529abf60c1f0ee8a1ab6f588cd93d996311ad904f"
+  },
+  "proof_cases": 217091,
+  "independent_cases": 102213,
+  "carry_states": 919917,
+  "standalone_regression_output": "/private/tmp/f65-q46-publication/build/flight-demo/m2-pr1-1792635966913417000",
+  "generated_contract_status": "unchanged",
+  "target_execution": "NOT RUN",
+  "xemu_d81_sd_physical": "NOT RUN",
+  "full_renderer_fit": "FAIL in retained composition; 11718-byte deficit; composition not installed by this publication"
+}

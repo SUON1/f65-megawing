@@ -119,6 +119,13 @@ geometry API and adds private captured camera/transform reuse. Its initial
 restores the regression probe to `$7FDC`, 36 bytes below `$8000`, with precision
 and memory ceilings unchanged. The founder approved this bounded correction
 and publication. See the [overrun correction](docs/reports/M2_PR2_FIT_OVERRUN_FIX.md).
+The founder subsequently approved the bounded Q46 limb experiment and corrected
+report for publication. The private arithmetic helper and rotation call-site are
+integrated separately from the unmerged full renderer/cache development work.
+The retained experiment saves 101 resident bytes in that failed composition,
+which still exceeds its unchanged resident ceiling by 11,718 bytes. See the
+[publication scope](docs/reports/M2_PR2_Q46_PUBLICATION.md) and
+[exact experiment](docs/reports/M2_PR2_Q46_LIMB16_EXPERIMENT.md).
 Full-renderer fit, integrated stack/timing and high-resolution output mapping
 remain open; no M2 target execution is claimed. Carry remaining obligations to the exact
 owner gates approved in the entry plan. Establish actual measured limits and
