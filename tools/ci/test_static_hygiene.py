@@ -130,6 +130,7 @@ class GitFixtureTests(unittest.TestCase):
 
     def test_exact_flight_snapshot_pins_pass_but_changed_bytes_fail(self):
         for path in (hygiene.Q46_FONT_SNAPSHOT, hygiene.TRANSFORM_REFERENCE,
+                     hygiene.INTERPOLATION_FONT_SNAPSHOT,
                      *hygiene.PROJECTION_SNAPSHOTS):
             with self.subTest(path=path):
                 manifest = fixture_manifest()
@@ -157,6 +158,7 @@ class GitFixtureTests(unittest.TestCase):
             "docs/evidence/flight-demo/2026-10-21-m2-renderer-fit/source/new.log",
             "docs/evidence/flight-demo/2026-10-21-m2-transform-sequence/new.log",
             "docs/evidence/flight-demo/2026-10-21-m2-projection-sequence/new.log",
+            "docs/evidence/flight-demo/2026-10-22-m2-interpolation-bitwalk/new.log",
         )
         for path in paths:
             with self.subTest(path=path):

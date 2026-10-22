@@ -1,0 +1,47 @@
+{
+  "status": "PASS",
+  "output": "/private/tmp/f65-m2-interpolation-publication/build/flight-demo/interpolation-publication-1792707062525907000",
+  "standalone_output": "/private/tmp/f65-m2-interpolation-publication/build/flight-demo/m2-pr1-1792707062550983000",
+  "standalone_sha256": "622ff2318cdf7cee9cd3be721fabb118a56cf0929eb0fb58debcad6cd53fb88d",
+  "reviewed_standalone_identity": "PASS byte-identical",
+  "stack": {
+    "hardware_bytes_main_including_entry_return": 20,
+    "software_dynamic_bytes": 0,
+    "software_constant_adjustments": 0,
+    "call_entries_checked": 11,
+    "scope": "direct-call probe; no IRQ/NMI or executed high-water claim",
+    "compiler_static_stack_bytes": 487
+  },
+  "sections": {
+    ".text": {
+      "start": 8215,
+      "bytes": 14270
+    },
+    ".rodata": {
+      "start": 22488,
+      "bytes": 794
+    },
+    ".data": {
+      "start": 23282,
+      "bytes": 22
+    },
+    ".bss": {
+      "start": 23304,
+      "bytes": 1456
+    },
+    ".noinit": {
+      "start": 24760,
+      "bytes": 487
+    }
+  },
+  "interpolation_cases": 457334,
+  "projection_cases": 799886,
+  "projection_contracts": 34,
+  "decimal_cases": 3857,
+  "clipping_regressions": 841,
+  "interpolation_corpus_sha256": "d86ade1681153dca3ea00d72de2272b64c09bda5c5c16ce489194aa566132b37",
+  "projection_corpus_sha256": "92c334a7812dabafe70ccef7ab8703db424c15ef1f312c56fd314bf36f90a8d5",
+  "reserve_allocation": 0,
+  "full_composition_relinks": 0,
+  "target_execution": "NOT RUN"
+}

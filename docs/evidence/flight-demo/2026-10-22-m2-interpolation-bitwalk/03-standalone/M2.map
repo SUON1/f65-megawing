@@ -1,0 +1,144 @@
+     VMA      LMA     Size Align Out     In      Symbol
+       0        0        0     1 __basic_zp_start = 0x0002
+       0        0        0     1 __basic_zp_end = 0x0090
+       0        0        0     1 __rc0 = __basic_zp_start
+       0        0        0     1 __rc1 = __rc0 + 1
+       0        0        0     1 PROVIDE(__rc2 = __rc1 + 1)
+       0        0        0     1 __rc3 = __rc2 + 1
+       0        0        0     1 PROVIDE(__rc4 = __rc3 + 1)
+       0        0        0     1 __rc5 = __rc4 + 1
+       0        0        0     1 PROVIDE(__rc6 = __rc5 + 1)
+       0        0        0     1 __rc7 = __rc6 + 1
+       0        0        0     1 PROVIDE(__rc8 = __rc7 + 1)
+       0        0        0     1 __rc9 = __rc8 + 1
+       0        0        0     1 PROVIDE(__rc10 = __rc9 + 1)
+       0        0        0     1 __rc11 = __rc10 + 1
+       0        0        0     1 PROVIDE(__rc12 = __rc11 + 1)
+       0        0        0     1 __rc13 = __rc12 + 1
+       0        0        0     1 PROVIDE(__rc14 = __rc13 + 1)
+       0        0        0     1 __rc15 = __rc14 + 1
+       0        0        0     1 PROVIDE(__rc16 = __rc15 + 1)
+       0        0        0     1 __rc17 = __rc16 + 1
+       0        0        0     1 PROVIDE(__rc18 = __rc17 + 1)
+       0        0        0     1 __rc19 = __rc18 + 1
+       0        0        0     1 PROVIDE(__rc20 = __rc19 + 1)
+       0        0        0     1 __rc21 = __rc20 + 1
+       0        0        0     1 PROVIDE(__rc22 = __rc21 + 1)
+       0        0        0     1 __rc23 = __rc22 + 1
+       0        0        0     1 PROVIDE(__rc24 = __rc23 + 1)
+       0        0        0     1 __rc25 = __rc24 + 1
+       0        0        0     1 PROVIDE(__rc26 = __rc25 + 1)
+       0        0        0     1 __rc27 = __rc26 + 1
+       0        0        0     1 PROVIDE(__rc28 = __rc27 + 1)
+       0        0        0     1 __rc29 = __rc28 + 1
+       0        0        0     1 PROVIDE(__rc30 = __rc29 + 1)
+       0        0        0     1 __rc31 = __rc30 + 1
+       0        0        0     1 __basic_zp_size = __basic_zp_end - __basic_zp_start
+    2001     2001       16     1 .basic_header
+    2001     2001       16     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/basic-header.o:(.basic_header)
+    2015     2015        0     1                 next_line
+      22       22        0     1 .zp.data
+      22       22        0     1         __zp_data_start = .
+      22       22        0     1 __zp_data_load_start = LOADADDR(.zp.data)
+      22       22        0     1 __zp_data_size = SIZEOF(.zp.data)
+      22       22        0     1 .zp.bss
+      22       22        0     1         __zp_bss_start = .
+      22       22        0     1 __zp_bss_size = SIZEOF(.zp.bss)
+    2017     2017     37be     1 .text
+    2017     2017        0     1         _init = .
+    2017     2017        0     1         _start = .
+    2017     2017        e     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/unmap-basic.o:(.init.010)
+    2025     2025        8     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(init-stack.S.obj):(.init.100)
+    2025     2025        0     1                 __do_init_stack
+    202d     202d        3     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(zero-bss.c.obj):(.init.200)
+    202d     202d        0     1                 __do_zero_bss
+    2030     2030        3     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/common/lib/crt0.o:(.call_main)
+    2033     2033        3     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(exit-custom.S.obj):(.after_main)
+    2033     2033        0     1                 __after_main
+    2036     2036        0     1         _fini = .
+    2036     2036        a     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/unmap-basic.o:(.fini.990)
+    2040     2040        1     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/common/lib/crt0.o:(.fini_rts)
+    2041     2041       13     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(zero-bss.c.obj):(.text.__zero_bss)
+    2041     2041       13     1                 __zero_bss
+    2054     2054      6a8     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-pr1-1792683066367533000/M2.prg.lto.o:(.text.m2_transform)
+    2054     2054      6a8     1                 m2_transform
+    26fc     26fc      414     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-pr1-1792683066367533000/M2.prg.lto.o:(.text.multiply_rotation)
+    26fc     26fc      414     1                 multiply_rotation
+    2b10     2b10      14e     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-pr1-1792683066367533000/M2.prg.lto.o:(.text.record_valid)
+    2b10     2b10      14e     1                 record_valid
+    2c5e     2c5e     2526     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-pr1-1792683066367533000/M2.prg.lto.o:(.text.main)
+    2c5e     2c5e     2526     1                 main
+    5184     5184        5     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-pr1-1792683066367533000/M2.prg.lto.o:(.text.exit)
+    5184     5184        5     1                 exit
+    5189     5189      357     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-pr1-1792683066367533000/M2.prg.lto.o:(.text.__udivdi3)
+    5189     5189      357     1                 __udivdi3
+    54e0     54e0       a6     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-pr1-1792683066367533000/M2.prg.lto.o:(.text.__umodhi3)
+    54e0     54e0       a6     1                 __umodhi3
+    5586     5586       6e     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-pr1-1792683066367533000/M2.prg.lto.o:(.text.__modhi3)
+    5586     5586       6e     1                 __modhi3
+    55f4     55f4       24     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-pr1-1792683066367533000/M2.prg.lto.o:(.text.memcpy)
+    55f4     55f4       24     1                 memcpy
+    5618     5618       1c     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-pr1-1792683066367533000/M2.prg.lto.o:(.text.__memset)
+    5618     5618       1c     1                 __memset
+    5634     5634       79     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-pr1-1792683066367533000/M2.prg.lto.o:(.text.__mulsi3)
+    5634     5634       79     1                 __mulsi3
+    56ad     56ad      128     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-pr1-1792683066367533000/M2.prg.lto.o:(.text.__muldi3)
+    56ad     56ad      128     1                 __muldi3
+    57d5     57d5        0     1         __init_array_start = .
+    57d5     57d5        0     1         __init_array_end = .
+    57d5     57d5        0     1         __fini_array_start = .
+    57d5     57d5        0     1         __fini_array_end = .
+    57d8     57d8      31a     8 .rodata
+    57d8     57d8      2d8     8         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-pr1-1792683066367533000/M2.prg.lto.o:(.rodata.m2_sine_q46)
+    57d8     57d8      2d8     1                 m2_sine_q46
+    5ab0     5ab0        1     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/common/lib/libcrt.a(const.S.obj):(.rodata)
+    5ab0     5ab0        0     1                 __set_v
+    5ab1     5ab1        9     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-pr1-1792683066367533000/M2.prg.lto.o:(.rodata..L__const.m2_surface_query.result)
+    5aba     5aba       38     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-pr1-1792683066367533000/M2.prg.lto.o:(.rodata.m2_transform.products)
+    5aba     5aba       38     1                 m2_transform.products
+    5af2     5af2       16     1 .data
+    5af2     5af2        0     1         __data_start = .
+    5af2     5af2       16     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-pr1-1792683066367533000/M2.prg.lto.o:(.data.m2_probe_camera)
+    5af2     5af2       16     1                 m2_probe_camera
+    5b08     5b08        0     1         __data_end = .
+    5b08     5b08        0     1 __data_load_start = LOADADDR(.data)
+    5b08     5b08        0     1 __data_size = SIZEOF(.data)
+    5b08     5b08      5b0     1 .bss
+    5b08     5b08        0     1         __bss_start = .
+    5b08     5b08        1     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-pr1-1792683066367533000/M2.prg.lto.o:(.bss.m2_probe_index)
+    5b08     5b08        1     1                 m2_probe_index
+    5b09     5b09        c     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-pr1-1792683066367533000/M2.prg.lto.o:(.bss.m2_probe_first)
+    5b09     5b09        c     1                 m2_probe_first
+    5b15     5b15        c     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-pr1-1792683066367533000/M2.prg.lto.o:(.bss.m2_probe_last)
+    5b15     5b15        c     1                 m2_probe_last
+    5b21     5b21        1     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-pr1-1792683066367533000/M2.prg.lto.o:(.bss.m2_probe_status)
+    5b21     5b21        1     1                 m2_probe_status
+    5b22     5b22        9     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-pr1-1792683066367533000/M2.prg.lto.o:(.bss.m2_probe_surface)
+    5b22     5b22        9     1                 m2_probe_surface
+    5b2b     5b2b       10     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-pr1-1792683066367533000/M2.prg.lto.o:(.bss.m2_probe_line)
+    5b2b     5b2b       10     1                 m2_probe_line
+    5b3b     5b3b      500     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-pr1-1792683066367533000/M2.prg.lto.o:(.bss.m2_probe_pixels)
+    5b3b     5b3b      500     1                 m2_probe_pixels
+    603b     603b        2     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-pr1-1792683066367533000/M2.prg.lto.o:(.bss.m2_probe_count)
+    603b     603b        2     1                 m2_probe_count
+    603d     603d       77     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-pr1-1792683066367533000/M2.prg.lto.o:(.bss.m2_probe_record)
+    603d     603d       77     1                 m2_probe_record
+    60b4     60b4        4     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-pr1-1792683066367533000/M2.prg.lto.o:(.bss.m2_probe_digest)
+    60b4     60b4        4     1                 m2_probe_digest
+    60b8     60b8        0     1         __bss_end = .
+    60b8     60b8        0     1 __bss_size = SIZEOF(.bss)
+    60b8     60b8      1e7     1 .noinit
+    60b8     60b8      1e7     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-pr1-1792683066367533000/M2.prg.lto.o:(.noinit..Lstatic_stack)
+    629f     629f        0     1         __heap_start = ALIGN(., 2)
+    629f     629f        0     1 __stack = 0xd000
+       0        0       cc     1 .comment
+       0        0       cc     1         <internal>:(.comment)
+       0        0       1e     1 .llvm_sympart
+       0        0        f     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-pr1-1792683066367533000/M2.prg.lto.o:(.llvm_sympart)
+       f        f        f     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-pr1-1792683066367533000/M2.prg.lto.o:(.llvm_sympart)
+       0        0      b10     4 .symtab
+       0        0      b10     4         <internal>:(.symtab)
+       0        0       72     1 .shstrtab
+       0        0       72     1         <internal>:(.shstrtab)
+       0        0      650     1 .strtab
+       0        0      650     1         <internal>:(.strtab)

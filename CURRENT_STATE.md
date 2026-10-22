@@ -140,6 +140,15 @@ experiment and corrected artifact remain unchanged: the correction saves 72
 resident bytes against the 34,221-byte reference, leaving a 9,574-byte deficit.
 See the [projection publication scope](docs/reports/M2_PR2_PROJECTION_PUBLICATION.md)
 and [correction evidence](docs/reports/M2_PR2_PROJECTION_FORWARD_GUARD.md).
+The founder also approved the bounded interpolation bit-consumption result and
+the required BIT/CLV host-verifier coverage correction for publication. The
+private interpolation helper and focused regressions are integrated separately
+from the unmerged renderer/cache/dispatch scaffold. The retained composition
+saves 385 resident bytes, leaving a 9,189-byte deficit under the unchanged
+ceiling. Projection-closure stack bounds pass at 24 hardware / 8 dynamic software
+bytes; whole-program proof remains unsupported at CLD. See the
+[interpolation publication scope](docs/reports/M2_PR2_INTERPOLATION_PUBLICATION.md)
+and [exact relink evidence](docs/reports/M2_PR2_INTERPOLATION_RELINK_RESULT.md).
 Full-renderer fit, integrated stack/timing and high-resolution output mapping
 remain open; no M2 target execution is claimed. Carry remaining obligations to the exact
 owner gates approved in the entry plan. Establish actual measured limits and

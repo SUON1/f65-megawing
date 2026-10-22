@@ -1,0 +1,109 @@
+[
+  {
+    "argv": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "tools/flight_demo/m2/build.py"
+    ],
+    "exit": 0,
+    "log": "standalone.txt"
+  },
+  {
+    "argv": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "tests/flight_demo/m2_full/interpolation_corpus.py",
+      "/private/tmp/f65-m2-interpolation-publication/build/flight-demo/interpolation-publication-1792707062525907000/interpolation.bin"
+    ],
+    "exit": 0,
+    "log": "interpolation-corpus.txt"
+  },
+  {
+    "argv": [
+      "/usr/bin/clang",
+      "-std=c11",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-Wconversion",
+      "-Werror",
+      "-fsanitize=address,undefined",
+      "-Isrc/graphics",
+      "-Isrc/environment",
+      "-Iinterfaces/generated",
+      "-Idocs/evidence/flight-demo/2026-10-22-m2-interpolation-bitwalk",
+      "tests/flight_demo/m2_full/interpolation_equivalence.c",
+      "src/environment/m2_fixture.c",
+      "interfaces/generated/m2_tables.c",
+      "-o",
+      "/private/tmp/f65-m2-interpolation-publication/build/flight-demo/interpolation-publication-1792707062525907000/interpolation-host"
+    ],
+    "exit": 0,
+    "log": "interpolation-compile.txt"
+  },
+  {
+    "argv": [
+      "/private/tmp/f65-m2-interpolation-publication/build/flight-demo/interpolation-publication-1792707062525907000/interpolation-host",
+      "/private/tmp/f65-m2-interpolation-publication/build/flight-demo/interpolation-publication-1792707062525907000/interpolation.bin"
+    ],
+    "exit": 0,
+    "log": "interpolation.txt"
+  },
+  {
+    "argv": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "tests/flight_demo/m2_full/projection_corpus.py",
+      "/private/tmp/f65-m2-interpolation-publication/build/flight-demo/interpolation-publication-1792707062525907000/projection.bin"
+    ],
+    "exit": 0,
+    "log": "projection-corpus.txt"
+  },
+  {
+    "argv": [
+      "/usr/bin/clang",
+      "-std=c11",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-Wconversion",
+      "-Werror",
+      "-fsanitize=address,undefined",
+      "-Isrc/graphics",
+      "-Isrc/environment",
+      "-Iinterfaces/generated",
+      "-Idocs/evidence/flight-demo/2026-10-21-m2-projection-sequence",
+      "tests/flight_demo/m2_full/projection_equivalence.c",
+      "src/environment/m2_fixture.c",
+      "interfaces/generated/m2_tables.c",
+      "-o",
+      "/private/tmp/f65-m2-interpolation-publication/build/flight-demo/interpolation-publication-1792707062525907000/projection-host"
+    ],
+    "exit": 0,
+    "log": "projection-compile.txt"
+  },
+  {
+    "argv": [
+      "/private/tmp/f65-m2-interpolation-publication/build/flight-demo/interpolation-publication-1792707062525907000/projection-host",
+      "/private/tmp/f65-m2-interpolation-publication/build/flight-demo/interpolation-publication-1792707062525907000/projection.bin"
+    ],
+    "exit": 0,
+    "log": "projection.txt"
+  },
+  {
+    "argv": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tools/ci",
+      "-p",
+      "test_*.py",
+      "-v"
+    ],
+    "exit": 0,
+    "log": "hygiene-fixtures.txt"
+  }
+]

@@ -1,0 +1,111 @@
+{
+  "status": "PASS",
+  "experiment_existing_paths": 15819,
+  "changed_existing_paths": [
+    "WORK_IN_PROGRESS.md",
+    "tests/flight_demo/m2/test_contract.py",
+    "tools/flight_demo/m2/stack_check.py"
+  ],
+  "new_paths_within_packet_and_report": "PASS",
+  "unchanged_other_checkouts": {
+    "/Users/slice/Developer/f65-megawing": 15731,
+    "/private/tmp/f65-m2-projection-experiment": 15702,
+    "/private/tmp/f65-m2-transform-experiment": 15536,
+    "/private/tmp/f65-m2-interpolation-intent": 15719
+  },
+  "unrelated_entries": [
+    "docs/evidence/r0f/successor/2026-09-22-workflow/R0FCAP13/",
+    "docs/evidence/r0f/successor/2026-09-22-workflow/R0FCAP14/",
+    "docs/evidence/r0f/successor/2026-09-22-workflow/R0FCLK08/",
+    "docs/evidence/r0f/successor/2026-09-22-workflow/R0FCLK09/",
+    "docs/evidence/r0f/successor/2026-09-22-workflow/R0FIRQ10/",
+    "docs/evidence/r0f/successor/2026-09-22-workflow/R0FIRQ11/",
+    "docs/evidence/r0f/successor/2026-09-25-r0fdbg07-physical/",
+    "docs/evidence/r0f/successor/2026-09-26-irq-handoff/",
+    "docs/evidence/r0f/successor/2026-09-26-r0fclk09-physical/",
+    "docs/evidence/r0f/successor/2026-09-26-r0firq10-physical/",
+    "docs/evidence/r0f/successor/2026-09-26-raster-irq/",
+    "docs/evidence/r0f/successor/2026-09-28-cap13-viewer/",
+    "docs/evidence/r0f/successor/2026-09-28-cap14-physical/",
+    "docs/evidence/r0f/successor/2026-09-28-r0firq11-physical/",
+    "docs/reports/R0-F_CAP14_DELIVERY_PREPARATION.md",
+    "docs/reports/SD_BACKUP_2026-09-28.md",
+    "tools/diagnostics/d81_fat_mirror_diagnostic.py",
+    "tools/diagnostics/mega65_sd_readonly_backup.py",
+    "tools/diagnostics/test_d81_fat_mirror_diagnostic.py",
+    "tools/diagnostics/test_mega65_sd_readonly_backup.py"
+  ],
+  "historical_flight_inventories": {
+    "docs/evidence/flight-demo/2026-10-20-m2-pr1/inventory.json": {
+      "sha256": "022e13d2fea3ea29acfb002f61806bb8efaaa8e6febd3fbba215395a7781fb04",
+      "files": 11
+    },
+    "docs/evidence/flight-demo/2026-10-20-m2-pr1-clipping-p2/inventory.json": {
+      "sha256": "63e1173398904c45fe00ec1c0cd7fdc4194c4a03de80b9298d4a5c9fe9a62cec",
+      "files": 14
+    },
+    "docs/evidence/flight-demo/2026-10-20-m2-pr2-fit/inventory.json": {
+      "sha256": "f455b6a770065dc634cdf6fd838a85b51ace732d72e6943627e391e902fb54ba",
+      "files": 13
+    },
+    "docs/evidence/flight-demo/2026-10-20-m2-pr2-size-reduction/inventory.json": {
+      "sha256": "610a95351fcb3e370c9b658f33497839f2d28dbed0f50b888b54ce3ff080e648",
+      "files": 34
+    },
+    "docs/evidence/flight-demo/2026-10-21-m2-fit-overrun-fix/inventory.json": {
+      "sha256": "378395803f1a7bdeb958cc5e0c5c94043b4ba928e69295f266121ccc6070180d",
+      "files": 21
+    },
+    "docs/evidence/flight-demo/2026-10-21-m2-full-composition/inventory.json": {
+      "sha256": "a2a246280b828357153fa7822539d6ff666d28f5badaeaa5a3696042b8dad802",
+      "files": 23
+    },
+    "docs/evidence/flight-demo/2026-10-21-m2-generation-cache/inventory.json": {
+      "sha256": "0f6e27d6d31499068cc8fe9ae618387ce2287d24b2524a207ecfa58164c84e1d",
+      "files": 66
+    },
+    "docs/evidence/flight-demo/2026-10-21-m2-projection-forward-guard/inventory.json": {
+      "sha256": "4a6a2f67278376e34511040a49bab1532ffdfbe88cb3b49823eb39d69f14efb0",
+      "files": 64
+    },
+    "docs/evidence/flight-demo/2026-10-21-m2-projection-publication/inventory.json": {
+      "sha256": "8ffca3a5a5558e14cb1ce47b57dc7975b1daee5d65092c32b7de275f8350d41f",
+      "files": 27
+    },
+    "docs/evidence/flight-demo/2026-10-21-m2-projection-sequence/inventory.json": {
+      "sha256": "37ab3c43b4aec672433671eba2fc489949e5d0241a3001065a9346a397ff1c04",
+      "files": 71
+    },
+    "docs/evidence/flight-demo/2026-10-21-m2-q46-limb16/inventory.json": {
+      "sha256": "98e92da7e2c835ed69257ad30b2541d3fc9b3fc5c4046c65bad0ff33aba1cce6",
+      "files": 48
+    },
+    "docs/evidence/flight-demo/2026-10-21-m2-q46-publication/inventory.json": {
+      "sha256": "0e1f05af01243b5369081a41f3a418f20619f1bd2e3f41f78db73a50f1a87d5c",
+      "files": 23
+    },
+    "docs/evidence/flight-demo/2026-10-21-m2-renderer-fit/inventory.json": {
+      "sha256": "1266c44f842de62281a9e2057569338e2172c616df5763fa3ad0952693b9afb5",
+      "files": 47
+    },
+    "docs/evidence/flight-demo/2026-10-21-m2-transform-publication/inventory.json": {
+      "sha256": "64666dd4de57d18a39b26a67323c19c086a77d2b558bb8e9d5b34a23745b2f77",
+      "files": 21
+    },
+    "docs/evidence/flight-demo/2026-10-21-m2-transform-sequence/inventory.json": {
+      "sha256": "4a4d78bcb337f05290ebb0222a77f34333ab5aec0b595a276e1640c06c838179",
+      "files": 65
+    },
+    "docs/evidence/flight-demo/2026-10-22-m2-interpolation-bitwalk/inventory.json": {
+      "sha256": "f1fe60f9df3af61d2837be0f72ab10fcf57610e714ee29d8a7e6e463164e7298",
+      "files": 82
+    }
+  },
+  "raw_artifacts_unchanged": 57,
+  "generated_and_memory_files_unchanged": 43,
+  "local_links_checked": 10,
+  "whitespace_and_json": "PASS",
+  "report_sha256": "971de1d36bda2a65488a0e5cbaf22e6f4c1d670a5cd82324e32b6d353f4b0100",
+  "wip_sha256": "97aba377ddf410ef46a624536ef5fa099bb1e4e33958423c10ea700dda1d2bef",
+  "relinks": 0
+}

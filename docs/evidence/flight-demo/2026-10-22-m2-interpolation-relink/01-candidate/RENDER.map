@@ -1,0 +1,374 @@
+     VMA      LMA     Size Align Out     In      Symbol
+       0        0        0     1 __basic_zp_start = 0x0002
+       0        0        0     1 __basic_zp_end = 0x0090
+       0        0        0     1 __rc0 = __basic_zp_start
+       0        0        0     1 __rc1 = __rc0 + 1
+       0        0        0     1 PROVIDE(__rc2 = __rc1 + 1)
+       0        0        0     1 __rc3 = __rc2 + 1
+       0        0        0     1 PROVIDE(__rc4 = __rc3 + 1)
+       0        0        0     1 __rc5 = __rc4 + 1
+       0        0        0     1 PROVIDE(__rc6 = __rc5 + 1)
+       0        0        0     1 __rc7 = __rc6 + 1
+       0        0        0     1 PROVIDE(__rc8 = __rc7 + 1)
+       0        0        0     1 __rc9 = __rc8 + 1
+       0        0        0     1 PROVIDE(__rc10 = __rc9 + 1)
+       0        0        0     1 __rc11 = __rc10 + 1
+       0        0        0     1 PROVIDE(__rc12 = __rc11 + 1)
+       0        0        0     1 __rc13 = __rc12 + 1
+       0        0        0     1 PROVIDE(__rc14 = __rc13 + 1)
+       0        0        0     1 __rc15 = __rc14 + 1
+       0        0        0     1 PROVIDE(__rc16 = __rc15 + 1)
+       0        0        0     1 __rc17 = __rc16 + 1
+       0        0        0     1 PROVIDE(__rc18 = __rc17 + 1)
+       0        0        0     1 __rc19 = __rc18 + 1
+       0        0        0     1 PROVIDE(__rc20 = __rc19 + 1)
+       0        0        0     1 __rc21 = __rc20 + 1
+       0        0        0     1 PROVIDE(__rc22 = __rc21 + 1)
+       0        0        0     1 __rc23 = __rc22 + 1
+       0        0        0     1 PROVIDE(__rc24 = __rc23 + 1)
+       0        0        0     1 __rc25 = __rc24 + 1
+       0        0        0     1 PROVIDE(__rc26 = __rc25 + 1)
+       0        0        0     1 __rc27 = __rc26 + 1
+       0        0        0     1 PROVIDE(__rc28 = __rc27 + 1)
+       0        0        0     1 __rc29 = __rc28 + 1
+       0        0        0     1 PROVIDE(__rc30 = __rc29 + 1)
+       0        0        0     1 __rc31 = __rc30 + 1
+       0        0        0     1 __basic_zp_size = __basic_zp_end - __basic_zp_start
+    2001     2001       16     1 .basic_header
+    2001     2001       16     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/basic-header.o:(.basic_header)
+    2015     2015        0     1                 next_line
+      22       22        0     1 .zp.data
+      22       22        0     1         __zp_data_start = .
+      22       22        0     1 __zp_data_load_start = LOADADDR(.zp.data)
+      22       22        0     1 __zp_data_size = SIZEOF(.zp.data)
+      22       22        0     1 .zp.bss
+      22       22        0     1         __zp_bss_start = .
+      22       22        0     1 __zp_bss_size = SIZEOF(.zp.bss)
+    2017     2017     76a0     1 .text
+    2017     2017        0     1         _init = .
+    2017     2017        0     1         _start = .
+    2017     2017        e     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/unmap-basic.o:(.init.010)
+    2025     2025        3     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/r0a_platform_45gs02-dd7584.o:(.init.011)
+    2025     2025        0     1                 f65_basepage_enter
+    2028     2028        8     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(init-stack.S.obj):(.init.100)
+    2028     2028        0     1                 __do_init_stack
+    2030     2030        3     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(zero-bss.c.obj):(.init.200)
+    2030     2030        0     1                 __do_zero_bss
+    2033     2033        3     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/common/lib/crt0.o:(.call_main)
+    2036     2036        3     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(exit-custom.S.obj):(.after_main)
+    2036     2036        0     1                 __after_main
+    2039     2039        0     1         _fini = .
+    2039     2039        3     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/r0a_platform_45gs02-dd7584.o:(.fini.989)
+    2039     2039        0     1                 f65_basepage_leave
+    203c     203c        a     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/unmap-basic.o:(.fini.990)
+    2046     2046        1     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/common/lib/crt0.o:(.fini_rts)
+    2047     2047      140     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/qualification_45gs02-53a3e2.o:(.text.r0f_pf)
+    2047     2047        0     1                 r0f_pf_enter
+    20a7     20a7        0     1                 r0f_pf_start_irq
+    20be     20be        0     1                 r0f_pf_stop_irq
+    20ca     20ca        0     1                 r0f_pf_irq
+    20f6     20f6        0     1                 r0f_pf_nmi
+    20fe     20fe        0     1                 r0f_pf_flat_copy
+    213b     213b        0     1                 r0f_pf_register_probe
+    2187     2187       b4     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/combined_45gs02-21767f.o:(.text.r0fc_platform)
+    2187     2187        0     1                 r0fc_rom_toggle
+    21aa     21aa        0     1                 r0fc_stack_seed
+    21f1     21f1        0     1                 r0fc_stack_measure
+    223b     223b        7     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/backend.o:(.text.m2_fit_camera_keys)
+    223b     223b        7     1                 m2_fit_camera_keys
+    2242     2242       1d     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/backend.o:(.text.m2_backend_tile)
+    2242     2242       1d     1                 m2_backend_tile
+    225f     225f        7     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/backend.o:(.text.m2_backend_activate)
+    225f     225f        7     1                 m2_backend_activate
+    2266     2266       16     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/backend.o:(.text.m2_fit_service_bound)
+    2266     2266       16     1                 m2_fit_service_bound
+    227c     227c       16     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/backend.o:(.text.m2_fit_return_margin)
+    227c     227c       16     1                 m2_fit_return_margin
+    2292     2292       13     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(zero-bss.c.obj):(.text.__zero_bss)
+    2292     2292       13     1                 __zero_bss
+    22a5     22a5       77     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.m2_point_valid)
+    22a5     22a5       77     1                 m2_point_valid
+    231c     231c      2cf     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.m2_fixture_segment)
+    231c     231c      2cf     1                 m2_fixture_segment
+    25eb     25eb      213     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.m2_camera_valid)
+    25eb     25eb      213     1                 m2_camera_valid
+    27fe     27fe      3d9     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.m2_transform)
+    27fe     27fe      3d9     1                 m2_transform
+    2bd7     2bd7       e8     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.sine)
+    2bd7     2bd7       e8     1                 sine
+    2cbf     2cbf        3     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.multiply_rotation)
+    2cbf     2cbf        3     1                 multiply_rotation
+    2cc2     2cc2      41e     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.m2_multiply_q46)
+    2cc2     2cc2      41e     1                 m2_multiply_q46
+    30e0     30e0       78     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.m2_prepare)
+    30e0     30e0       78     1                 m2_prepare
+    3158     3158      76c     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.m2_project_prepared)
+    3158     3158      76c     1                 m2_project_prepared
+    38c4     38c4      28b     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.to_camera)
+    38c4     38c4      28b     1                 to_camera
+    3b4f     3b4f      3b2     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.plane_distance)
+    3b4f     3b4f      3b2     1                 plane_distance
+    3f01     3f01      4e9     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.interpolate_delta)
+    3f01     3f01      4e9     1                 interpolate_delta
+    43ea     43ea      218     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.project_axis)
+    43ea     43ea      218     1                 project_axis
+    4602     4602       ff     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.rounded_ratio)
+    4602     4602       ff     1                 rounded_ratio
+    4701     4701      3b1     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.m2_raster_begin)
+    4701     4701      3b1     1                 m2_raster_begin
+    4ab2     4ab2       76     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.raster_coordinate)
+    4ab2     4ab2       76     1                 raster_coordinate
+    4b28     4b28      1db     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.m2_raster_next)
+    4b28     4b28      1db     1                 m2_raster_next
+    4d03     4d03      318     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.m2_ground_prepared)
+    4d03     4d03      318     1                 m2_ground_prepared
+    501b     501b      195     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.m2_registration_prepared)
+    501b     501b      195     1                 m2_registration_prepared
+    51b0     51b0      401     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.m2_registration_matches_prepared)
+    51b0     51b0      401     1                 m2_registration_matches_prepared
+    55b1     55b1       24     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.m1_core_init)
+    55b1     55b1       24     1                 m1_core_init
+    55d5     55d5      12c     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.m1_command)
+    55d5     55d5      12c     1                 m1_command
+    5701     5701      32d     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.m1_tick)
+    5701     5701      32d     1                 m1_tick
+    5a2e     5a2e       6d     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.m1_input_sample)
+    5a2e     5a2e       6d     1                 m1_input_sample
+    5a9b     5a9b       6c     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.m1_extract)
+    5a9b     5a9b       6c     1                 m1_extract
+    5b07     5b07       95     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.m1_publish)
+    5b07     5b07       95     1                 m1_publish
+    5b9c     5b9c      104     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.m1_acquire)
+    5b9c     5b9c      104     1                 m1_acquire
+    5ca0     5ca0        c     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.m1_release)
+    5ca0     5ca0        c     1                 m1_release
+    5cac     5cac       13     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.m2_renderer_init)
+    5cac     5cac       13     1                 m2_renderer_init
+    5cbf     5cbf       66     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.m2_label_offer)
+    5cbf     5cbf       66     1                 m2_label_offer
+    5d25     5d25      15d     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.m2_renderer_begin)
+    5d25     5d25      15d     1                 m2_renderer_begin
+    5e82     5e82       b8     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.fail)
+    5e82     5e82       b8     1                 fail
+    5f3a     5f3a       c7     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.m2_renderer_cancel)
+    5f3a     5f3a       c7     1                 m2_renderer_cancel
+    6001     6001      248     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.m2_renderer_service)
+    6001     6001      248     1                 m2_renderer_service
+    6249     6249      14c     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.registration)
+    6249     6249      14c     1                 registration
+    6395     6395      1b7     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.anchor)
+    6395     6395      1b7     1                 anchor
+    654c     654c      3fc     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.telemetry)
+    654c     654c      3fc     1                 telemetry
+    6948     6948      1b5     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.cache_segment)
+    6948     6948      1b5     1                 cache_segment
+    6afd     6afd      270     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.background)
+    6afd     6afd      270     1                 background
+    6d6d     6d6d      198     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.segment)
+    6d6d     6d6d      198     1                 segment
+    6f05     6f05       c5     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.paint)
+    6f05     6f05       c5     1                 paint
+    6fca     6fca      450     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.overlay)
+    6fca     6fca      450     1                 overlay
+    741a     741a       53     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.put_text)
+    741a     741a       53     1                 put_text
+    746d     746d       4a     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.hex)
+    746d     746d       4a     1                 hex
+    74b7     74b7      24c     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.m2_renderer_commit)
+    74b7     74b7      24c     1                 m2_renderer_commit
+    7703     7703       51     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.m2_font_row)
+    7703     7703       51     1                 m2_font_row
+    7754     7754       1f     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.m2_camera_pressed)
+    7754     7754       1f     1                 m2_camera_pressed
+    7773     7773        f     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.m2_camera_reset)
+    7773     7773        f     1                 m2_camera_reset
+    7782     7782      412     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.m2_camera_command)
+    7782     7782      412     1                 m2_camera_command
+    7b94     7b94       51     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.direction)
+    7b94     7b94       51     1                 direction
+    7be5     7be5       f2     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.m2_dispatch_allows)
+    7be5     7be5       f2     1                 m2_dispatch_allows
+    7cd7     7cd7       9c     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.m2_dispatch_next)
+    7cd7     7cd7       9c     1                 m2_dispatch_next
+    7d73     7d73      262     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.m1_platform_begin)
+    7d73     7d73      262     1                 m1_platform_begin
+    7fd5     7fd5        3     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.m1_platform_now)
+    7fd5     7fd5        3     1                 m1_platform_now
+    7fd8     7fd8       16     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.m1_platform_period)
+    7fd8     7fd8       16     1                 m1_platform_period
+    7fee     7fee       11     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.m1_platform_key)
+    7fee     7fee       11     1                 m1_platform_key
+    7fff     7fff       12     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.m1_platform_fault)
+    7fff     7fff       12     1                 m1_platform_fault
+    8011     8011       3a     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.m1_platform_measure)
+    8011     8011       3a     1                 m1_platform_measure
+    804b     804b        6     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.m1_platform_alarm)
+    804b     804b        6     1                 m1_platform_alarm
+    8051     8051       1e     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.cfput16)
+    8051     8051       1e     1                 cfput16
+    806f     806f       1d     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.cfput32)
+    806f     806f       1d     1                 cfput32
+    808c     808c       38     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.cfline)
+    808c     808c       38     1                 cfline
+    80c4     80c4        c     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.screen_byte)
+    80c4     80c4        c     1                 screen_byte
+    80d0     80d0      1cf     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.cfcopy)
+    80d0     80d0      1cf     1                 cfcopy
+    829f     829f      1bd     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.cfphysical_crc)
+    829f     829f      1bd     1                 cfphysical_crc
+    845c     845c       54     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.crc_byte)
+    845c     845c       54     1                 crc_byte
+    84b0     84b0       7a     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.cfentry)
+    84b0     84b0       7a     1                 cfentry
+    852a     852a      227     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.cfrom_begin)
+    852a     852a      227     1                 cfrom_begin
+    8751     8751       33     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.cfclock_begin)
+    8751     8751       33     1                 cfclock_begin
+    8784     8784       8e     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.cfnow)
+    8784     8784       8e     1                 cfnow
+    8812     8812      285     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.cfratio)
+    8812     8812      285     1                 cfratio
+    8a97     8a97      15f     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.r0fc_range)
+    8a97     8a97      15f     1                 r0fc_range
+    8bf6     8bf6       ba     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.inside)
+    8bf6     8bf6       ba     1                 inside
+    8cb0     8cb0      282     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.main)
+    8cb0     8cb0      282     1                 main
+    8f32     8f32        5     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.exit)
+    8f32     8f32        5     1                 exit
+    8f37     8f37       24     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.memcpy)
+    8f37     8f37       24     1                 memcpy
+    8f5b     8f5b       1c     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.__memset)
+    8f5b     8f5b       1c     1                 __memset
+    8f77     8f77       13     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.__lshrhi3)
+    8f77     8f77       13     1                 __lshrhi3
+    8f8a     8f8a       17     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.__lshrsi3)
+    8f8a     8f8a       17     1                 __lshrsi3
+    8fa1     8fa1      357     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.__udivdi3)
+    8fa1     8fa1      357     1                 __udivdi3
+    92f8     92f8       a6     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.__umodhi3)
+    92f8     92f8       a6     1                 __umodhi3
+    939e     939e       d8     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.__udivmodhi4)
+    939e     939e       d8     1                 __udivmodhi4
+    9476     9476       6e     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.__modhi3)
+    9476     9476       6e     1                 __modhi3
+    94e4     94e4       32     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.__mulhi3)
+    94e4     94e4       32     1                 __mulhi3
+    9516     9516       79     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.__mulsi3)
+    9516     9516       79     1                 __mulsi3
+    958f     958f      128     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.text.__muldi3)
+    958f     958f      128     1                 __muldi3
+    96b7     96b7        0     1         __init_array_start = .
+    96b7     96b7        0     1         __init_array_end = .
+    96b7     96b7        0     1         __fini_array_start = .
+    96b7     96b7        0     1         __fini_array_end = .
+    96b8     96b8      618     8 .rodata
+    96b8     96b8      2d8     8         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.rodata.m2_sine_q46)
+    96b8     96b8      2d8     1                 m2_sine_q46
+    9990     9990       38     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.rodata.m2_transform.products)
+    9990     9990       38     1                 m2_transform.products
+    99c8     99c8       e2     1         <internal>:(.rodata.str1.1)
+    9aaa     9aaa      1d8     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.rodata.glyphs)
+    9aaa     9aaa      1d8     1                 glyphs
+    9c82     9c82       16     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.rodata..L__const.m2_camera_reset.reset)
+    9c98     9c98       38     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.rodata.r0fc_range.ranges)
+    9c98     9c98       38     1                 r0fc_range.ranges
+    9cd0     9cd0        2     1 .data
+    9cd0     9cd0        0     1         __data_start = .
+    9cd0     9cd0        1     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/backend.o:(.data.m2_fit_copy_ok)
+    9cd0     9cd0        1     1                 m2_fit_copy_ok
+    9cd1     9cd1        1     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/backend.o:(.data.m2_fit_activate_ok)
+    9cd1     9cd1        1     1                 m2_fit_activate_ok
+    9cd2     9cd2        0     1         __data_end = .
+    9cd2     9cd2        0     1 __data_load_start = LOADADDR(.data)
+    9cd2     9cd2        0     1 __data_size = SIZEOF(.data)
+    9cd2     9cd2      64b     1 .bss
+    9cd2     9cd2        0     1         __bss_start = .
+    9cd2     9cd2        2     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/backend.o:(.bss.m2_fit_camera_down)
+    9cd2     9cd2        2     1                 m2_fit_camera_down
+    9cd4     9cd4        1     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/backend.o:(.bss.m2_fit_store)
+    9cd4     9cd4        1     1                 m2_fit_store
+    9cd5     9cd5        2     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/backend.o:(.bss.m2_fit_tile)
+    9cd5     9cd5        2     1                 m2_fit_tile
+    9cd7     9cd7       40     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/backend.o:(.bss.m2_fit_staging)
+    9cd7     9cd7       40     1                 m2_fit_staging
+    9d17     9d17        4     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/backend.o:(.bss.m2_fit_service_ticks)
+    9d17     9d17        4     1                 m2_fit_service_ticks
+    9d1b     9d1b        4     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/backend.o:(.bss.m2_fit_return_ticks)
+    9d1b     9d1b        4     1                 m2_fit_return_ticks
+    9d1f     9d1f        4     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.bss.period_q16)
+    9d1f     9d1f        4     1                 period_q16
+    9d23     9d23        1     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.bss.cfreclaimed)
+    9d23     9d23        1     1                 cfreclaimed
+    9d24     9d24        1     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.bss.backup_valid)
+    9d24     9d24        1     1                 backup_valid
+    9d25     9d25        1     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.bss.cffault)
+    9d25     9d25        1     1                 cffault
+    9d26     9d26        9     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.bss.r0f_pf_copy_request)
+    9d26     9d26        9     1                 r0f_pf_copy_request
+    9d2f     9d2f       ff     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.bss.block)
+    9d2f     9d2f       ff     1                 block
+    9e2e     9e2e        1     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.bss.r0f_pf_cpu_port)
+    9e2e     9e2e        1     1                 r0f_pf_cpu_port
+    9e2f     9e2f        1     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.bss.r0f_pf_stack_high)
+    9e2f     9e2f        1     1                 r0f_pf_stack_high
+    9e30     9e30       ff     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.bss.cfworkspace)
+    9e30     9e30       ff     1                 cfworkspace
+    9f2f     9f2f        1     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.bss.features_open)
+    9f2f     9f2f        1     1                 features_open
+    9f30     9f30        1     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.bss.r0fc_trap_flags)
+    9f30     9f30        1     1                 r0fc_trap_flags
+    9f31     9f31        1     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.bss.r0fc_trap_base)
+    9f31     9f31        1     1                 r0fc_trap_base
+    9f32     9f32        1     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.bss.r0f_pf_nmi_seen)
+    9f32     9f32        1     1                 r0f_pf_nmi_seen
+    9f33     9f33        2     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.bss.r0f_pf_irq_count)
+    9f33     9f33        2     1                 r0f_pf_irq_count
+    9f35     9f35        1     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.bss.r0fc_hardware_low)
+    9f35     9f35        1     1                 r0fc_hardware_low
+    9f36     9f36        2     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.bss.r0fc_software_low)
+    9f36     9f36        2     1                 r0fc_software_low
+    9f38     9f38        1     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.bss.r0f_pf_irq_seq)
+    9f38     9f38        1     1                 r0f_pf_irq_seq
+    9f39     9f39        1     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.bss.r0f_pf_irq_seen)
+    9f39     9f39        1     1                 r0f_pf_irq_seen
+    9f3a     9f3a        7     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.bss.r0f_pf_probe_regs)
+    9f3a     9f3a        7     1                 r0f_pf_probe_regs
+    9f41     9f41        1     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.bss.r0f_pf_copy_ok)
+    9f41     9f41        1     1                 r0f_pf_copy_ok
+    9f42     9f42        2     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.bss.r0f_pf_probe_timeout)
+    9f42     9f42        2     1                 r0f_pf_probe_timeout
+    9f44     9f44        1     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.bss.r0fc_features)
+    9f44     9f44        1     1                 r0fc_features
+    9f45     9f45        1     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.bss.r0fc_hardware_seed)
+    9f45     9f45        1     1                 r0fc_hardware_seed
+    9f46     9f46        2     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.bss.r0fc_software_seed)
+    9f46     9f46        2     1                 r0fc_software_seed
+    9f48     9f48       40     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.bss.core)
+    9f48     9f48       40     1                 core
+    9f88     9f88       16     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.bss.requested)
+    9f88     9f88       16     1                 requested
+    9f9e     9f9e      34e     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.bss.renderer)
+    9f9e     9f9e      34e     1                 renderer
+    a2ec     a2ec        1     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.bss.input.0)
+    a2ec     a2ec        1     1                 input.0
+    a2ed     a2ed       2e     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.bss.snapshots)
+    a2ed     a2ed       2e     1                 snapshots
+    a31b     a31b        2     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.bss.previous_camera_keys)
+    a31b     a31b        2     1                 previous_camera_keys
+    a31d     a31d        0     1         __bss_end = .
+    a31d     a31d        0     1 __bss_size = SIZEOF(.bss)
+    a31d     a31d       c8     1 .noinit
+    a31d     a31d       c8     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.noinit..Lstatic_stack)
+    a3e5     a3e5        0     1         __heap_start = ALIGN(., 2)
+    a3e5     a3e5        0     1 __stack = 0xd000
+       0        0       cc     1 .comment
+       0        0       cc     1         <internal>:(.comment)
+       0        0        f     1 .llvm_sympart
+       0        0        f     1         /private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000/RENDER.prg.lto.o:(.llvm_sympart)
+       0        0     12a0     4 .symtab
+       0        0     12a0     4         <internal>:(.symtab)
+       0        0       72     1 .shstrtab
+       0        0       72     1         <internal>:(.shstrtab)
+       0        0      d06     1 .strtab
+       0        0      d06     1         <internal>:(.strtab)

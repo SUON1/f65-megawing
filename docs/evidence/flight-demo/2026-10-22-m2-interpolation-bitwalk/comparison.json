@@ -1,0 +1,131 @@
+{
+  "status": "FAILED I5 prerequisite stack gate; implementation stopped",
+  "main": "c6a41e0988a3e329f1b30f7d48c87d92e00b523b",
+  "reference": {
+    "allocated": {
+      ".basic_header": {
+        "start": 8193,
+        "bytes": 22,
+        "type": 1
+      },
+      ".zp.data": {
+        "start": 34,
+        "bytes": 0,
+        "type": 1
+      },
+      ".zp.bss": {
+        "start": 34,
+        "bytes": 0,
+        "type": 8
+      },
+      ".text": {
+        "start": 8215,
+        "bytes": 30747,
+        "type": 1
+      },
+      ".rodata": {
+        "start": 38968,
+        "bytes": 1561,
+        "type": 1
+      },
+      ".data": {
+        "start": 40529,
+        "bytes": 2,
+        "type": 1
+      },
+      ".bss": {
+        "start": 40531,
+        "bytes": 1611,
+        "type": 8
+      },
+      ".noinit": {
+        "start": 42142,
+        "bytes": 200,
+        "type": 8
+      }
+    },
+    "resident_bytes": 34149,
+    "resident_end": 42342,
+    "gaps": 6,
+    "ceiling": 32768,
+    "deficit": 9574,
+    "reserve_allocation": 0
+  },
+  "reference_interpolation_bytes": 1605,
+  "reference_shift_helper_bytes": 31,
+  "candidate_composed_relinks": 0,
+  "candidate_composed_accounting": null,
+  "composed_savings": "UNMEASURED; no candidate relink",
+  "last_verified_composed_deficit": 9574,
+  "standalone": {
+    "allocated": {
+      ".basic_header": {
+        "start": 8193,
+        "bytes": 22,
+        "type": 1
+      },
+      ".zp.data": {
+        "start": 34,
+        "bytes": 0,
+        "type": 1
+      },
+      ".zp.bss": {
+        "start": 34,
+        "bytes": 0,
+        "type": 8
+      },
+      ".text": {
+        "start": 8215,
+        "bytes": 14270,
+        "type": 1
+      },
+      ".rodata": {
+        "start": 22488,
+        "bytes": 794,
+        "type": 1
+      },
+      ".data": {
+        "start": 23282,
+        "bytes": 22,
+        "type": 1
+      },
+      ".bss": {
+        "start": 23304,
+        "bytes": 1456,
+        "type": 8
+      },
+      ".noinit": {
+        "start": 24760,
+        "bytes": 487,
+        "type": 8
+      }
+    },
+    "resident_bytes": 17054,
+    "resident_end": 25247,
+    "gaps": 3,
+    "ceiling": 32768,
+    "deficit": 0,
+    "reserve_allocation": 0,
+    "comparison_baseline": "/private/tmp/f65-m2-interpolation-experiment/docs/evidence/flight-demo/2026-10-21-m2-projection-forward-guard/03-standalone/build.json",
+    "before_resident_bytes": 17151,
+    "resident_delta": -97,
+    "section_deltas": {
+      ".text": -90,
+      ".rodata": 1,
+      ".data": 0,
+      ".bss": 0,
+      ".noinit": -10
+    },
+    "stack": "UNPROVEN; unchanged checker rejects BIT",
+    "interpolation_symbol": "Inlined into main; no separately sized helper",
+    "shift_helper": "__ashldi3 absent from standalone symbol table",
+    "later_static_checks": "Not reached by builder; ELF accounting here is read-only"
+  },
+  "tool_hashes": {
+    "compiler": "cc557ae99a68ed36e098062b0f5376a878e94ac187b87446c8e603e4fb45a906",
+    "objdump": "5327f031a741bfcd4104317fbad3d1e45275d70b49821f0da52391120848a8e9",
+    "nm": "3db2d4f247dc2ae7fefbc5c7f8fde21ecc7925e353650b6103d6d6e64a88bed7",
+    "host_clang": "5b1ddb7e9c11b87a034fc88b212e8ac243cfe2b4db696d767aa44c79595fc09a"
+  },
+  "target_execution": "NOT RUN"
+}

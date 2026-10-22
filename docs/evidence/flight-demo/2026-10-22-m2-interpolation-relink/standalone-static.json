@@ -1,0 +1,83 @@
+{
+  "status": "PASS remaining standalone static assertions",
+  "original_raw_output": "/private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-pr1-1792683066367533000",
+  "target_sha256": "622ff2318cdf7cee9cd3be721fabb118a56cf0929eb0fb58debcad6cd53fb88d",
+  "stack": {
+    "hardware_bytes_main_including_entry_return": 20,
+    "software_dynamic_bytes": 0,
+    "software_constant_adjustments": 0,
+    "call_entries_checked": 11,
+    "scope": "direct-call probe; no IRQ/NMI or executed high-water claim",
+    "compiler_static_stack_bytes": 487
+  },
+  "sections": {
+    ".text": {
+      "start": 8215,
+      "bytes": 14270
+    },
+    ".rodata": {
+      "start": 22488,
+      "bytes": 794
+    },
+    ".data": {
+      "start": 23282,
+      "bytes": 22
+    },
+    ".bss": {
+      "start": 23304,
+      "bytes": 1456
+    },
+    ".noinit": {
+      "start": 24760,
+      "bytes": 487
+    }
+  },
+  "owners": {
+    "m2_probe_camera": {
+      "address": 23282,
+      "bytes": 22
+    },
+    "m2_probe_count": {
+      "address": 24635,
+      "bytes": 2
+    },
+    "m2_probe_digest": {
+      "address": 24756,
+      "bytes": 4
+    },
+    "m2_probe_first": {
+      "address": 23305,
+      "bytes": 12
+    },
+    "m2_probe_index": {
+      "address": 23304,
+      "bytes": 1
+    },
+    "m2_probe_last": {
+      "address": 23317,
+      "bytes": 12
+    },
+    "m2_probe_line": {
+      "address": 23339,
+      "bytes": 16
+    },
+    "m2_probe_pixels": {
+      "address": 23355,
+      "bytes": 1280
+    },
+    "m2_probe_record": {
+      "address": 24637,
+      "bytes": 119
+    },
+    "m2_probe_status": {
+      "address": 23329,
+      "bytes": 1
+    },
+    "m2_probe_surface": {
+      "address": 23330,
+      "bytes": 9
+    }
+  },
+  "target_execution": "NOT RUN",
+  "source": "Unchanged tools/flight_demo/m2/build.py assertions after line 70; no rebuild"
+}

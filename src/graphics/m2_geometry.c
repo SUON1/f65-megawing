@@ -30,7 +30,7 @@ static int64_t interpolate_delta(int64_t delta, int64_t numerator,
     {
         quotient *= 2u;
         remainder *= 2u;
-        if (((magnitude >> (bit - 1u)) & 1u) != 0u)
+        if ((magnitude & (UINT64_C(1) << 63u)) != 0u)
         {
             remainder += fraction;
         }
@@ -42,6 +42,8 @@ static int64_t interpolate_delta(int64_t delta, int64_t numerator,
                 ++quotient;
             }
         }
+        // Unsigned wrap discards the bit already consumed by this step.
+        magnitude <<= 1u;
     }
     if (remainder >= (divisor + 1u) / 2u)
     {
