@@ -1,0 +1,43 @@
+{
+  "output": "/private/tmp/f65-m2-projection-experiment/build/flight-demo/projection-forward-checks-1792643384247216000",
+  "commands": [
+    {
+      "argv": [
+        "/usr/bin/clang",
+        "-std=c11",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Wconversion",
+        "-Werror",
+        "-fsanitize=address,undefined",
+        "-Isrc/graphics",
+        "-Isrc/environment",
+        "-Iinterfaces/generated",
+        "-Idocs/evidence/flight-demo/2026-10-21-m2-projection-sequence",
+        "tests/flight_demo/m2_full/projection_equivalence.c",
+        "src/environment/m2_fixture.c",
+        "interfaces/generated/m2_tables.c",
+        "-o",
+        "/private/tmp/f65-m2-projection-experiment/build/flight-demo/projection-forward-checks-1792643384247216000/host"
+      ],
+      "exit": 0,
+      "log": "host-compile.txt"
+    },
+    {
+      "argv": [
+        "/private/tmp/f65-m2-projection-experiment/build/flight-demo/projection-forward-checks-1792643384247216000/host",
+        "/private/tmp/f65-m2-projection-experiment/build/flight-demo/projection-comparison/corpus.bin"
+      ],
+      "exit": 0,
+      "log": "host.txt"
+    }
+  ],
+  "corpus_sha256": "92c334a7812dabafe70ccef7ab8703db424c15ef1f312c56fd314bf36f90a8d5",
+  "frozen_test_inputs": {
+    "tests/flight_demo/m2_full/projection_corpus.py": "5c9c650334b7e710e3a7cf4efb35345d3179336c92e4337c3774d556f1295d63",
+    "tests/flight_demo/m2_full/projection_equivalence.c": "8c19550cc2ae68ce986f634cf7a18ed25689f6c2f2cb0bf59c94ceef54bdfeca"
+  },
+  "candidate_geometry_sha256": "162048ced5d4e0fe0cdc7323ffad44fe6b628f1ece2ee8839a0319f62f63f78b",
+  "status": "PASS"
+}

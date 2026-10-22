@@ -1,0 +1,144 @@
+     VMA      LMA     Size Align Out     In      Symbol
+       0        0        0     1 __basic_zp_start = 0x0002
+       0        0        0     1 __basic_zp_end = 0x0090
+       0        0        0     1 __rc0 = __basic_zp_start
+       0        0        0     1 __rc1 = __rc0 + 1
+       0        0        0     1 PROVIDE(__rc2 = __rc1 + 1)
+       0        0        0     1 __rc3 = __rc2 + 1
+       0        0        0     1 PROVIDE(__rc4 = __rc3 + 1)
+       0        0        0     1 __rc5 = __rc4 + 1
+       0        0        0     1 PROVIDE(__rc6 = __rc5 + 1)
+       0        0        0     1 __rc7 = __rc6 + 1
+       0        0        0     1 PROVIDE(__rc8 = __rc7 + 1)
+       0        0        0     1 __rc9 = __rc8 + 1
+       0        0        0     1 PROVIDE(__rc10 = __rc9 + 1)
+       0        0        0     1 __rc11 = __rc10 + 1
+       0        0        0     1 PROVIDE(__rc12 = __rc11 + 1)
+       0        0        0     1 __rc13 = __rc12 + 1
+       0        0        0     1 PROVIDE(__rc14 = __rc13 + 1)
+       0        0        0     1 __rc15 = __rc14 + 1
+       0        0        0     1 PROVIDE(__rc16 = __rc15 + 1)
+       0        0        0     1 __rc17 = __rc16 + 1
+       0        0        0     1 PROVIDE(__rc18 = __rc17 + 1)
+       0        0        0     1 __rc19 = __rc18 + 1
+       0        0        0     1 PROVIDE(__rc20 = __rc19 + 1)
+       0        0        0     1 __rc21 = __rc20 + 1
+       0        0        0     1 PROVIDE(__rc22 = __rc21 + 1)
+       0        0        0     1 __rc23 = __rc22 + 1
+       0        0        0     1 PROVIDE(__rc24 = __rc23 + 1)
+       0        0        0     1 __rc25 = __rc24 + 1
+       0        0        0     1 PROVIDE(__rc26 = __rc25 + 1)
+       0        0        0     1 __rc27 = __rc26 + 1
+       0        0        0     1 PROVIDE(__rc28 = __rc27 + 1)
+       0        0        0     1 __rc29 = __rc28 + 1
+       0        0        0     1 PROVIDE(__rc30 = __rc29 + 1)
+       0        0        0     1 __rc31 = __rc30 + 1
+       0        0        0     1 __basic_zp_size = __basic_zp_end - __basic_zp_start
+    2001     2001       16     1 .basic_header
+    2001     2001       16     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/basic-header.o:(.basic_header)
+    2015     2015        0     1                 next_line
+      22       22        0     1 .zp.data
+      22       22        0     1         __zp_data_start = .
+      22       22        0     1 __zp_data_load_start = LOADADDR(.zp.data)
+      22       22        0     1 __zp_data_size = SIZEOF(.zp.data)
+      22       22        0     1 .zp.bss
+      22       22        0     1         __zp_bss_start = .
+      22       22        0     1 __zp_bss_size = SIZEOF(.zp.bss)
+    2017     2017     3818     1 .text
+    2017     2017        0     1         _init = .
+    2017     2017        0     1         _start = .
+    2017     2017        e     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/unmap-basic.o:(.init.010)
+    2025     2025        8     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(init-stack.S.obj):(.init.100)
+    2025     2025        0     1                 __do_init_stack
+    202d     202d        3     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(zero-bss.c.obj):(.init.200)
+    202d     202d        0     1                 __do_zero_bss
+    2030     2030        3     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/common/lib/crt0.o:(.call_main)
+    2033     2033        3     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(exit-custom.S.obj):(.after_main)
+    2033     2033        0     1                 __after_main
+    2036     2036        0     1         _fini = .
+    2036     2036        a     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/unmap-basic.o:(.fini.990)
+    2040     2040        1     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/common/lib/crt0.o:(.fini_rts)
+    2041     2041       13     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(zero-bss.c.obj):(.text.__zero_bss)
+    2041     2041       13     1                 __zero_bss
+    2054     2054      6a8     1         /private/tmp/f65-m2-projection-publication/build/flight-demo/m2-pr1-1792644414108528000/M2.prg.lto.o:(.text.m2_transform)
+    2054     2054      6a8     1                 m2_transform
+    26fc     26fc      414     1         /private/tmp/f65-m2-projection-publication/build/flight-demo/m2-pr1-1792644414108528000/M2.prg.lto.o:(.text.multiply_rotation)
+    26fc     26fc      414     1                 multiply_rotation
+    2b10     2b10      14e     1         /private/tmp/f65-m2-projection-publication/build/flight-demo/m2-pr1-1792644414108528000/M2.prg.lto.o:(.text.record_valid)
+    2b10     2b10      14e     1                 record_valid
+    2c5e     2c5e     2561     1         /private/tmp/f65-m2-projection-publication/build/flight-demo/m2-pr1-1792644414108528000/M2.prg.lto.o:(.text.main)
+    2c5e     2c5e     2561     1                 main
+    51bf     51bf        5     1         /private/tmp/f65-m2-projection-publication/build/flight-demo/m2-pr1-1792644414108528000/M2.prg.lto.o:(.text.exit)
+    51bf     51bf        5     1                 exit
+    51c4     51c4       1f     1         /private/tmp/f65-m2-projection-publication/build/flight-demo/m2-pr1-1792644414108528000/M2.prg.lto.o:(.text.__ashldi3)
+    51c4     51c4       1f     1                 __ashldi3
+    51e3     51e3      357     1         /private/tmp/f65-m2-projection-publication/build/flight-demo/m2-pr1-1792644414108528000/M2.prg.lto.o:(.text.__udivdi3)
+    51e3     51e3      357     1                 __udivdi3
+    553a     553a       a6     1         /private/tmp/f65-m2-projection-publication/build/flight-demo/m2-pr1-1792644414108528000/M2.prg.lto.o:(.text.__umodhi3)
+    553a     553a       a6     1                 __umodhi3
+    55e0     55e0       6e     1         /private/tmp/f65-m2-projection-publication/build/flight-demo/m2-pr1-1792644414108528000/M2.prg.lto.o:(.text.__modhi3)
+    55e0     55e0       6e     1                 __modhi3
+    564e     564e       24     1         /private/tmp/f65-m2-projection-publication/build/flight-demo/m2-pr1-1792644414108528000/M2.prg.lto.o:(.text.memcpy)
+    564e     564e       24     1                 memcpy
+    5672     5672       1c     1         /private/tmp/f65-m2-projection-publication/build/flight-demo/m2-pr1-1792644414108528000/M2.prg.lto.o:(.text.__memset)
+    5672     5672       1c     1                 __memset
+    568e     568e       79     1         /private/tmp/f65-m2-projection-publication/build/flight-demo/m2-pr1-1792644414108528000/M2.prg.lto.o:(.text.__mulsi3)
+    568e     568e       79     1                 __mulsi3
+    5707     5707      128     1         /private/tmp/f65-m2-projection-publication/build/flight-demo/m2-pr1-1792644414108528000/M2.prg.lto.o:(.text.__muldi3)
+    5707     5707      128     1                 __muldi3
+    582f     582f        0     1         __init_array_start = .
+    582f     582f        0     1         __init_array_end = .
+    582f     582f        0     1         __fini_array_start = .
+    582f     582f        0     1         __fini_array_end = .
+    5830     5830      319     8 .rodata
+    5830     5830      2d8     8         /private/tmp/f65-m2-projection-publication/build/flight-demo/m2-pr1-1792644414108528000/M2.prg.lto.o:(.rodata.m2_sine_q46)
+    5830     5830      2d8     1                 m2_sine_q46
+    5b08     5b08        9     1         /private/tmp/f65-m2-projection-publication/build/flight-demo/m2-pr1-1792644414108528000/M2.prg.lto.o:(.rodata..L__const.m2_surface_query.result)
+    5b11     5b11       38     1         /private/tmp/f65-m2-projection-publication/build/flight-demo/m2-pr1-1792644414108528000/M2.prg.lto.o:(.rodata.m2_transform.products)
+    5b11     5b11       38     1                 m2_transform.products
+    5b49     5b49       16     1 .data
+    5b49     5b49        0     1         __data_start = .
+    5b49     5b49       16     1         /private/tmp/f65-m2-projection-publication/build/flight-demo/m2-pr1-1792644414108528000/M2.prg.lto.o:(.data.m2_probe_camera)
+    5b49     5b49       16     1                 m2_probe_camera
+    5b5f     5b5f        0     1         __data_end = .
+    5b5f     5b5f        0     1 __data_load_start = LOADADDR(.data)
+    5b5f     5b5f        0     1 __data_size = SIZEOF(.data)
+    5b5f     5b5f      5b0     1 .bss
+    5b5f     5b5f        0     1         __bss_start = .
+    5b5f     5b5f        1     1         /private/tmp/f65-m2-projection-publication/build/flight-demo/m2-pr1-1792644414108528000/M2.prg.lto.o:(.bss.m2_probe_index)
+    5b5f     5b5f        1     1                 m2_probe_index
+    5b60     5b60        c     1         /private/tmp/f65-m2-projection-publication/build/flight-demo/m2-pr1-1792644414108528000/M2.prg.lto.o:(.bss.m2_probe_first)
+    5b60     5b60        c     1                 m2_probe_first
+    5b6c     5b6c        c     1         /private/tmp/f65-m2-projection-publication/build/flight-demo/m2-pr1-1792644414108528000/M2.prg.lto.o:(.bss.m2_probe_last)
+    5b6c     5b6c        c     1                 m2_probe_last
+    5b78     5b78        1     1         /private/tmp/f65-m2-projection-publication/build/flight-demo/m2-pr1-1792644414108528000/M2.prg.lto.o:(.bss.m2_probe_status)
+    5b78     5b78        1     1                 m2_probe_status
+    5b79     5b79        9     1         /private/tmp/f65-m2-projection-publication/build/flight-demo/m2-pr1-1792644414108528000/M2.prg.lto.o:(.bss.m2_probe_surface)
+    5b79     5b79        9     1                 m2_probe_surface
+    5b82     5b82       10     1         /private/tmp/f65-m2-projection-publication/build/flight-demo/m2-pr1-1792644414108528000/M2.prg.lto.o:(.bss.m2_probe_line)
+    5b82     5b82       10     1                 m2_probe_line
+    5b92     5b92      500     1         /private/tmp/f65-m2-projection-publication/build/flight-demo/m2-pr1-1792644414108528000/M2.prg.lto.o:(.bss.m2_probe_pixels)
+    5b92     5b92      500     1                 m2_probe_pixels
+    6092     6092        2     1         /private/tmp/f65-m2-projection-publication/build/flight-demo/m2-pr1-1792644414108528000/M2.prg.lto.o:(.bss.m2_probe_count)
+    6092     6092        2     1                 m2_probe_count
+    6094     6094       77     1         /private/tmp/f65-m2-projection-publication/build/flight-demo/m2-pr1-1792644414108528000/M2.prg.lto.o:(.bss.m2_probe_record)
+    6094     6094       77     1                 m2_probe_record
+    610b     610b        4     1         /private/tmp/f65-m2-projection-publication/build/flight-demo/m2-pr1-1792644414108528000/M2.prg.lto.o:(.bss.m2_probe_digest)
+    610b     610b        4     1                 m2_probe_digest
+    610f     610f        0     1         __bss_end = .
+    610f     610f        0     1 __bss_size = SIZEOF(.bss)
+    610f     610f      1f1     1 .noinit
+    610f     610f      1f1     1         /private/tmp/f65-m2-projection-publication/build/flight-demo/m2-pr1-1792644414108528000/M2.prg.lto.o:(.noinit..Lstatic_stack)
+    6300     6300        0     1         __heap_start = ALIGN(., 2)
+    6300     6300        0     1 __stack = 0xd000
+       0        0       cc     1 .comment
+       0        0       cc     1         <internal>:(.comment)
+       0        0       1e     1 .llvm_sympart
+       0        0        f     1         /private/tmp/f65-m2-projection-publication/build/flight-demo/m2-pr1-1792644414108528000/M2.prg.lto.o:(.llvm_sympart)
+       f        f        f     1         /private/tmp/f65-m2-projection-publication/build/flight-demo/m2-pr1-1792644414108528000/M2.prg.lto.o:(.llvm_sympart)
+       0        0      b10     4 .symtab
+       0        0      b10     4         <internal>:(.symtab)
+       0        0       72     1 .shstrtab
+       0        0       72     1         <internal>:(.shstrtab)
+       0        0      652     1 .strtab
+       0        0      652     1         <internal>:(.strtab)

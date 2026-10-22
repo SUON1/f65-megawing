@@ -133,6 +133,13 @@ composition it saves another 2,072 resident bytes, leaving a 9,646-byte deficit
 under the unchanged memory limit. See the
 [transform publication scope](docs/reports/M2_PR2_TRANSFORM_PUBLICATION.md) and
 [experiment evidence](docs/reports/M2_PR2_TRANSFORM_SEQUENCE_EXPERIMENT.md).
+The founder also approved the bounded prepared-projection correction for
+publication. Its exact projection function is integrated independently of the
+unmerged renderer/cache/dispatch scaffolding. The retained failed projection
+experiment and corrected artifact remain unchanged: the correction saves 72
+resident bytes against the 34,221-byte reference, leaving a 9,574-byte deficit.
+See the [projection publication scope](docs/reports/M2_PR2_PROJECTION_PUBLICATION.md)
+and [correction evidence](docs/reports/M2_PR2_PROJECTION_FORWARD_GUARD.md).
 Full-renderer fit, integrated stack/timing and high-resolution output mapping
 remain open; no M2 target execution is claimed. Carry remaining obligations to the exact
 owner gates approved in the entry plan. Establish actual measured limits and

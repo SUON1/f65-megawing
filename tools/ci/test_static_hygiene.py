@@ -129,7 +129,8 @@ class GitFixtureTests(unittest.TestCase):
                     hygiene.check(self.root, self.base, self.commit())
 
     def test_exact_flight_snapshot_pins_pass_but_changed_bytes_fail(self):
-        for path in (hygiene.Q46_FONT_SNAPSHOT, hygiene.TRANSFORM_REFERENCE):
+        for path in (hygiene.Q46_FONT_SNAPSHOT, hygiene.TRANSFORM_REFERENCE,
+                     *hygiene.PROJECTION_SNAPSHOTS):
             with self.subTest(path=path):
                 manifest = fixture_manifest()
                 manifest["whitespace"][path] = hashlib.sha256(TEXT).hexdigest()
@@ -155,6 +156,7 @@ class GitFixtureTests(unittest.TestCase):
             "docs/evidence/r0f/group2/fixture/new.log",
             "docs/evidence/flight-demo/2026-10-21-m2-renderer-fit/source/new.log",
             "docs/evidence/flight-demo/2026-10-21-m2-transform-sequence/new.log",
+            "docs/evidence/flight-demo/2026-10-21-m2-projection-sequence/new.log",
         )
         for path in paths:
             with self.subTest(path=path):

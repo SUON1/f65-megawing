@@ -1,0 +1,68 @@
+[
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "tests/flight_demo/m2_full/projection_corpus.py",
+      "/private/tmp/f65-m2-projection-publication/build/flight-demo/projection-publication-1792644412092089000/corpus.bin"
+    ],
+    "exit": 0,
+    "log": "corpus.txt"
+  },
+  {
+    "argv": [
+      "/usr/bin/clang",
+      "-std=c11",
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-Wconversion",
+      "-Werror",
+      "-fsanitize=address,undefined",
+      "-Isrc/graphics",
+      "-Isrc/environment",
+      "-Iinterfaces/generated",
+      "-Idocs/evidence/flight-demo/2026-10-21-m2-projection-sequence",
+      "tests/flight_demo/m2_full/projection_equivalence.c",
+      "src/environment/m2_fixture.c",
+      "interfaces/generated/m2_tables.c",
+      "-o",
+      "/private/tmp/f65-m2-projection-publication/build/flight-demo/projection-publication-1792644412092089000/host"
+    ],
+    "exit": 0,
+    "log": "host-compile.txt"
+  },
+  {
+    "argv": [
+      "/private/tmp/f65-m2-projection-publication/build/flight-demo/projection-publication-1792644412092089000/host",
+      "/private/tmp/f65-m2-projection-publication/build/flight-demo/projection-publication-1792644412092089000/corpus.bin"
+    ],
+    "exit": 0,
+    "log": "host.txt"
+  },
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "tools/flight_demo/m2/build.py"
+    ],
+    "exit": 0,
+    "log": "standalone.txt"
+  },
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tools/ci",
+      "-p",
+      "test_*.py",
+      "-v"
+    ],
+    "exit": 0,
+    "log": "hygiene-fixtures.txt"
+  }
+]

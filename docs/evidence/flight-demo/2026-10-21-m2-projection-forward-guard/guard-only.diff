@@ -1,0 +1,18 @@
+--- failed-candidate/m2_geometry.c
++++ local-forward-guard/m2_geometry.c
+@@ -291,8 +291,13 @@
+     M2Line result;
+     for (uint8_t end = 0u; end < 2u; ++end)
+     {
+-        result.x[end] = project_axis(points[end].v[1], points[end].v[0], M2_WIDTH);
+-        result.y[end] = project_axis(points[end].v[2], points[end].v[0], M2_HEIGHT);
++        const int64_t forward = points[end].v[0];
++        if (forward <= 0)
++        {
++            return -1;
++        }
++        result.x[end] = project_axis(points[end].v[1], forward, M2_WIDTH);
++        result.y[end] = project_axis(points[end].v[2], forward, M2_HEIGHT);
+     }
+     *line = result;
+     return 1;
