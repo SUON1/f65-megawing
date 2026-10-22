@@ -1,0 +1,116 @@
+{
+  "status": "PROPOSED planning manifest; no source restoration or build performed",
+  "main": "c6a41e0988a3e329f1b30f7d48c87d92e00b523b",
+  "main_ci": "https://github.com/SUON1/f65-megawing/actions/runs/39724644712",
+  "reference_build": "docs/evidence/flight-demo/2026-10-21-m2-projection-forward-guard/04-candidate/build.json",
+  "reference_build_sha256": "4a663e747ed0f6bf6428178bef9fc183d4983cfabe33495812193207b503588e",
+  "reference_target_sha256": "72fd75a63771794a0f1936f92289cac612db149317781ab5646756a8045aa94d",
+  "reference_elf_sha256": "81fbae03f52e8548e8b3a9c304807c969f96097611dc1d6888993c344609c5d2",
+  "resident_bytes": 34149,
+  "end_exclusive": 42342,
+  "ceiling_exclusive": 32768,
+  "deficit_bytes": 9574,
+  "recorded_inputs": 79,
+  "already_exact_on_main": 63,
+  "restorations": [
+    {
+      "destination": "src/diagnostics/m2/camera.c",
+      "retained_source": "docs/evidence/flight-demo/2026-10-21-m2-renderer-fit/source/src/diagnostics/m2/camera.c",
+      "sha256": "8842ab36a2b5b874ebdcdd29e59cb371cef243622694f03c259a8e2088be0fcd"
+    },
+    {
+      "destination": "src/diagnostics/m2/camera.h",
+      "retained_source": "docs/evidence/flight-demo/2026-10-21-m2-renderer-fit/source/src/diagnostics/m2/camera.h",
+      "sha256": "860ade5befe3e74c50ffc5bab8922c3c088aab8be994d90a592ceea4c804a889"
+    },
+    {
+      "destination": "src/diagnostics/m2/dispatch.c",
+      "retained_source": "docs/evidence/flight-demo/2026-10-21-m2-generation-cache/source/src/diagnostics/m2/dispatch.c",
+      "sha256": "c9c082125102473fe0ad47efcb681351fe3f659d63154488c92a568476e6bdd0"
+    },
+    {
+      "destination": "src/diagnostics/m2/dispatch.h",
+      "retained_source": "docs/evidence/flight-demo/2026-10-21-m2-generation-cache/source/src/diagnostics/m2/dispatch.h",
+      "sha256": "9f22e842d5c07827f7646d54dc0c570a6674c21f64f922eb04c4cef8e9b53ad1"
+    },
+    {
+      "destination": "src/graphics/m2_font.c",
+      "retained_source": "docs/evidence/flight-demo/2026-10-21-m2-renderer-fit/source/src/graphics/m2_font.c",
+      "sha256": "a1b32d503b8b22ba053b37a91dbdef35e70b36c2e5d0ee36c03278e00bfe0471"
+    },
+    {
+      "destination": "src/graphics/m2_geometry.c",
+      "retained_source": "docs/evidence/flight-demo/2026-10-21-m2-projection-forward-guard/source/src/graphics/m2_geometry.c",
+      "sha256": "162048ced5d4e0fe0cdc7323ffad44fe6b628f1ece2ee8839a0319f62f63f78b"
+    },
+    {
+      "destination": "src/graphics/m2_prepared_private.h",
+      "retained_source": "docs/evidence/flight-demo/2026-10-21-m2-generation-cache/source/src/graphics/m2_prepared_private.h",
+      "sha256": "0242ad82f09e41cc501bf4604f24fe3d33601f18cddf1d100a3b8d0c1585596e"
+    },
+    {
+      "destination": "src/graphics/m2_renderer.c",
+      "retained_source": "docs/evidence/flight-demo/2026-10-21-m2-generation-cache/source/src/graphics/m2_renderer.c",
+      "sha256": "2217e02fe9eb57453aca212513ef25a5012f057b918532d24a14d1768f7be9dc"
+    },
+    {
+      "destination": "src/graphics/m2_renderer.h",
+      "retained_source": "docs/evidence/flight-demo/2026-10-21-m2-generation-cache/source/src/graphics/m2_renderer.h",
+      "sha256": "dca1a995f2f7b4e9206df16eb374334a6ca67ffdc3e6e631373735ae15f54208"
+    },
+    {
+      "destination": "src/input/m2_camera_input.c",
+      "retained_source": "docs/evidence/flight-demo/2026-10-21-m2-renderer-fit/source/src/input/m2_camera_input.c",
+      "sha256": "b8c16663b1fd9c5519942272af5edf5664f2eea50dc5aadb3ade882605ad7ca6"
+    },
+    {
+      "destination": "src/input/m2_camera_input.h",
+      "retained_source": "docs/evidence/flight-demo/2026-10-21-m2-renderer-fit/source/src/input/m2_camera_input.h",
+      "sha256": "4fcdc7b7ea6550186e991d312ecdcec4d1dccfc51b6de79c3d9e1b5c7daea5f4"
+    },
+    {
+      "destination": "tests/flight_demo/m2_full/fit_backend.c",
+      "retained_source": "docs/evidence/flight-demo/2026-10-21-m2-generation-cache/source/tests/flight_demo/m2_full/fit_backend.c",
+      "sha256": "aaa8590c32d073cd886137421e911f4f7215a9f5c00280b46f1621d90e6796f3"
+    },
+    {
+      "destination": "tests/flight_demo/m2_full/fit_root.c",
+      "retained_source": "docs/evidence/flight-demo/2026-10-21-m2-generation-cache/source/tests/flight_demo/m2_full/fit_root.c",
+      "sha256": "7662d2941ef3fcfbfe5da37c40a5b251d81b6123f672e2ce5af88c75f184f520"
+    },
+    {
+      "destination": "tests/flight_demo/m2_full/renderer_cases.json",
+      "retained_source": "docs/evidence/flight-demo/2026-10-21-m2-generation-cache/source/tests/flight_demo/m2_full/renderer_cases.json",
+      "sha256": "5ee8ccac24a88ba6ed548d9b8636a73b70d1d9c2a5b44a7ed87ffca9d2ada1e2"
+    },
+    {
+      "destination": "tests/flight_demo/m2_full/renderer_host.c",
+      "retained_source": "docs/evidence/flight-demo/2026-10-21-m2-generation-cache/source/tests/flight_demo/m2_full/renderer_host.c",
+      "sha256": "f6fde2ccea489ab06a97b99a13c0290c12e5458439677abd9c61b5f2918523d1"
+    },
+    {
+      "destination": "tools/flight_demo/m2_full/renderer_build.py",
+      "retained_source": "docs/evidence/flight-demo/2026-10-21-m2-generation-cache/source/tools/flight_demo/m2_full/renderer_build.py",
+      "sha256": "b5bc66a1b7213ff0bd17240199b45a36a1871256b2b1469692f86d1af6f7c9c9"
+    }
+  ],
+  "frozen_target_functions": [
+    "m2_project_prepared",
+    "m2_transform",
+    "m2_multiply_q46",
+    "to_camera",
+    "plane_distance",
+    "project_axis",
+    "rounded_ratio"
+  ],
+  "candidate_scope": "Only the magnitude bit-selection/consumption statements inside interpolate_delta; all other production bytes frozen after reference reconstruction",
+  "rules": [
+    "Reverify main and exact CI before a future isolated experiment.",
+    "Verify all 79 reference input hashes before any build.",
+    "Use the corrected projection source snapshot, preserving accepted Q46, transform, projection and local-forward guard.",
+    "Never overlay entire old snapshots or copy from mutable development checkouts.",
+    "Reproduce exact PRG, allocated sections, owners, compiler tools and normalized recipe before the candidate.",
+    "Known reference full-fit FAIL is the baseline; stop on every unexplained identity or prerequisite mismatch.",
+    "Reference reconstruction remains experiment scaffolding, not runtime/display acceptance."
+  ]
+}

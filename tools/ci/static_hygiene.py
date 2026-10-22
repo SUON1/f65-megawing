@@ -25,6 +25,10 @@ TRANSFORM_REFERENCE = (
     "docs/evidence/flight-demo/2026-10-21-m2-transform-sequence/"
     "reference_transform.inc"
 )
+INTERPOLATION_FONT_SNAPSHOT = (
+    "docs/evidence/flight-demo/2026-10-22-m2-interpolation-bitwalk/"
+    "source/src/graphics/m2_font.c"
+)
 PROJECTION_SNAPSHOTS = tuple(
     "docs/evidence/flight-demo/2026-10-21-m2-projection-sequence/" + name
     for name in (
@@ -76,7 +80,8 @@ def load_manifest(data):
                 or ".." in parts
                 or str(PurePosixPath(path)) != path
                 or not (path.startswith(EVIDENCE_ROOTS)
-                        or path in (LEGACY_D81, Q46_FONT_SNAPSHOT, TRANSFORM_REFERENCE)
+                        or path in (LEGACY_D81, Q46_FONT_SNAPSHOT, TRANSFORM_REFERENCE,
+                                    INTERPOLATION_FONT_SNAPSHOT)
                         or path in PROJECTION_SNAPSHOTS)
                 or not isinstance(digest, str)
                 or not re.fullmatch(r"[0-9a-f]{64}", digest)

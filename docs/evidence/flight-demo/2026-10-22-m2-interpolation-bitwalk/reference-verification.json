@@ -1,0 +1,18 @@
+{
+  "status": "PASS exact reference",
+  "resident_bytes": 34149,
+  "target_sha256": "72fd75a63771794a0f1936f92289cac612db149317781ab5646756a8045aa94d",
+  "input_count": 79,
+  "interpolate_delta": {
+    "start": 16129,
+    "bytes": 1605,
+    "kind": "t"
+  },
+  "shift_helper": {
+    "start": 37075,
+    "bytes": 31,
+    "kind": "t"
+  },
+  "normalization": "Only fresh output/worktree tool paths; archived replay JSON adds nm owner kinds and resident span, raw builder report retained.",
+  "known_fit_failure": "Expected FAIL; no unexpected failure"
+}

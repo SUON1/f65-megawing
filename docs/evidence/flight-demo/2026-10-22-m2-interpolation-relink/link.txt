@@ -1,0 +1,43 @@
+{
+  "output": "/private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-interpolation-resumed-1792701029486920000",
+  "interpolation": {
+    "start": 16129,
+    "bytes": 1257,
+    "kind": "t"
+  },
+  "shift_helper": null,
+  "descriptor_tables": {
+    "m2_transform.products": {
+      "start": 39312,
+      "bytes": 56,
+      "kind": "r"
+    }
+  },
+  "sections": {
+    ".text": {
+      "start": 8215,
+      "bytes": 30368
+    },
+    ".rodata": {
+      "start": 38584,
+      "bytes": 1560
+    },
+    ".data": {
+      "start": 40144,
+      "bytes": 2
+    },
+    ".bss": {
+      "start": 40146,
+      "bytes": 1611
+    },
+    ".noinit": {
+      "start": 41757,
+      "bytes": 200
+    }
+  },
+  "resident_bytes": 33764,
+  "resident_end": 41957,
+  "excess_bytes": 9189,
+  "early_renderer_fit": "FAIL",
+  "target_sha256": "5ba1a5a8cc60a896e3f9e9332157d6ddef08a61b313d68663c9c8e6791f62bd3"
+}

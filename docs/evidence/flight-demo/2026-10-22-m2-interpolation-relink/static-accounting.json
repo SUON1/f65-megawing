@@ -1,0 +1,192 @@
+{
+  "reference": {
+    "stack": {
+      "status": "PASS",
+      "result": {
+        "hardware_bytes_main_including_entry_return": 24,
+        "software_dynamic_bytes": 8,
+        "software_constant_adjustments": 2,
+        "call_entries_checked": 13,
+        "scope": "direct-call probe; no IRQ/NMI or executed high-water claim"
+      }
+    },
+    "closure": [
+      "__ashldi3",
+      "__memset",
+      "__mulsi3",
+      "__udivdi3",
+      "interpolate_delta",
+      "m2_multiply_q46",
+      "m2_point_valid",
+      "m2_project_prepared",
+      "memcpy",
+      "multiply_rotation",
+      "plane_distance",
+      "project_axis",
+      "rounded_ratio",
+      "to_camera"
+    ],
+    "instruction_inventory": {
+      "__ashldi3": 17,
+      "__memset": 15,
+      "__mulsi3": 64,
+      "__udivdi3": 395,
+      "interpolate_delta": 748,
+      "m2_multiply_q46": 526,
+      "m2_point_valid": 65,
+      "m2_project_prepared": 884,
+      "memcpy": 22,
+      "multiply_rotation": 1,
+      "plane_distance": 504,
+      "project_axis": 280,
+      "rounded_ratio": 135,
+      "to_camera": 321
+    },
+    "software_stack_pointer_writes": [
+      [
+        "sta",
+        "$2                      ; 0x2 <__rc0>"
+      ],
+      [
+        "sta",
+        "$3                      ; 0x3 <__rc1>"
+      ],
+      [
+        "sta",
+        "$2                      ; 0x2 <__rc0>"
+      ],
+      [
+        "sta",
+        "$3                      ; 0x3 <__rc1>"
+      ]
+    ],
+    "syntactic_root_software_frame_bytes": 8,
+    "per_call_instruction_bounds": {
+      "q46": 16299,
+      "to_camera": 151836,
+      "interpolate_delta": 216580,
+      "project_axis": 51370
+    },
+    "contributions": {
+      "root": 21216,
+      "point_validation": 520,
+      "two_endpoint_transforms": 303672,
+      "plane_distances": 6048,
+      "coordinate_interpolations": 3898440,
+      "projected_coordinates": 205480,
+      "bounded_copies": 1650
+    },
+    "conservative_projection_instruction_bound": 4437026,
+    "operation_maxima": {
+      "to_camera": 2,
+      "q46_products": 18,
+      "limb_products_32bit": 162,
+      "plane_distances": 12,
+      "interpolations": 18,
+      "interpolation_bit_steps": 1152,
+      "interpolation_subtraction_tests": 2304,
+      "project_axis": 4,
+      "wide_divisions": 4,
+      "memcpy_calls": 3
+    },
+    "whole_probe_stack": {
+      "status": "UNPROVEN",
+      "reason": "unrecognized instruction: cld"
+    }
+  },
+  "candidate": {
+    "stack": {
+      "status": "PASS",
+      "result": {
+        "hardware_bytes_main_including_entry_return": 24,
+        "software_dynamic_bytes": 8,
+        "software_constant_adjustments": 2,
+        "call_entries_checked": 12,
+        "scope": "direct-call probe; no IRQ/NMI or executed high-water claim"
+      }
+    },
+    "closure": [
+      "__memset",
+      "__mulsi3",
+      "__udivdi3",
+      "interpolate_delta",
+      "m2_multiply_q46",
+      "m2_point_valid",
+      "m2_project_prepared",
+      "memcpy",
+      "multiply_rotation",
+      "plane_distance",
+      "project_axis",
+      "rounded_ratio",
+      "to_camera"
+    ],
+    "instruction_inventory": {
+      "__memset": 15,
+      "__mulsi3": 64,
+      "__udivdi3": 395,
+      "interpolate_delta": 596,
+      "m2_multiply_q46": 526,
+      "m2_point_valid": 65,
+      "m2_project_prepared": 884,
+      "memcpy": 22,
+      "multiply_rotation": 1,
+      "plane_distance": 504,
+      "project_axis": 280,
+      "rounded_ratio": 135,
+      "to_camera": 321
+    },
+    "software_stack_pointer_writes": [
+      [
+        "sta",
+        "$2                      ; 0x2 <__rc0>"
+      ],
+      [
+        "sta",
+        "$3                      ; 0x3 <__rc1>"
+      ],
+      [
+        "sta",
+        "$2                      ; 0x2 <__rc0>"
+      ],
+      [
+        "sta",
+        "$3                      ; 0x3 <__rc1>"
+      ]
+    ],
+    "syntactic_root_software_frame_bytes": 8,
+    "per_call_instruction_bounds": {
+      "q46": 16299,
+      "to_camera": 151836,
+      "interpolate_delta": 116220,
+      "project_axis": 51370
+    },
+    "contributions": {
+      "root": 21216,
+      "point_validation": 520,
+      "two_endpoint_transforms": 303672,
+      "plane_distances": 6048,
+      "coordinate_interpolations": 2091960,
+      "projected_coordinates": 205480,
+      "bounded_copies": 1650
+    },
+    "conservative_projection_instruction_bound": 2630546,
+    "operation_maxima": {
+      "to_camera": 2,
+      "q46_products": 18,
+      "limb_products_32bit": 162,
+      "plane_distances": 12,
+      "interpolations": 18,
+      "interpolation_bit_steps": 1152,
+      "interpolation_subtraction_tests": 2304,
+      "project_axis": 4,
+      "wide_divisions": 4,
+      "memcpy_calls": 3
+    },
+    "whole_probe_stack": {
+      "status": "UNPROVEN",
+      "reason": "unrecognized instruction: cld"
+    }
+  },
+  "checker_sha256": "5e4e20d3ff19697a7d55d3ae27c61260f3200172d4a9ba75bee84fa9810ac826",
+  "limitations": "Instruction-visit overbounds only; no cycles, runtime speed, wait states, platform/IRQ/NMI overhead, whole-renderer admission or 100 Hz margins."
+}

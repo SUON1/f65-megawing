@@ -1,0 +1,20 @@
+--- reference/src/graphics/m2_geometry.c
++++ candidate/src/graphics/m2_geometry.c
+@@ -30,7 +30,7 @@
+     {
+         quotient *= 2u;
+         remainder *= 2u;
+-        if (((magnitude >> (bit - 1u)) & 1u) != 0u)
++        if ((magnitude & (UINT64_C(1) << 63u)) != 0u)
+         {
+             remainder += fraction;
+         }
+@@ -42,6 +42,8 @@
+                 ++quotient;
+             }
+         }
++        // Unsigned wrap discards the bit already consumed by this step.
++        magnitude <<= 1u;
+     }
+     if (remainder >= (divisor + 1u) / 2u)
+     {

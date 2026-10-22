@@ -21,7 +21,8 @@ def check(disassembly):
     branches = {'bcc', 'bcs', 'beq', 'bne', 'bmi', 'bpl', 'bvc', 'bvs'}
     pushes = {'pha', 'phx', 'phy', 'phz', 'php'}
     pulls = {'pla', 'plx', 'ply', 'plz', 'plp'}
-    ordinary = set('adc and asl clc cli cmp cpx cpy dec dew dex dey eor inc inw inx iny lda ldx ldy lsr ora rol ror sbc sec sei sta stx sty stz tax tay txa tya'.split())
+    # BIT and CLV change flags, not stacks; both branch successors stay checked.
+    ordinary = set('adc and asl bit clc cli clv cmp cpx cpy dec dew dex dey eor inc inw inx iny lda ldx ldy lsr ora rol ror sbc sec sei sta stx sty stz tax tay txa tya'.split())
     # Admit only the compiler's explicit, constant 16-bit SP adjustment.
     # Every other SP write remains a hard failure, including indexed writes.
     software_effect = {}

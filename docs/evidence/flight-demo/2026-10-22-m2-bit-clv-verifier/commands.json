@@ -1,0 +1,27 @@
+[
+  {
+    "argv": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests/flight_demo/m2",
+      "-p",
+      "test_*.py",
+      "-v"
+    ],
+    "exit": 0,
+    "log": "regressions.txt"
+  },
+  {
+    "argv": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "/private/tmp/f65-m2-interpolation-experiment/docs/evidence/flight-demo/2026-10-22-m2-bit-clv-verifier/replay.py"
+    ],
+    "exit": 0,
+    "log": "replay.txt"
+  }
+]

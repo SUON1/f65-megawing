@@ -1,0 +1,53 @@
+{
+  "status": "PASS",
+  "reference_checker_sha256": "4d344f815d246859b621caac01f2c9e27f1501ecec32c7f9491d7f2e427522ef",
+  "checker_sha256": "5e4e20d3ff19697a7d55d3ae27c61260f3200172d4a9ba75bee84fa9810ac826",
+  "replay": {
+    "previous": {
+      "path": "docs/evidence/flight-demo/2026-10-21-m2-projection-forward-guard/03-standalone/M2.disassembly",
+      "sha256": "4e547d315061d7445edab574b471814f08dd3373e1fb67a08ecb0f0e3fd2b0b2",
+      "before": {
+        "status": "PASS",
+        "stack": {
+          "hardware_bytes_main_including_entry_return": 20,
+          "software_dynamic_bytes": 0,
+          "software_constant_adjustments": 0,
+          "call_entries_checked": 12,
+          "scope": "direct-call probe; no IRQ/NMI or executed high-water claim"
+        }
+      },
+      "after": {
+        "status": "PASS",
+        "stack": {
+          "hardware_bytes_main_including_entry_return": 20,
+          "software_dynamic_bytes": 0,
+          "software_constant_adjustments": 0,
+          "call_entries_checked": 12,
+          "scope": "direct-call probe; no IRQ/NMI or executed high-water claim"
+        }
+      }
+    },
+    "interpolation": {
+      "path": "docs/evidence/flight-demo/2026-10-22-m2-interpolation-bitwalk/03-standalone/M2.disassembly",
+      "sha256": "446b837320606cfbd21a9619ed0cedbddea64c6711b1dbd71269a5cca4bb6fef",
+      "before": {
+        "status": "FAIL",
+        "reason": "unrecognized instruction: bit"
+      },
+      "after": {
+        "status": "PASS",
+        "stack": {
+          "hardware_bytes_main_including_entry_return": 20,
+          "software_dynamic_bytes": 0,
+          "software_constant_adjustments": 0,
+          "call_entries_checked": 11,
+          "scope": "direct-call probe; no IRQ/NMI or executed high-water claim"
+        }
+      }
+    }
+  },
+  "unchanged_raw_artifacts": 57,
+  "relinks": 0,
+  "target_execution": "NOT RUN",
+  "scope": "Pinned standalone direct-call probes; no IRQ/NMI, executed high-water, whole renderer, deadline or runtime/display admission"
+}

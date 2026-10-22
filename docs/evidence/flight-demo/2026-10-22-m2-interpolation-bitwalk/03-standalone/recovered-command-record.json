@@ -1,0 +1,201 @@
+{
+  "provenance": "Reconstructed from unchanged builder and existing logs; not a builder-produced success report",
+  "wrapper": [
+    "python3",
+    "-B",
+    "tools/flight_demo/m2/build.py"
+  ],
+  "wrapper_exit": 1,
+  "commands": [
+    {
+      "argv": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests/flight_demo/m2",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit": 0,
+      "log": "contract-tests.txt"
+    },
+    {
+      "argv": [
+        "/usr/bin/clang",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Wconversion",
+        "-Werror",
+        "-fsanitize=address,undefined",
+        "-Iinterfaces/generated",
+        "-Isrc/environment",
+        "-Isrc/graphics",
+        "-Isrc/core",
+        "-Isrc/input",
+        "-Isrc/presentation",
+        "src/environment/m2_fixture.c",
+        "src/graphics/m2_geometry.c",
+        "interfaces/generated/m2_tables.c",
+        "src/core/m1_runtime.c",
+        "src/input/m1_input.c",
+        "src/presentation/m1_snapshot.c",
+        "tests/flight_demo/m2/host.c",
+        "-o",
+        "/private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-pr1-1792683066367533000/host"
+      ],
+      "exit": 0,
+      "log": "host-build.txt"
+    },
+    {
+      "argv": [
+        "/private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-pr1-1792683066367533000/host"
+      ],
+      "exit": 0,
+      "log": "host.txt"
+    },
+    {
+      "argv": [
+        "/usr/bin/clang",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Wconversion",
+        "-Werror",
+        "-shared",
+        "-fPIC",
+        "-Iinterfaces/generated",
+        "-Isrc/environment",
+        "-Isrc/graphics",
+        "-Isrc/core",
+        "-Isrc/input",
+        "-Isrc/presentation",
+        "src/environment/m2_fixture.c",
+        "src/graphics/m2_geometry.c",
+        "interfaces/generated/m2_tables.c",
+        "-o",
+        "/private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-pr1-1792683066367533000/geometry.dylib"
+      ],
+      "exit": 0,
+      "log": "oracle-build.txt"
+    },
+    {
+      "argv": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-B",
+        "tests/flight_demo/m2/oracle.py",
+        "/private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-pr1-1792683066367533000/geometry.dylib"
+      ],
+      "exit": 0,
+      "log": "oracle.json"
+    },
+    {
+      "argv": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-B",
+        "tests/flight_demo/m2/clip_regressions.py",
+        "/private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-pr1-1792683066367533000/geometry.dylib"
+      ],
+      "exit": 0,
+      "log": "clip-regressions.json"
+    },
+    {
+      "argv": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-B",
+        "tests/flight_demo/m2/clip_regressions.py",
+        "--emit-c",
+        "/private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-pr1-1792683066367533000/clip_vectors.h"
+      ],
+      "exit": 0,
+      "log": "clip-vectors.txt"
+    },
+    {
+      "argv": [
+        "/usr/bin/clang",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Wconversion",
+        "-Werror",
+        "-fsanitize=address,undefined",
+        "-Iinterfaces/generated",
+        "-Isrc/environment",
+        "-Isrc/graphics",
+        "-Isrc/core",
+        "-Isrc/input",
+        "-Isrc/presentation",
+        "-I/private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-pr1-1792683066367533000",
+        "src/environment/m2_fixture.c",
+        "src/graphics/m2_geometry.c",
+        "interfaces/generated/m2_tables.c",
+        "tests/flight_demo/m2/clip_host.c",
+        "-o",
+        "/private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-pr1-1792683066367533000/clip-host"
+      ],
+      "exit": 0,
+      "log": "clip-host-build.txt"
+    },
+    {
+      "argv": [
+        "/private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-pr1-1792683066367533000/clip-host"
+      ],
+      "exit": 0,
+      "log": "clip-host.txt"
+    },
+    {
+      "argv": [
+        "/private/tmp/f65-m2-interpolation-experiment/toolchain/runtime/llvm-mos/bin/mos-mega65-clang",
+        "-mcpu=mos45gs02",
+        "-mlto-zp=0",
+        "-Os",
+        "-fno-jump-tables",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Wconversion",
+        "-Werror",
+        "-Iinterfaces/generated",
+        "-Isrc/environment",
+        "-Isrc/graphics",
+        "-Isrc/core",
+        "-Isrc/input",
+        "-Isrc/presentation",
+        "src/environment/m2_fixture.c",
+        "src/graphics/m2_geometry.c",
+        "interfaces/generated/m2_tables.c",
+        "tests/flight_demo/m2/target.c",
+        "-Wl,-T,src/platform/r0f/startup.ld",
+        "-Wl,-Map,/private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-pr1-1792683066367533000/M2.map",
+        "-o",
+        "/private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-pr1-1792683066367533000/M2.prg"
+      ],
+      "exit": 0,
+      "log": "target-build.txt"
+    },
+    {
+      "argv": [
+        "/private/tmp/f65-m2-interpolation-experiment/toolchain/runtime/llvm-mos/bin/llvm-objdump",
+        "-d",
+        "/private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-pr1-1792683066367533000/M2.prg.elf"
+      ],
+      "exit": 0,
+      "log": "M2.disassembly"
+    },
+    {
+      "argv": [
+        "/private/tmp/f65-m2-interpolation-experiment/toolchain/runtime/llvm-mos/bin/llvm-nm",
+        "-S",
+        "/private/tmp/f65-m2-interpolation-experiment/build/flight-demo/m2-pr1-1792683066367533000/M2.prg.elf"
+      ],
+      "exit": 0,
+      "log": "M2.symbols"
+    }
+  ],
+  "stack_gate": "FAIL unrecognized instruction: bit",
+  "later_static_checks": "NOT REACHED"
+}
