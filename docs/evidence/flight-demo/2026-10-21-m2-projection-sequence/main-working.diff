@@ -1,0 +1,154 @@
+diff --git a/WORK_IN_PROGRESS.md b/WORK_IN_PROGRESS.md
+index ebc93f2..5e1f70c 100644
+--- a/WORK_IN_PROGRESS.md
++++ b/WORK_IN_PROGRESS.md
+@@ -1,7 +1,11 @@
+ # Work in Progress
+ 
+-- **Status: NONE — bounded transform experiment approved for publication.**
+-- **Authority:** Founder approved the reviewed transform experiment and authorized commit, push, PR, merge after checks and main verification, then stop.
+-- **Result:** Exact reviewed transform function, focused tests, plans/report and immutable evidence published separately from renderer/cache scaffolding. Retained composition saves 2,072 resident bytes and remains 9,646 bytes over its unchanged ceiling. [Publication scope](docs/reports/M2_PR2_TRANSFORM_PUBLICATION.md), [experiment](docs/reports/M2_PR2_TRANSFORM_SEQUENCE_EXPERIMENT.md).
+-- **Boundary:** Original development and experiment checkouts, historical evidence and unrelated paths preserved. Full renderer fit, integrated stack/ABI/service bounds and runtime/display admission remain unresolved; generated contracts unchanged.
+-- **Stop:** Verify merged main, then stop. No further optimization, Xemu, D81, SD, physical testing or later milestone.
++- **Status: READY FOR REVIEW — bounded size gate FAILED; implementation stopped.**
++- **Branch/base:** `codex/65aero-m2-projection-experiment`, verified main `9dae245314ddd41cceaa7c6c3e7fce90c564138e`; exact-main CI PASS.
++- **Authority:** [Approved bounded projection intent](docs/plans/65AERO_M2_PR2_PROJECTION_BUILD_INTENT.md), as approved by the founder on 21 October. The retained planning file is unchanged provenance; this task approval supersedes its pending status.
++- **Scope:** Reconstruct the 79-input reference; one candidate confined to `m2_project_prepared`; fixed comparison/oracle/renderer and target checks. Stop after candidate relink and read-only accounting.
++- **Boundary:** Preserve all other checkouts, evidence, unrelated entries, precision, memory limits, ownership, renderer/cache/dispatch and generated contracts. No Xemu, D81, SD, physical testing or publication.
++- **Result:** [Projection experiment](docs/reports/M2_PR2_PROJECTION_EXPERIMENT.md): own projection code -96 bytes, text +328, scratch -16; resident 34,221 → 34,533 (+312); remaining deficit 9,958 bytes, end `$A6E6`. One reference and one candidate composed relink.
++- **Checks:** 799,886 exact ASan/UBSan comparisons +34 contract checks; 3,857 Decimal cases; 841 near/far cases; renderer/cancellation/fault checks and five identical images; standalone target/static PASS. Composed stack proof remains UNPROVEN because unchanged checker rejects `bit` in frozen interpolation. Full-fit/runtime/display gates not reached.
++- **Preservation:** Original 15,731 paths and prior transform 15,536 paths unchanged; 20 unrelated entries and 12 historical inventories verified; generated files/ledgers unchanged.
++- **Next:** Founder review of the failed experiment. No second candidate, optimization, target execution or publication authorized.
+diff --git a/src/graphics/m2_geometry.c b/src/graphics/m2_geometry.c
+index 1824718..be77627 100644
+--- a/src/graphics/m2_geometry.c
++++ b/src/graphics/m2_geometry.c
+@@ -250,48 +250,50 @@ int8_t m2_project_prepared(const struct M2Prepared *prepared,
+     {
+         return -1;
+     }
+-    ClipPoint a = to_camera(&prepared->camera, &prepared->rotation, first);
+-    ClipPoint b = to_camera(&prepared->camera, &prepared->rotation, last);
++    const M2Point *endpoints[2] = {first, last};
++    ClipPoint points[2];
++    for (uint8_t end = 0u; end < 2u; ++end)
++    {
++        points[end] = to_camera(&prepared->camera, &prepared->rotation,
++                                endpoints[end]);
++    }
+     for (uint8_t plane = 0u; plane < M2_CLIP_PLANES; ++plane)
+     {
+-        int64_t da = plane_distance(&a, plane);
+-        int64_t db = plane_distance(&b, plane);
+-        if (da < 0 && db < 0)
++        int64_t distances[2];
++        for (uint8_t end = 0u; end < 2u; ++end)
++        {
++            distances[end] = plane_distance(&points[end], plane);
++        }
++        if (distances[0] < 0 && distances[1] < 0)
+         {
+             return 0;
+         }
+-        if ((da < 0) != (db < 0))
++        if ((distances[0] < 0) != (distances[1] < 0))
+         {
+-            // Interpolate from the inside endpoint; ratio is in [0,1].
+-            ClipPoint inside = da >= 0 ? a : b;
+-            ClipPoint outside = da < 0 ? a : b;
+-            int64_t numerator = da >= 0 ? da : db;
+-            int64_t denominator = da >= 0 ? da - db : db - da;
++            uint8_t outside = distances[0] < 0 ? 0u : 1u;
++            uint8_t inside = (uint8_t)(outside ^ 1u);
++            int64_t numerator = distances[inside];
++            int64_t denominator = numerator - distances[outside];
++            // Keep the ratio and inside point fixed while replacing only the
++            // outside coordinates. Each delta reads its own prior component.
+             for (uint8_t axis = 0u; axis < 3u; ++axis)
+             {
+-                int64_t delta = (int64_t)outside.v[axis] - inside.v[axis];
+-                outside.v[axis] = inside.v[axis]
++                int64_t delta = points[outside].v[axis] - points[inside].v[axis];
++                points[outside].v[axis] = points[inside].v[axis]
+                     + interpolate_delta(delta, numerator, denominator);
+             }
+-            if (da < 0)
+-            {
+-                a = outside;
+-            }
+-            else
+-            {
+-                b = outside;
+-            }
+         }
+     }
+-    if (a.v[0] <= 0 || b.v[0] <= 0)
++    if (points[0].v[0] <= 0 || points[1].v[0] <= 0)
+     {
+         return -1;
+     }
+     M2Line result;
+-    result.x[0] = project_axis(a.v[1], a.v[0], M2_WIDTH);
+-    result.y[0] = project_axis(a.v[2], a.v[0], M2_HEIGHT);
+-    result.x[1] = project_axis(b.v[1], b.v[0], M2_WIDTH);
+-    result.y[1] = project_axis(b.v[2], b.v[0], M2_HEIGHT);
++    for (uint8_t end = 0u; end < 2u; ++end)
++    {
++        result.x[end] = project_axis(points[end].v[1], points[end].v[0], M2_WIDTH);
++        result.y[end] = project_axis(points[end].v[2], points[end].v[0], M2_HEIGHT);
++    }
+     *line = result;
+     return 1;
+ }
+@@ -486,3 +488,39 @@ uint8_t m2_pair_eligible(const M2Registration *world,
+     }
+     return 1u;
+ }
++
++// Private owner validation against the already captured immutable transform.
++// Public record_valid/pair_eligible retain their independent reconstruction.
++uint8_t m2_registration_matches_prepared(const struct M2Prepared *prepared,
++    const M2Registration *record, uint32_t generation, uint32_t tick, uint8_t store)
++{
++    if (prepared == 0 || prepared->ready != 1u || record == 0
++        || generation == 0u || store > 1u || record->generation != generation
++        || record->source_tick != tick || record->store != store
++        || record->fixture_revision != M2_FIXTURE_REVISION
++        || record->projection_revision != M2_PROJECTION_REVISION
++        || record->composition_revision != M2_COMPOSITION_REVISION
++        || record->view_id != 0u || record->tier_id != 0u
++        || record->camera.revision != prepared->camera.revision
++        || record->camera.yaw != prepared->camera.yaw
++        || record->camera.pitch != prepared->camera.pitch
++        || record->camera.roll != prepared->camera.roll)
++    {
++        return 0u;
++    }
++    for (uint8_t i = 0u; i < 3u; ++i)
++    {
++        if (record->camera.position.v[i] != prepared->camera.position.v[i])
++        {
++            return 0u;
++        }
++    }
++    for (uint8_t i = 0u; i < 9u; ++i)
++    {
++        if (record->transform.m[i] != prepared->rotation.m[i])
++        {
++            return 0u;
++        }
++    }
++    return 1u;
++}
+diff --git a/src/graphics/m2_prepared_private.h b/src/graphics/m2_prepared_private.h
+index 8790225..98e557f 100644
+--- a/src/graphics/m2_prepared_private.h
++++ b/src/graphics/m2_prepared_private.h
+@@ -15,3 +15,7 @@ int8_t m2_ground_prepared(const struct M2Prepared *prepared, uint16_t x, uint16_
+ uint8_t m2_registration_prepared(const struct M2Prepared *prepared,
+                                  uint32_t generation, uint32_t tick, uint8_t store,
+                                  M2Registration *record);
++
++// Private captured-owner comparison; does not reconstruct a caller's matrix.
++uint8_t m2_registration_matches_prepared(const struct M2Prepared *prepared,
++    const M2Registration *record, uint32_t generation, uint32_t tick, uint8_t store);

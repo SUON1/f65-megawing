@@ -1,0 +1,174 @@
+{
+  "before": {
+    "stack": {
+      "status": "UNPROVEN",
+      "reason": "unrecognized instruction: bit"
+    },
+    "software_stack_pointer_writes": [
+      [
+        "sta",
+        "$2                      ; 0x2 <__rc0>"
+      ],
+      [
+        "sta",
+        "$3                      ; 0x3 <__rc1>"
+      ],
+      [
+        "sta",
+        "$2                      ; 0x2 <__rc0>"
+      ],
+      [
+        "sta",
+        "$3                      ; 0x3 <__rc1>"
+      ]
+    ],
+    "closure": [
+      "__ashldi3",
+      "__memset",
+      "__mulsi3",
+      "__udivdi3",
+      "interpolate_delta",
+      "m2_multiply_q46",
+      "m2_point_valid",
+      "m2_project_prepared",
+      "memcpy",
+      "multiply_rotation",
+      "plane_distance",
+      "project_axis",
+      "rounded_ratio",
+      "to_camera"
+    ],
+    "instruction_inventory": {
+      "__ashldi3": 17,
+      "__memset": 15,
+      "__mulsi3": 64,
+      "__udivdi3": 395,
+      "interpolate_delta": 748,
+      "m2_multiply_q46": 526,
+      "m2_point_valid": 65,
+      "m2_project_prepared": 895,
+      "memcpy": 22,
+      "multiply_rotation": 1,
+      "plane_distance": 504,
+      "project_axis": 280,
+      "rounded_ratio": 135,
+      "to_camera": 321
+    },
+    "per_call_bounds": {
+      "q46": 16299,
+      "to_camera": 151836,
+      "interpolate_delta": 216580,
+      "project_axis": 51370
+    },
+    "contributions": {
+      "root": 21480,
+      "point_validation": 520,
+      "two_endpoint_transforms": 303672,
+      "plane_distances": 6048,
+      "coordinate_interpolations": 3898440,
+      "projected_coordinates": 205480,
+      "bounded_copies": 10450
+    },
+    "conservative_projection_instruction_bound": 4446090,
+    "source_operation_maxima": {
+      "point_validation": 2,
+      "to_camera": 2,
+      "q46_products": 18,
+      "limb_products_32bit": 162,
+      "plane_distance": 12,
+      "interpolate_delta": 18,
+      "interpolation_bit_steps": 1152,
+      "interpolation_subtraction_tests": 2304,
+      "project_axis": 4,
+      "wide_divisions": 4,
+      "memcpy_calls": 19
+    }
+  },
+  "after": {
+    "stack": {
+      "status": "UNPROVEN",
+      "reason": "unrecognized instruction: bit"
+    },
+    "software_stack_pointer_writes": [
+      [
+        "sta",
+        "$2                      ; 0x2 <__rc0>"
+      ],
+      [
+        "sta",
+        "$3                      ; 0x3 <__rc1>"
+      ],
+      [
+        "sta",
+        "$2                      ; 0x2 <__rc0>"
+      ],
+      [
+        "sta",
+        "$3                      ; 0x3 <__rc1>"
+      ]
+    ],
+    "closure": [
+      "__ashldi3",
+      "__memset",
+      "__mulsi3",
+      "__udivdi3",
+      "interpolate_delta",
+      "m2_multiply_q46",
+      "m2_point_valid",
+      "m2_project_prepared",
+      "memcpy",
+      "multiply_rotation",
+      "plane_distance",
+      "project_axis",
+      "rounded_ratio",
+      "to_camera"
+    ],
+    "instruction_inventory": {
+      "__ashldi3": 17,
+      "__memset": 15,
+      "__mulsi3": 64,
+      "__udivdi3": 395,
+      "interpolate_delta": 748,
+      "m2_multiply_q46": 526,
+      "m2_point_valid": 65,
+      "m2_project_prepared": 884,
+      "memcpy": 22,
+      "multiply_rotation": 1,
+      "plane_distance": 504,
+      "project_axis": 280,
+      "rounded_ratio": 135,
+      "to_camera": 321
+    },
+    "per_call_bounds": {
+      "q46": 16299,
+      "to_camera": 151836,
+      "interpolate_delta": 216580,
+      "project_axis": 51370
+    },
+    "contributions": {
+      "root": 21216,
+      "point_validation": 520,
+      "two_endpoint_transforms": 303672,
+      "plane_distances": 6048,
+      "coordinate_interpolations": 3898440,
+      "projected_coordinates": 205480,
+      "bounded_copies": 1650
+    },
+    "conservative_projection_instruction_bound": 4437026,
+    "source_operation_maxima": {
+      "point_validation": 2,
+      "to_camera": 2,
+      "q46_products": 18,
+      "limb_products_32bit": 162,
+      "plane_distance": 12,
+      "interpolate_delta": 18,
+      "interpolation_bit_steps": 1152,
+      "interpolation_subtraction_tests": 2304,
+      "project_axis": 4,
+      "wide_divisions": 4,
+      "memcpy_calls": 3
+    }
+  },
+  "stack_checker_sha256": "4d344f815d246859b621caac01f2c9e27f1501ecec32c7f9491d7f2e427522ef",
+  "limitations": "Structural instruction overbounds only; no cycles, speed, wait states, platform/IRQ/NMI or dispatcher admission. Stack checker rejects BIT in frozen interpolation in both artifacts; no integrated hardware-stack bound claimed. Both roots syntactically allocate and free an 8-byte software frame; no other closure SP writes. Resident scratch charged separately."
+}

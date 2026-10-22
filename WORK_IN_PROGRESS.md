@@ -1,7 +1,7 @@
 # Work in Progress
 
-- **Status: NONE — bounded transform experiment approved for publication.**
-- **Authority:** Founder approved the reviewed transform experiment and authorized commit, push, PR, merge after checks and main verification, then stop.
-- **Result:** Exact reviewed transform function, focused tests, plans/report and immutable evidence published separately from renderer/cache scaffolding. Retained composition saves 2,072 resident bytes and remains 9,646 bytes over its unchanged ceiling. [Publication scope](docs/reports/M2_PR2_TRANSFORM_PUBLICATION.md), [experiment](docs/reports/M2_PR2_TRANSFORM_SEQUENCE_EXPERIMENT.md).
-- **Boundary:** Original development and experiment checkouts, historical evidence and unrelated paths preserved. Full renderer fit, integrated stack/ABI/service bounds and runtime/display admission remain unresolved; generated contracts unchanged.
+- **Status: NONE — bounded projection correction approved for publication.**
+- **Authority:** Founder approved the reviewed bounded correction and authorized commit, push, PR, merge after checks and verification of main, then stop.
+- **Result:** Exact reviewed prepared-projection function, focused tests, plans, reports and immutable failed/corrected evidence published independently of renderer/cache scaffolding. Retained composition saves 72 resident bytes and remains 9,574 bytes over its unchanged ceiling. [Publication scope](docs/reports/M2_PR2_PROJECTION_PUBLICATION.md), [correction](docs/reports/M2_PR2_PROJECTION_FORWARD_GUARD.md).
+- **Boundary:** Existing development and experiment checkouts, evidence and unrelated paths preserved. Full fit, composed stack/ABI/timing and runtime/display admission remain unresolved; generated contracts unchanged.
 - **Stop:** Verify merged main, then stop. No further optimization, Xemu, D81, SD, physical testing or later milestone.

@@ -1,0 +1,20 @@
+{
+  "output": "/private/tmp/f65-m2-projection-publication/build/flight-demo/projection-publication-1792644412092089000",
+  "standalone_output": "/private/tmp/f65-m2-projection-publication/build/flight-demo/m2-pr1-1792644414108528000",
+  "comparison": "PASS 799886 exact cases and 34 contract checks, ASan/UBSan",
+  "corpus_sha256": "92c334a7812dabafe70ccef7ab8703db424c15ef1f312c56fd314bf36f90a8d5",
+  "standalone": "PASS; PRG, sections and stack byte-identical to reviewed probe",
+  "target_sha256": "4e8e7ebfe5a57ca9a1f0c77fcb5c823d6653d8a3879db4cef3e9a6f28be9daa3",
+  "stack": {
+    "hardware_bytes_main_including_entry_return": 20,
+    "software_dynamic_bytes": 0,
+    "software_constant_adjustments": 0,
+    "call_entries_checked": 12,
+    "scope": "direct-call probe; no IRQ/NMI or executed high-water claim",
+    "compiler_static_stack_bytes": 497
+  },
+  "host_compiler_sha256": "5b1ddb7e9c11b87a034fc88b212e8ac243cfe2b4db696d767aa44c79595fc09a",
+  "active_geometry_sha256": "6724f9564fda4131140893a2bea7559b7c0ddc33003e0ac576ea830fe3c1d32a",
+  "no_full_renderer_rebuild": true,
+  "no_target_execution": true
+}

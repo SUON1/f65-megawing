@@ -250,48 +250,55 @@ int8_t m2_project_prepared(const struct M2Prepared *prepared,
     {
         return -1;
     }
-    ClipPoint a = to_camera(&prepared->camera, &prepared->rotation, first);
-    ClipPoint b = to_camera(&prepared->camera, &prepared->rotation, last);
+    const M2Point *endpoints[2] = {first, last};
+    ClipPoint points[2];
+    for (uint8_t end = 0u; end < 2u; ++end)
+    {
+        points[end] = to_camera(&prepared->camera, &prepared->rotation,
+                                endpoints[end]);
+    }
     for (uint8_t plane = 0u; plane < M2_CLIP_PLANES; ++plane)
     {
-        int64_t da = plane_distance(&a, plane);
-        int64_t db = plane_distance(&b, plane);
-        if (da < 0 && db < 0)
+        int64_t distances[2];
+        for (uint8_t end = 0u; end < 2u; ++end)
+        {
+            distances[end] = plane_distance(&points[end], plane);
+        }
+        if (distances[0] < 0 && distances[1] < 0)
         {
             return 0;
         }
-        if ((da < 0) != (db < 0))
+        if ((distances[0] < 0) != (distances[1] < 0))
         {
-            // Interpolate from the inside endpoint; ratio is in [0,1].
-            ClipPoint inside = da >= 0 ? a : b;
-            ClipPoint outside = da < 0 ? a : b;
-            int64_t numerator = da >= 0 ? da : db;
-            int64_t denominator = da >= 0 ? da - db : db - da;
+            uint8_t outside = distances[0] < 0 ? 0u : 1u;
+            uint8_t inside = (uint8_t)(outside ^ 1u);
+            int64_t numerator = distances[inside];
+            int64_t denominator = numerator - distances[outside];
+            // Keep the ratio and inside point fixed while replacing only the
+            // outside coordinates. Each delta reads its own prior component.
             for (uint8_t axis = 0u; axis < 3u; ++axis)
             {
-                int64_t delta = (int64_t)outside.v[axis] - inside.v[axis];
-                outside.v[axis] = inside.v[axis]
+                int64_t delta = points[outside].v[axis] - points[inside].v[axis];
+                points[outside].v[axis] = points[inside].v[axis]
                     + interpolate_delta(delta, numerator, denominator);
-            }
-            if (da < 0)
-            {
-                a = outside;
-            }
-            else
-            {
-                b = outside;
             }
         }
     }
-    if (a.v[0] <= 0 || b.v[0] <= 0)
+    if (points[0].v[0] <= 0 || points[1].v[0] <= 0)
     {
         return -1;
     }
     M2Line result;
-    result.x[0] = project_axis(a.v[1], a.v[0], M2_WIDTH);
-    result.y[0] = project_axis(a.v[2], a.v[0], M2_HEIGHT);
-    result.x[1] = project_axis(b.v[1], b.v[0], M2_WIDTH);
-    result.y[1] = project_axis(b.v[2], b.v[0], M2_HEIGHT);
+    for (uint8_t end = 0u; end < 2u; ++end)
+    {
+        const int64_t forward = points[end].v[0];
+        if (forward <= 0)
+        {
+            return -1;
+        }
+        result.x[end] = project_axis(points[end].v[1], forward, M2_WIDTH);
+        result.y[end] = project_axis(points[end].v[2], forward, M2_HEIGHT);
+    }
     *line = result;
     return 1;
 }

@@ -1,0 +1,186 @@
+00004739 <rounded_ratio>:
+    4739: 85 15        	sta	$15                     ; 0x15 <__rc19>
+    473b: 86 14        	stx	$14                     ; 0x14 <__rc18>
+    473d: a5 11        	lda	$11                     ; 0x11 <__rc15>
+    473f: 10 03        	bpl	$4744 <rounded_ratio+0xb>
+    4741: 38           	sec
+    4742: 80 01        	bra	$4745 <rounded_ratio+0xc>
+    4744: 18           	clc
+    4745: a9 ff        	lda	#$ff
+    4747: aa           	tax
+    4748: b0 02        	bcs	$474c <rounded_ratio+0x13>
+    474a: a2 00        	ldx	#$0
+    474c: e0 00        	cpx	#$0
+    474e: 30 02        	bmi	$4752 <rounded_ratio+0x19>
+    4750: a9 00        	lda	#$0
+    4752: a6 16        	ldx	$16                     ; 0x16 <__rc20>
+    4754: da           	phx
+    4755: a6 17        	ldx	$17                     ; 0x17 <__rc21>
+    4757: da           	phx
+    4758: a6 18        	ldx	$18                     ; 0x18 <__rc22>
+    475a: da           	phx
+    475b: a6 19        	ldx	$19                     ; 0x19 <__rc23>
+    475d: da           	phx
+    475e: a6 1a        	ldx	$1a                     ; 0x1a <__rc24>
+    4760: 8e b7 a6     	stx	$a6b7                   ; 0xa6b7 <__data_load_start+0x6e6>
+    4763: a6 1b        	ldx	$1b                     ; 0x1b <__rc25>
+    4765: 8e b8 a6     	stx	$a6b8                   ; 0xa6b8 <__data_load_start+0x6e7>
+    4768: a6 1c        	ldx	$1c                     ; 0x1c <__rc26>
+    476a: 8e b9 a6     	stx	$a6b9                   ; 0xa6b9 <__data_load_start+0x6e8>
+    476d: a6 1d        	ldx	$1d                     ; 0x1d <__rc27>
+    476f: 8e ba a6     	stx	$a6ba                   ; 0xa6ba <__data_load_start+0x6e9>
+    4772: 0a           	asl
+    4773: 0a           	asl
+    4774: a9 00        	lda	#$0
+    4776: 2a           	rol
+    4777: aa           	tax
+    4778: a9 00        	lda	#$0
+    477a: 2a           	rol
+    477b: a8           	tay
+    477c: a9 00        	lda	#$0
+    477e: 2a           	rol
+    477f: 85 16        	sta	$16                     ; 0x16 <__rc20>
+    4781: a9 00        	lda	#$0
+    4783: 2a           	rol
+    4784: 85 17        	sta	$17                     ; 0x17 <__rc21>
+    4786: a9 00        	lda	#$0
+    4788: 2a           	rol
+    4789: 85 18        	sta	$18                     ; 0x18 <__rc22>
+    478b: a9 00        	lda	#$0
+    478d: 2a           	rol
+    478e: 85 19        	sta	$19                     ; 0x19 <__rc23>
+    4790: a9 00        	lda	#$0
+    4792: 2a           	rol
+    4793: 85 1a        	sta	$1a                     ; 0x1a <__rc24>
+    4795: 64 1d        	stz	$1d                     ; 0x1d <__rc27>
+    4797: 26 1d        	rol	$1d                     ; 0x1d <__rc27>
+    4799: 18           	clc
+    479a: 8a           	txa
+    479b: 65 0a        	adc	$a                      ; 0xa <__rc8>
+    479d: 85 1b        	sta	$1b                     ; 0x1b <__rc25>
+    479f: 98           	tya
+    47a0: 65 0b        	adc	$b                      ; 0xb <__rc9>
+    47a2: aa           	tax
+    47a3: a5 16        	lda	$16                     ; 0x16 <__rc20>
+    47a5: 65 0c        	adc	$c                      ; 0xc <__rc10>
+    47a7: 85 1c        	sta	$1c                     ; 0x1c <__rc26>
+    47a9: a5 17        	lda	$17                     ; 0x17 <__rc21>
+    47ab: 65 0d        	adc	$d                      ; 0xd <__rc11>
+    47ad: 85 16        	sta	$16                     ; 0x16 <__rc20>
+    47af: a5 18        	lda	$18                     ; 0x18 <__rc22>
+    47b1: 65 0e        	adc	$e                      ; 0xe <__rc12>
+    47b3: 85 17        	sta	$17                     ; 0x17 <__rc21>
+    47b5: a5 19        	lda	$19                     ; 0x19 <__rc23>
+    47b7: 65 0f        	adc	$f                      ; 0xf <__rc13>
+    47b9: 85 18        	sta	$18                     ; 0x18 <__rc22>
+    47bb: a5 1a        	lda	$1a                     ; 0x1a <__rc24>
+    47bd: 65 10        	adc	$10                     ; 0x10 <__rc14>
+    47bf: a8           	tay
+    47c0: a5 1d        	lda	$1d                     ; 0x1d <__rc27>
+    47c2: 65 11        	adc	$11                     ; 0x11 <__rc15>
+    47c4: c9 80        	cmp	#$80
+    47c6: 6a           	ror
+    47c7: 85 1a        	sta	$1a                     ; 0x1a <__rc24>
+    47c9: 98           	tya
+    47ca: 6a           	ror
+    47cb: 85 19        	sta	$19                     ; 0x19 <__rc23>
+    47cd: 66 18        	ror	$18                     ; 0x18 <__rc22>
+    47cf: 66 17        	ror	$17                     ; 0x17 <__rc21>
+    47d1: 66 16        	ror	$16                     ; 0x16 <__rc20>
+    47d3: 66 1c        	ror	$1c                     ; 0x1c <__rc26>
+    47d5: a4 1c        	ldy	$1c                     ; 0x1c <__rc26>
+    47d7: 8a           	txa
+    47d8: 6a           	ror
+    47d9: 85 1c        	sta	$1c                     ; 0x1c <__rc26>
+    47db: a5 1b        	lda	$1b                     ; 0x1b <__rc25>
+    47dd: 6a           	ror
+    47de: a6 09        	ldx	$9                      ; 0x9 <__rc7>
+    47e0: 10 03        	bpl	$47e5 <rounded_ratio+0xac>
+    47e2: 4c 1a 48     	jmp	$481a <rounded_ratio+0xe1>
+    47e5: 18           	clc
+    47e6: 65 15        	adc	$15                     ; 0x15 <__rc19>
+    47e8: 85 15        	sta	$15                     ; 0x15 <__rc19>
+    47ea: a5 1c        	lda	$1c                     ; 0x1c <__rc26>
+    47ec: 65 14        	adc	$14                     ; 0x14 <__rc18>
+    47ee: aa           	tax
+    47ef: 98           	tya
+    47f0: 65 04        	adc	$4                      ; 0x4 <__rc2>
+    47f2: 85 04        	sta	$4                      ; 0x4 <__rc2>
+    47f4: a5 16        	lda	$16                     ; 0x16 <__rc20>
+    47f6: 65 05        	adc	$5                      ; 0x5 <__rc3>
+    47f8: 85 05        	sta	$5                      ; 0x5 <__rc3>
+    47fa: a5 17        	lda	$17                     ; 0x17 <__rc21>
+    47fc: 65 06        	adc	$6                      ; 0x6 <__rc4>
+    47fe: 85 06        	sta	$6                      ; 0x6 <__rc4>
+    4800: a5 18        	lda	$18                     ; 0x18 <__rc22>
+    4802: 65 07        	adc	$7                      ; 0x7 <__rc5>
+    4804: 85 07        	sta	$7                      ; 0x7 <__rc5>
+    4806: a5 19        	lda	$19                     ; 0x19 <__rc23>
+    4808: 65 08        	adc	$8                      ; 0x8 <__rc6>
+    480a: 85 08        	sta	$8                      ; 0x8 <__rc6>
+    480c: a5 1a        	lda	$1a                     ; 0x1a <__rc24>
+    480e: 65 09        	adc	$9                      ; 0x9 <__rc7>
+    4810: 85 09        	sta	$9                      ; 0x9 <__rc7>
+    4812: a5 15        	lda	$15                     ; 0x15 <__rc19>
+    4814: 20 1d 96     	jsr	$961d <__divdi3>
+    4817: 4c 68 48     	jmp	$4868 <rounded_ratio+0x12f>
+    481a: 38           	sec
+    481b: e5 15        	sbc	$15                     ; 0x15 <__rc19>
+    481d: 85 15        	sta	$15                     ; 0x15 <__rc19>
+    481f: a5 1c        	lda	$1c                     ; 0x1c <__rc26>
+    4821: e5 14        	sbc	$14                     ; 0x14 <__rc18>
+    4823: aa           	tax
+    4824: 98           	tya
+    4825: e5 04        	sbc	$4                      ; 0x4 <__rc2>
+    4827: 85 04        	sta	$4                      ; 0x4 <__rc2>
+    4829: a5 16        	lda	$16                     ; 0x16 <__rc20>
+    482b: e5 05        	sbc	$5                      ; 0x5 <__rc3>
+    482d: 85 05        	sta	$5                      ; 0x5 <__rc3>
+    482f: a5 17        	lda	$17                     ; 0x17 <__rc21>
+    4831: e5 06        	sbc	$6                      ; 0x6 <__rc4>
+    4833: 85 06        	sta	$6                      ; 0x6 <__rc4>
+    4835: a5 18        	lda	$18                     ; 0x18 <__rc22>
+    4837: e5 07        	sbc	$7                      ; 0x7 <__rc5>
+    4839: 85 07        	sta	$7                      ; 0x7 <__rc5>
+    483b: a5 19        	lda	$19                     ; 0x19 <__rc23>
+    483d: e5 08        	sbc	$8                      ; 0x8 <__rc6>
+    483f: 85 08        	sta	$8                      ; 0x8 <__rc6>
+    4841: a5 1a        	lda	$1a                     ; 0x1a <__rc24>
+    4843: e5 09        	sbc	$9                      ; 0x9 <__rc7>
+    4845: 85 09        	sta	$9                      ; 0x9 <__rc7>
+    4847: a5 15        	lda	$15                     ; 0x15 <__rc19>
+    4849: 20 1d 96     	jsr	$961d <__divdi3>
+    484c: 85 06        	sta	$6                      ; 0x6 <__rc4>
+    484e: 86 07        	stx	$7                      ; 0x7 <__rc5>
+    4850: a9 00        	lda	#$0
+    4852: 38           	sec
+    4853: e5 06        	sbc	$6                      ; 0x6 <__rc4>
+    4855: a8           	tay
+    4856: a9 00        	lda	#$0
+    4858: e5 07        	sbc	$7                      ; 0x7 <__rc5>
+    485a: aa           	tax
+    485b: a9 00        	lda	#$0
+    485d: e5 04        	sbc	$4                      ; 0x4 <__rc2>
+    485f: 85 04        	sta	$4                      ; 0x4 <__rc2>
+    4861: a9 00        	lda	#$0
+    4863: e5 05        	sbc	$5                      ; 0x5 <__rc3>
+    4865: 85 05        	sta	$5                      ; 0x5 <__rc3>
+    4867: 98           	tya
+    4868: ac ba a6     	ldy	$a6ba                   ; 0xa6ba <__data_load_start+0x6e9>
+    486b: 84 1d        	sty	$1d                     ; 0x1d <__rc27>
+    486d: ac b9 a6     	ldy	$a6b9                   ; 0xa6b9 <__data_load_start+0x6e8>
+    4870: 84 1c        	sty	$1c                     ; 0x1c <__rc26>
+    4872: ac b8 a6     	ldy	$a6b8                   ; 0xa6b8 <__data_load_start+0x6e7>
+    4875: 84 1b        	sty	$1b                     ; 0x1b <__rc25>
+    4877: ac b7 a6     	ldy	$a6b7                   ; 0xa6b7 <__data_load_start+0x6e6>
+    487a: 84 1a        	sty	$1a                     ; 0x1a <__rc24>
+    487c: 7a           	ply
+    487d: 84 19        	sty	$19                     ; 0x19 <__rc23>
+    487f: 7a           	ply
+    4880: 84 18        	sty	$18                     ; 0x18 <__rc22>
+    4882: 7a           	ply
+    4883: 84 17        	sty	$17                     ; 0x17 <__rc21>
+    4885: 7a           	ply
+    4886: 84 16        	sty	$16                     ; 0x16 <__rc20>
+    4888: 60           	rts
+

@@ -1,0 +1,44 @@
+{
+  "output": "/private/tmp/f65-m2-projection-publication/build/flight-demo/m2-pr1-1792644414108528000",
+  "status": "PASS host/oracle/target compile-link-static",
+  "stack": {
+    "hardware_bytes_main_including_entry_return": 20,
+    "software_dynamic_bytes": 0,
+    "software_constant_adjustments": 0,
+    "call_entries_checked": 12,
+    "scope": "direct-call probe; no IRQ/NMI or executed high-water claim",
+    "compiler_static_stack_bytes": 497
+  },
+  "sections": {
+    ".text": {
+      "start": 8215,
+      "bytes": 14360
+    },
+    ".rodata": {
+      "start": 22576,
+      "bytes": 793
+    },
+    ".data": {
+      "start": 23369,
+      "bytes": 22
+    },
+    ".bss": {
+      "start": 23391,
+      "bytes": 1456
+    },
+    ".noinit": {
+      "start": 24847,
+      "bytes": 497
+    }
+  },
+  "oracle": {
+    "oracle": "Decimal 60-digit independent quaternion and parametric clipping",
+    "cases": 3857,
+    "visible": 1278,
+    "raster_points": 119735,
+    "max_projection_error_pixels": "0.0000212242184388830443357598481208377150872710737205925378",
+    "projection_limit": 0.5,
+    "raster_limit_pixels": 1,
+    "status": "PASS"
+  }
+}

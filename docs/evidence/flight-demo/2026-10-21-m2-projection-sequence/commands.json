@@ -1,0 +1,95 @@
+{
+  "cwd": "/private/tmp/f65-m2-projection-experiment",
+  "commands": [
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "tools/flight_demo/m2_full/renderer_build.py"
+      ],
+      "exit": 1,
+      "result": "Expected reference resident fit FAIL; all compile, host, target tools exit 0",
+      "details": "00-reference/raw-build.json"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "tests/flight_demo/m2_full/projection_corpus.py",
+        "build/flight-demo/projection-comparison/corpus.bin"
+      ],
+      "exit": 0,
+      "result": "Frozen before candidate source edit",
+      "details": "corpus-identity.json"
+    },
+    {
+      "argv": [
+        "/usr/bin/clang",
+        "-std=c11",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Wconversion",
+        "-Werror",
+        "-fsanitize=address,undefined",
+        "-Isrc/graphics",
+        "-Isrc/environment",
+        "-Iinterfaces/generated",
+        "-Idocs/evidence/flight-demo/2026-10-21-m2-projection-sequence",
+        "tests/flight_demo/m2_full/projection_equivalence.c",
+        "src/environment/m2_fixture.c",
+        "interfaces/generated/m2_tables.c",
+        "-o",
+        "build/flight-demo/projection-comparison/host"
+      ],
+      "exit": 0,
+      "stdout_stderr": ""
+    },
+    {
+      "argv": [
+        "build/flight-demo/projection-comparison/host",
+        "build/flight-demo/projection-comparison/corpus.bin"
+      ],
+      "exit": 0,
+      "log": "host.txt"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "tools/flight_demo/m2/build.py"
+      ],
+      "exit": 0,
+      "details": "03-standalone/build.json"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "docs/evidence/flight-demo/2026-10-21-m2-projection-sequence/run_recipe.py",
+        "host"
+      ],
+      "exit": 0,
+      "details": "04-candidate/build.json commands 0 through 2"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "docs/evidence/flight-demo/2026-10-21-m2-projection-sequence/run_recipe.py",
+        "link",
+        "--output",
+        "/private/tmp/f65-m2-projection-experiment/build/flight-demo/m2-projection-candidate-1792641396700509000"
+      ],
+      "exit": 1,
+      "result": "FAILED bounded size gate; total resident +312",
+      "details": "04-candidate/build.json commands 3 through 6"
+    }
+  ],
+  "comparison_executable_sha256": "fe7e55d782cce68da0e28c329715217461649f266bae30aada7a734999e5cdd6",
+  "static_analysis_notes": [
+    "Unchanged existing checker rejects BIT in frozen interpolation in both artifacts.",
+    "Two preliminary read-only analysis assertions assumed no SP writes. Actual disassembly shows an 8-byte allocate/free pair in each root; corrected inventory, no source edit or relink.",
+    "Reference verification initial dictionary comparisons required schema normalization (owner kind absent from original builder) and worktree tool-path normalization; nm kinds and physical tool hashes match. No artifact mismatch."
+  ]
+}
