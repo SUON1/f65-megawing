@@ -1,7 +1,7 @@
 # Work in Progress
 
-- **Status: NONE — bounded interpolation result and verifier fix approved for publication.**
-- **Authority:** Founder approved both reviewed increments and authorized commit, push, PR, merge after checks, verification of main and stop.
-- **Result:** Exact interpolation helper, approved BIT/CLV verifier/regressions, focused corpus/tests, plans, reports and three immutable failed/verifier/relink packets prepared independently of renderer/cache/dispatch scaffolding. Retained composition saves 385 bytes and remains 9,189 bytes over its unchanged ceiling. [Publication scope](docs/reports/M2_PR2_INTERPOLATION_PUBLICATION.md), [result](docs/reports/M2_PR2_INTERPOLATION_RELINK_RESULT.md).
-- **Boundary:** Original checkouts, all historical evidence and unrelated paths preserved. Full fit, whole-program stack/ABI/timing and runtime/display admission remain unresolved; generated contracts and memory limits unchanged.
-- **Stop:** Verify merged main, then stop. No further optimization, Xemu, D81, SD, physical testing or later milestone.
+- **Status: NONE — accepted P2 host correction published as patch and evidence only.**
+- **Authority:** Founder accepted the reported host-test correction and explicitly selected exact patch plus sealed host evidence; active M2 prerequisites remain outside this publication.
+- **Result:** [Publication scope and gate handoff](docs/reports/M2_GUARD_EVIDENCE_PUBLICATION.md); [exact patch, original host packet and identities](docs/evidence/flight-demo/2026-10-25-m2-guard-evidence-publication/README.md). The accepted 13 host tests were not rerun. No active source, tests, generated contracts, memory ledgers or CI exception changes.
+- **Boundary:** All original worktrees/evidence and unrelated paths remain preserved. Development-candidate startup/stack/service and diagnostic PAL/NTSC results retain their scoped PASS; resident fit remains FAIL by 2,175 bytes. These are preserved development evidence, not main target/runtime admission.
+- **Next:** Verify integrated main and stop. A separately authorized bounded whole-program residency/load-contract admission is needed before implementation; no automatic optimization, bank adoption, relink, Xemu, D81, SD or physical work.
