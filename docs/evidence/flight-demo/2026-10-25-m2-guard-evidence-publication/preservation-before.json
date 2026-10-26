@@ -1,0 +1,98 @@
+{
+  "/Users/slice/Developer/f65-megawing": {
+    "paths": 15731,
+    "digest": "34770545fab5757659adcbff0eb750199e9fc426461fefb9b49b7385f8e3f7dd",
+    "head": "8ee5214ea9c63b86e92ca9bc4fa0779115dbd57f",
+    "status": " M WORK_IN_PROGRESS.md\n M src/graphics/m2_geometry.c\n M src/graphics/m2_prepared_private.h\n?? docs/evidence/flight-demo/2026-10-21-m2-generation-cache/\n?? docs/evidence/flight-demo/2026-10-21-m2-q46-limb16/\n?? docs/evidence/flight-demo/2026-10-21-m2-renderer-fit/\n?? docs/evidence/r0f/successor/2026-09-22-workflow/R0FCAP13/\n?? docs/evidence/r0f/successor/2026-09-22-workflow/R0FCAP14/\n?? docs/evidence/r0f/successor/2026-09-22-workflow/R0FCLK08/\n?? docs/evidence/r0f/successor/2026-09-22-workflow/R0FCLK09/\n?? docs/evidence/r0f/successor/2026-09-22-workflow/R0FIRQ10/\n?? docs/evidence/r0f/successor/2026-09-22-workflow/R0FIRQ11/\n?? docs/evidence/r0f/successor/2026-09-25-r0fdbg07-physical/\n?? docs/evidence/r0f/successor/2026-09-26-irq-handoff/\n?? docs/evidence/r0f/successor/2026-09-26-r0fclk09-physical/\n?? docs/evidence/r0f/successor/2026-09-26-r0firq10-physical/\n?? docs/evidence/r0f/successor/2026-09-26-raster-irq/\n?? docs/evidence/r0f/successor/2026-09-28-cap13-viewer/\n?? docs/evidence/r0f/successor/2026-09-28-cap14-physical/\n?? docs/evidence/r0f/successor/2026-09-28-r0firq11-physical/\n?? docs/plans/65AERO_M2_PR2_RENDERER_ADMISSION_BUILD_INTENT.md\n?? docs/reports/M2_PR2_GENERATION_CACHE_GATE.md\n?? docs/reports/M2_PR2_Q46_LIMB16_EXPERIMENT.md\n?? docs/reports/M2_PR2_RENDERER_FIT_GATE.md\n?? docs/reports/R0-F_CAP14_DELIVERY_PREPARATION.md\n?? docs/reports/SD_BACKUP_2026-09-28.md\n?? src/diagnostics/m2/\n?? src/graphics/m2_font.c\n?? src/graphics/m2_q46_private.h\n?? src/graphics/m2_renderer.c\n?? src/graphics/m2_renderer.h\n?? src/input/m2_camera_input.c\n?? src/input/m2_camera_input.h\n?? tests/flight_demo/m2_full/fit_backend.c\n?? tests/flight_demo/m2_full/fit_root.c\n?? tests/flight_demo/m2_full/q46_binding.c\n?? tests/flight_demo/m2_full/q46_equivalence.c\n?? tests/flight_demo/m2_full/q46_oracle.py\n?? tests/flight_demo/m2_full/renderer_cases.json\n?? tests/flight_demo/m2_full/renderer_host.c\n?? tools/diagnostics/d81_fat_mirror_diagnostic.py\n?? tools/diagnostics/mega65_sd_readonly_backup.py\n?? tools/diagnostics/test_d81_fat_mirror_diagnostic.py\n?? tools/diagnostics/test_mega65_sd_readonly_backup.py\n?? tools/flight_demo/m2_full/renderer_build.py\n"
+  },
+  "/private/tmp/f65-m2-deficit-intent": {
+    "paths": 15453,
+    "digest": "0f706e9ba0c5ea0966d492394a28b582a3604f078981b3c8158afdb71c6a504c",
+    "head": "b3406ed8b9e141b50ca7ea7d3b5edd169c1ae310",
+    "status": " M WORK_IN_PROGRESS.md\n?? docs/plans/65AERO_M2_PR2_DEFICIT_BUILD_INTENT.md\n?? docs/plans/65AERO_M2_PR2_DEFICIT_RECONSTRUCTION.json\n"
+  },
+  "/private/tmp/f65-m2-interpolation-experiment": {
+    "paths": 15862,
+    "digest": "2f2a060e506e69cdf1b100c236c13c5af0db1cc85f5aea330a4e8a517ab04769",
+    "head": "c6a41e0988a3e329f1b30f7d48c87d92e00b523b",
+    "status": " M WORK_IN_PROGRESS.md\n M src/graphics/m2_geometry.c\n M src/graphics/m2_prepared_private.h\n M tests/flight_demo/m2/test_contract.py\n M tools/flight_demo/m2/stack_check.py\n?? docs/evidence/flight-demo/2026-10-22-m2-bit-clv-verifier/\n?? docs/evidence/flight-demo/2026-10-22-m2-interpolation-bitwalk/\n?? docs/evidence/flight-demo/2026-10-22-m2-interpolation-relink/\n?? docs/plans/65AERO_M2_PR2_INTERPOLATION_BUILD_INTENT.md\n?? docs/plans/65AERO_M2_PR2_INTERPOLATION_RECONSTRUCTION.json\n?? docs/reports/M2_BIT_CLV_VERIFIER_FIX.md\n?? docs/reports/M2_PR2_INTERPOLATION_BITWALK_EXPERIMENT.md\n?? docs/reports/M2_PR2_INTERPOLATION_RELINK_RESULT.md\n?? src/diagnostics/m2/\n?? src/graphics/m2_font.c\n?? src/graphics/m2_renderer.c\n?? src/graphics/m2_renderer.h\n?? src/input/m2_camera_input.c\n?? src/input/m2_camera_input.h\n?? tests/flight_demo/m2_full/fit_backend.c\n?? tests/flight_demo/m2_full/fit_root.c\n?? tests/flight_demo/m2_full/interpolation_corpus.py\n?? tests/flight_demo/m2_full/interpolation_equivalence.c\n?? tests/flight_demo/m2_full/renderer_cases.json\n?? tests/flight_demo/m2_full/renderer_host.c\n?? tools/flight_demo/m2_full/renderer_build.py\n"
+  },
+  "/private/tmp/f65-m2-interpolation-intent": {
+    "paths": 15719,
+    "digest": "f81d32da0a2f36f09249cf062fbb17b84eec7c63ecb1235ca7937fecaebaee79",
+    "head": "c6a41e0988a3e329f1b30f7d48c87d92e00b523b",
+    "status": " M WORK_IN_PROGRESS.md\n?? docs/plans/65AERO_M2_PR2_INTERPOLATION_BUILD_INTENT.md\n?? docs/plans/65AERO_M2_PR2_INTERPOLATION_RECONSTRUCTION.json\n"
+  },
+  "/private/tmp/f65-m2-interpolation-publication": {
+    "paths": 15881,
+    "digest": "01571f3dc5ba748a3cc21367e55cfba45cc68ebce4fb680558881ad9e1672442",
+    "head": "58319aebd14c1eed89e7ce3b77e2b9570d9a4d2f",
+    "status": ""
+  },
+  "/private/tmp/f65-m2-minimal-renderer-admission": {
+    "paths": 15888,
+    "digest": "4c81370e8ab821822dd2a7ce529b9569e54c2340dca12510f4c391c032a8d60b",
+    "head": "44e4c09050a7d3282ea7c3e577d6cdd9124f2a18",
+    "status": " M WORK_IN_PROGRESS.md\n?? docs/evidence/flight-demo/2026-10-23-m2-minimal-admission/\n?? docs/reports/M2_MINIMUM_RENDERER_GATE1.md\n"
+  },
+  "/private/tmp/f65-m2-minimal-runway-renderer": {
+    "paths": 17285,
+    "digest": "eb3c061dcbd3c5167e24f49803730747cf03c76b3c69f4e51fe0a3b007d55995",
+    "head": "44e4c09050a7d3282ea7c3e577d6cdd9124f2a18",
+    "status": " M WORK_IN_PROGRESS.md\n M src/graphics/m2_q46_private.h\n M tests/flight_demo/m2/test_contract.py\n M tools/flight_demo/m2/stack_check.py\n?? docs/evidence/flight-demo/2026-10-23-m2-adapter-budget/\n?? docs/evidence/flight-demo/2026-10-23-m2-graphics-bytes/\n?? docs/evidence/flight-demo/2026-10-23-m2-minimum-renderer/\n?? docs/evidence/flight-demo/2026-10-23-m2-resumable-projection/\n?? docs/evidence/flight-demo/2026-10-24-m2-horizon-scalar/\n?? docs/evidence/flight-demo/2026-10-24-m2-option-a/\n?? docs/evidence/flight-demo/2026-10-24-m2-q46-packing/\n?? docs/evidence/flight-demo/2026-10-25-m2-bank-contracts/\n?? docs/evidence/flight-demo/2026-10-25-m2-guard-test-isolation/\n?? docs/evidence/flight-demo/2026-10-25-m2-runtime-admission/\n?? docs/evidence/flight-demo/2026-10-25-m2-xemu-diagnostic-preflight/\n?? docs/plans/65AERO_M2_ADAPTER_BUDGET_BUILD_INTENT.md\n?? docs/plans/65AERO_M2_BANKED_CONTRACTS_DRAFT.json\n?? docs/plans/65AERO_M2_BANK_CONTRACTS_DESIGN_INTENT.md\n?? docs/plans/65AERO_M2_BOOT_LOAD_CONTRACT_DRAFT.md\n?? docs/plans/65AERO_M2_CODE_BANK_CONTRACT_DRAFT.md\n?? docs/plans/65AERO_M2_GRAPHICS_BYTES_BUILD_INTENT.md\n?? docs/plans/65AERO_M2_HORIZON_SCALAR_BUILD_INTENT.md\n?? docs/plans/65AERO_M2_MINIMUM_RENDERER_BUILD_INTENT.md\n?? docs/plans/65AERO_M2_OPTION_A_BUILD_INTENT.md\n?? docs/plans/65AERO_M2_PROTECTED_MAP_CONTRACT_DRAFT.md\n?? docs/plans/65AERO_M2_Q46_PACKING_BUILD_INTENT.md\n?? docs/plans/65AERO_M2_RESUMABLE_PROJECTION_BUILD_INTENT.md\n?? docs/plans/65AERO_M2_RUNTIME_ADMISSION_BUILD_INTENT.md\n?? docs/plans/65AERO_M2_XEMU_DIAGNOSTIC_BUILD_INTENT.md\n?? docs/reports/M2_ADAPTER_BUDGET_PROJECTION_RESULT.md\n?? docs/reports/M2_BANK_CONTRACTS_DESIGN_REVIEW.md\n?? docs/reports/M2_GRAPHICS_BYTES_RESULT.md\n?? docs/reports/M2_HORIZON_SCALAR_RESULT.md\n?? docs/reports/M2_MINIMUM_RENDERER_RESULT.md\n?? docs/reports/M2_OPTION_A_MEMORY_FEASIBILITY.md\n?? docs/reports/M2_Q46_PACKING_RESULT.md\n?? docs/reports/M2_RESUMABLE_PROJECTION_RESULT.md\n?? docs/reports/M2_RUNTIME_ADMISSION_RESULT.md\n?? docs/reports/M2_XEMU_DIAGNOSTIC_PREFLIGHT.md\n?? interfaces/generated/m2_min.h\n?? interfaces/generated/m2_min_fields.h\n?? interfaces/m2_min.json\n?? memory/m2-min-ledger.json\n?? src/diagnostics/m2_min/\n?? src/graphics/m2_min_bytes.c\n?? src/graphics/m2_min_bytes.h\n?? src/graphics/m2_min_font.c\n?? src/graphics/m2_min_font.h\n?? src/graphics/m2_min_geometry.c\n?? src/graphics/m2_min_geometry.h\n?? src/graphics/m2_min_renderer.c\n?? src/graphics/m2_min_renderer.h\n?? src/input/m2_min_input.c\n?? src/input/m2_min_input.h\n?? src/platform/m2_min/\n?? tests/flight_demo/m2_min/\n?? toolchain/runtime\n?? tools/flight_demo/m2_min/\n"
+  },
+  "/private/tmp/f65-m2-plane-distance-experiment": {
+    "paths": 15992,
+    "digest": "9a10197672955fb0d1a6abc6d2cb8ff3e9c06bd0b5413259e4cc9a621ce0eceb",
+    "head": "44e4c09050a7d3282ea7c3e577d6cdd9124f2a18",
+    "status": " M WORK_IN_PROGRESS.md\n M src/graphics/m2_geometry.c\n M src/graphics/m2_prepared_private.h\n?? docs/evidence/flight-demo/2026-10-22-m2-plane-distance/\n?? docs/evidence/flight-demo/2026-10-22-m2-sdk-symlink-verifier/\n?? docs/plans/65AERO_M2_PR2_PLANE_DISTANCE_BUILD_INTENT.md\n?? docs/plans/65AERO_M2_PR2_PLANE_DISTANCE_RECONSTRUCTION.json\n?? docs/reports/M2_PR2_PLANE_DISTANCE_EXPERIMENT.md\n?? docs/reports/M2_SDK_SYMLINK_VERIFIER_FIX.md\n?? src/diagnostics/m2/\n?? src/graphics/m2_font.c\n?? src/graphics/m2_renderer.c\n?? src/graphics/m2_renderer.h\n?? src/input/m2_camera_input.c\n?? src/input/m2_camera_input.h\n?? tests/flight_demo/m2_full/fit_backend.c\n?? tests/flight_demo/m2_full/fit_root.c\n?? tests/flight_demo/m2_full/plane_distance_corpus.py\n?? tests/flight_demo/m2_full/plane_distance_equivalence.c\n?? tests/flight_demo/m2_full/renderer_cases.json\n?? tests/flight_demo/m2_full/renderer_host.c\n?? toolchain/runtime\n?? tools/flight_demo/m2_full/renderer_build.py\n"
+  },
+  "/private/tmp/f65-m2-plane-distance-intent": {
+    "paths": 15883,
+    "digest": "a5ad1483694f392aa2efd3d662f3107717d013d0436af9920cb65ab7cb84908f",
+    "head": "44e4c09050a7d3282ea7c3e577d6cdd9124f2a18",
+    "status": " M WORK_IN_PROGRESS.md\n?? docs/plans/65AERO_M2_PR2_PLANE_DISTANCE_BUILD_INTENT.md\n?? docs/plans/65AERO_M2_PR2_PLANE_DISTANCE_RECONSTRUCTION.json\n"
+  },
+  "/private/tmp/f65-m2-projection-experiment": {
+    "paths": 15702,
+    "digest": "b4a7832c3a2e222cdd4ba317e8544a437baeb83f68a98330b0972ad693b762dc",
+    "head": "9dae245314ddd41cceaa7c6c3e7fce90c564138e",
+    "status": " M WORK_IN_PROGRESS.md\n M src/graphics/m2_geometry.c\n M src/graphics/m2_prepared_private.h\n?? docs/evidence/flight-demo/2026-10-21-m2-projection-forward-guard/\n?? docs/evidence/flight-demo/2026-10-21-m2-projection-sequence/\n?? docs/plans/65AERO_M2_PR2_PROJECTION_BUILD_INTENT.md\n?? docs/plans/65AERO_M2_PR2_PROJECTION_RECONSTRUCTION.json\n?? docs/reports/M2_PR2_PROJECTION_EXPERIMENT.md\n?? docs/reports/M2_PR2_PROJECTION_FORWARD_GUARD.md\n?? src/diagnostics/m2/\n?? src/graphics/m2_font.c\n?? src/graphics/m2_renderer.c\n?? src/graphics/m2_renderer.h\n?? src/input/m2_camera_input.c\n?? src/input/m2_camera_input.h\n?? tests/flight_demo/m2_full/fit_backend.c\n?? tests/flight_demo/m2_full/fit_root.c\n?? tests/flight_demo/m2_full/projection_corpus.py\n?? tests/flight_demo/m2_full/projection_equivalence.c\n?? tests/flight_demo/m2_full/renderer_cases.json\n?? tests/flight_demo/m2_full/renderer_host.c\n?? tools/flight_demo/m2_full/renderer_build.py\n"
+  },
+  "/private/tmp/f65-m2-projection-intent": {
+    "paths": 15547,
+    "digest": "615559a3259cc1de3f2a70fe33eb34405ae4701793420088bac74468c5d7fe0e",
+    "head": "9dae245314ddd41cceaa7c6c3e7fce90c564138e",
+    "status": " M WORK_IN_PROGRESS.md\n?? docs/plans/65AERO_M2_PR2_PROJECTION_BUILD_INTENT.md\n?? docs/plans/65AERO_M2_PR2_PROJECTION_RECONSTRUCTION.json\n"
+  },
+  "/private/tmp/f65-m2-projection-publication": {
+    "paths": 15717,
+    "digest": "7ef67f28b5abe91d3896f393a5a2caefdda3b524e17be0c53f9884dfca8e0bcc",
+    "head": "04c54fbf672fc579c727ae5cfec6a854df0351bd",
+    "status": ""
+  },
+  "/private/tmp/f65-m2-transform-experiment": {
+    "paths": 15536,
+    "digest": "3d06590a80151c96fe9fed966293d6a1c1aa20b74ecc5f36323c89c3bb3e848a",
+    "head": "b3406ed8b9e141b50ca7ea7d3b5edd169c1ae310",
+    "status": " M WORK_IN_PROGRESS.md\n M src/graphics/m2_geometry.c\n M src/graphics/m2_prepared_private.h\n?? docs/evidence/flight-demo/2026-10-21-m2-transform-sequence/\n?? docs/plans/65AERO_M2_PR2_DEFICIT_BUILD_INTENT.md\n?? docs/plans/65AERO_M2_PR2_DEFICIT_RECONSTRUCTION.json\n?? docs/reports/M2_PR2_TRANSFORM_SEQUENCE_EXPERIMENT.md\n?? src/diagnostics/m2/\n?? src/graphics/m2_font.c\n?? src/graphics/m2_renderer.c\n?? src/graphics/m2_renderer.h\n?? src/input/m2_camera_input.c\n?? src/input/m2_camera_input.h\n?? tests/flight_demo/m2_full/fit_backend.c\n?? tests/flight_demo/m2_full/fit_root.c\n?? tests/flight_demo/m2_full/renderer_cases.json\n?? tests/flight_demo/m2_full/renderer_host.c\n?? tests/flight_demo/m2_full/transform_oracle.py\n?? tests/flight_demo/m2_full/transform_sequence.c\n?? tools/flight_demo/m2_full/renderer_build.py\n"
+  },
+  "/private/tmp/f65-m2-transform-publication": {
+    "paths": 15545,
+    "digest": "972a000f7cc858b7d3a2a3f65a7215eb143ba7f37adfbb965e4d98a37f0faba9",
+    "head": "f529154cf5525591966779a436e4f03f6df4189b",
+    "status": ""
+  },
+  "/private/tmp/f65-q46-publication": {
+    "paths": 15881,
+    "digest": "01571f3dc5ba748a3cc21367e55cfba45cc68ebce4fb680558881ad9e1672442",
+    "head": "44e4c09050a7d3282ea7c3e577d6cdd9124f2a18",
+    "status": ""
+  },
+  "/Users/slice/.codex/worktrees/physics-v4-review-revisions/f65-megawing": {
+    "paths": 15034,
+    "digest": "867375d18ab501ceb6dd8aee2c297b8ad33d0314aa61bc3a89b7891b2c4e6b73",
+    "head": "c9cad932b4241df97f28e350228905e3ea6d4aaa",
+    "status": ""
+  }
+}

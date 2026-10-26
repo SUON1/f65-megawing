@@ -149,6 +149,14 @@ ceiling. Projection-closure stack bounds pass at 24 hardware / 8 dynamic softwar
 bytes; whole-program proof remains unsupported at CLD. See the
 [interpolation publication scope](docs/reports/M2_PR2_INTERPOLATION_PUBLICATION.md)
 and [exact relink evidence](docs/reports/M2_PR2_INTERPOLATION_RELINK_RESULT.md).
+The founder separately accepted the P2 guard-test evidence-isolation correction
+for its reported host-test scope. Main records its exact patch and sealed host
+evidence only; the minimum-renderer implementation and its prerequisites remain
+outside the active main tree. The preserved development candidate's startup,
+stack, service and diagnostic PAL/NTSC results retain their limited evidence
+meaning; its 2,175-byte resident deficit remains unresolved. See the
+[publication scope and next blocker](docs/reports/M2_GUARD_EVIDENCE_PUBLICATION.md).
+
 Full-renderer fit, integrated stack/timing and high-resolution output mapping
 remain open; no M2 target execution is claimed. Carry remaining obligations to the exact
 owner gates approved in the entry plan. Establish actual measured limits and

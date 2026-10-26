@@ -1,0 +1,86 @@
+{
+  "schema": 1,
+  "date": "2026-10-25",
+  "authority": "Founder accepts P2 reported host-test scope; explicitly selects exact patch and sealed host evidence only.",
+  "publication_base": "44e4c09050a7d3282ea7c3e577d6cdd9124f2a18",
+  "base_ci": {
+    "id": 39863685756,
+    "conclusion": "success",
+    "url": "https://github.com/SUON1/f65-megawing/actions/runs/39863685756"
+  },
+  "active_m2_code_adopted": false,
+  "accepted_packet": {
+    "name": "2026-10-25-m2-guard-test-isolation",
+    "members": 10,
+    "inventory_sha256": "47c6fe4ed7a641c312e59563fa67a784d9b307612745cc4248d8870724eef116",
+    "archive": "accepted-host-evidence.tar.gz",
+    "archive_sha256": "460a150471cd501fa3d713d852a8c28b50591f80fb9a0cf9bae2678c6685c110",
+    "archive_bytes": 722239,
+    "archive_regular_files": 11,
+    "member_hashes": {
+      "README.md": "9d21434ae34a304819a09255def0dce8827c7a78a1f0b16bcc328b667b1a576b",
+      "after/WORK_IN_PROGRESS.md": "c07b99d86f7a60cfd349ab1368b31d889526073ba45edfe0e5544c1b9c4c3d8e",
+      "after/tests/flight_demo/m2_min/test_runtime_admission.py": "c2a90a7f207c1366140da2113024745d3f850a8da7debe92ea4e84ccc4488541",
+      "before/WORK_IN_PROGRESS.md": "80322d31ea5aba1ff9d23b764722253f932d3a371f66ec6040c8ac32ecd9a443",
+      "before/tests/flight_demo/m2_min/test_runtime_admission.py": "cfd5555af201d2413f3e6b504f09d3b30aed388a4fb9e7dcbe67b295ff2e44c2",
+      "before.json": "edc5063d3f3f202c4c3a60e21270d1815fceebd7b749e7ae5a1ba6370b924ac4",
+      "changes.diff": "6d7a5fd897fa56711ffc2b1a279cf57160cf90f1f33d64fa090bee7ea5f90d04",
+      "min-regressions.txt": "c9b5ae1199f822be10a5a8b5d9a92632e64245c00b0f31c8df970976d626d212",
+      "validate.py": "0363ce1a4d488912e4227507f0b3dd01aa85ec1b6246810de0db60ed51405cb9",
+      "validation.json": "a9f86bee0c3ab00fd8f1ab81c92dc378f6ba5e6e737c2e9d6a01b00e72416a23",
+      "inventory.json": "47c6fe4ed7a641c312e59563fa67a784d9b307612745cc4248d8870724eef116"
+    }
+  },
+  "patch": {
+    "file": "accepted-test-patch.json",
+    "file_sha256": "88cc39576b22d70ed19e6945a82943e6bab7ca2528bc87ffd1423a0340465722",
+    "decoded_sha256": "dbaf432239bea70799d923f2e74b416f1386abb687adc85858b0d7b860bedf66",
+    "before_sha256": "cfd5555af201d2413f3e6b504f09d3b30aed388a4fb9e7dcbe67b295ff2e44c2",
+    "after_sha256": "c2a90a7f207c1366140da2113024745d3f850a8da7debe92ea4e84ccc4488541"
+  },
+  "accepted_host_tests": {
+    "count": 13,
+    "log_sha256": "c9b5ae1199f822be10a5a8b5d9a92632e64245c00b0f31c8df970976d626d212",
+    "publication_reruns": 0,
+    "scope": "guard success, deliberate compile failure and guard exit17, plus existing minimum host regressions"
+  },
+  "retained_development_evidence": {
+    "worktree": "/private/tmp/f65-m2-minimal-runway-renderer",
+    "packet": "2026-10-25-m2-runtime-admission",
+    "inventory_sha256": "d5fce59c011225643d27d884454c7b7982e7a99dfbd4e1af598a4a4fb200a245",
+    "members": 294,
+    "prg_sha256": "10c6b083bd37392b8177d3211035a76c599894aa46bb11ff4a18851e97dab6e1",
+    "outcomes": {
+      "startup": "PASS",
+      "stack": "PASS",
+      "renderer_service": "PASS",
+      "resident_fit": "FAIL",
+      "xemu_execution": "PASS",
+      "visual_renderer_behavior": "PASS"
+    },
+    "profile": "reset-only MIN-1; pinned Xemu normal40.5MHz NTSC/PAL; no external NMI injection; clock age below half range",
+    "resident_bytes": 26750,
+    "resident_limit": 24575,
+    "deficit_bytes": 2175,
+    "compiler_scratch_bytes": 77,
+    "hardware_stack_bytes": 50,
+    "software_stack_bytes": 127,
+    "trap_stack_bytes": 3,
+    "reserve_bytes": 0,
+    "clock_period_min_exclusive": 9892,
+    "required_quiet_plus_largest_slot": 9794,
+    "runtime_reconciliation_status": "PASS NTSC/PAL minimum-renderer diagnostic only",
+    "full_m2_or_graphics_acceptance": false
+  },
+  "original_failed_packet": {
+    "name": "2026-10-24-m2-q46-packing",
+    "inventory_sha256": "ea750c8876e87d58ceaf15bade9590e512a3586c6856e51ba30e73cf274073fb",
+    "prg_sha256": "1eb1c8f0e91cc80d846eb814a5393b10ac667c69304e884c02b0f30162b38841",
+    "resident_bytes": 26566,
+    "deficit_bytes": 1991,
+    "preserved": true
+  },
+  "boundary": "Evidence publication only; no active source, generated contract, memory ledger, CI exception, target link, emulator, D81, SD or physical work.",
+  "next_engineering_blocker": "development candidate resident deficit2175",
+  "smallest_next_task": "Bounded whole-program residency/load-contract admission against the working diagnostic; account recovery and all overhead, obtain founder decisions; no automatic optimization experiment."
+}
