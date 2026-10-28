@@ -1,0 +1,185 @@
+{
+  "identity": "65AERO-M2-MIN-REBUILD-SDK-PATH-1",
+  "status": "READY FOR REVIEW",
+  "scope": "host validator SDK normalization and mocked regression only",
+  "head": "b044440fa98c2dfc91ec590668049610afc98a1e",
+  "branch": "codex/65aero-m2-minimum-renderer-baseline",
+  "changed_prior_paths": [
+    "WORK_IN_PROGRESS.md",
+    "docs/reports/M2_MINIMUM_REBUILD_CORRECTIONS.md",
+    "tools/flight_demo/m2_rebuild/validate.py"
+  ],
+  "added_source_paths": [
+    "tests/flight_demo/m2_rebuild/test_validate_sdk_path.py"
+  ],
+  "commands": [
+    {
+      "argv": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests/flight_demo/m2_rebuild",
+        "-p",
+        "test_*sdk*.py",
+        "-v"
+      ],
+      "cwd": "/Users/slice/Developer/f65-megawing-m2-source-baseline",
+      "returncode": 0
+    },
+    {
+      "argv": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests/flight_demo/m2_rebuild",
+        "-p",
+        "test_toolchain_identity.py",
+        "-v"
+      ],
+      "cwd": "/Users/slice/Developer/f65-megawing-m2-source-baseline",
+      "returncode": 0
+    },
+    {
+      "argv": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-B",
+        "/private/tmp/f65-sdk-path-6qe2lrcp/negative_control.py"
+      ],
+      "cwd": "/Users/slice/Developer/f65-megawing-m2-source-baseline",
+      "returncode": 0
+    }
+  ],
+  "tests": {
+    "new_path_regressions": 4,
+    "existing_sdk_identity_tests": 8,
+    "result": "PASS",
+    "negative_control": "PASS: pre-fix validator fails the absolute SDK identity assertion as expected; failure transcript retained"
+  },
+  "validation": {
+    "python_syntax": "PASS",
+    "whitespace": "PASS",
+    "documentation_links": "PASS",
+    "git_diff_check": "PASS",
+    "source_scope": "PASS"
+  },
+  "preservation": {
+    "before_files": 16036,
+    "unchanged_files": 16033,
+    "all_prior_evidence": "UNCHANGED",
+    "sealed_packets": [
+      {
+        "path": "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/final-check-1793159493442203000/seal.json",
+        "sha256": "b59c53df2a1fd0302f8baa0dcb61a27c6dc184875fbf45bd3db985340e82ecad",
+        "members": 3
+      },
+      {
+        "path": "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/final-check-1793159584829644000/seal.json",
+        "sha256": "de5f1ec39509665ad511c4747ba4dcf36a6791eee512d40251d199450d8bff8b",
+        "members": 3
+      },
+      {
+        "path": "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158722615552000/seal.json",
+        "sha256": "4119436bb5ddfa5370380ee52dc8562ab7a14bf7bbd90529b92468e2ed6b85d6",
+        "members": 5
+      },
+      {
+        "path": "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158735932906000/seal.json",
+        "sha256": "8f648dddf962f9af0d2ba62ee8d1357eed4c8eddf8557f16bad86e08ea0040c4",
+        "members": 7
+      },
+      {
+        "path": "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158762399896000/seal.json",
+        "sha256": "d55f043e5c322326307781917464f9e0b5916718db67e2da9967055c762026d8",
+        "members": 23
+      },
+      {
+        "path": "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/static-replay-1793158940264539000/seal.json",
+        "sha256": "9e87146e09e22d3e17c51362d49fdd2fe5c4464b357dcc4bcf2021a4610ed87d",
+        "members": 2
+      },
+      {
+        "path": "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/seal.json",
+        "sha256": "064841772c02a8f91903ef67cf52cbb3efd007a9382559be9e23908099216c8e",
+        "members": 9
+      },
+      {
+        "path": "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild-corrections/final-check-1793167870594015000/seal.json",
+        "sha256": "6c54c39dec066468b592a34252b700991cca763d86476db46315ceac93b0e809",
+        "members": 2
+      },
+      {
+        "path": "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild-corrections/historical-replay-1793167739912661000/seal.json",
+        "sha256": "96dc0fa3440bf68bb95496ce56fc8a848b463b5d6140ea43d8a9238206a3c165",
+        "members": 2
+      },
+      {
+        "path": "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild-corrections/host-1793167637309996000/seal.json",
+        "sha256": "f69da18321255895c50ee343612c5da4822b14d0084c4a6f4071094ffce50bfc",
+        "members": 23
+      },
+      {
+        "path": "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild-corrections/target-1793167696482111000/seal.json",
+        "sha256": "4d3185145bdcdd3512df0a315a11624138bfc224ed73532eac5f5bfd42c65f0c",
+        "members": 10
+      }
+    ],
+    "other_checkouts": {
+      "original": {
+        "status": "UNCHANGED",
+        "paths": 480,
+        "head": "8ee5214ea9c63b86e92ca9bc4fa0779115dbd57f",
+        "status_sha256": "2045b2dd7d4fa98833e1f5b27ba3cf84bcfe9b89569d476244d1e00dbc9da3d0",
+        "diff_sha256": "8f6284a455ebbbcd985f7f546772edd8232b8f8ef052cdc2293b2e29009386c4"
+      },
+      "design": {
+        "status": "UNCHANGED",
+        "paths": 0,
+        "head": "cacb6e9d88c7cfd297a2d57c854b5861323902d9",
+        "status_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "scope": "tracked/untracked bytes and symlink identities; ignored paths and absent historical worktrees not certified"
+  },
+  "source_after": {
+    "WORK_IN_PROGRESS.md": {
+      "bytes": 2000,
+      "sha256": "d9023eaf1237c90d9c4444f6a739f14d6a99d7ce5be34764e9f0497063d7dabc"
+    },
+    "docs/reports/M2_MINIMUM_REBUILD_CORRECTIONS.md": {
+      "bytes": 12070,
+      "sha256": "4d28a981a5462315e8e2a3b9132f201af22bab4d31a57ac619ce079b68fcf70e"
+    },
+    "tools/flight_demo/m2_rebuild/validate.py": {
+      "bytes": 15330,
+      "sha256": "b44511414677f40010b32024992ccfa80c792a9b9ce78bf2f9b9c5d76c4be8f2"
+    },
+    "tests/flight_demo/m2_rebuild/test_validate_sdk_path.py": {
+      "bytes": 6929,
+      "sha256": "591608f0324f609f2e7200639028ae08ba5bbacc6c3dcf6fbb3ce51f2a1c32db"
+    }
+  },
+  "previous_target": {
+    "evidence": "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild-corrections/target-1793167696482111000",
+    "prg_sha256": "1873c76d7b13f438244d5c3f99d8c80bc951af47cda9fc5ba9a6fadbeb4eda51",
+    "resident_bytes": 32839,
+    "resident_limit": 24575,
+    "deficit": 8264,
+    "fit": "FAIL retained; not rerun"
+  },
+  "actual_compiler_or_linker_invocations": 0,
+  "target_relinked": false,
+  "target_executed": false,
+  "runtime_admission": false,
+  "stack_service": "UNPROVEN; unchanged",
+  "banking": false,
+  "xemu": "NOT RUN",
+  "physical_tests": "NOT RUN",
+  "publication": false
+}

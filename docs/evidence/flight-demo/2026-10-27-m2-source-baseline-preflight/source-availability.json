@@ -1,0 +1,425 @@
+{
+  "identity": "65AERO-M2-MIN-SOURCE-PREFLIGHT-1",
+  "base": "b044440fa98c2dfc91ec590668049610afc98a1e",
+  "branch": "codex/65aero-m2-minimum-renderer-baseline",
+  "gate": "SOURCE_BYTES_UNAVAILABLE",
+  "status": "BLOCKED_PENDING_VERIFIED_CANDIDATE_SOURCE_PATH",
+  "authorized_scope": "import only required identified implementation source/contracts/tests/generated inputs from the verified candidate; no reconstruction or substitute experiment source",
+  "candidate_prg_sha256": "10c6b083bd37392b8177d3211035a76c599894aa46bb11ff4a18851e97dab6e1",
+  "runtime_packet_inventory_sha256": "d5fce59c011225643d27d884454c7b7982e7a99dfbd4e1af598a4a4fb200a245",
+  "published_archive_sha256": "460a150471cd501fa3d713d852a8c28b50591f80fb9a0cf9bae2678c6685c110",
+  "before_inventory_file_sha256": "edc5063d3f3f202c4c3a60e21270d1815fceebd7b749e7ae5a1ba6370b924ac4",
+  "available_accepted_guard_test": {
+    "bytes": 7547,
+    "sha256": "c2a90a7f207c1366140da2113024745d3f850a8da7debe92ea4e84ccc4488541",
+    "imported": false
+  },
+  "source_availability_checks": {
+    "reachable_git_minimum_paths": 0,
+    "size_filtered_all_git_blobs_checked": 25,
+    "exact_candidate_blob_matches": 0,
+    "candidate_related_inventory_entries": 55,
+    "required_runtime_source_files_unavailable": 18,
+    "limitations": "No snapshot, Trash, historical-worktree or private-journal recovery; input inventory is metadata, not original source bytes."
+  },
+  "inventory_entries": [
+    {
+      "path": "interfaces/generated/m2_min.h",
+      "bytes": 314,
+      "sealed_sha256": "a6fac5436440f271bb6dfda6ee3eb2b5dd98008e7e17fe169d9657ee6afba7d1",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "interfaces/generated/m2_min_fields.h",
+      "bytes": 5063,
+      "sealed_sha256": "26a74be7657841db32073df9b26cec768b76b251d32cb4ba00368939101237bd",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "interfaces/m2_min.json",
+      "bytes": 269,
+      "sealed_sha256": "4615b60b749c6b5f99bb3d395b4aa2e1c7db5c3ec1b686bb6252c1f2a08fdf2c",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "memory/m2-min-ledger.json",
+      "bytes": 1973,
+      "sealed_sha256": "782f2d3fab9d8a5afddb67bbb1229a44bdc702a9ea6c80b40785ba79681ebb52",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "src/diagnostics/m2_min/camera.c",
+      "bytes": 2033,
+      "sealed_sha256": "1dbbbeb28072ddea5d273f7817203be09dad3446e195711b3a8620bfea9001a2",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "src/diagnostics/m2_min/camera.h",
+      "bytes": 340,
+      "sealed_sha256": "51f133ab7bf0d55313437c7f2259383ea4f07bd302636689b0a634ed3efb0208",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "src/diagnostics/m2_min/main.c",
+      "bytes": 4835,
+      "sealed_sha256": "f1fd1c6bef10fb00f4fdefd21a44b1fd6b1c41f0c1648103e35859ae0cf9952b",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "src/diagnostics/m2_min/service_bounds.h",
+      "bytes": 460,
+      "sealed_sha256": "007cefe74904e6901f2735c32da74d4e6fb2a81867a2b0a5e233b4c02517a20c",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "src/graphics/m2_min_bytes.c",
+      "bytes": 6783,
+      "sealed_sha256": "2622a6f0fe3d2550b9a275dcdb96e1f02852b6d50d2d25a378a4b4ba3a3887ec",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "src/graphics/m2_min_bytes.h",
+      "bytes": 2000,
+      "sealed_sha256": "d5be4b5284aea6b21893eda85037c62f82472ac9915bc05cec31964f56cad6f3",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "src/graphics/m2_min_font.c",
+      "bytes": 1542,
+      "sealed_sha256": "bff97d7b8c015e2c2d7de45cf9852629d238efb6b94418af1dfa2cce089c4e95",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "src/graphics/m2_min_font.h",
+      "bytes": 81,
+      "sealed_sha256": "b75736075eb94c2a10b21d2cf2b10eab9a1bb04072261dd548cc403dca1b8ba1",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "src/graphics/m2_min_geometry.c",
+      "bytes": 12860,
+      "sealed_sha256": "bc5241586e392578e26a7285666480b97086a30c90de99353e66abfeba728f23",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "src/graphics/m2_min_geometry.h",
+      "bytes": 1396,
+      "sealed_sha256": "561cc128620dd26fcceec6e77b90b8a18a02c7c6c19c78e0bd2d50b0ee5e7f8a",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "src/graphics/m2_min_renderer.c",
+      "bytes": 14234,
+      "sealed_sha256": "82aff670ed332df2b3c56461a446d5a33be7780d6545d67a67da9d3677d63a46",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "src/graphics/m2_min_renderer.h",
+      "bytes": 1736,
+      "sealed_sha256": "40bc28d5add0c5527debcd5d40ff5fd3de9be6d17da8c58dbe86bda081effd4b",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "src/input/m2_min_input.c",
+      "bytes": 213,
+      "sealed_sha256": "0b2277745484fa1f763bdbe5de25dc00af77cb3ddb560edc24d4b74f9d1788a2",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "src/input/m2_min_input.h",
+      "bytes": 376,
+      "sealed_sha256": "d5907946ee6f11edc1c39bbf07173c7d3779eef2cddc9baf8fbd5e2ad0966121",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "src/platform/m2_min/m2_min_platform.c",
+      "bytes": 6781,
+      "sealed_sha256": "5e84522b44e8f2db68517ba055c5a652bca43bd4c03d31e6ba15b769c3cc0312",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "src/platform/m2_min/m2_min_platform.h",
+      "bytes": 383,
+      "sealed_sha256": "4ff56036deebc3d5d3939dc5653075e31ff80419e5e1f9415ed766419a2c96a6",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "src/platform/m2_min/startup.ld",
+      "bytes": 356,
+      "sealed_sha256": "fae05ba82af4c877782dbed5d3999c820724f590d407ba2bbb651667fe8856d8",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "src/platform/m2_min/startup_45gs02.s",
+      "bytes": 1164,
+      "sealed_sha256": "5ca41d6c2fa25ca440f021d2fa19c70c8340d609e647faaa74ad0100f40abe59",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "tests/flight_demo/m2_min/adapter_host.c",
+      "bytes": 3952,
+      "sealed_sha256": "c5270a9d842125bd321e7e1247f3fc59936e916ed6ac2a00061f25a6a6392b65",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "tests/flight_demo/m2_min/binding.c",
+      "bytes": 2624,
+      "sealed_sha256": "16e85a79f46c94f87a710758fdff796ea6b3478f289de2cb96d943269aecd6fd",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "tests/flight_demo/m2_min/binding.h",
+      "bytes": 943,
+      "sealed_sha256": "203225e8ee9b1e1b54ef8929b7945bf34767c059f40e95e6146b812cbec69077",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "tests/flight_demo/m2_min/fields_host.c",
+      "bytes": 3119,
+      "sealed_sha256": "9307c485944726ffc70e0937e0b2240be7910d6df69f580d8009e3c68ba01a62",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "tests/flight_demo/m2_min/host.c",
+      "bytes": 14087,
+      "sealed_sha256": "19ea80b80793c8adb633e7fdf474cb3dbd00cb5b55d5bb5f94e412ae1c13e9a8",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "tests/flight_demo/m2_min/limb_host.c",
+      "bytes": 4679,
+      "sealed_sha256": "b7c49c63a06f4f542a235a5c8d98e77fdc87876268d6da8c89e641e39548bdb3",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "tests/flight_demo/m2_min/limb_observe.h",
+      "bytes": 228,
+      "sealed_sha256": "21c3365e11e778b9b7e5a523c26ed8145995fdef6e49285fb94a02088c7d323d",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "tests/flight_demo/m2_min/oracle.py",
+      "bytes": 2028,
+      "sealed_sha256": "3e583151f309455305a49ae39e290658df408ce6737d8355830380d712c010da",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "tests/flight_demo/m2_min/projection_host.c",
+      "bytes": 7416,
+      "sealed_sha256": "f38a98506f485cbd9c43554185a8a7b6fecf6c5ed9ff0d2e10021fc4d529798b",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "tests/flight_demo/m2_min/q46_packing_host.c",
+      "bytes": 4493,
+      "sealed_sha256": "046397b4522bcb4aba9e379dac84909496220260b9285120b520126698f1c874",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "tests/flight_demo/m2_min/scalar_host.c",
+      "bytes": 6498,
+      "sealed_sha256": "d5067bd8c962b458f8ce6fcc41e3304a79f1a775a79c58fa7f5bd2b5b4b3819f",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "tests/flight_demo/m2_min/scalar_observe.h",
+      "bytes": 424,
+      "sealed_sha256": "abd8b67924da26e124289ec5a66d583c7e73a28b3c76341076f97da705c64a6a",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "tests/flight_demo/m2_min/test_byte_contract.py",
+      "bytes": 808,
+      "sealed_sha256": "e7739f8b77d3c1e2fb2bc5f4d9fad745a1d006f1ef830e21b9968881e2a1dcf5",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "tests/flight_demo/m2_min/test_contract.py",
+      "bytes": 2451,
+      "sealed_sha256": "91c88cd48cffd07163de0c2457af863f880cf8bbf1b5a84d9d57e35ffc528e03",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "tests/flight_demo/m2_min/test_runtime_admission.py",
+      "bytes": 5473,
+      "sealed_sha256": "cfd5555af201d2413f3e6b504f09d3b30aed388a4fb9e7dcbe67b295ff2e44c2",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "tools/flight_demo/m2_min/adapter_build.py",
+      "bytes": 885,
+      "sealed_sha256": "0bdbbdc5803764a20e6af0c544312572aea53f12178a374c4fdcd40fb2671071",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "tools/flight_demo/m2_min/build.py",
+      "bytes": 8451,
+      "sealed_sha256": "e6944db2665e78aa375e7cbb7bb1cf2b909c4f5a06372616040fc1edc35d4787",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "tools/flight_demo/m2_min/byte_build.py",
+      "bytes": 10614,
+      "sealed_sha256": "d10e24349898f3eab196de2e032893ef471121559ba5ad2c89a6313243fc67a7",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "tools/flight_demo/m2_min/byte_handoff.py",
+      "bytes": 9157,
+      "sealed_sha256": "3748e31907512c3f084b0f26bc9bd70edb0a54b6e0b79cfb0c7c85921d64a1d6",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "tools/flight_demo/m2_min/cycle_admission.py",
+      "bytes": 14361,
+      "sealed_sha256": "9f548dd7e428ea8dfce80c6185d38410f25853219b0766ae26c4674c285de312",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "tools/flight_demo/m2_min/generate.py",
+      "bytes": 5805,
+      "sealed_sha256": "aa101d08609d59152c5ce5125d6aa7f39361df06fd1122fc563bcfe41df0e36c",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "tools/flight_demo/m2_min/horizon_build.py",
+      "bytes": 1133,
+      "sealed_sha256": "b5946b5ef80253ea9b6bde5704cbb43cb885252d90d5128191457e6fad06008b",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "tools/flight_demo/m2_min/memory_option_a.py",
+      "bytes": 9009,
+      "sealed_sha256": "3e735fe6490a7af3d9e74448740db01378367d25b9c6e666e9895c44084a9cec",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "tools/flight_demo/m2_min/packing_build.py",
+      "bytes": 2083,
+      "sealed_sha256": "796642f8b0791995250860b628789e5b375e2c7f9e39f543ce2e608a1686d765",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "tools/flight_demo/m2_min/projection_build.py",
+      "bytes": 8858,
+      "sealed_sha256": "abb48916a68007fb2ec78eecd33411caa0781508daf141c81bfd81d6915a12b8",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "tools/flight_demo/m2_min/reconcile.py",
+      "bytes": 10734,
+      "sealed_sha256": "0c39da3d494bb7fb83a4586fb090a4ff8cefa475ef4c32f853945e9b7e5b6f8d",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "tools/flight_demo/m2_min/runtime_admission.py",
+      "bytes": 21166,
+      "sealed_sha256": "7445707e43b59c3faf7ac03748b872a3f530a6d38d3f6673d1c594f364dd55b5",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "tools/flight_demo/m2_min/seal.py",
+      "bytes": 4609,
+      "sealed_sha256": "496654935e45201484f12648167a8f1552e594532cfa3108f353a0a3baa1367a",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "tools/flight_demo/m2_min/stack_admission.py",
+      "bytes": 6575,
+      "sealed_sha256": "ad79716d0f34849c44b4bbed92c0b2b9098a1d972977be6f6062e001226a1445",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "tools/flight_demo/m2_min/startup_admission.py",
+      "bytes": 7829,
+      "sealed_sha256": "3ae2435cc1da2dff1df71a2a6a40b80140e0508631cb550d0e50ba9a63496d20",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "tools/flight_demo/m2_min/trap_stack_admission.py",
+      "bytes": 3311,
+      "sealed_sha256": "978d91f015e837439ae5e9a8e27ef4d7cd0aa4b1dec0d1d33fca9bd5290ed66e",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "tools/flight_demo/m2_min/verify_xemu.py",
+      "bytes": 6878,
+      "sealed_sha256": "4fa0f7473ff01c0858d1ab5039d0b68f10bec67b4e210887731c50e1d99ac94f",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    },
+    {
+      "path": "tools/flight_demo/m2_min/xemu_diagnostic.py",
+      "bytes": 12735,
+      "sealed_sha256": "d1c65a17437fdc3fc317aabe3593ce9932f046d24934772141a5306f2840aec1",
+      "classification": "minimum-related inventory entry; exact required build closure still requires original build inputs",
+      "available_as_matching_local_file": false
+    }
+  ],
+  "historical_fit": {
+    "tier": "retained candidate report only; not a new build",
+    "resident_bytes": 26750,
+    "limit": 24575,
+    "deficit": 2175,
+    "gate": "FAIL",
+    "runtime_enablement": false
+  },
+  "source_imported": false,
+  "build_or_target_tests_run": false,
+  "banking_implemented": false,
+  "main_WIP": "NONE",
+  "next_required_input": "existing directory/archive of the hash-verifiable candidate source; verify complete consumed-input closure before import"
+}

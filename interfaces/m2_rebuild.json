@@ -1,0 +1,136 @@
+{
+  "identity": "65AERO-M2-MIN-REBUILD-1",
+  "parent": "65AERO-M2-PR1-2",
+  "composition_revision": 3,
+  "implementation": "new implementation from b044440; not recovered candidate source",
+  "selection": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    7,
+    11,
+    15
+  ],
+  "width": 320,
+  "height": 200,
+  "world_height": 128,
+  "columns": 40,
+  "text_rows": 8,
+  "tile_bytes": 64,
+  "tile_offset": 2048,
+  "blank_offset": 63488,
+  "store_bytes": 63552,
+  "stores": [
+    131072,
+    196608
+  ],
+  "color_base": 267911168,
+  "color_bytes": 2000,
+  "output_ntsc": [
+    720,
+    480,
+    40,
+    40,
+    2
+  ],
+  "output_pal": [
+    720,
+    572,
+    40,
+    86,
+    2
+  ],
+  "memory": {
+    "resident": [
+      8193,
+      32768
+    ],
+    "hardware_stack": [
+      256,
+      512
+    ],
+    "base_page": [
+      512,
+      768
+    ],
+    "software_stack": [
+      49152,
+      53248
+    ],
+    "rom_backup": [
+      134217728,
+      134348800
+    ],
+    "protected_reserve": [
+      360448,
+      393216
+    ],
+    "reserve_used": 0
+  },
+  "runtime_enablement": false,
+  "banking": false,
+  "dma": false,
+  "numeric": {
+    "positions": "signed Q12 feet",
+    "clipping": "signed Q24 feet",
+    "rotation": "signed Q46",
+    "screen": "signed Q16 pixels",
+    "public_records": "unchanged integrated M2 PR1 records"
+  },
+  "slots": [
+    "BEGIN",
+    "PREPARE",
+    "PROJECT",
+    "BACKGROUND",
+    "COPY",
+    "LINE",
+    "TEXT",
+    "COMMIT"
+  ],
+  "target_budgets": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "budget_status": "UNPROVEN; zero forbids dispatch",
+  "records": {
+    "M2RebuildBundle": [
+      [
+        "registration",
+        "M2Registration"
+      ],
+      [
+        "composition_revision",
+        "uint32_t"
+      ],
+      [
+        "checksum",
+        "uint32_t"
+      ]
+    ]
+  },
+  "colors": {
+    "BLACK": 1,
+    "SKY": 2,
+    "GROUND": 3,
+    "WHITE": 4
+  },
+  "raster": {
+    "samples_per_quantum": 8,
+    "pixel_writes_per_quantum": 1,
+    "copy_bytes_max": 64
+  },
+  "hardware_sources": {
+    "vic_registers": "pinned LLVM-MOS v23.1.0 mega65/include/_vic4.h",
+    "emulator_source": "https://github.com/lgblgblgb/xemu/blob/40dfef0d1d5f56be2469492715c12bdb32c75b67/targets/mega65/vic4.c",
+    "status": "source/static only; display and service not qualified"
+  }
+}

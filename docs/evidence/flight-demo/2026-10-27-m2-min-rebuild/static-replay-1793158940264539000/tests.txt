@@ -1,0 +1,17 @@
+test_generated_bytes (test_contract.Contract) ... ok
+test_integrated_public_bytes_unchanged (test_contract.Contract) ... ok
+test_memory_and_owner_bounds (test_contract.Contract) ... ok
+test_source_ownership_and_denied_dispatch (test_contract.Contract) ... ok
+test_unreviewed_profile_fails_closed (test_contract.Contract) ... ok
+test_bypassed_entry_rejected (test_startup.Startup) ... ok
+test_earlier_stack_initialization_rejected (test_startup.Startup) ... ok
+test_missing_map_rejected (test_startup.Startup) ... ok
+test_normalized_boundary_is_first_stack_instruction (test_startup.Startup) ... ok
+test_wrong_cpu_port_rejected (test_startup.Startup) ... ok
+test_wrong_io_map_rejected (test_startup.Startup) ... ok
+test_zz_sealed_packet_preserved (test_startup.Startup) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.204s
+
+OK

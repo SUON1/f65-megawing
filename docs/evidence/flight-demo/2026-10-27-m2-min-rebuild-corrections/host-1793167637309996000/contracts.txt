@@ -1,0 +1,32 @@
+test_generated_bytes (test_contract.Contract) ... ok
+test_integrated_public_bytes_unchanged (test_contract.Contract) ... ok
+test_memory_and_owner_bounds (test_contract.Contract) ... ok
+test_source_ownership_and_denied_dispatch (test_contract.Contract) ... ok
+test_unreviewed_profile_fails_closed (test_contract.Contract) ... ok
+test_absolute_terminal_loop_raw_bytes_accepted (test_startup.Startup) ... ok
+test_bypassed_entry_rejected (test_startup.Startup) ... ok
+test_changed_branch_rejected (test_startup.Startup) ... ok
+test_earlier_stack_initialization_rejected (test_startup.Startup) ... ok
+test_full_check_requires_raw_prg (test_startup.Startup) ... ok
+test_historical_unsafe_handler_rejected (test_startup.Startup) ... ok
+test_missing_branch_bytes_rejected (test_startup.Startup) ... ok
+test_missing_map_rejected (test_startup.Startup) ... ok
+test_normalized_boundary_is_first_stack_instruction (test_startup.Startup) ... ok
+test_off_by_one_terminal_targets_rejected (test_startup.Startup) ... ok
+test_return_or_fallthrough_rejected (test_startup.Startup) ... ok
+test_wrong_cpu_port_rejected (test_startup.Startup) ... ok
+test_wrong_io_map_rejected (test_startup.Startup) ... ok
+test_zz_sealed_packet_preserved (test_startup.Startup) ... ok
+test_complete_tree_and_deterministic_serialization (test_toolchain_identity.ToolchainIdentity) ... ok
+test_configuration_resource_runtime_and_tool_changes_are_detected (test_toolchain_identity.ToolchainIdentity) ... ok
+test_confined_directory_link_and_cycle (test_toolchain_identity.ToolchainIdentity) ... ok
+test_external_links_fail_closed_at_every_hop (test_toolchain_identity.ToolchainIdentity) ... ok
+test_reading_does_not_modify_sdk_or_neighbor_evidence (test_toolchain_identity.ToolchainIdentity) ... ok
+test_removed_and_added_files_are_detected (test_toolchain_identity.ToolchainIdentity) ... ok
+test_retargeted_or_removed_symlink_is_detected (test_toolchain_identity.ToolchainIdentity) ... ok
+test_special_file_fails_closed_without_reading_it (test_toolchain_identity.ToolchainIdentity) ... ok
+
+----------------------------------------------------------------------
+Ran 27 tests in 0.513s
+
+OK

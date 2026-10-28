@@ -1,0 +1,13 @@
+test_complete_tree_and_deterministic_serialization (test_toolchain_identity.ToolchainIdentity) ... ok
+test_configuration_resource_runtime_and_tool_changes_are_detected (test_toolchain_identity.ToolchainIdentity) ... ok
+test_confined_directory_link_and_cycle (test_toolchain_identity.ToolchainIdentity) ... ok
+test_external_links_fail_closed_at_every_hop (test_toolchain_identity.ToolchainIdentity) ... ok
+test_reading_does_not_modify_sdk_or_neighbor_evidence (test_toolchain_identity.ToolchainIdentity) ... ok
+test_removed_and_added_files_are_detected (test_toolchain_identity.ToolchainIdentity) ... ok
+test_retargeted_or_removed_symlink_is_detected (test_toolchain_identity.ToolchainIdentity) ... ok
+test_special_file_fails_closed_without_reading_it (test_toolchain_identity.ToolchainIdentity) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.121s
+
+OK

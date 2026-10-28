@@ -1,0 +1,23 @@
+Negative control: PASS; prior relative-path defect detected
+test_relative_sdk_uses_caller_identity_for_every_tool (path_tests_negative_control.ValidateSdkPath) ... FAIL
+
+======================================================================
+FAIL: test_relative_sdk_uses_caller_identity_for_every_tool (path_tests_negative_control.ValidateSdkPath)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/slice/Developer/f65-megawing-m2-source-baseline/tests/flight_demo/m2_rebuild/test_validate_sdk_path.py", line 121, in test_relative_sdk_uses_caller_identity_for_every_tool
+    self.check_sdk_path("relative")
+  File "/Users/slice/Developer/f65-megawing-m2-source-baseline/tests/flight_demo/m2_rebuild/test_validate_sdk_path.py", line 98, in check_sdk_path
+    identity.capture.assert_called_once_with(sdk)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/unittest/mock.py", line 919, in assert_called_once_with
+    return self.assert_called_with(*args, **kwargs)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/unittest/mock.py", line 907, in assert_called_with
+    raise AssertionError(_error_message()) from cause
+AssertionError: expected call not found.
+Expected: capture(PosixPath('/private/var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/tmpj0m_k3ul/caller/sdk'))
+Actual: capture(PosixPath('sdk'))
+
+----------------------------------------------------------------------
+Ran 1 test in 0.016s
+
+FAILED (failures=1)
