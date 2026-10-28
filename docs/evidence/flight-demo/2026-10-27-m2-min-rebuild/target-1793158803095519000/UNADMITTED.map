@@ -1,0 +1,397 @@
+     VMA      LMA     Size Align Out     In      Symbol
+       0        0        0     1 __basic_zp_start = 0x0002
+       0        0        0     1 __basic_zp_end = 0x0090
+       0        0        0     1 __rc0 = __basic_zp_start
+       0        0        0     1 __rc1 = __rc0 + 1
+       0        0        0     1 PROVIDE(__rc2 = __rc1 + 1)
+       0        0        0     1 __rc3 = __rc2 + 1
+       0        0        0     1 PROVIDE(__rc4 = __rc3 + 1)
+       0        0        0     1 __rc5 = __rc4 + 1
+       0        0        0     1 PROVIDE(__rc6 = __rc5 + 1)
+       0        0        0     1 __rc7 = __rc6 + 1
+       0        0        0     1 PROVIDE(__rc8 = __rc7 + 1)
+       0        0        0     1 __rc9 = __rc8 + 1
+       0        0        0     1 PROVIDE(__rc10 = __rc9 + 1)
+       0        0        0     1 __rc11 = __rc10 + 1
+       0        0        0     1 PROVIDE(__rc12 = __rc11 + 1)
+       0        0        0     1 __rc13 = __rc12 + 1
+       0        0        0     1 PROVIDE(__rc14 = __rc13 + 1)
+       0        0        0     1 __rc15 = __rc14 + 1
+       0        0        0     1 PROVIDE(__rc16 = __rc15 + 1)
+       0        0        0     1 __rc17 = __rc16 + 1
+       0        0        0     1 PROVIDE(__rc18 = __rc17 + 1)
+       0        0        0     1 __rc19 = __rc18 + 1
+       0        0        0     1 PROVIDE(__rc20 = __rc19 + 1)
+       0        0        0     1 __rc21 = __rc20 + 1
+       0        0        0     1 PROVIDE(__rc22 = __rc21 + 1)
+       0        0        0     1 __rc23 = __rc22 + 1
+       0        0        0     1 PROVIDE(__rc24 = __rc23 + 1)
+       0        0        0     1 __rc25 = __rc24 + 1
+       0        0        0     1 PROVIDE(__rc26 = __rc25 + 1)
+       0        0        0     1 __rc27 = __rc26 + 1
+       0        0        0     1 PROVIDE(__rc28 = __rc27 + 1)
+       0        0        0     1 __rc29 = __rc28 + 1
+       0        0        0     1 PROVIDE(__rc30 = __rc29 + 1)
+       0        0        0     1 __rc31 = __rc30 + 1
+       0        0        0     1 __basic_zp_size = __basic_zp_end - __basic_zp_start
+    2001     2001       16     1 .basic_header
+    2001     2001       16     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/basic-header.o:(.basic_header)
+    2015     2015        0     1                 next_line
+      22       22        0     1 .zp.data
+      22       22        0     1         __zp_data_start = .
+      22       22        0     1 __zp_data_load_start = LOADADDR(.zp.data)
+      22       22        0     1 __zp_data_size = SIZEOF(.zp.data)
+      22       22        0     1 .zp.bss
+      22       22        0     1         __zp_bss_start = .
+      22       22        0     1 __zp_bss_size = SIZEOF(.zp.bss)
+    2017     2017     743c     1 .text
+    2017     2017        0     1         _init = .
+    2017     2017        0     1         _start = .
+    2017     2017       61     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/startup_45gs02-b0c236.o:(.init.008)
+    2017     2017        0     1                 m2rb_startup
+    2078     2078        0     1                 m2rb_normalized
+    2078     2078        8     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(init-stack.S.obj):(.init.100)
+    2078     2078        0     1                 __do_init_stack
+    2080     2080        3     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(zero-bss.c.obj):(.init.200)
+    2080     2080        0     1                 __do_zero_bss
+    2083     2083        3     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/common/lib/crt0.o:(.call_main)
+    2086     2086        3     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(exit-custom.S.obj):(.after_main)
+    2086     2086        0     1                 __after_main
+    2089     2089        0     1         _fini = .
+    2089     2089        1     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/common/lib/crt0.o:(.fini_rts)
+    208a     208a      140     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/qualification_45gs02-a0b79d.o:(.text.r0f_pf)
+    208a     208a        0     1                 r0f_pf_enter
+    20ea     20ea        0     1                 r0f_pf_start_irq
+    2101     2101        0     1                 r0f_pf_stop_irq
+    210d     210d        0     1                 r0f_pf_irq
+    2139     2139        0     1                 r0f_pf_nmi
+    2141     2141        0     1                 r0f_pf_flat_copy
+    217e     217e        0     1                 r0f_pf_register_probe
+    21ca     21ca       b4     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/combined_45gs02-32a6e8.o:(.text.r0fc_platform)
+    21ca     21ca        0     1                 r0fc_rom_toggle
+    21ed     21ed        0     1                 r0fc_stack_seed
+    2234     2234        0     1                 r0fc_stack_measure
+    227e     227e        4     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/startup_45gs02-b0c236.o:(.text.m2rb_early_stop)
+    227e     227e        0     1                 m2rb_early_stop
+    2282     2282       13     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(zero-bss.c.obj):(.text.__zero_bss)
+    2282     2282       13     1                 __zero_bss
+    2295     2295       77     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.m2_point_valid)
+    2295     2295       77     1                 m2_point_valid
+    230c     230c      2cf     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.m2_fixture_segment)
+    230c     230c      2cf     1                 m2_fixture_segment
+    25db     25db      213     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.m2_camera_valid)
+    25db     25db      213     1                 m2_camera_valid
+    27ee     27ee      3a8     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.m2_transform)
+    27ee     27ee      3a8     1                 m2_transform
+    2b96     2b96       e8     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.sine)
+    2b96     2b96       e8     1                 sine
+    2c7e     2c7e        3     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.multiply_rotation)
+    2c7e     2c7e        3     1                 multiply_rotation
+    2c81     2c81      41e     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.m2_multiply_q46)
+    2c81     2c81      41e     1                 m2_multiply_q46
+    309f     309f       1a     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.m2_prepare)
+    309f     309f       1a     1                 m2_prepare
+    30b9     30b9      76c     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.m2_project_prepared)
+    30b9     30b9      76c     1                 m2_project_prepared
+    3825     3825      28b     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.to_camera)
+    3825     3825      28b     1                 to_camera
+    3ab0     3ab0      3b2     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.plane_distance)
+    3ab0     3ab0      3b2     1                 plane_distance
+    3e62     3e62      4e9     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.interpolate_delta)
+    3e62     3e62      4e9     1                 interpolate_delta
+    434b     434b      218     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.project_axis)
+    434b     434b      218     1                 project_axis
+    4563     4563       ff     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.rounded_ratio)
+    4563     4563       ff     1                 rounded_ratio
+    4662     4662      338     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.m2_raster_begin)
+    4662     4662      338     1                 m2_raster_begin
+    499a     499a       76     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.raster_coordinate)
+    499a     499a       76     1                 raster_coordinate
+    4a10     4a10      107     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.m2_raster_next)
+    4a10     4a10      107     1                 m2_raster_next
+    4b17     4b17      2bc     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.m2_ground_prepared)
+    4b17     4b17      2bc     1                 m2_ground_prepared
+    4dd3     4dd3      1b9     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.m2_registration_prepared)
+    4dd3     4dd3      1b9     1                 m2_registration_prepared
+    4f8c     4f8c       24     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.m1_core_init)
+    4f8c     4f8c       24     1                 m1_core_init
+    4fb0     4fb0      12c     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.m1_command)
+    4fb0     4fb0      12c     1                 m1_command
+    50dc     50dc      32d     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.m1_tick)
+    50dc     50dc      32d     1                 m1_tick
+    5409     5409       67     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.m1_input_sample)
+    5409     5409       67     1                 m1_input_sample
+    5470     5470       6c     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.m1_extract)
+    5470     5470       6c     1                 m1_extract
+    54dc     54dc       95     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.m1_publish)
+    54dc     54dc       95     1                 m1_publish
+    5571     5571      104     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.m1_acquire)
+    5571     5571      104     1                 m1_acquire
+    5675     5675       10     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.m1_release)
+    5675     5675       10     1                 m1_release
+    5685     5685       1f     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.m2rb_input_edges)
+    5685     5685       1f     1                 m2rb_input_edges
+    56a4     56a4       b6     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.m2rb_camera_init)
+    56a4     56a4       b6     1                 m2rb_camera_init
+    575a     575a      131     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.m2rb_camera_equal)
+    575a     575a      131     1                 m2rb_camera_equal
+    588b     588b      427     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.m2rb_camera_edges)
+    588b     588b      427     1                 m2rb_camera_edges
+    5cb2     5cb2       45     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.direction)
+    5cb2     5cb2       45     1                 direction
+    5cf7     5cf7       50     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.clamp)
+    5cf7     5cf7       50     1                 clamp
+    5d47     5d47       13     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.m2rb_renderer_init)
+    5d47     5d47       13     1                 m2rb_renderer_init
+    5d5a     5d5a       cc     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.m2rb_dispatch)
+    5d5a     5d5a       cc     1                 m2rb_dispatch
+    5e26     5e26      132     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.same_camera)
+    5e26     5e26      132     1                 same_camera
+    5f58     5f58       4b     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.increment)
+    5f58     5f58       4b     1                 increment
+    5fa3     5fa3       e9     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.begin)
+    5fa3     5fa3       e9     1                 begin
+    608c     608c       e3     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.prepare)
+    608c     608c       e3     1                 prepare
+    616f     616f       ae     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.project)
+    616f     616f       ae     1                 project
+    621d     621d      11e     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.background)
+    621d     621d      11e     1                 background
+    633b     633b       57     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.copy_tile)
+    633b     633b       57     1                 copy_tile
+    6392     6392      15f     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.line)
+    6392     6392      15f     1                 line
+    64f1     64f1       72     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.text)
+    64f1     64f1       72     1                 text
+    6563     6563       37     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.commit)
+    6563     6563       37     1                 commit
+    659a     659a      31c     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.bundle_valid)
+    659a     659a      31c     1                 bundle_valid
+    68b6     68b6        c     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.fail)
+    68b6     68b6        c     1                 fail
+    68c2     68c2      3fb     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.m2rb_text_row)
+    68c2     68c2      3fb     1                 m2rb_text_row
+    6cbd     6cbd       4d     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.label)
+    6cbd     6cbd       4d     1                 label
+    6d0a     6d0a       d2     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.hex)
+    6d0a     6d0a       d2     1                 hex
+    6ddc     6ddc       db     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.decimal)
+    6ddc     6ddc       db     1                 decimal
+    6eb7     6eb7       da     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.m2rb_glyph)
+    6eb7     6eb7       da     1                 m2rb_glyph
+    6f91     6f91       cc     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.m2rb_guard)
+    6f91     6f91       cc     1                 m2rb_guard
+    705d     705d      262     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.m1_platform_begin)
+    705d     705d      262     1                 m1_platform_begin
+    72bf     72bf        3     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.m1_platform_now)
+    72bf     72bf        3     1                 m1_platform_now
+    72c2     72c2       16     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.m1_platform_period)
+    72c2     72c2       16     1                 m1_platform_period
+    72d8     72d8       11     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.m1_platform_key)
+    72d8     72d8       11     1                 m1_platform_key
+    72e9     72e9       12     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.m1_platform_fault)
+    72e9     72e9       12     1                 m1_platform_fault
+    72fb     72fb        9     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.cfput16)
+    72fb     72fb        9     1                 cfput16
+    7304     7304       1d     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.cfput32)
+    7304     7304       1d     1                 cfput32
+    7321     7321       38     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.cfline)
+    7321     7321       38     1                 cfline
+    7359     7359        c     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.screen_byte)
+    7359     7359        c     1                 screen_byte
+    7365     7365      1cf     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.cfcopy)
+    7365     7365      1cf     1                 cfcopy
+    7534     7534      1bd     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.cfphysical_crc)
+    7534     7534      1bd     1                 cfphysical_crc
+    76f1     76f1       54     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.crc_byte)
+    76f1     76f1       54     1                 crc_byte
+    7745     7745       7a     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.cfentry)
+    7745     7745       7a     1                 cfentry
+    77bf     77bf      222     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.cfrom_begin)
+    77bf     77bf      222     1                 cfrom_begin
+    79e1     79e1       33     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.cfclock_begin)
+    79e1     79e1       33     1                 cfclock_begin
+    7a14     7a14       8e     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.cfnow)
+    7a14     7a14       8e     1                 cfnow
+    7aa2     7aa2      285     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.cfratio)
+    7aa2     7aa2      285     1                 cfratio
+    7d27     7d27      15f     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.r0fc_range)
+    7d27     7d27      15f     1                 r0fc_range
+    7e86     7e86       ba     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.inside)
+    7e86     7e86       ba     1                 inside
+    7f40     7f40      102     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.m2rb_io_write)
+    7f40     7f40      102     1                 m2rb_io_write
+    8042     8042       17     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.store_base)
+    8042     8042       17     1                 store_base
+    8059     8059      176     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.copy)
+    8059     8059      176     1                 copy
+    81cf     81cf      234     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.m2rb_platform_init)
+    81cf     81cf      234     1                 m2rb_platform_init
+    8403     8403      242     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.initialize_store)
+    8403     8403      242     1                 initialize_store
+    8645     8645       25     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.word)
+    8645     8645       25     1                 word
+    866a     866a       a9     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.m2rb_io_commit)
+    866a     866a       a9     1                 m2rb_io_commit
+    8713     8713       21     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.raster)
+    8713     8713       21     1                 raster
+    8734     8734       52     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.m2rb_platform_keys)
+    8734     8734       52     1                 m2rb_platform_keys
+    8786     8786      2c9     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.main)
+    8786     8786      2c9     1                 main
+    8a4f     8a4f        5     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.stop)
+    8a4f     8a4f        5     1                 stop
+    8a54     8a54        5     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.exit)
+    8a54     8a54        5     1                 exit
+    8a59     8a59       13     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.__ashlhi3)
+    8a59     8a59       13     1                 __ashlhi3
+    8a6c     8a6c        b     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.__lshrqi3)
+    8a6c     8a6c        b     1                 __lshrqi3
+    8a77     8a77       17     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.__lshrsi3)
+    8a77     8a77       17     1                 __lshrsi3
+    8a8e     8a8e       bd     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.__udivhi3)
+    8a8e     8a8e       bd     1                 __udivhi3
+    8b4b     8b4b      357     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.__udivdi3)
+    8b4b     8b4b      357     1                 __udivdi3
+    8ea2     8ea2       a6     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.__umodhi3)
+    8ea2     8ea2       a6     1                 __umodhi3
+    8f48     8f48       d8     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.__udivmodhi4)
+    8f48     8f48       d8     1                 __udivmodhi4
+    9020     9020       6e     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.__modhi3)
+    9020     9020       6e     1                 __modhi3
+    908e     908e      1b2     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.__udivmodsi4)
+    908e     908e      1b2     1                 __udivmodsi4
+    9240     9240       24     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.memcpy)
+    9240     9240       24     1                 memcpy
+    9264     9264       1c     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.__memset)
+    9264     9264       1c     1                 __memset
+    9280     9280       32     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.__mulhi3)
+    9280     9280       32     1                 __mulhi3
+    92b2     92b2       79     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.__mulsi3)
+    92b2     92b2       79     1                 __mulsi3
+    932b     932b      128     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.text.__muldi3)
+    932b     932b      128     1                 __muldi3
+    9453     9453        0     1         __init_array_start = .
+    9453     9453        0     1         __init_array_end = .
+    9453     9453        0     1         __fini_array_start = .
+    9453     9453        0     1         __fini_array_end = .
+    9458     9458      59b     8 .rodata
+    9458     9458      2d8     8         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.rodata.m2_sine_q46)
+    9458     9458      2d8     1                 m2_sine_q46
+    9730     9730       38     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.rodata.m2_transform.products)
+    9730     9730       38     1                 m2_transform.products
+    9768     9768        9     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.rodata.m2rb_segment_ids)
+    9768     9768        9     1                 m2rb_segment_ids
+    9771     9771      111     1         <internal>:(.rodata.str1.1)
+    9882     9882      11f     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.rodata.m2rb_glyph.rows)
+    9882     9882      11f     1                 m2rb_glyph.rows
+    99a1     99a1       38     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.rodata.r0fc_range.ranges)
+    99a1     99a1       38     1                 r0fc_range.ranges
+    99d9     99d9        d     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.rodata.m2rb_platform_keys.rows)
+    99d9     99d9        d     1                 m2rb_platform_keys.rows
+    99e6     99e6        d     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.rodata.m2rb_platform_keys.masks)
+    99e6     99e6        d     1                 m2rb_platform_keys.masks
+    99f3     99f3        0     1 .data
+    99f3     99f3        0     1         __data_start = .
+    99f3     99f3        0     1         __data_end = .
+    99f3     99f3        0     1 __data_load_start = LOADADDR(.data)
+    99f3     99f3        0     1 __data_size = SIZEOF(.data)
+    99f3     99f3      5c3     1 .bss
+    99f3     99f3        0     1         __bss_start = .
+    99f3     99f3        4     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.bss.period_q16)
+    99f3     99f3        4     1                 period_q16
+    99f7     99f7        1     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.bss.cfreclaimed)
+    99f7     99f7        1     1                 cfreclaimed
+    99f8     99f8        1     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.bss.backup_valid)
+    99f8     99f8        1     1                 backup_valid
+    99f9     99f9        1     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.bss.cffault)
+    99f9     99f9        1     1                 cffault
+    99fa     99fa       ff     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.bss.block)
+    99fa     99fa       ff     1                 block
+    9af9     9af9        1     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.bss.r0f_pf_cpu_port)
+    9af9     9af9        1     1                 r0f_pf_cpu_port
+    9afa     9afa        1     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.bss.r0f_pf_stack_high)
+    9afa     9afa        1     1                 r0f_pf_stack_high
+    9afb     9afb       ff     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.bss.cfworkspace)
+    9afb     9afb       ff     1                 cfworkspace
+    9bfa     9bfa        1     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.bss.features_open)
+    9bfa     9bfa        1     1                 features_open
+    9bfb     9bfb        1     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.bss.r0fc_trap_flags)
+    9bfb     9bfb        1     1                 r0fc_trap_flags
+    9bfc     9bfc        1     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.bss.r0fc_trap_base)
+    9bfc     9bfc        1     1                 r0fc_trap_base
+    9bfd     9bfd        1     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.bss.r0f_pf_nmi_seen)
+    9bfd     9bfd        1     1                 r0f_pf_nmi_seen
+    9bfe     9bfe        2     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.bss.r0f_pf_irq_count)
+    9bfe     9bfe        2     1                 r0f_pf_irq_count
+    9c00     9c00        1     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.bss.r0fc_hardware_low)
+    9c00     9c00        1     1                 r0fc_hardware_low
+    9c01     9c01        2     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.bss.r0fc_software_low)
+    9c01     9c01        2     1                 r0fc_software_low
+    9c03     9c03        1     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.bss.r0f_pf_irq_seq)
+    9c03     9c03        1     1                 r0f_pf_irq_seq
+    9c04     9c04        1     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.bss.r0f_pf_irq_seen)
+    9c04     9c04        1     1                 r0f_pf_irq_seen
+    9c05     9c05        7     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.bss.r0f_pf_probe_regs)
+    9c05     9c05        7     1                 r0f_pf_probe_regs
+    9c0c     9c0c        1     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.bss.r0f_pf_copy_ok)
+    9c0c     9c0c        1     1                 r0f_pf_copy_ok
+    9c0d     9c0d        2     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.bss.r0f_pf_probe_timeout)
+    9c0d     9c0d        2     1                 r0f_pf_probe_timeout
+    9c0f     9c0f        1     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.bss.r0fc_features)
+    9c0f     9c0f        1     1                 r0fc_features
+    9c10     9c10        1     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.bss.r0fc_hardware_seed)
+    9c10     9c10        1     1                 r0fc_hardware_seed
+    9c11     9c11        2     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.bss.r0fc_software_seed)
+    9c11     9c11        2     1                 r0fc_software_seed
+    9c13     9c13        1     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.bss.initialized)
+    9c13     9c13        1     1                 initialized
+    9c14     9c14        1     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.bss.enabled)
+    9c14     9c14        1     1                 enabled
+    9c15     9c15        1     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.bss.front)
+    9c15     9c15        1     1                 front
+    9c16     9c16       40     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.bss.buffer)
+    9c16     9c16       40     1                 buffer
+    9c56     9c56        2     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.bss.top)
+    9c56     9c56        2     1                 top
+    9c58     9c58        9     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.bss.r0f_pf_copy_request)
+    9c58     9c58        9     1                 r0f_pf_copy_request
+    9c61     9c61        1     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.bss.m2rb_launch_authorized)
+    9c61     9c61        1     1                 m2rb_launch_authorized
+    9c62     9c62       40     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.bss.core)
+    9c62     9c62       40     1                 core
+    9ca2     9ca2       16     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.bss.camera)
+    9ca2     9ca2       16     1                 camera
+    9cb8     9cb8      2a4     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.bss.renderer)
+    9cb8     9cb8      2a4     1                 renderer
+    9f5c     9f5c        2     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.bss.camera_input.0)
+    9f5c     9f5c        2     1                 camera_input.0
+    9f5e     9f5e        1     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.bss.input.0)
+    9f5e     9f5e        1     1                 input.0
+    9f5f     9f5f       2e     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.bss.snapshots)
+    9f5f     9f5f       2e     1                 snapshots
+    9f8d     9f8d        4     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.bss.m2rb_replay_checkpoint)
+    9f8d     9f8d        4     1                 m2rb_replay_checkpoint
+    9f91     9f91       20     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.bss.m2rb_target_budgets)
+    9f91     9f91       20     1                 m2rb_target_budgets
+    9fb1     9fb1        4     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.bss.m2rb_guard_budget)
+    9fb1     9fb1        4     1                 m2rb_guard_budget
+    9fb5     9fb5        1     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.bss.m2rb_status)
+    9fb5     9fb5        1     1                 m2rb_status
+    9fb6     9fb6        0     1         __bss_end = .
+    9fb6     9fb6        0     1 __bss_size = SIZEOF(.bss)
+    9fb6     9fb6       be     1 .noinit
+    9fb6     9fb6       be     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.noinit..Lstatic_stack)
+    a074     a074        0     1         __heap_start = ALIGN(., 2)
+    a074     a074        0     1 __stack = 0xd000
+       0        0       cc     1 .comment
+       0        0       cc     1         <internal>:(.comment)
+       0        0       1e     1 .llvm_sympart
+       0        0        f     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.llvm_sympart)
+       f        f        f     1         /Users/slice/Developer/f65-megawing-m2-source-baseline/docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.lto.o:(.llvm_sympart)
+       0        0     1370     4 .symtab
+       0        0     1370     4         <internal>:(.symtab)
+       0        0       72     1 .shstrtab
+       0        0       72     1         <internal>:(.shstrtab)
+       0        0      d1e     1 .strtab
+       0        0      d1e     1         <internal>:(.strtab)

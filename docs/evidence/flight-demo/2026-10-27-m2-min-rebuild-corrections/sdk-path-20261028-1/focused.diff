@@ -1,0 +1,229 @@
+--- a/WORK_IN_PROGRESS.md
++++ b/WORK_IN_PROGRESS.md
+@@ -1,11 +1,11 @@
+ # Work in Progress
+ 
+ - **Status: READY FOR REVIEW.**
+-- **Task:** Minimum-renderer P1 and both P2 corrections, packet `65AERO-M2-MIN-REBUILD-CORRECTIONS-1`; same private profile, branch `codex/65aero-m2-minimum-renderer-baseline`, base `b044440fa98c2dfc91ec590668049610afc98a1e`.
+-- **Authority:** Founder authorizes these three fixes, affected checks and one target relink. [Original Build Intent](docs/plans/65AERO_M2_MINIMUM_REBUILD_BUILD_INTENT.md); [correction handoff](docs/reports/M2_MINIMUM_REBUILD_CORRECTIONS.md).
+-- **Result:** Terminal handler uses raw-verified absolute JMP; `AGE AT TEXT` uses the candidate snapshot; full SDK identities verified before/after linking. Host/sanitizer, 27 contract/startup/SDK tests, frozen geometry/near-far oracles, policy checks and one complete target compile/link PASS.
+-- **Fit:** FAIL retained: 32,839 / 24,575 resident bytes, deficit 8,264 (44 fewer than prior). Compiler scratch 190, renderer workspace 676, reserve zero. Precision, public records, clock, stage order and limits unchanged.
+-- **Admission:** Linked prefix/terminal closure checked only; runtime startup, whole-program stack and service remain UNPROVEN. Launch, eight operation bounds and guard remain zero. Xemu/display NOT RUN/NOT OBSERVED; no banking.
+-- **Preservation:** [Correction evidence](docs/evidence/flight-demo/2026-10-27-m2-min-rebuild-corrections/) retains the exact reviewed source archive, all original failures and the new target identity. Old packet remains unchanged; historical 22/15 recovery and eight unverified Git-worktree tiers remain unchanged.
++- **Task:** Remaining minimum-renderer SDK-path P2; same private profile `65AERO-M2-MIN-REBUILD-1`, branch `codex/65aero-m2-minimum-renderer-baseline`, base `b044440fa98c2dfc91ec590668049610afc98a1e`.
++- **Authority:** Founder authorizes SDK absolute-path normalization and host-only regression. [Original Build Intent](docs/plans/65AERO_M2_MINIMUM_REBUILD_BUILD_INTENT.md); [correction handoff](docs/reports/M2_MINIMUM_REBUILD_CORRECTIONS.md#remaining-sdk-path-p2--host-only-correction-28-october-2026). No new relink or target execution; the earlier one-relink authorization is consumed.
++- **Result:** SDK resolved at validator entry and shared by lock hashes, inventories, tool commands, verification and evidence. Four new mocked host regressions and eight SDK identity tests PASS; preserved pre-fix negative control fails as expected. Accepted renderer/oracle and target checks were not rerun.
++- **Fit:** Earlier FAIL retained: 32,839 / 24,575 resident bytes, deficit 8,264. Compiler scratch 190, renderer workspace 676, reserve zero. Target sources, precision, public/generated records, flags, clock, stage order and limits unchanged.
++- **Admission:** Earlier linked prefix/terminal closure checked only; runtime startup, whole-program stack and service remain UNPROVEN. Launch, eight operation bounds and guard remain zero. Xemu/display NOT RUN/NOT OBSERVED; no banking.
++- **Preservation:** [New host-only packet](docs/evidence/flight-demo/2026-10-27-m2-min-rebuild-corrections/sdk-path-20261028-1/) retains focused source/diff and checks. Previous 11 sealed packets/89 members, original failures, relink claim and 480 unrelated paths unchanged. Historical 22/15 recovery and eight unverified Git-worktree tiers remain unchanged.
+ - **Next:** Founder review. No automatic optimization, banking, target execution or publication.
+-- **Boundary:** No commit, push, PR, merge, Xemu, D81, SD or physical testing performed.
++- **Boundary:** No relink, banking, Xemu, D81, SD, physical testing, commit, push, PR or merge in this correction.
+--- a/docs/reports/M2_MINIMUM_REBUILD_CORRECTIONS.md
++++ b/docs/reports/M2_MINIMUM_REBUILD_CORRECTIONS.md
+@@ -147,3 +147,56 @@
+ Recommended next action: founder review of these three corrections and retained
+ fit failure. Any publication or subsequent engineering requires its own scope;
+ no further optimization or banking work starts automatically.
++
++## Remaining SDK-path P2 — host-only correction, 28 October 2026
++
++Founder authorized only absolute SDK normalization and the host-only regression.
++The read-only review found that a relative SDK could be inventoried from the
++caller directory while tool commands resolved it from the repository directory.
++`execute()` now normalizes a supplied SDK once, before output creation or any
++checks. That absolute path feeds the lock hashes, pre-link capture, compiler,
++objdump/nm commands, post-verification and recorded SDK identity. The SDK remains
++optional for host validation. No public API, target source, precision, generated
++contract, compiler flags, memory ownership or admission limit changed.
++
++The regression uses a separate caller directory and repository, each containing
++a different disposable SDK. All subprocesses are mocked, with a fail-closed
++`Popen` trap; no compiler, linker or target analysis tool executes. Temporary
++synthetic outputs are confined to the fixture and are not target evidence.
++Four cases PASS: relative path, existing absolute path, relative symlink, and
++post-verification after a mocked compiler failure. They check both invoked and
++recorded tool paths, lock checks, inventory and verification identity.
++
++Affected commands, executed from this worktree:
++
++```text
++python3 -B -m unittest discover -s tests/flight_demo/m2_rebuild -p 'test_*sdk*.py' -v
++python3 -B -m unittest discover -s tests/flight_demo/m2_rebuild -p test_toolchain_identity.py -v
++```
++
++Results: four new regressions and eight existing SDK identity tests PASS.
++A separate host-only negative control loads the preserved pre-fix validator in
++memory: the relative-path regression fails at the expected absolute-identity
++assertion. Its expected-failure transcript is retained, not reclassified as a
++successful pre-fix result. Accepted renderer/oracle and target evidence was not
++rerun. The previous target invocation already used an absolute SDK path and its
++recorded identities remain valid for that earlier measured source.
++
++Fresh packet: [SDK path correction](../evidence/flight-demo/2026-10-27-m2-min-rebuild-corrections/sdk-path-20261028-1/).
++It retains before/after source, the focused diff, exact commands and logs,
++expected negative control, preservation checks and a seal. All 16,036 prior
++tracked/untracked file identities were compared; only the validator, this
++handoff and WIP changed. The new test and packet are the only additions.
++All 11 previous sealed packets (89 members), original failure evidence, the
++consumed relink claim and 480 unrelated modified/untracked paths remain unchanged.
++The approved design checkout remains clean. Ignored paths and missing historical
++worktrees are not newly certified by this inventory; the earlier 22/15 recovery
++and eight NOT VERIFIED Git-worktree limitations remain unchanged.
++
++Status: **READY FOR REVIEW**. The prior actual resident result remains
++32,839 / 24,575 bytes, **FAIL by 8,264 bytes**; reserve consumption remains zero.
++Whole-program stack, renderer service and runtime startup remain UNPROVEN;
++Xemu is NOT RUN and visual behavior NOT OBSERVED. This host tooling correction
++establishes no new target/runtime admission. No relink, banking, Xemu, D81, SD,
++physical testing or publication occurred. Next action: founder review of this
++focused correction; no optimization or further engineering starts automatically.
+--- a/tools/flight_demo/m2_rebuild/validate.py
++++ b/tools/flight_demo/m2_rebuild/validate.py
+@@ -63,6 +63,9 @@
+ 
+ 
+ def execute(tier, sdk, output):
++    # Bind the caller's SDK before commands change cwd to ROOT. Use this same
++    # absolute path for lock checks, inventories, subprocesses and evidence.
++    sdk = sdk.resolve() if sdk is not None else None
+     output.mkdir(parents=True, exist_ok=False)
+     report = {"identity": "65AERO-M2-MIN-REBUILD-CORRECTIONS-1",
+               "profile_identity": "65AERO-M2-MIN-REBUILD-1", "base": BASE, "tier": tier,
+--- /dev/null
++++ b/tests/flight_demo/m2_rebuild/test_validate_sdk_path.py
+@@ -0,0 +1,134 @@
++"""Host-only validator path regression: all commands and target results are mocked.
++
++Disposable output and SDK fixtures never touch sealed packets or the real SDK.
++"""
++from contextlib import redirect_stdout
++import importlib.util
++import io
++import json
++import os
++from pathlib import Path
++import subprocess
++import tempfile
++import unittest
++from unittest.mock import Mock, call, patch
++
++ROOT = Path(__file__).resolve().parents[3]
++SPEC = importlib.util.spec_from_file_location(
++    "m2rb_validate_sdk_path", ROOT / "tools/flight_demo/m2_rebuild/validate.py")
++VALIDATE = importlib.util.module_from_spec(SPEC)
++SPEC.loader.exec_module(VALIDATE)
++IDENTITY = VALIDATE.module(ROOT / "tools/flight_demo/m2_rebuild/toolchain_identity.py",
++                           "m2rb_test_sdk_identity")
++
++
++class ValidateSdkPath(unittest.TestCase):
++    def check_sdk_path(self, spelling, compile_exit=0):
++        with tempfile.TemporaryDirectory() as directory:
++            temporary = Path(directory).resolve()
++            caller, repository = temporary / "caller", temporary / "repository"
++            caller.mkdir()
++            repository.mkdir()
++            # Read-only source links support the real generator and input hashes.
++            for name in ["interfaces", "memory", "src", "tools", "tests"]:
++                (repository / name).symlink_to(ROOT / name, target_is_directory=True)
++            sdk = caller / "sdk"
++            shadow = repository / "sdk"
++            for tree, content in [(sdk, b"selected SDK"), (shadow, b"wrong SDK")]:
++                (tree / "bin").mkdir(parents=True)
++                for tool in ["mos-mega65-clang", "llvm-objdump", "llvm-nm"]:
++                    (tree / "bin" / tool).write_bytes(content + tool.encode())
++            (caller / "sdk-alias").symlink_to(sdk, target_is_directory=True)
++            lock = {"llvm_mos": {
++                "compiler_sha256": VALIDATE.sha(sdk / "bin/mos-mega65-clang"),
++                "objdump_sha256": VALIDATE.sha(sdk / "bin/llvm-objdump")}}
++            (repository / "toolchain").mkdir()
++            (repository / "toolchain/f65_toolchain.lock.json").write_text(json.dumps(lock))
++            output = repository / "disposable-output/run"
++            sdk_argument = {"relative": Path("sdk"), "absolute": sdk,
++                            "symlink": Path("sdk-alias")}[spelling]
++            identity = Mock(capture=Mock(wraps=IDENTITY.capture),
++                            verify=Mock(wraps=IDENTITY.verify), digest=IDENTITY.digest)
++            original_module = VALIDATE.module
++
++            def load_module(path, name):
++                if name == "m2rb_sdk_identity":
++                    return identity
++                if name in ["m2rb_startup_check", "m2rb_stack"]:
++                    return Mock(check=Mock(return_value={"status": "MOCK ONLY"}))
++                return original_module(path, name)
++
++            def run_mock(command, **kwargs):
++                self.assertEqual(kwargs["cwd"], repository)
++                tool = Path(command[0]).name
++                stdout = ""
++                status = 0
++                if command[0] == "git":
++                    self.assertEqual(command[1:3], ["merge-base", "--is-ancestor"])
++                elif tool == "mos-mega65-clang":
++                    # Synthetic bytes only; no compiler or linker is invoked.
++                    status = compile_exit
++                    if status == 0:
++                        (output / "UNADMITTED.prg").write_bytes(b"mock PRG")
++                        (output / "UNADMITTED.map").write_text("2001 2001 10 1 .text\n")
++                elif tool == "llvm-nm":
++                    stdout = "\n".join([
++                        "m2rb_dispatch", "m2rb_camera_edges", "m2rb_platform_init", "m2rb_glyph",
++                        "m2_prepare", "m2_project_prepared", "m2_ground_prepared", "m2rb_io_commit",
++                        "m1_tick", "m1_input_sample", "m1_acquire", "r0f_pf_flat_copy"])
++                else:
++                    self.assertEqual(tool, "llvm-objdump")
++                return subprocess.CompletedProcess(command, status, stdout, "")
++
++            previous_cwd = Path.cwd()
++            try:
++                os.chdir(caller)
++                with patch.object(VALIDATE, "ROOT", repository), \
++                     patch.object(VALIDATE, "module", side_effect=load_module), \
++                     patch.object(VALIDATE, "sha", wraps=VALIDATE.sha) as hashes, \
++                     patch.object(VALIDATE.subprocess, "check_output", return_value=VALIDATE.BASE), \
++                     patch.object(VALIDATE.subprocess, "run", side_effect=run_mock) as commands, \
++                     patch.object(VALIDATE.subprocess, "Popen", side_effect=AssertionError("real subprocess forbidden")), \
++                     redirect_stdout(io.StringIO()):
++                    result = VALIDATE.execute("target", sdk_argument, output)
++            finally:
++                os.chdir(previous_cwd)
++
++            self.assertEqual(result, 0 if compile_exit == 0 else 1)
++            identity.capture.assert_called_once_with(sdk)
++            inventory = json.loads((output / "sdk-inputs-before.json").read_text())
++            identity.verify.assert_called_once_with(sdk, inventory)
++            for tool in ["mos-mega65-clang", "llvm-objdump"]:
++                self.assertIn(call(sdk / "bin" / tool), hashes.call_args_list)
++            report = json.loads((output / "result.json").read_text())
++            self.assertEqual(report["toolchain"]["sdk"], str(sdk))
++            self.assertEqual(inventory["sdk_root"], str(sdk))
++            self.assertTrue(report["toolchain"]["sdk_unchanged_after_link"])
++            expected_tools = ["mos-mega65-clang"]
++            if compile_exit == 0:
++                expected_tools += ["llvm-objdump", "llvm-nm"]
++            expected_paths = [str(sdk / "bin" / tool) for tool in expected_tools]
++            self.assertEqual([entry["argv"][0] for entry in report["commands"]], expected_paths)
++            self.assertEqual([call.args[0][0] for call in commands.call_args_list
++                              if call.args[0][0] != "git"], expected_paths)
++            self.assertEqual(report["compile_link"], "PASS" if compile_exit == 0 else "FAIL")
++            # Both successful and failing mocked attempts retain their own seal.
++            seal = json.loads((output / "seal.json").read_text())
++            for name, expected in seal.items():
++                self.assertEqual(VALIDATE.sha(output / name), expected["sha256"])
++
++    def test_relative_sdk_uses_caller_identity_for_every_tool(self):
++        self.check_sdk_path("relative")
++
++    def test_absolute_sdk_is_preserved(self):
++        self.check_sdk_path("absolute")
++
++    def test_relative_sdk_alias_is_normalized(self):
++        self.check_sdk_path("symlink")
++
++    def test_compile_failure_verifies_same_absolute_sdk(self):
++        self.check_sdk_path("relative", compile_exit=1)
++
++
++if __name__ == "__main__":
++    unittest.main()

@@ -32,3 +32,10 @@ python3 -B tools/ci/static_hygiene.py --base origin/main --head HEAD --merge-bas
 The helper requires the manifest to exist in the specified committed head.
 Uncommitted checkout bytes do not substitute for the reviewed Git objects.
 CI remains documentation/static evidence only.
+
+The founder approved one additional whitespace pin on 2026-10-28 for
+`docs/evidence/flight-demo/2026-10-27-m2-min-rebuild-corrections/sdk-path-20261028-1/focused.diff`,
+SHA-256 `e0cf52a6bcfc72c4a73d3cea1a62af2dd19641353e7e6850e0edd8b18d4ec0a1`.
+Its three blank patch-context lines remain sealed and unchanged. The exception
+is exact-path only; changed, missing, renamed or symlinked evidence fails closed.
+Nearby unlisted files remain subject to ordinary whitespace checking.

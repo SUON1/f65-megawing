@@ -1,0 +1,4 @@
+tests/flight_demo/m2_rebuild/host.c:79:13: error: implicit conversion turns string literal into bool: 'char[40]' to '_Bool' [-Werror,-Wstring-conversion]
+   79 |     assert(!"finite renderer operation cap exhausted");
+      |            ~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.

@@ -1,0 +1,372 @@
+{
+  "identity": "65AERO-M2-MIN-REBUILD-CORRECTIONS-1",
+  "branch": "codex/65aero-m2-minimum-renderer-baseline",
+  "base": "b044440fa98c2dfc91ec590668049610afc98a1e",
+  "source": {
+    "WORK_IN_PROGRESS.md": {
+      "bytes": 1486,
+      "sha256": "2dc58661060b7d2b6a552dee9b87c45cae853a14da846ef2d33121cf31e1c481"
+    },
+    "docs/plans/65AERO_M2_MINIMUM_REBUILD_BUILD_INTENT.md": {
+      "bytes": 3943,
+      "sha256": "86c67ffb72a0118cf294cd922b30011213a46a020f111be00bb595bb94c6cddc"
+    },
+    "docs/reports/M2_MINIMUM_REBUILD_BASELINE.md": {
+      "bytes": 12887,
+      "sha256": "b8c4b3ed853bc0a203b0ecc79daa4ce34de978d32a50dd7e10641698fcb323e8"
+    },
+    "interfaces/generated/m2_rebuild_profile.h": {
+      "bytes": 866,
+      "sha256": "78dd368c1226b39218dfc53cf49b56749865df86825751091edc78c5c95cfba3"
+    },
+    "interfaces/m2_rebuild.json": {
+      "bytes": 2320,
+      "sha256": "9567374c9b08c1f24e9d58caca081885841dea42ae08c04e8b898e1dd42c7efb"
+    },
+    "memory/m2-rebuild-ledger.json": {
+      "bytes": 1502,
+      "sha256": "f4aecdc5633a1a5b367c09fc96d4699beb53da70e03e4dbb2fc609ec26c93a7d"
+    },
+    "src/diagnostics/m2_rebuild/camera.c": {
+      "bytes": 2799,
+      "sha256": "0364d4c5d62e4916bb0be9a4bce5f8ce75d5f3bf8c37c3c05ed6ebebdfd3e784"
+    },
+    "src/diagnostics/m2_rebuild/camera.h": {
+      "bytes": 398,
+      "sha256": "63bf8bea94191e5d398e80d62eff57ab2bc8c4774181beabb0063286a58862cb"
+    },
+    "src/diagnostics/m2_rebuild/main.c": {
+      "bytes": 2801,
+      "sha256": "a8c71ccddd6729418c4d5fab30549349b555bf6a87ddeccaee2fafdd3009ddac"
+    },
+    "src/graphics/m2_rebuild.c": {
+      "bytes": 9493,
+      "sha256": "063c7d2f219fe3b752905cb7a413d77dfb34c8a053e19719f8dba9bad866a2ee"
+    },
+    "src/graphics/m2_rebuild.h": {
+      "bytes": 1617,
+      "sha256": "7cdb82b91dc97cb22ddb2a4fc8f8978a8d2e648481f1fac1ec194bd766ced017"
+    },
+    "src/graphics/m2_rebuild_text.c": {
+      "bytes": 5408,
+      "sha256": "6f3e5a06da661cce4e564b0484983806cec7ede28cb376f2a65ccc63c150228d"
+    },
+    "src/input/m2_rebuild_input.c": {
+      "bytes": 213,
+      "sha256": "8ba01e0125251cfca67f73077a18faf2f493524e58596a08c2b9a135529e357e"
+    },
+    "src/input/m2_rebuild_input.h": {
+      "bytes": 523,
+      "sha256": "18d957492e830282d61fcb4022e756b57d329ea0cb6c51faf5ae095ce6d055bc"
+    },
+    "src/platform/m2_rebuild/guard.c": {
+      "bytes": 442,
+      "sha256": "1ec732b80f5475c96932a867a005df5f795a0e0f1d7a58db55278c1546fb6a31"
+    },
+    "src/platform/m2_rebuild/guard.h": {
+      "bytes": 230,
+      "sha256": "01abd076500a91ef12979742a6218a94b0bb48657b2117f8821657bc8653611b"
+    },
+    "src/platform/m2_rebuild/io.h": {
+      "bytes": 421,
+      "sha256": "0813e6a6901441a958d9bb503dd35f5ec34e829eacd4c74b971da573755c307e"
+    },
+    "src/platform/m2_rebuild/platform.c": {
+      "bytes": 8390,
+      "sha256": "b17b40b0f218d358976f7877cc48a5fead9eab1a17351c12b0b5b7dc56e44814"
+    },
+    "src/platform/m2_rebuild/platform.h": {
+      "bytes": 184,
+      "sha256": "d6d62c35496027454c3aa1b96414cf269de29122e31b4d30289947076a25c8e1"
+    },
+    "src/platform/m2_rebuild/startup.ld": {
+      "bytes": 257,
+      "sha256": "86e35c7d6759f9a50c94fcb51fc23cfd1f3d91e0b105ff46e59695b47ba8ff52"
+    },
+    "src/platform/m2_rebuild/startup_45gs02.s": {
+      "bytes": 1184,
+      "sha256": "36dc78ee26058da46b2b5a8b4ddf10d7ac3157a7eaae1ef13eca29070757acbd"
+    },
+    "tests/flight_demo/m2_rebuild/host.c": {
+      "bytes": 13568,
+      "sha256": "c7f7ad051b1270ce292c05335d6a2d0b41a2ff08d0319c1e1c6d77f931613f1c"
+    },
+    "tests/flight_demo/m2_rebuild/test_contract.py": {
+      "bytes": 4567,
+      "sha256": "c06a7e76ecb5980e8b625bbfc7cce3b09a55a3109edb2853f47cb2a56c8d40d9"
+    },
+    "tests/flight_demo/m2_rebuild/test_startup.py": {
+      "bytes": 2671,
+      "sha256": "3eda6f16cc603dbc85c3c15a1e6583462c63229a4766dd0c75ec873407fe1311"
+    },
+    "tools/flight_demo/m2_rebuild/final_check.py": {
+      "bytes": 9006,
+      "sha256": "e90fc36deddf765cb957b36e52521f56a589421062dca8e2034ac7906216b275"
+    },
+    "tools/flight_demo/m2_rebuild/generate.py": {
+      "bytes": 3369,
+      "sha256": "7d67ab299a7173c07913cd069bef8648653f24be9488d2b85c03122db3a627c8"
+    },
+    "tools/flight_demo/m2_rebuild/replay_static.py": {
+      "bytes": 6331,
+      "sha256": "2ed59d3eef4195763cb07400538c9ac726606c1ec8358738c0400e5ef9064e62"
+    },
+    "tools/flight_demo/m2_rebuild/startup_check.py": {
+      "bytes": 3947,
+      "sha256": "230728ce8b3f0b13f8ddf8becaa33320877cf7dc31c83a0b8efb913413afebbf"
+    },
+    "tools/flight_demo/m2_rebuild/validate.py": {
+      "bytes": 13626,
+      "sha256": "9b59dc68191796e4d19fa10b2c3aaa6b06f39f7f7062308b500d42b0556deb8a"
+    }
+  },
+  "original_packet_files": {
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/WIP-before.md": {
+      "bytes": 1685,
+      "sha256": "ceddd7802d617d254d2f77e8d86e4a85b5ebfeb1e513ffece9ae02a718fd93dd"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/main-verification.json": {
+      "bytes": 447,
+      "sha256": "1f03d16b22a34f7f30f0765b735975ed267ca0f8cb9eed6cfe563f7eabe8ec74"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158735932906000/host": {
+      "bytes": 319384,
+      "sha256": "e0dde8b6139df9d3c8be92db6fedfe5077d59128aca894e2176c447c90c2b4aa"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158735932906000/host-compile.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158735932906000/result.json": {
+      "bytes": 11317,
+      "sha256": "f97656b58e58b117549adcf5821886d602a3132704a5f20669ec01b28c2ee492"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158735932906000/seal.json": {
+      "bytes": 932,
+      "sha256": "8f648dddf962f9af0d2ba62ee8d1357eed4c8eddf8557f16bad86e08ea0040c4"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158735932906000/host.txt": {
+      "bytes": 94,
+      "sha256": "a5addf7006116cdf6a14879d3a9c2d19685e07661779690f1503e9d689abf247"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158735932906000/contracts.txt": {
+      "bytes": 426,
+      "sha256": "b439f7b1a9fc6864e9bd8672e6788d198a5cff5174142896085dc0a630901d53"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158735932906000/generated/memory/m2-rebuild-ledger.json": {
+      "bytes": 1502,
+      "sha256": "f4aecdc5633a1a5b367c09fc96d4699beb53da70e03e4dbb2fc609ec26c93a7d"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158735932906000/generated/interfaces/generated/m2_rebuild_profile.h": {
+      "bytes": 866,
+      "sha256": "78dd368c1226b39218dfc53cf49b56749865df86825751091edc78c5c95cfba3"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/target-compile.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg": {
+      "bytes": 31220,
+      "sha256": "388a034707e10547c0bae65a4744a0090ef8c152f9c8eef355021f01e0a5df8a"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/result.json": {
+      "bytes": 13787,
+      "sha256": "8c5b1431a177209d403e8295a8caf30124ba1714d7fc1598af1197962d13c34b"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/seal.json": {
+      "bytes": 1227,
+      "sha256": "064841772c02a8f91903ef67cf52cbb3efd007a9382559be9e23908099216c8e"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.map": {
+      "bytes": 48039,
+      "sha256": "38be6ce48c02f00f5a1be526bf97b08d8e9a8e37998816ff4f2b741f7378f291"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.elf": {
+      "bytes": 40832,
+      "sha256": "1fdf2059708ab092725f9b3ca9d6964801ad55d08c52176cdfad22b1e3a1ac0d"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.symbols": {
+      "bytes": 9457,
+      "sha256": "eb794e97514e370474760e39e8065ed4f0e7ba31af7a512f49b81b83ca972971"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.disassembly": {
+      "bytes": 837987,
+      "sha256": "bfeb651a480b6708a072a0977dd53aeb4ed18a2d03692f27aaa5aee09e09ade3"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/generated/memory/m2-rebuild-ledger.json": {
+      "bytes": 1502,
+      "sha256": "f4aecdc5633a1a5b367c09fc96d4699beb53da70e03e4dbb2fc609ec26c93a7d"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/generated/interfaces/generated/m2_rebuild_profile.h": {
+      "bytes": 866,
+      "sha256": "78dd368c1226b39218dfc53cf49b56749865df86825751091edc78c5c95cfba3"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/final-check-1793159493442203000/original-checkout-current-inventory.json": {
+      "bytes": 89870,
+      "sha256": "5a60b94997d3029cd7d6f0154df666b3ac98e5383277011495972b96859d7e6b"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/final-check-1793159493442203000/result.json": {
+      "bytes": 14846,
+      "sha256": "e63371cdec2a377d6e314b036385041dbd52886ff9130a4cd606b1d47ca9acd7"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/final-check-1793159493442203000/sdk-inputs.json": {
+      "bytes": 13907,
+      "sha256": "b8f536b369d5bce91410ee64b7eecdf8c670605e61ba4aed60f7432f62c69f8c"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/final-check-1793159493442203000/seal.json": {
+      "bytes": 411,
+      "sha256": "b59c53df2a1fd0302f8baa0dcb61a27c6dc184875fbf45bd3db985340e82ecad"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/final-check-1793159584829644000/original-checkout-current-inventory.json": {
+      "bytes": 89870,
+      "sha256": "5a60b94997d3029cd7d6f0154df666b3ac98e5383277011495972b96859d7e6b"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/final-check-1793159584829644000/result.json": {
+      "bytes": 15474,
+      "sha256": "f8fd3598aefa2742ab73b3785bf733a4ef070d8333595c38e6972846d5b8b3ca"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/final-check-1793159584829644000/sdk-inputs.json": {
+      "bytes": 13907,
+      "sha256": "b8f536b369d5bce91410ee64b7eecdf8c670605e61ba4aed60f7432f62c69f8c"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/final-check-1793159584829644000/seal.json": {
+      "bytes": 411,
+      "sha256": "de5f1ec39509665ad511c4747ba4dcf36a6791eee512d40251d199450d8bff8b"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/static-replay-1793158940264539000/result.json": {
+      "bytes": 11580,
+      "sha256": "a48cfa0a4043a1effac33d0bc1e4d6ffa839c3c4bfb0386797601e0e4a8b0b01"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/static-replay-1793158940264539000/tests.txt": {
+      "bytes": 875,
+      "sha256": "ea94edf66feb1f25aae4accae898cbf2519a1afd50cd827dedd03c212ab57d20"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/static-replay-1793158940264539000/seal.json": {
+      "bytes": 249,
+      "sha256": "9e87146e09e22d3e17c51362d49fdd2fe5c4464b357dcc4bcf2021a4610ed87d"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158762399896000/host-frame.indices": {
+      "bytes": 64000,
+      "sha256": "69c529d8edb64bcc7a56ef8cb3b04b2ac7e5b3f35d9bd6615fc0bc41f5d14c1e"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158762399896000/prepared-host-compile.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158762399896000/host": {
+      "bytes": 319480,
+      "sha256": "462610437172237ef11000f10caf7c95a02e9e6a6d60ba64b82417a18f40d576"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158762399896000/host-compile.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158762399896000/result.json": {
+      "bytes": 16762,
+      "sha256": "b442bac47f5d21e714c1d5e1eab41c747fb7a1b28068234e40c796ed13509a94"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158762399896000/near-far-oracle.txt": {
+      "bytes": 130528,
+      "sha256": "e0dea9d809f9eae406654555471c13ed834b88e95465b1d1c2983d0d3c8268b0"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158762399896000/geometry-host.txt": {
+      "bytes": 90,
+      "sha256": "a38ef9ed61ddaf569938aa94760889d4e1d870c19fcd5f0cb2b7336d5be3ac48"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158762399896000/seal.json": {
+      "bytes": 3013,
+      "sha256": "d55f043e5c322326307781917464f9e0b5916718db67e2da9967055c762026d8"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158762399896000/geometry-oracle.txt": {
+      "bytes": 317,
+      "sha256": "8a5af6855858fc185c78a312904f6e23d749c9edd7c7fb8174f50701b6d8a479"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158762399896000/host.txt": {
+      "bytes": 230,
+      "sha256": "2a56f37492461c9b0178972370c6da73377ddead1c2a64ca0324a2070856e3a9"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158762399896000/geometry.dylib": {
+      "bytes": 34416,
+      "sha256": "0433d402322e5e902e99078a7c2c87ad191975ab7324a5a727cce972accda982"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158762399896000/geometry-host-compile.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158762399896000/prepared-host": {
+      "bytes": 157472,
+      "sha256": "ee131de2f93bf1ec3c57f2ef733faf727d34abc086b82ce90335eb6ebf152e41"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158762399896000/cursor-host-compile.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158762399896000/prepared-host.txt": {
+      "bytes": 131,
+      "sha256": "03abdc14e4e074cb006627642b16487c747ca9efdcd36de1d5a2ef9a75c63967"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158762399896000/cursor-host": {
+      "bytes": 156520,
+      "sha256": "c51bbe6d9b5fd66b0a4f8e9029ea8bb0563738a56f783e5243e7b5ba14c9cf04"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158762399896000/geometry-host": {
+      "bytes": 174736,
+      "sha256": "ff9f0cafee05e9e6fda95e5991aa6b35b285bc55cbd85eebfba524025674700a"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158762399896000/contracts.txt": {
+      "bytes": 426,
+      "sha256": "1cd679c15b8b3c16696f354cc1c869fe1d45a461f72b289769c7afe17dd05841"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158762399896000/host-frame.png": {
+      "bytes": 2651,
+      "sha256": "3fe5f35877e92185d5e60c6291dd6db9f181c4ed3186f25c1ca718ee07fe7a8a"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158762399896000/cursor-host.txt": {
+      "bytes": 79,
+      "sha256": "23425946f84ca7b66ac7620aa458a1efa782ecf185073f89d58ced7728aa0a3f"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158762399896000/oracle-compile.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158762399896000/ci-policy-tests.txt": {
+      "bytes": 1380,
+      "sha256": "b0e798d7377c35ec901368be1f577a81dd29ba488bd7fea451a1c9d3799448d7"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158762399896000/generated/memory/m2-rebuild-ledger.json": {
+      "bytes": 1502,
+      "sha256": "f4aecdc5633a1a5b367c09fc96d4699beb53da70e03e4dbb2fc609ec26c93a7d"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158762399896000/generated/interfaces/generated/m2_rebuild_profile.h": {
+      "bytes": 866,
+      "sha256": "78dd368c1226b39218dfc53cf49b56749865df86825751091edc78c5c95cfba3"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158722615552000/host-compile.txt": {
+      "bytes": 299,
+      "sha256": "55a955abf251bd19a6f8c22a1da98c4200ac86dd5eff6cfc4ed5abf113b443b2"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158722615552000/result.json": {
+      "bytes": 10935,
+      "sha256": "8c4bea0c2474604c8cc2640ef84941097a859b493cf4739a75874777f42ee523"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158722615552000/seal.json": {
+      "bytes": 696,
+      "sha256": "4119436bb5ddfa5370380ee52dc8562ab7a14bf7bbd90529b92468e2ed6b85d6"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158722615552000/contracts.txt": {
+      "bytes": 426,
+      "sha256": "2db6244f0cac5ff9eb5eb6f1ef5eece8c7a098e8e34cb36d3a6de158f3bd00d7"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158722615552000/generated/memory/m2-rebuild-ledger.json": {
+      "bytes": 1502,
+      "sha256": "f4aecdc5633a1a5b367c09fc96d4699beb53da70e03e4dbb2fc609ec26c93a7d"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158722615552000/generated/interfaces/generated/m2_rebuild_profile.h": {
+      "bytes": 866,
+      "sha256": "78dd368c1226b39218dfc53cf49b56749865df86825751091edc78c5c95cfba3"
+    }
+  },
+  "archive_sha256": "6aece6681643d5dfd49308d74ad008a0a5ee123bf0700c2e63424fda9a1d6ee8",
+  "authorized_relinks": 1,
+  "relinks_used": 0
+}

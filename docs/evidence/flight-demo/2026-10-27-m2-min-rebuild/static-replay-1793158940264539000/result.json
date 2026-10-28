@@ -1,0 +1,562 @@
+{
+  "identity": "65AERO-M2-MIN-REBUILD-1",
+  "base": "b044440fa98c2dfc91ec590668049610afc98a1e",
+  "compile_link": "PASS",
+  "prg": {
+    "bytes": 31220,
+    "sha256": "388a034707e10547c0bae65a4744a0090ef8c152f9c8eef355021f01e0a5df8a"
+  },
+  "sections": {
+    ".text": {
+      "start": 8215,
+      "bytes": 29756
+    },
+    ".rodata": {
+      "start": 37976,
+      "bytes": 1435
+    },
+    ".data": {
+      "start": 39411,
+      "bytes": 0
+    },
+    ".bss": {
+      "start": 39411,
+      "bytes": 1475
+    },
+    ".noinit": {
+      "start": 40886,
+      "bytes": 190
+    }
+  },
+  "resident_start": 8193,
+  "resident_end": 41076,
+  "resident_bytes": 32883,
+  "resident_limit": 24575,
+  "resident_fit": "FAIL",
+  "deficit": 8308,
+  "remaining_margin": -8308,
+  "compiler_scratch": {
+    "start": 40886,
+    "bytes": 190
+  },
+  "software_stack_envelope": [
+    49152,
+    53248
+  ],
+  "hardware_stack_envelope": [
+    256,
+    512
+  ],
+  "stack_collision": false,
+  "reserve_used": 0,
+  "retained_implementation": {
+    "m2rb_dispatch": true,
+    "m2rb_camera_edges": true,
+    "m2rb_platform_init": true,
+    "m2rb_glyph": true,
+    "m2_prepare": true,
+    "m2_project_prepared": true,
+    "m2_ground_prepared": true,
+    "m2rb_io_commit": true,
+    "m1_tick": true,
+    "m1_input_sample": true,
+    "m1_acquire": true,
+    "r0f_pf_flat_copy": true
+  },
+  "replayed_packet": "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000",
+  "original_result_sha256": "8c5b1431a177209d403e8295a8caf30124ba1714d7fc1598af1197962d13c34b",
+  "original_seal_sha256": "064841772c02a8f91903ef67cf52cbb3efd007a9382559be9e23908099216c8e",
+  "application_source_parity": "PASS; unchanged measured target inputs",
+  "validator_changes": {
+    "tools/flight_demo/m2_rebuild/startup_check.py": {
+      "linked": "a4a0bd18fed7b8516c6f604525abd95c9c32b3a025b5b81ddd3db56d68b16917",
+      "current": "230728ce8b3f0b13f8ddf8becaa33320877cf7dc31c83a0b8efb913413afebbf"
+    },
+    "tools/flight_demo/m2_rebuild/validate.py": {
+      "linked": "a311cfbd17775b0d0c7140b317f4a00fb7b614ecf6f1d6d46c795757a3373520",
+      "current": "eb293b7d07907190c8cfac71365cd8297f507bf36dcff629557e8f2ca744f513"
+    }
+  },
+  "relinked": false,
+  "target_executed": false,
+  "banking": false,
+  "execution_admitted": false,
+  "startup_static": {
+    "normal_entry_ordering": "PASS",
+    "start": 8215,
+    "normalized": 8312,
+    "pre_normalization_instructions": 48,
+    "scope": "linked straight-line reset-entry prefix only",
+    "runtime_startup_admission": "UNPROVEN; no inherited-entry/async NMI/ROM-trap execution proof"
+  },
+  "probe_stack_result": {
+    "status": "UNPROVEN",
+    "reason": "software stack pointer writes need fresh accounting"
+  },
+  "whole_program_stack": "UNPROVEN; reachable compiler helpers, startup, trap, fault, IRQ/NMI paths lack a complete conservative proof",
+  "service": {
+    "status": "UNPROVEN",
+    "target_operation_grants": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "guard_grant": 0,
+    "units": "authoritative native clock counts; all unknown bounds deny work",
+    "100_hz_clock": "unchanged",
+    "stages": 21,
+    "skip_or_merge_ticks": false,
+    "target_launch": "disabled",
+    "cycles_measured": false
+  },
+  "largest_code_symbols": [
+    {
+      "address": 12473,
+      "bytes": 1900,
+      "kind": "t",
+      "name": "m2_project_prepared"
+    },
+    {
+      "address": 15970,
+      "bytes": 1257,
+      "kind": "t",
+      "name": "interpolate_delta"
+    },
+    {
+      "address": 22667,
+      "bytes": 1063,
+      "kind": "t",
+      "name": "m2rb_camera_edges"
+    },
+    {
+      "address": 11393,
+      "bytes": 1054,
+      "kind": "t",
+      "name": "m2_multiply_q46"
+    },
+    {
+      "address": 26818,
+      "bytes": 1019,
+      "kind": "t",
+      "name": "m2rb_text_row"
+    },
+    {
+      "address": 15024,
+      "bytes": 946,
+      "kind": "t",
+      "name": "plane_distance"
+    },
+    {
+      "address": 10222,
+      "bytes": 936,
+      "kind": "t",
+      "name": "m2_transform"
+    },
+    {
+      "address": 35659,
+      "bytes": 855,
+      "kind": "t",
+      "name": "__udivdi3"
+    },
+    {
+      "address": 18018,
+      "bytes": 824,
+      "kind": "t",
+      "name": "m2_raster_begin"
+    },
+    {
+      "address": 20700,
+      "bytes": 813,
+      "kind": "t",
+      "name": "m1_tick"
+    },
+    {
+      "address": 26010,
+      "bytes": 796,
+      "kind": "t",
+      "name": "bundle_valid"
+    },
+    {
+      "address": 8972,
+      "bytes": 719,
+      "kind": "t",
+      "name": "m2_fixture_segment"
+    },
+    {
+      "address": 34694,
+      "bytes": 713,
+      "kind": "T",
+      "name": "main"
+    },
+    {
+      "address": 19223,
+      "bytes": 700,
+      "kind": "t",
+      "name": "m2_ground_prepared"
+    },
+    {
+      "address": 14373,
+      "bytes": 651,
+      "kind": "t",
+      "name": "to_camera"
+    },
+    {
+      "address": 31394,
+      "bytes": 645,
+      "kind": "t",
+      "name": "cfratio"
+    },
+    {
+      "address": 28765,
+      "bytes": 610,
+      "kind": "t",
+      "name": "m1_platform_begin"
+    },
+    {
+      "address": 33795,
+      "bytes": 578,
+      "kind": "t",
+      "name": "initialize_store"
+    },
+    {
+      "address": 33231,
+      "bytes": 564,
+      "kind": "t",
+      "name": "m2rb_platform_init"
+    },
+    {
+      "address": 30655,
+      "bytes": 546,
+      "kind": "t",
+      "name": "cfrom_begin"
+    }
+  ],
+  "all_bss_symbols": [
+    {
+      "address": 40886,
+      "bytes": 0,
+      "kind": "B",
+      "name": "__bss_end"
+    },
+    {
+      "address": 39411,
+      "bytes": 0,
+      "kind": "B",
+      "name": "__bss_start"
+    },
+    {
+      "address": 41076,
+      "bytes": 0,
+      "kind": "B",
+      "name": "__heap_start"
+    },
+    {
+      "address": 34,
+      "bytes": 0,
+      "kind": "B",
+      "name": "__zp_bss_start"
+    },
+    {
+      "address": 39416,
+      "bytes": 1,
+      "kind": "b",
+      "name": "backup_valid"
+    },
+    {
+      "address": 39417,
+      "bytes": 1,
+      "kind": "b",
+      "name": "cffault"
+    },
+    {
+      "address": 39415,
+      "bytes": 1,
+      "kind": "b",
+      "name": "cfreclaimed"
+    },
+    {
+      "address": 39956,
+      "bytes": 1,
+      "kind": "b",
+      "name": "enabled"
+    },
+    {
+      "address": 39930,
+      "bytes": 1,
+      "kind": "b",
+      "name": "features_open"
+    },
+    {
+      "address": 39957,
+      "bytes": 1,
+      "kind": "b",
+      "name": "front"
+    },
+    {
+      "address": 39955,
+      "bytes": 1,
+      "kind": "b",
+      "name": "initialized"
+    },
+    {
+      "address": 40798,
+      "bytes": 1,
+      "kind": "b",
+      "name": "input.0"
+    },
+    {
+      "address": 40033,
+      "bytes": 1,
+      "kind": "b",
+      "name": "m2rb_launch_authorized"
+    },
+    {
+      "address": 40885,
+      "bytes": 1,
+      "kind": "b",
+      "name": "m2rb_status"
+    },
+    {
+      "address": 39948,
+      "bytes": 1,
+      "kind": "B",
+      "name": "r0f_pf_copy_ok"
+    },
+    {
+      "address": 39673,
+      "bytes": 1,
+      "kind": "B",
+      "name": "r0f_pf_cpu_port"
+    },
+    {
+      "address": 39940,
+      "bytes": 1,
+      "kind": "B",
+      "name": "r0f_pf_irq_seen"
+    },
+    {
+      "address": 39939,
+      "bytes": 1,
+      "kind": "B",
+      "name": "r0f_pf_irq_seq"
+    },
+    {
+      "address": 39933,
+      "bytes": 1,
+      "kind": "B",
+      "name": "r0f_pf_nmi_seen"
+    },
+    {
+      "address": 39674,
+      "bytes": 1,
+      "kind": "B",
+      "name": "r0f_pf_stack_high"
+    },
+    {
+      "address": 39951,
+      "bytes": 1,
+      "kind": "B",
+      "name": "r0fc_features"
+    },
+    {
+      "address": 39936,
+      "bytes": 1,
+      "kind": "B",
+      "name": "r0fc_hardware_low"
+    },
+    {
+      "address": 39952,
+      "bytes": 1,
+      "kind": "B",
+      "name": "r0fc_hardware_seed"
+    },
+    {
+      "address": 39932,
+      "bytes": 1,
+      "kind": "B",
+      "name": "r0fc_trap_base"
+    },
+    {
+      "address": 39931,
+      "bytes": 1,
+      "kind": "B",
+      "name": "r0fc_trap_flags"
+    },
+    {
+      "address": 40796,
+      "bytes": 2,
+      "kind": "b",
+      "name": "camera_input.0"
+    },
+    {
+      "address": 39934,
+      "bytes": 2,
+      "kind": "B",
+      "name": "r0f_pf_irq_count"
+    },
+    {
+      "address": 39949,
+      "bytes": 2,
+      "kind": "B",
+      "name": "r0f_pf_probe_timeout"
+    },
+    {
+      "address": 39937,
+      "bytes": 2,
+      "kind": "B",
+      "name": "r0fc_software_low"
+    },
+    {
+      "address": 39953,
+      "bytes": 2,
+      "kind": "B",
+      "name": "r0fc_software_seed"
+    },
+    {
+      "address": 40022,
+      "bytes": 2,
+      "kind": "b",
+      "name": "top"
+    },
+    {
+      "address": 40881,
+      "bytes": 4,
+      "kind": "b",
+      "name": "m2rb_guard_budget"
+    },
+    {
+      "address": 40845,
+      "bytes": 4,
+      "kind": "b",
+      "name": "m2rb_replay_checkpoint"
+    },
+    {
+      "address": 39411,
+      "bytes": 4,
+      "kind": "b",
+      "name": "period_q16"
+    },
+    {
+      "address": 39941,
+      "bytes": 7,
+      "kind": "B",
+      "name": "r0f_pf_probe_regs"
+    },
+    {
+      "address": 40024,
+      "bytes": 9,
+      "kind": "B",
+      "name": "r0f_pf_copy_request"
+    },
+    {
+      "address": 40098,
+      "bytes": 22,
+      "kind": "b",
+      "name": "camera"
+    },
+    {
+      "address": 40849,
+      "bytes": 32,
+      "kind": "b",
+      "name": "m2rb_target_budgets"
+    },
+    {
+      "address": 40799,
+      "bytes": 46,
+      "kind": "b",
+      "name": "snapshots"
+    },
+    {
+      "address": 39958,
+      "bytes": 64,
+      "kind": "b",
+      "name": "buffer"
+    },
+    {
+      "address": 40034,
+      "bytes": 64,
+      "kind": "b",
+      "name": "core"
+    },
+    {
+      "address": 39418,
+      "bytes": 255,
+      "kind": "b",
+      "name": "block"
+    },
+    {
+      "address": 39675,
+      "bytes": 255,
+      "kind": "b",
+      "name": "cfworkspace"
+    },
+    {
+      "address": 40120,
+      "bytes": 676,
+      "kind": "b",
+      "name": "renderer"
+    }
+  ],
+  "renderer_workspace": {
+    "address": 40120,
+    "bytes": 676,
+    "kind": "b",
+    "name": "renderer"
+  },
+  "bss_symbol_sum": 1475,
+  "static_layout": {
+    "base_page": [
+      512,
+      768
+    ],
+    "compiler_pseudoregisters": [
+      514,
+      546
+    ],
+    "flat_copy_pointer_scratch": [
+      546,
+      554
+    ],
+    "display_stores": [
+      [
+        131072,
+        194624
+      ],
+      [
+        196608,
+        260160
+      ]
+    ],
+    "color": [
+      267911168,
+      267913168
+    ],
+    "rom_backup": [
+      134217728,
+      134348800
+    ],
+    "protected_reserve": [
+      360448,
+      393216
+    ],
+    "reserve_used": 0,
+    "aliasing": "none; cache, bundles, tile/text and cursor have distinct storage"
+  },
+  "unqualified_display": "No target visual proof. V200 physical row alignment, PAL/NTSC border cropping, palette/mode/readback and safe pointer-prefetch commit remain unqualified.",
+  "contract_and_startup_tests": {
+    "exit": 0,
+    "log": "tests.txt"
+  },
+  "sealed_packet_preservation": "PASS",
+  "verifiers": {
+    "tools/flight_demo/m2_rebuild/replay_static.py": "2ed59d3eef4195763cb07400538c9ac726606c1ec8358738c0400e5ef9064e62",
+    "tools/flight_demo/m2_rebuild/startup_check.py": "230728ce8b3f0b13f8ddf8becaa33320877cf7dc31c83a0b8efb913413afebbf",
+    "tests/flight_demo/m2_rebuild/test_startup.py": "3eda6f16cc603dbc85c3c15a1e6583462c63229a4766dd0c75ec873407fe1311",
+    "tools/flight_demo/m2/stack_check.py": "5e4e20d3ff19697a7d55d3ae27c61260f3200172d4a9ba75bee84fa9810ac826"
+  }
+}

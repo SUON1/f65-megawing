@@ -1,0 +1,297 @@
+{
+  "identity": "65AERO-M2-MIN-REBUILD-1",
+  "status": "READY FOR REVIEW",
+  "base": "b044440fa98c2dfc91ec590668049610afc98a1e",
+  "branch": "codex/65aero-m2-minimum-renderer-baseline",
+  "main_verified": {
+    "identity": "65AERO-M2-MIN-REBUILD-1",
+    "remote_main": "b044440fa98c2dfc91ec590668049610afc98a1e",
+    "main_ci": {
+      "id": 40609267575,
+      "head": "b044440fa98c2dfc91ec590668049610afc98a1e",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/SUON1/f65-megawing/actions/runs/40609267575"
+    },
+    "branch": "codex/65aero-m2-minimum-renderer-baseline",
+    "base": "b044440fa98c2dfc91ec590668049610afc98a1e"
+  },
+  "public_and_historical_tracked_bytes": "unchanged; only tracked diff is WIP",
+  "scope_paths": [
+    "WORK_IN_PROGRESS.md",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/WIP-before.md",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/final-check-1793159493442203000/original-checkout-current-inventory.json",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/final-check-1793159493442203000/result.json",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/final-check-1793159493442203000/sdk-inputs.json",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/final-check-1793159493442203000/seal.json",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158722615552000/contracts.txt",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158722615552000/generated/interfaces/generated/m2_rebuild_profile.h",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158722615552000/generated/memory/m2-rebuild-ledger.json",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158722615552000/host-compile.txt",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158722615552000/result.json",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158722615552000/seal.json",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158735932906000/contracts.txt",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158735932906000/generated/interfaces/generated/m2_rebuild_profile.h",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158735932906000/generated/memory/m2-rebuild-ledger.json",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158735932906000/host",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158735932906000/host-compile.txt",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158735932906000/host.txt",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158735932906000/result.json",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158735932906000/seal.json",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158762399896000/ci-policy-tests.txt",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158762399896000/contracts.txt",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158762399896000/cursor-host",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158762399896000/cursor-host-compile.txt",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158762399896000/cursor-host.txt",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158762399896000/generated/interfaces/generated/m2_rebuild_profile.h",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158762399896000/generated/memory/m2-rebuild-ledger.json",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158762399896000/geometry-host",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158762399896000/geometry-host-compile.txt",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158762399896000/geometry-host.txt",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158762399896000/geometry-oracle.txt",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158762399896000/geometry.dylib",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158762399896000/host",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158762399896000/host-compile.txt",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158762399896000/host-frame.indices",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158762399896000/host-frame.png",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158762399896000/host.txt",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158762399896000/near-far-oracle.txt",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158762399896000/oracle-compile.txt",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158762399896000/prepared-host",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158762399896000/prepared-host-compile.txt",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158762399896000/prepared-host.txt",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158762399896000/result.json",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158762399896000/seal.json",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/main-verification.json",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/static-replay-1793158940264539000/result.json",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/static-replay-1793158940264539000/seal.json",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/static-replay-1793158940264539000/tests.txt",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.disassembly",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.map",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.prg.elf",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/UNADMITTED.symbols",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/generated/interfaces/generated/m2_rebuild_profile.h",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/generated/memory/m2-rebuild-ledger.json",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/result.json",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/seal.json",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/target-compile.txt",
+    "docs/evidence/flight-demo/2026-10-27-m2-source-baseline-preflight/source-availability.json",
+    "docs/plans/65AERO_M2_MINIMUM_REBUILD_BUILD_INTENT.md",
+    "docs/reports/M2_MINIMUM_REBUILD_BASELINE.md",
+    "interfaces/generated/m2_rebuild_profile.h",
+    "interfaces/m2_rebuild.json",
+    "memory/m2-rebuild-ledger.json",
+    "src/diagnostics/m2_rebuild/camera.c",
+    "src/diagnostics/m2_rebuild/camera.h",
+    "src/diagnostics/m2_rebuild/main.c",
+    "src/graphics/m2_rebuild.c",
+    "src/graphics/m2_rebuild.h",
+    "src/graphics/m2_rebuild_text.c",
+    "src/input/m2_rebuild_input.c",
+    "src/input/m2_rebuild_input.h",
+    "src/platform/m2_rebuild/guard.c",
+    "src/platform/m2_rebuild/guard.h",
+    "src/platform/m2_rebuild/io.h",
+    "src/platform/m2_rebuild/platform.c",
+    "src/platform/m2_rebuild/platform.h",
+    "src/platform/m2_rebuild/startup.ld",
+    "src/platform/m2_rebuild/startup_45gs02.s",
+    "tests/flight_demo/m2_rebuild/host.c",
+    "tests/flight_demo/m2_rebuild/test_contract.py",
+    "tests/flight_demo/m2_rebuild/test_startup.py",
+    "tools/flight_demo/m2_rebuild/final_check.py",
+    "tools/flight_demo/m2_rebuild/generate.py",
+    "tools/flight_demo/m2_rebuild/replay_static.py",
+    "tools/flight_demo/m2_rebuild/startup_check.py",
+    "tools/flight_demo/m2_rebuild/validate.py"
+  ],
+  "scope": "PASS",
+  "whitespace_and_python_syntax": "PASS",
+  "sealed_packets": {
+    "host-1793158735932906000": {
+      "members": 7,
+      "seal_sha256": "8f648dddf962f9af0d2ba62ee8d1357eed4c8eddf8557f16bad86e08ea0040c4",
+      "status": "UNCHANGED"
+    },
+    "target-1793158803095519000": {
+      "members": 9,
+      "seal_sha256": "064841772c02a8f91903ef67cf52cbb3efd007a9382559be9e23908099216c8e",
+      "status": "UNCHANGED"
+    },
+    "final-check-1793159493442203000": {
+      "members": 3,
+      "seal_sha256": "b59c53df2a1fd0302f8baa0dcb61a27c6dc184875fbf45bd3db985340e82ecad",
+      "status": "UNCHANGED"
+    },
+    "static-replay-1793158940264539000": {
+      "members": 2,
+      "seal_sha256": "9e87146e09e22d3e17c51362d49fdd2fe5c4464b357dcc4bcf2021a4610ed87d",
+      "status": "UNCHANGED"
+    },
+    "host-1793158762399896000": {
+      "members": 23,
+      "seal_sha256": "d55f043e5c322326307781917464f9e0b5916718db67e2da9967055c762026d8",
+      "status": "UNCHANGED"
+    },
+    "host-1793158722615552000": {
+      "members": 5,
+      "seal_sha256": "4119436bb5ddfa5370380ee52dc8562ab7a14bf7bbd90529b92468e2ed6b85d6",
+      "status": "UNCHANGED"
+    }
+  },
+  "measured_application_input_parity": "PASS; no target source change or relink after failed fit",
+  "original_checkout": {
+    "head": "8ee5214ea9c63b86e92ca9bc4fa0779115dbd57f",
+    "branch": "codex/65aero-m2-pr2-renderer-fit",
+    "status_sha256": "2045b2dd7d4fa98833e1f5b27ba3cf84bcfe9b89569d476244d1e00dbc9da3d0",
+    "diff_sha256": "8f6284a455ebbbcd985f7f546772edd8232b8f8ef052cdc2293b2e29009386c4",
+    "path_count": 480,
+    "status_diff_and_count_match_prior": true,
+    "current_inventory": "original-checkout-current-inventory.json",
+    "current_inventory_sha256": "5a60b94997d3029cd7d6f0154df666b3ac98e5383277011495972b96859d7e6b",
+    "prior_aggregate_content_digest": "660bc2d4da87d5525c1fe5c406a6ce0ce30d1cfa625609945131ee901a493fdb",
+    "prior_aggregate_encoding_reproduced": false,
+    "scope": "current file hashes recorded; prior aggregate encoding not reproduced; not an ignored-path or full historical-worktree inventory"
+  },
+  "approved_design_checkout": "clean at cacb6e9d88c7cfd297a2d57c854b5861323902d9",
+  "historical_recovery": {
+    "members": 37,
+    "previously_verified": 22,
+    "unresolved": 15,
+    "git_worktree_tier": "8 prior checkouts remain NOT VERIFIED",
+    "reconstructed_files": 0,
+    "reconstructed_metadata": 0
+  },
+  "sdk_inventory": "sdk-inputs.json",
+  "sdk_inventory_sha256": "b8f536b369d5bce91410ee64b7eecdf8c670605e61ba4aed60f7432f62c69f8c",
+  "sdk_inventory_entries": 94,
+  "final_source_identities": {
+    "WORK_IN_PROGRESS.md": {
+      "bytes": 1486,
+      "sha256": "2dc58661060b7d2b6a552dee9b87c45cae853a14da846ef2d33121cf31e1c481"
+    },
+    "docs/plans/65AERO_M2_MINIMUM_REBUILD_BUILD_INTENT.md": {
+      "bytes": 3943,
+      "sha256": "86c67ffb72a0118cf294cd922b30011213a46a020f111be00bb595bb94c6cddc"
+    },
+    "docs/reports/M2_MINIMUM_REBUILD_BASELINE.md": {
+      "bytes": 12887,
+      "sha256": "b8c4b3ed853bc0a203b0ecc79daa4ce34de978d32a50dd7e10641698fcb323e8"
+    },
+    "interfaces/generated/m2_rebuild_profile.h": {
+      "bytes": 866,
+      "sha256": "78dd368c1226b39218dfc53cf49b56749865df86825751091edc78c5c95cfba3"
+    },
+    "interfaces/m2_rebuild.json": {
+      "bytes": 2320,
+      "sha256": "9567374c9b08c1f24e9d58caca081885841dea42ae08c04e8b898e1dd42c7efb"
+    },
+    "memory/m2-rebuild-ledger.json": {
+      "bytes": 1502,
+      "sha256": "f4aecdc5633a1a5b367c09fc96d4699beb53da70e03e4dbb2fc609ec26c93a7d"
+    },
+    "src/diagnostics/m2_rebuild/camera.c": {
+      "bytes": 2799,
+      "sha256": "0364d4c5d62e4916bb0be9a4bce5f8ce75d5f3bf8c37c3c05ed6ebebdfd3e784"
+    },
+    "src/diagnostics/m2_rebuild/camera.h": {
+      "bytes": 398,
+      "sha256": "63bf8bea94191e5d398e80d62eff57ab2bc8c4774181beabb0063286a58862cb"
+    },
+    "src/diagnostics/m2_rebuild/main.c": {
+      "bytes": 2801,
+      "sha256": "a8c71ccddd6729418c4d5fab30549349b555bf6a87ddeccaee2fafdd3009ddac"
+    },
+    "src/graphics/m2_rebuild.c": {
+      "bytes": 9493,
+      "sha256": "063c7d2f219fe3b752905cb7a413d77dfb34c8a053e19719f8dba9bad866a2ee"
+    },
+    "src/graphics/m2_rebuild.h": {
+      "bytes": 1617,
+      "sha256": "7cdb82b91dc97cb22ddb2a4fc8f8978a8d2e648481f1fac1ec194bd766ced017"
+    },
+    "src/graphics/m2_rebuild_text.c": {
+      "bytes": 5408,
+      "sha256": "6f3e5a06da661cce4e564b0484983806cec7ede28cb376f2a65ccc63c150228d"
+    },
+    "src/input/m2_rebuild_input.c": {
+      "bytes": 213,
+      "sha256": "8ba01e0125251cfca67f73077a18faf2f493524e58596a08c2b9a135529e357e"
+    },
+    "src/input/m2_rebuild_input.h": {
+      "bytes": 523,
+      "sha256": "18d957492e830282d61fcb4022e756b57d329ea0cb6c51faf5ae095ce6d055bc"
+    },
+    "src/platform/m2_rebuild/guard.c": {
+      "bytes": 442,
+      "sha256": "1ec732b80f5475c96932a867a005df5f795a0e0f1d7a58db55278c1546fb6a31"
+    },
+    "src/platform/m2_rebuild/guard.h": {
+      "bytes": 230,
+      "sha256": "01abd076500a91ef12979742a6218a94b0bb48657b2117f8821657bc8653611b"
+    },
+    "src/platform/m2_rebuild/io.h": {
+      "bytes": 421,
+      "sha256": "0813e6a6901441a958d9bb503dd35f5ec34e829eacd4c74b971da573755c307e"
+    },
+    "src/platform/m2_rebuild/platform.c": {
+      "bytes": 8390,
+      "sha256": "b17b40b0f218d358976f7877cc48a5fead9eab1a17351c12b0b5b7dc56e44814"
+    },
+    "src/platform/m2_rebuild/platform.h": {
+      "bytes": 184,
+      "sha256": "d6d62c35496027454c3aa1b96414cf269de29122e31b4d30289947076a25c8e1"
+    },
+    "src/platform/m2_rebuild/startup.ld": {
+      "bytes": 257,
+      "sha256": "86e35c7d6759f9a50c94fcb51fc23cfd1f3d91e0b105ff46e59695b47ba8ff52"
+    },
+    "src/platform/m2_rebuild/startup_45gs02.s": {
+      "bytes": 1184,
+      "sha256": "36dc78ee26058da46b2b5a8b4ddf10d7ac3157a7eaae1ef13eca29070757acbd"
+    },
+    "tests/flight_demo/m2_rebuild/host.c": {
+      "bytes": 13568,
+      "sha256": "c7f7ad051b1270ce292c05335d6a2d0b41a2ff08d0319c1e1c6d77f931613f1c"
+    },
+    "tests/flight_demo/m2_rebuild/test_contract.py": {
+      "bytes": 4567,
+      "sha256": "c06a7e76ecb5980e8b625bbfc7cce3b09a55a3109edb2853f47cb2a56c8d40d9"
+    },
+    "tests/flight_demo/m2_rebuild/test_startup.py": {
+      "bytes": 2671,
+      "sha256": "3eda6f16cc603dbc85c3c15a1e6583462c63229a4766dd0c75ec873407fe1311"
+    },
+    "tools/flight_demo/m2_rebuild/final_check.py": {
+      "bytes": 9006,
+      "sha256": "e90fc36deddf765cb957b36e52521f56a589421062dca8e2034ac7906216b275"
+    },
+    "tools/flight_demo/m2_rebuild/generate.py": {
+      "bytes": 3369,
+      "sha256": "7d67ab299a7173c07913cd069bef8648653f24be9488d2b85c03122db3a627c8"
+    },
+    "tools/flight_demo/m2_rebuild/replay_static.py": {
+      "bytes": 6331,
+      "sha256": "2ed59d3eef4195763cb07400538c9ac726606c1ec8358738c0400e5ef9064e62"
+    },
+    "tools/flight_demo/m2_rebuild/startup_check.py": {
+      "bytes": 3947,
+      "sha256": "230728ce8b3f0b13f8ddf8becaa33320877cf7dc31c83a0b8efb913413afebbf"
+    },
+    "tools/flight_demo/m2_rebuild/validate.py": {
+      "bytes": 13626,
+      "sha256": "9b59dc68191796e4d19fa10b2c3aaa6b06f39f7f7062308b500d42b0556deb8a"
+    }
+  },
+  "target_relinked": false,
+  "target_executed": false,
+  "committed": false,
+  "pushed": false,
+  "xemu": "NOT RUN",
+  "banking": "NOT IMPLEMENTED",
+  "resident_fit": "FAIL",
+  "resident_bytes": 32883,
+  "deficit": 8308,
+  "reserve_used": 0
+}

@@ -174,6 +174,16 @@ owner gates approved in the entry plan. Establish actual measured limits and
 full integrated-harness acceptance at their gates; bounded program closeout
 does not relabel historical evidence or approve production capacity.
 
+The founder approved the new `65AERO-M2-MIN-REBUILD-1` source baseline and
+its startup, telemetry provenance and SDK identity/path corrections for
+publication. This is a new reproducible development baseline, not recovered
+historical source. See the [correction handoff](docs/reports/M2_MINIMUM_REBUILD_CORRECTIONS.md).
+The retained complete target link uses 32,839 resident bytes against 24,575,
+a failed fit by 8,264 bytes, with zero reserve use. Runtime startup, whole-program
+stack and service remain UNPROVEN; launch and service grants stay zero.
+The source baseline includes no banking or Xemu admission. Historical failures
+and incomplete recovery limitations remain preserved.
+
 ## Project-truth debt
 
 - The `spec/` corpus now distinguishes current authority, candidate Runtime v1, provenance, supporting references, and project-control records.

@@ -1,0 +1,378 @@
+{
+  "bin/ld.lld": {
+    "bytes": 60993024,
+    "sha256": "0676f6ecbafea9ab5a1fe2bf8dd3cdd67b8ed856ee137d7550b90fe5202e2b58"
+  },
+  "bin/llvm-nm": {
+    "bytes": 8924088,
+    "sha256": "3db2d4f247dc2ae7fefbc5c7f8fde21ecc7925e353650b6103d6d6e64a88bed7"
+  },
+  "bin/llvm-objdump": {
+    "bytes": 10891216,
+    "sha256": "5327f031a741bfcd4104317fbad3d1e45275d70b49821f0da52391120848a8e9"
+  },
+  "bin/mos-mega65-clang": {
+    "bytes": 120041864,
+    "sha256": "cc557ae99a68ed36e098062b0f5376a878e94ac187b87446c8e603e4fb45a906"
+  },
+  "mos-platform/commodore/include/cbm.h": {
+    "bytes": 13293,
+    "sha256": "d4a0a8d082a571a2c6cd7b899b35236f5fc3bdf8a241bad3a019bef38a0cf920"
+  },
+  "mos-platform/commodore/lib/commodore.ld": {
+    "bytes": 806,
+    "sha256": "43f89d3b77c0aafd64aa7beaf5309eb8bfd631939e20db8ad9231a901a388d23"
+  },
+  "mos-platform/commodore/lib/libc.a": {
+    "bytes": 370320,
+    "sha256": "67042818e83b4e34bdbd2e4105bee7b537a3fe64be609644ac08ae07407c8819"
+  },
+  "mos-platform/commodore/lib/libcrt0.a": {
+    "bytes": 18686,
+    "sha256": "95b091d61a3f6ee5723e36fd79e7877b69c3e023996211f354d8a2970fdacbaa"
+  },
+  "mos-platform/commodore/lib/save-basic.o": {
+    "bytes": 1124,
+    "sha256": "724b74262a385378835a0883f6b12daf541e457aed713b564cca3ea0e85c3467"
+  },
+  "mos-platform/common/include/6502.h": {
+    "bytes": 208,
+    "sha256": "c425c2c4d35104a9dc93b9620935769f58aa979ada331ca175608ff645c4647b"
+  },
+  "mos-platform/common/include/__internal.h": {
+    "bytes": 213,
+    "sha256": "71527689807c806024d03f73262df9c759393e61110508e06a3b88846fe7bc00"
+  },
+  "mos-platform/common/include/__type-traits-impl.h": {
+    "bytes": 1269,
+    "sha256": "ecb9de289a66abeec3aff67b0e95916562e46ad7f641f667cf1a0516b353eb7a"
+  },
+  "mos-platform/common/include/algorithm": {
+    "bytes": 1277,
+    "sha256": "30ef93aa97c2c5ba2dc7e88a271b22bf5f22034a7c3ad9d7db25b26a455af39c"
+  },
+  "mos-platform/common/include/alloca.h": {
+    "bytes": 78,
+    "sha256": "b5fd4b8d726da1eab5f9b27c4d073b86a8b052486bfd5372533d4abf2c7b3984"
+  },
+  "mos-platform/common/include/array": {
+    "bytes": 1649,
+    "sha256": "4323407b685a7028dfb63cfe8d01d4a46e9d85a920d69f60aab70e848711a3dc"
+  },
+  "mos-platform/common/include/assert.h": {
+    "bytes": 965,
+    "sha256": "dd596055ec86fbd447425cd226636ed5b7101075a758adc33445441ec7be2be2"
+  },
+  "mos-platform/common/include/climits": {
+    "bytes": 84,
+    "sha256": "a2c3c26632c4ff210e861ac01e4c67f386459ffbca3651bdac974854cb2a948b"
+  },
+  "mos-platform/common/include/cstdarg": {
+    "bytes": 122,
+    "sha256": "e78ecee518a24aa1a6e75675c41f584a8aa33a8b93c4f3f6256d4cb899183e2c"
+  },
+  "mos-platform/common/include/cstddef": {
+    "bytes": 1914,
+    "sha256": "89e6bef82eb0b5e2119eb74635d1aac596df93217f27d215fced493485a40365"
+  },
+  "mos-platform/common/include/cstdint": {
+    "bytes": 1082,
+    "sha256": "f60df65e9528824a870552b847458c450b52c4905efc3a5c477133ff61931f62"
+  },
+  "mos-platform/common/include/cstdio": {
+    "bytes": 237,
+    "sha256": "ffd0112cbef2165f2afe6013a3a6c8e3b47b819ec3720f0fb16e3a46a40a735c"
+  },
+  "mos-platform/common/include/cstdlib": {
+    "bytes": 307,
+    "sha256": "9efbab2cf044054e6b18a9e1d6c207eac7c909af024584dd6238a145cb24b78a"
+  },
+  "mos-platform/common/include/ctype.h": {
+    "bytes": 412,
+    "sha256": "cc7ab6dce5363b7264aa39236a5f8bebbf8a99a5f5533876bee113f3eb14bde4"
+  },
+  "mos-platform/common/include/errno.h": {
+    "bytes": 523,
+    "sha256": "42913f97563c3558ab2f83bd3bdf99aa53aec29b55ab6b5937a60091cc51e767"
+  },
+  "mos-platform/common/include/exception": {
+    "bytes": 295,
+    "sha256": "cc46bf191d71ba6bba6374ffa0ce58a2c52e17599a8f63d3e3b60d74a00ac1fa"
+  },
+  "mos-platform/common/include/fcntl.h": {
+    "bytes": 3650,
+    "sha256": "28b4fe69227dbd8680d4b65ab84afe09028bd32035cdf9a819bf54f8fc4647f0"
+  },
+  "mos-platform/common/include/fixed_point.h": {
+    "bytes": 19189,
+    "sha256": "9553cd6d57f3c8591fb8422f10c6248e15aecdc215876ac370a67be4fef81ee4"
+  },
+  "mos-platform/common/include/initializer_list": {
+    "bytes": 1311,
+    "sha256": "0ad4799152dd2ed32f80a281897220cfdec7fceedff49a5030c1409580178f3a"
+  },
+  "mos-platform/common/include/inttypes.h": {
+    "bytes": 6139,
+    "sha256": "851184a2a37d17d55fd42cd86e46359e467b793bfcd122d7ff2e48fb561a870e"
+  },
+  "mos-platform/common/include/iterator": {
+    "bytes": 963,
+    "sha256": "ec5d81d24538fcf53db834a5335cb502fd6e6a2c2f3b4c5dbc589fd54beb1255"
+  },
+  "mos-platform/common/include/limits": {
+    "bytes": 2907,
+    "sha256": "56f4f937bc3c68fa40a6b4e1f590d85992af3712e6fb94f9d33fd6f6e4f30da7"
+  },
+  "mos-platform/common/include/math.h": {
+    "bytes": 486,
+    "sha256": "b05b4d03e51672b5b365a675f9a10bffec519fd91867ab274c5ad55e07ecfeeb"
+  },
+  "mos-platform/common/include/new": {
+    "bytes": 1468,
+    "sha256": "059fa5da1ec58b09347c0520c100d211db19848486f3c8530bffce78e751d302"
+  },
+  "mos-platform/common/include/peekpoke.h": {
+    "bytes": 3422,
+    "sha256": "8ffbd607cb8217c71e3b2d6e6e8eec30fad4dcf25a7e60b038e745d15f85d317"
+  },
+  "mos-platform/common/include/setjmp.h": {
+    "bytes": 399,
+    "sha256": "4b176c48fb2ba59c82c2cdd7da0d5a7d92da013f5b370179953682146d9ace31"
+  },
+  "mos-platform/common/include/signal.h": {
+    "bytes": 970,
+    "sha256": "0ca06ffe230a8c22abb01c5eebae799d8b7e3414fb9fc6d10af51a6c88a631e0"
+  },
+  "mos-platform/common/include/soa-struct.inc": {
+    "bytes": 1949,
+    "sha256": "59e87cf2a5a3b2748f1758450a83b17d1585ca35eae301319933c43600c39ac7"
+  },
+  "mos-platform/common/include/soa.h": {
+    "bytes": 14995,
+    "sha256": "e2d0eb5f241c977b7ab96441d900ed702766736d6f86d8857d98b8a2d7dd0720"
+  },
+  "mos-platform/common/include/stdio.h": {
+    "bytes": 4439,
+    "sha256": "90de8777479012b3898f7a7df536f9eb82def76a01b4a6697bf0a2c64a64c9a9"
+  },
+  "mos-platform/common/include/stdlib.h": {
+    "bytes": 8804,
+    "sha256": "dbcea039f760bd2b476cf8c84b54abb76633be5a5444800a56baebaf29e1e950"
+  },
+  "mos-platform/common/include/string.h": {
+    "bytes": 1640,
+    "sha256": "f836cbd1ddee1ef27b0924a68477571dcd5f821bd2d5a40966ac0102decff767"
+  },
+  "mos-platform/common/include/time.h": {
+    "bytes": 815,
+    "sha256": "b16fc0732dc5c05cb6dc188ae5812be608df2938996a98bba289a7afa47f8fc5"
+  },
+  "mos-platform/common/include/type_traits": {
+    "bytes": 41185,
+    "sha256": "07e2d0d329c4a24c1b2ed53c6a05effabba0e12a9a5a23a1f7e502184fbd33a4"
+  },
+  "mos-platform/common/include/typeinfo": {
+    "bytes": 582,
+    "sha256": "9deaa02ef73823ac6b09908350edeef1cd6cd88126f537b82850492f04cea5c0"
+  },
+  "mos-platform/common/include/unistd.h": {
+    "bytes": 4083,
+    "sha256": "3f89e10773aba133251f55e9e991cb91ededcb101016db33b60068bf61bd7a07"
+  },
+  "mos-platform/common/include/utility": {
+    "bytes": 1280,
+    "sha256": "9ecc67572005bdbfc7e3648ac9a659033e1e7b112f8335001e5b7f93ff35cc71"
+  },
+  "mos-platform/common/include/wchar.h": {
+    "bytes": 278,
+    "sha256": "133676620093446226e8ffc7806e78895afa584ca24d7b297ead74bc5667915b"
+  },
+  "mos-platform/common/lib/bss-sections.ld": {
+    "bytes": 58,
+    "sha256": "1d513a5cd848f174b0fadfabd96f0c03ce204b42091924985ca5ba4f630ddf75"
+  },
+  "mos-platform/common/lib/bss-symbols.ld": {
+    "bytes": 27,
+    "sha256": "3edb897b042ec3f9b0a17ee151e5452a5b3da94c50e981991bdaa63523dca75f"
+  },
+  "mos-platform/common/lib/bss.ld": {
+    "bytes": 80,
+    "sha256": "4e8309ea24595f84ec7797762ad227bc5f2218e6a6b1ce3743e40eab104f5f9d"
+  },
+  "mos-platform/common/lib/c.ld": {
+    "bytes": 304,
+    "sha256": "e05e74327ed0a461f10ba48c60ff6ed65d6a0d575580a19314a2d304efe82f55"
+  },
+  "mos-platform/common/lib/crt0.o": {
+    "bytes": 632,
+    "sha256": "237b1cb332ca62323082e8fd268f4782d38ad4073e5962ea7b8e47bff6bc0ac8"
+  },
+  "mos-platform/common/lib/data-sections.ld": {
+    "bytes": 56,
+    "sha256": "fd7f367a557ee967dc22c9d70122f6a265e6d767396fe47ca28a85a13557ce04"
+  },
+  "mos-platform/common/lib/data-symbols.ld": {
+    "bytes": 66,
+    "sha256": "0712b91f1c8f9e98c21f1e2642ce8f99d66ee30c1c332a3117fabea72ba199ea"
+  },
+  "mos-platform/common/lib/data.ld": {
+    "bytes": 88,
+    "sha256": "b51944c15a5c10f48da48b3215552a70daeded739c5b29bf13c9d4b9f6f2d6eb"
+  },
+  "mos-platform/common/lib/imag-regs.ld": {
+    "bytes": 986,
+    "sha256": "cfc97aaf676e0bc1b3375f51ccd76fda6b4956916aa7f6420a22a39b8ed32a2c"
+  },
+  "mos-platform/common/lib/libc.a": {
+    "bytes": 253028,
+    "sha256": "935eb777b5cc2841ff605deb684ea7c9fb04142029c232c767d66a2661848f3a"
+  },
+  "mos-platform/common/lib/libcopy-data.a": {
+    "bytes": 3478,
+    "sha256": "c2dcfd953e059548033bacf213c2b8c2c5952e43ea1f053d59561f600d8ef45d"
+  },
+  "mos-platform/common/lib/libcopy-zp-data.a": {
+    "bytes": 1466,
+    "sha256": "0aaa477aa97342a8b05013018a2adeb5503d95e37ee605372e219ecfee56e9f5"
+  },
+  "mos-platform/common/lib/libcrt.a": {
+    "bytes": 353412,
+    "sha256": "f72b3fd6034dff7890939839ca3c8799e82b9ce5aa912eabbe7940cecaa4756e"
+  },
+  "mos-platform/common/lib/libcrt0.a": {
+    "bytes": 3592,
+    "sha256": "1b98c3856e5920f64dd775dd634233756861ad8a05fa149c47734c176462aee4"
+  },
+  "mos-platform/common/lib/libexit-custom.a": {
+    "bytes": 1574,
+    "sha256": "5ba7396c95f4d9ad5697fe5f0eafc30f3487b56c9b7c9d6a63fcb0c86f7ce0ed"
+  },
+  "mos-platform/common/lib/libexit-loop.a": {
+    "bytes": 7240,
+    "sha256": "89ee826f98c93fb8f8a037752adfd9c72eced44261f9d0b068b49472c0d210c5"
+  },
+  "mos-platform/common/lib/libexit-return.a": {
+    "bytes": 2942,
+    "sha256": "2b342a51469c2ec8bdcc7d173b00cf8e22667a4558ae318ccbb100aa237e1c41"
+  },
+  "mos-platform/common/lib/libinit-stack.a": {
+    "bytes": 734,
+    "sha256": "116c745c61d81ad3d219794a546f0c1bb2765d2251b2094c2346f8beed612050"
+  },
+  "mos-platform/common/lib/libm.a": {
+    "bytes": 2788,
+    "sha256": "1de1a66fc3947759b6b55fe1db6d392d63b86b538a9dd5d57ac5fff6ddd6ba29"
+  },
+  "mos-platform/common/lib/libprintf_flt.a": {
+    "bytes": 16528,
+    "sha256": "1f44b20a968e75bb280c6375fb55aeacf3cab7db687ad5705a2e413c833e3975"
+  },
+  "mos-platform/common/lib/libzero-bss.a": {
+    "bytes": 2552,
+    "sha256": "dd08a5bcaf6471a8cb1513dfb2419ee8faeb7a9608b3634c0bbab08c70425a30"
+  },
+  "mos-platform/common/lib/noinit-sections.ld": {
+    "bytes": 410,
+    "sha256": "6b53ee087a1d6c8f1f6e2ddb5e1504bf3a04cc3265382fbd1acec132a5417f88"
+  },
+  "mos-platform/common/lib/noinit.ld": {
+    "bytes": 63,
+    "sha256": "76b28b5e3a93bff81dcca4c50955ca72df620dbc5c816d8a35171d00972a34b9"
+  },
+  "mos-platform/common/lib/rodata-sections.ld": {
+    "bytes": 28,
+    "sha256": "6e4cfa0c1708e76a22312ae6b2654f317c2e8381eb7d768e0ee0abe0f0a54f37"
+  },
+  "mos-platform/common/lib/rodata.ld": {
+    "bytes": 53,
+    "sha256": "0e2323eea5b4bc04301c837d1fd98652482766b60d09d8679b4d95fb0e01f3b9"
+  },
+  "mos-platform/common/lib/text-sections.ld": {
+    "bytes": 777,
+    "sha256": "bb3424a1c4805da7bfd7e1bdc6951f47f64faafecdbf374bc396ff8663311676"
+  },
+  "mos-platform/common/lib/text.ld": {
+    "bytes": 49,
+    "sha256": "400035867f485470dafb0b0baca3b76c554345c7e9825c77263a6d89b2d02d91"
+  },
+  "mos-platform/common/lib/zp-bss-sections.ld": {
+    "bytes": 41,
+    "sha256": "f100712eed5ca3665b310e8b0d4a5c30639058343739d2e2648dadcbb22996a0"
+  },
+  "mos-platform/common/lib/zp-bss-symbols.ld": {
+    "bytes": 33,
+    "sha256": "4840a6bada7104b039f8339cf249809465feb18aac800b4ffce2edb4e3da0159"
+  },
+  "mos-platform/common/lib/zp-bss.ld": {
+    "bytes": 80,
+    "sha256": "2d91ae712e998be8f58fdf855da58a9883dde5c70321cf2a0d78e29787d4f6fb"
+  },
+  "mos-platform/common/lib/zp-data-sections.ld": {
+    "bytes": 68,
+    "sha256": "8d7a4a40eb72f0fac014e5155dd86d14ecfed84bbd65525cb68a7ae237c50a14"
+  },
+  "mos-platform/common/lib/zp-data-symbols.ld": {
+    "bytes": 78,
+    "sha256": "3ea0fff3b1b7e4826f0610a05217bbbfbedf0780953fc2c2e42747078bc76880"
+  },
+  "mos-platform/common/lib/zp-data.ld": {
+    "bytes": 88,
+    "sha256": "877ce1056532d74e7a026d5b178cf4c44c79cedcb845505d07270303ca7dfb0e"
+  },
+  "mos-platform/common/lib/zp-noinit-sections.ld": {
+    "bytes": 70,
+    "sha256": "9f82b0591e95dad79b3d10968934eed89c456991eda9cbf54c102133ac7cc7eb"
+  },
+  "mos-platform/common/lib/zp-noinit.ld": {
+    "bytes": 53,
+    "sha256": "2ff13ee50f03bf4d9ec91902f4f9e30bff5171c08d609dd70d9a80786685b216"
+  },
+  "mos-platform/common/lib/zp.ld": {
+    "bytes": 58,
+    "sha256": "5d88dfc34fd9d46bcef9735d083433c48878fab5e391b8026a21b6e6db830f18"
+  },
+  "mos-platform/mega65/include/_45E100.h": {
+    "bytes": 3443,
+    "sha256": "338dbb2c340ca2f66b5b263da2d50d3d8f38350886dc39e057931bf79d666a6e"
+  },
+  "mos-platform/mega65/include/_dmagic.h": {
+    "bytes": 7333,
+    "sha256": "3ff7f97a36ec3df5adba8cbeb204acdc0bf49560ab021c11996220a84a6203a3"
+  },
+  "mos-platform/mega65/include/_vic3.h": {
+    "bytes": 2876,
+    "sha256": "acbf017038241f638b270b5b04debc16610f5db6d3fbe46b32d3613ee7a2b82c"
+  },
+  "mos-platform/mega65/include/_vic4.h": {
+    "bytes": 16967,
+    "sha256": "66a2c88127cd24764d4bc4b45b0f76e8ee68cfd5fb8d0e63bf503b1a39e2a45c"
+  },
+  "mos-platform/mega65/include/dma.hpp": {
+    "bytes": 3243,
+    "sha256": "ebbc0ced7483eb7a17bb2411c955bf3767c11e9617d897120579736e8c13a954"
+  },
+  "mos-platform/mega65/include/mega65.h": {
+    "bytes": 6824,
+    "sha256": "73c651638ed6ddf86eef0a99d1c52ccab29996e3be70680132bc81a3881fe5d3"
+  },
+  "mos-platform/mega65/lib/basic-header.o": {
+    "bytes": 624,
+    "sha256": "4a2240a5be34265d5e20f5fe843d0de6c6c76098686d829a3ad3f55a20b537a1"
+  },
+  "mos-platform/mega65/lib/libc.a": {
+    "bytes": 376792,
+    "sha256": "e8573ce26430d2e1031efea5a074c30fef64ca1c6c52abdad50009fc1e746f3f"
+  },
+  "mos-platform/mega65/lib/libcrt0.a": {
+    "bytes": 37704,
+    "sha256": "f039bfab55ea4d9022c9cf27c1f30060e0dadc72eb27912a4f82a7f98ac0a68f"
+  },
+  "mos-platform/mega65/lib/link.ld": {
+    "bytes": 885,
+    "sha256": "a079ff5e61ad9f41226dce914421564f088dcbe89740cf2de0b1e691faa29a21"
+  },
+  "mos-platform/mega65/lib/unmap-basic.o": {
+    "bytes": 532,
+    "sha256": "11d1a2b55da2d0c0dd73630e282c7eb7d205ecb023b4982184e275e15a10abc8"
+  }
+}

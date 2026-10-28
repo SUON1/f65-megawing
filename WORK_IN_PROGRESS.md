@@ -1,5 +1,6 @@
 # Work in Progress
 
-- **Status: NONE — founder-approved RF residency design checkpoint; no active implementation.**
-- **Record:** [Approved versioned M2 design and publication](docs/plans/65AERO_M2_RESIDENCY_FEASIBILITY.md). RF-D1–RF-D3 and RF-EX1 apply only to controlled M2 development design; actual fit, stack, gateway and service performance remain UNPROVEN. Public ABI, production ownership and reserve are unchanged.
-- **Next:** After verified integration, establish the source-complete minimum-renderer baseline on a new branch. Import only identified verified-candidate inputs; retain a failing fit gate with runtime enablement disabled. Publish that baseline separately before banking implementation. The old incomplete packet is not a prerequisite.
+- **Status: NONE.**
+- **Record:** Founder-approved minimum-renderer source baseline and P1/P2 corrections. See [correction handoff](docs/reports/M2_MINIMUM_REBUILD_CORRECTIONS.md).
+- **Limits:** Resident fit FAIL: 32,839 / 24,575 bytes, deficit 8,264. Runtime startup, whole-program stack and service remain UNPROVEN; launch remains disabled. No banking or runtime admission.
+- **Next:** Separate founder-authorized engineering task; no automatic continuation.

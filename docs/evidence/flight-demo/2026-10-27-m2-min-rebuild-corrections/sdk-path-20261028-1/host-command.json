@@ -1,0 +1,16 @@
+{
+  "argv": [
+    "/Library/Developer/CommandLineTools/usr/bin/python3",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests/flight_demo/m2_rebuild",
+    "-p",
+    "test_*sdk*.py",
+    "-v"
+  ],
+  "cwd": "/Users/slice/Developer/f65-megawing-m2-source-baseline",
+  "returncode": 0
+}
