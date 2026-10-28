@@ -1,0 +1,155 @@
+{
+  "identity": "65AERO-M2-RESIDENCY-FEASIBILITY-1",
+  "evidence_tier": "design/static only",
+  "design_check_command": "python3 -B docs/evidence/flight-demo/2026-10-27-m2-residency-feasibility/validate.py",
+  "design_check": {
+    "chunk_id": "6ae12e",
+    "wall_time_seconds": 0.376665958,
+    "exit_code": 0,
+    "original_token_count": 254,
+    "output": "{\n  \"static_validation\": \"PASS\",\n  \"identity\": \"65AERO-M2-RESIDENCY-FEASIBILITY-1\",\n  \"baseline\": \"af3b0913c4b73eb6b8add638fb88bdbbae158036\",\n  \"pinned_git_inputs\": 12,\n  \"manifest_documents_verified\": 28,\n  \"arithmetic\": {\n    \"selected_text\": 4374,\n    \"reference_deficit\": 2175,\n    \"resident_after_reference_removal\": 22376,\n    \"gross_headroom\": 2199,\n    \"new_data_minimum\": 363,\n    \"resident_with_minimum_data\": 22739,\n    \"remaining_overhead_allowance\": 1836,\n    \"bank_with_header_minimum\": 4390,\n    \"bank_remaining_before_other_costs\": 3802,\n    \"if_2199_were_removal_deficit\": 339,\n    \"boot_component_union_maximum\": 49151,\n    \"runtime_resident_bank_envelopes\": 32767\n  },\n  \"fail_closed_negative_cases\": 7,\n  \"signature_cases\": \"specified only; target/host bank calls NOT RUN\",\n  \"contract_adoption\": \"PENDING_FOUNDER_DECISIONS\",\n  \"complete_budget\": \"UNPROVEN\",\n  \"prototype_admission\": \"NOT_ADMITTED\",\n  \"target_fit\": \"NOT_BUILT\",\n  \"changed_stack_map_service\": \"UNPROVEN\",\n  \"xemu\": \"NOT_RUN\"\n}\n",
+    "parsed": {
+      "static_validation": "PASS",
+      "identity": "65AERO-M2-RESIDENCY-FEASIBILITY-1",
+      "baseline": "af3b0913c4b73eb6b8add638fb88bdbbae158036",
+      "pinned_git_inputs": 12,
+      "manifest_documents_verified": 28,
+      "arithmetic": {
+        "selected_text": 4374,
+        "reference_deficit": 2175,
+        "resident_after_reference_removal": 22376,
+        "gross_headroom": 2199,
+        "new_data_minimum": 363,
+        "resident_with_minimum_data": 22739,
+        "remaining_overhead_allowance": 1836,
+        "bank_with_header_minimum": 4390,
+        "bank_remaining_before_other_costs": 3802,
+        "if_2199_were_removal_deficit": 339,
+        "boot_component_union_maximum": 49151,
+        "runtime_resident_bank_envelopes": 32767
+      },
+      "fail_closed_negative_cases": 7,
+      "signature_cases": "specified only; target/host bank calls NOT RUN",
+      "contract_adoption": "PENDING_FOUNDER_DECISIONS",
+      "complete_budget": "UNPROVEN",
+      "prototype_admission": "NOT_ADMITTED",
+      "target_fit": "NOT_BUILT",
+      "changed_stack_map_service": "UNPROVEN",
+      "xemu": "NOT_RUN"
+    }
+  },
+  "whitespace_check": {
+    "command": "git --no-optional-locks diff --check",
+    "exit_code": 0,
+    "output": ""
+  },
+  "documentation_attempts": [
+    {
+      "attempt": 1,
+      "exit_code": 1,
+      "output": "Traceback (most recent call last):\n  File \"<stdin>\", line 12, in <module>\nAssertionError: ('docs/plans/65AERO_M2_RESIDENCY_FEASIBILITY.md', '../evidence/flight-demo/2026-10-27-m2-residency-feasibility/validation.json')\n",
+      "disposition": "Referenced validation.json had not yet been written. Retained here; no target admission or implementation advanced."
+    },
+    {
+      "attempt": 2,
+      "chunk_id": "9459b7",
+      "wall_time_seconds": 0.642448042,
+      "exit_code": 0,
+      "original_token_count": 127,
+      "output": "{\n  \"local_links\": \"PASS\",\n  \"link_count\": 18,\n  \"syntax\": \"PASS\",\n  \"whitespace\": \"PASS\",\n  \"scope\": \"PASS\",\n  \"changed_paths\": [\n    \"WORK_IN_PROGRESS.md\",\n    \"docs/plans/65AERO_M2_RESIDENCY_FEASIBILITY.md\",\n    \"docs/evidence/flight-demo/2026-10-27-m2-residency-feasibility/accounting.json\",\n    \"docs/evidence/flight-demo/2026-10-27-m2-residency-feasibility/validate.py\",\n    \"docs/evidence/flight-demo/2026-10-27-m2-residency-feasibility/validation.json\"\n  ],\n  \"generated_or_engine_changes\": false\n}\n",
+      "parsed": {
+        "local_links": "PASS",
+        "link_count": 18,
+        "syntax": "PASS",
+        "whitespace": "PASS",
+        "scope": "PASS",
+        "changed_paths": [
+          "WORK_IN_PROGRESS.md",
+          "docs/plans/65AERO_M2_RESIDENCY_FEASIBILITY.md",
+          "docs/evidence/flight-demo/2026-10-27-m2-residency-feasibility/accounting.json",
+          "docs/evidence/flight-demo/2026-10-27-m2-residency-feasibility/validate.py",
+          "docs/evidence/flight-demo/2026-10-27-m2-residency-feasibility/validation.json"
+        ],
+        "generated_or_engine_changes": false
+      }
+    }
+  ],
+  "original_checkout_before": {
+    "head": "8ee5214ea9c63b86e92ca9bc4fa0779115dbd57f",
+    "branch": "codex/65aero-m2-pr2-renderer-fit",
+    "status_sha256": "2045b2dd7d4fa98833e1f5b27ba3cf84bcfe9b89569d476244d1e00dbc9da3d0",
+    "diff_sha256": "8f6284a455ebbbcd985f7f546772edd8232b8f8ef052cdc2293b2e29009386c4",
+    "path_count": 480,
+    "content_inventory_sha256": "660bc2d4da87d5525c1fe5c406a6ce0ce30d1cfa625609945131ee901a493fdb"
+  },
+  "original_checkout_after": {
+    "head": "8ee5214ea9c63b86e92ca9bc4fa0779115dbd57f",
+    "branch": "codex/65aero-m2-pr2-renderer-fit",
+    "status_sha256": "2045b2dd7d4fa98833e1f5b27ba3cf84bcfe9b89569d476244d1e00dbc9da3d0",
+    "diff_sha256": "8f6284a455ebbbcd985f7f546772edd8232b8f8ef052cdc2293b2e29009386c4",
+    "path_count": 480,
+    "content_inventory_sha256": "660bc2d4da87d5525c1fe5c406a6ce0ce30d1cfa625609945131ee901a493fdb"
+  },
+  "original_checkout_preservation": "PASS for identical HEAD, branch, status, diff and 480 modified/untracked path identities; not a full historical-worktree or ignored-path inventory",
+  "unresolved_provenance": "Old 37-member packet remains incomplete/unadopted; historical 22 verified, 15 not verified recoverable; eight historical checkouts NOT VERIFIED at Git-worktree tier.",
+  "target_generated_artifacts": "NOT GENERATED",
+  "target_compile_link": "NOT RUN",
+  "xemu_d81_sd_physical": "NOT RUN",
+  "commit_push_pr_merge": "NOT PERFORMED; awaiting founder review",
+  "implementation_admission": "STOP_REQUIRED_DESIGN_DECISIONS; complete cost/stack/MAP/service evidence UNPROVEN",
+  "checkpoint_files": {
+    "WORK_IN_PROGRESS.md": {
+      "bytes": 1875,
+      "sha256": "2bd7615bf63032e2e8fe87199935ce70cb5f1fe6f4cfa25b1d6afbe184da6114"
+    },
+    "docs/plans/65AERO_M2_RESIDENCY_FEASIBILITY.md": {
+      "bytes": 21197,
+      "sha256": "e2bae5747fa5cf4b2cb5dcb90bb0458fa399245216cbc02120c64bc82d714a49"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-residency-feasibility/accounting.json": {
+      "bytes": 6278,
+      "sha256": "8001f62b7fe51eed6f11cfaebba9a1254e5177778f476c4848d8cf37a9dd86a3"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-residency-feasibility/validate.py": {
+      "bytes": 6923,
+      "sha256": "55e1f3278167fa2d994b5a55227e84d238f38e7111923616dc4bd626465918cb"
+    }
+  },
+  "design_check_initial": {
+    "chunk_id": "138f00",
+    "wall_time_seconds": 0.008393542,
+    "exit_code": 0,
+    "original_token_count": 254,
+    "output": "{\n  \"static_validation\": \"PASS\",\n  \"identity\": \"65AERO-M2-RESIDENCY-FEASIBILITY-1\",\n  \"baseline\": \"af3b0913c4b73eb6b8add638fb88bdbbae158036\",\n  \"pinned_git_inputs\": 12,\n  \"manifest_documents_verified\": 28,\n  \"arithmetic\": {\n    \"selected_text\": 4374,\n    \"reference_deficit\": 2175,\n    \"resident_after_reference_removal\": 22376,\n    \"gross_headroom\": 2199,\n    \"new_data_minimum\": 363,\n    \"resident_with_minimum_data\": 22739,\n    \"remaining_overhead_allowance\": 1836,\n    \"bank_with_header_minimum\": 4390,\n    \"bank_remaining_before_other_costs\": 3802,\n    \"if_2199_were_removal_deficit\": 339,\n    \"boot_component_union_maximum\": 49151,\n    \"runtime_resident_bank_envelopes\": 32767\n  },\n  \"fail_closed_negative_cases\": 7,\n  \"signature_cases\": \"specified only; target/host bank calls NOT RUN\",\n  \"contract_adoption\": \"PENDING_FOUNDER_DECISIONS\",\n  \"complete_budget\": \"UNPROVEN\",\n  \"prototype_admission\": \"NOT_ADMITTED\",\n  \"target_fit\": \"NOT_BUILT\",\n  \"changed_stack_map_service\": \"UNPROVEN\",\n  \"xemu\": \"NOT_RUN\"\n}\n",
+    "parsed": {
+      "static_validation": "PASS",
+      "identity": "65AERO-M2-RESIDENCY-FEASIBILITY-1",
+      "baseline": "af3b0913c4b73eb6b8add638fb88bdbbae158036",
+      "pinned_git_inputs": 12,
+      "manifest_documents_verified": 28,
+      "arithmetic": {
+        "selected_text": 4374,
+        "reference_deficit": 2175,
+        "resident_after_reference_removal": 22376,
+        "gross_headroom": 2199,
+        "new_data_minimum": 363,
+        "resident_with_minimum_data": 22739,
+        "remaining_overhead_allowance": 1836,
+        "bank_with_header_minimum": 4390,
+        "bank_remaining_before_other_costs": 3802,
+        "if_2199_were_removal_deficit": 339,
+        "boot_component_union_maximum": 49151,
+        "runtime_resident_bank_envelopes": 32767
+      },
+      "fail_closed_negative_cases": 7,
+      "signature_cases": "specified only; target/host bank calls NOT RUN",
+      "contract_adoption": "PENDING_FOUNDER_DECISIONS",
+      "complete_budget": "UNPROVEN",
+      "prototype_admission": "NOT_ADMITTED",
+      "target_fit": "NOT_BUILT",
+      "changed_stack_map_service": "UNPROVEN",
+      "xemu": "NOT_RUN"
+    }
+  },
+  "final_status": "READY FOR REVIEW; STOP_REQUIRED_DESIGN_DECISIONS"
+}
