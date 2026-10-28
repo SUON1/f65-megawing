@@ -1,0 +1,133 @@
+{
+  "identity": "65AERO-M2-RF-DESIGN-PUBLICATION-1",
+  "date": "2026-10-27",
+  "approval": "Founder approves RF-D1, RF-D2, RF-D3 and RF-EX1 as reviewed for controlled M2 development design and publication only.",
+  "approved_decisions": [
+    "RF-D1",
+    "RF-D2",
+    "RF-D3",
+    "RF-EX1"
+  ],
+  "source_base": "af3b0913c4b73eb6b8add638fb88bdbbae158036",
+  "branch": "codex/65aero-m2-residency-feasibility",
+  "reviewed_result_sha256": "e2080820650866510b9bd7ae50de699c261d3f5bf5ea7c8b96b045190927c31d",
+  "reviewed_archive": {
+    "file": "reviewed-revision-2.tar.gz",
+    "bytes": 25558,
+    "sha256": "de7b83806f538522f3a29c21053680abaef83cdbd4d2d9ddad4696c474d4d038",
+    "members": 4
+  },
+  "target_status": {
+    "actual_fit": "UNPROVEN",
+    "stack": "UNPROVEN",
+    "gateway": "UNPROVEN",
+    "service": "UNPROVEN",
+    "banking_implemented": false,
+    "runtime_admitted": false,
+    "reserve_used": 0
+  },
+  "budget_estimates": {
+    "proposed_code_removal": 4374,
+    "projected_headroom": 2199,
+    "minimum_additional_data": 363,
+    "remaining_overhead_allowance": 1836
+  },
+  "preservation_before": {
+    "head": "8ee5214ea9c63b86e92ca9bc4fa0779115dbd57f",
+    "branch": "codex/65aero-m2-pr2-renderer-fit",
+    "status_sha256": "2045b2dd7d4fa98833e1f5b27ba3cf84bcfe9b89569d476244d1e00dbc9da3d0",
+    "diff_sha256": "8f6284a455ebbbcd985f7f546772edd8232b8f8ef052cdc2293b2e29009386c4",
+    "path_count": 480,
+    "content_inventory_sha256": "660bc2d4da87d5525c1fe5c406a6ce0ce30d1cfa625609945131ee901a493fdb"
+  },
+  "historical_packet": {
+    "members": 37,
+    "historically_sha_verified": 22,
+    "unresolved": 15,
+    "reconstructed": 0,
+    "adopted": false,
+    "full_recovery_claimed": false,
+    "historical_git_worktrees_not_verified": 8
+  },
+  "checks": {
+    "design": {
+      "chunk_id": "d5f703",
+      "wall_time_seconds": 0.9733185,
+      "exit_code": 0,
+      "original_token_count": 394,
+      "output": "{\n  \"static_validation\": \"PASS\",\n  \"identity\": \"65AERO-M2-RESIDENCY-FEASIBILITY-1\",\n  \"baseline\": \"af3b0913c4b73eb6b8add638fb88bdbbae158036\",\n  \"head\": \"af3b0913c4b73eb6b8add638fb88bdbbae158036\",\n  \"branch\": \"codex/65aero-m2-residency-feasibility\",\n  \"pinned_git_inputs\": 12,\n  \"manifest_documents_verified\": 28,\n  \"arithmetic\": {\n    \"selected_text\": 4374,\n    \"reference_deficit\": 2175,\n    \"resident_after_reference_removal\": 22376,\n    \"gross_headroom\": 2199,\n    \"new_data_minimum\": 363,\n    \"resident_with_minimum_data\": 22739,\n    \"remaining_overhead_allowance\": 1836,\n    \"bank_with_header_minimum\": 4390,\n    \"bank_remaining_before_other_costs\": 3802,\n    \"if_2199_were_removal_deficit\": 339,\n    \"boot_component_union_maximum\": 49151,\n    \"runtime_resident_bank_envelopes\": 32767\n  },\n  \"fail_closed_negative_cases\": 9,\n  \"signature_cases\": \"specified only; target/host bank calls NOT RUN\",\n  \"founder_direction\": \"APPROVED_RF_D1_D2_D3_RF_EX1_DEVELOPMENT_DESIGN\",\n  \"placement_exception\": \"RF-EX1_APPROVED_DEVELOPMENT_DESIGN_ONLY\",\n  \"contract_adoption\": \"APPROVED_DESIGN;NO_ACTIVE_ALLOCATION\",\n  \"contract_revision\": 3,\n  \"schema_contract_negative_cases\": 22,\n  \"prior_checkpoint_members_verified\": 5,\n  \"reviewed_revision_members_verified\": 4,\n  \"unresolved_historical_members_recorded\": 15,\n  \"complete_budget\": \"UNPROVEN\",\n  \"prototype_admission\": \"NOT_ADMITTED\",\n  \"actual_fit\": \"UNPROVEN\",\n  \"stack\": \"UNPROVEN\",\n  \"gateway\": \"UNPROVEN\",\n  \"service\": \"UNPROVEN\",\n  \"target_fit\": \"NOT_BUILT\",\n  \"changed_stack_map_service\": \"UNPROVEN\",\n  \"xemu\": \"NOT_RUN\"\n}\n"
+    },
+    "ci_policy": {
+      "chunk_id": "8eaa79",
+      "wall_time_seconds": 2.707530167,
+      "exit_code": 0,
+      "original_token_count": 345,
+      "output": "test_changed_pinned_text_or_media_fails (test_static_hygiene.GitFixtureTests) ... ok\ntest_committed_head_not_mutable_checkout_is_checked (test_static_hygiene.GitFixtureTests) ... ok\ntest_conflicting_category_hashes_fail (test_static_hygiene.GitFixtureTests) ... ok\ntest_exact_flight_snapshot_pins_pass_but_changed_bytes_fail (test_static_hygiene.GitFixtureTests) ... ok\ntest_exact_pins_pass_pr_push_and_initial_push (test_static_hygiene.GitFixtureTests) ... ok\ntest_group2_exact_pin_passes_but_changed_bytes_fail (test_static_hygiene.GitFixtureTests) ... ok\ntest_missing_renamed_or_symlink_pin_fails (test_static_hygiene.GitFixtureTests) ... ok\ntest_unlisted_live_and_evidence_whitespace_fails (test_static_hygiene.GitFixtureTests) ... ok\ntest_unlisted_media_fails (test_static_hygiene.GitFixtureTests) ... ok\ntest_duplicate_keys_and_unknown_schema (test_static_hygiene.PolicyTests) ... ok\ntest_guard_allows_only_exact_media (test_static_hygiene.PolicyTests) ... ok\ntest_invalid_paths_and_hashes (test_static_hygiene.PolicyTests) ... ok\ntest_rom_and_emulator_state_cannot_be_exempted (test_static_hygiene.PolicyTests) ... ok\ntest_toolchain_prefixes_remain_blocked_even_if_listed (test_static_hygiene.PolicyTests) ... ok\ntest_valid_manifest (test_static_hygiene.PolicyTests) ... ok\n\n----------------------------------------------------------------------\nRan 15 tests in 2.742s\n\nOK\n"
+    },
+    "documentation_scope": {
+      "chunk_id": "50f9ea",
+      "wall_time_seconds": 1.2077825,
+      "exit_code": 0,
+      "original_token_count": 33,
+      "output": "{\n  \"scope\": \"PASS\",\n  \"paths\": 10,\n  \"new_source_or_abi_files\": false,\n  \"syntax_whitespace_links\": \"PASS\",\n  \"local_links\": 43\n}\n"
+    }
+  },
+  "scope": [
+    "CURRENT_STATE.md",
+    "WORK_IN_PROGRESS.md",
+    "docs/plans/65AERO_M2_RESIDENCY_FEASIBILITY.md",
+    "docs/evidence/flight-demo/2026-10-27-m2-residency-feasibility/accounting.json",
+    "docs/evidence/flight-demo/2026-10-27-m2-residency-feasibility/validate.py",
+    "docs/evidence/flight-demo/2026-10-27-m2-residency-feasibility/validation.json",
+    "docs/evidence/flight-demo/2026-10-27-m2-residency-feasibility/checkpoint-before-conditional.tar.gz",
+    "docs/evidence/flight-demo/2026-10-27-m2-residency-feasibility/finalization-validation.json",
+    "docs/evidence/flight-demo/2026-10-27-m2-residency-feasibility/reviewed-revision-2.tar.gz",
+    "docs/evidence/flight-demo/2026-10-27-m2-residency-feasibility/publication.json"
+  ],
+  "preservation_before_scope": "original dirty checkout HEAD/branch/status/diff and 480 modified/untracked file identities; no full historical-worktree PASS",
+  "generated_artifact_status": "No active generated engine artifacts changed; no target image generated",
+  "public_artifact_review": "Ten approved paths only; archives contain design text/JSON/checker snapshots, no private journals, credentials, licensed ROM/D81 or unrelated personal files",
+  "historical_records_unchanged": {
+    "validation.json": "b37a3f1ad9a8d536b7a7bddeb101975b34c3ea59762cf2b63f4fd192d1fe1906",
+    "finalization-validation.json": "e2080820650866510b9bd7ae50de699c261d3f5bf5ea7c8b96b045190927c31d",
+    "checkpoint-before-conditional.tar.gz": "1e7aded9b572be45a4809b770261cdfa19e173c34463c91d9a288c6fbdd4a2cb"
+  },
+  "publication_file_identities": {
+    "CURRENT_STATE.md": {
+      "bytes": 12661,
+      "sha256": "6669985ca0fa45f076c08be90bded2623710bf36d59b02b273fcf2be168ac44f"
+    },
+    "WORK_IN_PROGRESS.md": {
+      "bytes": 764,
+      "sha256": "ceb6f9b567c4843d958b3ca5d65dcc8500426eb01eb48aab3d6f8bb75f4adfa9"
+    },
+    "docs/plans/65AERO_M2_RESIDENCY_FEASIBILITY.md": {
+      "bytes": 33030,
+      "sha256": "7d1704e7a85a1f15186c8fa3f70614693c95bee08e5b75a57fcfb0b94d47c800"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-residency-feasibility/accounting.json": {
+      "bytes": 15401,
+      "sha256": "36d9ca5c365768a226fad61fe812bb3ba79223b880ad666cf459a9cfc484ac16"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-residency-feasibility/validate.py": {
+      "bytes": 29530,
+      "sha256": "9d9caf8f42ead4f62a93d9b1faec378f6194a71434d891c5062d82c60efe9d21"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-residency-feasibility/validation.json": {
+      "bytes": 9344,
+      "sha256": "b37a3f1ad9a8d536b7a7bddeb101975b34c3ea59762cf2b63f4fd192d1fe1906"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-residency-feasibility/checkpoint-before-conditional.tar.gz": {
+      "bytes": 16401,
+      "sha256": "1e7aded9b572be45a4809b770261cdfa19e173c34463c91d9a288c6fbdd4a2cb"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-residency-feasibility/finalization-validation.json": {
+      "bytes": 14060,
+      "sha256": "e2080820650866510b9bd7ae50de699c261d3f5bf5ea7c8b96b045190927c31d"
+    },
+    "docs/evidence/flight-demo/2026-10-27-m2-residency-feasibility/reviewed-revision-2.tar.gz": {
+      "bytes": 25558,
+      "sha256": "de7b83806f538522f3a29c21053680abaef83cdbd4d2d9ddad4696c474d4d038"
+    }
+  }
+}

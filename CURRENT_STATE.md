@@ -157,6 +157,17 @@ stack, service and diagnostic PAL/NTSC results retain their limited evidence
 meaning; its 2,175-byte resident deficit remains unresolved. See the
 [publication scope and next blocker](docs/reports/M2_GUARD_EVIDENCE_PUBLICATION.md).
 
+
+The founder approved RF-D1, RF-D2, RF-D3 and RF-EX1 for the versioned M2
+controlled-development design. The [residency contract](docs/plans/65AERO_M2_RESIDENCY_FEASIBILITY.md)
+records the exact development-only code-bank exception, gateway verification
+on every call and reset-only loading/retirement requirements. No permanent
+production map, public ABI, protected-reserve use or active bank allocation is
+introduced. Actual fit, stack, gateway and service performance remain UNPROVEN.
+The source-complete minimum-renderer baseline and subsequent banked prototype
+are separate reviewable increments; the old incomplete adoption packet is not
+a prerequisite and is not claimed recovered or adopted.
+
 Full-renderer fit, integrated stack/timing and high-resolution output mapping
 remain open; no M2 target execution is claimed. Carry remaining obligations to the exact
 owner gates approved in the entry plan. Establish actual measured limits and

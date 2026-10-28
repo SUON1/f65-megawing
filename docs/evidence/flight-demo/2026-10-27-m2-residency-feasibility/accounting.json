@@ -1,0 +1,409 @@
+{
+  "identity": "65AERO-M2-RESIDENCY-FEASIBILITY-1",
+  "effective": false,
+  "prototype_admitted": false,
+  "baseline": "af3b0913c4b73eb6b8add638fb88bdbbae158036",
+  "published_record": "docs/evidence/flight-demo/2026-10-25-m2-guard-evidence-publication/record.json",
+  "historical_incomplete_packet": {
+    "members": 37,
+    "previously_verified": 22,
+    "not_verified_recoverable": 15,
+    "inventory_sha256": "1e932efe541468afce20081b9654186b457c458b24d70df992a6c911b2233447",
+    "git_worktree_tier_unverified": 8,
+    "adopted": false,
+    "recovery_performed_this_task": false,
+    "unresolved_members": [
+      {
+        "path": "README.md",
+        "sealed_sha256": "252d2fdf4253bd72ff5227e02204467518d442fbeaefbb337c8733bbd3ad0a8b",
+        "status": "NOT VERIFIED RECOVERABLE; no new recovery attempted"
+      },
+      {
+        "path": "after/docs/adoption/m2-residency-load-v2/manifest.proposed.json",
+        "sealed_sha256": "af8794725db0ec7b281792747b84f46809079ecde47d6e5974c594167f7186fe",
+        "status": "NOT VERIFIED RECOVERABLE; no new recovery attempted"
+      },
+      {
+        "path": "bytecode-preservation.json",
+        "sealed_sha256": "598dace4910784210cc71a8e5b2482cbf9db168dc2eb07455aaf5d61a00502e6",
+        "status": "NOT VERIFIED RECOVERABLE; no new recovery attempted"
+      },
+      {
+        "path": "checker-correction.json",
+        "sealed_sha256": "465d1ec69fa20bf9658a3767887b21791586b89fcb7ecb732e3734dec48a8129",
+        "status": "NOT VERIFIED RECOVERABLE; no new recovery attempted"
+      },
+      {
+        "path": "checker-revisions/attempt-01.py",
+        "sealed_sha256": "993a47b7b8c0940269e5b670c8244d924470a5638b14e16cc1fd3994009486b5",
+        "status": "NOT VERIFIED RECOVERABLE; no new recovery attempted"
+      },
+      {
+        "path": "checker-revisions/attempt-02.py",
+        "sealed_sha256": "5e9d5bcf1ccc4a1a401a235e114a248572edc82d0189289e4f7095de22592b6b",
+        "status": "NOT VERIFIED RECOVERABLE; no new recovery attempted"
+      },
+      {
+        "path": "ci-read-attempt-01.txt",
+        "sealed_sha256": "1cc158e58c5bd49d40c4ea3bd66e36d2fe43019453f2067471f60ce036781bee",
+        "status": "NOT VERIFIED RECOVERABLE; no new recovery attempted"
+      },
+      {
+        "path": "handoff.json",
+        "sealed_sha256": "a00c66dfee12d7891fcd314acd3218d7e4de09d70b3ca59bf8403543ff72e4da",
+        "status": "NOT VERIFIED RECOVERABLE; no new recovery attempted"
+      },
+      {
+        "path": "independent-reviews.json",
+        "sealed_sha256": "34ff21b52fc4d8346f32290b9a69540ee17a1dfdbb885e3d9c63179ab4e2fd1a",
+        "status": "NOT VERIFIED RECOVERABLE; no new recovery attempted"
+      },
+      {
+        "path": "inputs.json",
+        "sealed_sha256": "7daafca9e493ae01210a80c3bbe3e9f48b5148bbb37fe48bd2b2602e2c48ef40",
+        "status": "NOT VERIFIED RECOVERABLE; no new recovery attempted"
+      },
+      {
+        "path": "main-verification.json",
+        "sealed_sha256": "7d8c1e9d2959a0b90669b15668d2309a0031dfc0afb0e611a6526e65d0e71791",
+        "status": "NOT VERIFIED RECOVERABLE; no new recovery attempted"
+      },
+      {
+        "path": "protected-active.json",
+        "sealed_sha256": "ad72350e6e8fea69b916a3586e04f69d8be5b5bf78a669689d3d1c7b643642af",
+        "status": "NOT VERIFIED RECOVERABLE; no new recovery attempted"
+      },
+      {
+        "path": "static-attempt-01.txt",
+        "sealed_sha256": "3cf28f65f2b7a46b18b9b504e65902cdd578d39f7bde7810e3b119f1b94d5585",
+        "status": "NOT VERIFIED RECOVERABLE; no new recovery attempted"
+      },
+      {
+        "path": "static-attempt-02.txt",
+        "sealed_sha256": "9e0797628b82b3a14b8e4def53e5bd426774ebaa967f146c1e97105ab431230e",
+        "status": "NOT VERIFIED RECOVERABLE; no new recovery attempted"
+      },
+      {
+        "path": "static-attempt-03.txt",
+        "sealed_sha256": "9e0797628b82b3a14b8e4def53e5bd426774ebaa967f146c1e97105ab431230e",
+        "status": "NOT VERIFIED RECOVERABLE; no new recovery attempted"
+      }
+    ],
+    "current_full_packet_preservation": "NOT VERIFIED; historical identities retained without reconstruction"
+  },
+  "informing_drafts": {
+    "contracts/codebank-v2.md": "db7a726d04c6084816b5018f1326ecf2cef835022cf2ca05c88ea8ede1a7b1df",
+    "contracts/map-v2.md": "9c3cb61a6d1ca3863c74294b1179f57cd9247c9a7e4a45dff300bcafbca687be",
+    "contracts/boot-v2.md": "212c93a332341654f8fa39217798ae3cc530267164af14a2fad4a8ce9848fac0",
+    "contracts/profile-v2.json": "3a2d2925b33bc367d84ca69651ac58d8090d8f57d1d545a5bd260e61515b8800",
+    "ledgers/owner-ledger-v2.json": "c64a4207e7432a1dbd1429a61b9b4218db1e969f226c3baf1ccfbf82bede10b2"
+  },
+  "reference_bodies": {
+    "m2_min_transform_step": 676,
+    "m2_min_project_step": 1927,
+    "sine": 232,
+    "m2_multiply_q46": 661,
+    "m2_q46_magnitude": 69,
+    "distance": 339,
+    "interpolation_begin": 218,
+    "ratio_begin": 67,
+    "screen_coordinate": 185
+  },
+  "new_resident_data_minimum": {
+    "descriptor": 64,
+    "readback": 255,
+    "logical_controls": 44
+  },
+  "signature": {
+    "bytes": 16,
+    "format": "ASCII 65M2RUN2 + expected_build_id[0:8]",
+    "owner": "protected Platform gateway",
+    "every_invocation": true,
+    "after_selection_before_execution": true,
+    "cached_authorization": false,
+    "failure": "no bank execution; canonical restoration; sticky fault and reset lockout",
+    "negative_cases_required_not_executed": [
+      "missing",
+      "incorrect",
+      "unreadable",
+      "changed_between_successive_calls"
+    ]
+  },
+  "unpriced_resident_terms": {
+    "gateway_entry_and_per_invocation_signature_text": null,
+    "typed_wrappers_and_trampolines": null,
+    "normal_restoration_text": null,
+    "boot_loader_copy_crc_text": null,
+    "additional_fault_recovery_lockout_text": null,
+    "constants_beyond_minimum_data": null,
+    "padding_compiler_scratch_and_codegen_delta": null,
+    "unavoidable_hot_cold_duplication": null
+  },
+  "unpriced_other_terms": {
+    "bank_entry_return_thunks_alignment_and_codegen_delta": null,
+    "additional_hardware_stack": null,
+    "additional_software_stack": null,
+    "eight_dispatch_slot_bounds": null,
+    "begin_commit_and_guard_bounds": null
+  },
+  "proposed_physical_ranges": {
+    "resident": [
+      8193,
+      32768
+    ],
+    "hardware_stack": [
+      256,
+      512
+    ],
+    "base_page": [
+      512,
+      768
+    ],
+    "software_stack": [
+      49152,
+      53248
+    ],
+    "boot_landing": [
+      32768,
+      40960
+    ],
+    "graphics_code_bank": [
+      294912,
+      303104
+    ],
+    "remaining_graphics_workspace": [
+      303104,
+      327680
+    ],
+    "boot_staging": [
+      327680,
+      335872
+    ],
+    "protected_reserve": [
+      360448,
+      393216
+    ],
+    "rom_backup": [
+      134217728,
+      134348800
+    ]
+  },
+  "cpu_alias": [
+    32768,
+    40960
+  ],
+  "main_push_ci": {
+    "id": 40259907202,
+    "head_sha": "af3b0913c4b73eb6b8add638fb88bdbbae158036",
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "original_checkout_before": {
+    "head": "8ee5214ea9c63b86e92ca9bc4fa0779115dbd57f",
+    "branch": "codex/65aero-m2-pr2-renderer-fit",
+    "status_sha256": "2045b2dd7d4fa98833e1f5b27ba3cf84bcfe9b89569d476244d1e00dbc9da3d0",
+    "diff_sha256": "8f6284a455ebbbcd985f7f546772edd8232b8f8ef052cdc2293b2e29009386c4",
+    "path_count": 480,
+    "content_inventory_sha256": "660bc2d4da87d5525c1fe5c406a6ce0ce30d1cfa625609945131ee901a493fdb"
+  },
+  "git_inputs": {
+    "spec/manifests/spec-corpus.json": "4506b0a637f19f67ae0ed16ddc702e986db752fd51f2f749166ed422faa7ef90",
+    "spec/core/F65_Main_Concept_v1.8_APPROVED_AMENDMENT.md": "32bb79981e432021c815444513874c32b99fc3804edd1f766930e7bf5d663921",
+    "spec/core/F65_Main_Concept_v1.7_HUMAN_APPROVED.md": "65fbec43e3b9138557393fa6a05e9ba44ca70db1b84164f1b0011b39c65c229e",
+    "spec/core/F65_Runtime_v1.2_APPROVED_CANDIDATE_AMENDMENT.md": "34fa3a4c9422f6fcad92a2e716587a01c257db1c1c606f53612db100f6b3f354",
+    "spec/core/F65_Runtime_v1.1_APPROVED_CANDIDATE_AMENDMENT.md": "779a319fb317a3e2b7657cbf91767d10fa540f1e019b81735ae0e0f7fa4c3207",
+    "spec/core/F65_65Aero_Engine_Runtime_and_Technical_Supplement_v1_HUMAN_APPROVED_CANDIDATE_DESIGN.pdf": "bcb50a96ca6aadfd45637c48c4a80a10d8ce61b1e2461ba03448b4f06497d260",
+    "spec/subsystems/F-65_Megawing_Graphics_White_Paper_v2.1.pdf": "b94b3db857b0b7536aad23dcdc4918625fc7da27584df6886da58391b75fdb51",
+    "memory/m2-full-ledger.json": "7475a4be755db4a3143cb784c7b8c862222f3edafb67e97cea6bdaf9e5784ac5",
+    "memory/m2-pr1-ledger.json": "8675e743c587882582a8527168783a7b4101ecf34295f2eed6f7247a249e5ea8",
+    "interfaces/f65_platform_abi.json5": "10ba96446adb586114e9fb19b81d249880eaa1a47379e8ea9306aafb7b09eb4d",
+    "toolchain/f65_toolchain.lock.json": "0de4864a0665f04cab26f67bdd533697d8006460142dcb7e8e5ce0ecb72d742b",
+    "docs/evidence/flight-demo/2026-10-25-m2-guard-evidence-publication/record.json": "b8ad04adad959b4165dacffa1a62146a731bb523e3307e5ee11c26f39d1b6380"
+  },
+  "reference": {
+    "prg_sha256": "10c6b083bd37392b8177d3211035a76c599894aa46bb11ff4a18851e97dab6e1",
+    "resident_bytes": 26750,
+    "resident_limit": 24575,
+    "deficit_bytes": 2175,
+    "compiler_scratch_bytes": 77,
+    "hardware_stack_bytes": 50,
+    "software_stack_bytes": 127,
+    "trap_stack_bytes": 3,
+    "reserve_bytes": 0
+  },
+  "derived_estimates": {
+    "selected_text": 4374,
+    "reference_deficit": 2175,
+    "resident_after_reference_removal": 22376,
+    "gross_headroom": 2199,
+    "new_data_minimum": 363,
+    "resident_with_minimum_data": 22739,
+    "remaining_overhead_allowance": 1836,
+    "bank_with_header_minimum": 4390,
+    "bank_remaining_before_other_costs": 3802,
+    "if_2199_were_removal_deficit": 339,
+    "boot_component_union_maximum": 49151,
+    "runtime_resident_bank_envelopes": 32767
+  },
+  "schema": "65AERO-M2-RESIDENCY-FEASIBILITY-ACCOUNTING-3",
+  "contract_revision": 3,
+  "founder_disposition": {
+    "scope": "approved versioned M2 development design and publication only",
+    "decisions": {
+      "RF-D1": "APPROVED_DEVELOPMENT_DESIGN_ONLY",
+      "RF-D2": "APPROVED_DEVELOPMENT_DESIGN_ONLY",
+      "RF-D3": "APPROVED_DEVELOPMENT_DESIGN_ONLY",
+      "RF-EX1": "APPROVED_DEVELOPMENT_DESIGN_ONLY"
+    },
+    "design_exception_approved": true,
+    "actual_placement_admitted": false,
+    "permanent_architecture_allocation": false,
+    "production_memory_map_changed": false,
+    "public_abi_changed": false,
+    "banked_runtime_admitted": false
+  },
+  "placement_exception": {
+    "id": "RF-EX1",
+    "status": "APPROVED_DEVELOPMENT_DESIGN_ONLY",
+    "effective": false,
+    "affected_authority": [
+      "Main v1.8 incorporated v1.7 \u00a75.1",
+      "Runtime v1.2 incorporated v1 \u00a76.1/6.4/6.6",
+      "Graphics v2.1 \u00a79",
+      "M2 PR2 integrated-fit intent"
+    ],
+    "proposed_only": "For the reviewed M2 development profile only, permit closed Graphics transform/project code in [$048000,$04A000), reducing its workspace to [$04A000,$050000); admit private bounded gateway calls and load-time [$008000,$00A000)/boot-only [$050000,$052000) leases. No production map, public ABI or permanent allocation change.",
+    "current_architecture_placement": "EXPLICIT_DEVELOPMENT_EXCEPTION;PRODUCTION_OWNERSHIP_UNCHANGED",
+    "implementation_of_exception": "NOT_IMPLEMENTED;SEPARATE_AUTHORIZATION_REQUIRED"
+  },
+  "finalized_contract": {
+    "range_notation": "half-open physical byte ranges; cpu_alias is not a second physical allocation",
+    "run_bank": {
+      "range_ref": "graphics_code_bank",
+      "owner": "Graphics",
+      "loader_mapper": "protected CoreRuntime/Platform only",
+      "lifetime": "reserved from boot load through reset; immutable after READY; quarantined on failure",
+      "capacity_bytes": 8192,
+      "runtime_writers": false
+    },
+    "exclusions": {
+      "simulation": [
+        65536,
+        98304
+      ],
+      "audio_state_and_queues": [
+        98304,
+        114688
+      ],
+      "display_controls": [
+        114688,
+        118784
+      ],
+      "shared_scratch": [
+        118784,
+        131072
+      ],
+      "display_a": [
+        131072,
+        196608
+      ],
+      "display_b": [
+        196608,
+        262144
+      ],
+      "graphics_assets": [
+        262144,
+        294912
+      ],
+      "resource_outside_boot_lease": [
+        335872,
+        360448
+      ],
+      "protected_reserve": [
+        360448,
+        393216
+      ],
+      "color_ram": [
+        267911168,
+        267943936
+      ],
+      "rom_backup": [
+        134217728,
+        134348800
+      ]
+    },
+    "resource_parent": [
+      327680,
+      360448
+    ],
+    "protected_proof_sublocations": {
+      "audio_cache": [
+        339968,
+        352256
+      ],
+      "dma_lists": [
+        352256,
+        356352
+      ],
+      "proof_reserved": [
+        356352,
+        360448
+      ]
+    },
+    "boot_leases": {
+      "owner": "ResourceManager load-time lease; Platform sole executor",
+      "landing_range_ref": "boot_landing",
+      "staging_range_ref": "boot_staging",
+      "exclusive": true,
+      "normal_operation_blocked_until_verified_retirement": true,
+      "landing_full_zero_and_readback_bytes": 8192,
+      "staging_released_after_run_identity_and_landing_retirement": true,
+      "staging_release_is_not_a_wipe": true,
+      "failure": "READY false; quarantine leases/bank; reset-only terminal lockout",
+      "runtime_reload": false
+    },
+    "gateway": {
+      "non_reentrant": true,
+      "max_body_quanta_per_invocation": 1,
+      "signature_reads_per_invocation": 16,
+      "near_spans_checked_before_mapping": true,
+      "verification_owner": "protected Platform gateway",
+      "verify_after_selection_before_branch": true,
+      "previous_verification_authorizes_next_call": false,
+      "unreadable_unprovable_mapping_refuses_admission": true,
+      "nested_call": "resident terminal sink; retain outer ownership; no normal return",
+      "irq_masked_through_restore": true,
+      "nmi": "fixed resident handler; no C/MAP/bank/DMA; sticky interference; prove all races",
+      "canonical_restore_before_public_return_yield_or_clock": true,
+      "stack_bounds_require_actual_whole_program_proof": true,
+      "all_eight_service_slots_require_nonzero_proven_bounds": true
+    },
+    "future_engine": {
+      "profile_only": true,
+      "full_graphics_workspace_bytes_after_proposed_bank": 24576,
+      "shared_owner_borrowing": false,
+      "permanent_resource_lease": false,
+      "banking_as_public_engine_service": false,
+      "m3_m4_and_full_profile_require_new_combined_ledger_and_service_admission": true,
+      "simulation_hz": 100,
+      "stages": 21,
+      "reserve_use": 0
+    },
+    "source_baseline": {
+      "status": "NOT_ESTABLISHED_ON_MAIN",
+      "must_be_source_complete_under_git": true,
+      "old_packet_required": false,
+      "separate_increment_from_banking": true,
+      "failing_resident_fit_may_be_retained": true,
+      "runtime_enablement_permitted": false,
+      "prototype_before_baseline_and_reviewed_contract_integration": false
+    }
+  },
+  "prior_checkpoint": {
+    "archive": "checkpoint-before-conditional.tar.gz",
+    "archive_sha256": "1e7aded9b572be45a4809b770261cdfa19e173c34463c91d9a288c6fbdd4a2cb",
+    "members": 5,
+    "original_validation_sha256": "b37a3f1ad9a8d536b7a7bddeb101975b34c3ea59762cf2b63f4fd192d1fe1906"
+  },
+  "publication_record": "publication.json"
+}
