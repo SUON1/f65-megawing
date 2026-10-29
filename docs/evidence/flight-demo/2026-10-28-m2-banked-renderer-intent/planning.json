@@ -1,0 +1,157 @@
+{
+  "identity": "65AERO-M2-BANK-INTENT-1",
+  "status": "READY FOR REVIEW",
+  "scope": "planning only; no implementation authorization",
+  "base": "b20f91cb8023ea02e33d5fec6870026023bd8fbf",
+  "branch": "codex/65aero-m2-banked-renderer-intent",
+  "verified_main": {
+    "fetch_and_ls_remote": "b20f91cb8023ea02e33d5fec6870026023bd8fbf",
+    "push_ci": 40767414470,
+    "conclusion": "success"
+  },
+  "reference_target": {
+    "prg_sha256": "1873c76d7b13f438244d5c3f99d8c80bc951af47cda9fc5ba9a6fadbeb4eda51",
+    "resident": 32839,
+    "limit": 24575,
+    "deficit": 8264,
+    "compiler_scratch": 190,
+    "reserve": 0
+  },
+  "calculation": {
+    "bank_8k": 8192,
+    "signature": 16,
+    "max_body_bytes": 8176,
+    "residual_before_new_resident_data": 88,
+    "minimum_additional_data_reference": 363,
+    "residual_after_minimum_data_before_other_overhead": 451,
+    "ten_symbol_inventory": {
+      "m2_project_prepared": 1900,
+      "interpolate_delta": 1257,
+      "m2_multiply_q46": 1054,
+      "m2_transform": 936,
+      "plane_distance": 946,
+      "to_camera": 651,
+      "project_axis": 536,
+      "m2_camera_valid": 531,
+      "rounded_ratio": 255,
+      "sine": 232
+    },
+    "ten_symbol_sum_not_closed_membership": 8298,
+    "residual_with_ten_symbols_and_minimum_data": 329,
+    "historical_4374_removal_current_residual_after_data": 4253,
+    "proposed_16k_remaining_other_overhead_upper_ceiling_not_prediction": 7741
+  },
+  "gates": {
+    "RF_EX1_banking_alone": "FAIL capacity preflight for unchanged-size relocation",
+    "RF_EX2": "NOT APPROVED; design-only request",
+    "new_closed_membership_budget": "UNPROVEN",
+    "stack_service_runtime": "UNPROVEN; unchanged"
+  },
+  "checks": {
+    "arithmetic": "PASS",
+    "documentation_links": "PASS",
+    "whitespace": "PASS",
+    "branch_ancestry": "PASS",
+    "scope": "PASS",
+    "application_reference_hashes": 71,
+    "sealed_packets": [
+      {
+        "path": "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/final-check-1793159493442203000/seal.json",
+        "members": 3,
+        "sha256": "b59c53df2a1fd0302f8baa0dcb61a27c6dc184875fbf45bd3db985340e82ecad"
+      },
+      {
+        "path": "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/final-check-1793159584829644000/seal.json",
+        "members": 3,
+        "sha256": "de5f1ec39509665ad511c4747ba4dcf36a6791eee512d40251d199450d8bff8b"
+      },
+      {
+        "path": "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158722615552000/seal.json",
+        "members": 5,
+        "sha256": "4119436bb5ddfa5370380ee52dc8562ab7a14bf7bbd90529b92468e2ed6b85d6"
+      },
+      {
+        "path": "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158735932906000/seal.json",
+        "members": 7,
+        "sha256": "8f648dddf962f9af0d2ba62ee8d1357eed4c8eddf8557f16bad86e08ea0040c4"
+      },
+      {
+        "path": "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/host-1793158762399896000/seal.json",
+        "members": 23,
+        "sha256": "d55f043e5c322326307781917464f9e0b5916718db67e2da9967055c762026d8"
+      },
+      {
+        "path": "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/static-replay-1793158940264539000/seal.json",
+        "members": 2,
+        "sha256": "9e87146e09e22d3e17c51362d49fdd2fe5c4464b357dcc4bcf2021a4610ed87d"
+      },
+      {
+        "path": "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild/target-1793158803095519000/seal.json",
+        "members": 9,
+        "sha256": "064841772c02a8f91903ef67cf52cbb3efd007a9382559be9e23908099216c8e"
+      },
+      {
+        "path": "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild-corrections/final-check-1793167870594015000/seal.json",
+        "members": 2,
+        "sha256": "6c54c39dec066468b592a34252b700991cca763d86476db46315ceac93b0e809"
+      },
+      {
+        "path": "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild-corrections/historical-replay-1793167739912661000/seal.json",
+        "members": 2,
+        "sha256": "96dc0fa3440bf68bb95496ce56fc8a848b463b5d6140ea43d8a9238206a3c165"
+      },
+      {
+        "path": "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild-corrections/host-1793167637309996000/seal.json",
+        "members": 23,
+        "sha256": "f69da18321255895c50ee343612c5da4822b14d0084c4a6f4071094ffce50bfc"
+      },
+      {
+        "path": "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild-corrections/sdk-path-20261028-1/seal.json",
+        "members": 18,
+        "sha256": "02b6ff5b2be6d8e877f7e8951d5b7dcbb9514ffa0da7d6dc6566550141a4621f"
+      },
+      {
+        "path": "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild-corrections/target-1793167696482111000/seal.json",
+        "members": 10,
+        "sha256": "4d3185145bdcdd3512df0a315a11624138bfc224ed73532eac5f5bfd42c65f0c"
+      }
+    ],
+    "historical_packet_count": 12,
+    "historical_member_count": 107,
+    "original_unrelated_paths": 480,
+    "original_status_and_diff": "unchanged",
+    "other_checkouts": {
+      "/Users/slice/Developer/f65-megawing-m2-source-baseline": {
+        "head": "a2f75a1c61287d29071b4b7448ea2cdc97258be3",
+        "worktree": "clean; unchanged"
+      },
+      "/Users/slice/Developer/f65-megawing-m2-residency-feasibility": {
+        "head": "cacb6e9d88c7cfd297a2d57c854b5861323902d9",
+        "worktree": "clean; unchanged"
+      }
+    },
+    "historical_recovery": "22 previously verified / 15 unresolved; eight prior Git-worktree tiers NOT VERIFIED"
+  },
+  "inputs": {
+    "spec/manifests/spec-corpus.json": "4506b0a637f19f67ae0ed16ddc702e986db752fd51f2f749166ed422faa7ef90",
+    "docs/plans/65AERO_M2_RESIDENCY_FEASIBILITY.md": "7d1704e7a85a1f15186c8fa3f70614693c95bee08e5b75a57fcfb0b94d47c800",
+    "interfaces/m2_rebuild.json": "9567374c9b08c1f24e9d58caca081885841dea42ae08c04e8b898e1dd42c7efb",
+    "memory/m2-rebuild-ledger.json": "f4aecdc5633a1a5b367c09fc96d4699beb53da70e03e4dbb2fc609ec26c93a7d",
+    "interfaces/f65_platform_abi.json5": "10ba96446adb586114e9fb19b81d249880eaa1a47379e8ea9306aafb7b09eb4d",
+    "src/graphics/m2_geometry.c": "55ab3d159b4cf2c96fcae8a52eecb47b6fb5631d966a180d2e2820cc72ad2607",
+    "src/diagnostics/m2_rebuild/main.c": "841a0f2166afd36a1b8abc6f43378b2598379e104ae09b0144d4eb11067f1d46",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild-corrections/target-1793167696482111000/result.json": "390aeca8ca13190a573440e4c8390c5caeb0fc8d55834282dbf21a639a3026e3",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild-corrections/target-1793167696482111000/UNADMITTED.symbols": "373388d45834c63ff17c7ceb78a1a9cd6dd59e69b6a029393a091fcdd078bd78",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild-corrections/target-1793167696482111000/UNADMITTED.map": "d9f9a0c62f1341aa3b8851f75a478867e0e1f31245fb7f4778358a8a42346b3f"
+  },
+  "outputs": {
+    "docs/plans/65AERO_M2_BANKED_RENDERER_BUILD_INTENT.md": "bfe8a6e317bcaab83648a55f57fad76639ec9ac830d17b791098f406fa38f5fa",
+    "WORK_IN_PROGRESS.md": "39bba8af558aad7942cfab9fd167f01736aa8c2747959da525d75b50538069f1"
+  },
+  "target_tools_run": false,
+  "relinked": false,
+  "host_behavior_tests_run": false,
+  "xemu": "NOT RUN",
+  "media_physical": "NOT RUN",
+  "published": false
+}

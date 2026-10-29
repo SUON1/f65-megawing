@@ -1,0 +1,364 @@
+{
+  "schema": 1,
+  "identity": "65AERO-M2-RF-EX2-P2-1",
+  "base": "b20f91cb8023ea02e33d5fec6870026023bd8fbf",
+  "reference": {
+    "resident": 32839,
+    "ceiling": 24575,
+    "deficit": 8264,
+    "scratch": 190,
+    "reserve": 0
+  },
+  "relocation": {
+    "bank_candidates": {
+      "m2_transform": {
+        "address": 10222,
+        "bytes": 936
+      },
+      "sine": {
+        "address": 11158,
+        "bytes": 232
+      },
+      "multiply_rotation": {
+        "address": 11390,
+        "bytes": 3
+      },
+      "m2_multiply_q46": {
+        "address": 11393,
+        "bytes": 1054
+      },
+      "m2_project_prepared": {
+        "address": 12473,
+        "bytes": 1900
+      },
+      "to_camera": {
+        "address": 14373,
+        "bytes": 651
+      },
+      "plane_distance": {
+        "address": 15024,
+        "bytes": 946
+      },
+      "interpolate_delta": {
+        "address": 15970,
+        "bytes": 1257
+      },
+      "project_axis": {
+        "address": 17227,
+        "bytes": 536
+      },
+      "rounded_ratio": {
+        "address": 17763,
+        "bytes": 255
+      },
+      "__udivdi3": {
+        "address": 35614,
+        "bytes": 855
+      }
+    },
+    "resident_closure": {
+      "m2_camera_valid": {
+        "address": 9691,
+        "bytes": 531
+      },
+      "m2_point_valid": {
+        "address": 8853,
+        "bytes": 119
+      },
+      "__modhi3": {
+        "address": 36851,
+        "bytes": 110
+      },
+      "__umodhi3": {
+        "address": 36469,
+        "bytes": 166
+      },
+      "__mulsi3": {
+        "address": 37509,
+        "bytes": 121
+      },
+      "memcpy": {
+        "address": 37395,
+        "bytes": 36
+      },
+      "__memset": {
+        "address": 37431,
+        "bytes": 28
+      }
+    },
+    "edges": {
+      "__memset": [],
+      "__modhi3": [
+        "__umodhi3"
+      ],
+      "__mulsi3": [],
+      "__udivdi3": [],
+      "__umodhi3": [],
+      "interpolate_delta": [],
+      "m2_camera_valid": [],
+      "m2_multiply_q46": [
+        "__memset",
+        "__mulsi3"
+      ],
+      "m2_point_valid": [],
+      "m2_project_prepared": [
+        "interpolate_delta",
+        "m2_point_valid",
+        "memcpy",
+        "plane_distance",
+        "project_axis",
+        "to_camera"
+      ],
+      "m2_transform": [
+        "m2_camera_valid",
+        "memcpy",
+        "multiply_rotation",
+        "sine"
+      ],
+      "memcpy": [],
+      "multiply_rotation": [
+        "m2_multiply_q46"
+      ],
+      "plane_distance": [],
+      "project_axis": [
+        "rounded_ratio"
+      ],
+      "rounded_ratio": [
+        "__udivdi3"
+      ],
+      "sine": [
+        "__modhi3"
+      ],
+      "to_camera": [
+        "multiply_rotation"
+      ]
+    }
+  },
+  "crc": {
+    "symbol": "crc_byte",
+    "address": 30705,
+    "bytes": 84,
+    "direct_callers": [
+      "cfphysical_crc"
+    ],
+    "resident_chain": [
+      "m1_platform_begin",
+      "cfrom_begin",
+      "cfphysical_crc",
+      "crc_byte"
+    ],
+    "relocatable_credit": 0,
+    "resident_copy_required": true,
+    "bank_duplicate_if_added_bytes": 84,
+    "budget_delta": 0
+  },
+  "ranges": {
+    "bank": [
+      294912,
+      311296
+    ],
+    "window": [
+      32768,
+      49152
+    ],
+    "workspace": [
+      311296,
+      327680
+    ],
+    "landing": [
+      32768,
+      49152
+    ],
+    "staging": [
+      327680,
+      344064
+    ],
+    "audio_cache": [
+      339968,
+      352256
+    ],
+    "software_stack": [
+      49152,
+      53248
+    ],
+    "reserve": [
+      360448,
+      393216
+    ]
+  },
+  "ownership": {
+    "status": "BLOCKED BY MEMORY OWNERSHIP",
+    "staging_owner": "ResourceManager",
+    "conflicting_owner": "Audio",
+    "overlap": [
+      339968,
+      344064
+    ],
+    "exclusive_pre_audio_lease_proven": false,
+    "exception_approved": false,
+    "inherited_quiescence_proven": false,
+    "active_allocation": false
+  },
+  "reuse": {
+    "post_successful_platform_init": true,
+    "before_first_tick": true,
+    "no_pending_rom_work": true,
+    "no_runtime_restore_reload": true,
+    "failure_terminal_until_reset": true,
+    "no_handler_user": true,
+    "descriptor_disjoint": true,
+    "new_resident_placement_required": true,
+    "existing_255_stays_charged": true
+  },
+  "gateway": {
+    "owner": "Platform",
+    "signature_reads_per_call": 16,
+    "verify_after_selection_before_entry": true,
+    "cached_authorization": false,
+    "missing_wrong_changed_unreadable_fail_closed": true,
+    "canonical_restore": true,
+    "restore_uncertain_terminal": true,
+    "non_reentrant": true,
+    "nested_lockout": true,
+    "irq_nmi_costs_required": true,
+    "all_eight_slots_required": true
+  },
+  "budget": {
+    "optimistic_removed": 8625,
+    "gross_allowance": 361,
+    "distinct_new_data": 363,
+    "distinct_resident": 24577,
+    "distinct_margin": -2,
+    "conditional_new_data": 108,
+    "conditional_resident": 24322,
+    "conditional_pre_overhead_allowance": 253,
+    "unknown_resident_cost_upper_bounds": {
+      "gateway_signature": null,
+      "typed_wrappers": null,
+      "canonical_restore": null,
+      "loader_crc_retirement": null,
+      "fault_terminal": null,
+      "context_continuation": null,
+      "alignment_duplication": null,
+      "compiler_scratch_delta": null
+    },
+    "final_resident_allowance": null,
+    "additional_hardware_stack": null,
+    "additional_software_stack": null,
+    "service_cycle_bounds": null,
+    "whole_program_stack": "UNPROVEN",
+    "complete_fit": "UNPROVEN"
+  },
+  "workspace": {
+    "current_physical_arena_demand": 0,
+    "arena_capacity": 16384,
+    "renderer_resident_bytes": 676,
+    "future_continuation_bytes": null
+  },
+  "decision": "REJECT OPTION A",
+  "inputs": {
+    "WORK_IN_PROGRESS.md": "0ba35938ea4fded9b73180cfe00d30f948bc46bda1e3d4d9fb10f1bf1ea986f8",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild-corrections/target-1793167696482111000/UNADMITTED.disassembly": "071343ad264769b7e7d78b3be2a814a611af897714973a111c6e532260f22bdb",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild-corrections/target-1793167696482111000/UNADMITTED.map": "d9f9a0c62f1341aa3b8851f75a478867e0e1f31245fb7f4778358a8a42346b3f",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild-corrections/target-1793167696482111000/UNADMITTED.prg": "1873c76d7b13f438244d5c3f99d8c80bc951af47cda9fc5ba9a6fadbeb4eda51",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild-corrections/target-1793167696482111000/UNADMITTED.prg.elf": "fe33b9604950776e591007bc39080bccd292f1ca127e4adc331a63e3f0810cbb",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild-corrections/target-1793167696482111000/UNADMITTED.symbols": "373388d45834c63ff17c7ceb78a1a9cd6dd59e69b6a029393a091fcdd078bd78",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild-corrections/target-1793167696482111000/result.json": "390aeca8ca13190a573440e4c8390c5caeb0fc8d55834282dbf21a639a3026e3",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild-corrections/target-1793167696482111000/sdk-inputs-before.json": "b24badf04fe5ff8afa0083c71eaecc3c8db4d0f7c1a17d48113c811297e80930",
+    "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild-corrections/target-1793167696482111000/seal.json": "4d3185145bdcdd3512df0a315a11624138bfc224ed73532eac5f5bfd42c65f0c",
+    "docs/evidence/flight-demo/2026-10-27-m2-residency-feasibility/accounting.json": "36d9ca5c365768a226fad61fe812bb3ba79223b880ad666cf459a9cfc484ac16",
+    "docs/evidence/flight-demo/2026-10-29-m2-rf-ex2-design/before-design.tar.gz": "a269c706489d4cd6e94957f88b2ec44c2bf03aefab63008e783b1a877fde357b",
+    "docs/evidence/flight-demo/2026-10-29-m2-rf-ex2-design/reviewed-before-p2.tar.gz": "bff1de3be662c896387b33f1ef7572f82de0b0da7addcdfba68dec59ea8cb2aa",
+    "docs/plans/65AERO_M2_BANKED_RENDERER_BUILD_INTENT.md": "f79a715b16f2c0e2501cc7c7ac731d2e5c33df095751c92c7a08751b30ac4cbd",
+    "docs/plans/65AERO_M2_RESIDENCY_FEASIBILITY.md": "70815f67e7fcb9515a02a7fa6c552ea33f96131cf2876e93a5675665360dc38a",
+    "interfaces/f65_platform_abi.json5": "10ba96446adb586114e9fb19b81d249880eaa1a47379e8ea9306aafb7b09eb4d",
+    "interfaces/generated/m1_development.h": "9f9f3d28933cd585fac1f4efaaa53a1d32ed63565739dfba66e252faf835a272",
+    "interfaces/generated/m2_full.h": "24868bc121f44cbcedb7b88b0b956f080ca120acf410abda0326d257e0e2d9a3",
+    "interfaces/generated/m2_pr1.h": "bdb2825313c4b95df37de895db5479b36fae72bc6be6325b2437d6b3d78e44c3",
+    "interfaces/generated/m2_rebuild_profile.h": "78dd368c1226b39218dfc53cf49b56749865df86825751091edc78c5c95cfba3",
+    "interfaces/generated/m2_tables.c": "dd23e7167eb442a80157c2e40101075f5f517e7bd57f6de5673eca1db4cb399f",
+    "interfaces/generated/r0a_interfaces.h": "7a8ad3dce5f8f20fcdd2adfd293273117eee6ff27dce65fccff3522b8080aece",
+    "interfaces/generated/r0b_interfaces.h": "a31d5f860e8e76ac9795016531b396d7bc02a515957362ed25ed75a2af13bb6d",
+    "interfaces/generated/r0c_interfaces.h": "e69adb558aac7e3142d1b8396d047c70445d9906ece6389d4b9763e67c31d63f",
+    "interfaces/generated/r0d_interfaces.h": "a00a18cf593ac7d51e055522992f946eed0873006f69e0c8a650a0fdc43c6e97",
+    "interfaces/generated/r0e_interfaces.h": "29609c64855e4ac98cf28e05ece7d9a5bb46957e3c087a1ba4676cde80526bea",
+    "interfaces/generated/r0f_combined.h": "a728d596e43163e28d1de7d2e17ee366b6df4970be8924bff9f64ca2e4a0d4f2",
+    "interfaces/generated/r0f_group1_export.h": "e86f3dcb16fb8a204b6411329a661853db113725d8138212dff2bcb8c266ff3d",
+    "interfaces/generated/r0f_group1_pool.h": "2e4dd7b2805cb62fa936c1ba52231b7092fe762e8332a2aee7fe37be11a57455",
+    "interfaces/generated/r0f_group1_presentation.h": "0bb9fbe4add169446e6f713524b82c7368efa319dc092611537ff4e9087b3f45",
+    "interfaces/generated/r0f_group1_trace.h": "63e342c6fce691550541ca8b21bc82b42fb893f9366b95ac43b4adebcee413d6",
+    "interfaces/generated/r0f_interfaces.h": "a1c0c55cf73e0aae634e2c4267496f700f90959d5529b25ac5a02652337bc995",
+    "interfaces/generated/r0f_platform.h": "e9067d9be6ddf5d78ad4a771e18f3199cb6e7256912bc6bbf29dfec923874363",
+    "interfaces/generated/r0f_resume.h": "55ba5146aa0c008590f18eab49c1cdb42b0e42dd67015963bbf85034ced57805",
+    "interfaces/generated/r0f_successor.h": "dd1fbd6fc50bffed153f50fce5975359300f472f998f67c65fa7fffc3eb59db1",
+    "interfaces/generated/r0f_successor_integration.h": "412e7ec4ab655b9905a83babd185c1a10b23f2e6bea34cdc4f08ef824f679a91",
+    "interfaces/m2_rebuild.json": "9567374c9b08c1f24e9d58caca081885841dea42ae08c04e8b898e1dd42c7efb",
+    "memory/m2-rebuild-ledger.json": "f4aecdc5633a1a5b367c09fc96d4699beb53da70e03e4dbb2fc609ec26c93a7d",
+    "spec/core/F65_Main_Concept_v1.7_HUMAN_APPROVED.md": "65fbec43e3b9138557393fa6a05e9ba44ca70db1b84164f1b0011b39c65c229e",
+    "spec/manifests/spec-corpus.json": "4506b0a637f19f67ae0ed16ddc702e986db752fd51f2f749166ed422faa7ef90",
+    "src/core/m1_runtime.c": "7a6e816ad70e4d5c0859e768ff69109cac4c16c14deff328934a3b2c6d12111c",
+    "src/core/m1_runtime.h": "dea575f388825684fc341a869d2c55e746a6fa4188a8a624d369f7dfcc1c41bd",
+    "src/diagnostics/m2_rebuild/camera.c": "0364d4c5d62e4916bb0be9a4bce5f8ce75d5f3bf8c37c3c05ed6ebebdfd3e784",
+    "src/diagnostics/m2_rebuild/camera.h": "63bf8bea94191e5d398e80d62eff57ab2bc8c4774181beabb0063286a58862cb",
+    "src/diagnostics/m2_rebuild/main.c": "841a0f2166afd36a1b8abc6f43378b2598379e104ae09b0144d4eb11067f1d46",
+    "src/diagnostics/r0f/combined_model.c": "9aaf2f9b7002c69297be58ff969f57d5e0c034c40659bec9b496f7e8c2ace861",
+    "src/diagnostics/r0f/combined_model.h": "0931d1e42914903d61d073be597910575a941171c6592b45d4a81649123113df",
+    "src/diagnostics/r0f/combined_platform.c": "428d54c3274c4c71f64c5c880337a3f2de8d9810518ea9caaa0ce5a99909d47a",
+    "src/diagnostics/r0f/combined_platform.h": "4d83f75144d74dca6d9442daee528d59e97672d50b8aa41d9f810d4a27436736",
+    "src/diagnostics/r0f/group1_capture.h": "2082534cb82bbd36fcca164846749026ffab79b2b01e91e4d75be22edf7a8b0f",
+    "src/diagnostics/r0f/group1_export.h": "a419aa2496fb30ab76dccde87eaf4bdfd5d9957be5618f0fa16b77e883cce168",
+    "src/diagnostics/r0f/group1_pool.h": "ed1a6ccf581e3985ead6a7fe8a324238ff88b4e55b30558f058903deb37b645e",
+    "src/diagnostics/r0f/group1_presentation.h": "ff5c576734a893cf7f2e156b2c54457c0b2324ef51b5fa02ffb8478db6bc300a",
+    "src/diagnostics/r0f/group1_scene.h": "a621fca30042136d6b152c9cc799782616e1c1c4126fd808fb9ca476bd4daf10",
+    "src/diagnostics/r0f/group1_timing.h": "b2e8a54fa58836a5c87e8abc860fa3d66b433b924d290b28975c48fc9732bd19",
+    "src/diagnostics/r0f/group1_transport.h": "4791323db21777634796cbab4dc7d3bc37bab0bef95220f80c7fbd8cc4a7d5a0",
+    "src/diagnostics/r0f/group1_workload.h": "76129ad092877528f7114f6f484225dac7101a2873a2e83f4cc4c0f6148bd41a",
+    "src/diagnostics/r0f/resume_model.h": "a9b80f303261868e41420612edf06ebb8800dc60abb36bda7478b73c53366458",
+    "src/diagnostics/r0f/successor_capture.h": "181ff142b1525430911c35c2b7244eb540e05229c80cdd2db18ecb31ec79a484",
+    "src/diagnostics/r0f/successor_irq.h": "adb0619bb19a91c775f304aa8d71b7798e22c9f0a0f48eee6a437fdb629e86e6",
+    "src/diagnostics/r0f/successor_lifecycle.h": "622681480cf001f90d9e5ff49a20d136248192796cc73568b466ec931c563546",
+    "src/environment/m2_fixture.c": "bbf33786a0a3a20dbb7e45f87186406b36bcf89fd940ef496ec4a3103b5fdce1",
+    "src/environment/m2_fixture.h": "b648aacefa74936f5dd0825f7c2012265c50c86db196b8cca5a07b90d7fb3926",
+    "src/graphics/m1_graphics.h": "aba7047213e7b7a0d8ba7a926128e81eabc4862506698a64f684b7c4135d153f",
+    "src/graphics/m2_geometry.c": "55ab3d159b4cf2c96fcae8a52eecb47b6fb5631d966a180d2e2820cc72ad2607",
+    "src/graphics/m2_geometry.h": "181651397e6a59ea759a4da226072c51a7d71abf5b5dd1811377a229cbe906cd",
+    "src/graphics/m2_prepared_private.h": "36e823c4eb20fc638f21553184b78328c40a96fea072ed14d7e2bbe509d6acb1",
+    "src/graphics/m2_q46_private.h": "a39cec23b356a09e99a451650b68f72a62d7ba3a1c43e550cccd23356fa50f2d",
+    "src/graphics/m2_raster_private.h": "5fa31c7ae70d8dc302a23e01665abd9efd4c0856e3fc9165e27dbee28e57d169",
+    "src/graphics/m2_rebuild.c": "c46505db675daebcbc7bf49fefd904dea59b9c780e43cdfebd77a2c5e583523b",
+    "src/graphics/m2_rebuild.h": "dbbb3f5dd81470ddb75cc44a5927b70a23162362a7973e45bb9f817e23cfc6b9",
+    "src/graphics/m2_rebuild_text.c": "993e668ee1b85641e73fff4cab3aecc86d3765973046c391311316f01db79313",
+    "src/input/m1_input.c": "9a6f763a41615d58287b9d6b68560f961766648223e1a0af7a4b1e0964211e05",
+    "src/input/m1_input.h": "92652343774a66a65d16bcec4a13a401215305958c7ed4c283d078086eb3cbae",
+    "src/input/m2_rebuild_input.c": "8ba01e0125251cfca67f73077a18faf2f493524e58596a08c2b9a135529e357e",
+    "src/input/m2_rebuild_input.h": "18d957492e830282d61fcb4022e756b57d329ea0cb6c51faf5ae095ce6d055bc",
+    "src/platform/m1/m1_platform.c": "e321f14c79eb0c8516e04a00b949cb7fcacc90a20624bdbfc89f34c49882f08e",
+    "src/platform/m1/m1_platform.h": "00211a594d0b43ab1163c9025abd2f83ac4d25311e2f7227e942e1eb85e1f119",
+    "src/platform/m2_rebuild/guard.c": "1ec732b80f5475c96932a867a005df5f795a0e0f1d7a58db55278c1546fb6a31",
+    "src/platform/m2_rebuild/guard.h": "01abd076500a91ef12979742a6218a94b0bb48657b2117f8821657bc8653611b",
+    "src/platform/m2_rebuild/io.h": "0813e6a6901441a958d9bb503dd35f5ec34e829eacd4c74b971da573755c307e",
+    "src/platform/m2_rebuild/platform.c": "b17b40b0f218d358976f7877cc48a5fead9eab1a17351c12b0b5b7dc56e44814",
+    "src/platform/m2_rebuild/platform.h": "d6d62c35496027454c3aa1b96414cf269de29122e31b4d30289947076a25c8e1",
+    "src/platform/m2_rebuild/startup.ld": "86e35c7d6759f9a50c94fcb51fc23cfd1f3d91e0b105ff46e59695b47ba8ff52",
+    "src/platform/m2_rebuild/startup_45gs02.s": "d5055b8aba3afa24f42ff7faa45cf4749af95e7963a227a19025ed1b716882cc",
+    "src/platform/r0f/combined_45gs02.s": "f57927e7b4177adb68a72c3f98d4d76b96257c3940c4bd96f9799effa7fbae11",
+    "src/platform/r0f/qualification_45gs02.s": "c2ee3a522bd20795074b04a1a1a317baf80a420eebfd3aa1cb2c5f9a1fb9e600",
+    "src/presentation/m1_snapshot.c": "0bc27b247f8b9a678c09c68afa158831477ade48949b8bc9b3631ecc11ca7191",
+    "src/presentation/m1_snapshot.h": "964af7bf654b102d5db67eccf8104e224916b7ac40da6a3540d1271c6dc1abe6",
+    "toolchain/f65_toolchain.lock.json": "0de4864a0665f04cab26f67bdd533697d8006460142dcb7e8e5ce0ecb72d742b"
+  },
+  "reviewed_preservation": {
+    "files": 16060,
+    "digest": "bba8638cf77e85e241212c8056130f5ce4102c00ab9f1eb25b46b8a4133e593e",
+    "inventory": "reviewed-inventory.json.gz",
+    "edited_preimages": "reviewed-before-p2.tar.gz",
+    "edited_paths": [
+      "WORK_IN_PROGRESS.md",
+      "docs/plans/65AERO_M2_BANKED_RENDERER_BUILD_INTENT.md",
+      "docs/plans/65AERO_M2_RESIDENCY_FEASIBILITY.md"
+    ],
+    "unchanged": 16057,
+    "original_unrelated_paths": 480
+  },
+  "evidence_tier": "DOCUMENTATION_STATIC_DESIGN_ONLY"
+}
