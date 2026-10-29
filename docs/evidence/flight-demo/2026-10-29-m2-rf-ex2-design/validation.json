@@ -1,0 +1,147 @@
+{
+  "identity": "65AERO-M2-RF-EX2-P2-1",
+  "status": "COMPLETE",
+  "commands": [
+    {
+      "argv": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-B",
+        "/Users/slice/Developer/f65-megawing-m2-banked-renderer-intent/docs/evidence/flight-demo/2026-10-29-m2-rf-ex2-design/validate.py"
+      ],
+      "cwd": "/Users/slice/Developer/f65-megawing-m2-banked-renderer-intent",
+      "exit": 0,
+      "stdout": "attempts/validation-1/0-stdout.txt",
+      "stderr": "attempts/validation-1/0-stderr.txt"
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/Users/slice/Developer/f65-megawing-m2-banked-renderer-intent",
+      "exit": 0,
+      "stdout": "attempts/validation-1/1-stdout.txt",
+      "stderr": "attempts/validation-1/1-stderr.txt"
+    },
+    {
+      "argv": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "--version"
+      ],
+      "cwd": "/Users/slice/Developer/f65-megawing-m2-banked-renderer-intent",
+      "exit": 0,
+      "stdout": "attempts/validation-1/2-stdout.txt",
+      "stderr": "attempts/validation-1/2-stderr.txt"
+    },
+    {
+      "argv": [
+        "git",
+        "--version"
+      ],
+      "cwd": "/Users/slice/Developer/f65-megawing-m2-banked-renderer-intent",
+      "exit": 0,
+      "stdout": "attempts/validation-1/3-stdout.txt",
+      "stderr": "attempts/validation-1/3-stderr.txt"
+    }
+  ],
+  "evidence_tier": "DOCUMENTATION_STATIC_DESIGN_ONLY",
+  "candidate": "REJECT OPTION A",
+  "ownership": "BLOCKED BY MEMORY OWNERSHIP",
+  "tool_identities": {
+    "python": {
+      "path": "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/bin/python3.9",
+      "sha256": "6e7ae61f68a3838094fc56590f84c52069a97d7816f6bb79e0e85995b340e464"
+    },
+    "git": {
+      "path": "/opt/homebrew/Cellar/git/2.55.0/bin/git",
+      "sha256": "9048038886ac36210fbb616b49b0707465f63683cb04e33a2013baf95f746938"
+    },
+    "checker": {
+      "path": "/Users/slice/Developer/f65-megawing-m2-banked-renderer-intent/docs/evidence/flight-demo/2026-10-29-m2-rf-ex2-design/validate.py",
+      "sha256": "1e1ec424ba7e6eaa281dfcaeb8b9b0436b4e28d5b4ed90d141151c16fa26f302"
+    }
+  },
+  "notes": [
+    "No target tools, compiler, linker or bank code executed",
+    "Prior setup failure retained under attempts/setup-1",
+    "Unknown assembly boot edges are not whole-program stack/control-flow PASS"
+  ],
+  "design_validation": "PASS",
+  "candidate_feasibility": "NOT ADMITTED; REJECT OPTION A",
+  "retained_target_toolchain": {
+    "scope": "identity from sealed prior target evidence; tools NOT run or requalified in this task",
+    "record": "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild-corrections/target-1793167696482111000/result.json",
+    "record_sha256": "390aeca8ca13190a573440e4c8390c5caeb0fc8d55834282dbf21a639a3026e3",
+    "toolchain": {
+      "sdk": "/Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos",
+      "compiler_sha256": "cc557ae99a68ed36e098062b0f5376a878e94ac187b87446c8e603e4fb45a906",
+      "objdump_sha256": "5327f031a741bfcd4104317fbad3d1e45275d70b49821f0da52391120848a8e9",
+      "flags": [
+        "-mcpu=mos45gs02",
+        "-mlto-zp=0",
+        "-Oz",
+        "-fno-inline-functions",
+        "-fno-jump-tables",
+        "-Wall",
+        "-Wextra",
+        "-Wconversion",
+        "-Werror"
+      ],
+      "sdk_inventory": "sdk-inputs-before.json",
+      "sdk_inventory_sha256": "b24badf04fe5ff8afa0083c71eaecc3c8db4d0f7c1a17d48113c811297e80930",
+      "sdk_identity_digest": "4166ea6e185bc8471593336e0ac691b784fb5c0a51f861a1c26463c1609bbfd4",
+      "sdk_identity_scope": "complete SDK tree; directories, regular files and confined symlinks",
+      "sdk_entries": 1139,
+      "sdk_unchanged_after_link": true
+    }
+  },
+  "results": {
+    "checks": "PASS",
+    "tier": "DOCUMENTATION_STATIC_DESIGN_ONLY",
+    "crc_bytes": 84,
+    "crc_removal_credit": 0,
+    "closure_bytes": 9736,
+    "optimistic_removal": 8625,
+    "conditional_allowance_before_unknowns": 253,
+    "final_allowance": null,
+    "ownership": "BLOCKED BY MEMORY OWNERSHIP",
+    "recommendation": "REJECT OPTION A",
+    "reviewed_files": 16060,
+    "archived_edited_preimages": 3,
+    "unchanged_reviewed_files": 16057,
+    "original_paths": 480,
+    "fail_closed_model_cases": [
+      "unknown_is_not_zero",
+      "no_final_253_claim",
+      "no_staging_exclusivity_claim",
+      "no_silent_exception",
+      "no_reserve_use",
+      "no_stack_overlap",
+      "no_cached_signature",
+      "every_call_reads_signature",
+      "verification_before_entry",
+      "signature_faults_close",
+      "no_unsafe_reuse",
+      "descriptor_cannot_alias",
+      "no_double_buffer_credit",
+      "no_assumed_stack",
+      "no_guessed_timing",
+      "no_prototype_permission"
+    ],
+    "target_tools_run": false,
+    "runtime_admitted": false
+  },
+  "prior_setup_failure": {
+    "argv": [
+      "python3",
+      "-B",
+      "/private/tmp/f65-rf-p2-67qvd18g/make_packet.py"
+    ],
+    "exit": 1,
+    "error": "ValueError: unresolved direct/indirect closure edge",
+    "scope": "packet setup parser initially included zero-size assembly boot symbols outside relocation closure; never target execution",
+    "retained_capture": "attempts/setup-1/command.json",
+    "correction": "closure assertions remain fail-closed; unknown assembly boot paths stay UNPROVEN"
+  }
+}

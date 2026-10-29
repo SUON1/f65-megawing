@@ -1,6 +1,6 @@
 # Work in Progress
 
 - **Status: NONE.**
-- **Record:** Founder-approved minimum-renderer source baseline and P1/P2 corrections. See [correction handoff](docs/reports/M2_MINIMUM_REBUILD_CORRECTIONS.md).
-- **Limits:** Resident fit FAIL: 32,839 / 24,575 bytes, deficit 8,264. Runtime startup, whole-program stack and service remain UNPROVEN; launch remains disabled. No banking or runtime admission.
-- **Next:** Separate founder-authorized engineering task; no automatic continuation.
+- **Record:** [Founder-approved RF-EX2 negative record and Option A rejection](docs/decisions/M2_OPTION_A_REJECTION_2026-10-29.md). RF-EX2 not adopted; RF-EX1 historical only, no active allocation or implementation authority.
+- **Next:** After verified integration, start authorized Option B lean-renderer work in a new branch. Preserve precision, nine segments, camera, complete frames, telemetry, 100 Hz/21-stage timeline, owners and zero reserve; stop at first unresolved mandatory gate.
+- **Boundary:** No banking, new memory exception, D81, SD or physical testing.

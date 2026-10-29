@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/private/tmp/f65-rf-p2-67qvd18g/make_packet.py", line 6, in <module>
+    symbols,edges,closure=v.linked_graph();target=json.loads((v.TARGET/'result.json').read_text())
+  File "/Users/slice/Developer/f65-megawing-m2-banked-renderer-intent/docs/evidence/flight-demo/2026-10-29-m2-rf-ex2-design/validate.py", line 88, in linked_graph
+    require(not set(unresolved) & (closure | {"crc_byte", "cfphysical_crc", "cfrom_begin"}),
+  File "/Users/slice/Developer/f65-megawing-m2-banked-renderer-intent/docs/evidence/flight-demo/2026-10-29-m2-rf-ex2-design/validate.py", line 26, in require
+    raise ValueError(message)
+ValueError: unresolved direct/indirect closure edge

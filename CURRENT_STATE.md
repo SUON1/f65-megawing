@@ -191,3 +191,12 @@ and incomplete recovery limitations remain preserved.
 - Broader technical-document consolidation is deferred until after repository reorganization and the new development system are complete.
 - `F65_OFFICIAL_RECORD.md` retains configuration and R0 history; `CODEX_PROGRESS.md` retains the historical development journal. Neither is the routine live project-status interface.
 - The current GitHub repository visibility is public. The historical bootstrap entry in `F65_OFFICIAL_RECORD.md` retains the earlier private-repository state as provenance; any later visibility change requires deliberate Git/project-control housekeeping.
+
+
+The founder accepted the RF-EX2 revision 5 corrections and negative feasibility
+record and rejected Option A banking for the current renderer. RF-EX2 is not
+adopted; RF-EX1 remains historical design approval without active allocation or
+implementation authority. See the [rejection disposition](docs/decisions/M2_OPTION_A_REJECTION_2026-10-29.md).
+The next authorized source increment is Option B lean-renderer work, separately
+branched after verified integration, preserving all existing owner/precision/
+resident/reserve/timing requirements. No bank or memory exception is introduced.
