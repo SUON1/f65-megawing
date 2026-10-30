@@ -74,8 +74,11 @@ class Contract(unittest.TestCase):
         self.assertNotIn("m2rb_target_budgets[slot] =", main)
         self.assertIn("m2rb_guard(now, release, budget, m2rb_guard_budget)", main)
         source = (ROOT / "src/graphics/m2_rebuild.c").read_text()
-        self.assertEqual(source.count("m2_project_prepared("), 1)
-        self.assertEqual(source.count("m2_prepare("), 1)
+        self.assertEqual(source.count("m2c_project_service("), 1)
+        self.assertEqual(source.count("m2c_prepare_service("), 1)
+        self.assertEqual(source.count("m2c_horizon_service("), 1)
+        self.assertNotIn("m2_project_prepared(", source)
+        self.assertNotIn("m2_prepare(", source)
         self.assertNotIn("m2_pair_eligible(", source)
 
 

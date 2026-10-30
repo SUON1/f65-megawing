@@ -62,12 +62,12 @@ def preview(raw, output):
                        + chunk(b"IDAT", zlib.compress(scanlines)) + chunk(b"IEND", b""))
 
 
-def execute(tier, sdk, output):
+def execute(tier, sdk, output, identity=None, composition_check=None):
     # Bind the caller's SDK before commands change cwd to ROOT. Use this same
     # absolute path for lock checks, inventories, subprocesses and evidence.
     sdk = sdk.resolve() if sdk is not None else None
     output.mkdir(parents=True, exist_ok=False)
-    report = {"identity": "65AERO-M2-MIN-REBUILD-CORRECTIONS-1",
+    report = {"identity": identity or "65AERO-M2-MIN-REBUILD-CORRECTIONS-1",
               "profile_identity": "65AERO-M2-MIN-REBUILD-1", "base": BASE, "tier": tier,
               "head": subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip(),
               "commands": [], "target_executed": False, "execution_admitted": False,
@@ -180,8 +180,11 @@ def execute(tier, sdk, output):
                 required = ["m2rb_dispatch", "m2rb_camera_edges", "m2rb_platform_init", "m2rb_glyph",
                             "m2_prepare", "m2_project_prepared", "m2_ground_prepared", "m2rb_io_commit",
                             "m1_tick", "m1_input_sample", "m1_acquire", "r0f_pf_flat_copy"]
-                report["retained_implementation"] = {name: bool(re.search(r"\b" + name + r"$", symbols, re.M)) for name in required}
-                assert all(report["retained_implementation"].values()), "incomplete target composition"
+                if composition_check is None:
+                    report["retained_implementation"] = {name: bool(re.search(r"\b" + name + r"$", symbols, re.M)) for name in required}
+                    assert all(report["retained_implementation"].values()), "incomplete target composition"
+                else:
+                    report["retained_implementation"] = composition_check(disassembly, symbols)
                 startup = module(ROOT / "tools/flight_demo/m2_rebuild/startup_check.py", "m2rb_startup_check")
                 report["startup_static"] = startup.check(disassembly, symbols, target.read_bytes())
                 checker = module(ROOT / "tools/flight_demo/m2/stack_check.py", "m2rb_stack")

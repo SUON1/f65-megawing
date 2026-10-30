@@ -30,11 +30,6 @@ uint8_t m2rb_camera_equal(const M2Camera *first, const M2Camera *last)
     return 1u;
 }
 
-static int8_t direction(uint16_t edges, uint16_t plus, uint16_t minus)
-{
-    return (int8_t)(((edges & plus) != 0u) - ((edges & minus) != 0u));
-}
-
 static int32_t clamp(int32_t value, int32_t minimum, int32_t maximum)
 {
     if (value < minimum)
@@ -57,29 +52,74 @@ int8_t m2rb_camera_edges(M2Camera *camera, uint16_t edges)
     }
     else
     {
-        next.position.v[0] = clamp(next.position.v[0]
-            + (int32_t)direction(edges, M2RB_NORTH, M2RB_SOUTH)
-                * 25L * M2_POSITION_SCALE,
+        static const int32_t minimum[3] = {
             -M2_NORTH_LIMIT_FT * M2_POSITION_SCALE,
-            M2_NORTH_LIMIT_FT * M2_POSITION_SCALE);
-        next.position.v[1] = clamp(next.position.v[1]
-            + (int32_t)direction(edges, M2RB_EAST, M2RB_WEST)
-                * 25L * M2_POSITION_SCALE,
             -M2_EAST_LIMIT_FT * M2_POSITION_SCALE,
-            M2_EAST_LIMIT_FT * M2_POSITION_SCALE);
-        next.position.v[2] = clamp(next.position.v[2]
-            + (int32_t)direction(edges, M2RB_DOWN, M2RB_UP)
-                * 10L * M2_POSITION_SCALE,
-            -M2_HEIGHT_MAX_FT * M2_POSITION_SCALE,
-            -M2_HEIGHT_MIN_FT * M2_POSITION_SCALE);
-        next.yaw = (int16_t)((next.yaw
-            + direction(edges, M2RB_YAW_RIGHT, M2RB_YAW_LEFT) + 360) % 360);
-        next.pitch = (int16_t)clamp(next.pitch
-            + direction(edges, M2RB_PITCH_UP, M2RB_PITCH_DOWN),
-            -M2_TILT_LIMIT_DEG, M2_TILT_LIMIT_DEG);
-        next.roll = (int16_t)clamp(next.roll
-            + direction(edges, M2RB_ROLL_RIGHT, M2RB_ROLL_LEFT),
-            -M2_TILT_LIMIT_DEG, M2_TILT_LIMIT_DEG);
+            -M2_HEIGHT_MAX_FT * M2_POSITION_SCALE
+        };
+        static const int32_t maximum[3] = {
+            M2_NORTH_LIMIT_FT * M2_POSITION_SCALE,
+            M2_EAST_LIMIT_FT * M2_POSITION_SCALE,
+            -M2_HEIGHT_MIN_FT * M2_POSITION_SCALE
+        };
+        uint16_t pairs = edges;
+        for (uint8_t axis = 0u; axis < 3u; ++axis)
+        {
+            int8_t direction = (int8_t)(((pairs & 1u) != 0u) - ((pairs & 2u) != 0u));
+            if (axis == 2u)
+            {
+                direction = (int8_t)-direction;
+            }
+            int32_t step = (axis == 2u ? 10L : 25L) * M2_POSITION_SCALE;
+            int32_t value = next.position.v[axis];
+            if (direction > 0)
+            {
+                value += step;
+            }
+            else if (direction < 0)
+            {
+                value -= step;
+            }
+            next.position.v[axis] = clamp(value, minimum[axis], maximum[axis]);
+            pairs >>= 2u;
+        }
+        int16_t angles[3] = {next.yaw, next.pitch, next.roll};
+        for (uint8_t axis = 0u; axis < 3u; ++axis)
+        {
+            int16_t direction = (int16_t)(((pairs & 2u) != 0u) - ((pairs & 1u) != 0u));
+            if (axis == 1u)
+            {
+                direction = (int16_t)-direction;
+            }
+            int16_t value = (int16_t)(angles[axis] + direction);
+            if (axis == 0u)
+            {
+                if (value < 0)
+                {
+                    value += 360;
+                }
+                else if (value >= 360)
+                {
+                    value -= 360;
+                }
+            }
+            else
+            {
+                if (value < -M2_TILT_LIMIT_DEG)
+                {
+                    value = -M2_TILT_LIMIT_DEG;
+                }
+                if (value > M2_TILT_LIMIT_DEG)
+                {
+                    value = M2_TILT_LIMIT_DEG;
+                }
+            }
+            angles[axis] = value;
+            pairs >>= 2u;
+        }
+        next.yaw = angles[0];
+        next.pitch = angles[1];
+        next.roll = angles[2];
     }
     next.revision = camera->revision;
     if (m2rb_camera_equal(camera, &next))
