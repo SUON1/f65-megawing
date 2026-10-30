@@ -1,0 +1,67 @@
+{
+  "identity": "65AERO-M2-LEAN-1",
+  "scope": "host sanitizer exact formatter/glyph equivalence",
+  "base": "9570f0ab427121a4e8f042041a14c89aaaeff9e2",
+  "reference_sha256": "993e668ee1b85641e73fff4cab3aecc86d3765973046c391311316f01db79313",
+  "commands": [
+    {
+      "argv": [
+        "/usr/bin/clang",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Wconversion",
+        "-Werror",
+        "-fsanitize=address,undefined",
+        "-Iinterfaces/generated",
+        "-Isrc/graphics",
+        "-Isrc/presentation",
+        "-Isrc/environment",
+        "-Isrc/core",
+        "-Dm2rb_text_row=reference_text_row",
+        "-Dm2rb_glyph=reference_glyph",
+        "-c",
+        "/Users/slice/Developer/f65-megawing-m2-option-b/docs/evidence/flight-demo/2026-10-29-m2-option-b/text-1793302574153355000/reference_text.c",
+        "-o",
+        "/Users/slice/Developer/f65-megawing-m2-option-b/docs/evidence/flight-demo/2026-10-29-m2-option-b/text-1793302574153355000/reference.o"
+      ],
+      "exit": 0,
+      "log": "0.txt"
+    },
+    {
+      "argv": [
+        "/usr/bin/clang",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Wconversion",
+        "-Werror",
+        "-fsanitize=address,undefined",
+        "-Iinterfaces/generated",
+        "-Isrc/graphics",
+        "-Isrc/presentation",
+        "-Isrc/environment",
+        "-Isrc/core",
+        "src/graphics/m2_rebuild_text.c",
+        "tests/flight_demo/m2_lean/text_equivalence.c",
+        "/Users/slice/Developer/f65-megawing-m2-option-b/docs/evidence/flight-demo/2026-10-29-m2-option-b/text-1793302574153355000/reference.o",
+        "-o",
+        "/Users/slice/Developer/f65-megawing-m2-option-b/docs/evidence/flight-demo/2026-10-29-m2-option-b/text-1793302574153355000/compare"
+      ],
+      "exit": 0,
+      "log": "1.txt"
+    },
+    {
+      "argv": [
+        "/Users/slice/Developer/f65-megawing-m2-option-b/docs/evidence/flight-demo/2026-10-29-m2-option-b/text-1793302574153355000/compare"
+      ],
+      "exit": 0,
+      "log": "2.txt"
+    }
+  ],
+  "result": "PASS",
+  "source_identities": {
+    "src/graphics/m2_rebuild_text.c": "6e33e8871ed1e32c13279084c1204de1147ab3ba653550ec43671168f23b9312",
+    "tests/flight_demo/m2_lean/text_equivalence.c": "7af92162dad35894dd0655d271e6f2d1c210c876047f95f2345e7f1085a6cf10"
+  }
+}

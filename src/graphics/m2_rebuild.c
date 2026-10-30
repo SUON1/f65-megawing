@@ -93,6 +93,14 @@ static void prepare(M2RebuildRenderer *renderer)
     }
     bundle->composition_revision = M2RB_COMPOSITION_REVISION;
     bundle->checksum = renderer->snapshot.checksum;
+    // The original predicate is affine in x/y. Preserve the full Q46 integer
+    // result; bounded additions replace repeated full-width multiplication.
+    const M2Transform *rotation = &renderer->prepared.rotation;
+    renderer->horizon_band = rotation->m[2] * (2L * M2_FOCAL)
+        - rotation->m[5] * (M2_WIDTH - 1L)
+        - rotation->m[8] * (M2_HEIGHT - 1L);
+    renderer->horizon_tile = renderer->horizon_band;
+    renderer->horizon_row = renderer->horizon_band;
     increment(&renderer->prepared_count);
     renderer->phase = M2RB_PROJECT;
 }
@@ -126,22 +134,15 @@ static void project(M2RebuildRenderer *renderer)
 
 static void background(M2RebuildRenderer *renderer)
 {
-    uint16_t x = (uint16_t)((renderer->tile_index % M2RB_COLUMNS) * 8u);
-    uint16_t y = (uint16_t)((renderer->tile_index / M2RB_COLUMNS) * 8u
-        + renderer->tile_row);
-    // Exactly eight full-precision common-horizon classifications per quantum.
+    const M2Transform *rotation = &renderer->prepared.rotation;
+    int64_t down = renderer->horizon_row;
     for (uint8_t column = 0u; column < 8u; ++column)
     {
-        int8_t ground = m2_ground_prepared(&renderer->prepared,
-                                          (uint16_t)(x + column), y);
-        if (ground < 0)
-        {
-            fail(renderer, 3u);
-            return;
-        }
         renderer->tile[renderer->tile_row * 8u + column]
-            = ground ? M2RB_GROUND : M2RB_SKY;
+            = down > 0 ? M2RB_GROUND : M2RB_SKY;
+        down += rotation->m[5] * 2;
     }
+    renderer->horizon_row += rotation->m[8] * 2;
     ++renderer->tile_row;
     if (renderer->tile_row == 8u)
     {
@@ -163,6 +164,20 @@ static void copy_tile(M2RebuildRenderer *renderer)
     }
     ++renderer->tile_index;
     renderer->phase = renderer->after_copy;
+    if (renderer->after_copy == M2RB_BACKGROUND && renderer->tile_index < 640u)
+    {
+        const M2Transform *rotation = &renderer->prepared.rotation;
+        if (renderer->tile_index % M2RB_COLUMNS == 0u)
+        {
+            renderer->horizon_band += rotation->m[8] * 16;
+            renderer->horizon_tile = renderer->horizon_band;
+        }
+        else
+        {
+            renderer->horizon_tile += rotation->m[5] * 16;
+        }
+        renderer->horizon_row = renderer->horizon_tile;
+    }
     if (renderer->tile_index == 640u)
     {
         renderer->phase = M2RB_LINE;
