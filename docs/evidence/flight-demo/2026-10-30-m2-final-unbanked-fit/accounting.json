@@ -1,0 +1,81 @@
+{
+  "identity": "65AERO-M2-COMMAND-1",
+  "parent": "d48c9ea884ea3dee1c7dcc90fa36891268b0dc14",
+  "result": "BLOCKED",
+  "parent_resident": 28049,
+  "resident": 26927,
+  "ceiling": 24575,
+  "saving": 1122,
+  "deficit": 2352,
+  "sections": {
+    ".text": {
+      "start": 8215,
+      "bytes": 22720
+    },
+    ".rodata": {
+      "start": 30936,
+      "bytes": 2115
+    },
+    ".data": {
+      "start": 33051,
+      "bytes": 0
+    },
+    ".bss": {
+      "start": 33051,
+      "bytes": 2016
+    },
+    ".noinit": {
+      "start": 35067,
+      "bytes": 53
+    }
+  },
+  "prefix": 22,
+  "alignment": 1,
+  "renderer_bytes": 1217,
+  "state_growth": 54,
+  "scratch_bytes": 53,
+  "reserve_used": 0,
+  "prg": {
+    "bytes": 24860,
+    "sha256": "5b3a93f3f6b6ca7d8c711bc74fe5b4d3895af79d5ca0104608fa3763c73426cc"
+  },
+  "target_seal_sha256": "26106670a262070a111656c160994bda42e6030955c04d2691b2b12e0e6033e5",
+  "numeric_control": [
+    4036,
+    4153
+  ],
+  "metadata_camera": [
+    1628,
+    451
+  ],
+  "raster_begin_conversion": [
+    959,
+    579
+  ],
+  "prepare_wrapper": [
+    268,
+    63
+  ],
+  "commit": [
+    55,
+    57
+  ],
+  "native_vm": 3090,
+  "operand_decode": 245,
+  "operand_binding": 261,
+  "generated_instruction_bytes": 388,
+  "wide_constant_bytes": 64,
+  "startup": "UNPROVEN overall; prefix/closed sink static PASS only",
+  "whole_program_stack": "UNPROVEN",
+  "service_interrupts_and_cadence": "UNPROVEN",
+  "xemu_pal_ntsc": "NOT RUN",
+  "runtime_visual": "NOT OBSERVED",
+  "next_founder_decision": {
+    "status": "PROPOSED ONLY; NOT ADOPTED",
+    "development_resident_end_exclusive": 36864,
+    "development_resident_ceiling": 28671,
+    "measured_image_margin": 1744,
+    "exception": "Development ceiling and protection of CPU/physical bank0 extension from covering MAP/staging; preserve production authority, Runtime ownership, stacks, precision, 100Hz and zero reserve",
+    "admission": "Fresh boot/load, full stack/service/interrupt/physical address/owner proof before Xemu; no promised M3/M4 capacity"
+  }
+}

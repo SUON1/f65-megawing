@@ -4,14 +4,17 @@ Every invocation gets a fresh output directory. All failures remain sealed.
 Use --tier target only after reviewing the corresponding host results.
 """
 import argparse
+import gzip
 import hashlib
 import importlib.util
+import io
 import json
 from pathlib import Path
 import re
 import struct
 import subprocess
 import sys
+import tarfile
 import time
 import zlib
 
@@ -40,6 +43,21 @@ def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def archive_sources(output, inputs):
+    archive = output / "source.tar.gz"
+    with archive.open("xb") as raw, gzip.GzipFile(fileobj=raw, mode="wb", mtime=0) as compressed:
+        with tarfile.open(fileobj=compressed, mode="w") as stream:
+            for name, digest in sorted(inputs.items()):
+                data = (ROOT / name).read_bytes()
+                assert hashlib.sha256(data).hexdigest() == digest, name
+                entry = tarfile.TarInfo(name)
+                entry.mode = 0o644
+                entry.size = len(data)
+                entry.mtime = 0
+                stream.addfile(entry, io.BytesIO(data))
+    return {"file": archive.name, "bytes": archive.stat().st_size, "sha256": sha(archive)}
+
+
 def module(path, name):
     spec = importlib.util.spec_from_file_location(name, path)
     value = importlib.util.module_from_spec(spec)
@@ -62,7 +80,8 @@ def preview(raw, output):
                        + chunk(b"IDAT", zlib.compress(scanlines)) + chunk(b"IEND", b""))
 
 
-def execute(tier, sdk, output, identity=None, composition_check=None):
+def execute(tier, sdk, output, identity=None, composition_check=None,
+            extra_inputs=(), service_cardinality=None, archive_inputs=False):
     # Bind the caller's SDK before commands change cwd to ROOT. Use this same
     # absolute path for lock checks, inventories, subprocesses and evidence.
     sdk = sdk.resolve() if sdk is not None else None
@@ -201,6 +220,8 @@ def execute(tier, sdk, output, identity=None, composition_check=None):
                                     "text": "one <=40-character row format plus one 64-byte glyph",
                                     "commit": "one complete bundle validation + checked physical selector"},
                                  "note": "Cardinality is not timing admission. No nonzero cycle bounds invented."}
+            if service_cardinality is not None:
+                report["service"]["quantum_cardinality"] = service_cardinality
             if compile_result.returncode:
                 raise RuntimeError("target compile/link failed; retained without optimization")
         report["checks_completed"] = True
@@ -211,6 +232,7 @@ def execute(tier, sdk, output, identity=None, composition_check=None):
         paths = set(GEOMETRY + CORE + NEW + PLATFORM + ["src/diagnostics/m2_rebuild/main.c",
                     "interfaces/m2_rebuild.json", "src/platform/m2_rebuild/startup.ld",
                     "toolchain/f65_toolchain.lock.json"])
+        paths.update(extra_inputs)
         for directory in INCLUDES:
             paths.update(str(path.relative_to(ROOT)) for path in (ROOT / directory).glob("*.h"))
         for directory in ["tools/flight_demo/m2_rebuild", "tests/flight_demo/m2_rebuild"]:
@@ -219,6 +241,8 @@ def execute(tier, sdk, output, identity=None, composition_check=None):
                       "tests/flight_demo/m2/host.c", "tests/flight_demo/m2_full/prepared_host.c",
                       "tests/flight_demo/m2_pr2/cursor_host.c", "tools/flight_demo/m2/stack_check.py"])
         report["inputs"] = {name: sha(ROOT / name) for name in sorted(paths)}
+        if archive_inputs:
+            report["source_archive"] = archive_sources(output, report["inputs"])
         save()
         inventory = {str(path.relative_to(output)): {"bytes": path.stat().st_size, "sha256": sha(path)}
                      for path in sorted(output.rglob("*")) if path.is_file()}

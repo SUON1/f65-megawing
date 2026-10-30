@@ -1,9 +1,13 @@
 // Exact public adapters and narrow validation/raster. Host batch adapters are
 // dead-stripped from the target; the real renderer uses resumable services.
+#include <stddef.h>
 #include <string.h>
 
 #include "m2_compact.h"
 #include "m2_raster_private.h"
+
+_Static_assert(offsetof(M2Line, y) == 2u * sizeof(int32_t)
+    && sizeof(M2Line) == 4u * sizeof(int32_t), "flat coordinate field run changed");
 
 uint8_t m2_camera_valid(const M2Camera *camera)
 {
@@ -35,44 +39,42 @@ uint8_t m2_camera_valid(const M2Camera *camera)
     return 1u;
 }
 
-static int16_t raster_coordinate(int32_t value, int32_t extent)
-{
-    uint32_t sample = (uint32_t)(value + M2_SCREEN_SCALE / 2) >> 16u;
-    return (int16_t)(sample >= (uint32_t)extent ? (uint32_t)(extent - 1) : sample);
-}
-
 uint8_t m2_raster_begin(const M2Line *line, struct M2RasterCursor *cursor)
 {
     if (line == 0 || cursor == 0)
     {
         return 0u;
     }
-    for (uint8_t end = 0u; end < 2u; ++end)
+    int16_t coordinates[4];
+    // Validate/decode all four fields before writing the caller's cursor.
+    for (uint8_t i = 0u; i < 4u; ++i)
     {
-        if (line->x[end] < -M2_SCREEN_SCALE / 2
-            || line->x[end] > (M2_WIDTH * M2_SCREEN_SCALE - M2_SCREEN_SCALE / 2)
-            || line->y[end] < -M2_SCREEN_SCALE / 2
-            || line->y[end] > (M2_HEIGHT * M2_SCREEN_SCALE - M2_SCREEN_SCALE / 2))
+        const uint8_t *bytes = (const uint8_t *)line + i * sizeof(int32_t);
+        int32_t value;
+        memcpy(&value, bytes, sizeof(value));
+        int32_t extent = i < 2u ? M2_WIDTH : M2_HEIGHT;
+        if (value < -M2_SCREEN_SCALE / 2
+            || value > extent * M2_SCREEN_SCALE - M2_SCREEN_SCALE / 2)
         {
             return 0u;
         }
+        int16_t sample;
+        memcpy(&sample, bytes + 2u, sizeof(sample));
+        sample = (int16_t)(sample + (bytes[1] >> 7u));
+        coordinates[i] = sample >= extent ? (int16_t)(extent - 1) : sample;
     }
-    struct M2RasterCursor result;
-    result.x = raster_coordinate(line->x[0], M2_WIDTH);
-    result.y = raster_coordinate(line->y[0], M2_HEIGHT);
-    int16_t end_x = raster_coordinate(line->x[1], M2_WIDTH);
-    int16_t end_y = raster_coordinate(line->y[1], M2_HEIGHT);
-    result.dx = (int16_t)(end_x > result.x ? end_x - result.x : result.x - end_x);
-    result.dy = (int16_t)(end_y > result.y ? end_y - result.y : result.y - end_y);
-    result.remaining = (uint16_t)((result.dx > result.dy ? result.dx : result.dy) + 1);
-    if (result.remaining > M2_RASTER_POINTS)
-    {
-        return 0u;
-    }
-    result.step_x = end_x > result.x ? 1 : -1;
-    result.step_y = end_y > result.y ? 1 : -1;
-    result.error = (int16_t)(result.dx - result.dy);
-    *cursor = result;
+    cursor->x = coordinates[0];
+    cursor->y = coordinates[2];
+    int16_t end_x = coordinates[1];
+    int16_t end_y = coordinates[3];
+    cursor->dx = (int16_t)(end_x > cursor->x ? end_x - cursor->x : cursor->x - end_x);
+    cursor->dy = (int16_t)(end_y > cursor->y ? end_y - cursor->y : cursor->y - end_y);
+    // Checked viewport bounds imply max(dx,dy)+1<=320. The specialization
+    // guard fixes width/height/raster capacity, so no post-write failure exists.
+    cursor->remaining = (uint16_t)((cursor->dx > cursor->dy ? cursor->dx : cursor->dy) + 1);
+    cursor->step_x = end_x > cursor->x ? 1 : -1;
+    cursor->step_y = end_y > cursor->y ? 1 : -1;
+    cursor->error = (int16_t)(cursor->dx - cursor->dy);
     return 1u;
 }
 
@@ -121,8 +123,8 @@ int8_t m2_project_prepared(const struct M2Prepared *prepared,
     {
         return -1;
     }
-    // 18*7 transform, 6*(1+3*104) clipping, 4*104 projection <2500.
-    for (uint16_t step = 0u; step < 2500u; ++step)
+    // Command overhead +18 products +18 clip axes +4 projections <3000.
+    for (uint16_t step = 0u; step < 3000u; ++step)
     {
         int8_t result = m2c_project_service(&work, prepared, line);
         if (result != 0)

@@ -12,7 +12,7 @@ enum
     M2RB_COPY, M2RB_LINE, M2RB_TEXT, M2RB_COMMIT, M2RB_FAILED
 };
 
-typedef struct
+typedef struct M2RebuildRenderer
 {
     struct M2Prepared prepared;
     M2Compact geometry;

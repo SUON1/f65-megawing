@@ -1,6 +1,7 @@
 #include <limits.h>
 
 #include "camera.h"
+#include "m2_record_private.h"
 
 void m2rb_camera_init(M2Camera *camera)
 {
@@ -15,19 +16,7 @@ void m2rb_camera_init(M2Camera *camera)
 
 uint8_t m2rb_camera_equal(const M2Camera *first, const M2Camera *last)
 {
-    if (first->revision != last->revision || first->yaw != last->yaw
-        || first->pitch != last->pitch || first->roll != last->roll)
-    {
-        return 0u;
-    }
-    for (uint8_t axis = 0u; axis < 3u; ++axis)
-    {
-        if (first->position.v[axis] != last->position.v[axis])
-        {
-            return 0u;
-        }
-    }
-    return 1u;
+    return m2_camera_same(first, last);
 }
 
 static int32_t clamp(int32_t value, int32_t minimum, int32_t maximum)

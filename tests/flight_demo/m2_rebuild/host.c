@@ -77,8 +77,8 @@ static void publish(M1Snapshots *pool, uint32_t tick)
 static void until(M2RebuildRenderer *renderer, M1Snapshots *pool,
                   const M2Camera *camera, uint8_t phase)
 {
-    // Nine <=2500-step projections + horizon/paint/copy/raster/text <32768.
-    for (uint32_t work = 0u; work < 32768u; ++work)
+    // Nine <=3000-step programs + bounded horizon/paint/copy/raster/text <40000.
+    for (uint32_t work = 0u; work < 40000u; ++work)
     {
         if (renderer->phase == phase)
         {
@@ -444,7 +444,8 @@ static void exact_horizon_spans(void)
                 do
                 {
                     result = m2c_horizon_service(&horizon, &work, &prepared);
-                    assert(++count <= 469u && result >= 0);
+                    // <=64 command/setup services +320 edge moves +128 rows.
+                    assert(++count <= 512u && result >= 0);
                 } while (result == 0);
                 if (count > maximum_work)
                 {
@@ -480,7 +481,7 @@ static void cancel_every_numeric_boundary(void)
     reset_backend();
     publish(&pool, 42u);
     uint32_t cutpoints = 0u;
-    for (uint32_t steps = 0u; steps < 23000u; ++steps)
+    for (uint32_t steps = 0u; steps < 40000u; ++steps)
     {
         if (renderer.phase == M2RB_BACKGROUND)
         {

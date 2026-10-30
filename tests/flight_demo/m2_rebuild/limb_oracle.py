@@ -28,6 +28,10 @@ class Line(C.Structure):
     _fields_ = [("x", C.c_int32 * 2), ("y", C.c_int32 * 2)]
 
 
+class Pixel(C.Structure):
+    _fields_ = [("x", C.c_uint16), ("y", C.c_uint16)]
+
+
 def wide(value):
     return Wide.from_buffer_copy(value.to_bytes(8, "little", signed=True))
 
@@ -164,8 +168,44 @@ def camera_equivalence(candidate, reference):
     print(f"CAMERA REFERENCE PASS: {count} edge-mask/pose combinations, clamps/reset/opposition/revision exhaustion")
 
 
+def raster_equivalence(candidate, reference):
+    for library in [candidate, reference]:
+        library.m2_raster_line.argtypes = [C.POINTER(Line), C.POINTER(Pixel), C.c_uint16,
+                                           C.POINTER(C.c_uint16)]
+        library.m2_raster_line.restype = U8
+    rng = random.Random(0x65A7)
+    cases = []
+    for _ in range(4096):
+        cases.append(Line((C.c_int32 * 2)(*[rng.randrange(-32768, 319 * 65536 + 32769)
+                                           for _ in range(2)]),
+                          (C.c_int32 * 2)(*[rng.randrange(-32768, 127 * 65536 + 32769)
+                                           for _ in range(2)])))
+    for x in [-32768,0,32768,159*65536+32768,319*65536+32768]:
+        for y in [-32768,0,32768,63*65536+32768,127*65536+32768]:
+            cases.append(Line((C.c_int32 * 2)(x,319*65536-x),
+                              (C.c_int32 * 2)(y,127*65536-y)))
+    samples = 0
+    for line in cases:
+        a = (Pixel * 320)()
+        b = (Pixel * 320)()
+        ca, cb = C.c_uint16(), C.c_uint16()
+        x = candidate.m2_raster_line(C.byref(line), a, 320, C.byref(ca))
+        y = reference.m2_raster_line(C.byref(line), b, 320, C.byref(cb))
+        assert x == y == 1 and ca.value == cb.value
+        assert bytes(a)[:ca.value*4] == bytes(b)[:cb.value*4]
+        samples += ca.value
+    line = Line((C.c_int32 * 2)(0,319*65536),(C.c_int32 * 2)(0,127*65536))
+    for capacity in [0,1,319]:
+        a = (Pixel * 320).from_buffer_copy(b'\xA5' * (320*4))
+        count = C.c_uint16(0xA5A5)
+        assert not candidate.m2_raster_line(C.byref(line), a, capacity, C.byref(count))
+        assert count.value == 0xA5A5 and bytes(a) == b'\xA5' * (320*4)
+    print(f"RASTER REFERENCE PASS: {len(cases)} exact lines/{samples} pixels; half-pixel endpoints and capacity failures")
+
+
 if __name__ == "__main__":
     compact, native = map(C.CDLL, sys.argv[1:])
     arithmetic(compact)
     equivalence(compact, native)
     camera_equivalence(compact, native)
+    raster_equivalence(compact, native)

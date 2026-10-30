@@ -1,0 +1,435 @@
+     VMA      LMA     Size Align Out     In      Symbol
+       0        0        0     1 __basic_zp_start = 0x0002
+       0        0        0     1 __basic_zp_end = 0x0090
+       0        0        0     1 __rc0 = __basic_zp_start
+       0        0        0     1 __rc1 = __rc0 + 1
+       0        0        0     1 PROVIDE(__rc2 = __rc1 + 1)
+       0        0        0     1 __rc3 = __rc2 + 1
+       0        0        0     1 PROVIDE(__rc4 = __rc3 + 1)
+       0        0        0     1 __rc5 = __rc4 + 1
+       0        0        0     1 PROVIDE(__rc6 = __rc5 + 1)
+       0        0        0     1 __rc7 = __rc6 + 1
+       0        0        0     1 PROVIDE(__rc8 = __rc7 + 1)
+       0        0        0     1 __rc9 = __rc8 + 1
+       0        0        0     1 PROVIDE(__rc10 = __rc9 + 1)
+       0        0        0     1 __rc11 = __rc10 + 1
+       0        0        0     1 PROVIDE(__rc12 = __rc11 + 1)
+       0        0        0     1 __rc13 = __rc12 + 1
+       0        0        0     1 PROVIDE(__rc14 = __rc13 + 1)
+       0        0        0     1 __rc15 = __rc14 + 1
+       0        0        0     1 PROVIDE(__rc16 = __rc15 + 1)
+       0        0        0     1 __rc17 = __rc16 + 1
+       0        0        0     1 PROVIDE(__rc18 = __rc17 + 1)
+       0        0        0     1 __rc19 = __rc18 + 1
+       0        0        0     1 PROVIDE(__rc20 = __rc19 + 1)
+       0        0        0     1 __rc21 = __rc20 + 1
+       0        0        0     1 PROVIDE(__rc22 = __rc21 + 1)
+       0        0        0     1 __rc23 = __rc22 + 1
+       0        0        0     1 PROVIDE(__rc24 = __rc23 + 1)
+       0        0        0     1 __rc25 = __rc24 + 1
+       0        0        0     1 PROVIDE(__rc26 = __rc25 + 1)
+       0        0        0     1 __rc27 = __rc26 + 1
+       0        0        0     1 PROVIDE(__rc28 = __rc27 + 1)
+       0        0        0     1 __rc29 = __rc28 + 1
+       0        0        0     1 PROVIDE(__rc30 = __rc29 + 1)
+       0        0        0     1 __rc31 = __rc30 + 1
+       0        0        0     1 __basic_zp_size = __basic_zp_end - __basic_zp_start
+    2001     2001       16     1 .basic_header
+    2001     2001       16     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/basic-header.o:(.basic_header)
+    2015     2015        0     1                 next_line
+      22       22        0     1 .zp.data
+      22       22        0     1         __zp_data_start = .
+      22       22        0     1 __zp_data_load_start = LOADADDR(.zp.data)
+      22       22        0     1 __zp_data_size = SIZEOF(.zp.data)
+      22       22        0     1 .zp.bss
+      22       22        0     1         __zp_bss_start = .
+      22       22        0     1 __zp_bss_size = SIZEOF(.zp.bss)
+    2017     2017     58c0     1 .text
+    2017     2017        0     1         _init = .
+    2017     2017        0     1         _start = .
+    2017     2017       61     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/startup_45gs02-659901.o:(.init.008)
+    2017     2017        0     1                 m2rb_startup
+    2078     2078        0     1                 m2rb_normalized
+    2078     2078        8     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(init-stack.S.obj):(.init.100)
+    2078     2078        0     1                 __do_init_stack
+    2080     2080        3     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(zero-bss.c.obj):(.init.200)
+    2080     2080        0     1                 __do_zero_bss
+    2083     2083        3     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/common/lib/crt0.o:(.call_main)
+    2086     2086        3     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(exit-custom.S.obj):(.after_main)
+    2086     2086        0     1                 __after_main
+    2089     2089        0     1         _fini = .
+    2089     2089        1     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/common/lib/crt0.o:(.fini_rts)
+    208a     208a      140     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/qualification_45gs02-c441d4.o:(.text.r0f_pf)
+    208a     208a        0     1                 r0f_pf_enter
+    20ea     20ea        0     1                 r0f_pf_start_irq
+    2101     2101        0     1                 r0f_pf_stop_irq
+    210d     210d        0     1                 r0f_pf_irq
+    2139     2139        0     1                 r0f_pf_nmi
+    2141     2141        0     1                 r0f_pf_flat_copy
+    217e     217e        0     1                 r0f_pf_register_probe
+    21ca     21ca       b4     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/combined_45gs02-7978e6.o:(.text.r0fc_platform)
+    21ca     21ca        0     1                 r0fc_rom_toggle
+    21ed     21ed        0     1                 r0fc_stack_seed
+    2234     2234        0     1                 r0fc_stack_measure
+    227e     227e        4     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/startup_45gs02-659901.o:(.text.m2rb_early_stop)
+    227e     227e        0     1                 m2rb_early_stop
+    2282     2282       13     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(zero-bss.c.obj):(.text.__zero_bss)
+    2282     2282       13     1                 __zero_bss
+    2295     2295       77     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.m2_point_valid)
+    2295     2295       77     1                 m2_point_valid
+    230c     230c      2cf     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.m2_fixture_segment)
+    230c     230c      2cf     1                 m2_fixture_segment
+    25db     25db       31     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.m2w_i32)
+    25db     25db       31     1                 m2w_i32
+    260c     260c       29     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.m2w_negate)
+    260c     260c       29     1                 m2w_negate
+    2635     2635       4b     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.m2w_add)
+    2635     2635       4b     1                 m2w_add
+    2680     2680       15     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.m2w_double)
+    2680     2680       15     1                 m2w_double
+    2695     2695       66     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.m2w_compare)
+    2695     2695       66     1                 m2w_compare
+    26fb     26fb       59     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.m2w_positive)
+    26fb     26fb       59     1                 m2w_positive
+    2754     2754       5b     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.m2w_narrow)
+    2754     2754       5b     1                 m2w_narrow
+    27af     27af       ad     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.m2l_multiply)
+    27af     27af       ad     1                 m2l_multiply
+    285c     285c       6b     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.magnitude)
+    285c     285c       6b     1                 magnitude
+    28c7     28c7       5d     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.m2l_divide)
+    28c7     28c7       5d     1                 m2l_divide
+    2924     2924      1bf     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.m2l_service)
+    2924     2924      1bf     1                 m2l_service
+    2ae3     2ae3      13f     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.finish)
+    2ae3     2ae3      13f     1                 finish
+    2c22     2c22       28     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.remainder_double)
+    2c22     2c22       28     1                 remainder_double
+    2c4a     2c4a       2f     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.remainder_ge)
+    2c4a     2c4a       2f     1                 remainder_ge
+    2c79     2c79        5     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.m2c_prepare_begin)
+    2c79     2c79        5     1                 m2c_prepare_begin
+    2c7e     2c7e       24     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.start)
+    2c7e     2c7e       24     1                 start
+    2ca2     2ca2       26     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.m2c_prepare_service)
+    2ca2     2ca2       26     1                 m2c_prepare_service
+    2cc8     2cc8      c12     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.m2_command_service)
+    2cc8     2cc8      c12     1                 m2_command_service
+    38da     38da      105     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.bind)
+    38da     38da      105     1                 bind
+    39df     39df       f5     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.operand)
+    39df     39df       f5     1                 operand
+    3ad4     3ad4       be     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.sine)
+    3ad4     3ad4       be     1                 sine
+    3b92     3b92       16     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.jump)
+    3b92     3b92       16     1                 jump
+    3ba8     3ba8       7d     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.m2c_project_begin)
+    3ba8     3ba8       7d     1                 m2c_project_begin
+    3c25     3c25       43     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.m2c_project_service)
+    3c25     3c25       43     1                 m2c_project_service
+    3c68     3c68        4     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.m2c_horizon_begin)
+    3c68     3c68        4     1                 m2c_horizon_begin
+    3c6c     3c6c       46     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.m2c_horizon_service)
+    3c6c     3c6c       46     1                 m2c_horizon_service
+    3cb2     3cb2       f4     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.m2_camera_valid)
+    3cb2     3cb2       f4     1                 m2_camera_valid
+    3da6     3da6      243     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.m2_raster_begin)
+    3da6     3da6      243     1                 m2_raster_begin
+    3fe9     3fe9      107     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.m2_raster_next)
+    3fe9     3fe9      107     1                 m2_raster_next
+    40f0     40f0       81     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.m2_camera_same)
+    40f0     40f0       81     1                 m2_camera_same
+    4171     4171      13f     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.m2_bundle_fields)
+    4171     4171      13f     1                 m2_bundle_fields
+    42b0     42b0       24     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.m1_core_init)
+    42b0     42b0       24     1                 m1_core_init
+    42d4     42d4      12c     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.m1_command)
+    42d4     42d4      12c     1                 m1_command
+    4400     4400      32d     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.m1_tick)
+    4400     4400      32d     1                 m1_tick
+    472d     472d       67     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.m1_input_sample)
+    472d     472d       67     1                 m1_input_sample
+    4794     4794       6c     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.m1_extract)
+    4794     4794       6c     1                 m1_extract
+    4800     4800       95     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.m1_publish)
+    4800     4800       95     1                 m1_publish
+    4895     4895      104     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.m1_acquire)
+    4895     4895      104     1                 m1_acquire
+    4999     4999       10     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.m1_release)
+    4999     4999       10     1                 m1_release
+    49a9     49a9       1f     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.m2rb_input_edges)
+    49a9     49a9       1f     1                 m2rb_input_edges
+    49c8     49c8       b6     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.m2rb_camera_init)
+    49c8     49c8       b6     1                 m2rb_camera_init
+    4a7e     4a7e        3     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.m2rb_camera_equal)
+    4a7e     4a7e        3     1                 m2rb_camera_equal
+    4a81     4a81      31b     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.m2rb_camera_edges)
+    4a81     4a81      31b     1                 m2rb_camera_edges
+    4d9c     4d9c       50     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.clamp)
+    4d9c     4d9c       50     1                 clamp
+    4dec     4dec       13     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.m2rb_renderer_init)
+    4dec     4dec       13     1                 m2rb_renderer_init
+    4dff     4dff       f4     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.m2rb_dispatch)
+    4dff     4dff       f4     1                 m2rb_dispatch
+    4ef3     4ef3       4b     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.increment)
+    4ef3     4ef3       4b     1                 increment
+    4f3e     4f3e       ea     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.begin)
+    4f3e     4f3e       ea     1                 begin
+    5028     5028       3f     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.prepare)
+    5028     5028       3f     1                 prepare
+    5067     5067       ce     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.project)
+    5067     5067       ce     1                 project
+    5135     5135      13c     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.background)
+    5135     5135      13c     1                 background
+    5271     5271       57     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.copy_tile)
+    5271     5271       57     1                 copy_tile
+    52c8     52c8      15f     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.line)
+    52c8     52c8      15f     1                 line
+    5427     5427      14a     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.text)
+    5427     5427      14a     1                 text
+    5571     5571       39     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.commit)
+    5571     5571       39     1                 commit
+    55aa     55aa        c     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.fail)
+    55aa     55aa        c     1                 fail
+    55b6     55b6       a7     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.m2rb_text_row)
+    55b6     55b6       a7     1                 m2rb_text_row
+    565d     565d      231     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.number)
+    565d     565d      231     1                 number
+    588e     588e       da     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.m2rb_glyph)
+    588e     588e       da     1                 m2rb_glyph
+    5968     5968       cc     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.m2rb_guard)
+    5968     5968       cc     1                 m2rb_guard
+    5a34     5a34      262     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.m1_platform_begin)
+    5a34     5a34      262     1                 m1_platform_begin
+    5c96     5c96        3     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.m1_platform_now)
+    5c96     5c96        3     1                 m1_platform_now
+    5c99     5c99       16     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.m1_platform_period)
+    5c99     5c99       16     1                 m1_platform_period
+    5caf     5caf       11     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.m1_platform_key)
+    5caf     5caf       11     1                 m1_platform_key
+    5cc0     5cc0       12     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.m1_platform_fault)
+    5cc0     5cc0       12     1                 m1_platform_fault
+    5cd2     5cd2        9     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.cfput16)
+    5cd2     5cd2        9     1                 cfput16
+    5cdb     5cdb       1d     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.cfput32)
+    5cdb     5cdb       1d     1                 cfput32
+    5cf8     5cf8       38     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.cfline)
+    5cf8     5cf8       38     1                 cfline
+    5d30     5d30        c     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.screen_byte)
+    5d30     5d30        c     1                 screen_byte
+    5d3c     5d3c      1cf     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.cfcopy)
+    5d3c     5d3c      1cf     1                 cfcopy
+    5f0b     5f0b      1bd     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.cfphysical_crc)
+    5f0b     5f0b      1bd     1                 cfphysical_crc
+    60c8     60c8       54     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.crc_byte)
+    60c8     60c8       54     1                 crc_byte
+    611c     611c       7a     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.cfentry)
+    611c     611c       7a     1                 cfentry
+    6196     6196      222     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.cfrom_begin)
+    6196     6196      222     1                 cfrom_begin
+    63b8     63b8       33     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.cfclock_begin)
+    63b8     63b8       33     1                 cfclock_begin
+    63eb     63eb       8e     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.cfnow)
+    63eb     63eb       8e     1                 cfnow
+    6479     6479      285     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.cfratio)
+    6479     6479      285     1                 cfratio
+    66fe     66fe      15f     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.r0fc_range)
+    66fe     66fe      15f     1                 r0fc_range
+    685d     685d       ba     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.inside)
+    685d     685d       ba     1                 inside
+    6917     6917      102     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.m2rb_io_write)
+    6917     6917      102     1                 m2rb_io_write
+    6a19     6a19       17     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.store_base)
+    6a19     6a19       17     1                 store_base
+    6a30     6a30      176     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.copy)
+    6a30     6a30      176     1                 copy
+    6ba6     6ba6      234     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.m2rb_platform_init)
+    6ba6     6ba6      234     1                 m2rb_platform_init
+    6dda     6dda      242     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.initialize_store)
+    6dda     6dda      242     1                 initialize_store
+    701c     701c       25     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.word)
+    701c     701c       25     1                 word
+    7041     7041       a9     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.m2rb_io_commit)
+    7041     7041       a9     1                 m2rb_io_commit
+    70ea     70ea       21     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.raster)
+    70ea     70ea       21     1                 raster
+    710b     710b       52     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.m2rb_platform_keys)
+    710b     710b       52     1                 m2rb_platform_keys
+    715d     715d      259     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.main)
+    715d     715d      259     1                 main
+    73b6     73b6        5     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.stop)
+    73b6     73b6        5     1                 stop
+    73bb     73bb        5     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.exit)
+    73bb     73bb        5     1                 exit
+    73c0     73c0       24     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.memcpy)
+    73c0     73c0       24     1                 memcpy
+    73e4     73e4       3b     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.memcmp)
+    73e4     73e4       3b     1                 memcmp
+    741f     741f       1c     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.__memset)
+    741f     741f       1c     1                 __memset
+    743b     743b        b     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.__ashlqi3)
+    743b     743b        b     1                 __ashlqi3
+    7446     7446       13     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.__ashlhi3)
+    7446     7446       13     1                 __ashlhi3
+    7459     7459        b     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.__lshrqi3)
+    7459     7459        b     1                 __lshrqi3
+    7464     7464       13     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.__lshrhi3)
+    7464     7464       13     1                 __lshrhi3
+    7477     7477       17     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.__lshrsi3)
+    7477     7477       17     1                 __lshrsi3
+    748e     748e       a6     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.__umodhi3)
+    748e     748e       a6     1                 __umodhi3
+    7534     7534       d8     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.__udivmodhi4)
+    7534     7534       d8     1                 __udivmodhi4
+    760c     760c       6e     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.__modhi3)
+    760c     760c       6e     1                 __modhi3
+    767a     767a      1b2     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.__udivmodsi4)
+    767a     767a      1b2     1                 __udivmodsi4
+    782c     782c       32     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.__mulhi3)
+    782c     782c       32     1                 __mulhi3
+    785e     785e       79     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.text.__mulsi3)
+    785e     785e       79     1                 __mulsi3
+    78d7     78d7        0     1         __init_array_start = .
+    78d7     78d7        0     1         __init_array_end = .
+    78d7     78d7        0     1         __fini_array_start = .
+    78d7     78d7        0     1         __fini_array_end = .
+    78d8     78d8      843     8 .rodata
+    78d8     78d8       40     8         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.rodata.m2_command_constants)
+    78d8     78d8       40     1                 m2_command_constants
+    7918     7918      2d8     8         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.rodata.m2_sine_q46)
+    7918     7918      2d8     1                 m2_sine_q46
+    7bf0     7bf0        1     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/common/lib/libcrt.a(const.S.obj):(.rodata)
+    7bf0     7bf0        0     1                 __set_v
+    7bf1     7bf1        3     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.rodata.entries)
+    7bf1     7bf1        3     1                 entries
+    7bf4     7bf4        3     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.rodata.ends)
+    7bf4     7bf4        3     1                 ends
+    7bf7     7bf7      184     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.rodata.m2_commands)
+    7bf7     7bf7      184     1                 m2_commands
+    7d7b     7d7b       12     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.rodata.m2_bundle_fields.fixed)
+    7d7b     7d7b       12     1                 m2_bundle_fields.fixed
+    7d8d     7d8d       34     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.rodata.m2_bundle_fields.fields)
+    7d8d     7d8d       34     1                 m2_bundle_fields.fields
+    7dc1     7dc1        c     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.rodata.m2rb_camera_edges.minimum)
+    7dc1     7dc1        c     1                 m2rb_camera_edges.minimum
+    7dcd     7dcd        c     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.rodata.m2rb_camera_edges.maximum)
+    7dcd     7dcd        c     1                 m2rb_camera_edges.maximum
+    7dd9     7dd9        9     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.rodata.m2rb_segment_ids)
+    7dd9     7dd9        9     1                 m2rb_segment_ids
+    7de2     7de2       10     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.rodata.m2rb_text_row.templates)
+    7de2     7de2       10     1                 m2rb_text_row.templates
+    7df2     7df2      16a     1         <internal>:(.rodata.str1.1)
+    7f5c     7f5c       4e     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.rodata.fields)
+    7f5c     7f5c       4e     1                 fields
+    7faa     7faa      11f     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.rodata.m2rb_glyph.rows)
+    7faa     7faa      11f     1                 m2rb_glyph.rows
+    80c9     80c9       38     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.rodata.r0fc_range.ranges)
+    80c9     80c9       38     1                 r0fc_range.ranges
+    8101     8101        d     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.rodata.m2rb_platform_keys.rows)
+    8101     8101        d     1                 m2rb_platform_keys.rows
+    810e     810e        d     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.rodata.m2rb_platform_keys.masks)
+    810e     810e        d     1                 m2rb_platform_keys.masks
+    811b     811b        0     1 .data
+    811b     811b        0     1         __data_start = .
+    811b     811b        0     1         __data_end = .
+    811b     811b        0     1 __data_load_start = LOADADDR(.data)
+    811b     811b        0     1 __data_size = SIZEOF(.data)
+    811b     811b      7e0     1 .bss
+    811b     811b        0     1         __bss_start = .
+    811b     811b        4     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.bss.period_q16)
+    811b     811b        4     1                 period_q16
+    811f     811f        1     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.bss.cfreclaimed)
+    811f     811f        1     1                 cfreclaimed
+    8120     8120        1     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.bss.backup_valid)
+    8120     8120        1     1                 backup_valid
+    8121     8121        1     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.bss.cffault)
+    8121     8121        1     1                 cffault
+    8122     8122       ff     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.bss.block)
+    8122     8122       ff     1                 block
+    8221     8221        1     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.bss.r0f_pf_cpu_port)
+    8221     8221        1     1                 r0f_pf_cpu_port
+    8222     8222        1     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.bss.r0f_pf_stack_high)
+    8222     8222        1     1                 r0f_pf_stack_high
+    8223     8223       ff     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.bss.cfworkspace)
+    8223     8223       ff     1                 cfworkspace
+    8322     8322        1     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.bss.features_open)
+    8322     8322        1     1                 features_open
+    8323     8323        1     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.bss.r0fc_trap_flags)
+    8323     8323        1     1                 r0fc_trap_flags
+    8324     8324        1     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.bss.r0fc_trap_base)
+    8324     8324        1     1                 r0fc_trap_base
+    8325     8325        1     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.bss.r0f_pf_nmi_seen)
+    8325     8325        1     1                 r0f_pf_nmi_seen
+    8326     8326        2     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.bss.r0f_pf_irq_count)
+    8326     8326        2     1                 r0f_pf_irq_count
+    8328     8328        1     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.bss.r0fc_hardware_low)
+    8328     8328        1     1                 r0fc_hardware_low
+    8329     8329        2     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.bss.r0fc_software_low)
+    8329     8329        2     1                 r0fc_software_low
+    832b     832b        1     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.bss.r0f_pf_irq_seq)
+    832b     832b        1     1                 r0f_pf_irq_seq
+    832c     832c        1     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.bss.r0f_pf_irq_seen)
+    832c     832c        1     1                 r0f_pf_irq_seen
+    832d     832d        7     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.bss.r0f_pf_probe_regs)
+    832d     832d        7     1                 r0f_pf_probe_regs
+    8334     8334        1     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.bss.r0f_pf_copy_ok)
+    8334     8334        1     1                 r0f_pf_copy_ok
+    8335     8335        2     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.bss.r0f_pf_probe_timeout)
+    8335     8335        2     1                 r0f_pf_probe_timeout
+    8337     8337        1     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.bss.r0fc_features)
+    8337     8337        1     1                 r0fc_features
+    8338     8338        1     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.bss.r0fc_hardware_seed)
+    8338     8338        1     1                 r0fc_hardware_seed
+    8339     8339        2     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.bss.r0fc_software_seed)
+    8339     8339        2     1                 r0fc_software_seed
+    833b     833b        1     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.bss.initialized)
+    833b     833b        1     1                 initialized
+    833c     833c        1     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.bss.enabled)
+    833c     833c        1     1                 enabled
+    833d     833d        1     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.bss.front)
+    833d     833d        1     1                 front
+    833e     833e       40     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.bss.buffer)
+    833e     833e       40     1                 buffer
+    837e     837e        2     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.bss.top)
+    837e     837e        2     1                 top
+    8380     8380        9     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.bss.r0f_pf_copy_request)
+    8380     8380        9     1                 r0f_pf_copy_request
+    8389     8389        1     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.bss.m2rb_launch_authorized)
+    8389     8389        1     1                 m2rb_launch_authorized
+    838a     838a       40     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.bss.core)
+    838a     838a       40     1                 core
+    83ca     83ca       16     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.bss.camera)
+    83ca     83ca       16     1                 camera
+    83e0     83e0      4c1     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.bss.renderer)
+    83e0     83e0      4c1     1                 renderer
+    88a1     88a1        2     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.bss.camera_input.0)
+    88a1     88a1        2     1                 camera_input.0
+    88a3     88a3        1     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.bss.input.0)
+    88a3     88a3        1     1                 input.0
+    88a4     88a4       2e     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.bss.snapshots)
+    88a4     88a4       2e     1                 snapshots
+    88d2     88d2        4     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.bss.m2rb_replay_checkpoint)
+    88d2     88d2        4     1                 m2rb_replay_checkpoint
+    88d6     88d6       20     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.bss.m2rb_target_budgets)
+    88d6     88d6       20     1                 m2rb_target_budgets
+    88f6     88f6        4     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.bss.m2rb_guard_budget)
+    88f6     88f6        4     1                 m2rb_guard_budget
+    88fa     88fa        1     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.bss.m2rb_status)
+    88fa     88fa        1     1                 m2rb_status
+    88fb     88fb        0     1         __bss_end = .
+    88fb     88fb        0     1 __bss_size = SIZEOF(.bss)
+    88fb     88fb       35     1 .noinit
+    88fb     88fb       35     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.noinit..Lstatic_stack)
+    8930     8930        0     1         __heap_start = ALIGN(., 2)
+    8930     8930        0     1 __stack = 0xd000
+       0        0       cc     1 .comment
+       0        0       cc     1         <internal>:(.comment)
+       0        0       1e     1 .llvm_sympart
+       0        0        f     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.llvm_sympart)
+       f        f        f     1         /private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/target-1793382249042750000/UNADMITTED.prg.lto.o:(.llvm_sympart)
+       0        0     14a0     4 .symtab
+       0        0     14a0     4         <internal>:(.symtab)
+       0        0       72     1 .shstrtab
+       0        0       72     1         <internal>:(.shstrtab)
+       0        0      e1b     1 .strtab
+       0        0      e1b     1         <internal>:(.strtab)

@@ -4,6 +4,7 @@
 #include "io.h"
 #include "m2_fixture.h"
 #include "m2_rebuild.h"
+#include "m2_record_private.h"
 
 static void increment(uint32_t *value)
 {
@@ -26,17 +27,6 @@ void m2rb_renderer_init(M2RebuildRenderer *renderer)
 }
 
 // Compare the immutable capture, never merely a caller-supplied revision number.
-static uint8_t same_camera(const M2Camera *first, const M2Camera *last)
-{
-    if (first->revision != last->revision || first->yaw != last->yaw
-        || first->pitch != last->pitch || first->roll != last->roll)
-    {
-        return 0u;
-    }
-    return (uint8_t)(memcmp(first->position.v, last->position.v,
-                             sizeof(first->position.v)) == 0);
-}
-
 static void begin(M2RebuildRenderer *renderer, M1Snapshots *pool,
                   const M2Camera *camera)
 {
@@ -94,15 +84,11 @@ static void prepare(M2RebuildRenderer *renderer)
         renderer->preparing_horizon = 1u;
         return;
     }
-    M2RebuildBundle *bundle = &renderer->bundles[renderer->destination];
-    if (!m2_registration_prepared(&renderer->prepared, renderer->generation,
-            renderer->snapshot.tick, renderer->destination, &bundle->registration))
+    if (!m2_bundle_fields(renderer, 0u))
     {
         fail(renderer, 3u);
         return;
     }
-    bundle->composition_revision = M2RB_COMPOSITION_REVISION;
-    bundle->checksum = renderer->snapshot.checksum;
     increment(&renderer->prepared_count);
     renderer->phase = M2RB_PROJECT;
 }
@@ -255,31 +241,9 @@ static void text(M2RebuildRenderer *renderer, uint32_t current_tick)
     renderer->phase = M2RB_COPY;
 }
 
-static uint8_t bundle_valid(const M2RebuildRenderer *renderer)
-{
-    const M2RebuildBundle *bundle = &renderer->bundles[renderer->destination];
-    const M2Registration *record = &bundle->registration;
-    if (renderer->prepared.ready != 1u || renderer->tile_index != 960u
-        || bundle->composition_revision != M2RB_COMPOSITION_REVISION
-        || bundle->checksum != renderer->snapshot.checksum
-        || record->composition_revision != M2_COMPOSITION_REVISION
-        || record->fixture_revision != M2_FIXTURE_REVISION
-        || record->projection_revision != M2_PROJECTION_REVISION
-        || record->generation != renderer->generation
-        || record->source_tick != renderer->snapshot.tick
-        || record->store != renderer->destination
-        || record->view_id != 0u || record->tier_id != 0u
-        || !same_camera(&record->camera, &renderer->prepared.camera))
-    {
-        return 0u;
-    }
-    return (uint8_t)(memcmp(record->transform.m, renderer->prepared.rotation.m,
-                             sizeof(record->transform.m)) == 0);
-}
-
 static void commit(M2RebuildRenderer *renderer)
 {
-    if (!bundle_valid(renderer))
+    if (!m2_bundle_fields(renderer, 1u))
     {
         fail(renderer, 5u);
         return;
@@ -309,7 +273,7 @@ uint8_t m2rb_dispatch(M2RebuildRenderer *renderer, M1Snapshots *pool,
         return 0u;
     }
     if (renderer->phase != M2RB_BEGIN
-        && !same_camera(wanted, &renderer->prepared.camera))
+        && !m2_camera_same(wanted, &renderer->prepared.camera))
     {
         renderer->prepared.ready = 0u;
         memset(renderer->visible, 0, sizeof(renderer->visible));

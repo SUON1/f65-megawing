@@ -1,4 +1,6 @@
-// Graphics-owned arithmetic continuation. Never serialized or shared with Core.
+// Graphics-owned continuation. Bound ports refer to this stable object and
+// captured prepared/horizon addresses. An active copy or changed binding fails
+// closed; restart/cancellation must call begin before using a relocated copy.
 #pragma once
 #include "m2_limb.h"
 #include "m2_prepared_private.h"
@@ -10,6 +12,8 @@ _Static_assert(M2_ROTATION_SCALE == (1LL << 46u), "Q46 contract changed");
 _Static_assert(M2_SCREEN_SCALE == (1L << 16u), "Q16 contract changed");
 _Static_assert(M2_VERTICAL_NUM == 2 && M2_VERTICAL_DEN == 5, "clip planes changed");
 _Static_assert(M2_WIDTH == 320 && M2_HEIGHT == 128 && M2_FOCAL == 160, "projection changed");
+_Static_assert(M2_RASTER_POINTS >= M2_WIDTH && M2_RASTER_POINTS >= M2_HEIGHT,
+    "checked raster extent exceeds capacity");
 _Static_assert(M2_WORLD_LIMIT_FT == 65536 && M2_NORTH_LIMIT_FT == 12000
     && M2_EAST_LIMIT_FT == 6000 && M2_HEIGHT_MAX_FT == 3000
     && M2_HEIGHT_MIN_FT == 10 && M2_TILT_LIMIT_DEG == 60
@@ -27,12 +31,15 @@ typedef struct
     M2Wide temporary;
     M2Point endpoints[2];
     M2Line line;
+    uint8_t *ports[25];
     uint8_t state;
-    uint8_t index;
-    uint8_t endpoint;
-    uint8_t row;
-    uint8_t axis;
-    uint8_t plane;
+    uint8_t kind;
+    uint8_t waiting;
+    uint8_t bound;
+    uint8_t product_ready;
+    uint8_t return_pc;
+    uint8_t return_active;
+    uint8_t counters[3];
     uint8_t outside;
     uint8_t inside;
 } M2Compact;
