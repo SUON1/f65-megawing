@@ -1,0 +1,3 @@
+default world exact comparison: sky 16000 ground 24874 runway 86 pixels
+HORIZON PASS: 16588800 exact pixels, max 469 preparation services (not cycles)
+Assertion failed: (cancelled.phase == M2RB_PREPARE && cancelled.geometry.job.phase == 0u), function cancel_every_numeric_boundary, file host.c, line 499.

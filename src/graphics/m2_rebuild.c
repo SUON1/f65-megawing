@@ -33,14 +33,8 @@ static uint8_t same_camera(const M2Camera *first, const M2Camera *last)
     {
         return 0u;
     }
-    for (uint8_t axis = 0u; axis < 3u; ++axis)
-    {
-        if (first->position.v[axis] != last->position.v[axis])
-        {
-            return 0u;
-        }
-    }
-    return 1u;
+    return (uint8_t)(memcmp(first->position.v, last->position.v,
+                             sizeof(first->position.v)) == 0);
 }
 
 static void begin(M2RebuildRenderer *renderer, M1Snapshots *pool,
@@ -72,6 +66,9 @@ static void begin(M2RebuildRenderer *renderer, M1Snapshots *pool,
     renderer->tile_index = 0u;
     renderer->tile_row = 0u;
     renderer->raster_active = 0u;
+    renderer->preparing_horizon = 0u;
+    renderer->geometry_active = 0u;
+    m2c_prepare_begin(&renderer->geometry);
     renderer->rejected = pool->rejected;
     memset(renderer->visible, 0, sizeof(renderer->visible));
     renderer->phase = M2RB_PREPARE;
@@ -79,9 +76,22 @@ static void begin(M2RebuildRenderer *renderer, M1Snapshots *pool,
 
 static void prepare(M2RebuildRenderer *renderer)
 {
-    if (!m2_prepare(&renderer->prepared, &renderer->prepared.camera))
+    int8_t result = renderer->preparing_horizon
+        ? m2c_horizon_service(&renderer->horizon, &renderer->geometry, &renderer->prepared)
+        : m2c_prepare_service(&renderer->geometry, &renderer->prepared);
+    if (result < 0)
     {
         fail(renderer, 3u);
+        return;
+    }
+    if (result == 0)
+    {
+        return;
+    }
+    if (!renderer->preparing_horizon)
+    {
+        m2c_horizon_begin(&renderer->horizon);
+        renderer->preparing_horizon = 1u;
         return;
     }
     M2RebuildBundle *bundle = &renderer->bundles[renderer->destination];
@@ -99,22 +109,33 @@ static void prepare(M2RebuildRenderer *renderer)
 
 static void project(M2RebuildRenderer *renderer)
 {
-    M2Point first;
-    M2Point last;
-    if (!m2_fixture_segment(M2_FIXTURE_REVISION,
-            m2rb_segment_ids[renderer->segment], &first, &last))
+    if (!renderer->geometry_active)
     {
-        fail(renderer, 3u);
+        M2Point first;
+        M2Point last;
+        if (!m2_fixture_segment(M2_FIXTURE_REVISION,
+                m2rb_segment_ids[renderer->segment], &first, &last)
+            || !m2c_project_begin(&renderer->geometry, &first, &last))
+        {
+            fail(renderer, 3u);
+            return;
+        }
+        renderer->geometry_active = 1u;
         return;
     }
-    int8_t visible = m2_project_prepared(&renderer->prepared, &first, &last,
+    int8_t visible = m2c_project_service(&renderer->geometry, &renderer->prepared,
                                          &renderer->lines[renderer->segment]);
     if (visible < 0)
     {
         fail(renderer, 3u);
         return;
     }
-    renderer->visible[renderer->segment] = (uint8_t)visible;
+    if (visible == 0)
+    {
+        return;
+    }
+    renderer->geometry_active = 0u;
+    renderer->visible[renderer->segment] = (uint8_t)(visible == 1);
     increment(&renderer->projected_count);
     ++renderer->segment;
     if (renderer->segment == M2RB_SEGMENTS)
@@ -129,16 +150,12 @@ static void background(M2RebuildRenderer *renderer)
     uint16_t x = (uint16_t)((renderer->tile_index % M2RB_COLUMNS) * 8u);
     uint16_t y = (uint16_t)((renderer->tile_index / M2RB_COLUMNS) * 8u
         + renderer->tile_row);
-    // Exactly eight full-precision common-horizon classifications per quantum.
+    // Exact cached scanline boundaries: no wide arithmetic in tile painting.
     for (uint8_t column = 0u; column < 8u; ++column)
     {
-        int8_t ground = m2_ground_prepared(&renderer->prepared,
-                                          (uint16_t)(x + column), y);
-        if (ground < 0)
-        {
-            fail(renderer, 3u);
-            return;
-        }
+        uint8_t ground = renderer->horizon.positive
+            ? x + column >= renderer->horizon.boundary[y]
+            : x + column < renderer->horizon.boundary[y];
         renderer->tile[renderer->tile_row * 8u + column]
             = ground ? M2RB_GROUND : M2RB_SKY;
     }
@@ -256,14 +273,8 @@ static uint8_t bundle_valid(const M2RebuildRenderer *renderer)
     {
         return 0u;
     }
-    for (uint8_t i = 0u; i < 9u; ++i)
-    {
-        if (record->transform.m[i] != renderer->prepared.rotation.m[i])
-        {
-            return 0u;
-        }
-    }
-    return 1u;
+    return (uint8_t)(memcmp(record->transform.m, renderer->prepared.rotation.m,
+                             sizeof(record->transform.m)) == 0);
 }
 
 static void commit(M2RebuildRenderer *renderer)

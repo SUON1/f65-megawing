@@ -77,7 +77,8 @@ static void publish(M1Snapshots *pool, uint32_t tick)
 static void until(M2RebuildRenderer *renderer, M1Snapshots *pool,
                   const M2Camera *camera, uint8_t phase)
 {
-    for (uint32_t work = 0u; work < 16000u; ++work)
+    // Nine <=2500-step projections + horizon/paint/copy/raster/text <32768.
+    for (uint32_t work = 0u; work < 32768u; ++work)
     {
         if (renderer->phase == phase)
         {
@@ -220,7 +221,7 @@ static void complete_frame(const char *output)
     m2rb_text_row(&renderer, 6u);
     assert(memcmp(renderer.text, "ALTITUDE: NOT IMPLEMENTED", 25u) == 0);
     m2rb_text_row(&renderer, 7u);
-    assert(memcmp(renderer.text, "AIRSPEED: NOT IMPLEMENTED", 25u) == 0);
+    assert(memcmp(renderer.text + 15u, "AIRSPEED: NOT IMPLEMENTED", 25u) == 0);
     commit_result = 0;
     assert(dispatch(&renderer, &pool, &camera, 1u));
     assert(!renderer.shown && renderer.phase == M2RB_COMMIT);
@@ -417,6 +418,98 @@ static void held_and_replay(void)
     m1_release(&pools[2], held);
 }
 
+static void exact_horizon_spans(void)
+{
+    static const int16_t tilts[] = {-60,-59,-45,-1,0,1,45,59,60};
+    uint32_t comparisons = 0u;
+    uint16_t maximum_work = 0u;
+    for (uint8_t pitch = 0u; pitch < sizeof(tilts) / sizeof(tilts[0]); ++pitch)
+    {
+        for (uint8_t roll = 0u; roll < sizeof(tilts) / sizeof(tilts[0]); ++roll)
+        {
+            for (uint16_t yaw = 0u; yaw < 360u; yaw += 89u)
+            {
+                M2Camera camera;
+                m2rb_camera_init(&camera);
+                camera.pitch = tilts[pitch];
+                camera.roll = tilts[roll];
+                camera.yaw = (int16_t)yaw;
+                struct M2Prepared prepared;
+                assert(m2_prepare(&prepared, &camera));
+                M2Compact work;
+                M2Horizon horizon;
+                m2c_horizon_begin(&horizon);
+                uint16_t count = 0u;
+                int8_t result;
+                do
+                {
+                    result = m2c_horizon_service(&horizon, &work, &prepared);
+                    assert(++count <= 469u && result >= 0);
+                } while (result == 0);
+                if (count > maximum_work)
+                {
+                    maximum_work = count;
+                }
+                for (uint16_t y = 0u; y < 128u; ++y)
+                {
+                    for (uint16_t x = 0u; x < 320u; ++x)
+                    {
+                        int64_t down = prepared.rotation.m[2] * 320L
+                            + prepared.rotation.m[5] * (2L * x - 319L)
+                            + prepared.rotation.m[8] * (2L * y - 127L);
+                        uint8_t ground = horizon.positive ? x >= horizon.boundary[y]
+                                                         : x < horizon.boundary[y];
+                        assert(ground == (down > 0));
+                        ++comparisons;
+                    }
+                }
+            }
+        }
+    }
+    printf("HORIZON PASS: %u exact pixels, max %u preparation services (not cycles)\n",
+           comparisons, maximum_work);
+}
+
+static void cancel_every_numeric_boundary(void)
+{
+    M2RebuildRenderer renderer;
+    M1Snapshots pool = {0};
+    M2Camera camera;
+    m2rb_camera_init(&camera);
+    m2rb_renderer_init(&renderer);
+    reset_backend();
+    publish(&pool, 42u);
+    uint32_t cutpoints = 0u;
+    for (uint32_t steps = 0u; steps < 23000u; ++steps)
+    {
+        if (renderer.phase == M2RB_BACKGROUND)
+        {
+            printf("CANCELLATION PASS: %u numeric continuation cutpoints\n", cutpoints);
+            return;
+        }
+        if (renderer.phase == M2RB_PREPARE || renderer.phase == M2RB_PROJECT)
+        {
+            M2RebuildRenderer cancelled = renderer;
+            M1Snapshots cancelled_pool = pool;
+            M2Camera changed = camera;
+            assert(m2rb_camera_edges(&changed, M2RB_YAW_RIGHT) == 1);
+            assert(dispatch(&cancelled, &cancelled_pool, &changed, 1u));
+            assert(cancelled.phase == M2RB_BEGIN && !cancelled.prepared.ready);
+            assert(cancelled.cancellations == 1u && copies == 0u);
+            // The captured snapshot was already released. A fresh generation
+            // waits for a new publication; the cloned test must not consume
+            // the original renderer's pool.
+            publish(&cancelled_pool, 43u);
+            assert(dispatch(&cancelled, &cancelled_pool, &changed, 1u));
+            assert(cancelled.phase == M2RB_PREPARE && cancelled.geometry.job.phase == 0u);
+            assert(cancelled.prepared.camera.revision == changed.revision);
+            ++cutpoints;
+        }
+        assert(dispatch(&renderer, &pool, &camera, 1u) && !renderer.fault);
+    }
+    assert(0 && "numeric preparation must exhaust its proved cardinality");
+}
+
 int main(int argc, char **argv)
 {
     assert(argc == 2);
@@ -426,6 +519,8 @@ int main(int argc, char **argv)
     source_age_generations();
     cancellation_and_faults();
     held_and_replay();
+    exact_horizon_spans();
+    cancel_every_numeric_boundary();
     puts("HOST PASS: frame/cache/camera/horizon/cancellation/held/fault/exhaustion/guard/replay DE675132");
     printf("host workspace %zu bytes; NOT target ABI/stack/timing evidence\n", sizeof(M2RebuildRenderer));
     return 0;

@@ -1,0 +1,91 @@
+{
+  "identity": "65AERO-M2-UNBANKED-1",
+  "tier": "independent-host",
+  "commands": [
+    {
+      "argv": [
+        "/usr/bin/clang",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Wconversion",
+        "-Werror",
+        "-O2",
+        "-shared",
+        "-fPIC",
+        "-Iinterfaces/generated",
+        "-Isrc/core",
+        "-Isrc/input",
+        "-Isrc/presentation",
+        "-Isrc/environment",
+        "-Isrc/graphics",
+        "-Isrc/diagnostics/m2_rebuild",
+        "-Isrc/platform/m2_rebuild",
+        "-Isrc/platform/m1",
+        "-Isrc/diagnostics/r0f",
+        "src/environment/m2_fixture.c",
+        "src/graphics/m2_limb.c",
+        "src/graphics/m2_compact.c",
+        "src/graphics/m2_compact_public.c",
+        "interfaces/generated/m2_tables.c",
+        "-o",
+        "/private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/arithmetic-1793345443377217000/compact.dylib"
+      ],
+      "exit": 0,
+      "log": "compact-compile.txt"
+    },
+    {
+      "argv": [
+        "/usr/bin/clang",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Wconversion",
+        "-Werror",
+        "-O2",
+        "-shared",
+        "-fPIC",
+        "-Iinterfaces/generated",
+        "-Isrc/core",
+        "-Isrc/input",
+        "-Isrc/presentation",
+        "-Isrc/environment",
+        "-Isrc/graphics",
+        "-Isrc/diagnostics/m2_rebuild",
+        "-Isrc/platform/m2_rebuild",
+        "-Isrc/platform/m1",
+        "-Isrc/diagnostics/r0f",
+        "src/environment/m2_fixture.c",
+        "src/graphics/m2_geometry.c",
+        "interfaces/generated/m2_tables.c",
+        "-o",
+        "/private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/arithmetic-1793345443377217000/native.dylib"
+      ],
+      "exit": 0,
+      "log": "native-compile.txt"
+    },
+    {
+      "argv": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-B",
+        "tests/flight_demo/m2_rebuild/limb_oracle.py",
+        "/private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/arithmetic-1793345443377217000/compact.dylib",
+        "/private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/arithmetic-1793345443377217000/native.dylib"
+      ],
+      "exit": 0,
+      "log": "bigint-native-oracle.txt"
+    }
+  ],
+  "target_executed": false,
+  "status": "PASS",
+  "inputs": {
+    "src/environment/m2_fixture.c": "bbf33786a0a3a20dbb7e45f87186406b36bcf89fd940ef496ec4a3103b5fdce1",
+    "src/graphics/m2_limb.c": "2a539ba1adcd1f537e19a9ca89ed705d820fed52153e16886c1c7f7f4de09a8e",
+    "src/graphics/m2_compact.c": "81a423e0049107ef55e5d1328d67e9e972afd72bcadb3b38433343ef11d9ff4c",
+    "src/graphics/m2_compact_public.c": "ce14e557a1d592b16ecb26e5e22ec3dbddc22ec4bbcbcbb6ec0f57a927bc5e6a",
+    "interfaces/generated/m2_tables.c": "dd23e7167eb442a80157c2e40101075f5f517e7bd57f6de5673eca1db4cb399f",
+    "src/graphics/m2_geometry.c": "55ab3d159b4cf2c96fcae8a52eecb47b6fb5631d966a180d2e2820cc72ad2607",
+    "tests/flight_demo/m2_rebuild/limb_oracle.py": "4865587fab6e1c2cf90ac923e439e472e3ca2093d6d2422e2fae7eeba3ebd3b5",
+    "tools/flight_demo/m2_rebuild/compact_validate.py": "45fe6bc9b5c8d06495c1d84e04ef4bea6cb9d08b6d83564deb514e0d8d06a7c7"
+  }
+}

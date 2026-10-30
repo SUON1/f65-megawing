@@ -1,0 +1,57 @@
+{
+  "identity": "65AERO-M2-UNBANKED-1",
+  "tier": "focused-host",
+  "commands": [
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests/flight_demo/m2_rebuild",
+        "-p",
+        "test_compact*.py",
+        "-v"
+      ],
+      "exit": 0,
+      "log": "checker-specialization.txt"
+    },
+    {
+      "argv": [
+        "/usr/bin/clang",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Wconversion",
+        "-Werror",
+        "-fsanitize=address,undefined",
+        "-Iinterfaces/generated",
+        "-Isrc/core",
+        "-Isrc/input",
+        "-Isrc/presentation",
+        "-Isrc/environment",
+        "-Isrc/graphics",
+        "-Isrc/diagnostics/m2_rebuild",
+        "-Isrc/platform/m2_rebuild",
+        "src/graphics/m2_rebuild_text.c",
+        "tests/flight_demo/m2_rebuild/text_compact.c",
+        "-o",
+        "/private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/focused-1793345691265329000/text"
+      ],
+      "exit": 1,
+      "log": "text-compile.txt"
+    }
+  ],
+  "status": "FAIL",
+  "target_executed": false,
+  "inputs": {
+    "src/graphics/m2_compact.h": "90cd5f41e56938b2e1bd832deb6f6eea12b8d5c40bb26227c07264bb96ee44f5",
+    "src/graphics/m2_rebuild_text.c": "4e2dcd0ac533432dc13c940c332ca5c05e5ec057281802e3d630233aceb727ae",
+    "tests/flight_demo/m2_rebuild/text_compact.c": "33dc6ec179075da96a6d7332b1cd7b59ea71a567f3a39836a0544208c5262729",
+    "tools/flight_demo/m2_rebuild/compact_check.py": "42ebe8cff6970ea703b3f86e624cef33f946d21ff82d8f9c7a51d38b0acf8851",
+    "tests/flight_demo/m2_rebuild/test_compact_check.py": "0134b4fd1c9c3e8450ed48a996b6133741689f61ecc8568a6c6d2539fe45f6ed",
+    "tests/flight_demo/m2_rebuild/test_compact_specialization.py": "cd826897e77627a377dbf4cbb7021735e3fe1746b0e45176bc76ba0b0097a088"
+  }
+}

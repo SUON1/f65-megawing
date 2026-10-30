@@ -1,0 +1,86 @@
+{
+  "identity": "65AERO-M2-UNBANKED-1",
+  "baseline": "9570f0ab427121a4e8f042041a14c89aaaeff9e2",
+  "baseline_resident": 32839,
+  "resident": 28049,
+  "ceiling": 24575,
+  "saving": 4790,
+  "deficit": 3474,
+  "sections": {
+    ".text": {
+      "start": 8215,
+      "bytes": 24363
+    },
+    ".rodata": {
+      "start": 32584,
+      "bytes": 1643
+    },
+    ".data": {
+      "start": 34227,
+      "bytes": 0
+    },
+    ".bss": {
+      "start": 34227,
+      "bytes": 1962
+    },
+    ".noinit": {
+      "start": 36189,
+      "bytes": 53
+    }
+  },
+  "prefix": 22,
+  "alignment": 6,
+  "renderer_bytes": 1163,
+  "geometry_continuation_bytes": 200,
+  "horizon_cache_and_state_bytes": 285,
+  "added_flags": 2,
+  "reserve_used": 0,
+  "prg": {
+    "bytes": 26036,
+    "sha256": "5cbe53fce1440ea429c5bd4e1308e1460f6bb344fe459a403b975a50ca448758"
+  },
+  "startup": "UNPROVEN; linked prefix/raw terminal sink PASS only",
+  "whole_program_stack": "UNPROVEN",
+  "hardware_stack_envelope": 256,
+  "software_stack_envelope": 4096,
+  "compiler_scratch": 53,
+  "renderer_service": "UNPROVEN",
+  "world_cadence": "UNPROVEN",
+  "xemu": "NOT RUN",
+  "visual_runtime": "NOT OBSERVED",
+  "runtime_benefit": "UNPROVEN",
+  "target_packet": "target-1793345752710330000",
+  "target_seal_sha256": "a77aab97c28e189f2027d6ff7fe648cf5343a81844d5966f1440d776d2a28ae4",
+  "stale_metadata": {
+    "path": "target-1793345752710330000/result.json",
+    "field": "service.quantum_cardinality",
+    "disposition": "Inherited baseline descriptions; superseded by report actual slot table. Sealed original unchanged."
+  },
+  "code_costs": {
+    "geometry_arithmetic": [
+      8470,
+      5730
+    ],
+    "compiler_helpers": [
+      2301,
+      1239
+    ],
+    "telemetry_font": [
+      1743,
+      946
+    ],
+    "graphics_composition_validation": [
+      4193,
+      3764
+    ],
+    "diagnostic_camera": [
+      1730,
+      1393
+    ],
+    "raster": [
+      1205,
+      1222
+    ]
+  },
+  "next_blocker": "Complete resident fit; 3474 bytes missing. No further experiment authorized in this task."
+}

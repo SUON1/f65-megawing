@@ -1,6 +1,7 @@
 // Graphics owns this private workspace. No aliasing, public ABI or serialization.
 #pragma once
 #include "m1_snapshot.h"
+#include "m2_compact.h"
 #include "m2_prepared_private.h"
 #include "m2_raster_private.h"
 #include "m2_rebuild_profile.h"
@@ -14,6 +15,8 @@ enum
 typedef struct
 {
     struct M2Prepared prepared;
+    M2Compact geometry;
+    M2Horizon horizon;
     M2Line lines[M2RB_SEGMENTS];
     M2RebuildBundle bundles[2];
     M1Snapshot snapshot;
@@ -39,6 +42,8 @@ typedef struct
     uint8_t destination;
     uint8_t shown;
     uint8_t fault;
+    uint8_t preparing_horizon;
+    uint8_t geometry_active;
 } M2RebuildRenderer;
 
 void m2rb_renderer_init(M2RebuildRenderer *renderer);
