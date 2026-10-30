@@ -1,0 +1,45 @@
+{
+  "identity": "65AERO-M2-LEAN-FAILED-CHECKPOINT-1",
+  "purpose": "preservation only; FAILED FIT EXPERIMENT - NOT FOR MERGE",
+  "command": {
+    "argv": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "/Users/slice/Developer/f65-megawing-m2-option-b/docs/evidence/flight-demo/2026-10-29-m2-option-b-checkpoint/check_publication.py"
+    ],
+    "cwd": "/Users/slice/Developer/f65-megawing-m2-option-b",
+    "exit": 0,
+    "stdout": "attempt-2/stdout.txt",
+    "stderr": "attempt-2/stderr.txt"
+  },
+  "checker_sha256": "b1f056d8277e32b01472680ea72111bf1d43780bf7542c06658a633c0c400214",
+  "evidence_tier": "PUBLICATION_STATIC_ONLY",
+  "rendering_oracle_tests_rerun": false,
+  "target_relinked": false,
+  "experiment_source_changed_for_publication": false,
+  "merge_authorized": false,
+  "prior_check_failure": "attempt-1/checks.json; archived WIP links now checked in original root context",
+  "results": {
+    "scope": "PASS",
+    "syntax": "PASS",
+    "whitespace": "PASS",
+    "artifact_guard": "PASS",
+    "preservation": "PASS",
+    "reviewed_files": 16135,
+    "unchanged_live_files": 16134,
+    "WIP_preimage": "preserved; only prior file changed for publication",
+    "sealed_experiment_members": 46,
+    "unrelated_paths": 480,
+    "source_tests_handoff_measured_results": "UNCHANGED",
+    "horizon_code_delta": 778,
+    "telemetry_code_delta": -271,
+    "resident_delta": 556,
+    "resident_bytes": 33395,
+    "resident_limit": 24575,
+    "fit": "FAIL",
+    "runtime_benefit": "UNPROVEN",
+    "xemu": "NOT RUN",
+    "physical_testing": "NOT RUN",
+    "candidate_path_count": 68
+  }
+}

@@ -417,9 +417,49 @@ static void held_and_replay(void)
     m1_release(&pools[2], held);
 }
 
+// Compare every sky/ground sample before runway overdraw against the unchanged
+// full-width public predicate, across yaw and both tilt extrema.
+static void horizon_traversal(void)
+{
+    const int16_t yaw[] = {0, 90, 180, 359};
+    const int16_t tilt[] = {-60, 0, 60};
+    for (uint8_t a = 0u; a < 4u; ++a)
+    {
+        for (uint8_t b = 0u; b < 3u; ++b)
+        {
+            for (uint8_t c = 0u; c < 3u; ++c)
+            {
+                M2RebuildRenderer renderer;
+                M1Snapshots pool = {0};
+                M2Camera camera;
+                m2rb_camera_init(&camera);
+                camera.yaw = yaw[a];
+                camera.pitch = tilt[b];
+                camera.roll = tilt[c];
+                m2rb_renderer_init(&renderer);
+                reset_backend();
+                publish(&pool, 42u);
+                until(&renderer, &pool, &camera, M2RB_LINE);
+                for (uint16_t y = 0u; y < M2_HEIGHT; ++y)
+                {
+                    for (uint16_t x = 0u; x < M2_WIDTH; ++x)
+                    {
+                        int8_t ground = m2_ground_prepared(&renderer.prepared, x, y);
+                        assert(ground >= 0);
+                        assert(pixel(renderer.destination, x, y)
+                            == (ground ? M2RB_GROUND : M2RB_SKY));
+                    }
+                }
+            }
+        }
+    }
+    puts("HORIZON PASS: 36 cameras / 1474560 exact pixel comparisons");
+}
+
 int main(int argc, char **argv)
 {
     assert(argc == 2);
+    horizon_traversal();
     camera_tests();
     guard_tests();
     complete_frame(argv[1]);

@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/Users/slice/Developer/f65-megawing-m2-option-b/docs/evidence/flight-demo/2026-10-29-m2-option-b-checkpoint/check_publication.py", line 129, in <module>
+    main()
+  File "/Users/slice/Developer/f65-megawing-m2-option-b/docs/evidence/flight-demo/2026-10-29-m2-option-b-checkpoint/check_publication.py", line 100, in main
+    assert destination.exists() or destination.resolve() == HERE / 'checks.json', (name,href)
+AssertionError: ('docs/evidence/flight-demo/2026-10-29-m2-option-b-checkpoint/WIP-before.md', 'docs/reports/M2_OPTION_B_LEAN_RESULT.md')

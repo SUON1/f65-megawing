@@ -62,12 +62,12 @@ def preview(raw, output):
                        + chunk(b"IDAT", zlib.compress(scanlines)) + chunk(b"IEND", b""))
 
 
-def execute(tier, sdk, output):
+def execute(tier, sdk, output, identity="65AERO-M2-MIN-REBUILD-CORRECTIONS-1"):
     # Bind the caller's SDK before commands change cwd to ROOT. Use this same
     # absolute path for lock checks, inventories, subprocesses and evidence.
     sdk = sdk.resolve() if sdk is not None else None
     output.mkdir(parents=True, exist_ok=False)
-    report = {"identity": "65AERO-M2-MIN-REBUILD-CORRECTIONS-1",
+    report = {"identity": identity,
               "profile_identity": "65AERO-M2-MIN-REBUILD-1", "base": BASE, "tier": tier,
               "head": subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip(),
               "commands": [], "target_executed": False, "execution_admitted": False,

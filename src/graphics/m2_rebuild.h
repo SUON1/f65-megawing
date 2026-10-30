@@ -18,6 +18,10 @@ typedef struct
     M2RebuildBundle bundles[2];
     M1Snapshot snapshot;
     struct M2RasterCursor raster;
+    // Exact affine horizon values; all remain resident across tile yields.
+    int64_t horizon_band;
+    int64_t horizon_tile;
+    int64_t horizon_row;
     uint32_t generation;
     uint32_t prepared_count;
     uint32_t projected_count;

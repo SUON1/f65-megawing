@@ -1,0 +1,21 @@
+{
+  "identity": "65AERO-M2-LEAN-FAILED-CHECKPOINT-1",
+  "purpose": "preservation only; FAILED FIT EXPERIMENT - NOT FOR MERGE",
+  "command": {
+    "argv": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "/Users/slice/Developer/f65-megawing-m2-option-b/docs/evidence/flight-demo/2026-10-29-m2-option-b-checkpoint/check_publication.py"
+    ],
+    "cwd": "/Users/slice/Developer/f65-megawing-m2-option-b",
+    "exit": 1,
+    "stdout": "publication-stdout.txt",
+    "stderr": "publication-stderr.txt"
+  },
+  "checker_sha256": "f46d92cb991850b7d75b591ea644a0299a80da0e072a0d092878c2102a6a22b4",
+  "evidence_tier": "PUBLICATION_STATIC_ONLY",
+  "rendering_oracle_tests_rerun": false,
+  "target_relinked": false,
+  "source_changed_for_publication": false,
+  "merge_authorized": false
+}

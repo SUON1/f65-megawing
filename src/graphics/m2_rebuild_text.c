@@ -3,15 +3,6 @@
 
 #include "m2_rebuild.h"
 
-static uint8_t label(char text[40], uint8_t column, const char *value)
-{
-    while (*value != '\0' && column < 40u)
-    {
-        text[column++] = *value++;
-    }
-    return column;
-}
-
 static uint8_t hex(char text[40], uint8_t column, uint32_t value, uint8_t digits)
 {
     static const char alphabet[] = "0123456789ABCDEF";
@@ -41,62 +32,68 @@ static uint8_t decimal(char text[40], uint8_t column, int32_t value,
     return (uint8_t)(column + digits);
 }
 
+// Control bytes select numeric fields; all printable bytes are literal labels.
+// This private recipe preserves the existing 40-column telemetry contract.
+static uint32_t field(const M2RebuildRenderer *renderer, uint8_t id)
+{
+    const M2Camera *camera = &renderer->prepared.camera;
+    switch (id)
+    {
+        case 1u: return renderer->snapshot.tick;
+        case 2u: return renderer->snapshot.commands;
+        case 3u: return renderer->generation;
+        case 4u: return camera->revision;
+        case 5u: return renderer->source_age_at_text;
+        case 6u: return renderer->snapshot.fault;
+        case 7u: return renderer->rejected;
+        case 8u: return (uint32_t)(camera->position.v[0] / M2_POSITION_SCALE);
+        case 9u: return (uint32_t)(camera->position.v[1] / M2_POSITION_SCALE);
+        case 10u: return (uint32_t)(-camera->position.v[2] / M2_POSITION_SCALE);
+        case 11u: return (uint32_t)camera->yaw;
+        case 12u: return (uint32_t)camera->pitch;
+        default: return (uint32_t)camera->roll;
+    }
+}
+
 void m2rb_text_row(M2RebuildRenderer *renderer, uint8_t row)
 {
-    char *text = renderer->text;
-    const M2Camera *camera = &renderer->prepared.camera;
-    uint8_t column = 0u;
-    memset(text, ' ', 40u);
-    switch (row)
+    static const char *const recipes[8] = {
+        "NON-FLIGHT DIAGNOSTIC M2 REBUILD",
+        "TICK \001 CMD \002", "GEN \003 CAM \004",
+        "AGE AT TEXT \005 F \006 REJ \007",
+        "CAM N\010 E\011 H\012 FT", "YAW\013 PITCH\014 ROLL\015",
+        "ALTITUDE: NOT IMPLEMENTED", "AIRSPEED: NOT IMPLEMENTED"
+    };
+    memset(renderer->text, ' ', 40u);
+    if (row >= 8u)
     {
-        case 0u:
-            (void)label(text, 0u, "NON-FLIGHT DIAGNOSTIC M2 REBUILD");
-            break;
-        case 1u:
-            column = label(text, 0u, "TICK ");
-            column = hex(text, column, renderer->snapshot.tick, 8u);
-            column = label(text, column, " CMD ");
-            (void)hex(text, column, renderer->snapshot.commands, 8u);
-            break;
-        case 2u:
-            column = label(text, 0u, "GEN ");
-            column = hex(text, column, renderer->generation, 8u);
-            column = label(text, column, " CAM ");
-            (void)hex(text, column, camera->revision, 8u);
-            break;
-        case 3u:
-            column = label(text, 0u, "AGE AT TEXT ");
-            column = hex(text, column, renderer->source_age_at_text, 8u);
-            column = label(text, column, " F ");
-            column = hex(text, column, renderer->snapshot.fault, 2u);
-            column = label(text, column, " REJ ");
-            (void)hex(text, column, renderer->rejected, 8u);
-            break;
-        case 4u:
-            column = label(text, 0u, "CAM N");
-            column = decimal(text, column, camera->position.v[0] / M2_POSITION_SCALE, 5u);
-            column = label(text, column, " E");
-            column = decimal(text, column, camera->position.v[1] / M2_POSITION_SCALE, 5u);
-            column = label(text, column, " H");
-            column = decimal(text, column, -camera->position.v[2] / M2_POSITION_SCALE, 4u);
-            (void)label(text, column, " FT");
-            break;
-        case 5u:
-            column = label(text, 0u, "YAW");
-            column = decimal(text, column, camera->yaw, 3u);
-            column = label(text, column, " PITCH");
-            column = decimal(text, column, camera->pitch, 2u);
-            column = label(text, column, " ROLL");
-            (void)decimal(text, column, camera->roll, 2u);
-            break;
-        case 6u:
-            (void)label(text, 0u, "ALTITUDE: NOT IMPLEMENTED");
-            break;
-        case 7u:
-            (void)label(text, 0u, "AIRSPEED: NOT IMPLEMENTED");
-            break;
-        default:
-            break;
+        return;
+    }
+    const char *recipe = recipes[row];
+    uint8_t column = 0u;
+    while (*recipe != '\0' && column < 40u)
+    {
+        uint8_t token = (uint8_t)*recipe++;
+        if (token >= 32u)
+        {
+            renderer->text[column++] = (char)token;
+        }
+        else if (token < 8u)
+        {
+            column = hex(renderer->text, column, field(renderer, token),
+                         token == 6u ? 2u : 8u);
+        }
+        else
+        {
+            uint8_t digits = token < 10u ? 5u : token == 10u ? 4u
+                : token == 11u ? 3u : 2u;
+            // All signed fields are within +/-12000. Interpret the defined
+            // unsigned conversion without relying on an out-of-range cast.
+            uint32_t raw = field(renderer, token);
+            int32_t value = raw <= INT32_MAX ? (int32_t)raw
+                : -(int32_t)(0u - raw);
+            column = decimal(renderer->text, column, value, digits);
+        }
     }
 }
 
