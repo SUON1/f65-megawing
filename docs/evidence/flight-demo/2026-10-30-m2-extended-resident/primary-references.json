@@ -1,0 +1,57 @@
+{
+  "xemu_commit": "40dfef0d1d5f56be2469492715c12bdb32c75b67",
+  "xemu_url": "https://github.com/lgblgblgb/xemu",
+  "core_url": "https://github.com/MEGA65/mega65-core",
+  "core_ref": "development fetched 2026-10-30; exact source Git blob and SHA below; not the physical core identity",
+  "files": [
+    {
+      "path": "mega65/gs4510.vhdl",
+      "bytes": 517734,
+      "sha256": "1437fbd99c0fd9ecf1c4ce73ec9f0b81e3671aac8421fd60b128a1e93c8ecf1c",
+      "git_blob": "0b327740e257cb4f22e1bafbf6c95837f1a18561"
+    },
+    {
+      "path": "mega65/iomap.txt",
+      "bytes": 106055,
+      "sha256": "2e887ca56fc7e3a8b199fe1013ebfb53420c40b2b8c7c08c81ef37a53c1ff588",
+      "git_blob": "06233ea9a0bfb53ee37593e310e2b8e2bcbbf99a"
+    },
+    {
+      "path": "targets/mega65/hypervisor.c",
+      "bytes": 30501,
+      "sha256": "766c0191bacb133ddedf50b14e1f825e3311174e83707ba8bc5ba877cbdc685b",
+      "git_blob": "64dafc14669ba448b2840fa19e76d20656cfcf74"
+    },
+    {
+      "path": "targets/mega65/inject.c",
+      "bytes": 16281,
+      "sha256": "32468567110414b98a7b4a91cdccaa0ae046e44c7d5eb53ceb5beede13e813c0",
+      "git_blob": "add0be13498035c43164970c71b0496ce59440e7"
+    },
+    {
+      "path": "targets/mega65/io_mapper.c",
+      "bytes": 31382,
+      "sha256": "ab5dc491ed0b2c41ac4e3c8ed6413ee1db3d9191cf75dfa6b9094adb91bcdfd0",
+      "git_blob": "44ba40f414aeb33a4cd643098ebf09a89c557f5e"
+    },
+    {
+      "path": "targets/mega65/memory_mapper.c",
+      "bytes": 51388,
+      "sha256": "46b303b76baef6ac8d66519c65e4aa41d619674e9cdadd03eedafdbdedaaf87c",
+      "git_blob": "9a95787d2d8e3b1b2734cc5818cb8b6920613ea8"
+    },
+    {
+      "path": "xemu/cpu65.c",
+      "bytes": 87131,
+      "sha256": "2f138d3da13583b8f21669fe09d802296fdf211e98826d46e16d5b546e1cfc14",
+      "git_blob": "54aff297cd3e8a1528dc06de86f24c7e3ee6e618"
+    },
+    {
+      "path": "xemu/cpu65_mega65_timings.h",
+      "bytes": 7914,
+      "sha256": "6bb84846f83975acbdff5f16e39ebe7b5e08390cb68ed0cab2a85df311b4af58",
+      "git_blob": "03ead4f0ce7d08e3812b1ca405ad60a62f2803a7"
+    }
+  ],
+  "scope": "primary source review; no emulator or hardware execution"
+}

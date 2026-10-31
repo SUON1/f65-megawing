@@ -1,0 +1,37 @@
+{
+  "identity": "65AERO-M2-EXTRES-1",
+  "contract_sha256": "f92dd42af003e039b8afccbcf9dfa4dc022256830ca2af83fcd6d6f71617229b",
+  "status": "development-only allocation; runtime admission pending",
+  "owner": "CoreRuntime bank zero; no change of owner",
+  "resident": [
+    8193,
+    36864
+  ],
+  "production_resident_unchanged": [
+    8193,
+    32768
+  ],
+  "forbidden_covering_map_block": [
+    32768,
+    40960
+  ],
+  "staging_policy": "own initial PRG load is permitted; no later loading or staging over any resident byte, including the extension",
+  "lifetime": "initial PRG load through reset",
+  "unchanged_owner_ledger": "memory/m2-rebuild-ledger.json",
+  "hardware_stack": [
+    256,
+    512
+  ],
+  "base_page": [
+    512,
+    768
+  ],
+  "software_stack": [
+    49152,
+    53248
+  ],
+  "reserve_used": 0,
+  "other_owner_allocations_changed": false,
+  "banking": false,
+  "execution_admitted": false
+}

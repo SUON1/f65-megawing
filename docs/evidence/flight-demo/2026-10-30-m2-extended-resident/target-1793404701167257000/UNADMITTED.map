@@ -1,0 +1,451 @@
+     VMA      LMA     Size Align Out     In      Symbol
+       0        0        0     1 __m2re_noinit_start = ADDR(.noinit)
+       0        0        0     1 __m2re_noinit_end = ADDR(.noinit) + SIZEOF(.noinit)
+       0        0        0     1 
+       0        0        0     1 
+       0        0        0     1 
+       0        0        0     1 
+       0        0        0     1 
+       0        0        0     1 
+       0        0        0     1 
+       0        0        0     1 
+       0        0        0     1 
+       0        0        0     1 __basic_zp_start = 0x0002
+       0        0        0     1 __basic_zp_end = 0x0090
+       0        0        0     1 __rc0 = __basic_zp_start
+       0        0        0     1 __rc1 = __rc0 + 1
+       0        0        0     1 PROVIDE(__rc2 = __rc1 + 1)
+       0        0        0     1 __rc3 = __rc2 + 1
+       0        0        0     1 PROVIDE(__rc4 = __rc3 + 1)
+       0        0        0     1 __rc5 = __rc4 + 1
+       0        0        0     1 PROVIDE(__rc6 = __rc5 + 1)
+       0        0        0     1 __rc7 = __rc6 + 1
+       0        0        0     1 PROVIDE(__rc8 = __rc7 + 1)
+       0        0        0     1 __rc9 = __rc8 + 1
+       0        0        0     1 PROVIDE(__rc10 = __rc9 + 1)
+       0        0        0     1 __rc11 = __rc10 + 1
+       0        0        0     1 PROVIDE(__rc12 = __rc11 + 1)
+       0        0        0     1 __rc13 = __rc12 + 1
+       0        0        0     1 PROVIDE(__rc14 = __rc13 + 1)
+       0        0        0     1 __rc15 = __rc14 + 1
+       0        0        0     1 PROVIDE(__rc16 = __rc15 + 1)
+       0        0        0     1 __rc17 = __rc16 + 1
+       0        0        0     1 PROVIDE(__rc18 = __rc17 + 1)
+       0        0        0     1 __rc19 = __rc18 + 1
+       0        0        0     1 PROVIDE(__rc20 = __rc19 + 1)
+       0        0        0     1 __rc21 = __rc20 + 1
+       0        0        0     1 PROVIDE(__rc22 = __rc21 + 1)
+       0        0        0     1 __rc23 = __rc22 + 1
+       0        0        0     1 PROVIDE(__rc24 = __rc23 + 1)
+       0        0        0     1 __rc25 = __rc24 + 1
+       0        0        0     1 PROVIDE(__rc26 = __rc25 + 1)
+       0        0        0     1 __rc27 = __rc26 + 1
+       0        0        0     1 PROVIDE(__rc28 = __rc27 + 1)
+       0        0        0     1 __rc29 = __rc28 + 1
+       0        0        0     1 PROVIDE(__rc30 = __rc29 + 1)
+       0        0        0     1 __rc31 = __rc30 + 1
+       0        0        0     1 __basic_zp_size = __basic_zp_end - __basic_zp_start
+    2001     2001       16     1 .basic_header
+    2001     2001       16     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/basic-header.o:(.basic_header)
+    2015     2015        0     1                 next_line
+      22       22        0     1 .zp.data
+      22       22        0     1         __zp_data_start = .
+      22       22        0     1 __zp_data_load_start = LOADADDR(.zp.data)
+      22       22        0     1 __zp_data_size = SIZEOF(.zp.data)
+      22       22        0     1 .zp.bss
+      22       22        0     1         __zp_bss_start = .
+      22       22        0     1 __zp_bss_size = SIZEOF(.zp.bss)
+    2017     2017     591e     1 .text
+    2017     2017        0     1         _init = .
+    2017     2017        0     1         _start = .
+    2017     2017       61     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/startup_45gs02-0c4702.o:(.init.008)
+    2017     2017        0     1                 m2rb_startup
+    2078     2078        0     1                 m2rb_normalized
+    2078     2078        8     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(init-stack.S.obj):(.init.100)
+    2078     2078        0     1                 __do_init_stack
+    2080     2080       5e     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/extended_startup_45gs02-7a281a.o:(.init.150)
+    2080     2080        0     1                 m2re_startup
+    20c0     20c0        0     1                 m2re_noinit_zero
+    20de     20de        0     1                 m2re_noinit_done
+    20de     20de        0     1                 m2re_startup_done
+    20de     20de        3     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(zero-bss.c.obj):(.init.200)
+    20de     20de        0     1                 __do_zero_bss
+    20e1     20e1        3     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/common/lib/crt0.o:(.call_main)
+    20e4     20e4        3     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(exit-custom.S.obj):(.after_main)
+    20e4     20e4        0     1                 __after_main
+    20e7     20e7        0     1         _fini = .
+    20e7     20e7        1     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/common/lib/crt0.o:(.fini_rts)
+    20e8     20e8      140     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/qualification_45gs02-196fba.o:(.text.r0f_pf)
+    20e8     20e8        0     1                 r0f_pf_enter
+    2148     2148        0     1                 r0f_pf_start_irq
+    215f     215f        0     1                 r0f_pf_stop_irq
+    216b     216b        0     1                 r0f_pf_irq
+    2197     2197        0     1                 r0f_pf_nmi
+    219f     219f        0     1                 r0f_pf_flat_copy
+    21dc     21dc        0     1                 r0f_pf_register_probe
+    2228     2228       b4     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/combined_45gs02-16847a.o:(.text.r0fc_platform)
+    2228     2228        0     1                 r0fc_rom_toggle
+    224b     224b        0     1                 r0fc_stack_seed
+    2292     2292        0     1                 r0fc_stack_measure
+    22dc     22dc        4     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/startup_45gs02-0c4702.o:(.text.m2rb_early_stop)
+    22dc     22dc        0     1                 m2rb_early_stop
+    22e0     22e0       13     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(zero-bss.c.obj):(.text.__zero_bss)
+    22e0     22e0       13     1                 __zero_bss
+    22f3     22f3       77     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.m2_point_valid)
+    22f3     22f3       77     1                 m2_point_valid
+    236a     236a      2cf     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.m2_fixture_segment)
+    236a     236a      2cf     1                 m2_fixture_segment
+    2639     2639       31     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.m2w_i32)
+    2639     2639       31     1                 m2w_i32
+    266a     266a       29     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.m2w_negate)
+    266a     266a       29     1                 m2w_negate
+    2693     2693       4b     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.m2w_add)
+    2693     2693       4b     1                 m2w_add
+    26de     26de       15     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.m2w_double)
+    26de     26de       15     1                 m2w_double
+    26f3     26f3       66     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.m2w_compare)
+    26f3     26f3       66     1                 m2w_compare
+    2759     2759       59     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.m2w_positive)
+    2759     2759       59     1                 m2w_positive
+    27b2     27b2       5b     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.m2w_narrow)
+    27b2     27b2       5b     1                 m2w_narrow
+    280d     280d       ad     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.m2l_multiply)
+    280d     280d       ad     1                 m2l_multiply
+    28ba     28ba       6b     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.magnitude)
+    28ba     28ba       6b     1                 magnitude
+    2925     2925       5d     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.m2l_divide)
+    2925     2925       5d     1                 m2l_divide
+    2982     2982      1bf     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.m2l_service)
+    2982     2982      1bf     1                 m2l_service
+    2b41     2b41      13f     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.finish)
+    2b41     2b41      13f     1                 finish
+    2c80     2c80       28     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.remainder_double)
+    2c80     2c80       28     1                 remainder_double
+    2ca8     2ca8       2f     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.remainder_ge)
+    2ca8     2ca8       2f     1                 remainder_ge
+    2cd7     2cd7        5     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.m2c_prepare_begin)
+    2cd7     2cd7        5     1                 m2c_prepare_begin
+    2cdc     2cdc       24     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.start)
+    2cdc     2cdc       24     1                 start
+    2d00     2d00       26     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.m2c_prepare_service)
+    2d00     2d00       26     1                 m2c_prepare_service
+    2d26     2d26      c12     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.m2_command_service)
+    2d26     2d26      c12     1                 m2_command_service
+    3938     3938      105     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.bind)
+    3938     3938      105     1                 bind
+    3a3d     3a3d       f5     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.operand)
+    3a3d     3a3d       f5     1                 operand
+    3b32     3b32       be     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.sine)
+    3b32     3b32       be     1                 sine
+    3bf0     3bf0       16     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.jump)
+    3bf0     3bf0       16     1                 jump
+    3c06     3c06       7d     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.m2c_project_begin)
+    3c06     3c06       7d     1                 m2c_project_begin
+    3c83     3c83       43     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.m2c_project_service)
+    3c83     3c83       43     1                 m2c_project_service
+    3cc6     3cc6        4     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.m2c_horizon_begin)
+    3cc6     3cc6        4     1                 m2c_horizon_begin
+    3cca     3cca       46     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.m2c_horizon_service)
+    3cca     3cca       46     1                 m2c_horizon_service
+    3d10     3d10       f4     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.m2_camera_valid)
+    3d10     3d10       f4     1                 m2_camera_valid
+    3e04     3e04      243     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.m2_raster_begin)
+    3e04     3e04      243     1                 m2_raster_begin
+    4047     4047      107     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.m2_raster_next)
+    4047     4047      107     1                 m2_raster_next
+    414e     414e       81     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.m2_camera_same)
+    414e     414e       81     1                 m2_camera_same
+    41cf     41cf      13f     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.m2_bundle_fields)
+    41cf     41cf      13f     1                 m2_bundle_fields
+    430e     430e       24     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.m1_core_init)
+    430e     430e       24     1                 m1_core_init
+    4332     4332      12c     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.m1_command)
+    4332     4332      12c     1                 m1_command
+    445e     445e      32d     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.m1_tick)
+    445e     445e      32d     1                 m1_tick
+    478b     478b       67     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.m1_input_sample)
+    478b     478b       67     1                 m1_input_sample
+    47f2     47f2       6c     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.m1_extract)
+    47f2     47f2       6c     1                 m1_extract
+    485e     485e       95     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.m1_publish)
+    485e     485e       95     1                 m1_publish
+    48f3     48f3      104     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.m1_acquire)
+    48f3     48f3      104     1                 m1_acquire
+    49f7     49f7       10     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.m1_release)
+    49f7     49f7       10     1                 m1_release
+    4a07     4a07       1f     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.m2rb_input_edges)
+    4a07     4a07       1f     1                 m2rb_input_edges
+    4a26     4a26       b6     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.m2rb_camera_init)
+    4a26     4a26       b6     1                 m2rb_camera_init
+    4adc     4adc        3     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.m2rb_camera_equal)
+    4adc     4adc        3     1                 m2rb_camera_equal
+    4adf     4adf      31b     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.m2rb_camera_edges)
+    4adf     4adf      31b     1                 m2rb_camera_edges
+    4dfa     4dfa       50     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.clamp)
+    4dfa     4dfa       50     1                 clamp
+    4e4a     4e4a       13     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.m2rb_renderer_init)
+    4e4a     4e4a       13     1                 m2rb_renderer_init
+    4e5d     4e5d       f4     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.m2rb_dispatch)
+    4e5d     4e5d       f4     1                 m2rb_dispatch
+    4f51     4f51       4b     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.increment)
+    4f51     4f51       4b     1                 increment
+    4f9c     4f9c       ea     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.begin)
+    4f9c     4f9c       ea     1                 begin
+    5086     5086       3f     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.prepare)
+    5086     5086       3f     1                 prepare
+    50c5     50c5       ce     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.project)
+    50c5     50c5       ce     1                 project
+    5193     5193      13c     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.background)
+    5193     5193      13c     1                 background
+    52cf     52cf       57     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.copy_tile)
+    52cf     52cf       57     1                 copy_tile
+    5326     5326      15f     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.line)
+    5326     5326      15f     1                 line
+    5485     5485      14a     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.text)
+    5485     5485      14a     1                 text
+    55cf     55cf       39     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.commit)
+    55cf     55cf       39     1                 commit
+    5608     5608        c     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.fail)
+    5608     5608        c     1                 fail
+    5614     5614       a7     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.m2rb_text_row)
+    5614     5614       a7     1                 m2rb_text_row
+    56bb     56bb      231     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.number)
+    56bb     56bb      231     1                 number
+    58ec     58ec       da     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.m2rb_glyph)
+    58ec     58ec       da     1                 m2rb_glyph
+    59c6     59c6       cc     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.m2rb_guard)
+    59c6     59c6       cc     1                 m2rb_guard
+    5a92     5a92      262     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.m1_platform_begin)
+    5a92     5a92      262     1                 m1_platform_begin
+    5cf4     5cf4        3     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.m1_platform_now)
+    5cf4     5cf4        3     1                 m1_platform_now
+    5cf7     5cf7       16     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.m1_platform_period)
+    5cf7     5cf7       16     1                 m1_platform_period
+    5d0d     5d0d       11     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.m1_platform_key)
+    5d0d     5d0d       11     1                 m1_platform_key
+    5d1e     5d1e       12     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.m1_platform_fault)
+    5d1e     5d1e       12     1                 m1_platform_fault
+    5d30     5d30        9     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.cfput16)
+    5d30     5d30        9     1                 cfput16
+    5d39     5d39       1d     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.cfput32)
+    5d39     5d39       1d     1                 cfput32
+    5d56     5d56       38     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.cfline)
+    5d56     5d56       38     1                 cfline
+    5d8e     5d8e        c     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.screen_byte)
+    5d8e     5d8e        c     1                 screen_byte
+    5d9a     5d9a      1cf     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.cfcopy)
+    5d9a     5d9a      1cf     1                 cfcopy
+    5f69     5f69      1bd     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.cfphysical_crc)
+    5f69     5f69      1bd     1                 cfphysical_crc
+    6126     6126       54     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.crc_byte)
+    6126     6126       54     1                 crc_byte
+    617a     617a       7a     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.cfentry)
+    617a     617a       7a     1                 cfentry
+    61f4     61f4      222     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.cfrom_begin)
+    61f4     61f4      222     1                 cfrom_begin
+    6416     6416       33     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.cfclock_begin)
+    6416     6416       33     1                 cfclock_begin
+    6449     6449       8e     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.cfnow)
+    6449     6449       8e     1                 cfnow
+    64d7     64d7      285     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.cfratio)
+    64d7     64d7      285     1                 cfratio
+    675c     675c      15f     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.r0fc_range)
+    675c     675c      15f     1                 r0fc_range
+    68bb     68bb       ba     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.inside)
+    68bb     68bb       ba     1                 inside
+    6975     6975      102     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.m2rb_io_write)
+    6975     6975      102     1                 m2rb_io_write
+    6a77     6a77       17     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.store_base)
+    6a77     6a77       17     1                 store_base
+    6a8e     6a8e      176     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.copy)
+    6a8e     6a8e      176     1                 copy
+    6c04     6c04      234     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.m2rb_platform_init)
+    6c04     6c04      234     1                 m2rb_platform_init
+    6e38     6e38      242     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.initialize_store)
+    6e38     6e38      242     1                 initialize_store
+    707a     707a       25     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.word)
+    707a     707a       25     1                 word
+    709f     709f       a9     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.m2rb_io_commit)
+    709f     709f       a9     1                 m2rb_io_commit
+    7148     7148       21     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.raster)
+    7148     7148       21     1                 raster
+    7169     7169       52     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.m2rb_platform_keys)
+    7169     7169       52     1                 m2rb_platform_keys
+    71bb     71bb      259     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.main)
+    71bb     71bb      259     1                 main
+    7414     7414        5     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.stop)
+    7414     7414        5     1                 stop
+    7419     7419        5     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.exit)
+    7419     7419        5     1                 exit
+    741e     741e       24     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.memcpy)
+    741e     741e       24     1                 memcpy
+    7442     7442       3b     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.memcmp)
+    7442     7442       3b     1                 memcmp
+    747d     747d       1c     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.__memset)
+    747d     747d       1c     1                 __memset
+    7499     7499        b     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.__ashlqi3)
+    7499     7499        b     1                 __ashlqi3
+    74a4     74a4       13     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.__ashlhi3)
+    74a4     74a4       13     1                 __ashlhi3
+    74b7     74b7        b     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.__lshrqi3)
+    74b7     74b7        b     1                 __lshrqi3
+    74c2     74c2       13     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.__lshrhi3)
+    74c2     74c2       13     1                 __lshrhi3
+    74d5     74d5       17     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.__lshrsi3)
+    74d5     74d5       17     1                 __lshrsi3
+    74ec     74ec       a6     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.__umodhi3)
+    74ec     74ec       a6     1                 __umodhi3
+    7592     7592       d8     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.__udivmodhi4)
+    7592     7592       d8     1                 __udivmodhi4
+    766a     766a       6e     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.__modhi3)
+    766a     766a       6e     1                 __modhi3
+    76d8     76d8      1b2     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.__udivmodsi4)
+    76d8     76d8      1b2     1                 __udivmodsi4
+    788a     788a       32     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.__mulhi3)
+    788a     788a       32     1                 __mulhi3
+    78bc     78bc       79     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.text.__mulsi3)
+    78bc     78bc       79     1                 __mulsi3
+    7935     7935        0     1         __init_array_start = .
+    7935     7935        0     1         __init_array_end = .
+    7935     7935        0     1         __fini_array_start = .
+    7935     7935        0     1         __fini_array_end = .
+    7938     7938      843     8 .rodata
+    7938     7938       40     8         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.rodata.m2_command_constants)
+    7938     7938       40     1                 m2_command_constants
+    7978     7978      2d8     8         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.rodata.m2_sine_q46)
+    7978     7978      2d8     1                 m2_sine_q46
+    7c50     7c50        1     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/common/lib/libcrt.a(const.S.obj):(.rodata)
+    7c50     7c50        0     1                 __set_v
+    7c51     7c51        3     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.rodata.entries)
+    7c51     7c51        3     1                 entries
+    7c54     7c54        3     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.rodata.ends)
+    7c54     7c54        3     1                 ends
+    7c57     7c57      184     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.rodata.m2_commands)
+    7c57     7c57      184     1                 m2_commands
+    7ddb     7ddb       12     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.rodata.m2_bundle_fields.fixed)
+    7ddb     7ddb       12     1                 m2_bundle_fields.fixed
+    7ded     7ded       34     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.rodata.m2_bundle_fields.fields)
+    7ded     7ded       34     1                 m2_bundle_fields.fields
+    7e21     7e21        c     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.rodata.m2rb_camera_edges.minimum)
+    7e21     7e21        c     1                 m2rb_camera_edges.minimum
+    7e2d     7e2d        c     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.rodata.m2rb_camera_edges.maximum)
+    7e2d     7e2d        c     1                 m2rb_camera_edges.maximum
+    7e39     7e39        9     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.rodata.m2rb_segment_ids)
+    7e39     7e39        9     1                 m2rb_segment_ids
+    7e42     7e42       10     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.rodata.m2rb_text_row.templates)
+    7e42     7e42       10     1                 m2rb_text_row.templates
+    7e52     7e52      16a     1         <internal>:(.rodata.str1.1)
+    7fbc     7fbc       4e     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.rodata.fields)
+    7fbc     7fbc       4e     1                 fields
+    800a     800a      11f     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.rodata.m2rb_glyph.rows)
+    800a     800a      11f     1                 m2rb_glyph.rows
+    8129     8129       38     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.rodata.r0fc_range.ranges)
+    8129     8129       38     1                 r0fc_range.ranges
+    8161     8161        d     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.rodata.m2rb_platform_keys.rows)
+    8161     8161        d     1                 m2rb_platform_keys.rows
+    816e     816e        d     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.rodata.m2rb_platform_keys.masks)
+    816e     816e        d     1                 m2rb_platform_keys.masks
+    817b     817b        0     1 .data
+    817b     817b        0     1         __data_start = .
+    817b     817b        0     1         __data_end = .
+    817b     817b        0     1 __data_load_start = LOADADDR(.data)
+    817b     817b        0     1 __data_size = SIZEOF(.data)
+    817b     817b      7e0     1 .bss
+    817b     817b        0     1         __bss_start = .
+    817b     817b        4     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.bss.period_q16)
+    817b     817b        4     1                 period_q16
+    817f     817f        1     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.bss.cfreclaimed)
+    817f     817f        1     1                 cfreclaimed
+    8180     8180        1     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.bss.backup_valid)
+    8180     8180        1     1                 backup_valid
+    8181     8181        1     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.bss.cffault)
+    8181     8181        1     1                 cffault
+    8182     8182       ff     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.bss.block)
+    8182     8182       ff     1                 block
+    8281     8281        1     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.bss.r0f_pf_cpu_port)
+    8281     8281        1     1                 r0f_pf_cpu_port
+    8282     8282        1     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.bss.r0f_pf_stack_high)
+    8282     8282        1     1                 r0f_pf_stack_high
+    8283     8283       ff     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.bss.cfworkspace)
+    8283     8283       ff     1                 cfworkspace
+    8382     8382        1     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.bss.features_open)
+    8382     8382        1     1                 features_open
+    8383     8383        1     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.bss.r0fc_trap_flags)
+    8383     8383        1     1                 r0fc_trap_flags
+    8384     8384        1     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.bss.r0fc_trap_base)
+    8384     8384        1     1                 r0fc_trap_base
+    8385     8385        1     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.bss.r0f_pf_nmi_seen)
+    8385     8385        1     1                 r0f_pf_nmi_seen
+    8386     8386        2     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.bss.r0f_pf_irq_count)
+    8386     8386        2     1                 r0f_pf_irq_count
+    8388     8388        1     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.bss.r0fc_hardware_low)
+    8388     8388        1     1                 r0fc_hardware_low
+    8389     8389        2     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.bss.r0fc_software_low)
+    8389     8389        2     1                 r0fc_software_low
+    838b     838b        1     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.bss.r0f_pf_irq_seq)
+    838b     838b        1     1                 r0f_pf_irq_seq
+    838c     838c        1     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.bss.r0f_pf_irq_seen)
+    838c     838c        1     1                 r0f_pf_irq_seen
+    838d     838d        7     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.bss.r0f_pf_probe_regs)
+    838d     838d        7     1                 r0f_pf_probe_regs
+    8394     8394        1     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.bss.r0f_pf_copy_ok)
+    8394     8394        1     1                 r0f_pf_copy_ok
+    8395     8395        2     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.bss.r0f_pf_probe_timeout)
+    8395     8395        2     1                 r0f_pf_probe_timeout
+    8397     8397        1     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.bss.r0fc_features)
+    8397     8397        1     1                 r0fc_features
+    8398     8398        1     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.bss.r0fc_hardware_seed)
+    8398     8398        1     1                 r0fc_hardware_seed
+    8399     8399        2     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.bss.r0fc_software_seed)
+    8399     8399        2     1                 r0fc_software_seed
+    839b     839b        1     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.bss.initialized)
+    839b     839b        1     1                 initialized
+    839c     839c        1     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.bss.enabled)
+    839c     839c        1     1                 enabled
+    839d     839d        1     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.bss.front)
+    839d     839d        1     1                 front
+    839e     839e       40     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.bss.buffer)
+    839e     839e       40     1                 buffer
+    83de     83de        2     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.bss.top)
+    83de     83de        2     1                 top
+    83e0     83e0        9     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.bss.r0f_pf_copy_request)
+    83e0     83e0        9     1                 r0f_pf_copy_request
+    83e9     83e9        1     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.bss.m2rb_launch_authorized)
+    83e9     83e9        1     1                 m2rb_launch_authorized
+    83ea     83ea       40     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.bss.core)
+    83ea     83ea       40     1                 core
+    842a     842a       16     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.bss.camera)
+    842a     842a       16     1                 camera
+    8440     8440      4c1     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.bss.renderer)
+    8440     8440      4c1     1                 renderer
+    8901     8901        2     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.bss.camera_input.0)
+    8901     8901        2     1                 camera_input.0
+    8903     8903        1     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.bss.input.0)
+    8903     8903        1     1                 input.0
+    8904     8904       2e     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.bss.snapshots)
+    8904     8904       2e     1                 snapshots
+    8932     8932        4     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.bss.m2rb_replay_checkpoint)
+    8932     8932        4     1                 m2rb_replay_checkpoint
+    8936     8936       20     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.bss.m2rb_target_budgets)
+    8936     8936       20     1                 m2rb_target_budgets
+    8956     8956        4     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.bss.m2rb_guard_budget)
+    8956     8956        4     1                 m2rb_guard_budget
+    895a     895a        1     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.bss.m2rb_status)
+    895a     895a        1     1                 m2rb_status
+    895b     895b        0     1         __bss_end = .
+    895b     895b        0     1 __bss_size = SIZEOF(.bss)
+    895b     895b       35     1 .noinit
+    895b     895b       35     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.noinit..Lstatic_stack)
+    8990     8990        0     1         __heap_start = ALIGN(., 2)
+    8990     8990        0     1 __stack = 0xd000
+       0        0       cc     1 .comment
+       0        0       cc     1         <internal>:(.comment)
+       0        0       1e     1 .llvm_sympart
+       0        0        f     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.llvm_sympart)
+       f        f        f     1         /private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.prg.lto.o:(.llvm_sympart)
+       0        0     1500     4 .symtab
+       0        0     1500     4         <internal>:(.symtab)
+       0        0       72     1 .shstrtab
+       0        0       72     1         <internal>:(.shstrtab)
+       0        0      e82     1 .strtab
+       0        0      e82     1         <internal>:(.strtab)

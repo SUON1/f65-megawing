@@ -1,0 +1,298 @@
+{
+  "identity": "65AERO-M2-EXTRES-1",
+  "tier": "linked static admission",
+  "target": "docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793405200824046000",
+  "target_executed": false,
+  "Xemu": "NOT RUN",
+  "status": "BLOCKED",
+  "commands": [
+    {
+      "argv": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests/flight_demo/m2_rebuild",
+        "-p",
+        "test_*admission.py",
+        "-v"
+      ],
+      "exit": 0,
+      "log": "verifier-regressions.txt"
+    },
+    {
+      "argv": [
+        "/usr/bin/clang",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Wconversion",
+        "-Werror",
+        "-fsanitize=address,undefined",
+        "-Iinterfaces/generated",
+        "-Isrc/diagnostics/r0f",
+        "src/diagnostics/r0f/combined_model.c",
+        "tests/flight_demo/m2_rebuild/residency_ranges.c",
+        "-o",
+        "/private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/qualification-1793405245235739000/staging-ranges"
+      ],
+      "exit": 0,
+      "log": "staging-compile.txt"
+    },
+    {
+      "argv": [
+        "/private/tmp/f65-m2-extended-resident-admission/docs/evidence/flight-demo/2026-10-30-m2-extended-resident/qualification-1793405245235739000/staging-ranges"
+      ],
+      "exit": 0,
+      "log": "staging-ranges.txt"
+    }
+  ],
+  "target_prg_sha256": "02430394f14144f944dfb52f53e3bb9491ac40250a0710eb92f898434a1d48b9",
+  "target_seal_sha256": "098033d3e5c3eb4bf944366779519a212850a8ffb4c88b1ea6634cda83a570ae",
+  "toolchain": {
+    "sdk": "/Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos",
+    "compiler_sha256": "cc557ae99a68ed36e098062b0f5376a878e94ac187b87446c8e603e4fb45a906",
+    "objdump_sha256": "5327f031a741bfcd4104317fbad3d1e45275d70b49821f0da52391120848a8e9",
+    "flags": [
+      "-mcpu=mos45gs02",
+      "-mlto-zp=0",
+      "-Oz",
+      "-fno-inline-functions",
+      "-fno-jump-tables",
+      "-Wall",
+      "-Wextra",
+      "-Wconversion",
+      "-Werror"
+    ],
+    "sdk_inventory": "sdk-inputs-before.json",
+    "sdk_inventory_sha256": "b24badf04fe5ff8afa0083c71eaecc3c8db4d0f7c1a17d48113c811297e80930",
+    "sdk_identity_digest": "4166ea6e185bc8471593336e0ac691b784fb5c0a51f861a1c26463c1609bbfd4",
+    "sdk_identity_scope": "complete SDK tree; directories, regular files and confined symlinks",
+    "sdk_entries": 1139,
+    "sdk_unchanged_after_link": true
+  },
+  "load": {
+    "status": "PASS",
+    "scope": "raw PRG/ELF load identity; not observed CPU execution",
+    "origin": 8193,
+    "payload_end": 33147,
+    "payload_bytes": 24954,
+    "payload_bytes_above_8000": 379,
+    "file_backed_sections_compared": [
+      ".basic_header",
+      ".text",
+      ".rodata"
+    ],
+    "resident_end": 35216,
+    "executable_section_bytes_above_8000": 0,
+    "loader_rule": "pinned Xemu inject.c copies PRG stream into main_ram + load_addr without an $8000 split",
+    "BSS_and_scratch": "NOBITS; initialization separately verified, not loaded payload"
+  },
+  "canonical_prefix": {
+    "normal_entry_ordering": "PASS",
+    "start": 8215,
+    "normalized": 8312,
+    "pre_normalization_instructions": 48,
+    "scope": "linked reset-entry prefix and raw terminal-handler closure only",
+    "runtime_startup_admission": "UNPROVEN; no inherited-entry/async NMI/ROM-trap execution proof",
+    "terminal_handler_control_flow": "PASS",
+    "terminal_handler": 8921,
+    "terminal_handler_bytes": "784cd922",
+    "terminal_handler_target": 8921
+  },
+  "initialization": {
+    "status": "PASS",
+    "tier": "raw boot-fragment decoding/static helper proof",
+    "scratch": [
+      35163,
+      35216
+    ],
+    "scratch_zeroed": 53,
+    "BSS": [
+      33147,
+      35163
+    ],
+    "BSS_zeroed": 2016,
+    "cartridge_entry_cases": 15,
+    "bad_port_ROM_cases_fail_closed": 3,
+    "code_above_8000": "same canonical near-address policy; actual extent reported from ELF",
+    "startup_overall": "UNPROVEN until exact fresh-entry, privileged trap and asynchronous execution qualification"
+  },
+  "application_mapping": {
+    "status": "PASS",
+    "tier": "application linked MAP/ROM writer exclusion",
+    "canonical_MAP_sites": [
+      8226,
+      8232,
+      8428
+    ],
+    "ROM_overlay_writer_sites": [
+      8261,
+      8456
+    ],
+    "temporary_application_MAP": "none; covering $8000-$9fff and all other windows forbidden",
+    "staging": "actual retained physical-copy range validator tested separately; Graphics seam only names display/Color classes",
+    "privileged_trap": "UNPROVEN execution: separate Hypervisor suspension/restore; no application window lease or bank-zero overwrite authorized",
+    "physical_cartridge": "not qualified by Xemu; pinned primary VHDL contract only"
+  },
+  "application_stack": {
+    "status": "PASS",
+    "tier": "static application stack proof",
+    "root": "__do_init_stack (including BSS/startup, application and all reachable compiler helpers)",
+    "main_hardware_peak": 32,
+    "irq_frame_and_saves": 8,
+    "nmi_frame_and_saves": 4,
+    "hardware_bound": 44,
+    "software_bound": 38,
+    "hardware_capacity": 256,
+    "software_capacity": 4096,
+    "constant_software_adjustments": 21,
+    "call_entries": 115,
+    "reachable_instructions": 11130,
+    "software_initialization_alias": 8312,
+    "interrupt_compiler_scratch": "none; no direct-page accesses or calls",
+    "privileged_trap_sites": [
+      8750
+    ],
+    "whole_program_status": "UNPROVEN: exact Hypervisor internal stack/restoration and entry/NMI conditions require separate closure",
+    "conditions": [
+      "canonical prefix establishes E=1/page1 hardware stack before root",
+      "one nonrecursive external NMI edge may preempt IRQ; repeated nested external NMI is excluded",
+      "CF001 Hypervisor trap uses its separate protected stack; exact trap restoration required"
+    ],
+    "limitations": "No exercised high-water or arbitrary physical NMI-rate claim; Hypervisor internal stack is a separate gate"
+  },
+  "renderer_service": {
+    "status": "FAIL",
+    "tier": "necessary lower-bound rejection only; not WCET or observed cadence",
+    "operation": "unchanged-camera equality checks on mandatory BACKGROUND dispatches",
+    "geometry_world_tiles": 640,
+    "background_dispatches_per_tile": 8,
+    "mandatory_background_dispatches": 5120,
+    "camera_bytes_per_dispatch": 22,
+    "minimum_cycles_per_equal_byte": 55,
+    "equality_loop_instructions": [
+      {
+        "address": 29768,
+        "opcode": 178,
+        "minimum_cycles": 7
+      },
+      {
+        "address": 29770,
+        "opcode": 210,
+        "minimum_cycles": 7
+      },
+      {
+        "address": 29772,
+        "opcode": 208,
+        "minimum_cycles": 2
+      },
+      {
+        "address": 29774,
+        "opcode": 227,
+        "minimum_cycles": 8
+      },
+      {
+        "address": 29776,
+        "opcode": 227,
+        "minimum_cycles": 8
+      },
+      {
+        "address": 29778,
+        "opcode": 160,
+        "minimum_cycles": 2
+      },
+      {
+        "address": 29780,
+        "opcode": 198,
+        "minimum_cycles": 6
+      },
+      {
+        "address": 29782,
+        "opcode": 196,
+        "minimum_cycles": 4
+      },
+      {
+        "address": 29784,
+        "opcode": 208,
+        "minimum_cycles": 2
+      },
+      {
+        "address": 29787,
+        "opcode": 138,
+        "minimum_cycles": 1
+      },
+      {
+        "address": 29788,
+        "opcode": 208,
+        "minimum_cycles": 2
+      },
+      {
+        "address": 29790,
+        "opcode": 165,
+        "minimum_cycles": 4
+      },
+      {
+        "address": 29792,
+        "opcode": 208,
+        "minimum_cycles": 2
+      }
+    ],
+    "camera_check_call": 20140,
+    "minimum_frame_cycles": 6195200,
+    "maximum_available_cycles_at_20hz": 2025000,
+    "minimum_frame_milliseconds": 152.9679012345679,
+    "optimistic_maximum_hz": 6.537319214876033,
+    "excluded_positive_costs": [
+      "calls/returns/setup",
+      "taken-branch surcharges",
+      "painting",
+      "geometry",
+      "copies",
+      "raster",
+      "text",
+      "clock/guard",
+      "100Hz ticks",
+      "IRQ/NMI"
+    ],
+    "eight_dispatch_WCETs": [
+      "UNPROVEN",
+      "UNPROVEN",
+      "UNPROVEN",
+      "UNPROVEN",
+      "UNPROVEN",
+      "UNPROVEN",
+      "UNPROVEN",
+      "UNPROVEN"
+    ],
+    "launch_and_grants": "remain zero; no timing invented",
+    "smallest_correction": "amortize checked camera/generation and dispatch control across bounded batches; preserve cancellation before publication and per-tick yields"
+  },
+  "timing_source": {
+    "sha256": "6bb84846f83975acbdff5f16e39ebe7b5e08390cb68ed0cab2a85df311b4af58",
+    "git_blob": "03ead4f0ce7d08e3812b1ca405ad60a62f2803a7",
+    "url": "https://github.com/lgblgblgb/xemu/blob/40dfef0d1d5f56be2469492715c12bdb32c75b67/xemu/cpu65_mega65_timings.h"
+  },
+  "first_unresolved_gate": "whole-program privileged trap/entry proof remains UNPROVEN; renderer cadence independently FAILS",
+  "runtime_overall": "NOT ADMITTED; launch and all eight operation/guard grants remain zero",
+  "evidence_limits": {
+    "whole_program_stack": "UNPROVEN until exact privileged trap stack/restoration and entry/NMI conditions close",
+    "startup_execution": "UNPROVEN; static prefix/initialization is not observed fresh-entry/Hypervisor behavior",
+    "display_and_physical_address_execution": "NOT RUN",
+    "emulator_visuals": "NOT OBSERVED",
+    "physical": "NOT RUN",
+    "reserve_used": 0
+  },
+  "checker_inputs": {
+    "tools/flight_demo/m2_rebuild/extended_admit.py": "f75094cb6eee3cb169797be4d7b9f6b5b5abf70ce6608a41c2573a2020252d9b",
+    "tools/flight_demo/m2_rebuild/linked_admission.py": "692317ce8a16c06032d3597e4d4d8cb5303ba85c893660109a50886194fa5797",
+    "tools/flight_demo/m2_rebuild/stack_admission.py": "6ed23f38cd50932e8c65b9d8fca1fd9fac1958cbd039facb6744cbb76dc576ea",
+    "tools/flight_demo/m2_rebuild/startup_check.py": "a5ef429fe91eb58a36a41366344c5abba71a8ebcbb83925d0387e81b3630df23",
+    "tests/flight_demo/m2_rebuild/test_linked_admission.py": "47d3cb1f0c1a0c98c9105c4897add53a11ee80d941417968c4fba6217b84b519",
+    "tests/flight_demo/m2_rebuild/test_stack_admission.py": "41f4fc10ebe941e51c624d8c97546c245afbef2bd0c24abe2413ba521fa906ba",
+    "tests/flight_demo/m2_rebuild/residency_ranges.c": "acf831a6def8f43e587373686f2b68a63767e981f788e503b427c80a4a1a8a5f",
+    "src/diagnostics/r0f/combined_model.c": "9aaf2f9b7002c69297be58ff969f57d5e0c034c40659bec9b496f7e8c2ace861"
+  }
+}

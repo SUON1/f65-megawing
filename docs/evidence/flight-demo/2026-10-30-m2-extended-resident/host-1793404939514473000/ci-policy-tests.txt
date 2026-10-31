@@ -1,0 +1,21 @@
+test_changed_pinned_text_or_media_fails (test_static_hygiene.GitFixtureTests) ... ok
+test_committed_head_not_mutable_checkout_is_checked (test_static_hygiene.GitFixtureTests) ... ok
+test_conflicting_category_hashes_fail (test_static_hygiene.GitFixtureTests) ... ok
+test_exact_flight_snapshot_pins_pass_but_changed_bytes_fail (test_static_hygiene.GitFixtureTests) ... ok
+test_exact_pins_pass_pr_push_and_initial_push (test_static_hygiene.GitFixtureTests) ... ok
+test_group2_exact_pin_passes_but_changed_bytes_fail (test_static_hygiene.GitFixtureTests) ... ok
+test_missing_renamed_or_symlink_pin_fails (test_static_hygiene.GitFixtureTests) ... ok
+test_sdk_patch_missing_renamed_or_symlink_fails (test_static_hygiene.GitFixtureTests) ... ok
+test_unlisted_live_and_evidence_whitespace_fails (test_static_hygiene.GitFixtureTests) ... ok
+test_unlisted_media_fails (test_static_hygiene.GitFixtureTests) ... ok
+test_duplicate_keys_and_unknown_schema (test_static_hygiene.PolicyTests) ... ok
+test_guard_allows_only_exact_media (test_static_hygiene.PolicyTests) ... ok
+test_invalid_paths_and_hashes (test_static_hygiene.PolicyTests) ... ok
+test_rom_and_emulator_state_cannot_be_exempted (test_static_hygiene.PolicyTests) ... ok
+test_toolchain_prefixes_remain_blocked_even_if_listed (test_static_hygiene.PolicyTests) ... ok
+test_valid_manifest (test_static_hygiene.PolicyTests) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 4.205s
+
+OK

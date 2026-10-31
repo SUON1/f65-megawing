@@ -59,15 +59,37 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--tier", choices=["host", "independent", "focused", "target"], required=True)
     parser.add_argument("--sdk", type=Path)
+    parser.add_argument("--profile", choices=["extended"])
     args = parser.parse_args()
+    evidence = EVIDENCE
+    identity = IDENTITY
+    profile = None
+    extra = []
+    sources = []
+    if args.profile == "extended":
+        import tempfile
+        residency = module(ROOT / "tools/flight_demo/m2_rebuild/residency.py", "extended_residency")
+        data = residency.load()
+        with tempfile.TemporaryDirectory() as directory:
+            generated = Path(directory)
+            residency.generate(destination=generated)
+            for name in residency.OUTPUTS:
+                assert (ROOT / name).read_bytes() == (generated / name).read_bytes(), name
+        profile = {"identity": data["identity"], "resident_end": data["development_resident"][1],
+                   "production_end": data["production_resident"][1],
+                   "link_script": "src/platform/m2_rebuild/extended_resident.ld"}
+        evidence = ROOT / "docs/evidence/flight-demo/2026-10-30-m2-extended-resident"
+        identity = data["identity"]
+        extra = [residency.CONTRACT, *residency.OUTPUTS]
+        sources = ["src/platform/m2_rebuild/extended_startup_45gs02.s"]
     builder = module(ROOT / "tools/flight_demo/m2_rebuild/validate.py", "m2_command_builder")
     builder.GEOMETRY = ["src/environment/m2_fixture.c", "src/graphics/m2_limb.c",
         "src/graphics/m2_compact.c", "src/graphics/m2_compact_public.c",
         "src/graphics/m2_record_private.c", "interfaces/generated/m2_tables.c"]
     parent = module(ROOT / "tools/flight_demo/m2_rebuild/compact_validate.py", "m2_independent_checks")
-    parent.IDENTITY = IDENTITY
+    parent.IDENTITY = identity
     if args.tier == "independent":
-        capture = EVIDENCE / ("independent-" + str(time.time_ns()))
+        capture = evidence / ("independent-" + str(time.time_ns()))
         capture.mkdir()
         inputs = {str(path.relative_to(ROOT)): hashlib.sha256(path.read_bytes()).hexdigest()
             for folder in ["src/graphics", "src/diagnostics/m2_rebuild", "tools/flight_demo/m2_rebuild",
@@ -77,7 +99,7 @@ def main():
         (capture / "inputs.json").write_text(json.dumps(inputs, indent=2) + "\n")
         return parent.extra_host(builder, capture / "run")
     if args.tier == "focused":
-        return focused(builder, EVIDENCE / ("focused-" + str(time.time_ns())))
+        return focused(builder, evidence / ("focused-" + str(time.time_ns())))
     if args.tier == "target" and args.sdk is None:
         parser.error("absolute pinned --sdk required")
     checker = module(ROOT / "tools/flight_demo/m2_rebuild/compact_check.py", "m2_command_link_check")
@@ -89,10 +111,11 @@ def main():
             generated = Path(directory) / "commands.inc"
             generation.generate(generated)
             assert generated.read_bytes() == (ROOT / "src/graphics/m2_commands.inc").read_bytes()
-    return builder.execute(args.tier, args.sdk, EVIDENCE / (args.tier + "-" + str(time.time_ns())),
-        identity=IDENTITY, composition_check=checker.check,
+    return builder.execute(args.tier, args.sdk, evidence / (args.tier + "-" + str(time.time_ns())),
+        identity=identity, composition_check=checker.check,
         extra_inputs=["src/graphics/m2_commands.inc", "tools/flight_demo/m2_rebuild/commands.py",
-                      "tests/flight_demo/m2_rebuild/command_host.c"],
+                      "tests/flight_demo/m2_rebuild/command_host.c", *extra],
+        target_profile=profile, extra_target_sources=sources,
         archive_inputs=True,
         service_cardinality={"prepare": "one checked command or one kernel unit plus finalization",
           "project": "one checked command or one kernel unit plus finalization",

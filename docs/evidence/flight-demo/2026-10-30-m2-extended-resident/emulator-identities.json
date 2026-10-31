@@ -1,0 +1,23 @@
+{
+  "tier": "read-only identity preflight; NOT execution",
+  "artifacts": {
+    "xemu": {
+      "path": "/Users/slice/Developer/f65-megawing/toolchain/xemu/xmega65",
+      "available": true,
+      "sha256": "dd37baf7846b9696adcb662ffe5da040031b07214c66aef9a7f48cc30040b738"
+    },
+    "rom": {
+      "path": "/Users/slice/Documents/Codex/f65-megawing/MEGA65.ROM",
+      "available": true,
+      "sha256": "af3c447f791a2fdc48cb21e1bd3fab015e32641228d9d30d21259b9e878c6fa0"
+    },
+    "sdl": {
+      "path": "/Users/slice/Developer/f65-megawing/toolchain/xemu/libSDL2-xemu.dylib",
+      "available": true,
+      "sha256": "4338adca59bfc6bad6ff44d0df03a9cd59c83a8916c478ae5d91e06b5d090761"
+    }
+  },
+  "emulator_executed": false,
+  "ROM_bytes_copied": false,
+  "SD_or_media_opened": false
+}

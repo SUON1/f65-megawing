@@ -81,7 +81,8 @@ def preview(raw, output):
 
 
 def execute(tier, sdk, output, identity=None, composition_check=None,
-            extra_inputs=(), service_cardinality=None, archive_inputs=False):
+            extra_inputs=(), service_cardinality=None, archive_inputs=False,
+            target_profile=None, extra_target_sources=()):
     # Bind the caller's SDK before commands change cwd to ROOT. Use this same
     # absolute path for lock checks, inventories, subprocesses and evidence.
     sdk = sdk.resolve() if sdk is not None else None
@@ -157,14 +158,19 @@ def execute(tier, sdk, output, identity=None, composition_check=None,
             # Create-once claim enforces the one founder-authorized target relink.
             claim = {"identity": report["identity"], "output": str(output.relative_to(ROOT)),
                      "authorized_relinks": 1, "sdk_identity_digest": identity.digest(sdk_inputs)}
-            with (output.parent / "relink-claim.json").open("x") as stream:
+            # The extended admission task permits a retained startup-safety
+            # correction; each link still has its own create-once identity.
+            claim_path = output / "relink-claim.json" if target_profile else output.parent / "relink-claim.json"
+            with claim_path.open("x") as stream:
                 stream.write(json.dumps(claim, indent=2) + "\n")
             # Default SDK measurement envelope is NOT the resident admission limit.
-            sources = GEOMETRY + CORE + NEW + PLATFORM + ["src/diagnostics/m2_rebuild/main.c"]
+            sources = GEOMETRY + CORE + NEW + PLATFORM + list(extra_target_sources) + ["src/diagnostics/m2_rebuild/main.c"]
+            script = (target_profile["link_script"] if target_profile else
+                      "src/platform/m2_rebuild/startup.ld")
             target = output / "UNADMITTED.prg"
             try:
                 compile_result = run([sdk / "bin/mos-mega65-clang", *FLAGS, *includes, *sources,
-                      "-Wl,-T,src/platform/m2_rebuild/startup.ld",
+                      "-Wl,-T," + script,
                       "-Wl,-Map," + str(output / "UNADMITTED.map"), "-o", target], "target-compile.txt", required=False)
             finally:
                 identity.verify(sdk, sdk_inputs)
@@ -182,13 +188,18 @@ def execute(tier, sdk, output, identity=None, composition_check=None,
             report["sections"] = sections
             if sections:
                 end = max(item["start"] + item["bytes"] for item in sections.values())
+                ceiling = target_profile["resident_end"] if target_profile else 0x8000
                 report.update(resident_start=0x2001, resident_end=end, resident_bytes=end - 0x2001,
-                              resident_limit=24575, deficit=max(0, end - 0x8000),
-                              resident_fit="PASS" if end <= 0x8000 else "FAIL",
-                              remaining_margin=0x8000 - end,
+                              resident_limit=ceiling - 0x2001, deficit=max(0, end - ceiling),
+                              resident_fit="PASS" if end <= ceiling else "FAIL",
+                              remaining_margin=ceiling - end,
                               software_stack_envelope=[0xc000, 0xd000], hardware_stack_envelope=[0x100, 0x200],
                               compiler_scratch=sections.get(".noinit"),
                               stack_collision=(end > 0xc000))
+                if target_profile:
+                    report["development_residency"] = target_profile
+                    report["production_resident_fit"] = "PASS" if end <= 0x8000 else "FAIL"
+                    report["production_deficit"] = max(0, end - 0x8000)
             if compile_result.returncode == 0:
                 for tool, args, name in [("llvm-objdump", ["-d"], "UNADMITTED.disassembly"),
                                          ("llvm-nm", ["-S", "--size-sort"], "UNADMITTED.symbols")]:
@@ -233,6 +244,7 @@ def execute(tier, sdk, output, identity=None, composition_check=None,
                     "interfaces/m2_rebuild.json", "src/platform/m2_rebuild/startup.ld",
                     "toolchain/f65_toolchain.lock.json"])
         paths.update(extra_inputs)
+        paths.update(extra_target_sources)
         for directory in INCLUDES:
             paths.update(str(path.relative_to(ROOT)) for path in (ROOT / directory).glob("*.h"))
         for directory in ["tools/flight_demo/m2_rebuild", "tests/flight_demo/m2_rebuild"]:
