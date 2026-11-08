@@ -47,11 +47,13 @@ typedef struct M2RebuildRenderer
 } M2RebuildRenderer;
 
 void m2rb_renderer_init(M2RebuildRenderer *renderer);
-// A zero budget refuses all work. Positive host grants do not admit target cost.
-// The caller must prove the whole selected operation fits before its deadline.
+// Each role bound covers one continuation and its share of dispatch overhead.
+// The caller reserves batch boundary, clock, interrupt and return costs first.
+// Zero bounds are unavailable. BEGIN and COMMIT each occupy a separate batch.
 // current_tick is an immutable copy of the authoritative tick, never a new clock.
 uint8_t m2rb_dispatch(M2RebuildRenderer *renderer, M1Snapshots *pool,
-                       const M2Camera *wanted, uint32_t admitted_budget,
+                       const M2Camera *wanted, uint16_t work_counts,
+                       const volatile uint16_t role_bounds[M2RB_FAILED],
                        uint32_t current_tick);
 // Pure telemetry formatter and glyph builder, also independently inspected by tests.
 void m2rb_text_row(M2RebuildRenderer *renderer, uint8_t row);

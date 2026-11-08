@@ -59,14 +59,14 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--tier", choices=["host", "independent", "focused", "target"], required=True)
     parser.add_argument("--sdk", type=Path)
-    parser.add_argument("--profile", choices=["extended"])
+    parser.add_argument("--profile", choices=["extended", "extended-service"])
     args = parser.parse_args()
     evidence = EVIDENCE
     identity = IDENTITY
     profile = None
     extra = []
     sources = []
-    if args.profile == "extended":
+    if args.profile in ("extended", "extended-service"):
         import tempfile
         residency = module(ROOT / "tools/flight_demo/m2_rebuild/residency.py", "extended_residency")
         data = residency.load()
@@ -82,6 +82,11 @@ def main():
         identity = data["identity"]
         extra = [residency.CONTRACT, *residency.OUTPUTS]
         sources = ["src/platform/m2_rebuild/extended_startup_45gs02.s"]
+    if args.profile == "extended-service":
+        evidence = ROOT / "docs/evidence/flight-demo/2026-11-08-m2-bounded-service"
+        evidence.mkdir(exist_ok=True)
+        identity = "65AERO-M2-EXTRES-1-SERVICE1"
+        profile["compress_link_map"] = True
     builder = module(ROOT / "tools/flight_demo/m2_rebuild/validate.py", "m2_command_builder")
     builder.GEOMETRY = ["src/environment/m2_fixture.c", "src/graphics/m2_limb.c",
         "src/graphics/m2_compact.c", "src/graphics/m2_compact_public.c",
@@ -111,7 +116,10 @@ def main():
             generated = Path(directory) / "commands.inc"
             generation.generate(generated)
             assert generated.read_bytes() == (ROOT / "src/graphics/m2_commands.inc").read_bytes()
-    return builder.execute(args.tier, args.sdk, evidence / (args.tier + "-" + str(time.time_ns())),
+    # The new Build Intent authorizes exactly one complete target link.
+    packet = ("target" if args.profile == "extended-service" and args.tier == "target"
+              else args.tier + "-" + str(time.time_ns()))
+    return builder.execute(args.tier, args.sdk, evidence / packet,
         identity=identity, composition_check=checker.check,
         extra_inputs=["src/graphics/m2_commands.inc", "tools/flight_demo/m2_rebuild/commands.py",
                       "tests/flight_demo/m2_rebuild/command_host.c", *extra],

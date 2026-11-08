@@ -186,6 +186,18 @@ def execute(tier, sdk, output, identity=None, composition_check=None,
                         start, size = [int(value, 16) for value in match.groups()]
                         sections[name] = {"start": start, "bytes": size}
             report["sections"] = sections
+            map_file = output / "UNADMITTED.map"
+            if map_file.exists() and target_profile and target_profile.get("compress_link_map"):
+                # Package new linker output losslessly before sealing. A raw
+                # map can contain tool-generated trailing whitespace.
+                raw = map_file.read_bytes()
+                archive = output / "UNADMITTED.map.gz"
+                with archive.open("xb") as stream:
+                    stream.write(gzip.compress(raw, mtime=0))
+                assert gzip.decompress(archive.read_bytes()) == raw
+                report["link_map"] = {"file": archive.name, "raw_bytes": len(raw),
+                    "raw_sha256": hashlib.sha256(raw).hexdigest(), "sha256": sha(archive)}
+                map_file.unlink()
             if sections:
                 end = max(item["start"] + item["bytes"] for item in sections.values())
                 ceiling = target_profile["resident_end"] if target_profile else 0x8000

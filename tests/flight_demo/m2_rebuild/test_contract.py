@@ -68,11 +68,11 @@ class Contract(unittest.TestCase):
             for prohibited in ["CFREG", "volatile uint8_t *", "r0f_", "combined_platform", "cfdma"]:
                 self.assertNotIn(prohibited, text)
         main = (ROOT / "src/diagnostics/m2_rebuild/main.c").read_text()
-        self.assertIn("volatile uint32_t m2rb_target_budgets[8];", main)
+        self.assertIn("volatile uint16_t m2rb_target_budgets[M2RB_FAILED];", main)
         self.assertIn("volatile uint8_t m2rb_launch_authorized;", main)
         self.assertNotIn("m2rb_launch_authorized =", main)
         self.assertNotIn("m2rb_target_budgets[slot] =", main)
-        self.assertIn("m2rb_guard(now, release, budget, m2rb_guard_budget)", main)
+        self.assertIn("m2rb_guard(now, release, m2rb_target_budgets[slot], m2rb_guard_budget)", main)
         source = (ROOT / "src/graphics/m2_rebuild.c").read_text()
         self.assertEqual(source.count("m2c_project_service("), 1)
         self.assertEqual(source.count("m2c_prepare_service("), 1)
