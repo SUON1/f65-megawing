@@ -1,0 +1,67 @@
+{
+  "status": "FAIL",
+  "standard": "PAL",
+  "stops": [
+    {
+      "name": "sys",
+      "pc": 8215,
+      "previous_pc": 992,
+      "axyz": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "base_page": 0,
+      "hardware_sp": 495,
+      "flags": {
+        "E": true,
+        "N": false,
+        "Z": false,
+        "C": false,
+        "V": false,
+        "D": false,
+        "I": false
+      },
+      "software_sp": 58,
+      "irq_level": 0,
+      "nmi_edge": 0,
+      "cia1_icr_mask_data": [
+        0,
+        2
+      ],
+      "cia2_icr_mask_data": [
+        0,
+        3
+      ],
+      "map_hi_mb_lo_mb_hi_offset_lo_offset_mask": [
+        0,
+        0,
+        196608,
+        0,
+        142
+      ],
+      "cpu_port_ddr_data": [
+        255,
+        133
+      ],
+      "io_mode": 3,
+      "d030": 100,
+      "video_6f": 0,
+      "cartridge_fb_fd": [
+        255,
+        63
+      ],
+      "d67d": 111,
+      "rom_protection": 1,
+      "privileged": false,
+      "dma": false,
+      "hardware_stack_sha256": "83f6cff51ad3e1d6a06789ef37b4d631977943e128f585becb66dc4bad47f78c",
+      "fetch_page_base": 536870912,
+      "resident_sha256": "28f3557f0552f79641a1695fbefd7f04d51c56ec348907db10e6c1e2479a7af3"
+    }
+  ],
+  "rendering_executed": false,
+  "injection_stop": "0x28830",
+  "failure": "SYS fetch depends on an inherited MAP window"
+}

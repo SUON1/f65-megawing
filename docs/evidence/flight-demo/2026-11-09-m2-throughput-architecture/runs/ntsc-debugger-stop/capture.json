@@ -1,0 +1,311 @@
+{
+  "status": "FAIL",
+  "standard": "NTSC",
+  "stops": [
+    {
+      "name": "sys",
+      "pc": 8215,
+      "previous_pc": 992,
+      "axyz": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "base_page": 0,
+      "hardware_sp": 495,
+      "flags": {
+        "E": true,
+        "N": false,
+        "Z": false,
+        "C": false,
+        "V": false,
+        "D": false,
+        "I": false
+      },
+      "software_sp": 58,
+      "irq_level": 0,
+      "nmi_edge": 0,
+      "cia1_icr_mask_data": [
+        0,
+        2
+      ],
+      "cia2_icr_mask_data": [
+        0,
+        3
+      ],
+      "map_hi_mb_lo_mb_hi_offset_lo_offset_mask": [
+        0,
+        0,
+        196608,
+        0,
+        142
+      ],
+      "cpu_port_ddr_data": [
+        255,
+        133
+      ],
+      "io_mode": 3,
+      "d030": 100,
+      "video_6f": 128,
+      "cartridge_fb_fd": [
+        255,
+        63
+      ],
+      "d67d": 111,
+      "rom_protection": 1,
+      "privileged": false,
+      "dma": false,
+      "hardware_stack_sha256": "ac229711adebc1880fbddc52cb30ae5c416f6f0e669e8f6ac1fa9dc53f514060",
+      "fetch_page_base": 536870912,
+      "resident_sha256": "28f3557f0552f79641a1695fbefd7f04d51c56ec348907db10e6c1e2479a7af3",
+      "derived_sys_physical_fetch": 8215
+    },
+    {
+      "name": "canonical",
+      "pc": 8411,
+      "previous_pc": 8394,
+      "axyz": [
+        237,
+        255,
+        0,
+        0
+      ],
+      "base_page": 2,
+      "hardware_sp": 511,
+      "flags": {
+        "E": true,
+        "N": false,
+        "Z": true,
+        "C": true,
+        "V": false,
+        "D": false,
+        "I": true
+      },
+      "software_sp": 53248,
+      "irq_level": 0,
+      "nmi_edge": 0,
+      "cia1_icr_mask_data": [
+        0,
+        0
+      ],
+      "cia2_icr_mask_data": [
+        0,
+        0
+      ],
+      "map_hi_mb_lo_mb_hi_offset_lo_offset_mask": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "cpu_port_ddr_data": [
+        47,
+        53
+      ],
+      "io_mode": 3,
+      "d030": 68,
+      "video_6f": 128,
+      "cartridge_fb_fd": [
+        253,
+        193
+      ],
+      "d67d": 111,
+      "rom_protection": 1,
+      "privileged": false,
+      "dma": false,
+      "hardware_stack_sha256": "ac229711adebc1880fbddc52cb30ae5c416f6f0e669e8f6ac1fa9dc53f514060",
+      "fetch_page_base": 8192,
+      "resident_sha256": "28f3557f0552f79641a1695fbefd7f04d51c56ec348907db10e6c1e2479a7af3"
+    },
+    {
+      "name": "pre_trap",
+      "pc": 8750,
+      "previous_pc": 8748,
+      "axyz": [
+        112,
+        4,
+        0,
+        0
+      ],
+      "base_page": 2,
+      "hardware_sp": 496,
+      "flags": {
+        "E": true,
+        "N": false,
+        "Z": false,
+        "C": true,
+        "V": false,
+        "D": false,
+        "I": true
+      },
+      "software_sp": 53240,
+      "irq_level": 0,
+      "nmi_edge": 0,
+      "cia1_icr_mask_data": [
+        0,
+        2
+      ],
+      "cia2_icr_mask_data": [
+        0,
+        1
+      ],
+      "map_hi_mb_lo_mb_hi_offset_lo_offset_mask": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "cpu_port_ddr_data": [
+        47,
+        53
+      ],
+      "io_mode": 3,
+      "d030": 68,
+      "video_6f": 128,
+      "cartridge_fb_fd": [
+        253,
+        193
+      ],
+      "d67d": 111,
+      "rom_protection": 1,
+      "privileged": false,
+      "dma": false,
+      "hardware_stack_sha256": "a6e9ca7f800e04fcc99f93e8add583975c96c6e25e339e1ac987d445ea8a5ce3",
+      "fetch_page_base": 8704,
+      "resident_sha256": "6a4bb5580de5e66870f5dc46088ad754816f618eb4d0ccaf9427f37c1c9b754a",
+      "live_hickup_sha256": "b18d4fdd7f4f7bf10d8efeca64673f865a1668093b71701f79cfc6ccb99067f9",
+      "physical_rom_sha256": "af3c447f791a2fdc48cb21e1bd3fab015e32641228d9d30d21259b9e878c6fa0",
+      "live_cf001_slices_match": true
+    },
+    {
+      "name": "privileged",
+      "pc": 32768,
+      "previous_pc": 8750,
+      "axyz": [
+        112,
+        4,
+        0,
+        0
+      ],
+      "base_page": 191,
+      "hardware_sp": 48895,
+      "flags": {
+        "E": true,
+        "N": false,
+        "Z": false,
+        "C": true,
+        "V": false,
+        "D": false,
+        "I": true
+      },
+      "software_sp": 53240,
+      "irq_level": 0,
+      "nmi_edge": 0,
+      "cia1_icr_mask_data": [
+        0,
+        2
+      ],
+      "cia2_icr_mask_data": [
+        0,
+        1
+      ],
+      "map_hi_mb_lo_mb_hi_offset_lo_offset_mask": [
+        267386880,
+        0,
+        983040,
+        0,
+        48
+      ],
+      "cpu_port_ddr_data": [
+        63,
+        53
+      ],
+      "io_mode": 3,
+      "d030": 68,
+      "video_6f": 128,
+      "cartridge_fb_fd": [
+        253,
+        193
+      ],
+      "d67d": 111,
+      "rom_protection": 1,
+      "privileged": true,
+      "dma": false,
+      "hardware_stack_sha256": "a6e9ca7f800e04fcc99f93e8add583975c96c6e25e339e1ac987d445ea8a5ce3",
+      "fetch_page_base": 536870912,
+      "resident_sha256": "6a4bb5580de5e66870f5dc46088ad754816f618eb4d0ccaf9427f37c1c9b754a",
+      "live_hickup_sha256": "b18d4fdd7f4f7bf10d8efeca64673f865a1668093b71701f79cfc6ccb99067f9",
+      "physical_rom_sha256": "af3c447f791a2fdc48cb21e1bd3fab015e32641228d9d30d21259b9e878c6fa0",
+      "live_cf001_slices_match": true,
+      "saved_context_d640_d658": "7004000002f0012531220000000000002f35030000c7020000"
+    },
+    {
+      "name": "return",
+      "pc": 8753,
+      "previous_pc": 33313,
+      "axyz": [
+        107,
+        4,
+        0,
+        0
+      ],
+      "base_page": 2,
+      "hardware_sp": 496,
+      "flags": {
+        "E": true,
+        "N": false,
+        "Z": false,
+        "C": true,
+        "V": false,
+        "D": false,
+        "I": true
+      },
+      "software_sp": 53240,
+      "irq_level": 0,
+      "nmi_edge": 0,
+      "cia1_icr_mask_data": [
+        0,
+        2
+      ],
+      "cia2_icr_mask_data": [
+        0,
+        1
+      ],
+      "map_hi_mb_lo_mb_hi_offset_lo_offset_mask": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "cpu_port_ddr_data": [
+        47,
+        53
+      ],
+      "io_mode": 3,
+      "d030": 68,
+      "video_6f": 128,
+      "cartridge_fb_fd": [
+        253,
+        193
+      ],
+      "d67d": 107,
+      "rom_protection": 0,
+      "privileged": false,
+      "dma": false,
+      "hardware_stack_sha256": "a6e9ca7f800e04fcc99f93e8add583975c96c6e25e339e1ac987d445ea8a5ce3",
+      "fetch_page_base": 8704,
+      "resident_sha256": "6a4bb5580de5e66870f5dc46088ad754816f618eb4d0ccaf9427f37c1c9b754a",
+      "live_hickup_sha256": "8e25ac066bd543446f23d8d9ff7472b644a3066ce39cc6ae94afb26864fd458b",
+      "physical_rom_sha256": "af3c447f791a2fdc48cb21e1bd3fab015e32641228d9d30d21259b9e878c6fa0",
+      "live_cf001_slices_match": true
+    }
+  ],
+  "rendering_executed": false,
+  "injection_stop": "0x28830",
+  "pre_vector_host_input_fence": "PASS; no input pump between SYS and canonical state",
+  "failure": "terminal: debugger did not stop before the guest opcode"
+}
