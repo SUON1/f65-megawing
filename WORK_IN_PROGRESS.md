@@ -1,8 +1,7 @@
 # Work in Progress
 
-- **Status** BLOCKED at the M2 throughput estimate gate.
-- **Task** M2 Throughput Architecture Correction. Successor branch `codex/65aero-m2-throughput-architecture` starts at `a46279c15b2e7604a93e7ad8a78cabf58e1f576d`.
-- **Authority** The 9 November founder direction approves a private development display representation, exact numerical throughput work subject to the estimate gate, and a separate restricted boot trace.
-- **Renderer** Within-store tile reuse fits the existing allocations and reconstructs the sealed default image exactly in the host model. The cold and moving-camera exact arithmetic path has no credible complete 20 Hz budget. The estimate gate stopped implementation before a renderer relink.
-- **Boot diagnostic** `65AERO-M2-BOOT-TRACE-1` passed restricted PAL and NTSC Xemu traces through CF001 and the reset-only terminal. It has no reachable runtime clock, display construction or ticks. Full renderer Xemu was not run.
-- **Handoff** [Measured blockers and sealed boot traces](docs/reports/M2_THROUGHPUT_ARCHITECTURE_CORRECTION.md). The next decision is the bounded exact arithmetic backend and its Platform ownership.
+- **Status** READY FOR REVIEW
+- **Task** M2 bounded exact wide arithmetic on `codex/65aero-m2-exact-wide-arithmetic`, based on `5ccfe124b53af6a755819d6ae4da3fc1ded0de02`.
+- **Authority** Founder approval covers a private Platform math transaction, independent exact arithmetic verification and a linked worst-case clipping-division bound. Existing ABI, precision, ownership and runtime gates govern.
+- **Result** Exclusive linked application access and host exactness passed. The two-digit division bound is 32,760 CPU cycles. Complete resident fit failed at 29,426 / 28,671 bytes. Rendering service and runtime remain unadmitted.
+- **Handoff** [Arithmetic, ownership and fit evidence](docs/reports/M2_EXACT_WIDE_ARITHMETIC.md). Review the bounded checkpoint before any integration. The compile-only option leaves the tile representation and launch grants unchanged.

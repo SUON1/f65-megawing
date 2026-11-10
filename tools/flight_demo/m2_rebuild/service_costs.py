@@ -14,10 +14,10 @@ PRG_SHA = '567a7b0425598ffc049d4b82bcd8bdd82c09d7aef6bcd8523ac1063cdda4fbdd'
 TIMING_SHA = '6bb84846f83975acbdff5f16e39ebe7b5e08390cb68ed0cab2a85df311b4af58'
 
 
-class Costs:
-    def __init__(self, prg, disassembly, symbols, timings):
-        if hashlib.sha256(prg).hexdigest() != PRG_SHA:
-            raise ValueError('loop witnesses and limits apply only to the sealed SERVICE1 image')
+class InstructionTiming:
+    def __init__(self, prg, disassembly, symbols, timings, expected_prg):
+        if hashlib.sha256(prg).hexdigest() != expected_prg:
+            raise ValueError('loop witnesses and limits apply only to the sealed image')
         if hashlib.sha256(timings).hexdigest() != TIMING_SHA:
             raise ValueError('pinned Xemu timing table changed')
         self.instructions, self.names = parse(disassembly, symbols)
@@ -60,6 +60,11 @@ class Costs:
     def callee(self, address):
         op, operand, _ = self.instructions[address]
         return int(operand[1:], 16) if op == 'jsr' else None
+
+
+class Costs(InstructionTiming):
+    def __init__(self, prg, disassembly, symbols, timings):
+        super().__init__(prg, disassembly, symbols, timings, PRG_SHA)
 
     @lru_cache(maxsize=None)
     def minimum(self, start, end=None, exclude=frozenset(), cuts=frozenset(),

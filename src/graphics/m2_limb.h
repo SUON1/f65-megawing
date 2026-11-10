@@ -8,8 +8,14 @@ typedef struct
 {
     uint8_t a[6];
     uint8_t b[6];
+#ifdef M2_EXACT_WIDE
+    // The first twelve bytes hold the complete raw product. Division
+    // normalizes it in place, then consumes one nine-byte window per digit.
+    uint8_t product[18];
+#else
     uint8_t product[12];
     uint8_t remainder[7];
+#endif
     uint8_t quotient[12];
     M2Wide value;
     uint8_t phase;
@@ -31,5 +37,5 @@ uint8_t m2w_narrow(const M2Wide value, int32_t *out);
 uint8_t m2l_multiply(M2LimbJob *job, const M2Wide a, const M2Wide b,
                       uint8_t shift);
 uint8_t m2l_divide(M2LimbJob *job, const M2Wide denominator);
-// One six-cell multiplication row or one restoring-division bit. -1 is fault.
+// One bounded kernel unit. -1 is fault.
 int8_t m2l_service(M2LimbJob *job);
