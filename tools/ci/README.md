@@ -39,3 +39,23 @@ SHA-256 `e0cf52a6bcfc72c4a73d3cea1a62af2dd19641353e7e6850e0edd8b18d4ec0a1`.
 Its three blank patch-context lines remain sealed and unchanged. The exception
 is exact-path only; changed, missing, renamed or symlinked evidence fails closed.
 Nearby unlisted files remain subject to ordinary whitespace checking.
+
+The founder approved these three additional whitespace pins for PR #32 on
+2026-11-10. They are the complete set of unpinned whitespace
+failures against main `9570f0a` at failed-checkpoint head `521bb58`:
+
+| Exact path under `docs/evidence/flight-demo/` | SHA-256 |
+| --- | --- |
+| `2026-10-30-m2-extended-resident-publication/static-hygiene.txt` | `54f35360b92af2723dbcf348269a69875ef7ac7edd89b21e751a68963fb1f8e9` |
+| `2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.map` | `5cb9f9e9f475ab9f56df689b0c2f492028ba1a10187226f86577e71d2b2335da` |
+| `2026-10-30-m2-extended-resident/target-1793405200824046000/UNADMITTED.map` | `5606cb0b50af4b9e777220994e3195ef62af1d22334dc14d6426bfb6febaf1e5` |
+
+Each hash matches its original seal. Only these paths become eligible; no
+flight-demo directory exception is introduced. Existing manifest pins and
+artifact restrictions remain intact. Tests cover exact blobs, changed bytes,
+missing/renamed/symlinked pins, invalid neighboring exception paths and unlisted
+neighbor whitespace. The checker still reads committed Git objects.
+
+This CI correction does not alter the 755-byte resident-fit failure or the
+independent 298,776-cycle cold-frame deficit. PR #32 remains draft, NOT FOR
+MERGE. No target relink or runtime testing is part of this correction.

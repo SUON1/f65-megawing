@@ -1,0 +1,26 @@
+test_a_reload_has_one_extra_encoded_count (test_fixed_schedule_preflight.ClockArithmeticTests) ... ok
+test_b_reload_discontinuity_survives_unsigned_subtraction (test_fixed_schedule_preflight.ClockArithmeticTests) ... ok
+test_both_witness_samples_are_accepted (test_fixed_schedule_preflight.ClockArithmeticTests) ... ok
+test_each_coherence_comparison_rejects_inconsistency (test_fixed_schedule_preflight.ClockArithmeticTests) ... ok
+test_existing_top_sixteen_reload_exclusion (test_fixed_schedule_preflight.ClockArithmeticTests) ... ok
+test_first_gate_has_no_frame_or_runtime_success (test_fixed_schedule_preflight.ClockArithmeticTests) ... ok
+test_first_three_a_reloads_against_update_oracle (test_fixed_schedule_preflight.ClockArithmeticTests) ... ok
+test_force_loaded_state (test_fixed_schedule_preflight.ClockArithmeticTests) ... ok
+test_malformed_samples_and_updates_fail (test_fixed_schedule_preflight.ClockArithmeticTests) ... ok
+test_ordinary_update_is_32_counts (test_fixed_schedule_preflight.ClockArithmeticTests) ... ok
+test_upper_reload_reachability_against_event_oracle (test_fixed_schedule_preflight.ClockArithmeticTests) ... ok
+test_cli_exits_nonzero_without_touching_inputs (test_fixed_schedule_preflight.FrozenInputTests) ... ok
+test_each_changed_reference_fails (test_fixed_schedule_preflight.FrozenInputTests) ... ok
+test_missing_reference_fails (test_fixed_schedule_preflight.FrozenInputTests) ... ok
+test_missing_source_witness_fails (test_fixed_schedule_preflight.FrozenInputTests) ... ok
+test_modified_image_fails (test_fixed_schedule_preflight.FrozenInputTests) ... ok
+test_modified_target_source_fails (test_fixed_schedule_preflight.FrozenInputTests) ... ok
+test_old_result_cannot_be_regraded_to_allow_unknown_costs (test_fixed_schedule_preflight.FrozenInputTests) ... ok
+test_symlink_reference_fails_even_with_same_bytes (test_fixed_schedule_preflight.FrozenInputTests) ... ok
+test_truncated_changed_and_extra_packet_inputs_fail (test_fixed_schedule_preflight.FrozenInputTests) ... ok
+test_valid_inputs_stop_before_schedule (test_fixed_schedule_preflight.FrozenInputTests) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.466s
+
+OK

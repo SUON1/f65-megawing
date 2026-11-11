@@ -1,0 +1,42 @@
+{
+  "cwd": "/private/tmp/f65-m2-platform-clock",
+  "baseline": "5c78bf7d00aadda0e63ce800e27fe3e142c651c0",
+  "commands": [
+    {
+      "command": "git fetch --no-tags origin",
+      "exit_code": 0,
+      "scope": "Initial remote reference refresh only"
+    },
+    {
+      "command": "python3 -B docs/evidence/flight-demo/2026-11-11-m2-platform-clock/inspect_gap.py --baseline /private/tmp/f65-m2-fixed-kernel-cost-correction",
+      "exit_code": 0,
+      "output": "preflight.json"
+    },
+    {
+      "command": "python3 -B tests/flight_demo/m2_rebuild/test_platform_clock.py",
+      "exit_code": 0,
+      "output": "host-evidence.tar.gz",
+      "scope": "11 focused C host checks, including ASan/UBSan; not target runtime"
+    },
+    {
+      "command": "xcrun --find clang",
+      "exit_code": 0,
+      "output": "host-compiler.json"
+    },
+    {
+      "command": "python3 -B docs/evidence/flight-demo/2026-11-11-m2-platform-clock/check_scope.py",
+      "exit_code": 0,
+      "output": "static-preservation.json"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0
+    }
+  ],
+  "target_compiles": 0,
+  "target_links": 0,
+  "runtime_executions": 0,
+  "commits": 0,
+  "pushes": 0,
+  "pr_updates": 0
+}

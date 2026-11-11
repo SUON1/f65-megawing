@@ -1,0 +1,42 @@
+{
+  "identity": "65AERO-M2-FIXED-KERNEL-PREFLIGHT-1",
+  "prg_sha256": "7fdcea61387c0e6b7ae92310725966ac6c0e29e82e8ba1c9a6be77335af76aad",
+  "target_seal_sha256": "e906a9472db26272268137773be4c0dd220bb264bd9ff10f1f2b88ef0bce518a",
+  "source_invariants": {
+    "src/core/m1_runtime.c": "7a6e816ad70e4d5c0859e768ff69109cac4c16c14deff328934a3b2c6d12111c",
+    "src/input/m1_input.c": "9a6f763a41615d58287b9d6b68560f961766648223e1a0af7a4b1e0964211e05",
+    "src/presentation/m1_snapshot.c": "0bc27b247f8b9a678c09c68afa158831477ade48949b8bc9b3631ecc11ca7191",
+    "src/diagnostics/m2_rebuild/main.c": "5e0b7e56020015a658cd239df0be1968b702f06fa53ce629866472e74545bf95",
+    "src/diagnostics/m2_rebuild/camera.c": "cc0f7f24e87a5974159c2afe4a851b785d0c83f69d2af08af5c44950c55d43af",
+    "src/input/m2_rebuild_input.c": "8ba01e0125251cfca67f73077a18faf2f493524e58596a08c2b9a135529e357e",
+    "src/platform/m1/m1_platform.c": "e321f14c79eb0c8516e04a00b949cb7fcacc90a20624bdbfc89f34c49882f08e",
+    "src/platform/m2_rebuild/platform.c": "24035b74a18e3402ac7fe69180a20794f6ec14be60d3d6d7a972f714cfbf2464",
+    "src/diagnostics/r0f/combined_platform.c": "428d54c3274c4c71f64c5c880337a3f2de8d9810518ea9caaa0ce5a99909d47a"
+  },
+  "timing_sha256": "6bb84846f83975acbdff5f16e39ebe7b5e08390cb68ed0cab2a85df311b4af58",
+  "tick": {
+    "own_instructions": 564,
+    "calls": {
+      "7bbe:m1_platform_now": 5229,
+      "7bcd:m1_platform_fault": 34,
+      "7d61:stop": 4,
+      "7c89:m2rb_platform_keys": 8290,
+      "7c8c:m2rb_input_edges": 47,
+      "7c8f:m2rb_camera_edges": 12144,
+      "7d6b:stop": 4,
+      "7c98:m1_platform_key": 24,
+      "7c9b:m1_input_sample": 1248,
+      "7c9e:m1_tick": 11298,
+      "7d5c:stop": 4
+    },
+    "irq_including_entry": 105,
+    "nmi_including_entry": 26,
+    "interrupt_envelope": "two raster IRQs and one terminal NMI",
+    "iteration_cpu_cycles_upper": 39126,
+    "interval_cpu_cycles": 405000,
+    "cpu_slack_before_dispatch": 365874,
+    "scope": "pinned old image CPU work; not a native-clock or frame admission"
+  },
+  "target_links": 0,
+  "runtime_executions": 0
+}

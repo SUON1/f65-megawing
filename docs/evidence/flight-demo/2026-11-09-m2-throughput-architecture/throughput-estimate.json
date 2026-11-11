@@ -1,0 +1,54 @@
+{
+  "status": "BLOCKED at integrated cost-estimate gate",
+  "scope": "read-only calculations and host representation model on the sealed default frame",
+  "baseline_prg_sha256": "567a7b0425598ffc049d4b82bcd8bdd82c09d7aef6bcd8523ac1063cdda4fbdd",
+  "target_executed": false,
+  "default_exact_reconstruction": {
+    "0x20000": 48,
+    "0x30000": 48
+  },
+  "display": {
+    "map_bytes": 2000,
+    "existing_reserved_bank_bytes_each": 65536,
+    "existing_used_extent_each": 63552,
+    "dynamic_allocated_slots": 640,
+    "affine_boundary_and_monotone_raster_demand_bound": 550,
+    "immutable_tiles_including_footer": 43,
+    "additional_bitmap_bytes": 80,
+    "default_copied_bytes_using_existing_line_path": 5168,
+    "default_copy_body_cycles_minimum": 134368,
+    "conservative_copy_only_cardinality": 40080,
+    "cost_boundary": "per-byte cost is a lower bound; worst demand is an upper bound; their product is a sizing scenario, not observed cycles or a proved violation"
+  },
+  "numeric": {
+    "mandatory_delta_calls": 162,
+    "minimum_delta_byte_cycles": 99,
+    "minimum_delta_body_cycles": 1539648,
+    "mandatory_product_cells": 7740,
+    "minimum_product_cell_cycles": 155,
+    "minimum_multiplication_cell_cycles": 1199700,
+    "mandatory_division_bits": 3456,
+    "minimum_division_bit_cycles": 315,
+    "minimum_division_shift_cycles": 1088640,
+    "disjoint_arithmetic_body_minimum": 3827988,
+    "previous_prepare_project_and_divider_minimum": 2100204,
+    "normalized_division_structural_bit_bound": 7650,
+    "normalized_shift_only_budget_at_structural_bound": 2409750
+  },
+  "integrated": {
+    "frame_allowance_cycles": 2025000,
+    "previous_frame_minimum_cycles": 12626832,
+    "planning_allocation_cycles": {
+      "exact_numerics": 800000,
+      "display_all_roles": 925000,
+      "five_ticks_and_scheduler": 300000
+    },
+    "allocation_status": "UNPROVEN for moving/cold, commit wait and exact five-tick bound",
+    "prior_tick_envelope_cycles": 864989,
+    "restricted_queue_tick_envelope_cycles": 438269,
+    "tick_limit_cycles": 405000,
+    "remaining_resident_before_code_after_bitmap": 576,
+    "actual_candidate_link": "NOT BUILT; integrated estimate did not clear",
+    "same_camera_cache": "Only a hit under the complete camera, fixture and numerical contract identity. Cold and changed poses still need the exact full computation."
+  }
+}

@@ -1,7 +1,8 @@
 // Platform alone touches hardware. Reset-only, no ROM return or DMA submission.
 // Copy uses PF001: A result; X/Y/Z/B/P/SP preserved; Q overlaps A. Physical
-// pointer scratch is $0222-$0229 under canonical B=$02, MAP/MB zero. IRQ masked;
-// PF001 NMI preserves A, performs no C calls/copies, and sets its sticky fault.
+// pointer scratch is $0222-$0229 under canonical B=$02, MAP/MB zero.
+// PF001 IRQ/NMI can preempt the copy without using this scratch. NMI preserves
+// A, performs no C calls/copies, and sets its sticky fault.
 // Display initialization is pre-timeline; service and commit remain UNPROVEN.
 #include <string.h>
 
@@ -56,6 +57,11 @@ static uint8_t enabled;
 static uint8_t front;
 static uint16_t top;
 static uint8_t buffer[64];
+
+uint8_t m2rb_io_fault(void)
+{
+    return m1_platform_fault();
+}
 
 // Near-source ranges are checked without wrapping; output classes are selected
 // by public functions, never accepted as arbitrary physical caller addresses.

@@ -1,0 +1,10 @@
+{
+  "tier": "independent raw linked control-flow check",
+  "target": "docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000",
+  "target_prg_sha256": "6515f7378194b9346ff9eee8c6712b4d4ed6a8465f32319d8daf0bc302039fd8",
+  "checker_sha256": "9c580a4793268f22ebe4e1925a39fa662d186bd26a0c8862e336d15ee0094c78",
+  "status": "FAIL",
+  "target_executed": false,
+  "failure": "branch is not an instruction boundary: 0x20dd",
+  "actual_exit": 1
+}

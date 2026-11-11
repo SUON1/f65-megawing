@@ -1,0 +1,1059 @@
+{
+  "status": "PASS: old caller/source preflight for host-only correction; no changed-image admission",
+  "baseline": "/private/tmp/f65-m2-fixed-kernel-cost-correction",
+  "baseline_commit": "5c78bf7d00aadda0e63ce800e27fe3e142c651c0",
+  "prg_sha256": "7fdcea61387c0e6b7ae92310725966ac6c0e29e82e8ba1c9a6be77335af76aad",
+  "source_count": 81,
+  "reference_count": 8,
+  "eight_read_window_cycles": 55,
+  "irq_cycles_including_entry": 105,
+  "sampler": {
+    "cases": 4128705,
+    "accepted_coherent": 4012577,
+    "rejected": 116128
+  },
+  "bounds": {
+    "__memset": {
+      "cpu_cycles": 5308,
+      "feedback": [
+        [
+          32236,
+          32223
+        ],
+        [
+          32240,
+          32223
+        ]
+      ],
+      "total_feedback_cap": 128,
+      "cyclic_instruction_count": 10
+    },
+    "m2c_prepare_begin": {
+      "cpu_cycles": 59,
+      "feedback": [],
+      "total_feedback_cap": 0,
+      "cyclic_instruction_count": 0
+    },
+    "memcpy": {
+      "cpu_cycles": 6093,
+      "feedback": [
+        [
+          32150,
+          32135
+        ],
+        [
+          32153,
+          32135
+        ]
+      ],
+      "total_feedback_cap": 128,
+      "cyclic_instruction_count": 12
+    },
+    "m1_release": {
+      "cpu_cycles": 27,
+      "feedback": [],
+      "total_feedback_cap": 0,
+      "cyclic_instruction_count": 0
+    },
+    "__mulhi3": {
+      "cpu_cycles": 1019,
+      "feedback": [
+        [
+          33277,
+          33256
+        ],
+        [
+          33281,
+          33256
+        ]
+      ],
+      "total_feedback_cap": 16,
+      "cyclic_instruction_count": 16
+    },
+    "m1_acquire": {
+      "cpu_cycles": 17228,
+      "feedback": [
+        [
+          19910,
+          19766
+        ],
+        [
+          19917,
+          19902
+        ],
+        [
+          19919,
+          19906
+        ],
+        [
+          19944,
+          19929
+        ]
+      ],
+      "total_feedback_cap": 12,
+      "cyclic_instruction_count": 85
+    },
+    "m2_camera_valid": {
+      "cpu_cycles": 828,
+      "feedback": [
+        [
+          16917,
+          16817
+        ]
+      ],
+      "total_feedback_cap": 3,
+      "cyclic_instruction_count": 47
+    },
+    "begin": {
+      "cpu_cycles": 37176,
+      "feedback": [],
+      "total_feedback_cap": 0,
+      "cyclic_instruction_count": 0
+    },
+    "fail": {
+      "cpu_cycles": 19,
+      "feedback": [],
+      "total_feedback_cap": 0,
+      "cyclic_instruction_count": 0
+    },
+    "increment": {
+      "cpu_cycles": 148,
+      "feedback": [],
+      "total_feedback_cap": 0,
+      "cyclic_instruction_count": 0
+    },
+    "m1_platform_fault": {
+      "cpu_cycles": 29,
+      "feedback": [],
+      "total_feedback_cap": 0,
+      "cyclic_instruction_count": 0
+    },
+    "raster": {
+      "cpu_cycles": 51,
+      "feedback": [],
+      "total_feedback_cap": 0,
+      "cyclic_instruction_count": 0
+    },
+    "m2rb_io_commit": {
+      "cpu_cycles": 326,
+      "feedback": [],
+      "total_feedback_cap": 0,
+      "cyclic_instruction_count": 0
+    },
+    "memcmp": {
+      "cpu_cycles": 8306,
+      "feedback": [
+        [
+          32185,
+          32165
+        ],
+        [
+          32189,
+          32165
+        ]
+      ],
+      "total_feedback_cap": 128,
+      "cyclic_instruction_count": 14
+    },
+    "m2_camera_same": {
+      "cpu_cycles": 16798,
+      "feedback": [],
+      "total_feedback_cap": 0,
+      "cyclic_instruction_count": 0
+    },
+    "coherent": {
+      "cpu_cycles": 22617,
+      "feedback": [],
+      "total_feedback_cap": 0,
+      "cyclic_instruction_count": 0
+    },
+    "__ashlhi3": {
+      "cpu_cycles": 520,
+      "feedback": [
+        [
+          32257,
+          32251
+        ]
+      ],
+      "total_feedback_cap": 32,
+      "cyclic_instruction_count": 5
+    },
+    "m2_bundle_fields": {
+      "cpu_cycles": 328024,
+      "feedback": [
+        [
+          18157,
+          18144
+        ],
+        [
+          18165,
+          18148
+        ],
+        [
+          18180,
+          18014
+        ],
+        [
+          18207,
+          18094
+        ]
+      ],
+      "total_feedback_cap": 394,
+      "cyclic_instruction_count": 91
+    },
+    "commit": {
+      "cpu_cycles": 351299,
+      "feedback": [],
+      "total_feedback_cap": 0,
+      "cyclic_instruction_count": 0
+    },
+    "__lshrqi3": {
+      "cpu_cycles": 275,
+      "feedback": [
+        [
+          32270,
+          32266
+        ]
+      ],
+      "total_feedback_cap": 32,
+      "cyclic_instruction_count": 4
+    },
+    "m2rb_glyph": {
+      "cpu_cycles": 39411,
+      "feedback": [
+        [
+          24727,
+          24717
+        ],
+        [
+          24834,
+          24803
+        ],
+        [
+          24860,
+          24830
+        ]
+      ],
+      "total_feedback_cap": 83,
+      "cyclic_instruction_count": 36
+    },
+    "__udivmodhi4": {
+      "cpu_cycles": 12301,
+      "feedback": [
+        [
+          32564,
+          32533
+        ],
+        [
+          32655,
+          32600
+        ],
+        [
+          32660,
+          32626
+        ],
+        [
+          32662,
+          32646
+        ]
+      ],
+      "total_feedback_cap": 64,
+      "cyclic_instruction_count": 50
+    },
+    "m2w_negate": {
+      "cpu_cycles": 695,
+      "feedback": [
+        [
+          9869,
+          9841
+        ]
+      ],
+      "total_feedback_cap": 12,
+      "cyclic_instruction_count": 17
+    },
+    "m2w_compare": {
+      "cpu_cycles": 992,
+      "feedback": [
+        [
+          10037,
+          9985
+        ]
+      ],
+      "total_feedback_cap": 8,
+      "cyclic_instruction_count": 27
+    },
+    "m2w_positive": {
+      "cpu_cycles": 6456,
+      "feedback": [],
+      "total_feedback_cap": 0,
+      "cyclic_instruction_count": 0
+    },
+    "jump": {
+      "cpu_cycles": 37,
+      "feedback": [],
+      "total_feedback_cap": 0,
+      "cyclic_instruction_count": 0
+    },
+    "m2w_double": {
+      "cpu_cycles": 1062,
+      "feedback": [
+        [
+          9943,
+          9882
+        ]
+      ],
+      "total_feedback_cap": 8,
+      "cyclic_instruction_count": 33
+    },
+    "m2w_i32": {
+      "cpu_cycles": 458,
+      "feedback": [
+        [
+          9828,
+          9803
+        ]
+      ],
+      "total_feedback_cap": 8,
+      "cyclic_instruction_count": 14
+    },
+    "__umodhi3": {
+      "cpu_cycles": 7243,
+      "feedback": [
+        [
+          32408,
+          32373
+        ],
+        [
+          32448,
+          32436
+        ],
+        [
+          32466,
+          32442
+        ]
+      ],
+      "total_feedback_cap": 48,
+      "cyclic_instruction_count": 38
+    },
+    "__modhi3": {
+      "cpu_cycles": 7402,
+      "feedback": [],
+      "total_feedback_cap": 0,
+      "cyclic_instruction_count": 0
+    },
+    "sine": {
+      "cpu_cycles": 14485,
+      "feedback": [],
+      "total_feedback_cap": 0,
+      "cyclic_instruction_count": 0
+    },
+    "m2w_add": {
+      "cpu_cycles": 1027,
+      "feedback": [
+        [
+          9943,
+          9882
+        ]
+      ],
+      "total_feedback_cap": 8,
+      "cyclic_instruction_count": 33
+    },
+    "m2w_narrow": {
+      "cpu_cycles": 606,
+      "feedback": [
+        [
+          10189,
+          10179
+        ],
+        [
+          10226,
+          10205
+        ]
+      ],
+      "total_feedback_cap": 8,
+      "cyclic_instruction_count": 18
+    },
+    "__lshrhi3": {
+      "cpu_cycles": 486,
+      "feedback": [
+        [
+          32287,
+          32281
+        ]
+      ],
+      "total_feedback_cap": 32,
+      "cyclic_instruction_count": 5
+    },
+    "finish": {
+      "cpu_cycles": 31443,
+      "feedback": [
+        [
+          12151,
+          12054
+        ],
+        [
+          12166,
+          12060
+        ],
+        [
+          12171,
+          12082
+        ],
+        [
+          12282,
+          12270
+        ]
+      ],
+      "total_feedback_cap": 43,
+      "cyclic_instruction_count": 65
+    },
+    "remainder_ge": {
+      "cpu_cycles": 553,
+      "feedback": [
+        [
+          11029,
+          10996
+        ]
+      ],
+      "total_feedback_cap": 6,
+      "cyclic_instruction_count": 18
+    },
+    "accumulate": {
+      "cpu_cycles": 1473,
+      "feedback": [
+        [
+          11962,
+          11905
+        ]
+      ],
+      "total_feedback_cap": 12,
+      "cyclic_instruction_count": 31
+    },
+    "math_ready": {
+      "cpu_cycles": 153,
+      "feedback": [
+        [
+          31509,
+          31501
+        ]
+      ],
+      "total_feedback_cap": 8,
+      "cyclic_instruction_count": 5
+    },
+    "m2rb_math_product": {
+      "cpu_cycles": 8463,
+      "feedback": [
+        [
+          31344,
+          31301
+        ],
+        [
+          31406,
+          31384
+        ],
+        [
+          31432,
+          31412
+        ]
+      ],
+      "total_feedback_cap": 16,
+      "cyclic_instruction_count": 50
+    },
+    "subtract_product": {
+      "cpu_cycles": 20252,
+      "feedback": [],
+      "total_feedback_cap": 0,
+      "cyclic_instruction_count": 0
+    },
+    "math_transact": {
+      "cpu_cycles": 8456,
+      "feedback": [
+        [
+          31344,
+          31301
+        ],
+        [
+          31406,
+          31384
+        ],
+        [
+          31432,
+          31412
+        ]
+      ],
+      "total_feedback_cap": 16,
+      "cyclic_instruction_count": 50
+    },
+    "m2rb_math_q24": {
+      "cpu_cycles": 8491,
+      "feedback": [],
+      "total_feedback_cap": 0,
+      "cyclic_instruction_count": 0
+    },
+    "divide_digit": {
+      "cpu_cycles": 33164,
+      "feedback": [],
+      "total_feedback_cap": 0,
+      "cyclic_instruction_count": 0
+    },
+    "finish_multiply": {
+      "cpu_cycles": 31481,
+      "feedback": [
+        [
+          12151,
+          12054
+        ],
+        [
+          12166,
+          12060
+        ],
+        [
+          12171,
+          12082
+        ],
+        [
+          12282,
+          12270
+        ]
+      ],
+      "total_feedback_cap": 43,
+      "cyclic_instruction_count": 65
+    },
+    "multiply_part": {
+      "cpu_cycles": 22580,
+      "feedback": [],
+      "total_feedback_cap": 0,
+      "cyclic_instruction_count": 0
+    },
+    "m2l_service": {
+      "cpu_cycles": 66796,
+      "feedback": [],
+      "total_feedback_cap": 0,
+      "cyclic_instruction_count": 0
+    },
+    "normalize": {
+      "cpu_cycles": 10459,
+      "feedback": [
+        [
+          10901,
+          10852
+        ]
+      ],
+      "total_feedback_cap": 6,
+      "cyclic_instruction_count": 25
+    },
+    "magnitude": {
+      "cpu_cycles": 6973,
+      "feedback": [],
+      "total_feedback_cap": 0,
+      "cyclic_instruction_count": 0
+    },
+    "m2l_divide": {
+      "cpu_cycles": 55620,
+      "feedback": [
+        [
+          10606,
+          10594
+        ],
+        [
+          10616,
+          10612
+        ],
+        [
+          10742,
+          10705
+        ]
+      ],
+      "total_feedback_cap": 15,
+      "cyclic_instruction_count": 32
+    },
+    "m2l_multiply": {
+      "cpu_cycles": 19513,
+      "feedback": [],
+      "total_feedback_cap": 0,
+      "cyclic_instruction_count": 0
+    },
+    "operand": {
+      "cpu_cycles": 241,
+      "feedback": [],
+      "total_feedback_cap": 0,
+      "cyclic_instruction_count": 0
+    },
+    "bind": {
+      "cpu_cycles": 2963,
+      "feedback": [
+        [
+          15764,
+          15720
+        ],
+        [
+          15849,
+          15813
+        ]
+      ],
+      "total_feedback_cap": 19,
+      "cyclic_instruction_count": 44
+    },
+    "m2_command_service": {
+      "cpu_cycles": 77812,
+      "feedback": [
+        [
+          14143,
+          14122
+        ]
+      ],
+      "total_feedback_cap": 12,
+      "cyclic_instruction_count": 10
+    },
+    "m2c_project_service": {
+      "cpu_cycles": 77914,
+      "feedback": [],
+      "total_feedback_cap": 0,
+      "cyclic_instruction_count": 0
+    },
+    "start": {
+      "cpu_cycles": 52,
+      "feedback": [],
+      "total_feedback_cap": 0,
+      "cyclic_instruction_count": 0
+    },
+    "m2_point_valid": {
+      "cpu_cycles": 1226,
+      "feedback": [
+        [
+          9044,
+          8948
+        ],
+        [
+          9055,
+          8948
+        ]
+      ],
+      "total_feedback_cap": 6,
+      "cyclic_instruction_count": 58
+    },
+    "m2c_project_begin": {
+      "cpu_cycles": 14893,
+      "feedback": [],
+      "total_feedback_cap": 0,
+      "cyclic_instruction_count": 0
+    },
+    "__mulsi3": {
+      "cpu_cycles": 5547,
+      "feedback": [
+        [
+          33364,
+          33321
+        ],
+        [
+          33372,
+          33321
+        ],
+        [
+          33381,
+          33321
+        ],
+        [
+          33390,
+          33321
+        ]
+      ],
+      "total_feedback_cap": 32,
+      "cyclic_instruction_count": 37
+    },
+    "m2_fixture_segment": {
+      "cpu_cycles": 29645,
+      "feedback": [
+        [
+          9736,
+          9619
+        ]
+      ],
+      "total_feedback_cap": 3,
+      "cyclic_instruction_count": 57
+    },
+    "r0f_pf_flat_copy": {
+      "cpu_cycles": 3215,
+      "feedback": [
+        [
+          8624,
+          8616
+        ],
+        [
+          8641,
+          8633
+        ]
+      ],
+      "total_feedback_cap": 72,
+      "cyclic_instruction_count": 10
+    },
+    "__lshrsi3": {
+      "cpu_cycles": 882,
+      "feedback": [
+        [
+          32310,
+          32300
+        ]
+      ],
+      "total_feedback_cap": 32,
+      "cyclic_instruction_count": 7
+    },
+    "copy": {
+      "cpu_cycles": 13060,
+      "feedback": [
+        [
+          29663,
+          29607
+        ]
+      ],
+      "total_feedback_cap": 4,
+      "cyclic_instruction_count": 28
+    },
+    "store_base": {
+      "cpu_cycles": 34,
+      "feedback": [],
+      "total_feedback_cap": 0,
+      "cyclic_instruction_count": 0
+    },
+    "m2rb_io_write": {
+      "cpu_cycles": 13477,
+      "feedback": [],
+      "total_feedback_cap": 0,
+      "cyclic_instruction_count": 0
+    },
+    "m2c_horizon_begin": {
+      "cpu_cycles": 9,
+      "feedback": [],
+      "total_feedback_cap": 0,
+      "cyclic_instruction_count": 0
+    },
+    "m2c_prepare_service": {
+      "cpu_cycles": 77865,
+      "feedback": [],
+      "total_feedback_cap": 0,
+      "cyclic_instruction_count": 0
+    },
+    "m2c_horizon_service": {
+      "cpu_cycles": 77962,
+      "feedback": [],
+      "total_feedback_cap": 0,
+      "cyclic_instruction_count": 0
+    },
+    "m2_raster_next": {
+      "cpu_cycles": 427,
+      "feedback": [],
+      "total_feedback_cap": 0,
+      "cyclic_instruction_count": 0
+    },
+    "m2_raster_begin": {
+      "cpu_cycles": 4267,
+      "feedback": [
+        [
+          17215,
+          16962
+        ],
+        [
+          17228,
+          16970
+        ]
+      ],
+      "total_feedback_cap": 8,
+      "cyclic_instruction_count": 139
+    },
+    "continuation": {
+      "cpu_cycles": 406245,
+      "feedback": [
+        [
+          23022,
+          22912
+        ],
+        [
+          23031,
+          22924
+        ],
+        [
+          23038,
+          22926
+        ]
+      ],
+      "total_feedback_cap": 8,
+      "cyclic_instruction_count": 68
+    },
+    "__udivmodsi4": {
+      "cpu_cycles": 69809,
+      "feedback": [
+        [
+          32984,
+          32917
+        ],
+        [
+          33142,
+          33045
+        ],
+        [
+          33147,
+          33129
+        ],
+        [
+          33149,
+          33097
+        ],
+        [
+          33154,
+          33129
+        ],
+        [
+          33156,
+          33097
+        ]
+      ],
+      "total_feedback_cap": 192,
+      "cyclic_instruction_count": 90
+    },
+    "number": {
+      "cpu_cycles": 637293,
+      "feedback": [
+        [
+          24602,
+          24534
+        ],
+        [
+          24646,
+          24582
+        ]
+      ],
+      "total_feedback_cap": 8,
+      "cyclic_instruction_count": 56
+    },
+    "m2rb_text_row": {
+      "cpu_cycles": 34426403,
+      "feedback": [
+        [
+          24033,
+          24023
+        ],
+        [
+          24106,
+          24040
+        ]
+      ],
+      "total_feedback_cap": 53,
+      "cyclic_instruction_count": 40
+    },
+    "word": {
+      "cpu_cycles": 79,
+      "feedback": [],
+      "total_feedback_cap": 0,
+      "cyclic_instruction_count": 0
+    },
+    "initialize_store": {
+      "cpu_cycles": 108096658,
+      "feedback": [
+        [
+          30586,
+          30468
+        ],
+        [
+          30593,
+          30475
+        ],
+        [
+          30604,
+          30494
+        ],
+        [
+          30696,
+          30381
+        ],
+        [
+          30710,
+          30428
+        ],
+        [
+          30713,
+          30437
+        ],
+        [
+          30830,
+          30739
+        ]
+      ],
+      "total_feedback_cap": 4033,
+      "cyclic_instruction_count": 217
+    },
+    "m2rb_platform_init": {
+      "cpu_cycles": 217537593,
+      "feedback": [
+        [
+          29953,
+          29844
+        ],
+        [
+          29962,
+          29895
+        ],
+        [
+          29965,
+          29897
+        ]
+      ],
+      "total_feedback_cap": 100,
+      "cyclic_instruction_count": 58
+    },
+    "m2rb_renderer_init": {
+      "cpu_cycles": 1343572,
+      "feedback": [
+        [
+          32236,
+          32223
+        ],
+        [
+          32240,
+          32223
+        ]
+      ],
+      "total_feedback_cap": 32768,
+      "cyclic_instruction_count": 10
+    },
+    "m2rb_io_fault": {
+      "cpu_cycles": 34,
+      "feedback": [],
+      "total_feedback_cap": 0,
+      "cyclic_instruction_count": 0
+    },
+    "m2rb_dispatch": {
+      "cpu_cycles": 26645541743,
+      "feedback": [
+        [
+          21707,
+          21555
+        ],
+        [
+          21716,
+          21559
+        ],
+        [
+          21726,
+          21681
+        ]
+      ],
+      "total_feedback_cap": 65535,
+      "cyclic_instruction_count": 83
+    },
+    "cfnow": {
+      "cpu_cycles": 4980,
+      "feedback": [
+        [
+          27813,
+          27766
+        ],
+        [
+          27819,
+          27766
+        ],
+        [
+          27829,
+          27766
+        ],
+        [
+          27838,
+          27766
+        ],
+        [
+          27853,
+          27766
+        ]
+      ],
+      "total_feedback_cap": 32,
+      "cyclic_instruction_count": 39
+    },
+    "cfratio": {
+      "cpu_cycles": 217906,
+      "feedback": [
+        [
+          28302,
+          28001
+        ],
+        [
+          28309,
+          28001
+        ],
+        [
+          28316,
+          28001
+        ],
+        [
+          28323,
+          28115
+        ],
+        [
+          28326,
+          28001
+        ],
+        [
+          28333,
+          28122
+        ],
+        [
+          28339,
+          28122
+        ],
+        [
+          28345,
+          28122
+        ],
+        [
+          28465,
+          28350
+        ],
+        [
+          28472,
+          28454
+        ],
+        [
+          28474,
+          28419
+        ],
+        [
+          28479,
+          28454
+        ],
+        [
+          28481,
+          28419
+        ]
+      ],
+      "total_feedback_cap": 240,
+      "cyclic_instruction_count": 238
+    },
+    "m1_core_init": {
+      "cpu_cycles": 5357,
+      "feedback": [],
+      "total_feedback_cap": 0,
+      "cyclic_instruction_count": 0
+    },
+    "m2rb_camera_init": {
+      "cpu_cycles": 319,
+      "feedback": [],
+      "total_feedback_cap": 0,
+      "cyclic_instruction_count": 0
+    },
+    "m2rb_guard": {
+      "cpu_cycles": 552,
+      "feedback": [],
+      "total_feedback_cap": 0,
+      "cyclic_instruction_count": 0
+    }
+  },
+  "dispatch_cpu_cycles_including_eight_deferred_rows": 26920952967,
+  "calibration_whole_poll_envelope_cpu_cycles": 4076303585,
+  "post_clock_initialization_cpu_cycles": 4295191412,
+  "runtime_dispatch_interval_cpu_cycles": 26920964465,
+  "old_tick_cpu_cycles": 39126,
+  "maximum_old_caller_cpu_cycles": 26920964465,
+  "native_counts_upper": 728824896,
+  "strict_native_count_limit": 2147483648,
+  "margin_native_counts": 1418658752,
+  "candidate_clock_target_cost": "UNMEASURED; future exact-image gap, stack, size and deadline recheck required",
+  "new_target_execution_or_link": false
+}

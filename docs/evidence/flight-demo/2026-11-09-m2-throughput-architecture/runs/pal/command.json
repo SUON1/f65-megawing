@@ -1,0 +1,63 @@
+{
+  "configuration": {
+    "standard": "PAL",
+    "working_directory": "/private/tmp/f65-m2-boot-tools/pal-identity-map",
+    "prg": "/private/tmp/f65-m2-boot-tools/target/BOOT-ONLY.prg",
+    "executable": "/private/tmp/f65-m2-boot-tools/pal-identity-map/XemuBoot.app/Contents/MacOS/xmega65",
+    "static": "/private/tmp/f65-m2-boot-tools/static.json",
+    "stdout": "/private/tmp/f65-m2-boot-tools/pal-identity-map/stdout.txt",
+    "stderr": "/private/tmp/f65-m2-boot-tools/pal-identity-map/stderr.txt",
+    "result": "/private/tmp/f65-m2-boot-tools/pal-identity-map/result.json",
+    "i2c_sha256": "15aaba90eece687188711b0d1f9bc012f8c7d6ae73ee2fe87ae1e130de6d7d38",
+    "identities": {
+      "xemu": "dd37baf7846b9696adcb662ffe5da040031b07214c66aef9a7f48cc30040b738",
+      "sdl": "4338adca59bfc6bad6ff44d0df03a9cd59c83a8916c478ae5d91e06b5d090761",
+      "rom": "af3c447f791a2fdc48cb21e1bd3fab015e32641228d9d30d21259b9e878c6fa0"
+    },
+    "environment": [
+      "SDL_VIDEODRIVER=cocoa",
+      "SDL_AUDIODRIVER=dummy"
+    ],
+    "arguments": [
+      "-skipconfigfile",
+      "-fastboot",
+      "-besure",
+      "-cpusinglestep",
+      "-nosound",
+      "-videostd",
+      "0",
+      "-lockvideostd",
+      "-fastclock",
+      "40.5",
+      "-rom",
+      "/Users/slice/Documents/Codex/f65-megawing/MEGA65.ROM",
+      "-virtsd",
+      "-sdimg",
+      "/private/tmp/f65-m2-boot-tools/pal-identity-map/virtual",
+      "-prg",
+      "/private/tmp/f65-m2-boot-tools/target/BOOT-ONLY.prg"
+    ]
+  },
+  "debugger_argv": [
+    "/usr/bin/lldb",
+    "-b",
+    "-o",
+    "command script import /private/tmp/f65-m2-throughput-20261109/tools/flight_demo/m2_rebuild/boot_trace.py",
+    "-o",
+    "f65-boot-observe /private/tmp/f65-m2-boot-tools/pal-identity-map/config.json"
+  ],
+  "result": "PASS at the restricted Xemu diagnostic tier",
+  "disposition": "PASS. Identity mapping proof and input fence active.",
+  "locally_retained_console": {
+    "stdout.txt": {
+      "path": "/private/tmp/f65-m2-boot-tools/pal-identity-map/stdout.txt",
+      "bytes": 12288,
+      "sha256": "fe3dd769bb462fe42d70b83f038c51d94911d05a9df186ecd80739e2038e8e6e"
+    },
+    "stderr.txt": {
+      "path": "/private/tmp/f65-m2-boot-tools/pal-identity-map/stderr.txt",
+      "bytes": 3667,
+      "sha256": "529e8da9f26466c12d3ba7c80ac6e6f7864adcf28a64404393b60057afd642ed"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "cwd": "isolated clone of codex/65aero-m2-extended-resident-admission",
+  "checks": [
+    {
+      "command": "python3 -B tools/flight_demo/m2_rebuild/service_admission.py --packet docs/evidence/flight-demo/2026-11-08-m2-bounded-service/target --host docs/evidence/flight-demo/2026-11-08-m2-bounded-service/host-1794156888511030000 --references /private/tmp/f65-m2-service-reference",
+      "exit": 1,
+      "result": "Evidence replay completed. Whole-frame service FAIL. Exit 1 deliberately signals non-admission.",
+      "output": "result.json"
+    },
+    {
+      "command": "python3 -B -m unittest discover -s tests/flight_demo/m2_rebuild -p 'test_*admission.py' -v",
+      "exit": 0,
+      "output": "verifier-regressions.txt"
+    },
+    {
+      "command": "python3 -B -m unittest discover -s tools/ci -p 'test_*.py' -v",
+      "exit": 0,
+      "output": "ci-policy-regressions.txt"
+    },
+    {
+      "command": "Python hashlib verification of the old packet seal and unrelated-path manifest; git rev-parse, merge-base, ls-tree, show, diff and status comparisons against 53ea27c and the retained worktree inventory",
+      "exit": 0,
+      "output": "preservation.json"
+    }
+  ]
+}

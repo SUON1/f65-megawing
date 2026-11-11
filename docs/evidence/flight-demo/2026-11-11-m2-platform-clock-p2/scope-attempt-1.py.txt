@@ -1,0 +1,132 @@
+"""Read-only P2 scope, syntax and preservation verification; no execution grant."""
+import ast
+from hashlib import sha256
+import json
+from pathlib import Path
+import re
+import subprocess
+import tarfile
+
+PACKET = Path(__file__).resolve().parent
+ROOT = PACKET.parents[3]
+OLD = PACKET.parent / '2026-11-11-m2-platform-clock'
+ALLOW = {'WORK_IN_PROGRESS.md', 'tools/flight_demo/m2_rebuild/clock_gap_v2.py',
+         'tests/flight_demo/m2_rebuild/test_clock_gap_v2.py',
+         'docs/reports/M2_PLATFORM_CLOCK_GAP_P2.md'}
+
+
+def git(root, *args):
+    return subprocess.check_output(['git', *args], cwd=root)
+
+
+def identity(raw):
+    return {'bytes': len(raw), 'sha256': sha256(raw).hexdigest()}
+
+
+def verify(root, inventory):
+    for name, expected in inventory.items():
+        if identity((root / name).read_bytes()) != expected:
+            raise ValueError('Preservation mismatch: ' + str(root / name))
+
+
+def sealed(packet):
+    inventory = json.loads((packet / 'seal.json').read_text())
+    members = {str(p.relative_to(packet)) for p in packet.rglob('*')
+               if p.is_file() and p.name != 'seal.json'}
+    if members != set(inventory):
+        raise ValueError('Packet membership changed: ' + str(packet))
+    verify(packet, inventory)
+    return len(inventory)
+
+
+before = json.loads((PACKET / 'before.json').read_text())
+preserved = {name: value for name, value in before.items() if name != 'WORK_IN_PROGRESS.md'}
+verify(ROOT, preserved)
+if identity((PACKET / 'prior-wip.md').read_bytes()) != before['WORK_IN_PROGRESS.md']:
+    raise ValueError('Prior WIP not preserved')
+if sha256((OLD / 'seal.json').read_bytes()).hexdigest() != '0b0abb69eebb774bbba81203cb9f7b8a990b634c8b1e2968e28af091cc89e593':
+    raise ValueError('Original seal changed')
+old_members = sealed(OLD)
+old_inputs = json.loads((OLD / 'candidate-inputs.json').read_text())
+verify(ROOT, {name: value for name, value in old_inputs.items() if name != 'WORK_IN_PROGRESS.md'})
+
+files = set(git(ROOT, 'ls-files', '--cached', '--others', '--exclude-standard', '-z').decode().split('\0')) - {''}
+added = files - set(before)
+prefix = str(PACKET.relative_to(ROOT)) + '/'
+if any(name not in ALLOW and not name.startswith(prefix) for name in added):
+    raise ValueError('Unexpected addition')
+if set(before) - files:
+    raise ValueError('Missing original file')
+for args, expected in ((('rev-parse', 'HEAD'), '5c78bf7d00aadda0e63ce800e27fe3e142c651c0'),
+                       (('branch', '--show-current'), 'codex/65aero-m2-platform-clock'),
+                       (('rev-parse', 'origin/main'), '9570f0ab427121a4e8f042041a14c89aaaeff9e2')):
+    if git(ROOT, *args).decode().strip() != expected:
+        raise ValueError('Git identity changed: ' + str(args))
+if git(ROOT, 'diff', '--cached', '--name-only'):
+    raise ValueError('Unexpected staged changes')
+
+related = json.loads((OLD / 'related-before.json').read_text())
+for name, expected in related.items():
+    root = Path(name)
+    actual = {'head': git(root, 'rev-parse', 'HEAD').decode().strip(),
+              'status': git(root, 'status', '--short').decode(),
+              'diff_sha256': sha256(git(root, 'diff', '--binary')).hexdigest()}
+    if actual != {key: expected[key] for key in actual}:
+        raise ValueError('Related checkout changed: ' + name)
+    verify(root, expected['dirty_files'])
+
+sources = json.loads((PACKET / 'source-identities.json').read_text())
+verify(ROOT, sources)
+with tarfile.open(PACKET / 'verifier-sources.tar.gz', 'r:gz') as archive:
+    if set(archive.getnames()) != set(sources) or len(archive.getnames()) != len(sources):
+        raise ValueError('Source archive membership mismatch')
+    for name, expected in sources.items():
+        if identity(archive.extractfile(name).read()) != expected:
+            raise ValueError('Archived source mismatch: ' + name)
+commands = json.loads((PACKET / 'commands.json').read_text())
+if len(commands) < 2 or any(command['exit_code'] for command in commands):
+    raise ValueError('Recorded command failure')
+result = json.loads((PACKET / 'run-1.stdout').read_text())
+if (result['identity'] != '65AERO-M2-PLATFORM-CLOCK-GAP-2'
+        or result['normalization']['admitted_feedback_cap'] != 12
+        or result['bounds']['normalize']['cpu_cycles'] != 14191
+        or result['bounds']['m2l_divide']['cpu_cycles'] != 63084):
+    raise ValueError('Correction result mismatch')
+
+counts = {'json': 0, 'python': 0, 'local_links': 0, 'text_whitespace': 0}
+for name in sorted(added | ALLOW):
+    path = ROOT / name
+    if path.suffix == '.gz':
+        continue
+    text = path.read_text()
+    if any(line.rstrip(' \t') != line for line in text.splitlines()):
+        raise ValueError('Trailing whitespace: ' + name)
+    counts['text_whitespace'] += 1
+    if path.suffix == '.json':
+        json.loads(text)
+        counts['json'] += 1
+    if path.suffix == '.py':
+        ast.parse(text, filename=name)
+        counts['python'] += 1
+    if path.suffix == '.md':
+        for link in re.findall(r'\[[^\]]+\]\(([^)]+)\)', text):
+            if '://' not in link and not link.startswith('#'):
+                if not (path.parent / link.split('#')[0]).exists():
+                    raise ValueError('Broken local link: ' + link)
+                counts['local_links'] += 1
+
+original = Path('/private/tmp/f65-m2-fixed-kernel-preflight/docs/evidence/flight-demo/2026-11-11-m2-fixed-kernel-preflight/check_scope.py')
+retained = subprocess.run(['python3', '-B', str(original)], text=True, capture_output=True,
+                          cwd=original.parents[4])
+if retained.returncode:
+    raise ValueError('Historical preservation checker failed: ' + retained.stderr)
+subprocess.run(['git', 'diff', '--check'], cwd=ROOT, check=True)
+if (PACKET / 'seal.json').exists():
+    sealed(PACKET)
+print(json.dumps({'status': 'PASS for P2 host/static scope',
+                  'preserved_preexisting_files': len(preserved), 'old_sealed_members': old_members,
+                  'related_checkouts': len(related), 'checks': counts,
+                  'p2_paths': sorted(added | {'WORK_IN_PROGRESS.md'}),
+                  'original_preservation': json.loads(retained.stdout),
+                  'source_archive_match': True, 'git_diff_check_exit': 0,
+                  'compiler_invocations': 0, 'target_links': 0, 'runtime_executions': 0}, indent=2))

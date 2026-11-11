@@ -1,0 +1,172 @@
+{
+  "status": "PASS",
+  "sources": {
+    "src/platform/m1/clock_private.h": {
+      "bytes": 1709,
+      "sha256": "16b540ff7950d3102229ad4cabbef6bef5422736bec316822a7a973fd39e8439"
+    },
+    "src/platform/m1/m1_platform.c": {
+      "bytes": 5420,
+      "sha256": "ceb7fcbc1c00d53380713376592ffb66fe20aa96f432315cfdaaf2ea26bd8006"
+    },
+    "src/platform/m1/m1_platform.h": {
+      "bytes": 613,
+      "sha256": "00211a594d0b43ab1163c9025abd2f83ac4d25311e2f7227e942e1eb85e1f119"
+    },
+    "src/diagnostics/r0f/combined_platform.c": {
+      "bytes": 12125,
+      "sha256": "428d54c3274c4c71f64c5c880337a3f2de8d9810518ea9caaa0ce5a99909d47a"
+    },
+    "src/diagnostics/r0f/combined_platform.h": {
+      "bytes": 1389,
+      "sha256": "4d83f75144d74dca6d9442daee528d59e97672d50b8aa41d9f810d4a27436736"
+    },
+    "src/diagnostics/r0f/combined_model.c": {
+      "bytes": 7409,
+      "sha256": "9aaf2f9b7002c69297be58ff969f57d5e0c034c40659bec9b496f7e8c2ace861"
+    },
+    "src/diagnostics/r0f/combined_model.h": {
+      "bytes": 1332,
+      "sha256": "0931d1e42914903d61d073be597910575a941171c6592b45d4a81649123113df"
+    },
+    "interfaces/generated/r0f_combined.h": {
+      "bytes": 2880,
+      "sha256": "a728d596e43163e28d1de7d2e17ee366b6df4970be8924bff9f64ca2e4a0d4f2"
+    },
+    "interfaces/generated/m1_development.h": {
+      "bytes": 1217,
+      "sha256": "9f9f3d28933cd585fac1f4efaaa53a1d32ed63565739dfba66e252faf835a272"
+    },
+    "src/platform/m2_rebuild/guard.c": {
+      "bytes": 687,
+      "sha256": "eff47ff7fc8396b2114e43b498f2818b3317852835e320ec8bda79390c20c4c3"
+    },
+    "src/platform/m2_rebuild/guard.h": {
+      "bytes": 312,
+      "sha256": "3257265ab9c85c60de155be2cfa266df1f579976d062a3cc410710991b5d6226"
+    },
+    "src/diagnostics/m2_rebuild/main.c": {
+      "bytes": 2693,
+      "sha256": "5e0b7e56020015a658cd239df0be1968b702f06fa53ce629866472e74545bf95"
+    },
+    "tests/flight_demo/m2_rebuild/clock_host.c": {
+      "bytes": 5277,
+      "sha256": "f5c62e2e45970675ba485f9ea4d2b02c056699968b437e569bd682c0e24e3c6d"
+    },
+    "tests/flight_demo/m2_rebuild/test_platform_clock.py": {
+      "bytes": 12156,
+      "sha256": "72bac54156fe4de1fe58cc197d61b6377f0495ab0c659b332bc0e92ef8b14591"
+    }
+  },
+  "compiler": "/usr/bin/clang",
+  "compiler_sha256": "5b1ddb7e9c11b87a034fc88b212e8ac243cfe2b4db696d767aa44c79595fc09a",
+  "compiler_version": [
+    "Apple clang version 21.0.0 (clang-2100.3.34.2)",
+    "Target: arm64-apple-darwin25.6.0",
+    "Thread model: posix",
+    "InstalledDir: /Library/Developer/CommandLineTools/usr/bin"
+  ],
+  "commands": [
+    {
+      "argv": [
+        "/usr/bin/clang",
+        "--version"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "/usr/bin/clang",
+        "-std=c11",
+        "-O1",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "-I/var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/f65-platform-clock-host-dmzsfuuz",
+        "-Iinterfaces/generated",
+        "-Isrc/diagnostics/r0f",
+        "-Isrc/platform/m1",
+        "-Isrc/platform/m2_rebuild",
+        "tests/flight_demo/m2_rebuild/clock_host.c",
+        "src/diagnostics/r0f/combined_model.c",
+        "src/platform/m2_rebuild/guard.c",
+        "-o",
+        "/var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/f65-platform-clock-host-dmzsfuuz/clock-host"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "/var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/f65-platform-clock-host-dmzsfuuz/clock-host"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "/var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/f65-platform-clock-host-dmzsfuuz/clock-host"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "/var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/f65-platform-clock-host-dmzsfuuz/clock-host"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "/var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/f65-platform-clock-host-dmzsfuuz/clock-host"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "/var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/f65-platform-clock-host-dmzsfuuz/clock-host"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "/var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/f65-platform-clock-host-dmzsfuuz/clock-host"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "/var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/f65-platform-clock-host-dmzsfuuz/clock-host"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "/var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/f65-platform-clock-host-dmzsfuuz/clock-host"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "/var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/f65-platform-clock-host-dmzsfuuz/clock-host"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "/var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/f65-platform-clock-host-dmzsfuuz/clock-host"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "/var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/f65-platform-clock-host-dmzsfuuz/clock-host"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "output": "/var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/f65-platform-clock-host-dmzsfuuz",
+  "target_link_or_execution": false,
+  "host_state_bytes": 12,
+  "logical_payload_bytes": 10
+}

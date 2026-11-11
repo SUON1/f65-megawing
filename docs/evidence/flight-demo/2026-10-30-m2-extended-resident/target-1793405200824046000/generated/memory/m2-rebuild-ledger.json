@@ -1,0 +1,63 @@
+{
+  "identity": "65AERO-M2-MIN-REBUILD-1",
+  "source_sha256": "9567374c9b08c1f24e9d58caca081885841dea42ae08c04e8b898e1dd42c7efb",
+  "status": "source baseline only; actual target fit/stack/service required",
+  "ranges": {
+    "resident": [
+      8193,
+      32768
+    ],
+    "hardware_stack": [
+      256,
+      512
+    ],
+    "base_page": [
+      512,
+      768
+    ],
+    "software_stack": [
+      49152,
+      53248
+    ],
+    "rom_backup": [
+      134217728,
+      134348800
+    ],
+    "protected_reserve": [
+      360448,
+      393216
+    ],
+    "reserve_used": 0
+  },
+  "displays": [
+    {
+      "owner": "Graphics",
+      "start": 131072,
+      "bytes": 63552
+    },
+    {
+      "owner": "Graphics",
+      "start": 196608,
+      "bytes": 63552
+    }
+  ],
+  "color": {
+    "owner": "Graphics/Platform",
+    "start": 267911168,
+    "bytes": 2000,
+    "immutable_after_init": true
+  },
+  "objects": {
+    "Graphics": "prepared camera/transform; two generated bundles; nine lines/visibility flags; snapshot; raster cursor; tile[64]; text[40]; counters",
+    "Diagnostics": "requested camera and revision",
+    "Input": "semantic prior key mask",
+    "Core/Presentation": "unchanged integrated owner objects",
+    "Platform": "existing lifecycle and new checked copy/mode adapter",
+    "compiler": "actual static scratch and both stack domains from target evidence"
+  },
+  "lifetime_aliasing": "none",
+  "reserve_allocation": 0,
+  "banking": false,
+  "dma_lists": [],
+  "execution_admitted": false
+}

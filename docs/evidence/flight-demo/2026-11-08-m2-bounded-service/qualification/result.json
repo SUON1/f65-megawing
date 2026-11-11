@@ -1,0 +1,351 @@
+{
+  "identity": "65AERO-M2-EXTRES-1-SERVICE1",
+  "checkpoint": "53ea27cbcd145be625c6e6602eac1f232e41b0cc",
+  "target": {
+    "members": 12,
+    "sha256": "0aaf182499633f4811a5156b56183a66ab8fdce6b6c04c0af590ad244dd0729e"
+  },
+  "host": {
+    "members": 24,
+    "sha256": "794c0d7002686d941566aa8e50d8416a6391bc35e8beeeaa6230c4c31e12e61e"
+  },
+  "target_prg_sha256": "567a7b0425598ffc049d4b82bcd8bdd82c09d7aef6bcd8523ac1063cdda4fbdd",
+  "source_members": 120,
+  "basic_run_sys_entry": 8215,
+  "load": {
+    "status": "PASS",
+    "scope": "raw PRG/ELF load identity; not observed CPU execution",
+    "origin": 8193,
+    "payload_end": 34155,
+    "payload_bytes": 25962,
+    "payload_bytes_above_8000": 1387,
+    "file_backed_sections_compared": [
+      ".basic_header",
+      ".text",
+      ".rodata"
+    ],
+    "resident_end": 36208,
+    "executable_section_bytes_above_8000": 0,
+    "loader_rule": "pinned Xemu inject.c copies PRG stream into main_ram + load_addr without an $8000 split",
+    "BSS_and_scratch": "NOBITS; initialization separately verified, not loaded payload"
+  },
+  "startup_prefix": {
+    "normal_entry_ordering": "PASS",
+    "start": 8215,
+    "normalized": 8312,
+    "pre_normalization_instructions": 48,
+    "scope": "linked reset-entry prefix and raw terminal-handler closure only",
+    "runtime_startup_admission": "UNPROVEN; no inherited-entry/async NMI/ROM-trap execution proof",
+    "terminal_handler_control_flow": "PASS",
+    "terminal_handler": 8921,
+    "terminal_handler_bytes": "784cd922",
+    "terminal_handler_target": 8921
+  },
+  "initialization": {
+    "status": "PASS",
+    "tier": "raw boot-fragment decoding/static helper proof",
+    "scratch": [
+      36155,
+      36208
+    ],
+    "scratch_zeroed": 53,
+    "BSS": [
+      34155,
+      36155
+    ],
+    "BSS_zeroed": 2000,
+    "cartridge_entry_cases": 15,
+    "bad_port_ROM_cases_fail_closed": 3,
+    "code_above_8000": "same canonical near-address policy; actual extent reported from ELF",
+    "startup_overall": "UNPROVEN until exact fresh-entry, privileged trap and asynchronous execution qualification"
+  },
+  "application_mapping": {
+    "status": "PASS",
+    "tier": "application linked MAP/ROM writer exclusion",
+    "canonical_MAP_sites": [
+      8226,
+      8232,
+      8428
+    ],
+    "ROM_overlay_writer_sites": [
+      8261,
+      8456
+    ],
+    "temporary_application_MAP": "none; covering $8000-$9fff and all other windows forbidden",
+    "staging": "actual retained physical-copy range validator tested separately; Graphics seam only names display/Color classes",
+    "privileged_trap": "UNPROVEN execution: separate Hypervisor suspension/restore; no application window lease or bank-zero overwrite authorized",
+    "physical_cartridge": "not qualified by Xemu; pinned primary VHDL contract only"
+  },
+  "application_stack": {
+    "status": "PASS",
+    "tier": "static application stack proof",
+    "root": "__do_init_stack (including BSS/startup, application and all reachable compiler helpers)",
+    "main_hardware_peak": 32,
+    "irq_frame_and_saves": 8,
+    "nmi_frame_and_saves": 4,
+    "hardware_bound": 44,
+    "software_bound": 38,
+    "hardware_capacity": 256,
+    "software_capacity": 4096,
+    "constant_software_adjustments": 21,
+    "call_entries": 112,
+    "reachable_instructions": 11632,
+    "software_initialization_alias": 8312,
+    "interrupt_compiler_scratch": "none; no direct-page accesses or calls",
+    "privileged_trap_sites": [
+      8750
+    ],
+    "whole_program_status": "UNPROVEN: exact Hypervisor internal stack/restoration and entry/NMI conditions require separate closure",
+    "conditions": [
+      "canonical prefix establishes E=1/page1 hardware stack before root",
+      "one nonrecursive external NMI edge may preempt IRQ; repeated nested external NMI is excluded",
+      "CF001 Hypervisor trap uses its separate protected stack; exact trap restoration required"
+    ],
+    "limitations": "No exercised high-water or arbitrary physical NMI-rate claim; Hypervisor internal stack is a separate gate"
+  },
+  "cf001_trap": {
+    "status": "PASS for this static built-in selector path, conditional on fresh session identity",
+    "xemu_commit": "40dfef0d1d5f56be2469492715c12bdb32c75b67",
+    "xemu_inputs": {
+      "targets/mega65/hypervisor.c": {
+        "bytes": 30501,
+        "sha256": "766c0191bacb133ddedf50b14e1f825e3311174e83707ba8bc5ba877cbdc685b"
+      },
+      "targets/mega65/inject.c": {
+        "bytes": 16281,
+        "sha256": "32468567110414b98a7b4a91cdccaa0ae046e44c7d5eb53ceb5beede13e813c0"
+      },
+      "targets/mega65/io_mapper.c": {
+        "bytes": 31382,
+        "sha256": "ab5dc491ed0b2c41ac4e3c8ed6413ee1db3d9191cf75dfa6b9094adb91bcdfd0"
+      },
+      "targets/mega65/memory_mapper.c": {
+        "bytes": 51388,
+        "sha256": "46b303b76baef6ac8d66519c65e4aa41d619674e9cdadd03eedafdbdedaaf87c"
+      },
+      "targets/mega65/memcontent.c": {
+        "bytes": 2034744,
+        "sha256": "70f75bfbcb8f1cb54db258e6009486f18e2b481ea7e72876e5e022b44589da0d"
+      },
+      "targets/mega65/mega65.c": {
+        "bytes": 34698,
+        "sha256": "b6550e3263d82a2b59b452c7f3d400f56544ab8be36c4b46cdcc087bfc67621e"
+      },
+      "targets/mega65/sdcard.c": {
+        "bytes": 49356,
+        "sha256": "5eb28898069cec38206f7fd1870ffcfae3c62bd1db4d4e05644ef634832aba5c"
+      },
+      "xemu/cpu65.c": {
+        "bytes": 87131,
+        "sha256": "2f138d3da13583b8f21669fe09d802296fdf211e98826d46e16d5b546e1cfc14"
+      },
+      "xemu/cpu65_mega65_timings.h": {
+        "bytes": 7914,
+        "sha256": "6bb84846f83975acbdff5f16e39ebe7b5e08390cb68ed0cab2a85df311b4af58"
+      }
+    },
+    "emulator_rom_and_sdl": {
+      "xemu": {
+        "bytes": 956800,
+        "sha256": "dd37baf7846b9696adcb662ffe5da040031b07214c66aef9a7f48cc30040b738"
+      },
+      "rom": {
+        "bytes": 131072,
+        "sha256": "af3c447f791a2fdc48cb21e1bd3fab015e32641228d9d30d21259b9e878c6fa0"
+      },
+      "sdl": {
+        "bytes": 1329552,
+        "sha256": "4338adca59bfc6bad6ff44d0df03a9cd59c83a8916c478ae5d91e06b5d090761"
+      }
+    },
+    "built_in_hickup": {
+      "bytes": 16384,
+      "sha256": "21f5b58549c61a886bfcdd4e73e3200b2c36790b8ba21ad6bbdaa59fefb8e7a4",
+      "file_offset": 631104
+    },
+    "raw_trap_slices_by_address": {
+      "8000": "4c048cea",
+      "8c04": "78d8297eaa7c0c8c",
+      "8c7c": "c38c",
+      "8cc3": "ad7dd649048d7dd68d40d64c1682",
+      "8216": "2024a2ad47d609018d47d68d7fd6",
+      "a224": "48a9828d80d6683860"
+    },
+    "user_trap_pc": 8750,
+    "return_pc": 8753,
+    "entry_conditions": [
+      "VIC-IV I/O visible, canonical zero MAP/mask/megabytes and B=$02",
+      "CPU DDR/data $2f/$35, E=1 page-one stack, D=0 and IRQ masked",
+      "ROM overlays and cartridge lines disabled; no cartridge or firmware override",
+      "no queued Hypervisor trap, fresh ROM and no pre-vector pending NMI"
+    ],
+    "privileged_execution": "trap 0 A=$70; private $8000-$bfff, B=$bf, SP=$beff; no IRQ/NMI entry while privileged",
+    "privileged_hardware_stack_peak_bytes": 3,
+    "privileged_software_stack_bytes": 0,
+    "privileged_write_addresses": [
+      "D67D",
+      "D640",
+      "D680",
+      "D647",
+      "D67F"
+    ],
+    "D680_82": "clear buffer mapping/error state only; no medium command or data transfer",
+    "restoration": "Xemu restores saved PC, MAP masks/MB/offsets, B, stack page/SP, E/I/D/P, I/O mode and CPU ports. VIC D030 and cartridge state are untouched by the traced firmware. User A and carry are deliberate results; the app wrapper restores saved P/X/Y/Z/B.",
+    "resident_integrity": "no user-RAM store; private stack writes and saved registers do not alias resident or software SP",
+    "failure": "CF001 rejects bad carry, B or ROM-protect result before the clock/ticks. Other return invariants rely on the pinned firmware and entry conditions. A late NMI latches terminal fault.",
+    "unproven": "actual pre-SYS MAP/NMI state, identity of running HICKUP after boot/upgrade, return visibility and external NMI arrival envelope on fresh PAL and NTSC"
+  },
+  "interrupt_writes": [
+    "$8775",
+    "$8776",
+    "$8777",
+    "$877b",
+    "$877c",
+    "$d019"
+  ],
+  "async_camera_generation_writer": false,
+  "writer_scope": "main is the only caller of camera edges and renderer dispatch; handlers only touch the addresses above; CF001 occurs during startup and runtime has no DMA submission",
+  "service": {
+    "status": "FAIL",
+    "scope": "pinned Xemu fast-mode instruction cycles, not execution or physical timing",
+    "clock_hz": 40500000,
+    "maximum_frame_cycles_at_20hz": 2025000,
+    "maximum_tick_cycles_at_100hz": 405000,
+    "roles": {
+      "begin": {
+        "address": 20690,
+        "successful_frame_calls": 1,
+        "minimum_cycles_excluding_separate_copy_and_divider_body": 82,
+        "maximum_cpu_cycles_with_rts": 20261,
+        "minimum_total_cycles_excluding_separate_loops": 82
+      },
+      "prepare": {
+        "address": 21468,
+        "successful_frame_calls": 585,
+        "minimum_cycles_excluding_separate_copy_and_divider_body": 44,
+        "maximum_cpu_cycles_with_rts": 1103542,
+        "minimum_total_cycles_excluding_separate_loops": 25740
+      },
+      "project": {
+        "address": 21531,
+        "successful_frame_calls": 5868,
+        "minimum_cycles_excluding_separate_copy_and_divider_body": 168,
+        "maximum_cpu_cycles_with_rts": 603024,
+        "minimum_total_cycles_excluding_separate_loops": 985824
+      },
+      "background": {
+        "address": 21737,
+        "successful_frame_calls": 5120,
+        "minimum_cycles_excluding_separate_copy_and_divider_body": 1703,
+        "maximum_cpu_cycles_with_rts": 16582,
+        "minimum_total_cycles_excluding_separate_loops": 8719360
+      },
+      "copy_tile": {
+        "address": 22053,
+        "successful_frame_calls": 960,
+        "minimum_cycles_excluding_separate_copy_and_divider_body": 105,
+        "maximum_cpu_cycles_with_rts": 41421,
+        "minimum_total_cycles_excluding_separate_loops": 100800
+      },
+      "line": {
+        "address": 22140,
+        "successful_frame_calls": 115,
+        "minimum_cycles_excluding_separate_copy_and_divider_body": 20,
+        "maximum_cpu_cycles_with_rts": 42233,
+        "minimum_total_cycles_excluding_separate_loops": 2300
+      },
+      "text": {
+        "address": 22491,
+        "successful_frame_calls": 320,
+        "minimum_cycles_excluding_separate_copy_and_divider_body": 325,
+        "maximum_cpu_cycles_with_rts": 62854144,
+        "minimum_total_cycles_excluding_separate_loops": 104000
+      },
+      "commit": {
+        "address": 21302,
+        "successful_frame_calls": 1,
+        "minimum_cycles_excluding_separate_copy_and_divider_body": 150,
+        "maximum_cpu_cycles_with_rts": 504041,
+        "minimum_total_cycles_excluding_separate_loops": 150
+      }
+    },
+    "helper_cpu_cycle_upper_bounds_with_returns": {
+      "m1_platform_now": 6111,
+      "m2rb_guard": 522,
+      "coherent": 2804,
+      "m2rb_io_fault": 32,
+      "m2rb_io_commit": 304,
+      "m1_tick": 784977,
+      "m2rb_platform_keys": 5147,
+      "m2rb_input_edges": 47,
+      "m2rb_camera_edges": 66298,
+      "m1_platform_key": 24,
+      "m1_input_sample": 942
+    },
+    "hardware_interrupt_cpu_cycle_upper_bounds_including_entry": {
+      "irq": 101,
+      "nmi": 26
+    },
+    "outer_call_jsr_cycles": 5,
+    "rts_cycles": 5,
+    "camera": {
+      "equal_byte_cycles_minimum": 55,
+      "byte_count": 22,
+      "full_equal_call_cycles_minimum": 1514,
+      "full_equal_call_cpu_cycle_upper_bound": 1908,
+      "two_equal_byte_loops_per_ordinary_batch_minimum": 2420,
+      "memcmp_loop": 30778,
+      "ordinary_batches": "two full checks; COMMIT checks three"
+    },
+    "copy": {
+      "loop": 8633,
+      "cycles_per_byte_minimum": 26,
+      "required_bytes": 61536,
+      "frame_cycles_minimum": 1599936
+    },
+    "division": {
+      "loop": 11395,
+      "cycles_per_bit_minimum": 315,
+      "required_bits": 3456,
+      "frame_cycles_minimum": 1088640
+    },
+    "background": {
+      "one_row_prefix_cycles_minimum": 293,
+      "one_pixel_cycles_minimum": 170,
+      "one_row_suffix_cycles_minimum": 50,
+      "one_row_cycles_minimum": 1703
+    },
+    "minimum_copy_plus_divider_cycles": 2688576,
+    "minimum_complete_frame_cycles": 12626832,
+    "minimum_complete_frame_ms": 311.7736296296296,
+    "optimistic_complete_frame_hz": 3.207455361724936,
+    "frame_excludes": [
+      "renderer dispatch/batch and coherence overhead",
+      "100 Hz release, input and tick work",
+      "guard, clock, interrupts and publication-window waiting"
+    ],
+    "batch_upper": {
+      "fixed_dispatch_cycles_with_rts": 9343,
+      "per_ordinary_step_overhead_cycles": 359,
+      "scheduler_cycles_including_clock_guard_dispatch_jsr": 6981,
+      "two_raster_irqs_and_one_nmi_cycles": 228,
+      "fixed_cycles_with_interrupt_envelope": 16552,
+      "tick_path_after_release_decision_cpu_cycles": 857780,
+      "tick_iteration_upper_including_clock_and_interrupts": 864989,
+      "operation_cpu_cost": "sum of admitted role bounds, including each continuation dispatch and iteration charge",
+      "additional_fixed_cost": "clock sampling, main pre-dispatch/return, IRQ/NMI and timestamp uncertainty",
+      "whole_wall_time": "UNPROVEN: native-count conversion, IRQ arrival and display-window timing require qualification"
+    },
+    "launch_and_native_count_grants": "zero; CPU cycle envelopes do not authorize a nonzero budget"
+  },
+  "target_executed": false,
+  "xemu": "NOT RUN",
+  "runtime_admission": "BLOCKED",
+  "programs": {
+    "tools/flight_demo/m2_rebuild/service_admission.py": "36f3edb33ff4817124fb8d8b7187f8ea8d40f1be13bf5fa44d8bb3c6fa04bb3c",
+    "tools/flight_demo/m2_rebuild/service_costs.py": "88074142dfb30b3fed281a4e935db5658085842013e0460088aeffef85188b12",
+    "tools/flight_demo/m2_rebuild/linked_admission.py": "7c06d2914cca52ee1831dce4a3a4c990c97239628c406712c1f442d39b6b4159",
+    "tools/flight_demo/m2_rebuild/stack_admission.py": "311babde951d2c584601473afb6c58690b3d04fe9c9e890981519ccd65c57047",
+    "tools/flight_demo/m2_rebuild/startup_check.py": "a5ef429fe91eb58a36a41366344c5abba71a8ebcbb83925d0387e81b3630df23"
+  }
+}

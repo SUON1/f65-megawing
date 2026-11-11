@@ -1,0 +1,90 @@
+{
+  "identity": "65AERO-M2-UNBANKED-1",
+  "tier": "publication-only",
+  "target_executed": false,
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit": 0,
+      "log": "publication-whitespace.txt"
+    }
+  ],
+  "baseline": {
+    "tracked_identities": 16084,
+    "preserved": 16076,
+    "authorized_changed": [
+      "WORK_IN_PROGRESS.md",
+      "src/diagnostics/m2_rebuild/camera.c",
+      "src/graphics/m2_rebuild.c",
+      "src/graphics/m2_rebuild.h",
+      "src/graphics/m2_rebuild_text.c",
+      "tests/flight_demo/m2_rebuild/host.c",
+      "tests/flight_demo/m2_rebuild/test_contract.py",
+      "tools/flight_demo/m2_rebuild/validate.py"
+    ]
+  },
+  "new_source_scope": [
+    "docs/reports/M2_UNBANKED_RENDERER.md",
+    "src/graphics/m2_compact.c",
+    "src/graphics/m2_compact.h",
+    "src/graphics/m2_compact_public.c",
+    "src/graphics/m2_limb.c",
+    "src/graphics/m2_limb.h",
+    "tests/flight_demo/m2_rebuild/limb_oracle.py",
+    "tests/flight_demo/m2_rebuild/test_compact_check.py",
+    "tests/flight_demo/m2_rebuild/test_compact_specialization.py",
+    "tests/flight_demo/m2_rebuild/text_compact.c",
+    "tools/flight_demo/m2_rebuild/compact_check.py",
+    "tools/flight_demo/m2_rebuild/compact_publication.py",
+    "tools/flight_demo/m2_rebuild/compact_validate.py"
+  ],
+  "unrelated_paths_preserved": 480,
+  "other_worktree_git_snapshots_preserved": 5,
+  "historical_provenance": "No reconstruction; old incomplete packet and missing worktree-tier limitations unchanged",
+  "sealed_attempts": {
+    "arithmetic-1793345443377217000": {
+      "members": 6,
+      "seal_sha256": "99082b73479b8c27f8e18e8fd5c6481ead5bc7d92ad46ca583a1b30196c3d0e2"
+    },
+    "arithmetic-1793345569500345000": {
+      "members": 7,
+      "seal_sha256": "951afe1569f9a818b644e83054c4a192e8fc3d9c709ee21d9ac78b4d74767a9f"
+    },
+    "focused-1793345691265329000": {
+      "members": 3,
+      "seal_sha256": "265e1e731ee24f5bb04bdaebafb3d744afe12b9606fe58e31d515adcdbb33fcd"
+    },
+    "focused-1793345731948193000": {
+      "members": 4,
+      "seal_sha256": "f3a707ffee931eb5de11a518fec0e1337a79799bf1baeae39b0bdcfbc91aa3d9"
+    },
+    "host-1793345330154273000": {
+      "members": 8,
+      "seal_sha256": "5b1dc99eead2286f8d3930667fa703006e1c9980555c3f5938bf2ae6e0e9640e"
+    },
+    "host-1793345435740522000": {
+      "members": 23,
+      "seal_sha256": "84c89386970de589782fb4ed7b483c2a738239f39b887ad679e33bffae1748cf"
+    },
+    "target-1793345752710330000": {
+      "members": 10,
+      "seal_sha256": "a77aab97c28e189f2027d6ff7fe648cf5343a81844d5966f1440d776d2a28ae4"
+    }
+  },
+  "target_source_identities_preserved": 98,
+  "candidate_source_archive": {
+    "bytes": 83862,
+    "sha256": "130a38ce985d917ac13ba87178bc072b2111253f4a59238aa1c8a2a7af704916"
+  },
+  "generated_artifacts": "UNCHANGED; full baseline identities and host regeneration checked",
+  "python_syntax": 8,
+  "json_syntax": 23,
+  "local_document_links": 4,
+  "new_text_whitespace": "PASS",
+  "checker_sha256": "11df948247e5029680ed2cca583001fca0ee44295288520c6dc2b474b527787c",
+  "status": "PASS"
+}
