@@ -1,0 +1,128 @@
+{
+  "identity": "65AERO-M2-COMMAND-1",
+  "tier": "focused-host",
+  "target_executed": false,
+  "commands": [
+    {
+      "argv": [
+        "/usr/bin/clang",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Wconversion",
+        "-Werror",
+        "-fsanitize=address,undefined",
+        "-Iinterfaces/generated",
+        "-Isrc/core",
+        "-Isrc/input",
+        "-Isrc/presentation",
+        "-Isrc/environment",
+        "-Isrc/graphics",
+        "-Isrc/diagnostics/m2_rebuild",
+        "-Isrc/platform/m2_rebuild",
+        "-Isrc/platform/m1",
+        "-Isrc/diagnostics/r0f",
+        "src/environment/m2_fixture.c",
+        "src/graphics/m2_limb.c",
+        "src/graphics/m2_compact_public.c",
+        "src/graphics/m2_record_private.c",
+        "interfaces/generated/m2_tables.c",
+        "src/diagnostics/m2_rebuild/camera.c",
+        "tests/flight_demo/m2_rebuild/command_host.c",
+        "-o",
+        "/private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/focused-1793382125713404000/command-negative"
+      ],
+      "exit": 0,
+      "log": "command-compile.txt"
+    },
+    {
+      "argv": [
+        "/private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/focused-1793382125713404000/command-negative"
+      ],
+      "exit": 0,
+      "log": "command.txt"
+    },
+    {
+      "argv": [
+        "/usr/bin/clang",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Wconversion",
+        "-Werror",
+        "-fsanitize=address,undefined",
+        "-Iinterfaces/generated",
+        "-Isrc/core",
+        "-Isrc/input",
+        "-Isrc/presentation",
+        "-Isrc/environment",
+        "-Isrc/graphics",
+        "-Isrc/diagnostics/m2_rebuild",
+        "-Isrc/platform/m2_rebuild",
+        "-Isrc/platform/m1",
+        "-Isrc/diagnostics/r0f",
+        "src/graphics/m2_rebuild_text.c",
+        "tests/flight_demo/m2_rebuild/text_compact.c",
+        "-o",
+        "/private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/focused-1793382125713404000/text"
+      ],
+      "exit": 0,
+      "log": "text-compile.txt"
+    },
+    {
+      "argv": [
+        "/private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/focused-1793382125713404000/text"
+      ],
+      "exit": 0,
+      "log": "text.txt"
+    }
+  ],
+  "status": "PASS",
+  "inputs": {
+    "src/graphics/m2_rebuild.c": "7049b66cf6a8c2f813cdaf3430dcecb33b146bfdb8a50212e9b35a277aef1021",
+    "src/graphics/m2_compact.h": "9250881c6315620ef128372c96c978f93c2321f67f1377e032341e2f98f2f003",
+    "src/graphics/m2_compact_public.c": "a24919e71e642ab4c1a6b6b9b7b56dfd9960ec82036a6c3a7f162289701e44cf",
+    "src/graphics/m2_record_private.c": "a95a8485562d1b64ba3aaf613cc912f271fbbaa81decd3ae7cf74864937f7f60",
+    "src/graphics/m1_graphics.h": "aba7047213e7b7a0d8ba7a926128e81eabc4862506698a64f684b7c4135d153f",
+    "src/graphics/m2_commands.inc": "bc8d99837ed08ed0f949ccc62f3ea5afeca5e8493cfd08eb21be05fb7f7acc0e",
+    "src/graphics/m2_rebuild_text.c": "4e2dcd0ac533432dc13c940c332ca5c05e5ec057281802e3d630233aceb727ae",
+    "src/graphics/m2_q46_private.h": "a39cec23b356a09e99a451650b68f72a62d7ba3a1c43e550cccd23356fa50f2d",
+    "src/graphics/.gitkeep": "640f254e1abf1a8f4ce080808c28f121fb42ff0ee9e3886e247384105965218e",
+    "src/graphics/m2_limb.c": "2a539ba1adcd1f537e19a9ca89ed705d820fed52153e16886c1c7f7f4de09a8e",
+    "src/graphics/m2_geometry.c": "55ab3d159b4cf2c96fcae8a52eecb47b6fb5631d966a180d2e2820cc72ad2607",
+    "src/graphics/m2_prepared_private.h": "36e823c4eb20fc638f21553184b78328c40a96fea072ed14d7e2bbe509d6acb1",
+    "src/graphics/m2_compact.c": "93c38ceaf4672bbe108d23612fee248f83fec2c2658883f0465138d0c118fd62",
+    "src/graphics/m2_rebuild.h": "a6afcb0ff7447e8d3902d6cf856ca1efea548eafc6eee6b4fcd854b797edd2f8",
+    "src/graphics/m1_graphics.c": "97c687978420644ad5caacd17a4a06782c3c2dd232f2448a9b8159a00ddb3726",
+    "src/graphics/m2_record_private.h": "58d191e11e1761b2c6781ac2208b875947e23117c33352fe9dfa2d5b602ca9d5",
+    "src/graphics/m2_geometry.h": "181651397e6a59ea759a4da226072c51a7d71abf5b5dd1811377a229cbe906cd",
+    "src/graphics/m2_raster_private.h": "5fa31c7ae70d8dc302a23e01665abd9efd4c0856e3fc9165e27dbee28e57d169",
+    "src/graphics/m2_limb.h": "72b4ba42a991118963b5fde965ee548c53d52fbacb687e27c2bd08eb1ef24f4c",
+    "tests/flight_demo/m2_rebuild/test_startup.py": "167b95b309ce3045093d35eeae312be88d6c83b78744ce6c5d9294b2812aa1a4",
+    "tests/flight_demo/m2_rebuild/command_host.c": "f524560777c3105e4487ddde00e8796637373b77f3335bb21620ae8132651fb8",
+    "tests/flight_demo/m2_rebuild/test_compact_specialization.py": "cd826897e77627a377dbf4cbb7021735e3fe1746b0e45176bc76ba0b0097a088",
+    "tests/flight_demo/m2_rebuild/test_toolchain_identity.py": "2a5a9126f24d6ea41fd76776f3d070bcd9746ceeef0820c61a8837a137138703",
+    "tests/flight_demo/m2_rebuild/test_validate_sdk_path.py": "591608f0324f609f2e7200639028ae08ba5bbacc6c3dcf6fbb3ce51f2a1c32db",
+    "tests/flight_demo/m2_rebuild/text_compact.c": "945ce9728700f1e1997d0d6b26df7b2e369475cafd7cf63d7966531935c41c79",
+    "tests/flight_demo/m2_rebuild/test_contract.py": "b960b33aa4df01616a10b9bb26836e12074321c1926b840eca8628ea9c40a323",
+    "tests/flight_demo/m2_rebuild/host.c": "649e5d80a17c16f27e5e634625582d6baec7fed7a109aa647499e9d5cf5e1b04",
+    "tests/flight_demo/m2_rebuild/limb_oracle.py": "9c27bf1483e222a2e9c6824927293cebc2adf903c90f80933484dfe044919f16",
+    "tests/flight_demo/m2_rebuild/test_compact_check.py": "0134b4fd1c9c3e8450ed48a996b6133741689f61ecc8568a6c6d2539fe45f6ed",
+    "tools/flight_demo/m2_rebuild/generate.py": "7d67ab299a7173c07913cd069bef8648653f24be9488d2b85c03122db3a627c8",
+    "tools/flight_demo/m2_rebuild/final_check.py": "3afa38d73eea9b3dbfb417784893f72c6c4266d31bc5de3725880d555aa50040",
+    "tools/flight_demo/m2_rebuild/startup_check.py": "a5ef429fe91eb58a36a41366344c5abba71a8ebcbb83925d0387e81b3630df23",
+    "tools/flight_demo/m2_rebuild/toolchain_identity.py": "e64a260fcf3f589dcb295134b2f45f7bbeb480da78593236a13cd9ee2c724a81",
+    "tools/flight_demo/m2_rebuild/validate.py": "8595541036979aff25916a76c856ddcdcd1c125e089774c2a432d99fb10d889e",
+    "tools/flight_demo/m2_rebuild/compact_publication.py": "11df948247e5029680ed2cca583001fca0ee44295288520c6dc2b474b527787c",
+    "tools/flight_demo/m2_rebuild/replay_static.py": "935581e1aa47f73fa247e3440714b415fe45df07b9f55a61776ceb50fb932beb",
+    "tools/flight_demo/m2_rebuild/compact_validate.py": "56ed9cfe1bdbf85ef91ef3142ada52e9d7eb961a21c4253a31e7884a460a2dc4",
+    "tools/flight_demo/m2_rebuild/commands.py": "315d6d87f1cb0a21a44fb1add3558b594aeae408a4b68c87a7f70d873937c040",
+    "tools/flight_demo/m2_rebuild/compact_check.py": "42ebe8cff6970ea703b3f86e624cef33f946d21ff82d8f9c7a51d38b0acf8851",
+    "tools/flight_demo/m2_rebuild/commands_validate.py": "b8b070d9afdae8993940eb795fd8a7d070d8c0793987e5c3095dfee897613be5"
+  },
+  "source_archive": {
+    "file": "source.tar.gz",
+    "bytes": 55514,
+    "sha256": "c0b941a73caf4f362833292bf6312b666dd432952ce1f178827fe8f12ccdde55"
+  }
+}

@@ -4,6 +4,7 @@
 #include "io.h"
 #include "m2_fixture.h"
 #include "m2_rebuild.h"
+#include "m2_record_private.h"
 
 static void increment(uint32_t *value)
 {
@@ -26,27 +27,10 @@ void m2rb_renderer_init(M2RebuildRenderer *renderer)
 }
 
 // Compare the immutable capture, never merely a caller-supplied revision number.
-static uint8_t same_camera(const M2Camera *first, const M2Camera *last)
-{
-    if (first->revision != last->revision || first->yaw != last->yaw
-        || first->pitch != last->pitch || first->roll != last->roll)
-    {
-        return 0u;
-    }
-    for (uint8_t axis = 0u; axis < 3u; ++axis)
-    {
-        if (first->position.v[axis] != last->position.v[axis])
-        {
-            return 0u;
-        }
-    }
-    return 1u;
-}
-
 static void begin(M2RebuildRenderer *renderer, M1Snapshots *pool,
                   const M2Camera *camera)
 {
-    if (!m2_camera_valid(camera) || renderer->generation == UINT32_MAX)
+    if (!m2_camera_valid(camera) || renderer->generation == UINT32_MAX || renderer->front > 1u)
     {
         fail(renderer, 1u);
         return;
@@ -68,10 +52,15 @@ static void begin(M2RebuildRenderer *renderer, M1Snapshots *pool,
     renderer->prepared.camera = *camera;
     renderer->prepared.ready = 0u;
     renderer->destination = (uint8_t)(renderer->front ^ 1u);
+    // The hidden record binds the captured identity before preparation begins.
+    renderer->bundles[renderer->destination].registration.generation = renderer->generation;
     renderer->segment = 0u;
     renderer->tile_index = 0u;
     renderer->tile_row = 0u;
     renderer->raster_active = 0u;
+    renderer->preparing_horizon = 0u;
+    renderer->geometry_active = 0u;
+    m2c_prepare_begin(&renderer->geometry);
     renderer->rejected = pool->rejected;
     memset(renderer->visible, 0, sizeof(renderer->visible));
     renderer->phase = M2RB_PREPARE;
@@ -79,42 +68,62 @@ static void begin(M2RebuildRenderer *renderer, M1Snapshots *pool,
 
 static void prepare(M2RebuildRenderer *renderer)
 {
-    if (!m2_prepare(&renderer->prepared, &renderer->prepared.camera))
+    int8_t result = renderer->preparing_horizon
+        ? m2c_horizon_service(&renderer->horizon, &renderer->geometry, &renderer->prepared)
+        : m2c_prepare_service(&renderer->geometry, &renderer->prepared);
+    if (result < 0)
     {
         fail(renderer, 3u);
         return;
     }
-    M2RebuildBundle *bundle = &renderer->bundles[renderer->destination];
-    if (!m2_registration_prepared(&renderer->prepared, renderer->generation,
-            renderer->snapshot.tick, renderer->destination, &bundle->registration))
+    if (result == 0)
+    {
+        return;
+    }
+    if (!renderer->preparing_horizon)
+    {
+        m2c_horizon_begin(&renderer->horizon);
+        renderer->preparing_horizon = 1u;
+        return;
+    }
+    if (!m2_bundle_fields(renderer, 0u))
     {
         fail(renderer, 3u);
         return;
     }
-    bundle->composition_revision = M2RB_COMPOSITION_REVISION;
-    bundle->checksum = renderer->snapshot.checksum;
     increment(&renderer->prepared_count);
     renderer->phase = M2RB_PROJECT;
 }
 
 static void project(M2RebuildRenderer *renderer)
 {
-    M2Point first;
-    M2Point last;
-    if (!m2_fixture_segment(M2_FIXTURE_REVISION,
-            m2rb_segment_ids[renderer->segment], &first, &last))
+    if (!renderer->geometry_active)
     {
-        fail(renderer, 3u);
+        M2Point first;
+        M2Point last;
+        if (!m2_fixture_segment(M2_FIXTURE_REVISION,
+                m2rb_segment_ids[renderer->segment], &first, &last)
+            || !m2c_project_begin(&renderer->geometry, &first, &last))
+        {
+            fail(renderer, 3u);
+            return;
+        }
+        renderer->geometry_active = 1u;
         return;
     }
-    int8_t visible = m2_project_prepared(&renderer->prepared, &first, &last,
+    int8_t visible = m2c_project_service(&renderer->geometry, &renderer->prepared,
                                          &renderer->lines[renderer->segment]);
     if (visible < 0)
     {
         fail(renderer, 3u);
         return;
     }
-    renderer->visible[renderer->segment] = (uint8_t)visible;
+    if (visible == 0)
+    {
+        return;
+    }
+    renderer->geometry_active = 0u;
+    renderer->visible[renderer->segment] = (uint8_t)(visible == 1);
     increment(&renderer->projected_count);
     ++renderer->segment;
     if (renderer->segment == M2RB_SEGMENTS)
@@ -129,16 +138,12 @@ static void background(M2RebuildRenderer *renderer)
     uint16_t x = (uint16_t)((renderer->tile_index % M2RB_COLUMNS) * 8u);
     uint16_t y = (uint16_t)((renderer->tile_index / M2RB_COLUMNS) * 8u
         + renderer->tile_row);
-    // Exactly eight full-precision common-horizon classifications per quantum.
+    // Exact cached scanline boundaries: no wide arithmetic in tile painting.
     for (uint8_t column = 0u; column < 8u; ++column)
     {
-        int8_t ground = m2_ground_prepared(&renderer->prepared,
-                                          (uint16_t)(x + column), y);
-        if (ground < 0)
-        {
-            fail(renderer, 3u);
-            return;
-        }
+        uint8_t ground = renderer->horizon.positive
+            ? x + column >= renderer->horizon.boundary[y]
+            : x + column < renderer->horizon.boundary[y];
         renderer->tile[renderer->tile_row * 8u + column]
             = ground ? M2RB_GROUND : M2RB_SKY;
     }
@@ -238,39 +243,46 @@ static void text(M2RebuildRenderer *renderer, uint32_t current_tick)
     renderer->phase = M2RB_COPY;
 }
 
-static uint8_t bundle_valid(const M2RebuildRenderer *renderer)
+static uint8_t coherent(M2RebuildRenderer *renderer, const M2Camera *wanted,
+                         uint32_t generation)
 {
-    const M2RebuildBundle *bundle = &renderer->bundles[renderer->destination];
-    const M2Registration *record = &bundle->registration;
-    if (renderer->prepared.ready != 1u || renderer->tile_index != 960u
-        || bundle->composition_revision != M2RB_COMPOSITION_REVISION
-        || bundle->checksum != renderer->snapshot.checksum
-        || record->composition_revision != M2_COMPOSITION_REVISION
-        || record->fixture_revision != M2_FIXTURE_REVISION
-        || record->projection_revision != M2_PROJECTION_REVISION
-        || record->generation != renderer->generation
-        || record->source_tick != renderer->snapshot.tick
-        || record->store != renderer->destination
-        || record->view_id != 0u || record->tier_id != 0u
-        || !same_camera(&record->camera, &renderer->prepared.camera))
+    if (generation == 0u || renderer->generation != generation
+        || renderer->destination > 1u || renderer->front > 1u
+        || renderer->bundles[renderer->destination].registration.generation != generation
+        || (renderer->phase != M2RB_BEGIN && renderer->destination == renderer->front))
     {
+        fail(renderer, 9u);
         return 0u;
     }
-    for (uint8_t i = 0u; i < 9u; ++i)
+    // The capture was range-validated at BEGIN. Equality includes the full
+    // pose and revision, so neither a revision match nor a pointer match suffices.
+    if (m2_camera_same(wanted, &renderer->prepared.camera))
     {
-        if (record->transform.m[i] != renderer->prepared.rotation.m[i])
-        {
-            return 0u;
-        }
+        return 1u;
     }
-    return 1u;
+    if (renderer->phase == M2RB_BEGIN)
+    {
+        // A writer during publication violates the single-threaded contract.
+        fail(renderer, 9u);
+        return 0u;
+    }
+    renderer->prepared.ready = 0u;
+    memset(renderer->visible, 0, sizeof(renderer->visible));
+    renderer->phase = M2RB_BEGIN;
+    increment(&renderer->cancellations);
+    return 0u;
 }
 
-static void commit(M2RebuildRenderer *renderer)
+static void commit(M2RebuildRenderer *renderer, const M2Camera *wanted,
+                   uint32_t generation)
 {
-    if (!bundle_valid(renderer))
+    if (!m2_bundle_fields(renderer, 1u))
     {
         fail(renderer, 5u);
+        return;
+    }
+    if (!coherent(renderer, wanted, generation))
+    {
         return;
     }
     int8_t result = m2rb_io_commit(renderer->destination);
@@ -289,28 +301,10 @@ static void commit(M2RebuildRenderer *renderer)
     }
 }
 
-uint8_t m2rb_dispatch(M2RebuildRenderer *renderer, M1Snapshots *pool,
-                       const M2Camera *wanted, uint32_t admitted_budget,
-                       uint32_t current_tick)
+static void continuation(M2RebuildRenderer *renderer, uint8_t role, uint32_t current_tick)
 {
-    if (admitted_budget == 0u || renderer->phase >= M2RB_FAILED)
+    switch (role)
     {
-        return 0u;
-    }
-    if (renderer->phase != M2RB_BEGIN
-        && !same_camera(wanted, &renderer->prepared.camera))
-    {
-        renderer->prepared.ready = 0u;
-        memset(renderer->visible, 0, sizeof(renderer->visible));
-        renderer->phase = M2RB_BEGIN;
-        increment(&renderer->cancellations);
-        return 1u;
-    }
-    switch (renderer->phase)
-    {
-        case M2RB_BEGIN:
-            begin(renderer, pool, wanted);
-            break;
         case M2RB_PREPARE:
             prepare(renderer);
             break;
@@ -329,12 +323,78 @@ uint8_t m2rb_dispatch(M2RebuildRenderer *renderer, M1Snapshots *pool,
         case M2RB_TEXT:
             text(renderer, current_tick);
             break;
-        case M2RB_COMMIT:
-            commit(renderer);
-            break;
         default:
             fail(renderer, 7u);
             break;
+    }
+}
+
+uint8_t m2rb_dispatch(M2RebuildRenderer *renderer, M1Snapshots *pool,
+                       const M2Camera *wanted, uint16_t work_counts,
+                       const volatile uint16_t role_bounds[M2RB_FAILED],
+                       uint32_t current_tick)
+{
+    uint8_t role = renderer->phase;
+    if (work_counts == 0u || role >= M2RB_FAILED)
+    {
+        return 0u;
+    }
+    uint16_t cost = role_bounds[role];
+    if (cost == 0u || cost > work_counts)
+    {
+        return 0u;
+    }
+    if (m2rb_io_fault())
+    {
+        fail(renderer, 10u);
+        return 1u;
+    }
+    uint32_t generation = renderer->generation;
+    if (role == M2RB_BEGIN)
+    {
+        begin(renderer, pool, wanted);
+        generation = renderer->generation;
+    }
+    else if (!coherent(renderer, wanted, generation))
+    {
+        return 1u;
+    }
+    else if (role == M2RB_COMMIT)
+    {
+        commit(renderer, wanted, generation);
+        if (renderer->phase == M2RB_BEGIN && renderer->destination != renderer->front)
+        {
+            return 1u; // Cancelled by the final pre-publication validation.
+        }
+    }
+    else
+    {
+        // Only the foreground tick path writes wanted. IRQ/NMI can post a
+        // sticky fault, but cannot change the camera or this private capture.
+        // Each iteration spends positive credit before executing one bounded role.
+        do
+        {
+            work_counts = (uint16_t)(work_counts - cost);
+            continuation(renderer, role, current_tick);
+            role = renderer->phase;
+            if (role == M2RB_BEGIN || role >= M2RB_COMMIT || m2rb_io_fault())
+            {
+                break;
+            }
+            cost = role_bounds[role];
+        } while (cost != 0u && cost <= work_counts);
+    }
+    if (renderer->phase != M2RB_FAILED)
+    {
+        if (m2rb_io_fault())
+        {
+            fail(renderer, 10u);
+        }
+        else if (role != M2RB_BEGIN || renderer->phase != M2RB_BEGIN)
+        {
+            // An idle BEGIN acquired no snapshot and has no capture to recheck.
+            (void)coherent(renderer, wanted, generation);
+        }
     }
     return 1u;
 }

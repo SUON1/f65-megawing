@@ -1,0 +1,1677 @@
+
+/private/tmp/f65-m2-boot-tools/target/BOOT-ONLY.prg.elf:	file format elf32-mos
+
+Disassembly of section .text:
+
+00002017 <m2rb_startup>:
+    2017: 78           	sei
+    2018: d8           	cld
+    2019: a9 00        	lda	#$0
+    201b: 5b           	tab
+    201c: a0 00        	ldy	#$0
+    201e: a2 0f        	ldx	#$f
+    2020: a3 0f        	ldz	#$f
+    2022: 5c           	map
+    2023: a9 00        	lda	#$0
+    2025: aa           	tax
+    2026: a8           	tay
+    2027: 4b           	taz
+    2028: 5c           	map
+    2029: ea           	nop
+    202a: 03           	see
+    202b: a0 01        	ldy	#$1
+    202d: 2b           	tys
+    202e: a2 ff        	ldx	#$ff
+    2030: 9a           	txs
+    2031: a9 2f        	lda	#$2f
+    2033: 85 00        	sta	$0                      ; 0x0 <__zp_data_size>
+    2035: a9 35        	lda	#$35
+    2037: 85 01        	sta	$1                      ; 0x1 <__zp_data_size+0x1>
+    2039: a9 47        	lda	#$47
+    203b: 8d 2f d0     	sta	$d02f                   ; 0xd02f <__heap_start+0xa141>
+    203e: a9 53        	lda	#$53
+    2040: 8d 2f d0     	sta	$d02f                   ; 0xd02f <__heap_start+0xa141>
+    2043: a9 44        	lda	#$44
+    2045: 8d 30 d0     	sta	$d030                   ; 0xd030 <__heap_start+0xa142>
+    2048: a9 7f        	lda	#$7f
+    204a: 8d 0d dc     	sta	$dc0d                   ; 0xdc0d <__heap_start+0xad1f>
+    204d: 8d 0d dd     	sta	$dd0d                   ; 0xdd0d <__heap_start+0xae1f>
+    2050: ad 0d dc     	lda	$dc0d                   ; 0xdc0d <__heap_start+0xad1f>
+    2053: ad 0d dd     	lda	$dd0d                   ; 0xdd0d <__heap_start+0xae1f>
+    2056: a9 00        	lda	#$0
+    2058: 8d 1a d0     	sta	$d01a                   ; 0xd01a <__heap_start+0xa12c>
+    205b: 8d 13 d7     	sta	$d713                   ; 0xd713 <__heap_start+0xa825>
+    205e: a9 0f        	lda	#$f
+    2060: 8d 19 d0     	sta	$d019                   ; 0xd019 <__heap_start+0xa12b>
+    2063: a9 d9        	lda	#$d9
+    2065: 8d fa ff     	sta	$fffa                   ; 0xfffa <__heap_start+0xd10c>
+    2068: 8d fe ff     	sta	$fffe                   ; 0xfffe <__heap_start+0xd110>
+    206b: a9 22        	lda	#$22
+    206d: 8d fb ff     	sta	$fffb                   ; 0xfffb <__heap_start+0xd10d>
+    2070: 8d ff ff     	sta	$ffff                   ; 0xffff <__heap_start+0xd111>
+    2073: a9 02        	lda	#$2
+    2075: 5b           	tab
+    2076: a3 00        	ldz	#$0
+
+00002078 <m2rb_normalized>:
+    2078: a9 00        	lda	#$0
+    207a: 85 02        	sta	$2                      ; 0x2 <__rc0>
+    207c: a9 d0        	lda	#$d0
+    207e: 85 03        	sta	$3                      ; 0x3 <__rc1>
+
+00002080 <m2re_startup>:
+    2080: ad fb d7     	lda	$d7fb                   ; 0xd7fb <__heap_start+0xa90d>
+    2083: 29 fd        	and	#$fd
+    2085: 8d fb d7     	sta	$d7fb                   ; 0xd7fb <__heap_start+0xa90d>
+    2088: a9 c1        	lda	#$c1
+    208a: 8d fd d7     	sta	$d7fd                   ; 0xd7fd <__heap_start+0xa90f>
+    208d: ad fb d7     	lda	$d7fb                   ; 0xd7fb <__heap_start+0xa90d>
+    2090: 29 02        	and	#$2
+    2092: d0 44        	bne	$20d8 <m2re_noinit_zero+0x18>
+    2094: ad fd d7     	lda	$d7fd                   ; 0xd7fd <__heap_start+0xa90f>
+    2097: 29 c0        	and	#$c0
+    2099: c9 c0        	cmp	#$c0
+    209b: d0 3b        	bne	$20d8 <m2re_noinit_zero+0x18>
+    209d: ad 30 d0     	lda	$d030                   ; 0xd030 <__heap_start+0xa142>
+    20a0: 29 b9        	and	#$b9
+    20a2: d0 34        	bne	$20d8 <m2re_noinit_zero+0x18>
+    20a4: a9 00        	lda	#$0
+    20a6: 5b           	tab
+    20a7: a5 00        	lda	$0                      ; 0x0 <__zp_data_size>
+    20a9: c9 2f        	cmp	#$2f
+    20ab: d0 2b        	bne	$20d8 <m2re_noinit_zero+0x18>
+    20ad: a5 01        	lda	$1                      ; 0x1 <__zp_data_size+0x1>
+    20af: c9 35        	cmp	#$35
+    20b1: d0 25        	bne	$20d8 <m2re_noinit_zero+0x18>
+    20b3: a9 02        	lda	#$2
+    20b5: 5b           	tab
+    20b6: a9 e8        	lda	#$e8
+    20b8: 85 22        	sta	$22                     ; 0x22 <__zp_bss_start>
+    20ba: a9 2e        	lda	#$2e
+    20bc: 85 23        	sta	$23                     ; 0x23 <__zp_bss_start+0x1>
+    20be: a0 00        	ldy	#$0
+
+000020c0 <m2re_noinit_zero>:
+    20c0: a5 23        	lda	$23                     ; 0x23 <__zp_bss_start+0x1>
+    20c2: c9 2e        	cmp	#$2e
+    20c4: d0 06        	bne	$20cc <m2re_noinit_zero+0xc>
+    20c6: a5 22        	lda	$22                     ; 0x22 <__zp_bss_start>
+    20c8: c9 ed        	cmp	#$ed
+    20ca: f0 0f        	beq	$20db <m2re_startup_done>
+    20cc: a9 00        	lda	#$0
+    20ce: 91 22        	sta	($22),y                 ; 0x22 <__zp_bss_start>
+    20d0: e6 22        	inc	$22                     ; 0x22 <__zp_bss_start>
+    20d2: d0 ec        	bne	$20c0 <m2re_noinit_zero>
+    20d4: e6 23        	inc	$23                     ; 0x23 <__zp_bss_start+0x1>
+    20d6: 80 e8        	bra	$20c0 <m2re_noinit_zero>
+    20d8: 4c d9 22     	jmp	$22d9 <m2rb_early_stop>
+
+000020db <m2re_startup_done>:
+    20db: 20 dd 22     	jsr	$22dd <__zero_bss>
+    20de: 20 f0 22     	jsr	$22f0 <main>
+
+000020e1 <__after_main>:
+    20e1: 4c 1c 2c     	jmp	$2c1c <exit>
+
+000020e4 <_fini>:
+    20e4: 60           	rts
+
+000020e5 <r0f_pf_enter>:
+    20e5: 78           	sei
+    20e6: d8           	cld
+    20e7: a9 00        	lda	#$0
+    20e9: aa           	tax
+    20ea: a8           	tay
+    20eb: 4b           	taz
+    20ec: 5c           	map
+    20ed: a9 00        	lda	#$0
+    20ef: 5b           	tab
+    20f0: a9 35        	lda	#$35
+    20f2: 85 01        	sta	$1                      ; 0x1 <__zp_data_size+0x1>
+    20f4: a5 01        	lda	$1                      ; 0x1 <__zp_data_size+0x1>
+    20f6: 8d ce 2d     	sta	$2dce                   ; 0x2dce <r0f_pf_cpu_port>
+    20f9: a9 47        	lda	#$47
+    20fb: 8d 2f d0     	sta	$d02f                   ; 0xd02f <__heap_start+0xa141>
+    20fe: a9 53        	lda	#$53
+    2100: 8d 2f d0     	sta	$d02f                   ; 0xd02f <__heap_start+0xa141>
+    2103: ad 30 d0     	lda	$d030                   ; 0xd030 <__heap_start+0xa142>
+    2106: 29 46        	and	#$46
+    2108: 8d 30 d0     	sta	$d030                   ; 0xd030 <__heap_start+0xa142>
+    210b: ea           	nop
+    210c: a9 02        	lda	#$2
+    210e: 5b           	tab
+    210f: a9 7f        	lda	#$7f
+    2111: 8d 0d dc     	sta	$dc0d                   ; 0xdc0d <__heap_start+0xad1f>
+    2114: 8d 0d dd     	sta	$dd0d                   ; 0xdd0d <__heap_start+0xae1f>
+    2117: ad 0d dc     	lda	$dc0d                   ; 0xdc0d <__heap_start+0xad1f>
+    211a: ad 0d dd     	lda	$dd0d                   ; 0xdd0d <__heap_start+0xae1f>
+    211d: a9 00        	lda	#$0
+    211f: 8d 1a d0     	sta	$d01a                   ; 0xd01a <__heap_start+0xa12c>
+    2122: 8d 13 d7     	sta	$d713                   ; 0xd713 <__heap_start+0xa825>
+    2125: a9 0f        	lda	#$f
+    2127: 8d 19 d0     	sta	$d019                   ; 0xd019 <__heap_start+0xa12b>
+    212a: a9 68        	lda	#$68
+    212c: 8d fe ff     	sta	$fffe                   ; 0xfffe <__heap_start+0xd110>
+    212f: a9 21        	lda	#$21
+    2131: 8d ff ff     	sta	$ffff                   ; 0xffff <__heap_start+0xd111>
+    2134: a9 94        	lda	#$94
+    2136: 8d fa ff     	sta	$fffa                   ; 0xfffa <__heap_start+0xd10c>
+    2139: a9 21        	lda	#$21
+    213b: 8d fb ff     	sta	$fffb                   ; 0xfffb <__heap_start+0xd10d>
+    213e: 0b           	tsy
+    213f: 98           	tya
+    2140: 8d cf 2d     	sta	$2dcf                   ; 0x2dcf <r0f_pf_stack_high>
+    2143: 7b           	tba
+    2144: 60           	rts
+
+00002145 <r0f_pf_start_irq>:
+    2145: ad 11 d0     	lda	$d011                   ; 0xd011 <__heap_start+0xa123>
+    2148: 29 7f        	and	#$7f
+    214a: 8d 11 d0     	sta	$d011                   ; 0xd011 <__heap_start+0xa123>
+    214d: a9 00        	lda	#$0
+    214f: 8d 12 d0     	sta	$d012                   ; 0xd012 <__heap_start+0xa124>
+    2152: a9 01        	lda	#$1
+    2154: 8d 19 d0     	sta	$d019                   ; 0xd019 <__heap_start+0xa12b>
+    2157: 8d 1a d0     	sta	$d01a                   ; 0xd01a <__heap_start+0xa12c>
+    215a: 58           	cli
+    215b: 60           	rts
+
+0000215c <r0f_pf_stop_irq>:
+    215c: 78           	sei
+    215d: a9 00        	lda	#$0
+    215f: 8d 1a d0     	sta	$d01a                   ; 0xd01a <__heap_start+0xa12c>
+    2162: a9 0f        	lda	#$f
+    2164: 8d 19 d0     	sta	$d019                   ; 0xd019 <__heap_start+0xa12b>
+    2167: 60           	rts
+
+00002168 <r0f_pf_irq>:
+    2168: 48           	pha
+    2169: da           	phx
+    216a: 5a           	phy
+    216b: db           	phz
+    216c: 7b           	tba
+    216d: 48           	pha
+    216e: ad 19 d0     	lda	$d019                   ; 0xd019 <__heap_start+0xa12b>
+    2171: 29 01        	and	#$1
+    2173: f0 18        	beq	$218d <r0f_pf_irq+0x25>
+    2175: ee d8 2e     	inc	$2ed8                   ; 0x2ed8 <r0f_pf_irq_seq>
+    2178: ee d3 2e     	inc	$2ed3                   ; 0x2ed3 <r0f_pf_irq_count>
+    217b: d0 03        	bne	$2180 <r0f_pf_irq+0x18>
+    217d: ee d4 2e     	inc	$2ed4                   ; 0x2ed4 <r0f_pf_irq_count+0x1>
+    2180: a9 80        	lda	#$80
+    2182: 8d d9 2e     	sta	$2ed9                   ; 0x2ed9 <r0f_pf_irq_seen>
+    2185: a9 01        	lda	#$1
+    2187: 8d 19 d0     	sta	$d019                   ; 0xd019 <__heap_start+0xa12b>
+    218a: ee d8 2e     	inc	$2ed8                   ; 0x2ed8 <r0f_pf_irq_seq>
+    218d: 68           	pla
+    218e: 5b           	tab
+    218f: fb           	plz
+    2190: 7a           	ply
+    2191: fa           	plx
+    2192: 68           	pla
+    2193: 40           	rti
+
+00002194 <r0f_pf_nmi>:
+    2194: 48           	pha
+    2195: a9 01        	lda	#$1
+    2197: 8d d2 2e     	sta	$2ed2                   ; 0x2ed2 <r0f_pf_nmi_seen>
+    219a: 68           	pla
+    219b: 40           	rti
+
+0000219c <r0f_pf_flat_copy>:
+    219c: 08           	php
+    219d: da           	phx
+    219e: 5a           	phy
+    219f: db           	phz
+    21a0: 7b           	tba
+    21a1: 48           	pha
+    21a2: c9 02        	cmp	#$2
+    21a4: d0 24        	bne	$21ca <r0f_pf_flat_copy+0x2e>
+    21a6: a2 00        	ldx	#$0
+    21a8: bd c6 2c     	lda	$2cc6,x                 ; 0x2cc6 <r0f_pf_copy_request>
+    21ab: 95 22        	sta	$22,x                   ; 0x22 <__zp_bss_start>
+    21ad: e8           	inx
+    21ae: e0 08        	cpx	#$8
+    21b0: d0 f6        	bne	$21a8 <r0f_pf_flat_copy+0xc>
+    21b2: ae ce 2c     	ldx	$2cce                   ; 0x2cce <r0f_pf_copy_request+0x8>
+    21b5: f0 13        	beq	$21ca <r0f_pf_flat_copy+0x2e>
+    21b7: a3 00        	ldz	#$0
+    21b9: ea b2 22     	lda	[$22],z                 ; 0x22 <__zp_bss_start>
+    21bc: ea 92 26     	sta	[$26],z                 ; 0x26 <__zp_bss_start+0x4>
+    21bf: 1b           	inz
+    21c0: ca           	dex
+    21c1: d0 f6        	bne	$21b9 <r0f_pf_flat_copy+0x1d>
+    21c3: a9 01        	lda	#$1
+    21c5: 8d e1 2e     	sta	$2ee1                   ; 0x2ee1 <r0f_pf_copy_ok>
+    21c8: 80 05        	bra	$21cf <r0f_pf_flat_copy+0x33>
+    21ca: a9 00        	lda	#$0
+    21cc: 8d e1 2e     	sta	$2ee1                   ; 0x2ee1 <r0f_pf_copy_ok>
+    21cf: 68           	pla
+    21d0: 5b           	tab
+    21d1: fb           	plz
+    21d2: 7a           	ply
+    21d3: fa           	plx
+    21d4: ad e1 2e     	lda	$2ee1                   ; 0x2ee1 <r0f_pf_copy_ok>
+    21d7: 28           	plp
+    21d8: 60           	rts
+
+000021d9 <r0f_pf_register_probe>:
+    21d9: 08           	php
+    21da: 48           	pha
+    21db: da           	phx
+    21dc: 5a           	phy
+    21dd: db           	phz
+    21de: 78           	sei
+    21df: a9 00        	lda	#$0
+    21e1: 8d d9 2e     	sta	$2ed9                   ; 0x2ed9 <r0f_pf_irq_seen>
+    21e4: 8d e2 2e     	sta	$2ee2                   ; 0x2ee2 <r0f_pf_probe_timeout>
+    21e7: 8d e3 2e     	sta	$2ee3                   ; 0x2ee3 <r0f_pf_probe_timeout+0x1>
+    21ea: d8           	cld
+    21eb: 18           	clc
+    21ec: a9 a5        	lda	#$a5
+    21ee: a2 5a        	ldx	#$5a
+    21f0: a0 c3        	ldy	#$c3
+    21f2: a3 3c        	ldz	#$3c
+    21f4: 58           	cli
+    21f5: 2c d9 2e     	bit	$2ed9                   ; 0x2ed9 <r0f_pf_irq_seen>
+    21f8: 30 0a        	bmi	$2204 <r0f_pf_register_probe+0x2b>
+    21fa: ee e2 2e     	inc	$2ee2                   ; 0x2ee2 <r0f_pf_probe_timeout>
+    21fd: d0 f6        	bne	$21f5 <r0f_pf_register_probe+0x1c>
+    21ff: ee e3 2e     	inc	$2ee3                   ; 0x2ee3 <r0f_pf_probe_timeout+0x1>
+    2202: d0 f1        	bne	$21f5 <r0f_pf_register_probe+0x1c>
+    2204: 8d da 2e     	sta	$2eda                   ; 0x2eda <r0f_pf_probe_regs>
+    2207: 8e db 2e     	stx	$2edb                   ; 0x2edb <r0f_pf_probe_regs+0x1>
+    220a: 8c dc 2e     	sty	$2edc                   ; 0x2edc <r0f_pf_probe_regs+0x2>
+    220d: 9c dd 2e     	stz	$2edd                   ; 0x2edd <r0f_pf_probe_regs+0x3>
+    2210: 08           	php
+    2211: 68           	pla
+    2212: 8d df 2e     	sta	$2edf                   ; 0x2edf <r0f_pf_probe_regs+0x5>
+    2215: 7b           	tba
+    2216: 8d de 2e     	sta	$2ede                   ; 0x2ede <r0f_pf_probe_regs+0x4>
+    2219: ad d9 2e     	lda	$2ed9                   ; 0x2ed9 <r0f_pf_irq_seen>
+    221c: 8d e0 2e     	sta	$2ee0                   ; 0x2ee0 <r0f_pf_probe_regs+0x6>
+    221f: fb           	plz
+    2220: 7a           	ply
+    2221: fa           	plx
+    2222: 68           	pla
+    2223: 28           	plp
+    2224: 60           	rts
+
+00002225 <r0fc_rom_toggle>:
+    2225: 08           	php
+    2226: 78           	sei
+    2227: da           	phx
+    2228: 5a           	phy
+    2229: db           	phz
+    222a: 7b           	tba
+    222b: 48           	pha
+    222c: a9 70        	lda	#$70
+    222e: 8d 40 d6     	sta	$d640                   ; 0xd640 <__heap_start+0xa752>
+    2231: ea           	nop
+    2232: 8d e4 2e     	sta	$2ee4                   ; 0x2ee4 <r0fc_features>
+    2235: 08           	php
+    2236: 68           	pla
+    2237: 8d d0 2e     	sta	$2ed0                   ; 0x2ed0 <r0fc_trap_flags>
+    223a: 7b           	tba
+    223b: 8d d1 2e     	sta	$2ed1                   ; 0x2ed1 <r0fc_trap_base>
+    223e: 68           	pla
+    223f: 5b           	tab
+    2240: fb           	plz
+    2241: 7a           	ply
+    2242: fa           	plx
+    2243: ad e4 2e     	lda	$2ee4                   ; 0x2ee4 <r0fc_features>
+    2246: 28           	plp
+    2247: 60           	rts
+
+00002248 <r0fc_stack_seed>:
+    2248: 08           	php
+    2249: 78           	sei
+    224a: da           	phx
+    224b: 5a           	phy
+    224c: ba           	tsx
+    224d: 8e e5 2e     	stx	$2ee5                   ; 0x2ee5 <r0fc_hardware_seed>
+    2250: a0 00        	ldy	#$0
+    2252: a9 a5        	lda	#$a5
+    2254: cc e5 2e     	cpy	$2ee5                   ; 0x2ee5 <r0fc_hardware_seed>
+    2257: f0 06        	beq	$225f <r0fc_stack_seed+0x17>
+    2259: 99 00 01     	sta	$100,y                  ; 0x100 <__zp_bss_start+0xde>
+    225c: c8           	iny
+    225d: 80 f5        	bra	$2254 <r0fc_stack_seed+0xc>
+    225f: a5 02        	lda	$2                      ; 0x2 <__rc0>
+    2261: 8d e6 2e     	sta	$2ee6                   ; 0x2ee6 <r0fc_software_seed>
+    2264: a5 03        	lda	$3                      ; 0x3 <__rc1>
+    2266: 8d e7 2e     	sta	$2ee7                   ; 0x2ee7 <r0fc_software_seed+0x1>
+    2269: a9 00        	lda	#$0
+    226b: 85 22        	sta	$22                     ; 0x22 <__zp_bss_start>
+    226d: a9 c0        	lda	#$c0
+    226f: 85 23        	sta	$23                     ; 0x23 <__zp_bss_start+0x1>
+    2271: a0 00        	ldy	#$0
+    2273: a5 23        	lda	$23                     ; 0x23 <__zp_bss_start+0x1>
+    2275: c5 03        	cmp	$3                      ; 0x3 <__rc1>
+    2277: d0 06        	bne	$227f <r0fc_stack_seed+0x37>
+    2279: a5 22        	lda	$22                     ; 0x22 <__zp_bss_start>
+    227b: c5 02        	cmp	$2                      ; 0x2 <__rc0>
+    227d: f0 0c        	beq	$228b <r0fc_stack_seed+0x43>
+    227f: a9 a5        	lda	#$a5
+    2281: 91 22        	sta	($22),y                 ; 0x22 <__zp_bss_start>
+    2283: e6 22        	inc	$22                     ; 0x22 <__zp_bss_start>
+    2285: d0 ec        	bne	$2273 <r0fc_stack_seed+0x2b>
+    2287: e6 23        	inc	$23                     ; 0x23 <__zp_bss_start+0x1>
+    2289: 80 e8        	bra	$2273 <r0fc_stack_seed+0x2b>
+    228b: 7a           	ply
+    228c: fa           	plx
+    228d: 28           	plp
+    228e: 60           	rts
+
+0000228f <r0fc_stack_measure>:
+    228f: 08           	php
+    2290: 78           	sei
+    2291: da           	phx
+    2292: 5a           	phy
+    2293: a0 00        	ldy	#$0
+    2295: b9 00 01     	lda	$100,y                  ; 0x100 <__zp_bss_start+0xde>
+    2298: c9 a5        	cmp	#$a5
+    229a: d0 06        	bne	$22a2 <r0fc_stack_measure+0x13>
+    229c: c8           	iny
+    229d: cc e5 2e     	cpy	$2ee5                   ; 0x2ee5 <r0fc_hardware_seed>
+    22a0: d0 f3        	bne	$2295 <r0fc_stack_measure+0x6>
+    22a2: 8c d5 2e     	sty	$2ed5                   ; 0x2ed5 <r0fc_hardware_low>
+    22a5: a9 00        	lda	#$0
+    22a7: 85 22        	sta	$22                     ; 0x22 <__zp_bss_start>
+    22a9: a9 c0        	lda	#$c0
+    22ab: 85 23        	sta	$23                     ; 0x23 <__zp_bss_start+0x1>
+    22ad: a0 00        	ldy	#$0
+    22af: a5 23        	lda	$23                     ; 0x23 <__zp_bss_start+0x1>
+    22b1: cd e7 2e     	cmp	$2ee7                   ; 0x2ee7 <r0fc_software_seed+0x1>
+    22b4: d0 07        	bne	$22bd <r0fc_stack_measure+0x2e>
+    22b6: a5 22        	lda	$22                     ; 0x22 <__zp_bss_start>
+    22b8: cd e6 2e     	cmp	$2ee6                   ; 0x2ee6 <r0fc_software_seed>
+    22bb: f0 0e        	beq	$22cb <r0fc_stack_measure+0x3c>
+    22bd: b1 22        	lda	($22),y                 ; 0x22 <__zp_bss_start>
+    22bf: c9 a5        	cmp	#$a5
+    22c1: d0 08        	bne	$22cb <r0fc_stack_measure+0x3c>
+    22c3: e6 22        	inc	$22                     ; 0x22 <__zp_bss_start>
+    22c5: d0 e8        	bne	$22af <r0fc_stack_measure+0x20>
+    22c7: e6 23        	inc	$23                     ; 0x23 <__zp_bss_start+0x1>
+    22c9: 80 e4        	bra	$22af <r0fc_stack_measure+0x20>
+    22cb: a5 22        	lda	$22                     ; 0x22 <__zp_bss_start>
+    22cd: 8d d6 2e     	sta	$2ed6                   ; 0x2ed6 <r0fc_software_low>
+    22d0: a5 23        	lda	$23                     ; 0x23 <__zp_bss_start+0x1>
+    22d2: 8d d7 2e     	sta	$2ed7                   ; 0x2ed7 <r0fc_software_low+0x1>
+    22d5: 7a           	ply
+    22d6: fa           	plx
+    22d7: 28           	plp
+    22d8: 60           	rts
+
+000022d9 <m2rb_early_stop>:
+    22d9: 78           	sei
+    22da: 4c d9 22     	jmp	$22d9 <m2rb_early_stop>
+
+000022dd <__zero_bss>:
+    22dd: a2 26        	ldx	#$26
+    22df: a0 02        	ldy	#$2
+    22e1: a9 c2        	lda	#$c2
+    22e3: 85 04        	sta	$4                      ; 0x4 <__rc2>
+    22e5: a9 2c        	lda	#$2c
+    22e7: 85 05        	sta	$5                      ; 0x5 <__rc3>
+    22e9: a9 00        	lda	#$0
+    22eb: 84 06        	sty	$6                      ; 0x6 <__rc4>
+    22ed: 4c 38 2c     	jmp	$2c38 <__memset>
+
+000022f0 <main>:
+    22f0: 20 67 27     	jsr	$2767 <cfentry>
+    22f3: a0 ff        	ldy	#$ff
+    22f5: aa           	tax
+    22f6: f0 05        	beq	$22fd <main+0xd>
+    22f8: ae d2 2e     	ldx	$2ed2                   ; 0x2ed2 <r0f_pf_nmi_seen>
+    22fb: f0 05        	beq	$2302 <main+0x12>
+    22fd: 8c c2 2c     	sty	$2cc2                   ; 0x2cc2 <m2_boot_outcome>
+    2300: 80 fe        	bra	$2300 <main+0x10>
+    2302: 20 e1 27     	jsr	$27e1 <cfrom_begin>
+    2305: aa           	tax
+    2306: f0 11        	beq	$2319 <main+0x29>
+    2308: ae c5 2c     	ldx	$2cc5                   ; 0x2cc5 <cffault>
+    230b: a0 ff        	ldy	#$ff
+    230d: 8a           	txa
+    230e: d0 ed        	bne	$22fd <main+0xd>
+    2310: ae d2 2e     	ldx	$2ed2                   ; 0x2ed2 <r0f_pf_nmi_seen>
+    2313: d0 e8        	bne	$22fd <main+0xd>
+    2315: a0 01        	ldy	#$1
+    2317: 80 e4        	bra	$22fd <main+0xd>
+    2319: a0 ff        	ldy	#$ff
+    231b: 80 e0        	bra	$22fd <main+0xd>
+
+0000231d <cfput16>:
+    231d: a2 01        	ldx	#$1
+    231f: 8e 7c 19     	stx	$197c                   ; 0x197c <__zp_bss_start+0x195a>
+    2322: 9c 7d 19     	stz	$197d                   ; 0x197d <__zp_bss_start+0x195b>
+    2325: 60           	rts
+
+00002326 <cfput32>:
+    2326: 86 06        	stx	$6                      ; 0x6 <__rc4>
+    2328: a4 05        	ldy	$5                      ; 0x5 <__rc3>
+    232a: a2 00        	ldx	#$0
+    232c: 80 10        	bra	$233e <cfput32+0x18>
+    232e: 9d 10 19     	sta	$1910,x                 ; 0x1910 <__zp_bss_start+0x18ee>
+    2331: e8           	inx
+    2332: a5 06        	lda	$6                      ; 0x6 <__rc4>
+    2334: 5a           	phy
+    2335: a4 04        	ldy	$4                      ; 0x4 <__rc2>
+    2337: 84 06        	sty	$6                      ; 0x6 <__rc4>
+    2339: 7a           	ply
+    233a: 84 04        	sty	$4                      ; 0x4 <__rc2>
+    233c: a0 00        	ldy	#$0
+    233e: e0 04        	cpx	#$4
+    2340: d0 ec        	bne	$232e <cfput32+0x8>
+    2342: 60           	rts
+
+00002343 <cfline>:
+    2343: a6 16        	ldx	$16                     ; 0x16 <__rc20>
+    2345: da           	phx
+    2346: a2 00        	ldx	#$0
+    2348: 80 0b        	bra	$2355 <cfline+0x12>
+    234a: 86 16        	stx	$16                     ; 0x16 <__rc20>
+    234c: aa           	tax
+    234d: a5 05        	lda	$5                      ; 0x5 <__rc3>
+    234f: 20 7b 23     	jsr	$237b <screen_byte>
+    2352: a6 16        	ldx	$16                     ; 0x16 <__rc20>
+    2354: e8           	inx
+    2355: e0 35        	cpx	#$35
+    2357: f0 1e        	beq	$2377 <cfline+0x34>
+    2359: bc 54 2c     	ldy	$2c54,x                 ; 0x2c54 <__zp_data_load_start+0xc3d>
+    235c: 8a           	txa
+    235d: 18           	clc
+    235e: 69 e0        	adc	#$e0
+    2360: 85 05        	sta	$5                      ; 0x5 <__rc3>
+    2362: a9 00        	lda	#$0
+    2364: 69 01        	adc	#$1
+    2366: 84 04        	sty	$4                      ; 0x4 <__rc2>
+    2368: c0 41        	cpy	#$41
+    236a: 90 de        	bcc	$234a <cfline+0x7>
+    236c: 86 16        	stx	$16                     ; 0x16 <__rc20>
+    236e: aa           	tax
+    236f: 98           	tya
+    2370: 29 1f        	and	#$1f
+    2372: 85 04        	sta	$4                      ; 0x4 <__rc2>
+    2374: 8a           	txa
+    2375: 80 d5        	bra	$234c <cfline+0x9>
+    2377: fa           	plx
+    2378: 86 16        	stx	$16                     ; 0x16 <__rc20>
+    237a: 60           	rts
+
+0000237b <screen_byte>:
+    237b: 85 06        	sta	$6                      ; 0x6 <__rc4>
+    237d: 8a           	txa
+    237e: 09 08        	ora	#$8
+    2380: 85 07        	sta	$7                      ; 0x7 <__rc5>
+    2382: a5 04        	lda	$4                      ; 0x4 <__rc2>
+    2384: 92 06        	sta	($6),z                  ; 0x6 <__rc4>
+    2386: 60           	rts
+
+00002387 <cfcopy>:
+    2387: 48           	pha
+    2388: 18           	clc
+    2389: a5 02        	lda	$2                      ; 0x2 <__rc0>
+    238b: 69 f9        	adc	#$f9
+    238d: 85 02        	sta	$2                      ; 0x2 <__rc0>
+    238f: a5 03        	lda	$3                      ; 0x3 <__rc1>
+    2391: 69 ff        	adc	#$ff
+    2393: 85 03        	sta	$3                      ; 0x3 <__rc1>
+    2395: 68           	pla
+    2396: a4 16        	ldy	$16                     ; 0x16 <__rc20>
+    2398: 5a           	phy
+    2399: a4 17        	ldy	$17                     ; 0x17 <__rc21>
+    239b: 5a           	phy
+    239c: a4 18        	ldy	$18                     ; 0x18 <__rc22>
+    239e: 5a           	phy
+    239f: a4 19        	ldy	$19                     ; 0x19 <__rc23>
+    23a1: 5a           	phy
+    23a2: 48           	pha
+    23a3: a5 1a        	lda	$1a                     ; 0x1a <__rc24>
+    23a5: a0 06        	ldy	#$6
+    23a7: 91 02        	sta	($2),y                  ; 0x2 <__rc0>
+    23a9: a5 1b        	lda	$1b                     ; 0x1b <__rc25>
+    23ab: 88           	dey
+    23ac: 91 02        	sta	($2),y                  ; 0x2 <__rc0>
+    23ae: a5 1c        	lda	$1c                     ; 0x1c <__rc26>
+    23b0: 88           	dey
+    23b1: 91 02        	sta	($2),y                  ; 0x2 <__rc0>
+    23b3: a5 1d        	lda	$1d                     ; 0x1d <__rc27>
+    23b5: 88           	dey
+    23b6: 91 02        	sta	($2),y                  ; 0x2 <__rc0>
+    23b8: a5 1e        	lda	$1e                     ; 0x1e <__rc28>
+    23ba: 88           	dey
+    23bb: 91 02        	sta	($2),y                  ; 0x2 <__rc0>
+    23bd: a5 1f        	lda	$1f                     ; 0x1f <__rc29>
+    23bf: 88           	dey
+    23c0: 91 02        	sta	($2),y                  ; 0x2 <__rc0>
+    23c2: a5 20        	lda	$20                     ; 0x20 <__rc30>
+    23c4: 88           	dey
+    23c5: 91 02        	sta	($2),y                  ; 0x2 <__rc0>
+    23c7: 68           	pla
+    23c8: a8           	tay
+    23c9: 86 0a        	stx	$a                      ; 0xa <__rc8>
+    23cb: a6 08        	ldx	$8                      ; 0x8 <__rc6>
+    23cd: 5a           	phy
+    23ce: a4 09        	ldy	$9                      ; 0x9 <__rc7>
+    23d0: 84 18        	sty	$18                     ; 0x18 <__rc22>
+    23d2: a4 06        	ldy	$6                      ; 0x6 <__rc4>
+    23d4: 84 16        	sty	$16                     ; 0x16 <__rc20>
+    23d6: a4 07        	ldy	$7                      ; 0x7 <__rc5>
+    23d8: 84 17        	sty	$17                     ; 0x17 <__rc21>
+    23da: a9 01        	lda	#$1
+    23dc: 2d c3 2c     	and	$2cc3                   ; 0x2cc3 <cfreclaimed>
+    23df: 64 07        	stz	$7                      ; 0x7 <__rc5>
+    23e1: a4 04        	ldy	$4                      ; 0x4 <__rc2>
+    23e3: 84 1d        	sty	$1d                     ; 0x1d <__rc27>
+    23e5: a4 05        	ldy	$5                      ; 0x5 <__rc3>
+    23e7: 84 1e        	sty	$1e                     ; 0x1e <__rc28>
+    23e9: 7a           	ply
+    23ea: 86 1a        	stx	$1a                     ; 0x1a <__rc24>
+    23ec: 86 06        	stx	$6                      ; 0x6 <__rc4>
+    23ee: a6 09        	ldx	$9                      ; 0x9 <__rc7>
+    23f0: 86 08        	stx	$8                      ; 0x8 <__rc6>
+    23f2: 85 09        	sta	$9                      ; 0x9 <__rc7>
+    23f4: a6 0a        	ldx	$a                      ; 0xa <__rc8>
+    23f6: 86 1c        	stx	$1c                     ; 0x1c <__rc26>
+    23f8: a6 0a        	ldx	$a                      ; 0xa <__rc8>
+    23fa: 84 1b        	sty	$1b                     ; 0x1b <__rc25>
+    23fc: 98           	tya
+    23fd: 20 03 2a     	jsr	$2a03 <r0fc_range>
+    2400: a2 15        	ldx	#$15
+    2402: a8           	tay
+    2403: d0 03        	bne	$2408 <cfcopy+0x81>
+    2405: 4c 0f 25     	jmp	$250f <cfcopy+0x188>
+    2408: a5 18        	lda	$18                     ; 0x18 <__rc22>
+    240a: d0 03        	bne	$240f <cfcopy+0x88>
+    240c: 4c 52 24     	jmp	$2452 <cfcopy+0xcb>
+    240f: a5 1e        	lda	$1e                     ; 0x1e <__rc28>
+    2411: c9 08        	cmp	#$8
+    2413: a0 01        	ldy	#$1
+    2415: b0 02        	bcs	$2419 <cfcopy+0x92>
+    2417: a0 00        	ldy	#$0
+    2419: 84 06        	sty	$6                      ; 0x6 <__rc4>
+    241b: a4 1c        	ldy	$1c                     ; 0x1c <__rc26>
+    241d: c0 00        	cpy	#$0
+    241f: a0 01        	ldy	#$1
+    2421: b0 02        	bcs	$2425 <cfcopy+0x9e>
+    2423: a0 00        	ldy	#$0
+    2425: 84 04        	sty	$4                      ; 0x4 <__rc2>
+    2427: a4 1b        	ldy	$1b                     ; 0x1b <__rc25>
+    2429: c0 00        	cpy	#$0
+    242b: a0 01        	ldy	#$1
+    242d: b0 02        	bcs	$2431 <cfcopy+0xaa>
+    242f: a0 00        	ldy	#$0
+    2431: 84 05        	sty	$5                      ; 0x5 <__rc3>
+    2433: c9 08        	cmp	#$8
+    2435: f0 03        	beq	$243a <cfcopy+0xb3>
+    2437: 4c 71 24     	jmp	$2471 <cfcopy+0xea>
+    243a: a5 1d        	lda	$1d                     ; 0x1d <__rc27>
+    243c: f0 03        	beq	$2441 <cfcopy+0xba>
+    243e: 4c 78 24     	jmp	$2478 <cfcopy+0xf1>
+    2441: a5 1c        	lda	$1c                     ; 0x1c <__rc26>
+    2443: f0 03        	beq	$2448 <cfcopy+0xc1>
+    2445: 4c 81 24     	jmp	$2481 <cfcopy+0xfa>
+    2448: a5 05        	lda	$5                      ; 0x5 <__rc3>
+    244a: f0 03        	beq	$244f <cfcopy+0xc8>
+    244c: 4c 85 24     	jmp	$2485 <cfcopy+0xfe>
+    244f: 4c b5 24     	jmp	$24b5 <cfcopy+0x12e>
+    2452: a6 16        	ldx	$16                     ; 0x16 <__rc20>
+    2454: a4 17        	ldy	$17                     ; 0x17 <__rc21>
+    2456: a5 1b        	lda	$1b                     ; 0x1b <__rc25>
+    2458: 85 16        	sta	$16                     ; 0x16 <__rc20>
+    245a: a5 1c        	lda	$1c                     ; 0x1c <__rc26>
+    245c: 85 17        	sta	$17                     ; 0x17 <__rc21>
+    245e: a5 1d        	lda	$1d                     ; 0x1d <__rc27>
+    2460: 85 18        	sta	$18                     ; 0x18 <__rc22>
+    2462: a5 1e        	lda	$1e                     ; 0x1e <__rc28>
+    2464: 85 19        	sta	$19                     ; 0x19 <__rc23>
+    2466: 86 1b        	stx	$1b                     ; 0x1b <__rc25>
+    2468: 84 1c        	sty	$1c                     ; 0x1c <__rc26>
+    246a: 64 1d        	stz	$1d                     ; 0x1d <__rc27>
+    246c: 64 1e        	stz	$1e                     ; 0x1e <__rc28>
+    246e: 4c b9 24     	jmp	$24b9 <cfcopy+0x132>
+    2471: a5 06        	lda	$6                      ; 0x6 <__rc4>
+    2473: d0 10        	bne	$2485 <cfcopy+0xfe>
+    2475: 4c b5 24     	jmp	$24b5 <cfcopy+0x12e>
+    2478: a4 1d        	ldy	$1d                     ; 0x1d <__rc27>
+    247a: c0 00        	cpy	#$0
+    247c: b0 07        	bcs	$2485 <cfcopy+0xfe>
+    247e: 4c b5 24     	jmp	$24b5 <cfcopy+0x12e>
+    2481: a5 04        	lda	$4                      ; 0x4 <__rc2>
+    2483: f0 30        	beq	$24b5 <cfcopy+0x12e>
+    2485: a4 1e        	ldy	$1e                     ; 0x1e <__rc28>
+    2487: c0 08        	cpy	#$8
+    2489: d0 10        	bne	$249b <cfcopy+0x114>
+    248b: a4 1d        	ldy	$1d                     ; 0x1d <__rc27>
+    248d: c0 02        	cpy	#$2
+    248f: d0 10        	bne	$24a1 <cfcopy+0x11a>
+    2491: a5 1c        	lda	$1c                     ; 0x1c <__rc26>
+    2493: d0 12        	bne	$24a7 <cfcopy+0x120>
+    2495: a5 05        	lda	$5                      ; 0x5 <__rc3>
+    2497: f0 12        	beq	$24ab <cfcopy+0x124>
+    2499: 80 1a        	bra	$24b5 <cfcopy+0x12e>
+    249b: a5 06        	lda	$6                      ; 0x6 <__rc4>
+    249d: f0 0c        	beq	$24ab <cfcopy+0x124>
+    249f: 80 14        	bra	$24b5 <cfcopy+0x12e>
+    24a1: c0 02        	cpy	#$2
+    24a3: 90 06        	bcc	$24ab <cfcopy+0x124>
+    24a5: 80 0e        	bra	$24b5 <cfcopy+0x12e>
+    24a7: a5 04        	lda	$4                      ; 0x4 <__rc2>
+    24a9: d0 0a        	bne	$24b5 <cfcopy+0x12e>
+    24ab: ad c4 2c     	lda	$2cc4                   ; 0x2cc4 <backup_valid>
+    24ae: 29 01        	and	#$1
+    24b0: f0 03        	beq	$24b5 <cfcopy+0x12e>
+    24b2: 4c 0f 25     	jmp	$250f <cfcopy+0x188>
+    24b5: 64 18        	stz	$18                     ; 0x18 <__rc22>
+    24b7: 64 19        	stz	$19                     ; 0x19 <__rc23>
+    24b9: a9 00        	lda	#$0
+    24bb: aa           	tax
+    24bc: 4c f7 24     	jmp	$24f7 <cfcopy+0x170>
+    24bf: a4 18        	ldy	$18                     ; 0x18 <__rc22>
+    24c1: 84 04        	sty	$4                      ; 0x4 <__rc2>
+    24c3: a4 19        	ldy	$19                     ; 0x19 <__rc23>
+    24c5: 84 05        	sty	$5                      ; 0x5 <__rc3>
+    24c7: 85 06        	sta	$6                      ; 0x6 <__rc4>
+    24c9: 86 20        	stx	$20                     ; 0x20 <__rc30>
+    24cb: a6 17        	ldx	$17                     ; 0x17 <__rc21>
+    24cd: 85 1f        	sta	$1f                     ; 0x1f <__rc29>
+    24cf: a5 16        	lda	$16                     ; 0x16 <__rc20>
+    24d1: 20 21 2c     	jsr	$2c21 <__lshrsi3>
+    24d4: a6 20        	ldx	$20                     ; 0x20 <__rc30>
+    24d6: 9d c6 2c     	sta	$2cc6,x                 ; 0x2cc6 <r0f_pf_copy_request>
+    24d9: a6 1d        	ldx	$1d                     ; 0x1d <__rc27>
+    24db: 86 04        	stx	$4                      ; 0x4 <__rc2>
+    24dd: a6 1e        	ldx	$1e                     ; 0x1e <__rc28>
+    24df: 86 05        	stx	$5                      ; 0x5 <__rc3>
+    24e1: a6 1f        	ldx	$1f                     ; 0x1f <__rc29>
+    24e3: 86 06        	stx	$6                      ; 0x6 <__rc4>
+    24e5: a6 1c        	ldx	$1c                     ; 0x1c <__rc26>
+    24e7: a5 1b        	lda	$1b                     ; 0x1b <__rc25>
+    24e9: 20 21 2c     	jsr	$2c21 <__lshrsi3>
+    24ec: a6 20        	ldx	$20                     ; 0x20 <__rc30>
+    24ee: 9d ca 2c     	sta	$2cca,x                 ; 0x2cca <r0f_pf_copy_request+0x4>
+    24f1: a5 1f        	lda	$1f                     ; 0x1f <__rc29>
+    24f3: e8           	inx
+    24f4: 18           	clc
+    24f5: 69 08        	adc	#$8
+    24f7: e0 04        	cpx	#$4
+    24f9: f0 03        	beq	$24fe <cfcopy+0x177>
+    24fb: 4c bf 24     	jmp	$24bf <cfcopy+0x138>
+    24fe: a6 1a        	ldx	$1a                     ; 0x1a <__rc24>
+    2500: 8e ce 2c     	stx	$2cce                   ; 0x2cce <r0f_pf_copy_request+0x8>
+    2503: 20 9c 21     	jsr	$219c <r0f_pf_flat_copy>
+    2506: aa           	tax
+    2507: a9 01        	lda	#$1
+    2509: e0 00        	cpx	#$0
+    250b: d0 07        	bne	$2514 <cfcopy+0x18d>
+    250d: a2 16        	ldx	#$16
+    250f: 8e c5 2c     	stx	$2cc5                   ; 0x2cc5 <cffault>
+    2512: a9 00        	lda	#$0
+    2514: 85 12        	sta	$12                     ; 0x12 <__rc16>
+    2516: a0 00        	ldy	#$0
+    2518: b1 02        	lda	($2),y                  ; 0x2 <__rc0>
+    251a: 85 20        	sta	$20                     ; 0x20 <__rc30>
+    251c: c8           	iny
+    251d: b1 02        	lda	($2),y                  ; 0x2 <__rc0>
+    251f: 85 1f        	sta	$1f                     ; 0x1f <__rc29>
+    2521: c8           	iny
+    2522: b1 02        	lda	($2),y                  ; 0x2 <__rc0>
+    2524: 85 1e        	sta	$1e                     ; 0x1e <__rc28>
+    2526: c8           	iny
+    2527: b1 02        	lda	($2),y                  ; 0x2 <__rc0>
+    2529: 85 1d        	sta	$1d                     ; 0x1d <__rc27>
+    252b: c8           	iny
+    252c: b1 02        	lda	($2),y                  ; 0x2 <__rc0>
+    252e: 85 1c        	sta	$1c                     ; 0x1c <__rc26>
+    2530: c8           	iny
+    2531: b1 02        	lda	($2),y                  ; 0x2 <__rc0>
+    2533: 85 1b        	sta	$1b                     ; 0x1b <__rc25>
+    2535: c8           	iny
+    2536: b1 02        	lda	($2),y                  ; 0x2 <__rc0>
+    2538: 85 1a        	sta	$1a                     ; 0x1a <__rc24>
+    253a: fa           	plx
+    253b: 86 19        	stx	$19                     ; 0x19 <__rc23>
+    253d: fa           	plx
+    253e: 86 18        	stx	$18                     ; 0x18 <__rc22>
+    2540: fa           	plx
+    2541: 86 17        	stx	$17                     ; 0x17 <__rc21>
+    2543: fa           	plx
+    2544: 86 16        	stx	$16                     ; 0x16 <__rc20>
+    2546: 18           	clc
+    2547: a5 02        	lda	$2                      ; 0x2 <__rc0>
+    2549: 69 07        	adc	#$7
+    254b: 85 02        	sta	$2                      ; 0x2 <__rc0>
+    254d: a5 03        	lda	$3                      ; 0x3 <__rc1>
+    254f: 69 00        	adc	#$0
+    2551: 85 03        	sta	$3                      ; 0x3 <__rc1>
+    2553: a5 12        	lda	$12                     ; 0x12 <__rc16>
+    2555: 60           	rts
+
+00002556 <cfphysical_crc>:
+    2556: 18           	clc
+    2557: a5 02        	lda	$2                      ; 0x2 <__rc0>
+    2559: 69 f6        	adc	#$f6
+    255b: 85 02        	sta	$2                      ; 0x2 <__rc0>
+    255d: a5 03        	lda	$3                      ; 0x3 <__rc1>
+    255f: 69 ff        	adc	#$ff
+    2561: 85 03        	sta	$3                      ; 0x3 <__rc1>
+    2563: a6 16        	ldx	$16                     ; 0x16 <__rc20>
+    2565: da           	phx
+    2566: a6 17        	ldx	$17                     ; 0x17 <__rc21>
+    2568: da           	phx
+    2569: a6 18        	ldx	$18                     ; 0x18 <__rc22>
+    256b: da           	phx
+    256c: a6 19        	ldx	$19                     ; 0x19 <__rc23>
+    256e: da           	phx
+    256f: a5 1a        	lda	$1a                     ; 0x1a <__rc24>
+    2571: a0 07        	ldy	#$7
+    2573: 91 02        	sta	($2),y                  ; 0x2 <__rc0>
+    2575: a5 1b        	lda	$1b                     ; 0x1b <__rc25>
+    2577: 88           	dey
+    2578: 91 02        	sta	($2),y                  ; 0x2 <__rc0>
+    257a: a5 1c        	lda	$1c                     ; 0x1c <__rc26>
+    257c: 88           	dey
+    257d: 91 02        	sta	($2),y                  ; 0x2 <__rc0>
+    257f: a5 1d        	lda	$1d                     ; 0x1d <__rc27>
+    2581: 88           	dey
+    2582: 91 02        	sta	($2),y                  ; 0x2 <__rc0>
+    2584: a5 1e        	lda	$1e                     ; 0x1e <__rc28>
+    2586: 88           	dey
+    2587: 91 02        	sta	($2),y                  ; 0x2 <__rc0>
+    2589: a5 1f        	lda	$1f                     ; 0x1f <__rc29>
+    258b: 88           	dey
+    258c: 91 02        	sta	($2),y                  ; 0x2 <__rc0>
+    258e: a5 20        	lda	$20                     ; 0x20 <__rc30>
+    2590: 88           	dey
+    2591: 91 02        	sta	($2),y                  ; 0x2 <__rc0>
+    2593: a5 21        	lda	$21                     ; 0x21 <__rc31>
+    2595: 88           	dey
+    2596: 91 02        	sta	($2),y                  ; 0x2 <__rc0>
+    2598: a0 02        	ldy	#$2
+    259a: a2 08        	ldx	#$8
+    259c: 84 13        	sty	$13                     ; 0x13 <__rc17>
+    259e: 8a           	txa
+    259f: a0 09        	ldy	#$9
+    25a1: 91 02        	sta	($2),y                  ; 0x2 <__rc0>
+    25a3: 64 1b        	stz	$1b                     ; 0x1b <__rc25>
+    25a5: 64 1d        	stz	$1d                     ; 0x1d <__rc27>
+    25a7: 64 1e        	stz	$1e                     ; 0x1e <__rc28>
+    25a9: 64 06        	stz	$6                      ; 0x6 <__rc4>
+    25ab: 64 07        	stz	$7                      ; 0x7 <__rc5>
+    25ad: a9 00        	lda	#$0
+    25af: a2 ff        	ldx	#$ff
+    25b1: 48           	pha
+    25b2: 8a           	txa
+    25b3: 88           	dey
+    25b4: 91 02        	sta	($2),y                  ; 0x2 <__rc0>
+    25b6: a4 13        	ldy	$13                     ; 0x13 <__rc17>
+    25b8: 68           	pla
+    25b9: 86 1f        	stx	$1f                     ; 0x1f <__rc29>
+    25bb: 86 1a        	stx	$1a                     ; 0x1a <__rc24>
+    25bd: 86 1c        	stx	$1c                     ; 0x1c <__rc26>
+    25bf: a6 06        	ldx	$6                      ; 0x6 <__rc4>
+    25c1: 86 04        	stx	$4                      ; 0x4 <__rc2>
+    25c3: a6 07        	ldx	$7                      ; 0x7 <__rc5>
+    25c5: 86 05        	stx	$5                      ; 0x5 <__rc3>
+    25c7: 5a           	phy
+    25c8: fa           	plx
+    25c9: c9 00        	cmp	#$0
+    25cb: d0 03        	bne	$25d0 <cfphysical_crc+0x7a>
+    25cd: 4c 9c 26     	jmp	$269c <cfphysical_crc+0x146>
+    25d0: a6 06        	ldx	$6                      ; 0x6 <__rc4>
+    25d2: 86 20        	stx	$20                     ; 0x20 <__rc30>
+    25d4: a6 07        	ldx	$7                      ; 0x7 <__rc5>
+    25d6: 86 21        	stx	$21                     ; 0x21 <__rc31>
+    25d8: 84 18        	sty	$18                     ; 0x18 <__rc22>
+    25da: aa           	tax
+    25db: d0 10        	bne	$25ed <cfphysical_crc+0x97>
+    25dd: a6 18        	ldx	$18                     ; 0x18 <__rc22>
+    25df: d0 10        	bne	$25f1 <cfphysical_crc+0x9b>
+    25e1: a6 07        	ldx	$7                      ; 0x7 <__rc5>
+    25e3: e0 01        	cpx	#$1
+    25e5: d0 0e        	bne	$25f5 <cfphysical_crc+0x9f>
+    25e7: a6 06        	ldx	$6                      ; 0x6 <__rc4>
+    25e9: e0 00        	cpx	#$0
+    25eb: 80 0a        	bra	$25f7 <cfphysical_crc+0xa1>
+    25ed: c9 00        	cmp	#$0
+    25ef: 80 06        	bra	$25f7 <cfphysical_crc+0xa1>
+    25f1: c0 00        	cpy	#$0
+    25f3: 80 02        	bra	$25f7 <cfphysical_crc+0xa1>
+    25f5: e0 01        	cpx	#$1
+    25f7: a2 ff        	ldx	#$ff
+    25f9: 86 16        	stx	$16                     ; 0x16 <__rc20>
+    25fb: b0 04        	bcs	$2601 <cfphysical_crc+0xab>
+    25fd: a6 06        	ldx	$6                      ; 0x6 <__rc4>
+    25ff: 86 16        	stx	$16                     ; 0x16 <__rc20>
+    2601: 85 19        	sta	$19                     ; 0x19 <__rc23>
+    2603: a2 cf        	ldx	#$cf
+    2605: 86 06        	stx	$6                      ; 0x6 <__rc4>
+    2607: a2 2c        	ldx	#$2c
+    2609: 86 07        	stx	$7                      ; 0x7 <__rc5>
+    260b: 64 17        	stz	$17                     ; 0x17 <__rc21>
+    260d: a6 1e        	ldx	$1e                     ; 0x1e <__rc28>
+    260f: 86 04        	stx	$4                      ; 0x4 <__rc2>
+    2611: a0 09        	ldy	#$9
+    2613: b1 02        	lda	($2),y                  ; 0x2 <__rc0>
+    2615: 85 05        	sta	$5                      ; 0x5 <__rc3>
+    2617: a6 16        	ldx	$16                     ; 0x16 <__rc20>
+    2619: 86 08        	stx	$8                      ; 0x8 <__rc6>
+    261b: 64 09        	stz	$9                      ; 0x9 <__rc7>
+    261d: a6 1d        	ldx	$1d                     ; 0x1d <__rc27>
+    261f: a5 1b        	lda	$1b                     ; 0x1b <__rc25>
+    2621: 20 87 23     	jsr	$2387 <cfcopy>
+    2624: a2 00        	ldx	#$0
+    2626: 64 04        	stz	$4                      ; 0x4 <__rc2>
+    2628: 64 05        	stz	$5                      ; 0x5 <__rc3>
+    262a: a8           	tay
+    262b: d0 03        	bne	$2630 <cfphysical_crc+0xda>
+    262d: 4c ca 26     	jmp	$26ca <cfphysical_crc+0x174>
+    2630: a0 00        	ldy	#$0
+    2632: 5a           	phy
+    2633: a0 08        	ldy	#$8
+    2635: b1 02        	lda	($2),y                  ; 0x2 <__rc0>
+    2637: 7a           	ply
+    2638: 80 23        	bra	$265d <cfphysical_crc+0x107>
+    263a: be cf 2c     	ldx	$2ccf,y                 ; 0x2ccf <block>
+    263d: 48           	pha
+    263e: a5 1a        	lda	$1a                     ; 0x1a <__rc24>
+    2640: 85 04        	sta	$4                      ; 0x4 <__rc2>
+    2642: a5 1c        	lda	$1c                     ; 0x1c <__rc26>
+    2644: 85 05        	sta	$5                      ; 0x5 <__rc3>
+    2646: 68           	pla
+    2647: 86 06        	stx	$6                      ; 0x6 <__rc4>
+    2649: a6 1f        	ldx	$1f                     ; 0x1f <__rc29>
+    264b: 84 17        	sty	$17                     ; 0x17 <__rc21>
+    264d: 20 13 27     	jsr	$2713 <crc_byte>
+    2650: a4 17        	ldy	$17                     ; 0x17 <__rc21>
+    2652: 86 1f        	stx	$1f                     ; 0x1f <__rc29>
+    2654: a6 04        	ldx	$4                      ; 0x4 <__rc2>
+    2656: 86 1a        	stx	$1a                     ; 0x1a <__rc24>
+    2658: a6 05        	ldx	$5                      ; 0x5 <__rc3>
+    265a: 86 1c        	stx	$1c                     ; 0x1c <__rc26>
+    265c: c8           	iny
+    265d: a6 16        	ldx	$16                     ; 0x16 <__rc20>
+    265f: 84 04        	sty	$4                      ; 0x4 <__rc2>
+    2661: e4 04        	cpx	$4                      ; 0x4 <__rc2>
+    2663: d0 d5        	bne	$263a <cfphysical_crc+0xe4>
+    2665: a0 08        	ldy	#$8
+    2667: 91 02        	sta	($2),y                  ; 0x2 <__rc0>
+    2669: a5 1b        	lda	$1b                     ; 0x1b <__rc25>
+    266b: 18           	clc
+    266c: 65 16        	adc	$16                     ; 0x16 <__rc20>
+    266e: 85 1b        	sta	$1b                     ; 0x1b <__rc25>
+    2670: a5 1d        	lda	$1d                     ; 0x1d <__rc27>
+    2672: 69 00        	adc	#$0
+    2674: 85 1d        	sta	$1d                     ; 0x1d <__rc27>
+    2676: a5 1e        	lda	$1e                     ; 0x1e <__rc28>
+    2678: 69 00        	adc	#$0
+    267a: 85 1e        	sta	$1e                     ; 0x1e <__rc28>
+    267c: c8           	iny
+    267d: b1 02        	lda	($2),y                  ; 0x2 <__rc0>
+    267f: 69 00        	adc	#$0
+    2681: 91 02        	sta	($2),y                  ; 0x2 <__rc0>
+    2683: 38           	sec
+    2684: a5 20        	lda	$20                     ; 0x20 <__rc30>
+    2686: e5 16        	sbc	$16                     ; 0x16 <__rc20>
+    2688: 85 06        	sta	$6                      ; 0x6 <__rc4>
+    268a: a5 21        	lda	$21                     ; 0x21 <__rc31>
+    268c: e9 00        	sbc	#$0
+    268e: 85 07        	sta	$7                      ; 0x7 <__rc5>
+    2690: a5 18        	lda	$18                     ; 0x18 <__rc22>
+    2692: e9 00        	sbc	#$0
+    2694: a8           	tay
+    2695: a5 19        	lda	$19                     ; 0x19 <__rc23>
+    2697: e9 00        	sbc	#$0
+    2699: 4c bf 25     	jmp	$25bf <cfphysical_crc+0x69>
+    269c: e0 00        	cpx	#$0
+    269e: f0 03        	beq	$26a3 <cfphysical_crc+0x14d>
+    26a0: 4c d0 25     	jmp	$25d0 <cfphysical_crc+0x7a>
+    26a3: a6 05        	ldx	$5                      ; 0x5 <__rc3>
+    26a5: f0 03        	beq	$26aa <cfphysical_crc+0x154>
+    26a7: 4c d0 25     	jmp	$25d0 <cfphysical_crc+0x7a>
+    26aa: a6 04        	ldx	$4                      ; 0x4 <__rc2>
+    26ac: f0 03        	beq	$26b1 <cfphysical_crc+0x15b>
+    26ae: 4c d0 25     	jmp	$25d0 <cfphysical_crc+0x7a>
+    26b1: a0 08        	ldy	#$8
+    26b3: b1 02        	lda	($2),y                  ; 0x2 <__rc0>
+    26b5: 49 ff        	eor	#$ff
+    26b7: 85 17        	sta	$17                     ; 0x17 <__rc21>
+    26b9: a5 1f        	lda	$1f                     ; 0x1f <__rc29>
+    26bb: 49 ff        	eor	#$ff
+    26bd: aa           	tax
+    26be: a5 1a        	lda	$1a                     ; 0x1a <__rc24>
+    26c0: 49 ff        	eor	#$ff
+    26c2: 85 04        	sta	$4                      ; 0x4 <__rc2>
+    26c4: a5 1c        	lda	$1c                     ; 0x1c <__rc26>
+    26c6: 49 ff        	eor	#$ff
+    26c8: 85 05        	sta	$5                      ; 0x5 <__rc3>
+    26ca: a5 17        	lda	$17                     ; 0x17 <__rc21>
+    26cc: 85 12        	sta	$12                     ; 0x12 <__rc16>
+    26ce: a0 00        	ldy	#$0
+    26d0: b1 02        	lda	($2),y                  ; 0x2 <__rc0>
+    26d2: 85 21        	sta	$21                     ; 0x21 <__rc31>
+    26d4: c8           	iny
+    26d5: b1 02        	lda	($2),y                  ; 0x2 <__rc0>
+    26d7: 85 20        	sta	$20                     ; 0x20 <__rc30>
+    26d9: c8           	iny
+    26da: b1 02        	lda	($2),y                  ; 0x2 <__rc0>
+    26dc: 85 1f        	sta	$1f                     ; 0x1f <__rc29>
+    26de: c8           	iny
+    26df: b1 02        	lda	($2),y                  ; 0x2 <__rc0>
+    26e1: 85 1e        	sta	$1e                     ; 0x1e <__rc28>
+    26e3: c8           	iny
+    26e4: b1 02        	lda	($2),y                  ; 0x2 <__rc0>
+    26e6: 85 1d        	sta	$1d                     ; 0x1d <__rc27>
+    26e8: c8           	iny
+    26e9: b1 02        	lda	($2),y                  ; 0x2 <__rc0>
+    26eb: 85 1c        	sta	$1c                     ; 0x1c <__rc26>
+    26ed: c8           	iny
+    26ee: b1 02        	lda	($2),y                  ; 0x2 <__rc0>
+    26f0: 85 1b        	sta	$1b                     ; 0x1b <__rc25>
+    26f2: c8           	iny
+    26f3: b1 02        	lda	($2),y                  ; 0x2 <__rc0>
+    26f5: 85 1a        	sta	$1a                     ; 0x1a <__rc24>
+    26f7: 7a           	ply
+    26f8: 84 19        	sty	$19                     ; 0x19 <__rc23>
+    26fa: 7a           	ply
+    26fb: 84 18        	sty	$18                     ; 0x18 <__rc22>
+    26fd: 7a           	ply
+    26fe: 84 17        	sty	$17                     ; 0x17 <__rc21>
+    2700: 7a           	ply
+    2701: 84 16        	sty	$16                     ; 0x16 <__rc20>
+    2703: 18           	clc
+    2704: a5 02        	lda	$2                      ; 0x2 <__rc0>
+    2706: 69 0a        	adc	#$a
+    2708: 85 02        	sta	$2                      ; 0x2 <__rc0>
+    270a: a5 03        	lda	$3                      ; 0x3 <__rc1>
+    270c: 69 00        	adc	#$0
+    270e: 85 03        	sta	$3                      ; 0x3 <__rc1>
+    2710: a5 12        	lda	$12                     ; 0x12 <__rc16>
+    2712: 60           	rts
+
+00002713 <crc_byte>:
+    2713: 86 09        	stx	$9                      ; 0x9 <__rc7>
+    2715: 45 06        	eor	$6                      ; 0x6 <__rc4>
+    2717: a8           	tay
+    2718: a2 08        	ldx	#$8
+    271a: 80 27        	bra	$2743 <crc_byte+0x30>
+    271c: 64 0a        	stz	$a                      ; 0xa <__rc8>
+    271e: 64 0b        	stz	$b                      ; 0xb <__rc9>
+    2720: 64 06        	stz	$6                      ; 0x6 <__rc4>
+    2722: 64 07        	stz	$7                      ; 0x7 <__rc5>
+    2724: 46 05        	lsr	$5                      ; 0x5 <__rc3>
+    2726: 66 04        	ror	$4                      ; 0x4 <__rc2>
+    2728: 66 09        	ror	$9                      ; 0x9 <__rc7>
+    272a: a5 08        	lda	$8                      ; 0x8 <__rc6>
+    272c: 6a           	ror
+    272d: 45 0a        	eor	$a                      ; 0xa <__rc8>
+    272f: a8           	tay
+    2730: a5 09        	lda	$9                      ; 0x9 <__rc7>
+    2732: 45 0b        	eor	$b                      ; 0xb <__rc9>
+    2734: 85 09        	sta	$9                      ; 0x9 <__rc7>
+    2736: a5 04        	lda	$4                      ; 0x4 <__rc2>
+    2738: 45 06        	eor	$6                      ; 0x6 <__rc4>
+    273a: 85 04        	sta	$4                      ; 0x4 <__rc2>
+    273c: a5 05        	lda	$5                      ; 0x5 <__rc3>
+    273e: 45 07        	eor	$7                      ; 0x7 <__rc5>
+    2740: 85 05        	sta	$5                      ; 0x5 <__rc3>
+    2742: ca           	dex
+    2743: 8a           	txa
+    2744: f0 1d        	beq	$2763 <crc_byte+0x50>
+    2746: 98           	tya
+    2747: 84 08        	sty	$8                      ; 0x8 <__rc6>
+    2749: 29 01        	and	#$1
+    274b: d0 03        	bne	$2750 <crc_byte+0x3d>
+    274d: 4c 1c 27     	jmp	$271c <crc_byte+0x9>
+    2750: a0 83        	ldy	#$83
+    2752: a9 20        	lda	#$20
+    2754: 85 0a        	sta	$a                      ; 0xa <__rc8>
+    2756: 84 0b        	sty	$b                      ; 0xb <__rc9>
+    2758: a0 b8        	ldy	#$b8
+    275a: 84 06        	sty	$6                      ; 0x6 <__rc4>
+    275c: a0 ed        	ldy	#$ed
+    275e: 84 07        	sty	$7                      ; 0x7 <__rc5>
+    2760: 4c 24 27     	jmp	$2724 <crc_byte+0x11>
+    2763: a6 09        	ldx	$9                      ; 0x9 <__rc7>
+    2765: 98           	tya
+    2766: 60           	rts
+
+00002767 <cfentry>:
+    2767: 20 e5 20     	jsr	$20e5 <r0f_pf_enter>
+    276a: 8d 0a 19     	sta	$190a                   ; 0x190a <__zp_bss_start+0x18e8>
+    276d: ae ce 2d     	ldx	$2dce                   ; 0x2dce <r0f_pf_cpu_port>
+    2770: 8e 0b 19     	stx	$190b                   ; 0x190b <__zp_bss_start+0x18e9>
+    2773: ae 6f d0     	ldx	$d06f                   ; 0xd06f <__heap_start+0xa181>
+    2776: 8e 08 19     	stx	$1908                   ; 0x1908 <__zp_bss_start+0x18e6>
+    2779: ad 54 d0     	lda	$d054                   ; 0xd054 <__heap_start+0xa166>
+    277c: 09 40        	ora	#$40
+    277e: 8d 54 d0     	sta	$d054                   ; 0xd054 <__heap_start+0xa166>
+    2781: ae 54 d0     	ldx	$d054                   ; 0xd054 <__heap_start+0xa166>
+    2784: 8e 09 19     	stx	$1909                   ; 0x1909 <__zp_bss_start+0x18e7>
+    2787: ad 0f d6     	lda	$d60f                   ; 0xd60f <__heap_start+0xa721>
+    278a: 29 20        	and	#$20
+    278c: f0 04        	beq	$2792 <cfentry+0x2b>
+    278e: a2 02        	ldx	#$2
+    2790: 80 02        	bra	$2794 <cfentry+0x2d>
+    2792: a2 01        	ldx	#$1
+    2794: 8e 07 19     	stx	$1907                   ; 0x1907 <__zp_bss_start+0x18e5>
+    2797: ae 29 d6     	ldx	$d629                   ; 0xd629 <__heap_start+0xa73b>
+    279a: 8e 9c 19     	stx	$199c                   ; 0x199c <__zp_bss_start+0x197a>
+    279d: a2 00        	ldx	#$0
+    279f: 80 12        	bra	$27b3 <cfentry+0x4c>
+    27a1: 8a           	txa
+    27a2: 18           	clc
+    27a3: 69 32        	adc	#$32
+    27a5: 85 04        	sta	$4                      ; 0x4 <__rc2>
+    27a7: a9 00        	lda	#$0
+    27a9: 69 d6        	adc	#$d6
+    27ab: 85 05        	sta	$5                      ; 0x5 <__rc3>
+    27ad: b2 04        	lda	($4),z                  ; 0x4 <__rc2>
+    27af: 9d a0 19     	sta	$19a0,x                 ; 0x19a0 <__zp_bss_start+0x197e>
+    27b2: e8           	inx
+    27b3: e0 04        	cpx	#$4
+    27b5: d0 ea        	bne	$27a1 <cfentry+0x3a>
+    27b7: ae 0a 19     	ldx	$190a                   ; 0x190a <__zp_bss_start+0x18e8>
+    27ba: e0 02        	cpx	#$2
+    27bc: d0 15        	bne	$27d3 <cfentry+0x6c>
+    27be: ae cf 2d     	ldx	$2dcf                   ; 0x2dcf <r0f_pf_stack_high>
+    27c1: e0 01        	cpx	#$1
+    27c3: d0 0e        	bne	$27d3 <cfentry+0x6c>
+    27c5: ae ce 2d     	ldx	$2dce                   ; 0x2dce <r0f_pf_cpu_port>
+    27c8: e0 35        	cpx	#$35
+    27ca: d0 07        	bne	$27d3 <cfentry+0x6c>
+    27cc: ad 30 d0     	lda	$d030                   ; 0xd030 <__heap_start+0xa142>
+    27cf: 29 b9        	and	#$b9
+    27d1: f0 08        	beq	$27db <cfentry+0x74>
+    27d3: a2 01        	ldx	#$1
+    27d5: 8e c5 2c     	stx	$2cc5                   ; 0x2cc5 <cffault>
+    27d8: a9 00        	lda	#$0
+    27da: 60           	rts
+    27db: 20 48 22     	jsr	$2248 <r0fc_stack_seed>
+    27de: a9 01        	lda	#$1
+    27e0: 60           	rts
+
+000027e1 <cfrom_begin>:
+    27e1: 18           	clc
+    27e2: a5 02        	lda	$2                      ; 0x2 <__rc0>
+    27e4: 69 f8        	adc	#$f8
+    27e6: 85 02        	sta	$2                      ; 0x2 <__rc0>
+    27e8: a5 03        	lda	$3                      ; 0x3 <__rc1>
+    27ea: 69 ff        	adc	#$ff
+    27ec: 85 03        	sta	$3                      ; 0x3 <__rc1>
+    27ee: a6 16        	ldx	$16                     ; 0x16 <__rc20>
+    27f0: da           	phx
+    27f1: a6 17        	ldx	$17                     ; 0x17 <__rc21>
+    27f3: da           	phx
+    27f4: a6 18        	ldx	$18                     ; 0x18 <__rc22>
+    27f6: da           	phx
+    27f7: a6 19        	ldx	$19                     ; 0x19 <__rc23>
+    27f9: da           	phx
+    27fa: a5 1a        	lda	$1a                     ; 0x1a <__rc24>
+    27fc: a0 07        	ldy	#$7
+    27fe: 91 02        	sta	($2),y                  ; 0x2 <__rc0>
+    2800: a5 1b        	lda	$1b                     ; 0x1b <__rc25>
+    2802: 88           	dey
+    2803: 91 02        	sta	($2),y                  ; 0x2 <__rc0>
+    2805: a5 1c        	lda	$1c                     ; 0x1c <__rc26>
+    2807: 88           	dey
+    2808: 91 02        	sta	($2),y                  ; 0x2 <__rc0>
+    280a: a5 1d        	lda	$1d                     ; 0x1d <__rc27>
+    280c: 88           	dey
+    280d: 91 02        	sta	($2),y                  ; 0x2 <__rc0>
+    280f: a5 1e        	lda	$1e                     ; 0x1e <__rc28>
+    2811: 88           	dey
+    2812: 91 02        	sta	($2),y                  ; 0x2 <__rc0>
+    2814: a5 1f        	lda	$1f                     ; 0x1f <__rc29>
+    2816: 88           	dey
+    2817: 91 02        	sta	($2),y                  ; 0x2 <__rc0>
+    2819: a5 20        	lda	$20                     ; 0x20 <__rc30>
+    281b: 88           	dey
+    281c: 91 02        	sta	($2),y                  ; 0x2 <__rc0>
+    281e: a5 21        	lda	$21                     ; 0x21 <__rc31>
+    2820: 88           	dey
+    2821: 91 02        	sta	($2),y                  ; 0x2 <__rc0>
+    2823: a2 ff        	ldx	#$ff
+    2825: 86 18        	stx	$18                     ; 0x18 <__rc22>
+    2827: 20 43 23     	jsr	$2343 <cfline>
+    282a: 64 17        	stz	$17                     ; 0x17 <__rc21>
+    282c: a2 01        	ldx	#$1
+    282e: 86 19        	stx	$19                     ; 0x19 <__rc23>
+    2830: a0 00        	ldy	#$0
+    2832: 64 1d        	stz	$1d                     ; 0x1d <__rc27>
+    2834: ca           	dex
+    2835: 98           	tya
+    2836: c9 00        	cmp	#$0
+    2838: 5a           	phy
+    2839: a0 01        	ldy	#$1
+    283b: b0 02        	bcs	$283f <cfrom_begin+0x5e>
+    283d: a0 00        	ldy	#$0
+    283f: 84 04        	sty	$4                      ; 0x4 <__rc2>
+    2841: 7a           	ply
+    2842: 85 20        	sta	$20                     ; 0x20 <__rc30>
+    2844: c9 00        	cmp	#$0
+    2846: d0 0f        	bne	$2857 <cfrom_begin+0x76>
+    2848: 8a           	txa
+    2849: e0 02        	cpx	#$2
+    284b: d0 1a        	bne	$2867 <cfrom_begin+0x86>
+    284d: a6 1d        	ldx	$1d                     ; 0x1d <__rc27>
+    284f: f0 03        	beq	$2854 <cfrom_begin+0x73>
+    2851: 4c 46 29     	jmp	$2946 <cfrom_begin+0x165>
+    2854: 4c 3f 29     	jmp	$293f <cfrom_begin+0x15e>
+    2857: 8a           	txa
+    2858: a6 04        	ldx	$4                      ; 0x4 <__rc2>
+    285a: f0 12        	beq	$286e <cfrom_begin+0x8d>
+    285c: 4c 4f 29     	jmp	$294f <cfrom_begin+0x16e>
+    285f: a6 18        	ldx	$18                     ; 0x18 <__rc22>
+    2861: 86 16        	stx	$16                     ; 0x16 <__rc20>
+    2863: b0 21        	bcs	$2886 <cfrom_begin+0xa5>
+    2865: 80 28        	bra	$288f <cfrom_begin+0xae>
+    2867: c9 02        	cmp	#$2
+    2869: 90 03        	bcc	$286e <cfrom_begin+0x8d>
+    286b: 4c 4f 29     	jmp	$294f <cfrom_begin+0x16e>
+    286e: 84 1b        	sty	$1b                     ; 0x1b <__rc25>
+    2870: a6 20        	ldx	$20                     ; 0x20 <__rc30>
+    2872: d0 0a        	bne	$287e <cfrom_begin+0x9d>
+    2874: c9 01        	cmp	#$1
+    2876: f0 03        	beq	$287b <cfrom_begin+0x9a>
+    2878: 4c f9 29     	jmp	$29f9 <cfrom_begin+0x218>
+    287b: 4c ee 29     	jmp	$29ee <cfrom_begin+0x20d>
+    287e: a6 18        	ldx	$18                     ; 0x18 <__rc22>
+    2880: 86 16        	stx	$16                     ; 0x16 <__rc20>
+    2882: a6 04        	ldx	$4                      ; 0x4 <__rc2>
+    2884: f0 09        	beq	$288f <cfrom_begin+0xae>
+    2886: aa           	tax
+    2887: a9 00        	lda	#$0
+    2889: 38           	sec
+    288a: e5 1b        	sbc	$1b                     ; 0x1b <__rc25>
+    288c: 85 16        	sta	$16                     ; 0x16 <__rc20>
+    288e: 8a           	txa
+    288f: 85 1e        	sta	$1e                     ; 0x1e <__rc28>
+    2891: 09 02        	ora	#$2
+    2893: a2 cf        	ldx	#$cf
+    2895: 86 06        	stx	$6                      ; 0x6 <__rc4>
+    2897: a2 2c        	ldx	#$2c
+    2899: 86 07        	stx	$7                      ; 0x7 <__rc5>
+    289b: 85 04        	sta	$4                      ; 0x4 <__rc2>
+    289d: a6 20        	ldx	$20                     ; 0x20 <__rc30>
+    289f: 86 05        	stx	$5                      ; 0x5 <__rc3>
+    28a1: a6 16        	ldx	$16                     ; 0x16 <__rc20>
+    28a3: 86 08        	stx	$8                      ; 0x8 <__rc6>
+    28a5: 64 09        	stz	$9                      ; 0x9 <__rc7>
+    28a7: 64 17        	stz	$17                     ; 0x17 <__rc21>
+    28a9: a6 1d        	ldx	$1d                     ; 0x1d <__rc27>
+    28ab: 84 1a        	sty	$1a                     ; 0x1a <__rc24>
+    28ad: 98           	tya
+    28ae: 20 87 23     	jsr	$2387 <cfcopy>
+    28b1: aa           	tax
+    28b2: d0 03        	bne	$28b7 <cfrom_begin+0xd6>
+    28b4: 4c a5 29     	jmp	$29a5 <cfrom_begin+0x1c4>
+    28b7: a5 20        	lda	$20                     ; 0x20 <__rc30>
+    28b9: 09 08        	ora	#$8
+    28bb: a2 cf        	ldx	#$cf
+    28bd: 86 06        	stx	$6                      ; 0x6 <__rc4>
+    28bf: a2 2c        	ldx	#$2c
+    28c1: 86 07        	stx	$7                      ; 0x7 <__rc5>
+    28c3: a6 1e        	ldx	$1e                     ; 0x1e <__rc28>
+    28c5: 86 04        	stx	$4                      ; 0x4 <__rc2>
+    28c7: 85 21        	sta	$21                     ; 0x21 <__rc31>
+    28c9: 85 05        	sta	$5                      ; 0x5 <__rc3>
+    28cb: a6 16        	ldx	$16                     ; 0x16 <__rc20>
+    28cd: 86 08        	stx	$8                      ; 0x8 <__rc6>
+    28cf: a6 19        	ldx	$19                     ; 0x19 <__rc23>
+    28d1: 86 09        	stx	$9                      ; 0x9 <__rc7>
+    28d3: a6 1d        	ldx	$1d                     ; 0x1d <__rc27>
+    28d5: a5 1a        	lda	$1a                     ; 0x1a <__rc24>
+    28d7: 20 87 23     	jsr	$2387 <cfcopy>
+    28da: aa           	tax
+    28db: d0 03        	bne	$28e0 <cfrom_begin+0xff>
+    28dd: 4c a5 29     	jmp	$29a5 <cfrom_begin+0x1c4>
+    28e0: a2 d0        	ldx	#$d0
+    28e2: 86 06        	stx	$6                      ; 0x6 <__rc4>
+    28e4: a2 2d        	ldx	#$2d
+    28e6: 86 07        	stx	$7                      ; 0x7 <__rc5>
+    28e8: a6 1e        	ldx	$1e                     ; 0x1e <__rc28>
+    28ea: 86 1f        	stx	$1f                     ; 0x1f <__rc29>
+    28ec: a6 1e        	ldx	$1e                     ; 0x1e <__rc28>
+    28ee: 86 04        	stx	$4                      ; 0x4 <__rc2>
+    28f0: a6 21        	ldx	$21                     ; 0x21 <__rc31>
+    28f2: 86 05        	stx	$5                      ; 0x5 <__rc3>
+    28f4: a6 16        	ldx	$16                     ; 0x16 <__rc20>
+    28f6: 86 08        	stx	$8                      ; 0x8 <__rc6>
+    28f8: 64 09        	stz	$9                      ; 0x9 <__rc7>
+    28fa: 64 17        	stz	$17                     ; 0x17 <__rc21>
+    28fc: a6 1d        	ldx	$1d                     ; 0x1d <__rc27>
+    28fe: a5 1a        	lda	$1a                     ; 0x1a <__rc24>
+    2900: 20 87 23     	jsr	$2387 <cfcopy>
+    2903: aa           	tax
+    2904: d0 03        	bne	$2909 <cfrom_begin+0x128>
+    2906: 4c a5 29     	jmp	$29a5 <cfrom_begin+0x1c4>
+    2909: a0 00        	ldy	#$0
+    290b: 5a           	phy
+    290c: fa           	plx
+    290d: a4 16        	ldy	$16                     ; 0x16 <__rc20>
+    290f: 86 04        	stx	$4                      ; 0x4 <__rc2>
+    2911: c4 04        	cpy	$4                      ; 0x4 <__rc2>
+    2913: f0 0d        	beq	$2922 <cfrom_begin+0x141>
+    2915: bd cf 2c     	lda	$2ccf,x                 ; 0x2ccf <block>
+    2918: da           	phx
+    2919: 7a           	ply
+    291a: c8           	iny
+    291b: dd d0 2d     	cmp	$2dd0,x                 ; 0x2dd0 <cfworkspace>
+    291e: f0 eb        	beq	$290b <cfrom_begin+0x12a>
+    2920: 80 18        	bra	$293a <cfrom_begin+0x159>
+    2922: 18           	clc
+    2923: a5 1b        	lda	$1b                     ; 0x1b <__rc25>
+    2925: 65 16        	adc	$16                     ; 0x16 <__rc20>
+    2927: a8           	tay
+    2928: a5 1d        	lda	$1d                     ; 0x1d <__rc27>
+    292a: 69 00        	adc	#$0
+    292c: 85 1d        	sta	$1d                     ; 0x1d <__rc27>
+    292e: a5 1e        	lda	$1e                     ; 0x1e <__rc28>
+    2930: 69 00        	adc	#$0
+    2932: aa           	tax
+    2933: a5 20        	lda	$20                     ; 0x20 <__rc30>
+    2935: 69 00        	adc	#$0
+    2937: 4c 36 28     	jmp	$2836 <cfrom_begin+0x55>
+    293a: a2 17        	ldx	#$17
+    293c: 4c a2 29     	jmp	$29a2 <cfrom_begin+0x1c1>
+    293f: c0 00        	cpy	#$0
+    2941: b0 0c        	bcs	$294f <cfrom_begin+0x16e>
+    2943: 4c 6e 28     	jmp	$286e <cfrom_begin+0x8d>
+    2946: a6 1d        	ldx	$1d                     ; 0x1d <__rc27>
+    2948: e0 00        	cpx	#$0
+    294a: b0 03        	bcs	$294f <cfrom_begin+0x16e>
+    294c: 4c 6e 28     	jmp	$286e <cfrom_begin+0x8d>
+    294f: a2 01        	ldx	#$1
+    2951: 8e c4 2c     	stx	$2cc4                   ; 0x2cc4 <backup_valid>
+    2954: 20 56 25     	jsr	$2556 <cfphysical_crc>
+    2957: 20 26 23     	jsr	$2326 <cfput32>
+    295a: 20 25 22     	jsr	$2225 <r0fc_rom_toggle>
+    295d: 8d cf 2e     	sta	$2ecf                   ; 0x2ecf <features_open>
+    2960: 8d 0e 19     	sta	$190e                   ; 0x190e <__zp_bss_start+0x18ec>
+    2963: ae d0 2e     	ldx	$2ed0                   ; 0x2ed0 <r0fc_trap_flags>
+    2966: 8e 0f 19     	stx	$190f                   ; 0x190f <__zp_bss_start+0x18ed>
+    2969: ad d0 2e     	lda	$2ed0                   ; 0x2ed0 <r0fc_trap_flags>
+    296c: 29 01        	and	#$1
+    296e: f0 1f        	beq	$298f <cfrom_begin+0x1ae>
+    2970: ae d1 2e     	ldx	$2ed1                   ; 0x2ed1 <r0fc_trap_base>
+    2973: e0 02        	cpx	#$2
+    2975: d0 18        	bne	$298f <cfrom_begin+0x1ae>
+    2977: a9 04        	lda	#$4
+    2979: 2d cf 2e     	and	$2ecf                   ; 0x2ecf <features_open>
+    297c: d0 11        	bne	$298f <cfrom_begin+0x1ae>
+    297e: a0 01        	ldy	#$1
+    2980: 8c c3 2c     	sty	$2cc3                   ; 0x2cc3 <cfreclaimed>
+    2983: a2 01        	ldx	#$1
+    2985: 86 17        	stx	$17                     ; 0x17 <__rc21>
+    2987: 8c 0c 19     	sty	$190c                   ; 0x190c <__zp_bss_start+0x18ea>
+    298a: 20 1d 23     	jsr	$231d <cfput16>
+    298d: 80 16        	bra	$29a5 <cfrom_begin+0x1c4>
+    298f: ad d0 2e     	lda	$2ed0                   ; 0x2ed0 <r0fc_trap_flags>
+    2992: 29 01        	and	#$1
+    2994: f0 0a        	beq	$29a0 <cfrom_begin+0x1bf>
+    2996: a9 04        	lda	#$4
+    2998: 2d cf 2e     	and	$2ecf                   ; 0x2ecf <features_open>
+    299b: f0 03        	beq	$29a0 <cfrom_begin+0x1bf>
+    299d: 20 25 22     	jsr	$2225 <r0fc_rom_toggle>
+    29a0: a2 18        	ldx	#$18
+    29a2: 8e c5 2c     	stx	$2cc5                   ; 0x2cc5 <cffault>
+    29a5: a5 17        	lda	$17                     ; 0x17 <__rc21>
+    29a7: 85 12        	sta	$12                     ; 0x12 <__rc16>
+    29a9: a0 00        	ldy	#$0
+    29ab: b1 02        	lda	($2),y                  ; 0x2 <__rc0>
+    29ad: 85 21        	sta	$21                     ; 0x21 <__rc31>
+    29af: c8           	iny
+    29b0: b1 02        	lda	($2),y                  ; 0x2 <__rc0>
+    29b2: 85 20        	sta	$20                     ; 0x20 <__rc30>
+    29b4: c8           	iny
+    29b5: b1 02        	lda	($2),y                  ; 0x2 <__rc0>
+    29b7: 85 1f        	sta	$1f                     ; 0x1f <__rc29>
+    29b9: c8           	iny
+    29ba: b1 02        	lda	($2),y                  ; 0x2 <__rc0>
+    29bc: 85 1e        	sta	$1e                     ; 0x1e <__rc28>
+    29be: c8           	iny
+    29bf: b1 02        	lda	($2),y                  ; 0x2 <__rc0>
+    29c1: 85 1d        	sta	$1d                     ; 0x1d <__rc27>
+    29c3: c8           	iny
+    29c4: b1 02        	lda	($2),y                  ; 0x2 <__rc0>
+    29c6: 85 1c        	sta	$1c                     ; 0x1c <__rc26>
+    29c8: c8           	iny
+    29c9: b1 02        	lda	($2),y                  ; 0x2 <__rc0>
+    29cb: 85 1b        	sta	$1b                     ; 0x1b <__rc25>
+    29cd: c8           	iny
+    29ce: b1 02        	lda	($2),y                  ; 0x2 <__rc0>
+    29d0: 85 1a        	sta	$1a                     ; 0x1a <__rc24>
+    29d2: fa           	plx
+    29d3: 86 19        	stx	$19                     ; 0x19 <__rc23>
+    29d5: fa           	plx
+    29d6: 86 18        	stx	$18                     ; 0x18 <__rc22>
+    29d8: fa           	plx
+    29d9: 86 17        	stx	$17                     ; 0x17 <__rc21>
+    29db: fa           	plx
+    29dc: 86 16        	stx	$16                     ; 0x16 <__rc20>
+    29de: 18           	clc
+    29df: a5 02        	lda	$2                      ; 0x2 <__rc0>
+    29e1: 69 08        	adc	#$8
+    29e3: 85 02        	sta	$2                      ; 0x2 <__rc0>
+    29e5: a5 03        	lda	$3                      ; 0x3 <__rc1>
+    29e7: 69 00        	adc	#$0
+    29e9: 85 03        	sta	$3                      ; 0x3 <__rc1>
+    29eb: a5 12        	lda	$12                     ; 0x12 <__rc16>
+    29ed: 60           	rts
+    29ee: a6 1d        	ldx	$1d                     ; 0x1d <__rc27>
+    29f0: e0 ff        	cpx	#$ff
+    29f2: d0 0a        	bne	$29fe <cfrom_begin+0x21d>
+    29f4: c0 01        	cpy	#$1
+    29f6: 4c 5f 28     	jmp	$285f <cfrom_begin+0x7e>
+    29f9: c9 01        	cmp	#$1
+    29fb: 4c 5f 28     	jmp	$285f <cfrom_begin+0x7e>
+    29fe: e0 ff        	cpx	#$ff
+    2a00: 4c 5f 28     	jmp	$285f <cfrom_begin+0x7e>
+
+00002a03 <r0fc_range>:
+    2a03: a4 16        	ldy	$16                     ; 0x16 <__rc20>
+    2a05: 5a           	phy
+    2a06: a4 17        	ldy	$17                     ; 0x17 <__rc21>
+    2a08: 5a           	phy
+    2a09: a4 18        	ldy	$18                     ; 0x18 <__rc22>
+    2a0b: 5a           	phy
+    2a0c: a4 19        	ldy	$19                     ; 0x19 <__rc23>
+    2a0e: 5a           	phy
+    2a0f: a4 1a        	ldy	$1a                     ; 0x1a <__rc24>
+    2a11: 8c e8 2e     	sty	$2ee8                   ; 0x2ee8 <__m2re_noinit_start>
+    2a14: a4 1b        	ldy	$1b                     ; 0x1b <__rc25>
+    2a16: 8c e9 2e     	sty	$2ee9                   ; 0x2ee9 <__m2re_noinit_start+0x1>
+    2a19: a4 1c        	ldy	$1c                     ; 0x1c <__rc26>
+    2a1b: 8c ea 2e     	sty	$2eea                   ; 0x2eea <__m2re_noinit_start+0x2>
+    2a1e: a4 1d        	ldy	$1d                     ; 0x1d <__rc27>
+    2a20: 8c eb 2e     	sty	$2eeb                   ; 0x2eeb <__m2re_noinit_start+0x3>
+    2a23: a4 1e        	ldy	$1e                     ; 0x1e <__rc28>
+    2a25: 8c ec 2e     	sty	$2eec                   ; 0x2eec <__m2re_noinit_start+0x4>
+    2a28: 85 16        	sta	$16                     ; 0x16 <__rc20>
+    2a2a: 86 17        	stx	$17                     ; 0x17 <__rc21>
+    2a2c: a6 04        	ldx	$4                      ; 0x4 <__rc2>
+    2a2e: 86 18        	stx	$18                     ; 0x18 <__rc22>
+    2a30: a6 05        	ldx	$5                      ; 0x5 <__rc3>
+    2a32: 86 19        	stx	$19                     ; 0x19 <__rc23>
+    2a34: a6 06        	ldx	$6                      ; 0x6 <__rc4>
+    2a36: 86 1a        	stx	$1a                     ; 0x1a <__rc24>
+    2a38: a6 07        	ldx	$7                      ; 0x7 <__rc5>
+    2a3a: 86 1b        	stx	$1b                     ; 0x1b <__rc25>
+    2a3c: a6 08        	ldx	$8                      ; 0x8 <__rc6>
+    2a3e: 86 1d        	stx	$1d                     ; 0x1d <__rc27>
+    2a40: a6 09        	ldx	$9                      ; 0x9 <__rc7>
+    2a42: 86 1c        	stx	$1c                     ; 0x1c <__rc26>
+    2a44: a2 01        	ldx	#$1
+    2a46: 86 1e        	stx	$1e                     ; 0x1e <__rc28>
+    2a48: e8           	inx
+    2a49: 64 08        	stz	$8                      ; 0x8 <__rc6>
+    2a4b: 64 09        	stz	$9                      ; 0x9 <__rc7>
+    2a4d: 86 0a        	stx	$a                      ; 0xa <__rc8>
+    2a4f: 64 0b        	stz	$b                      ; 0xb <__rc9>
+    2a51: 64 0c        	stz	$c                      ; 0xc <__rc10>
+    2a53: 64 0d        	stz	$d                      ; 0xd <__rc11>
+    2a55: 86 0e        	stx	$e                      ; 0xe <__rc12>
+    2a57: 64 0f        	stz	$f                      ; 0xf <__rc13>
+    2a59: a6 17        	ldx	$17                     ; 0x17 <__rc21>
+    2a5b: 20 62 2b     	jsr	$2b62 <inside>
+    2a5e: aa           	tax
+    2a5f: f0 0d        	beq	$2a6e <r0fc_range+0x6b>
+    2a61: a5 1e        	lda	$1e                     ; 0x1e <__rc28>
+    2a63: a6 1d        	ldx	$1d                     ; 0x1d <__rc27>
+    2a65: d0 03        	bne	$2a6a <r0fc_range+0x67>
+    2a67: 4c 9e 2a     	jmp	$2a9e <r0fc_range+0x9b>
+    2a6a: a5 1c        	lda	$1c                     ; 0x1c <__rc26>
+    2a6c: 80 30        	bra	$2a9e <r0fc_range+0x9b>
+    2a6e: a0 08        	ldy	#$8
+    2a70: a2 02        	ldx	#$2
+    2a72: a5 18        	lda	$18                     ; 0x18 <__rc22>
+    2a74: 85 04        	sta	$4                      ; 0x4 <__rc2>
+    2a76: a5 19        	lda	$19                     ; 0x19 <__rc23>
+    2a78: 85 05        	sta	$5                      ; 0x5 <__rc3>
+    2a7a: a5 1a        	lda	$1a                     ; 0x1a <__rc24>
+    2a7c: 85 06        	sta	$6                      ; 0x6 <__rc4>
+    2a7e: a5 1b        	lda	$1b                     ; 0x1b <__rc25>
+    2a80: 85 07        	sta	$7                      ; 0x7 <__rc5>
+    2a82: 64 08        	stz	$8                      ; 0x8 <__rc6>
+    2a84: 64 09        	stz	$9                      ; 0x9 <__rc7>
+    2a86: 64 0a        	stz	$a                      ; 0xa <__rc8>
+    2a88: 84 0b        	sty	$b                      ; 0xb <__rc9>
+    2a8a: 64 0c        	stz	$c                      ; 0xc <__rc10>
+    2a8c: 64 0d        	stz	$d                      ; 0xd <__rc11>
+    2a8e: 86 0e        	stx	$e                      ; 0xe <__rc12>
+    2a90: 64 0f        	stz	$f                      ; 0xf <__rc13>
+    2a92: a6 17        	ldx	$17                     ; 0x17 <__rc21>
+    2a94: a5 16        	lda	$16                     ; 0x16 <__rc20>
+    2a96: 20 62 2b     	jsr	$2b62 <inside>
+    2a99: aa           	tax
+    2a9a: f0 28        	beq	$2ac4 <r0fc_range+0xc1>
+    2a9c: a5 1e        	lda	$1e                     ; 0x1e <__rc28>
+    2a9e: ae ec 2e     	ldx	$2eec                   ; 0x2eec <__m2re_noinit_start+0x4>
+    2aa1: 86 1e        	stx	$1e                     ; 0x1e <__rc28>
+    2aa3: ae eb 2e     	ldx	$2eeb                   ; 0x2eeb <__m2re_noinit_start+0x3>
+    2aa6: 86 1d        	stx	$1d                     ; 0x1d <__rc27>
+    2aa8: ae ea 2e     	ldx	$2eea                   ; 0x2eea <__m2re_noinit_start+0x2>
+    2aab: 86 1c        	stx	$1c                     ; 0x1c <__rc26>
+    2aad: ae e9 2e     	ldx	$2ee9                   ; 0x2ee9 <__m2re_noinit_start+0x1>
+    2ab0: 86 1b        	stx	$1b                     ; 0x1b <__rc25>
+    2ab2: ae e8 2e     	ldx	$2ee8                   ; 0x2ee8 <__m2re_noinit_start>
+    2ab5: 86 1a        	stx	$1a                     ; 0x1a <__rc24>
+    2ab7: fa           	plx
+    2ab8: 86 19        	stx	$19                     ; 0x19 <__rc23>
+    2aba: fa           	plx
+    2abb: 86 18        	stx	$18                     ; 0x18 <__rc22>
+    2abd: fa           	plx
+    2abe: 86 17        	stx	$17                     ; 0x17 <__rc21>
+    2ac0: fa           	plx
+    2ac1: 86 16        	stx	$16                     ; 0x16 <__rc20>
+    2ac3: 60           	rts
+    2ac4: a5 1d        	lda	$1d                     ; 0x1d <__rc27>
+    2ac6: d0 03        	bne	$2acb <r0fc_range+0xc8>
+    2ac8: 4c 2e 2b     	jmp	$2b2e <r0fc_range+0x12b>
+    2acb: a0 00        	ldy	#$0
+    2acd: c0 38        	cpy	#$38
+    2acf: d0 03        	bne	$2ad4 <r0fc_range+0xd1>
+    2ad1: 4c 29 2b     	jmp	$2b29 <r0fc_range+0x126>
+    2ad4: 98           	tya
+    2ad5: 18           	clc
+    2ad6: 69 08        	adc	#$8
+    2ad8: 85 1c        	sta	$1c                     ; 0x1c <__rc26>
+    2ada: be 8a 2c     	ldx	$2c8a,y                 ; 0x2c8a <r0fc_range.ranges>
+    2add: 86 08        	stx	$8                      ; 0x8 <__rc6>
+    2adf: be 8b 2c     	ldx	$2c8b,y                 ; 0x2c8b <r0fc_range.ranges+0x1>
+    2ae2: 86 09        	stx	$9                      ; 0x9 <__rc7>
+    2ae4: be 8c 2c     	ldx	$2c8c,y                 ; 0x2c8c <r0fc_range.ranges+0x2>
+    2ae7: 86 0a        	stx	$a                      ; 0xa <__rc8>
+    2ae9: be 8d 2c     	ldx	$2c8d,y                 ; 0x2c8d <r0fc_range.ranges+0x3>
+    2aec: 86 0b        	stx	$b                      ; 0xb <__rc9>
+    2aee: b9 8e 2c     	lda	$2c8e,y                 ; 0x2c8e <r0fc_range.ranges+0x4>
+    2af1: be 8f 2c     	ldx	$2c8f,y                 ; 0x2c8f <r0fc_range.ranges+0x5>
+    2af4: 86 0d        	stx	$d                      ; 0xd <__rc11>
+    2af6: be 90 2c     	ldx	$2c90,y                 ; 0x2c90 <r0fc_range.ranges+0x6>
+    2af9: 48           	pha
+    2afa: b9 91 2c     	lda	$2c91,y                 ; 0x2c91 <r0fc_range.ranges+0x7>
+    2afd: a8           	tay
+    2afe: 68           	pla
+    2aff: 85 0c        	sta	$c                      ; 0xc <__rc10>
+    2b01: a5 18        	lda	$18                     ; 0x18 <__rc22>
+    2b03: 85 04        	sta	$4                      ; 0x4 <__rc2>
+    2b05: a5 19        	lda	$19                     ; 0x19 <__rc23>
+    2b07: 85 05        	sta	$5                      ; 0x5 <__rc3>
+    2b09: a5 1a        	lda	$1a                     ; 0x1a <__rc24>
+    2b0b: 85 06        	sta	$6                      ; 0x6 <__rc4>
+    2b0d: a5 1b        	lda	$1b                     ; 0x1b <__rc25>
+    2b0f: 85 07        	sta	$7                      ; 0x7 <__rc5>
+    2b11: 86 0e        	stx	$e                      ; 0xe <__rc12>
+    2b13: 84 0f        	sty	$f                      ; 0xf <__rc13>
+    2b15: a6 17        	ldx	$17                     ; 0x17 <__rc21>
+    2b17: a5 16        	lda	$16                     ; 0x16 <__rc20>
+    2b19: 20 62 2b     	jsr	$2b62 <inside>
+    2b1c: a4 1c        	ldy	$1c                     ; 0x1c <__rc26>
+    2b1e: aa           	tax
+    2b1f: d0 03        	bne	$2b24 <r0fc_range+0x121>
+    2b21: 4c cd 2a     	jmp	$2acd <r0fc_range+0xca>
+    2b24: a9 01        	lda	#$1
+    2b26: 4c 9e 2a     	jmp	$2a9e <r0fc_range+0x9b>
+    2b29: a9 00        	lda	#$0
+    2b2b: 4c 9e 2a     	jmp	$2a9e <r0fc_range+0x9b>
+    2b2e: a2 80        	ldx	#$80
+    2b30: a0 05        	ldy	#$5
+    2b32: a5 18        	lda	$18                     ; 0x18 <__rc22>
+    2b34: 85 04        	sta	$4                      ; 0x4 <__rc2>
+    2b36: a5 19        	lda	$19                     ; 0x19 <__rc23>
+    2b38: 85 05        	sta	$5                      ; 0x5 <__rc3>
+    2b3a: a5 1a        	lda	$1a                     ; 0x1a <__rc24>
+    2b3c: 85 06        	sta	$6                      ; 0x6 <__rc4>
+    2b3e: a5 1b        	lda	$1b                     ; 0x1b <__rc25>
+    2b40: 85 07        	sta	$7                      ; 0x7 <__rc5>
+    2b42: 64 08        	stz	$8                      ; 0x8 <__rc6>
+    2b44: 86 09        	stx	$9                      ; 0x9 <__rc7>
+    2b46: 84 0a        	sty	$a                      ; 0xa <__rc8>
+    2b48: 64 0b        	stz	$b                      ; 0xb <__rc9>
+    2b4a: 64 0c        	stz	$c                      ; 0xc <__rc10>
+    2b4c: 86 0d        	stx	$d                      ; 0xd <__rc11>
+    2b4e: 64 0e        	stz	$e                      ; 0xe <__rc12>
+    2b50: 64 0f        	stz	$f                      ; 0xf <__rc13>
+    2b52: a6 17        	ldx	$17                     ; 0x17 <__rc21>
+    2b54: a5 16        	lda	$16                     ; 0x16 <__rc20>
+    2b56: 20 62 2b     	jsr	$2b62 <inside>
+    2b59: aa           	tax
+    2b5a: f0 03        	beq	$2b5f <r0fc_range+0x15c>
+    2b5c: 4c 9c 2a     	jmp	$2a9c <r0fc_range+0x99>
+    2b5f: 4c cb 2a     	jmp	$2acb <r0fc_range+0xc8>
+
+00002b62 <inside>:
+    2b62: 85 10        	sta	$10                     ; 0x10 <__rc14>
+    2b64: 86 11        	stx	$11                     ; 0x11 <__rc15>
+    2b66: a4 0e        	ldy	$e                      ; 0xe <__rc12>
+    2b68: a6 0f        	ldx	$f                      ; 0xf <__rc13>
+    2b6a: a9 00        	lda	#$0
+    2b6c: e0 00        	cpx	#$0
+    2b6e: d0 11        	bne	$2b81 <inside+0x1f>
+    2b70: c0 00        	cpy	#$0
+    2b72: d0 13        	bne	$2b87 <inside+0x25>
+    2b74: a4 0d        	ldy	$d                      ; 0xd <__rc11>
+    2b76: c4 07        	cpy	$7                      ; 0x7 <__rc5>
+    2b78: d0 13        	bne	$2b8d <inside+0x2b>
+    2b7a: a4 0c        	ldy	$c                      ; 0xc <__rc10>
+    2b7c: c4 06        	cpy	$6                      ; 0x6 <__rc4>
+    2b7e: b0 11        	bcs	$2b91 <inside+0x2f>
+    2b80: 60           	rts
+    2b81: e0 00        	cpx	#$0
+    2b83: 90 fb        	bcc	$2b80 <inside+0x1e>
+    2b85: 80 0a        	bra	$2b91 <inside+0x2f>
+    2b87: c0 00        	cpy	#$0
+    2b89: 90 f5        	bcc	$2b80 <inside+0x1e>
+    2b8b: 80 04        	bra	$2b91 <inside+0x2f>
+    2b8d: c4 07        	cpy	$7                      ; 0x7 <__rc5>
+    2b8f: 90 ef        	bcc	$2b80 <inside+0x1e>
+    2b91: a6 05        	ldx	$5                      ; 0x5 <__rc3>
+    2b93: e4 0b        	cpx	$b                      ; 0xb <__rc9>
+    2b95: d0 14        	bne	$2bab <inside+0x49>
+    2b97: a4 04        	ldy	$4                      ; 0x4 <__rc2>
+    2b99: c4 0a        	cpy	$a                      ; 0xa <__rc8>
+    2b9b: d0 14        	bne	$2bb1 <inside+0x4f>
+    2b9d: a6 11        	ldx	$11                     ; 0x11 <__rc15>
+    2b9f: e4 09        	cpx	$9                      ; 0x9 <__rc7>
+    2ba1: d0 15        	bne	$2bb8 <inside+0x56>
+    2ba3: a4 10        	ldy	$10                     ; 0x10 <__rc14>
+    2ba5: c4 08        	cpy	$8                      ; 0x8 <__rc6>
+    2ba7: 90 d7        	bcc	$2b80 <inside+0x1e>
+    2ba9: 80 14        	bra	$2bbf <inside+0x5d>
+    2bab: e4 0b        	cpx	$b                      ; 0xb <__rc9>
+    2bad: 90 d1        	bcc	$2b80 <inside+0x1e>
+    2baf: 80 0e        	bra	$2bbf <inside+0x5d>
+    2bb1: c4 0a        	cpy	$a                      ; 0xa <__rc8>
+    2bb3: b0 0a        	bcs	$2bbf <inside+0x5d>
+    2bb5: 4c 80 2b     	jmp	$2b80 <inside+0x1e>
+    2bb8: e4 09        	cpx	$9                      ; 0x9 <__rc7>
+    2bba: b0 03        	bcs	$2bbf <inside+0x5d>
+    2bbc: 4c 80 2b     	jmp	$2b80 <inside+0x1e>
+    2bbf: a4 11        	ldy	$11                     ; 0x11 <__rc15>
+    2bc1: 38           	sec
+    2bc2: a5 10        	lda	$10                     ; 0x10 <__rc14>
+    2bc4: e5 08        	sbc	$8                      ; 0x8 <__rc6>
+    2bc6: aa           	tax
+    2bc7: 98           	tya
+    2bc8: e5 09        	sbc	$9                      ; 0x9 <__rc7>
+    2bca: a8           	tay
+    2bcb: a5 04        	lda	$4                      ; 0x4 <__rc2>
+    2bcd: e5 0a        	sbc	$a                      ; 0xa <__rc8>
+    2bcf: 85 08        	sta	$8                      ; 0x8 <__rc6>
+    2bd1: a5 05        	lda	$5                      ; 0x5 <__rc3>
+    2bd3: e5 0b        	sbc	$b                      ; 0xb <__rc9>
+    2bd5: 38           	sec
+    2bd6: 85 04        	sta	$4                      ; 0x4 <__rc2>
+    2bd8: a5 0c        	lda	$c                      ; 0xc <__rc10>
+    2bda: e5 06        	sbc	$6                      ; 0x6 <__rc4>
+    2bdc: 85 05        	sta	$5                      ; 0x5 <__rc3>
+    2bde: a5 0d        	lda	$d                      ; 0xd <__rc11>
+    2be0: e5 07        	sbc	$7                      ; 0x7 <__rc5>
+    2be2: 85 06        	sta	$6                      ; 0x6 <__rc4>
+    2be4: a5 0e        	lda	$e                      ; 0xe <__rc12>
+    2be6: e9 00        	sbc	#$0
+    2be8: 85 07        	sta	$7                      ; 0x7 <__rc5>
+    2bea: a5 0f        	lda	$f                      ; 0xf <__rc13>
+    2bec: e9 00        	sbc	#$0
+    2bee: c5 04        	cmp	$4                      ; 0x4 <__rc2>
+    2bf0: d0 1d        	bne	$2c0f <inside+0xad>
+    2bf2: a5 07        	lda	$7                      ; 0x7 <__rc5>
+    2bf4: c5 08        	cmp	$8                      ; 0x8 <__rc6>
+    2bf6: d0 13        	bne	$2c0b <inside+0xa9>
+    2bf8: 84 04        	sty	$4                      ; 0x4 <__rc2>
+    2bfa: a4 06        	ldy	$6                      ; 0x6 <__rc4>
+    2bfc: c4 04        	cpy	$4                      ; 0x4 <__rc2>
+    2bfe: d0 16        	bne	$2c16 <inside+0xb4>
+    2c00: 86 04        	stx	$4                      ; 0x4 <__rc2>
+    2c02: a6 05        	ldx	$5                      ; 0x5 <__rc3>
+    2c04: e4 04        	cpx	$4                      ; 0x4 <__rc2>
+    2c06: b0 0b        	bcs	$2c13 <inside+0xb1>
+    2c08: a9 00        	lda	#$0
+    2c0a: 60           	rts
+    2c0b: a6 08        	ldx	$8                      ; 0x8 <__rc6>
+    2c0d: 86 04        	stx	$4                      ; 0x4 <__rc2>
+    2c0f: c5 04        	cmp	$4                      ; 0x4 <__rc2>
+    2c11: 90 f5        	bcc	$2c08 <inside+0xa6>
+    2c13: a9 01        	lda	#$1
+    2c15: 60           	rts
+    2c16: c4 04        	cpy	$4                      ; 0x4 <__rc2>
+    2c18: 90 ee        	bcc	$2c08 <inside+0xa6>
+    2c1a: 80 f7        	bra	$2c13 <inside+0xb1>
+
+00002c1c <exit>:
+    2c1c: 20 e4 20     	jsr	$20e4 <_fini>
+    2c1f: 80 fe        	bra	$2c1f <exit+0x3>
+
+00002c21 <__lshrsi3>:
+    2c21: 86 07        	stx	$7                      ; 0x7 <__rc5>
+    2c23: a6 06        	ldx	$6                      ; 0x6 <__rc4>
+    2c25: f0 0e        	beq	$2c35 <__lshrsi3+0x14>
+    2c27: a6 06        	ldx	$6                      ; 0x6 <__rc4>
+    2c29: ca           	dex
+    2c2a: 46 05        	lsr	$5                      ; 0x5 <__rc3>
+    2c2c: 66 04        	ror	$4                      ; 0x4 <__rc2>
+    2c2e: 66 07        	ror	$7                      ; 0x7 <__rc5>
+    2c30: 6a           	ror
+    2c31: e0 00        	cpx	#$0
+    2c33: d0 f4        	bne	$2c29 <__lshrsi3+0x8>
+    2c35: a6 07        	ldx	$7                      ; 0x7 <__rc5>
+    2c37: 60           	rts
+
+00002c38 <__memset>:
+    2c38: a4 06        	ldy	$6                      ; 0x6 <__rc4>
+    2c3a: d0 04        	bne	$2c40 <__memset+0x8>
+    2c3c: e0 00        	cpx	#$0
+    2c3e: f0 13        	beq	$2c53 <__memset+0x1b>
+    2c40: 92 04        	sta	($4),z                  ; 0x4 <__rc2>
+    2c42: e3 04        	inw	$4                      ; 0x4 <__rc2>
+    2c44: ca           	dex
+    2c45: e0 ff        	cpx	#$ff
+    2c47: d0 02        	bne	$2c4b <__memset+0x13>
+    2c49: c6 06        	dec	$6                      ; 0x6 <__rc4>
+    2c4b: a4 06        	ldy	$6                      ; 0x6 <__rc4>
+    2c4d: d0 f1        	bne	$2c40 <__memset+0x8>
+    2c4f: e0 00        	cpx	#$0
+    2c51: d0 ed        	bne	$2c40 <__memset+0x8>
+    2c53: 60           	rts

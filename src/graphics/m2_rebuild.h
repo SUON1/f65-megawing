@@ -1,6 +1,7 @@
 // Graphics owns this private workspace. No aliasing, public ABI or serialization.
 #pragma once
 #include "m1_snapshot.h"
+#include "m2_compact.h"
 #include "m2_prepared_private.h"
 #include "m2_raster_private.h"
 #include "m2_rebuild_profile.h"
@@ -11,9 +12,11 @@ enum
     M2RB_COPY, M2RB_LINE, M2RB_TEXT, M2RB_COMMIT, M2RB_FAILED
 };
 
-typedef struct
+typedef struct M2RebuildRenderer
 {
     struct M2Prepared prepared;
+    M2Compact geometry;
+    M2Horizon horizon;
     M2Line lines[M2RB_SEGMENTS];
     M2RebuildBundle bundles[2];
     M1Snapshot snapshot;
@@ -39,14 +42,18 @@ typedef struct
     uint8_t destination;
     uint8_t shown;
     uint8_t fault;
+    uint8_t preparing_horizon;
+    uint8_t geometry_active;
 } M2RebuildRenderer;
 
 void m2rb_renderer_init(M2RebuildRenderer *renderer);
-// A zero budget refuses all work. Positive host grants do not admit target cost.
-// The caller must prove the whole selected operation fits before its deadline.
+// Each role bound covers one continuation and its share of dispatch overhead.
+// The caller reserves batch boundary, clock, interrupt and return costs first.
+// Zero bounds are unavailable. BEGIN and COMMIT each occupy a separate batch.
 // current_tick is an immutable copy of the authoritative tick, never a new clock.
 uint8_t m2rb_dispatch(M2RebuildRenderer *renderer, M1Snapshots *pool,
-                       const M2Camera *wanted, uint32_t admitted_budget,
+                       const M2Camera *wanted, uint16_t work_counts,
+                       const volatile uint16_t role_bounds[M2RB_FAILED],
                        uint32_t current_tick);
 // Pure telemetry formatter and glyph builder, also independently inspected by tests.
 void m2rb_text_row(M2RebuildRenderer *renderer, uint8_t row);

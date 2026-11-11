@@ -1,0 +1,105 @@
+{
+  "status": "READY FOR REVIEW",
+  "branch": "codex/65aero-m2-exact-wide-arithmetic",
+  "base": "5ccfe124b53af6a755819d6ae4da3fc1ded0de02",
+  "main_at_start": "9570f0ab427121a4e8f042041a14c89aaaeff9e2",
+  "changed_tracked_paths": [
+    "WORK_IN_PROGRESS.md",
+    "interfaces/f65_platform_abi.json5",
+    "src/graphics/m2_limb.c",
+    "src/graphics/m2_limb.h",
+    "tools/flight_demo/m2_rebuild/service_costs.py"
+  ],
+  "new_code_doc_paths": [
+    "docs/reports/M2_EXACT_WIDE_ARITHMETIC.md",
+    "src/platform/m2_rebuild/wide_math.c",
+    "src/platform/m2_rebuild/wide_math.h",
+    "tests/flight_demo/m2_rebuild/wide_math_bus.c",
+    "tests/flight_demo/m2_rebuild/wide_math_oracle.py",
+    "tools/flight_demo/m2_rebuild/wide_static.py",
+    "tools/flight_demo/m2_rebuild/wide_validate.py"
+  ],
+  "linked_source_and_generated_inputs_verified": 84,
+  "new_packet_seals": {
+    "host": "a78960a8c0920d6382219683573c6e2da3952deaf187f7528e85c9d5f6741f37",
+    "target": "e906a9472db26272268137773be4c0dd220bb264bd9ff10f1f2b88ef0bce518a",
+    "qualification": "16270bfecb8b663aa8ff50491028700dd13cf81ad4e9af62fed1688c2f728172"
+  },
+  "sdk_inventory_digest": "4166ea6e185bc8471593336e0ac691b784fb5c0a51f861a1c26463c1609bbfd4",
+  "primary_timing_and_mmio_reference": {
+    "commit": "40dfef0d1d5f56be2469492715c12bdb32c75b67",
+    "file_sha256": {
+      "xemu/cpu65.c": "2f138d3da13583b8f21669fe09d802296fdf211e98826d46e16d5b546e1cfc14",
+      "xemu/cpu65_mega65_timings.h": "6bb84846f83975acbdff5f16e39ebe7b5e08390cb68ed0cab2a85df311b4af58",
+      "targets/mega65/io_mapper.c": "ab5dc491ed0b2c41ac4e3c8ed6413ee1db3d9191cf75dfa6b9094adb91bcdfd0",
+      "targets/mega65/memory_mapper.c": "46b303b76baef6ac8d66519c65e4aa41d619674e9cdadd03eedafdbdedaaf87c",
+      "targets/mega65/vic4.c": "7abafaf98dde6c8a3b5ad582b811dd1a9071e0ff2f47bbc2a767b6372b878928",
+      "targets/mega65/vic4.h": "15147c924d88ae1d4c01a407bb12097d5d9b076e34eb6eba9a4f982db200272f"
+    }
+  },
+  "proof_programs": {
+    "tools/flight_demo/m2_rebuild/service_costs.py": "638193bd52bbe890dc9457216be20631868aa3ee08e593d7d7b0360f40c7876d",
+    "tools/flight_demo/m2_rebuild/wide_static.py": "ffcf423db0af990a9f7ca161b7501fa98747a1acf95510f83250828cf9d4119b",
+    "tools/flight_demo/m2_rebuild/wide_validate.py": "fd326e8e2f7da10ab1c2ec2d87920d788958f3dede83b1221901473cd2821eb1"
+  },
+  "commands": [
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests/flight_demo/m2_rebuild",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit": 0,
+      "tests": 57,
+      "log": "contract-tests.txt"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tools/ci",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit": 0,
+      "tests": 16,
+      "log": "ci-policy-tests.txt"
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit": 0
+    }
+  ],
+  "focused_read_only_results": {
+    "static_proof_mutations": "PASS: wrong PRG, wrong timing table, foreign math access and missing poll-loop witness fail closed",
+    "physical_alias_oracle": "PASS: 1424 CF001 range rejections; M2 stores and Color disjoint",
+    "prior_service_replay": "PASS: exact equality against sealed SERVICE1 cycle results",
+    "default_preprocessed_C": {
+      "status": "identical ignoring blank lines",
+      "sha256_after_blank_line_removal": "fa78c91793c4ac39579f4411091d1bac5513c576d70c27c3497df75ee1dfc563"
+    },
+    "syntax_registry_diff_and_local_links": "PASS",
+    "historical_preservation": "preservation.json"
+  },
+  "target_compile_links": 1,
+  "target_executed": false,
+  "tile_integration": false,
+  "xemu": "NOT RUN",
+  "d81_sd_physical": "NOT RUN"
+}

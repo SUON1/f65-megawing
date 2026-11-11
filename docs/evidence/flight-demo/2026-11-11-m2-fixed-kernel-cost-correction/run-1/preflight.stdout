@@ -1,0 +1,139 @@
+{
+  "identity": "65AERO-M2-FIXED-KERNEL-PREFLIGHT-2",
+  "baseline": "6c0caa8d453bb647696ef85b5b31b35ef2310def",
+  "status": "BLOCKED AT FIRST MANDATORY GATE",
+  "old_packet_seal_sha256": "77641f1f0aed3d8c993d713e7932350d6d824468ce99e736037bdd4cfb15da72",
+  "prg_sha256": "7fdcea61387c0e6b7ae92310725966ac6c0e29e82e8ba1c9a6be77335af76aad",
+  "target_seal_sha256": "e906a9472db26272268137773be4c0dd220bb264bd9ff10f1f2b88ef0bce518a",
+  "target_input_count": 81,
+  "reference_revision": "40dfef0d1d5f56be2469492715c12bdb32c75b67",
+  "reference_sha256": {
+    "targets/mega65/mega65.c": "b6550e3263d82a2b59b452c7f3d400f56544ab8be36c4b46cdcc087bfc67621e",
+    "targets/mega65/vic4.c": "7abafaf98dde6c8a3b5ad582b811dd1a9071e0ff2f47bbc2a767b6372b878928",
+    "targets/mega65/vic4.h": "15147c924d88ae1d4c01a407bb12097d5d9b076e34eb6eba9a4f982db200272f",
+    "targets/mega65/io_mapper.c": "ab5dc491ed0b2c41ac4e3c8ed6413ee1db3d9191cf75dfa6b9094adb91bcdfd0",
+    "targets/mega65/xemu-target.h": "ab0f7ad422e7601eacc63e8ad29f837b78ecc22b856900c1da7fbfb6ceecaca7",
+    "xemu/cpu65.c": "2f138d3da13583b8f21669fe09d802296fdf211e98826d46e16d5b546e1cfc14",
+    "xemu/cpu65_mega65_timings.h": "6bb84846f83975acbdff5f16e39ebe7b5e08390cb68ed0cab2a85df311b4af58",
+    "xemu/cia6526.c": "ce7429739fbd4e76784ab18061086b250f0b990252a21bce9f9c32879ce5ca21"
+  },
+  "source_witnesses": {
+    "timer_a_decrements_by_supplied_ticks": true,
+    "timer_a_underflow_at_zero": true,
+    "timer_a_adds_latch_not_latch_plus_one": true,
+    "timer_b_counts_a_underflows": true,
+    "timer_b_underflow_at_zero": true,
+    "timer_b_adds_latch_not_latch_plus_one": true,
+    "both_latches_ffff": true,
+    "linked_timer_force_load_and_start": true,
+    "cia1_ticks_32_per_scanline_update": true,
+    "binary_composite_timestamp": true,
+    "coherent_sampler_and_reload_exclusion": true
+  },
+  "native_clock": {
+    "status": "FAIL: binary native-clock continuity at upper-timer reload",
+    "evidence_tier": "source-pinned host arithmetic counterexample; not observed target execution",
+    "cia_updates_before": 134213632,
+    "cia_updates_after": 134213633,
+    "supplied_CIA_pulses": 32,
+    "before": {
+      "A": 1,
+      "B": 1,
+      "reads": [
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      "cfnow": 4294901758
+    },
+    "after": {
+      "A": 65504,
+      "B": 65535,
+      "reads": [
+        255,
+        255,
+        255,
+        255,
+        224,
+        255,
+        255,
+        255
+      ],
+      "cfnow": 31
+    },
+    "uint32_timestamp_delta": 65569,
+    "excess_encoded_counts": 65537,
+    "sampler_accepts_both": true,
+    "modes": [
+      "PAL",
+      "NTSC"
+    ],
+    "reason": "Both modes advance CIA1 by 32 per scanline update. The existing binary composite jumps by 65569; unsigned wrap subtraction does not remove it. No approved duration cap excludes this reachable state."
+  },
+  "publication_window_proof": "NOT REACHED",
+  "phase_schedule": "NOT REACHED; no favorable phase or overlap credit assigned",
+  "complete_cost_admission": "UNPROVEN",
+  "remaining_cost_allowance_cycles": null,
+  "resident": {
+    "old_bytes": 29426,
+    "ceiling": 28671,
+    "old_deficit": 755,
+    "selected_replaceable_bytes": 6935,
+    "replacement_allowance": 6180,
+    "allowance_after_256_margin_and_104_new_data": 5820,
+    "actual_successor_fit": "NOT BUILT / UNPROVEN",
+    "reserve_used": 0
+  },
+  "old_tick_CPU_bound": {
+    "own_instructions": 564,
+    "calls": {
+      "7bbe:m1_platform_now": 5229,
+      "7bcd:m1_platform_fault": 34,
+      "7d61:stop": 4,
+      "7c89:m2rb_platform_keys": 8290,
+      "7c8c:m2rb_input_edges": 47,
+      "7c8f:m2rb_camera_edges": 12144,
+      "7d6b:stop": 4,
+      "7c98:m1_platform_key": 24,
+      "7c9b:m1_input_sample": 1248,
+      "7c9e:m1_tick": 11298,
+      "7d5c:stop": 4
+    },
+    "irq_including_entry": 105,
+    "nmi_including_entry": 26,
+    "interrupt_envelope": "two raster IRQs and one terminal NMI",
+    "iteration_cpu_cycles_upper": 39126,
+    "interval_cpu_cycles": 405000,
+    "cpu_slack_before_dispatch": 365874,
+    "scope": "pinned old image CPU work; not a native-clock or frame admission"
+  },
+  "retained_demand": {
+    "products": 377,
+    "divisions": 198,
+    "quotient_digits": 396,
+    "unconditional_tile_slots": 640,
+    "conditional_unproved_tiles": 550
+  },
+  "unknown_costs": [
+    "normalization byte relocation and controls; sign, correction, rounding, overflow",
+    "rotation/clip control, DELTA packing, plane distances and exact horizon scan",
+    "tile background construction, raster traversal, text formatting, map bookkeeping",
+    "Platform acquisition/fault checks, wrappers, request staging and restoration",
+    "continuation dispatch, guards, native-count conversion and phase-aligned publication proof",
+    "complete encoded code, constants, compiler scratch, stacks and alignment"
+  ],
+  "execution_authorized": false,
+  "target_links": 0,
+  "runtime_executions": 0,
+  "not_reached_regressions": [
+    "joint tick/wait overlap and commit-window phases",
+    "guard/atomic-service schedule and Q16 release phases",
+    "cold/moving generations, cancellation and publication ages"
+  ],
+  "decision": "STOP. Review a bounded Platform-owned clock continuity correction before resuming scheduling proof. No clock implementation or target link in this task."
+}

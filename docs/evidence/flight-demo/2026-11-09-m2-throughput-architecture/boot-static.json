@@ -1,0 +1,204 @@
+{
+  "status": "PASS with required pre-opcode debugger checks",
+  "PRG_sha256": "0e81aa0e2f1440fc12bbd8530afac0c8d98b7f638f0f603a4d60b2af318f79cb",
+  "scope": "isolated reset-only CF001 trace; no reachable clock, Graphics or simulation service",
+  "load": {
+    "status": "PASS",
+    "scope": "raw PRG/ELF load identity; not observed CPU execution",
+    "origin": 8193,
+    "payload_end": 11458,
+    "payload_bytes": 3265,
+    "payload_bytes_above_8000": 0,
+    "file_backed_sections_compared": [
+      ".basic_header",
+      ".text",
+      ".rodata"
+    ],
+    "resident_end": 12013,
+    "executable_section_bytes_above_8000": 0,
+    "loader_rule": "pinned Xemu inject.c copies PRG stream into main_ram + load_addr without an $8000 split",
+    "BSS_and_scratch": "NOBITS; initialization separately verified, not loaded payload"
+  },
+  "prefix": {
+    "normal_entry_ordering": "PASS",
+    "start": 8215,
+    "normalized": 8312,
+    "pre_normalization_instructions": 48,
+    "scope": "linked reset-entry prefix and raw terminal-handler closure only",
+    "runtime_startup_admission": "UNPROVEN; no inherited-entry/async NMI/ROM-trap execution proof",
+    "terminal_handler_control_flow": "PASS",
+    "terminal_handler": 8921,
+    "terminal_handler_bytes": "784cd922",
+    "terminal_handler_target": 8921
+  },
+  "initialization": {
+    "status": "PASS",
+    "tier": "raw boot-fragment decoding/static helper proof",
+    "scratch": [
+      12008,
+      12013
+    ],
+    "scratch_zeroed": 5,
+    "BSS": [
+      11458,
+      12008
+    ],
+    "BSS_zeroed": 550,
+    "cartridge_entry_cases": 15,
+    "bad_port_ROM_cases_fail_closed": 3,
+    "code_above_8000": "same canonical near-address policy; actual extent reported from ELF",
+    "startup_overall": "UNPROVEN until exact fresh-entry, privileged trap and asynchronous execution qualification"
+  },
+  "map": {
+    "status": "PASS",
+    "tier": "application linked MAP/ROM writer exclusion",
+    "canonical_MAP_sites": [
+      8226,
+      8232,
+      8428
+    ],
+    "ROM_overlay_writer_sites": [
+      8261,
+      8456
+    ],
+    "temporary_application_MAP": "none; covering $8000-$9fff and all other windows forbidden",
+    "staging": "actual retained physical-copy range validator tested separately; Graphics seam only names display/Color classes",
+    "privileged_trap": "UNPROVEN execution: separate Hypervisor suspension/restore; no application window lease or bank-zero overwrite authorized",
+    "physical_cartridge": "not qualified by Xemu; pinned primary VHDL contract only"
+  },
+  "stack": {
+    "status": "PASS",
+    "tier": "static application stack proof",
+    "root": "__do_init_stack (including BSS/startup, application and all reachable compiler helpers)",
+    "main_hardware_peak": 28,
+    "irq_frame_and_saves": 8,
+    "nmi_frame_and_saves": 4,
+    "hardware_bound": 40,
+    "software_bound": 25,
+    "hardware_capacity": 256,
+    "software_capacity": 4096,
+    "constant_software_adjustments": 6,
+    "call_entries": 21,
+    "reachable_instructions": 1459,
+    "software_initialization_alias": 8312,
+    "interrupt_compiler_scratch": "none; no direct-page accesses or calls",
+    "privileged_trap_sites": [
+      8750
+    ],
+    "whole_program_status": "UNPROVEN: exact Hypervisor internal stack/restoration and entry/NMI conditions require separate closure",
+    "conditions": [
+      "canonical prefix establishes E=1/page1 hardware stack before root",
+      "one nonrecursive external NMI edge may preempt IRQ; repeated nested external NMI is excluded",
+      "CF001 Hypervisor trap uses its separate protected stack; exact trap restoration required"
+    ],
+    "limitations": "No exercised high-water or arbitrary physical NMI-rate claim; Hypervisor internal stack is a separate gate"
+  },
+  "terminal": 8960,
+  "cf001": {
+    "status": "PASS for this static built-in selector path, conditional on fresh session identity",
+    "xemu_commit": "40dfef0d1d5f56be2469492715c12bdb32c75b67",
+    "xemu_inputs": {
+      "targets/mega65/hypervisor.c": {
+        "bytes": 30501,
+        "sha256": "766c0191bacb133ddedf50b14e1f825e3311174e83707ba8bc5ba877cbdc685b"
+      },
+      "targets/mega65/inject.c": {
+        "bytes": 16281,
+        "sha256": "32468567110414b98a7b4a91cdccaa0ae046e44c7d5eb53ceb5beede13e813c0"
+      },
+      "targets/mega65/io_mapper.c": {
+        "bytes": 31382,
+        "sha256": "ab5dc491ed0b2c41ac4e3c8ed6413ee1db3d9191cf75dfa6b9094adb91bcdfd0"
+      },
+      "targets/mega65/memory_mapper.c": {
+        "bytes": 51388,
+        "sha256": "46b303b76baef6ac8d66519c65e4aa41d619674e9cdadd03eedafdbdedaaf87c"
+      },
+      "targets/mega65/memcontent.c": {
+        "bytes": 2034744,
+        "sha256": "70f75bfbcb8f1cb54db258e6009486f18e2b481ea7e72876e5e022b44589da0d"
+      },
+      "targets/mega65/mega65.c": {
+        "bytes": 34698,
+        "sha256": "b6550e3263d82a2b59b452c7f3d400f56544ab8be36c4b46cdcc087bfc67621e"
+      },
+      "targets/mega65/sdcard.c": {
+        "bytes": 49356,
+        "sha256": "5eb28898069cec38206f7fd1870ffcfae3c62bd1db4d4e05644ef634832aba5c"
+      },
+      "xemu/cpu65.c": {
+        "bytes": 87131,
+        "sha256": "2f138d3da13583b8f21669fe09d802296fdf211e98826d46e16d5b546e1cfc14"
+      },
+      "xemu/cpu65_mega65_timings.h": {
+        "bytes": 7914,
+        "sha256": "6bb84846f83975acbdff5f16e39ebe7b5e08390cb68ed0cab2a85df311b4af58"
+      }
+    },
+    "emulator_rom_and_sdl": {
+      "xemu": {
+        "bytes": 956800,
+        "sha256": "dd37baf7846b9696adcb662ffe5da040031b07214c66aef9a7f48cc30040b738"
+      },
+      "rom": {
+        "bytes": 131072,
+        "sha256": "af3c447f791a2fdc48cb21e1bd3fab015e32641228d9d30d21259b9e878c6fa0"
+      },
+      "sdl": {
+        "bytes": 1329552,
+        "sha256": "4338adca59bfc6bad6ff44d0df03a9cd59c83a8916c478ae5d91e06b5d090761"
+      }
+    },
+    "built_in_hickup": {
+      "bytes": 16384,
+      "sha256": "21f5b58549c61a886bfcdd4e73e3200b2c36790b8ba21ad6bbdaa59fefb8e7a4",
+      "file_offset": 631104
+    },
+    "raw_trap_slices_by_address": {
+      "8000": "4c048cea",
+      "8c04": "78d8297eaa7c0c8c",
+      "8c7c": "c38c",
+      "8cc3": "ad7dd649048d7dd68d40d64c1682",
+      "8216": "2024a2ad47d609018d47d68d7fd6",
+      "a224": "48a9828d80d6683860"
+    },
+    "user_trap_pc": 8750,
+    "return_pc": 8753,
+    "entry_conditions": [
+      "VIC-IV I/O visible, canonical zero MAP/mask/megabytes and B=$02",
+      "CPU DDR/data $2f/$35, E=1 page-one stack, D=0 and IRQ masked",
+      "ROM overlays and cartridge lines disabled; no cartridge or firmware override",
+      "no queued Hypervisor trap, fresh ROM and no pre-vector pending NMI"
+    ],
+    "privileged_execution": "trap 0 A=$70; private $8000-$bfff, B=$bf, SP=$beff; no IRQ/NMI entry while privileged",
+    "privileged_hardware_stack_peak_bytes": 3,
+    "privileged_software_stack_bytes": 0,
+    "privileged_write_addresses": [
+      "D67D",
+      "D640",
+      "D680",
+      "D647",
+      "D67F"
+    ],
+    "D680_82": "clear buffer mapping/error state only; no medium command or data transfer",
+    "restoration": "Xemu restores saved PC, MAP masks/MB/offsets, B, stack page/SP, E/I/D/P, I/O mode and CPU ports. VIC D030 and cartridge state are untouched by the traced firmware. User A and carry are deliberate results; the app wrapper restores saved P/X/Y/Z/B.",
+    "resident_integrity": "no user-RAM store; private stack writes and saved registers do not alias resident or software SP",
+    "failure": "CF001 rejects bad carry, B or ROM-protect result before the clock/ticks. Other return invariants rely on the pinned firmware and entry conditions. A late NMI latches terminal fault.",
+    "unproven": "actual pre-SYS MAP/NMI state, identity of running HICKUP after boot/upgrade, return visibility and external NMI arrival envelope on fresh PAL and NTSC"
+  },
+  "checkpoints": {
+    "sys": 8215,
+    "canonical": 8411,
+    "pre_trap": 8750,
+    "privileged": 32768,
+    "return": 8753,
+    "terminal": 8960
+  },
+  "symbols": {
+    "m2_boot_outcome": 11458,
+    "cffault": 11461,
+    "cfreclaimed": 11459,
+    "r0f_pf_nmi_seen": 11986
+  },
+  "startup_stop_basis": "host stop in PRG injection before memcpy; arm the exact SYS address and one-opcode mode. Validate before each guest continuation."
+}

@@ -1,0 +1,44 @@
+{
+  "python": "3.9.6 (default, Aug 25 2026, 21:26:21) \n[Clang 21.0.0 (clang-2100.3.34.2)]",
+  "commands": [
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "tools/flight_demo/m2_rebuild/fixed_schedule_preflight.py",
+        "--references",
+        "/private/tmp/f65-m2-service-reference"
+      ],
+      "cwd": "/private/tmp/f65-m2-fixed-kernel-cost-correction",
+      "exit_code": 2,
+      "stdout": "preflight.stdout",
+      "stderr": "preflight.stderr",
+      "source_sha256": {
+        "tools/flight_demo/m2_rebuild/fixed_schedule_preflight.py": "3061485bf0379cdb45ff39aca18538d61063d0240199ff0e563c6c02aab4c3a8",
+        "tests/flight_demo/m2_rebuild/test_fixed_schedule_preflight.py": "25fbd7462bfdfb2972af6e41e731d11030666691b205126cc929eed1a70db24b"
+      }
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests/flight_demo/m2_rebuild",
+        "-p",
+        "test_fixed_schedule_preflight.py",
+        "-v"
+      ],
+      "cwd": "/private/tmp/f65-m2-fixed-kernel-cost-correction",
+      "exit_code": 0,
+      "stdout": "regressions.stdout",
+      "stderr": "regressions.stderr",
+      "source_sha256": {
+        "tools/flight_demo/m2_rebuild/fixed_schedule_preflight.py": "3061485bf0379cdb45ff39aca18538d61063d0240199ff0e563c6c02aab4c3a8",
+        "tests/flight_demo/m2_rebuild/test_fixed_schedule_preflight.py": "25fbd7462bfdfb2972af6e41e731d11030666691b205126cc929eed1a70db24b"
+      }
+    }
+  ]
+}

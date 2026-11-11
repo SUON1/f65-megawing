@@ -1,0 +1,95 @@
+{
+  "identity": "65AERO-M2-COMMAND-1",
+  "tier": "independent-host",
+  "commands": [
+    {
+      "argv": [
+        "/usr/bin/clang",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Wconversion",
+        "-Werror",
+        "-O2",
+        "-shared",
+        "-fPIC",
+        "-Iinterfaces/generated",
+        "-Isrc/core",
+        "-Isrc/input",
+        "-Isrc/presentation",
+        "-Isrc/environment",
+        "-Isrc/graphics",
+        "-Isrc/diagnostics/m2_rebuild",
+        "-Isrc/platform/m2_rebuild",
+        "-Isrc/platform/m1",
+        "-Isrc/diagnostics/r0f",
+        "src/environment/m2_fixture.c",
+        "src/graphics/m2_limb.c",
+        "src/graphics/m2_compact.c",
+        "src/graphics/m2_compact_public.c",
+        "src/graphics/m2_record_private.c",
+        "interfaces/generated/m2_tables.c",
+        "src/diagnostics/m2_rebuild/camera.c",
+        "-o",
+        "/private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/independent-1793382017172697000/run/compact.dylib"
+      ],
+      "exit": 0,
+      "log": "compact-compile.txt"
+    },
+    {
+      "argv": [
+        "/usr/bin/clang",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Wconversion",
+        "-Werror",
+        "-O2",
+        "-shared",
+        "-fPIC",
+        "-Iinterfaces/generated",
+        "-Isrc/core",
+        "-Isrc/input",
+        "-Isrc/presentation",
+        "-Isrc/environment",
+        "-Isrc/graphics",
+        "-Isrc/diagnostics/m2_rebuild",
+        "-Isrc/platform/m2_rebuild",
+        "-Isrc/platform/m1",
+        "-Isrc/diagnostics/r0f",
+        "src/environment/m2_fixture.c",
+        "src/graphics/m2_geometry.c",
+        "interfaces/generated/m2_tables.c",
+        "/private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/independent-1793382017172697000/run/native-camera.c",
+        "-o",
+        "/private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/independent-1793382017172697000/run/native.dylib"
+      ],
+      "exit": 0,
+      "log": "native-compile.txt"
+    },
+    {
+      "argv": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-B",
+        "tests/flight_demo/m2_rebuild/limb_oracle.py",
+        "/private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/independent-1793382017172697000/run/compact.dylib",
+        "/private/tmp/f65-m2-final-unbanked-fit/docs/evidence/flight-demo/2026-10-30-m2-final-unbanked-fit/independent-1793382017172697000/run/native.dylib"
+      ],
+      "exit": 0,
+      "log": "bigint-native-oracle.txt"
+    }
+  ],
+  "target_executed": false,
+  "status": "PASS",
+  "inputs": {
+    "src/environment/m2_fixture.c": "bbf33786a0a3a20dbb7e45f87186406b36bcf89fd940ef496ec4a3103b5fdce1",
+    "src/graphics/m2_limb.c": "2a539ba1adcd1f537e19a9ca89ed705d820fed52153e16886c1c7f7f4de09a8e",
+    "src/graphics/m2_compact.c": "c2673acd51d0edb7da4f522597f9fd70db5f171c87c8f4b14f6ed88e386abf6b",
+    "src/graphics/m2_compact_public.c": "622d2521b98cd97ad38a6996e8a2789c3666057f11815c797081fbafd2bf8f09",
+    "src/graphics/m2_record_private.c": "a95a8485562d1b64ba3aaf613cc912f271fbbaa81decd3ae7cf74864937f7f60",
+    "interfaces/generated/m2_tables.c": "dd23e7167eb442a80157c2e40101075f5f517e7bd57f6de5673eca1db4cb399f",
+    "src/graphics/m2_geometry.c": "55ab3d159b4cf2c96fcae8a52eecb47b6fb5631d966a180d2e2820cc72ad2607",
+    "tests/flight_demo/m2_rebuild/limb_oracle.py": "9c27bf1483e222a2e9c6824927293cebc2adf903c90f80933484dfe044919f16",
+    "tools/flight_demo/m2_rebuild/compact_validate.py": "56ed9cfe1bdbf85ef91ef3142ada52e9d7eb961a21c4253a31e7884a460a2dc4"
+  }
+}
