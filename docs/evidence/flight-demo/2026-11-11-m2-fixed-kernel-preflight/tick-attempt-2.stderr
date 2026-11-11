@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/private/tmp/f65-m2-fixed-kernel-preflight/tools/flight_demo/m2_rebuild/fixed_preflight.py", line 189, in <module>
+    print(json.dumps(analyze(ROOT, args.references), indent=2))
+  File "/private/tmp/f65-m2-fixed-kernel-preflight/tools/flight_demo/m2_rebuild/fixed_preflight.py", line 182, in analyze
+    "tick": model.tick_iteration(), "target_links": 0, "runtime_executions": 0}
+  File "/private/tmp/f65-m2-fixed-kernel-preflight/tools/flight_demo/m2_rebuild/fixed_preflight.py", line 157, in tick_iteration
+    cost = self.cycles(callee) if name == "stop" else self.bound(name)
+  File "/private/tmp/f65-m2-fixed-kernel-preflight/tools/flight_demo/m2_rebuild/fixed_preflight.py", line 112, in bound
+    self.check_cycles(graph, FEEDBACK.get(name, set()))
+  File "/private/tmp/f65-m2-fixed-kernel-preflight/tools/flight_demo/m2_rebuild/fixed_preflight.py", line 103, in check_cycles
+    tuple(TopologicalSorter({at: {target for target, _ in successors
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/graphlib.py", line 242, in static_order
+    self.prepare()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/graphlib.py", line 104, in prepare
+    raise CycleError(f"nodes are in a cycle", cycle)
+graphlib.CycleError: ('nodes are in a cycle', [19256, 19254, 19252, 19250, 19248, 19246, 19244, 19243, 19241, 19239, 19234, 19232, 19265, 19263, 19261, 19256])
