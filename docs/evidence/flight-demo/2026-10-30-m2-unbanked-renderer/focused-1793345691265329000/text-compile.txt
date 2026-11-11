@@ -1,0 +1,4 @@
+tests/flight_demo/m2_rebuild/text_compact.c:25:75: error: implicit conversion loses integer precision: 'long' to 'int32_t' (aka 'int') [-Werror,-Wshorten-64-to-32]
+   25 |         renderer.prepared.camera.position.v[2] = -(int32_t)(10u + sample) * M2_POSITION_SCALE;
+      |                                                ~ ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~
+1 error generated.

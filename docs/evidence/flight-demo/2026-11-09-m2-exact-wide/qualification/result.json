@@ -1,0 +1,175 @@
+{
+  "prg_sha256": "7fdcea61387c0e6b7ae92310725966ac6c0e29e82e8ba1c9a6be77335af76aad",
+  "target_seal_sha256": "e906a9472db26272268137773be4c0dd220bb264bd9ff10f1f2b88ef0bce518a",
+  "ownership": {
+    "status": "PASS: linked application scope",
+    "reachable_instruction_counts": {
+      "foreground_and_prefix": 12309,
+      "irq_and_nmi": 30
+    },
+    "cpu_status": "D70F",
+    "cpu_operand_and_result_window": "D768-D77F",
+    "physical_status": "FFD370F",
+    "physical_operand_and_result_window": "FFD3768-FFD377F",
+    "indexed_or_indirect_bus_sites": [
+      31319,
+      31339,
+      31396,
+      31424
+    ],
+    "absolute_status_sites": [
+      31282,
+      31504
+    ],
+    "calls": [
+      [
+        11411,
+        31207
+      ],
+      [
+        11601,
+        31517
+      ],
+      [
+        12373,
+        31207
+      ],
+      [
+        12436,
+        31207
+      ],
+      [
+        31346,
+        31499
+      ],
+      [
+        31537,
+        31212
+      ]
+    ],
+    "long_indirect_sites": [
+      8633,
+      8636
+    ],
+    "owner_byte": 36154,
+    "conditions": [
+      "Canonical MEGA65 I/O, unchanged MAP/B and Z=0 for C entry.",
+      "Private pointers derive from linked RAM/stack objects or reviewed I/O classes.",
+      "The two PF001 far accesses use the checked CF001 copy and M2 store/color ranges.",
+      "The reset-only privileged trap precedes arithmetic. External concurrent masters are outside this proof."
+    ]
+  },
+  "cycles": {
+    "scope": "Conservative fast-mode instruction-cycle bounds from raw linked code. Includes eight-poll timeout, calls and returns.",
+    "clock_hz": 40500000,
+    "multiply_gateway_cycles": 1392,
+    "estimate_gateway_cycles": 1302,
+    "callee_bounds_with_return": {
+      "product_setup": 2556,
+      "raw_product_step": 3652,
+      "divide_setup": 10822,
+      "divide_nonfinal_digit": 8843,
+      "divide_final_digit": 13080
+    },
+    "standalone_including_outer_calls": {
+      "raw_numerator": 17189,
+      "two_digit_divide": 32760,
+      "numerator_and_division": 49949
+    },
+    "linked_command_overhead_excluding_arithmetic_callees": {
+      "multiply_setup": 3301,
+      "divide_setup": 3270,
+      "service": 4400
+    },
+    "clip_or_perspective_numerator_and_divide_cycles_with_commands": 82880,
+    "largest_single_arithmetic_command_cycles": 17480,
+    "linked_irq_cycles_including_entry": 101,
+    "linked_nmi_cycles_including_entry": 26,
+    "guard_and_one_clock_sample_including_calls": 4910,
+    "clip_interpolations": 162,
+    "perspective_divisions": 36,
+    "clip_interpolations_only_cycles_without_products_or_commands": 5307120,
+    "frame_envelope_for_divisions_only": 6486480,
+    "frame_envelope_for_products_divisions_and_commands": 16410240,
+    "numeric_planning_cycles_per_frame": 800000,
+    "excluded_from_frame_envelopes": "Geometry transforms, DELTA, scheduler/dispatch, IRQ/NMI, display and commit.",
+    "physical_wall_clock": "UNPROVEN: FPGA and bus wait-state latency are separate from the capped instruction path."
+  },
+  "stack": {
+    "status": "PASS",
+    "tier": "static application stack proof",
+    "root": "__do_init_stack (including BSS/startup, application and all reachable compiler helpers)",
+    "main_hardware_peak": 32,
+    "irq_frame_and_saves": 8,
+    "nmi_frame_and_saves": 4,
+    "hardware_bound": 44,
+    "software_bound": 38,
+    "hardware_capacity": 256,
+    "software_capacity": 4096,
+    "constant_software_adjustments": 21,
+    "call_entries": 120,
+    "reachable_instructions": 12291,
+    "software_initialization_alias": 8312,
+    "interrupt_compiler_scratch": "none; no direct-page accesses or calls",
+    "privileged_trap_sites": [
+      8750
+    ],
+    "whole_program_status": "UNPROVEN: exact Hypervisor internal stack/restoration and entry/NMI conditions require separate closure",
+    "conditions": [
+      "canonical prefix establishes E=1/page1 hardware stack before root",
+      "one nonrecursive external NMI edge may preempt IRQ; repeated nested external NMI is excluded",
+      "CF001 Hypervisor trap uses its separate protected stack; exact trap restoration required"
+    ],
+    "limitations": "No exercised high-water or arbitrary physical NMI-rate claim; Hypervisor internal stack is a separate gate"
+  },
+  "initialization": {
+    "status": "PASS",
+    "tier": "raw boot-fragment decoding/static helper proof",
+    "scratch": [
+      37532,
+      37619
+    ],
+    "scratch_zeroed": 87,
+    "BSS": [
+      35532,
+      37532
+    ],
+    "BSS_zeroed": 2000,
+    "cartridge_entry_cases": 15,
+    "bad_port_ROM_cases_fail_closed": 3,
+    "code_above_8000": "same canonical near-address policy; actual extent reported from ELF",
+    "startup_overall": "UNPROVEN until exact fresh-entry, privileged trap and asynchronous execution qualification"
+  },
+  "mapping": {
+    "status": "PASS",
+    "tier": "application linked MAP/ROM writer exclusion",
+    "canonical_MAP_sites": [
+      8226,
+      8232,
+      8428
+    ],
+    "ROM_overlay_writer_sites": [
+      8261,
+      8456
+    ],
+    "temporary_application_MAP": "none; covering $8000-$9fff and all other windows forbidden",
+    "staging": "actual retained physical-copy range validator tested separately; Graphics seam only names display/Color classes",
+    "privileged_trap": "UNPROVEN execution: separate Hypervisor suspension/restore; no application window lease or bank-zero overwrite authorized",
+    "physical_cartridge": "not qualified by Xemu; pinned primary VHDL contract only"
+  },
+  "resident_fit": "FAIL",
+  "target_executed": false,
+  "resident": {
+    "required": 29426,
+    "limit": 28671,
+    "deficit": 755,
+    "reserve": 0,
+    "bss": 2000,
+    "scratch": 87,
+    "payload": 27339,
+    "excess_resident_range": [
+      36864,
+      37619
+    ]
+  }
+}

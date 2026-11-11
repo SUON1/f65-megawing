@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "cases": 3252,
+  "old_bits": 312192,
+  "normalized_bits": 189990,
+  "overflow_cases": 996,
+  "scope": "independent integer checks with existing host kernel initialized by the proposed prefix rule; no changed target code",
+  "oracle_seed": "0x65A3",
+  "retained_library": "docs/evidence/flight-demo/2026-11-08-m2-bounded-service/independent-1794156948965229000/run/compact.dylib",
+  "library_sha256": "3701721bfb5a27ac98016e44ac42b644d7aee7a941e5fb452b1f7a3eab79588f",
+  "prefix_rule": "k=max(1, bit_length(N)-bit_length(D)+1); 0<=N>>k<D"
+}

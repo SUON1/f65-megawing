@@ -1,5 +1,13 @@
 {
   "r0f_combined_development": {"id":"R0F-PLAT-CF001","status":"OWNER_AUTHORIZED_EXPERIMENT_NOT_ACCEPTED","contract":"interfaces/r0f_combined_contract.json","decision":"docs/reports/R0-F_COMBINED_CONTRACT.md","scope":"Private reset-only ROM backup/reclaim/restore, nominal clock ratio, combined C fixture and real IRQ/DMA/PCM/matrix services; not production ROM-hosted storage return or R0-C wrapper promotion"},
+  "m2_exact_wide_development": {
+    "id": "65AERO-M2-EXACT-WIDE-1",
+    "status": "OWNER_AUTHORIZED_STATIC_EXPERIMENT",
+    "contract": "docs/reports/M2_EXACT_WIDE_ARITHMETIC.md",
+    "owner": "Platform foreground only under canonical MEGA65 I/O",
+    "cpu_io": {"status_read": "0xD70F", "operand_write": ["0xD770", "0xD777"], "quotient_read": ["0xD769", "0xD76C"], "product_read": ["0xD778", "0xD77F"]},
+    "scope": "Private build option. Existing public ABI, precision, memory owners and launch grants are unchanged. Runtime admission is separate."
+  },
   "schema_version": "r0c-0.1.0-proof-candidate",
   "r0f_platform_development": {"id":"R0F-PLAT-PF001","status":"OWNER_AUTHORIZED_DEVELOPMENT_NOT_QUALIFIED","authority":"Owner approval 2026-09-17; docs/reports/R0-F_COMBINED_PLATFORM_ADMISSION.md","contract":"interfaces/r0f_platform_contract.json","impact":"Additive reset-only private platform qualification; no production ABI or R0-C wrapper promotion; reversible ROM reclaim remains deferred"},
   "r0c_attic_implementation": {"status":"IMPLEMENTED_PROOF_WRAPPER_XEMU_PENDING_PHYSICAL","source":"src/platform/r0c_attic_45gs02.s","backend":"BOUNDED_CPU_COPY_ONLY","physicalEvidence":"PENDING"},

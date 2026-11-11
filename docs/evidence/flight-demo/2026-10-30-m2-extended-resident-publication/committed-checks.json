@@ -1,0 +1,33 @@
+{
+  "source_commit": "157f3a3ea4ce947a73b5e5fd098d61b042ba6b53",
+  "local_static_hygiene": {
+    "argv": [
+      "python3",
+      "-B",
+      "tools/ci/static_hygiene.py",
+      "--base",
+      "aed5bfb2014e8f3df28118668e5f24ded0ddad9e",
+      "--head",
+      "157f3a3ea4ce947a73b5e5fd098d61b042ba6b53",
+      "--merge-base"
+    ],
+    "exit": 1,
+    "status": "FAIL",
+    "reason": "18 original whitespace rows in two sealed raw linker maps",
+    "paths": [
+      "docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793404701167257000/UNADMITTED.map",
+      "docs/evidence/flight-demo/2026-10-30-m2-extended-resident/target-1793405200824046000/UNADMITTED.map"
+    ],
+    "policy": "UNCHANGED; no exceptions added",
+    "log": "static-hygiene.txt"
+  },
+  "engineering_packet_seal": {
+    "sha256": "ec07cdec4dff93ca7b3458d66f24e7997a4fe6743e5e0f1b0143bc9ff01dd640",
+    "members_unchanged": 109
+  },
+  "compiled_application_inputs_match_commit": 82,
+  "final_qualification_checkers_match_commit": 8,
+  "hosted_CI": "NOT RUN; no PR; no merge",
+  "Xemu": "NOT RUN",
+  "runtime": "BLOCKED BY ADMISSION; not enabled"
+}

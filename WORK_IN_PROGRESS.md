@@ -1,6 +1,12 @@
 # Work in Progress
 
-- **Status: NONE.**
-- **Record:** [Founder-approved RF-EX2 negative record and Option A rejection](docs/decisions/M2_OPTION_A_REJECTION_2026-10-29.md). RF-EX2 not adopted; RF-EX1 historical only, no active allocation or implementation authority.
-- **Next:** After verified integration, start authorized Option B lean-renderer work in a new branch. Preserve precision, nine segments, camera, complete frames, telemetry, 100 Hz/21-stage timeline, owners and zero reserve; stop at first unresolved mandatory gate.
-- **Boundary:** No banking, new memory exception, D81, SD or physical testing.
+- **Status** READY FOR REVIEW — BLOCKED at the complete-cost preflight; FK-D1–FK-D8 approved.
+- **Task** Bounded fixed-layout exact renderer successor, stopped at the first unresolved mandatory admission gate.
+- **Branch / baseline** `codex/65aero-m2-fixed-kernel`, based on `0e63edfb7de62ff991c91072a02397f432c12582`. Fetched `origin/main`: `9570f0ab427121a4e8f042041a14c89aaaeff9e2`. Experimental ancestry, not admitted main code.
+- **Build Intent** [Approved conditional FK intent](docs/plans/65AERO_M2_FIXED_KERNEL_BUILD_INTENT.md). Tick/ownership and complete-cost preflight precede renderer implementation, host checks and the single authorized target link.
+- **Preservation** PR #32 and its source/evidence stay unchanged. New evidence goes only to `docs/evidence/flight-demo/2026-11-11-m2-fixed-kernel-preflight/`. Original intent checkout and unrelated paths remain untouched.
+- **Limits** Q12/Q24/Q46/Q16, nine segments, camera envelope, 100 Hz/21 stages, 20 Hz, development end-exclusive $9000, production $8000, zero reserve. No banking, runtime testing, Xemu, D81, SD, hardware or publication.
+- **Result** Pinned tick CPU-work bound: 39,126 / 405,000 cycles. Examined partial separable frame budget: 2,276,912 / 2,025,000 cycles, 251,912 unclosed before unknown additional costs. This is a failed design-admission proof, not a measured or unavoidable frame overrun. No renderer implementation or target link was started.
+- **Current changes** Approved intent copy, host-only preflight verifier/regressions, new evidence and [handoff](docs/reports/M2_FIXED_KERNEL_PREFLIGHT.md). Registers/clobbers, CPU/physical memory allocation, MAP/B, DMA and IRQ/NMI behavior: unchanged. Generated profiles and target grants: unchanged.
+- **Validation** Final preflight exits 2 (admission refused); 11 host verifier regressions pass. All 16,556 baseline files outside WIP and 480 unrelated paths match. Six available historical checkouts match; two missing checkouts remain NOT VERIFIED at the Git-worktree tier. Original failed branch's 16,557 files and clean HEAD remain intact. Static syntax, documentation, scope and whitespace checks are recorded in the evidence packet.
+- **Not reached / next** No new fit, stack, renderer-service or runtime admission. Original 755-byte resident and 298,776-cycle cold-frame failures remain unchanged. Target links 0; runtime executions 0. Review the failed preflight before any further engineering or publication; no automatic optimization cycle or deadline change.

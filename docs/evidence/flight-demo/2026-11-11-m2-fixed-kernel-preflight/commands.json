@@ -1,0 +1,125 @@
+{
+  "cwd": "/private/tmp/f65-m2-fixed-kernel-preflight",
+  "python": "3.9.6 (default, Aug 25 2026, 21:26:21) \n[Clang 21.0.0 (clang-2100.3.34.2)]",
+  "git": "git version 2.55.0",
+  "commands": [
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "tools/flight_demo/m2_rebuild/fixed_preflight.py",
+        "--references",
+        "/private/tmp/f65-m2-service-reference"
+      ],
+      "exit_code": 1,
+      "stdout": "tick-attempt-1.stdout",
+      "stderr": "tick-attempt-1.stderr",
+      "scope": "development of host static verifier; no target execution"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "tools/flight_demo/m2_rebuild/fixed_preflight.py",
+        "--references",
+        "/private/tmp/f65-m2-service-reference"
+      ],
+      "exit_code": 1,
+      "stdout": "tick-attempt-2.stdout",
+      "stderr": "tick-attempt-2.stderr",
+      "scope": "development of host static verifier; no target execution"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "tools/flight_demo/m2_rebuild/fixed_preflight.py",
+        "--references",
+        "/private/tmp/f65-m2-service-reference"
+      ],
+      "exit_code": 0,
+      "stdout": "tick-attempt-3.json",
+      "stderr": "tick-attempt-3.stderr",
+      "scope": "development of host static verifier; no target execution"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "tools/flight_demo/m2_rebuild/fixed_preflight.py",
+        "--references",
+        "/private/tmp/f65-m2-service-reference"
+      ],
+      "exit_code": 0,
+      "stdout": "preflight.json",
+      "stderr": "preflight.stderr",
+      "gate": "admission refused in both results"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "tools/flight_demo/m2_rebuild/fixed_preflight.py",
+        "--references",
+        "/private/tmp/f65-m2-service-reference"
+      ],
+      "exit_code": 2,
+      "stdout": "preflight-final.json",
+      "stderr": "preflight-final.stderr",
+      "gate": "admission refused in both results"
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests/flight_demo/m2_rebuild",
+        "-p",
+        "test_fixed_preflight.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "combined_output": "regressions-1.txt",
+      "tests_passed": 9
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests/flight_demo/m2_rebuild",
+        "-p",
+        "test_fixed_preflight.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "combined_output": "regressions-final.txt",
+      "tests_passed": 11
+    },
+    {
+      "argv": [
+        "python3",
+        "-B",
+        "docs/evidence/flight-demo/2026-11-11-m2-fixed-kernel-preflight/check_scope.py"
+      ],
+      "exit_code": 0,
+      "stdout": "static-checks.json",
+      "scope": "focused syntax, links, whitespace, source scope and preservation"
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "scope": "run by check_scope.py"
+    }
+  ]
+}

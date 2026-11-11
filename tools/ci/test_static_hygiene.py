@@ -32,7 +32,13 @@ class PolicyTests(unittest.TestCase):
         self.assertEqual(hygiene.load_manifest(json.dumps(fixture_manifest())), fixture_manifest())
 
     def test_invalid_paths_and_hashes(self):
-        for path in ("/tmp/a", "src/new.py", hygiene.SDK_PATH_PATCH + ".other", "docs/evidence/r0f/group1/../bad.log", "docs/evidence/r0f/group1//bad.log"):
+        paths = (
+            "/tmp/a", "src/new.py", hygiene.SDK_PATH_PATCH + ".other",
+            *[path + ".other" for path in hygiene.EXTENDED_RESIDENT_SNAPSHOTS],
+            "docs/evidence/r0f/group1/../bad.log",
+            "docs/evidence/r0f/group1//bad.log",
+        )
+        for path in paths:
             with self.subTest(path=path):
                 manifest = fixture_manifest()
                 manifest["whitespace"] = {path: "a" * 64}
@@ -131,7 +137,8 @@ class GitFixtureTests(unittest.TestCase):
     def test_exact_flight_snapshot_pins_pass_but_changed_bytes_fail(self):
         for path in (hygiene.Q46_FONT_SNAPSHOT, hygiene.TRANSFORM_REFERENCE,
                      hygiene.INTERPOLATION_FONT_SNAPSHOT, hygiene.SDK_PATH_PATCH,
-                     *hygiene.PROJECTION_SNAPSHOTS):
+                     *hygiene.PROJECTION_SNAPSHOTS,
+                     *hygiene.EXTENDED_RESIDENT_SNAPSHOTS):
             with self.subTest(path=path):
                 manifest = fixture_manifest()
                 manifest["whitespace"][path] = hashlib.sha256(TEXT).hexdigest()
@@ -150,24 +157,26 @@ class GitFixtureTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "not a regular file"):
             hygiene.check(self.root, self.base, self.commit())
 
-    def test_sdk_patch_missing_renamed_or_symlink_fails(self):
-        path = hygiene.SDK_PATH_PATCH
-        manifest = fixture_manifest()
-        manifest["whitespace"][path] = hashlib.sha256(TEXT).hexdigest()
-        self.write(hygiene.MANIFEST, json.dumps(manifest).encode())
-        with self.assertRaisesRegex(ValueError, "missing or not a regular file"):
-            hygiene.check(self.root, self.base, self.commit())
-        self.write(path + ".renamed", TEXT)
-        with self.assertRaisesRegex(ValueError, "missing or not a regular file"):
-            hygiene.check(self.root, self.base, self.commit())
-        (self.root / path).symlink_to("focused.diff.renamed")
-        with self.assertRaisesRegex(ValueError, "not a regular file"):
-            hygiene.check(self.root, self.base, self.commit())
+    def test_flight_pins_missing_renamed_or_symlink_fail(self):
+        for path in (hygiene.SDK_PATH_PATCH, *hygiene.EXTENDED_RESIDENT_SNAPSHOTS):
+            with self.subTest(path=path):
+                manifest = fixture_manifest()
+                manifest["whitespace"][path] = hashlib.sha256(TEXT).hexdigest()
+                self.write(hygiene.MANIFEST, json.dumps(manifest).encode())
+                with self.assertRaisesRegex(ValueError, "missing or not a regular file"):
+                    hygiene.check(self.root, self.base, self.commit())
+                self.write(path + ".renamed", TEXT)
+                with self.assertRaisesRegex(ValueError, "missing or not a regular file"):
+                    hygiene.check(self.root, self.base, self.commit())
+                (self.root / path).symlink_to(Path(path).name + ".renamed")
+                with self.assertRaisesRegex(ValueError, "not a regular file"):
+                    hygiene.check(self.root, self.base, self.commit())
 
     def test_unlisted_live_and_evidence_whitespace_fails(self):
         paths = (
             "live.txt",
             hygiene.SDK_PATH_PATCH + ".other",
+            *[path + ".other" for path in hygiene.EXTENDED_RESIDENT_SNAPSHOTS],
             "docs/evidence/r0f/group1/fixture/new.log",
             "docs/evidence/r0f/group2/fixture/new.log",
             "docs/evidence/flight-demo/2026-10-21-m2-renderer-fit/source/new.log",

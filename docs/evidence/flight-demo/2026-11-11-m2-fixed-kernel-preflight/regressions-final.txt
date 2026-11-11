@@ -1,0 +1,16 @@
+test_all_target_sources_match_original_link (test_fixed_preflight.FixedPreflightTests) ... ok
+test_changed_image_fails (test_fixed_preflight.FixedPreflightTests) ... ok
+test_changed_seal_fails_without_evidence_write (test_fixed_preflight.FixedPreflightTests) ... ok
+test_cli_fails_closed (test_fixed_preflight.FixedPreflightTests) ... ok
+test_current_tick_has_positive_slack (test_fixed_preflight.FixedPreflightTests) ... ok
+test_missing_and_oversized_sdk_limits_fail (test_fixed_preflight.FixedPreflightTests) ... ok
+test_missing_feedback_witness_fails (test_fixed_preflight.FixedPreflightTests) ... ok
+test_partial_budget_cannot_be_mistaken_for_admission (test_fixed_preflight.FixedPreflightTests) ... ok
+test_second_command_producer_fails (test_fixed_preflight.FixedPreflightTests) ... ok
+test_uncovered_cycle_fails (test_fixed_preflight.FixedPreflightTests) ... ok
+test_unknown_dependency_fails (test_fixed_preflight.FixedPreflightTests) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.297s
+
+OK

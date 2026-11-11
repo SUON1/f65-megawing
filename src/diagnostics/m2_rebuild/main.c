@@ -17,7 +17,7 @@ static uint8_t stages[M1_STAGES];
 // Volatile reads retain the whole real application in the link. These are NOT
 // an enabling interface: no source path writes them or admits this executable.
 volatile uint8_t m2rb_launch_authorized;
-volatile uint32_t m2rb_target_budgets[8];
+volatile uint16_t m2rb_target_budgets[M2RB_FAILED];
 volatile uint32_t m2rb_guard_budget;
 volatile uint8_t m2rb_status;
 volatile uint32_t m2rb_replay_checkpoint;
@@ -48,11 +48,11 @@ int main(void)
     uint16_t fraction = 0u;
     for (;;)
     {
+        uint32_t now = m1_platform_now();
         if (m1_platform_fault() || renderer.fault != 0u)
         {
             stop(254u);
         }
-        uint32_t now = m1_platform_now();
         if ((uint32_t)(now - release) < 0x80000000UL)
         {
             // Catch up one ordered tick at a time; no skipped/merged releases.
@@ -77,14 +77,15 @@ int main(void)
             continue;
         }
         uint8_t slot = renderer.phase;
-        if (slot >= 8u)
+        if (slot >= M2RB_FAILED)
         {
             stop(251u);
         }
-        uint32_t budget = m2rb_target_budgets[slot];
-        if (m2rb_guard(now, release, budget, m2rb_guard_budget))
+        uint16_t work_counts = m2rb_guard(now, release, m2rb_target_budgets[slot], m2rb_guard_budget);
+        if (work_counts != 0u)
         {
-            (void)m2rb_dispatch(&renderer, &snapshots, &camera, budget, core.tick);
+            (void)m2rb_dispatch(&renderer, &snapshots, &camera, work_counts,
+                                m2rb_target_budgets, core.tick);
         }
     }
 }
