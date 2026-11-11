@@ -1,0 +1,41 @@
+[
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "tests/flight_demo/m2_rebuild/test_clock_gap_v2.py"
+    ],
+    "cwd": "/private/tmp/f65-m2-platform-clock",
+    "exit_code": 0
+  },
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "tools/flight_demo/m2_rebuild/clock_gap_v2.py",
+      "--baseline",
+      "/private/tmp/f65-m2-fixed-kernel-cost-correction"
+    ],
+    "cwd": "/private/tmp/f65-m2-platform-clock",
+    "exit_code": 0
+  },
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "docs/evidence/flight-demo/2026-11-11-m2-platform-clock-p2/check_scope.py"
+    ],
+    "cwd": "/private/tmp/f65-m2-platform-clock",
+    "exit_code": 1,
+    "scope": "initial preservation harness: archived prior-WIP links incorrectly resolved relative to packet; corrected to original repository root"
+  },
+  {
+    "argv": [
+      "python3",
+      "-B",
+      "docs/evidence/flight-demo/2026-11-11-m2-platform-clock-p2/check_scope.py"
+    ],
+    "cwd": "/private/tmp/f65-m2-platform-clock",
+    "exit_code": 0
+  }
+]

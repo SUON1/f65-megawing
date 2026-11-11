@@ -4,6 +4,7 @@
 
 #include "combined_platform.h"
 #include "m1_platform.h"
+#include "clock_private.h"
 
 extern void r0fc_stack_measure(void);
 extern volatile uint16_t r0fc_software_low;
@@ -24,15 +25,33 @@ extern volatile uint8_t r0fc_hardware_low;
 
 static uint32_t period_q16;
 static uint8_t frame;
+static M1Clock clock;
+
+static uint32_t clock_now(void)
+{
+    uint8_t fault = (uint8_t)(cffault != 0u || r0f_pf_nmi_seen != 0u
+        || clock.fault || clock.state == 0u);
+    uint32_t raw = fault ? 0u : cfnow();
+    return m1_clock_sample(&clock, raw,
+        (uint8_t)(fault || cffault != 0u || r0f_pf_nmi_seen != 0u));
+}
+
+static uint8_t clock_begin_failed(void)
+{
+    clock.fault = 1u;
+    return 0u;
+}
 
 uint8_t m1_platform_begin(void)
 {
+    m1_clock_reset(&clock);
+    period_q16 = 0u;
     memset((void *)cfresult, 0, R0FC_RESULT_BYTES);
     // cfrom_begin also writes its retained startup message at $09E0-$0A14.
     // This initialization-only dependency is source-pinned in the M1 ledger.
     if (!cfentry() || !cfrom_begin() || !cfclock_begin())
     {
-        return 0u;
+        return clock_begin_failed();
     }
     // Retain CF001's measured nominal ratio, without its workload or audio path.
     uint32_t start = 0u;
@@ -47,10 +66,14 @@ uint8_t m1_platform_begin(void)
         {
             if ((uint8_t)(next - previous) != 1u)
             {
-                return 0u;
+                return clock_begin_failed();
             }
             previous = next;
-            uint32_t now = cfnow();
+            uint32_t now = clock_now();
+            if (m1_platform_fault())
+            {
+                return clock_begin_failed();
+            }
             if (frames == 0u)
             {
                 start = now;
@@ -61,19 +84,20 @@ uint8_t m1_platform_begin(void)
     }
     if (frames != 17u || elapsed < 16000ul || elapsed > 1600000ul)
     {
-        return 0u;
+        return clock_begin_failed();
     }
     // Pinned Xemu uses scanline-truncated CPU/CIA accounting (CF001 contract).
     // This profile is emulator-only; reject a reported physical machine.
     if (cfresult[R0FC_O_REFERENCE] != 1u)
     {
-        return 0u;
+        return clock_begin_failed();
     }
     uint32_t cycles = (CFREG(M1_VIDEO_STANDARD) & 128u) ? 676962ul : 808704ul;
     period_q16 = cfratio(R0FC_CPU_HZ / M1_TICK_HZ, elapsed / 16u, cycles, 16u);
-    if (period_q16 == 0u || cffault != 0u)
+    if (period_q16 == 0u || m1_platform_fault())
     {
-        return 0u;
+        period_q16 = 0u;
+        return clock_begin_failed();
     }
     frame = CFREG(M1_FRAME_COUNTER);
     return 1u;
@@ -81,7 +105,7 @@ uint8_t m1_platform_begin(void)
 
 uint32_t m1_platform_now(void)
 {
-    return cfnow();
+    return clock_now();
 }
 
 uint32_t m1_platform_period(void)
@@ -151,7 +175,8 @@ uint8_t m1_platform_swap(uint8_t store)
 
 uint8_t m1_platform_fault(void)
 {
-    return (uint8_t)(cffault != 0u || r0f_pf_nmi_seen != 0u);
+    return (uint8_t)(cffault != 0u || r0f_pf_nmi_seen != 0u
+        || clock.fault || clock.state == 0u);
 }
 
 void m1_platform_measure(void)

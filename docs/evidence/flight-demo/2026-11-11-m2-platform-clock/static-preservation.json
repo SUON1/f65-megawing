@@ -1,0 +1,62 @@
+{
+  "status": "PASS for stated scope",
+  "published_files": 16610,
+  "unchanged_candidate_files": 16608,
+  "related_checkouts": 6,
+  "checks": {
+    "json": 5,
+    "python": 3,
+    "local_links": 21,
+    "text_whitespace": 15
+  },
+  "changed_paths": [
+    "WORK_IN_PROGRESS.md",
+    "docs/evidence/flight-demo/2026-11-11-m2-platform-clock/baseline-before.json",
+    "docs/evidence/flight-demo/2026-11-11-m2-platform-clock/check_scope.py",
+    "docs/evidence/flight-demo/2026-11-11-m2-platform-clock/host-compiler.json",
+    "docs/evidence/flight-demo/2026-11-11-m2-platform-clock/host-evidence.tar.gz",
+    "docs/evidence/flight-demo/2026-11-11-m2-platform-clock/host-result.json",
+    "docs/evidence/flight-demo/2026-11-11-m2-platform-clock/host-tests.txt",
+    "docs/evidence/flight-demo/2026-11-11-m2-platform-clock/inspect_gap.py",
+    "docs/evidence/flight-demo/2026-11-11-m2-platform-clock/preflight-exploration.tar.gz",
+    "docs/evidence/flight-demo/2026-11-11-m2-platform-clock/preflight.json",
+    "docs/evidence/flight-demo/2026-11-11-m2-platform-clock/related-before.json",
+    "docs/plans/65AERO_M2_PLATFORM_CLOCK_CONTINUITY_INTENT.md",
+    "docs/reports/M2_PLATFORM_CLOCK_CONTINUITY.md",
+    "src/platform/m1/clock_private.h",
+    "src/platform/m1/m1_platform.c",
+    "tests/flight_demo/m2_rebuild/clock_host.c",
+    "tests/flight_demo/m2_rebuild/test_platform_clock.py"
+  ],
+  "original_preservation": {
+    "status": "PASS for stated static/preservation scope",
+    "counts": {
+      "json": 0,
+      "python": 0,
+      "markdown_links": 0,
+      "whitespace_files": 0
+    },
+    "unchanged_checkpoint_files": 16556,
+    "unrelated_files": 480,
+    "historical_checkouts": {
+      "/Users/slice/Developer/f65-megawing": "MATCHED",
+      "/private/tmp/f65-m2-final-unbanked-fit": "NOT VERIFIED at the Git-worktree tier",
+      "/private/tmp/f65-m2-unbanked-renderer": "NOT VERIFIED at the Git-worktree tier",
+      "/Users/slice/.codex/worktrees/physics-v4-review-revisions/f65-megawing": "MATCHED",
+      "/Users/slice/Developer/f65-megawing-m2-banked-renderer-intent": "MATCHED",
+      "/Users/slice/Developer/f65-megawing-m2-option-b": "MATCHED",
+      "/Users/slice/Developer/f65-megawing-m2-residency-feasibility": "MATCHED",
+      "/Users/slice/Developer/f65-megawing-m2-source-baseline": "MATCHED"
+    },
+    "failed_experiment_files": 16557,
+    "changed_paths": [],
+    "head": "6c0caa8d453bb647696ef85b5b31b35ef2310def",
+    "main": "9570f0ab427121a4e8f042041a14c89aaaeff9e2",
+    "target_links": 0,
+    "runtime_executions": 0
+  },
+  "source_identity_match": true,
+  "target_links": 0,
+  "runtime_executions": 0,
+  "git_diff_check_exit": 0
+}
