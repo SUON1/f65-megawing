@@ -1,0 +1,159 @@
+{
+  "identity": "65AERO-M2-BOOT-TRACE-1",
+  "scope": "restricted CF001 bootstrap, never full M2",
+  "source_checkpoint": "a46279c15b2e7604a93e7ad8a78cabf58e1f576d",
+  "argv": [
+    "/Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/mos-mega65-clang",
+    "-mcpu=mos45gs02",
+    "-mlto-zp=0",
+    "-Oz",
+    "-fno-inline-functions",
+    "-fno-jump-tables",
+    "-Wall",
+    "-Wextra",
+    "-Wconversion",
+    "-Werror",
+    "-Iinterfaces/generated",
+    "-Isrc/diagnostics/r0f",
+    "src/diagnostics/m2_rebuild/boot_trace.c",
+    "src/diagnostics/r0f/combined_platform.c",
+    "src/diagnostics/r0f/combined_model.c",
+    "src/platform/r0f/qualification_45gs02.s",
+    "src/platform/r0f/combined_45gs02.s",
+    "src/platform/m2_rebuild/startup_45gs02.s",
+    "src/platform/m2_rebuild/extended_startup_45gs02.s",
+    "-Wl,-T,src/platform/m2_rebuild/extended_resident.ld",
+    "-Wl,-Map,/private/tmp/f65-m2-boot-tools/target/BOOT-ONLY.map",
+    "-o",
+    "/private/tmp/f65-m2-boot-tools/target/BOOT-ONLY.prg"
+  ],
+  "target_compile_exit": 0,
+  "llvm_objdump_exit": 0,
+  "llvm_nm_exit": 0,
+  "sdk_identity_digest": "4166ea6e185bc8471593336e0ac691b784fb5c0a51f861a1c26463c1609bbfd4",
+  "compiler": {
+    "bytes": 120041864,
+    "sha256": "cc557ae99a68ed36e098062b0f5376a878e94ac187b87446c8e603e4fb45a906"
+  },
+  "inputs": {
+    "src/diagnostics/m2_rebuild/boot_trace.c": {
+      "bytes": 356,
+      "sha256": "37bdd48566ce9854b6a6a363d234a3c70662c286633532923ebde0eee9f296be"
+    },
+    "src/diagnostics/r0f/combined_platform.c": {
+      "bytes": 12125,
+      "sha256": "428d54c3274c4c71f64c5c880337a3f2de8d9810518ea9caaa0ce5a99909d47a"
+    },
+    "src/diagnostics/r0f/combined_model.c": {
+      "bytes": 7409,
+      "sha256": "9aaf2f9b7002c69297be58ff969f57d5e0c034c40659bec9b496f7e8c2ace861"
+    },
+    "src/platform/r0f/qualification_45gs02.s": {
+      "bytes": 3297,
+      "sha256": "c2ee3a522bd20795074b04a1a1a317baf80a420eebfd3aa1cb2c5f9a1fb9e600"
+    },
+    "src/platform/r0f/combined_45gs02.s": {
+      "bytes": 1846,
+      "sha256": "f57927e7b4177adb68a72c3f98d4d76b96257c3940c4bd96f9799effa7fbae11"
+    },
+    "src/platform/m2_rebuild/startup_45gs02.s": {
+      "bytes": 1184,
+      "sha256": "d5055b8aba3afa24f42ff7faa45cf4749af95e7963a227a19025ed1b716882cc"
+    },
+    "src/platform/m2_rebuild/extended_startup_45gs02.s": {
+      "bytes": 1403,
+      "sha256": "09c7242f125c4e050e7f476f1484ae3305091a9746c8ed4fd6e85e33628333ba"
+    },
+    "src/platform/m2_rebuild/extended_resident.ld": {
+      "bytes": 927,
+      "sha256": "7d908d5d1a160794649c89bfb8dc096754af4fe22d2c8a1e8d9ba0d5ce95c80b"
+    },
+    "src/platform/m2_rebuild/startup.ld": {
+      "bytes": 257,
+      "sha256": "86e35c7d6759f9a50c94fcb51fc23cfd1f3d91e0b105ff46e59695b47ba8ff52"
+    },
+    "src/diagnostics/r0f/combined_platform.h": {
+      "bytes": 1389,
+      "sha256": "4d83f75144d74dca6d9442daee528d59e97672d50b8aa41d9f810d4a27436736"
+    },
+    "src/diagnostics/r0f/combined_model.h": {
+      "bytes": 1332,
+      "sha256": "0931d1e42914903d61d073be597910575a941171c6592b45d4a81649123113df"
+    },
+    "interfaces/generated/r0f_combined.h": {
+      "bytes": 2880,
+      "sha256": "a728d596e43163e28d1de7d2e17ee366b6df4970be8924bff9f64ca2e4a0d4f2"
+    },
+    "tools/flight_demo/m2_rebuild/boot_trace.py": {
+      "bytes": 18074,
+      "sha256": "9a804a408de322508884a4aff9b3288f6411aa972703dcb285a6aff7aa1af6c9"
+    },
+    "tools/flight_demo/m2_rebuild/throughput_estimate.py": {
+      "bytes": 9672,
+      "sha256": "dc4545b4579c29bbf87b994fd4002fd34d69e157e227d8ca18daa294f55bda20"
+    },
+    "tests/flight_demo/m2_rebuild/test_boot_trace.py": {
+      "bytes": 1802,
+      "sha256": "484a33263a95510589f2bf7ab1927d3a91fd2f09662a8c75fd41fa547934619b"
+    }
+  },
+  "sections": {
+    ".basic_header": {
+      "type": 1,
+      "flags": 2097154,
+      "address": 8193,
+      "bytes": 22
+    },
+    ".text": {
+      "type": 1,
+      "flags": 6,
+      "address": 8215,
+      "bytes": 3133
+    },
+    ".rodata": {
+      "type": 1,
+      "flags": 50,
+      "address": 11348,
+      "bytes": 110
+    },
+    ".bss": {
+      "type": 8,
+      "flags": 3,
+      "address": 11458,
+      "bytes": 550
+    },
+    ".noinit": {
+      "type": 8,
+      "flags": 3,
+      "address": 12008,
+      "bytes": 5
+    }
+  },
+  "raw_map_sha256": "1f5261d0294e54e93a4e2560d7ecc97c22bf8a4caad5548be8970768eba5ba2b",
+  "target_artifacts": {
+    "compile.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "BOOT-ONLY.disassembly": {
+      "bytes": 86094,
+      "sha256": "e7de5ba4229efa829a56fc754d5b464921b3b5b7fde6fd0b4e8bd1b0923211c9"
+    },
+    "BOOT-ONLY.symbols": {
+      "bytes": 6195,
+      "sha256": "f09d973ac3b1b64488e001753b507fb4e2777c52daead2206938674b0277c028"
+    },
+    "BOOT-ONLY.prg.elf": {
+      "bytes": 10024,
+      "sha256": "f66fb98239c9bf235a450c7cd18ad59a5684935e4c5ad06fed9e9aef08e847b4"
+    },
+    "BOOT-ONLY.prg": {
+      "bytes": 3267,
+      "sha256": "0e81aa0e2f1440fc12bbd8530afac0c8d98b7f638f0f603a4d60b2af318f79cb"
+    },
+    "BOOT-ONLY.map.gz": {
+      "bytes": 2366,
+      "sha256": "73e05ae831938f5847209fe6a1a5bc5d9b56de8c496012e2084822a52c9fc811"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "checks": [
+    {
+      "command": "python3 -B tools/flight_demo/m2_rebuild/throughput_estimate.py --references /private/tmp/f65-m2-service-reference",
+      "exit": 0,
+      "output": "throughput-estimate.json",
+      "result": "Evaluation complete. Integrated renderer estimate gate BLOCKED."
+    },
+    {
+      "command": "python3 -B tools/flight_demo/m2_rebuild/boot_trace.py --packet /private/tmp/f65-m2-boot-tools/target --references /private/tmp/f65-m2-service-reference",
+      "exit": 0,
+      "output": "boot-static.json",
+      "result": "Restricted boot static gates passed with the observed-entry preconditions."
+    },
+    {
+      "command": "python3 -B -m unittest discover -s tests/flight_demo/m2_rebuild -p 'test_*admission.py' -v",
+      "exit": 0,
+      "output": "verifier-regressions.txt"
+    },
+    {
+      "command": "python3 -B -m unittest discover -s tests/flight_demo/m2_rebuild -p 'test_boot_trace.py' -v",
+      "exit": 0,
+      "output": "observer-tests.txt"
+    },
+    {
+      "command": "python3 -B -m unittest discover -s tools/ci -p 'test_*.py' -v",
+      "exit": 0,
+      "output": "ci-tests.txt"
+    },
+    {
+      "command": "/usr/bin/clang -std=c11 -Wall -Wextra -Wconversion -Werror -fsanitize=address,undefined -Iinterfaces/generated -Isrc/diagnostics/r0f src/diagnostics/r0f/combined_model.c tests/flight_demo/m2_rebuild/residency_ranges.c -o /private/tmp/f65-m2-boot-tools/staging-ranges && /private/tmp/f65-m2-boot-tools/staging-ranges",
+      "exit": 0,
+      "result": "PASS: 131068 resident/covering-block staging requests rejected; existing owners retained"
+    }
+  ]
+}

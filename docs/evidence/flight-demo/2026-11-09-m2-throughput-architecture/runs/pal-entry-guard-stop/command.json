@@ -1,0 +1,63 @@
+{
+  "configuration": {
+    "standard": "PAL",
+    "working_directory": "/private/tmp/f65-m2-boot-tools/pal-cocoa",
+    "prg": "/private/tmp/f65-m2-boot-tools/target/BOOT-ONLY.prg",
+    "executable": "/private/tmp/f65-m2-boot-tools/pal-cocoa/XemuBoot.app/Contents/MacOS/xmega65",
+    "static": "/private/tmp/f65-m2-boot-tools/static.json",
+    "stdout": "/private/tmp/f65-m2-boot-tools/pal-cocoa/stdout.txt",
+    "stderr": "/private/tmp/f65-m2-boot-tools/pal-cocoa/stderr.txt",
+    "result": "/private/tmp/f65-m2-boot-tools/pal-cocoa/result.json",
+    "i2c_sha256": "15aaba90eece687188711b0d1f9bc012f8c7d6ae73ee2fe87ae1e130de6d7d38",
+    "identities": {
+      "xemu": "dd37baf7846b9696adcb662ffe5da040031b07214c66aef9a7f48cc30040b738",
+      "sdl": "4338adca59bfc6bad6ff44d0df03a9cd59c83a8916c478ae5d91e06b5d090761",
+      "rom": "af3c447f791a2fdc48cb21e1bd3fab015e32641228d9d30d21259b9e878c6fa0"
+    },
+    "environment": [
+      "SDL_VIDEODRIVER=cocoa",
+      "SDL_AUDIODRIVER=dummy"
+    ],
+    "arguments": [
+      "-skipconfigfile",
+      "-fastboot",
+      "-besure",
+      "-cpusinglestep",
+      "-nosound",
+      "-videostd",
+      "0",
+      "-lockvideostd",
+      "-fastclock",
+      "40.5",
+      "-rom",
+      "/Users/slice/Documents/Codex/f65-megawing/MEGA65.ROM",
+      "-virtsd",
+      "-sdimg",
+      "/private/tmp/f65-m2-boot-tools/pal-cocoa/virtual",
+      "-prg",
+      "/private/tmp/f65-m2-boot-tools/target/BOOT-ONLY.prg"
+    ]
+  },
+  "debugger_argv": [
+    "/usr/bin/lldb",
+    "-b",
+    "-o",
+    "command script import /private/tmp/f65-m2-throughput-20261109/tools/flight_demo/m2_rebuild/boot_trace.py",
+    "-o",
+    "f65-boot-observe /private/tmp/f65-m2-boot-tools/pal-cocoa/config.json"
+  ],
+  "result": "FAIL",
+  "disposition": "Observer stopped at the true SYS address before executing the PRG. Initial rule rejected any active MAP bit; the selected low megabyte and offset are both zero.",
+  "locally_retained_console": {
+    "stdout.txt": {
+      "path": "/private/tmp/f65-m2-boot-tools/pal-cocoa/stdout.txt",
+      "bytes": 12288,
+      "sha256": "40f2ec011e730328c55effeb6bc291b3845e9e7310d1d2a52bd37f827991726e"
+    },
+    "stderr.txt": {
+      "path": "/private/tmp/f65-m2-boot-tools/pal-cocoa/stderr.txt",
+      "bytes": 3462,
+      "sha256": "8da0313defec7e65cc9603d6490978b880beb012d52acc27746216af60a803fa"
+    }
+  }
+}

@@ -1,102 +1,112 @@
-// Graphics-owned decimal/hex telemetry, without ROM fonts or formatted I/O.
+// Graphics-owned diagnostic labels and direct field composition; no ROM font.
+#include <stddef.h>
 #include <string.h>
 
 #include "m2_rebuild.h"
 
-static uint8_t label(char text[40], uint8_t column, const char *value)
-{
-    while (*value != '\0' && column < 40u)
-    {
-        text[column++] = *value++;
-    }
-    return column;
-}
+enum { HEX32, HEX8, POSITION, HEIGHT, ANGLE };
 
-static uint8_t hex(char text[40], uint8_t column, uint32_t value, uint8_t digits)
+typedef struct
 {
+    uint16_t offset;
+    uint8_t row;
+    uint8_t column;
+    uint8_t kind;
+    uint8_t digits;
+} TextField;
+
+static const TextField fields[] = {
+    {offsetof(M2RebuildRenderer, snapshot.tick), 1,5,HEX32,8},
+    {offsetof(M2RebuildRenderer, snapshot.commands), 1,18,HEX32,8},
+    {offsetof(M2RebuildRenderer, generation), 2,4,HEX32,8},
+    {offsetof(M2RebuildRenderer, prepared.camera.revision), 2,17,HEX32,8},
+    {offsetof(M2RebuildRenderer, source_age_at_text), 3,12,HEX32,8},
+    {offsetof(M2RebuildRenderer, snapshot.fault), 3,23,HEX8,2},
+    {offsetof(M2RebuildRenderer, rejected), 3,30,HEX32,8},
+    {offsetof(M2RebuildRenderer, prepared.camera.position.v[0]), 4,5,POSITION,5},
+    {offsetof(M2RebuildRenderer, prepared.camera.position.v[1]), 4,13,POSITION,5},
+    {offsetof(M2RebuildRenderer, prepared.camera.position.v[2]), 4,21,HEIGHT,4},
+    {offsetof(M2RebuildRenderer, prepared.camera.yaw), 5,3,ANGLE,3},
+    {offsetof(M2RebuildRenderer, prepared.camera.pitch), 5,13,ANGLE,2},
+    {offsetof(M2RebuildRenderer, prepared.camera.roll), 5,21,ANGLE,2}
+};
+
+static void number(char *text, const uint8_t *source, uint8_t kind, uint8_t digits)
+{
+    uint32_t magnitude = 0u;
+    if (kind == ANGLE)
+    {
+        int16_t angle;
+        memcpy(&angle, source, sizeof(angle));
+        magnitude = (uint32_t)(int32_t)angle;
+    }
+    else
+    {
+        memcpy(&magnitude, source, kind == HEX8 ? 1u : 4u);
+    }
+    if (kind >= POSITION)
+    {
+        int32_t value;
+        memcpy(&value, &magnitude, sizeof(value));
+        if (kind != ANGLE)
+        {
+            value /= M2_POSITION_SCALE;
+        }
+        if (kind == HEIGHT)
+        {
+            value = -value;
+        }
+        *text++ = value < 0 ? '-' : '+';
+        magnitude = (uint32_t)(value < 0 ? -value : value);
+    }
     static const char alphabet[] = "0123456789ABCDEF";
-    for (uint8_t i = 0u; i < digits && column < 40u; ++i)
+    for (uint8_t i = digits; i != 0u; --i)
     {
-        uint8_t shift = (uint8_t)((digits - i - 1u) * 4u);
-        text[column++] = alphabet[(value >> shift) & 15u];
+        uint8_t digit;
+        if (kind < POSITION)
+        {
+            digit = (uint8_t)(magnitude & 15u);
+            magnitude >>= 4u;
+        }
+        else
+        {
+            digit = (uint8_t)(magnitude % 10u);
+            magnitude /= 10u;
+        }
+        text[i - 1u] = alphabet[digit];
     }
-    return column;
-}
-
-static uint8_t decimal(char text[40], uint8_t column, int32_t value,
-                       uint8_t digits)
-{
-    if (column >= 40u || (uint16_t)column + digits + 1u > 40u)
-    {
-        return column;
-    }
-    text[column++] = value < 0 ? '-' : '+';
-    // All diagnostic operands are within +/-12000; no INT32_MIN negation.
-    uint32_t magnitude = (uint32_t)(value < 0 ? -value : value);
-    for (uint8_t i = 0u; i < digits; ++i)
-    {
-        text[column + digits - i - 1u] = (char)('0' + magnitude % 10u);
-        magnitude /= 10u;
-    }
-    return (uint8_t)(column + digits);
 }
 
 void m2rb_text_row(M2RebuildRenderer *renderer, uint8_t row)
 {
-    char *text = renderer->text;
-    const M2Camera *camera = &renderer->prepared.camera;
-    uint8_t column = 0u;
-    memset(text, ' ', 40u);
-    switch (row)
+    static const char *const templates[8] = {
+        "NON-FLIGHT DIAGNOSTIC M2 UNBANKED",
+        "TICK          CMD         ",
+        "GEN          CAM         ",
+        "AGE AT TEXT          F    REJ         ",
+        "CAM N       E       H      FT",
+        "YAW     PITCH    ROLL    ",
+        "ALTITUDE: NOT IMPLEMENTED",
+        "               AIRSPEED: NOT IMPLEMENTED"
+    };
+    memset(renderer->text, ' ', 40u);
+    if (row >= 8u)
     {
-        case 0u:
-            (void)label(text, 0u, "NON-FLIGHT DIAGNOSTIC M2 REBUILD");
-            break;
-        case 1u:
-            column = label(text, 0u, "TICK ");
-            column = hex(text, column, renderer->snapshot.tick, 8u);
-            column = label(text, column, " CMD ");
-            (void)hex(text, column, renderer->snapshot.commands, 8u);
-            break;
-        case 2u:
-            column = label(text, 0u, "GEN ");
-            column = hex(text, column, renderer->generation, 8u);
-            column = label(text, column, " CAM ");
-            (void)hex(text, column, camera->revision, 8u);
-            break;
-        case 3u:
-            column = label(text, 0u, "AGE AT TEXT ");
-            column = hex(text, column, renderer->source_age_at_text, 8u);
-            column = label(text, column, " F ");
-            column = hex(text, column, renderer->snapshot.fault, 2u);
-            column = label(text, column, " REJ ");
-            (void)hex(text, column, renderer->rejected, 8u);
-            break;
-        case 4u:
-            column = label(text, 0u, "CAM N");
-            column = decimal(text, column, camera->position.v[0] / M2_POSITION_SCALE, 5u);
-            column = label(text, column, " E");
-            column = decimal(text, column, camera->position.v[1] / M2_POSITION_SCALE, 5u);
-            column = label(text, column, " H");
-            column = decimal(text, column, -camera->position.v[2] / M2_POSITION_SCALE, 4u);
-            (void)label(text, column, " FT");
-            break;
-        case 5u:
-            column = label(text, 0u, "YAW");
-            column = decimal(text, column, camera->yaw, 3u);
-            column = label(text, column, " PITCH");
-            column = decimal(text, column, camera->pitch, 2u);
-            column = label(text, column, " ROLL");
-            (void)decimal(text, column, camera->roll, 2u);
-            break;
-        case 6u:
-            (void)label(text, 0u, "ALTITUDE: NOT IMPLEMENTED");
-            break;
-        case 7u:
-            (void)label(text, 0u, "AIRSPEED: NOT IMPLEMENTED");
-            break;
-        default:
-            break;
+        return;
+    }
+    const char *label = templates[row];
+    for (uint8_t column = 0u; column < 40u && label[column] != '\0'; ++column)
+    {
+        renderer->text[column] = label[column];
+    }
+    for (uint8_t i = 0u; i < sizeof(fields) / sizeof(fields[0]); ++i)
+    {
+        if (fields[i].row == row)
+        {
+            number(&renderer->text[fields[i].column],
+                     (const uint8_t *)renderer + fields[i].offset,
+                     fields[i].kind, fields[i].digits);
+        }
     }
 }
 

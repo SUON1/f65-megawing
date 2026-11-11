@@ -33,6 +33,14 @@ SDK_PATH_PATCH = (
     "docs/evidence/flight-demo/2026-10-27-m2-min-rebuild-corrections/"
     "sdk-path-20261028-1/focused.diff"
 )
+EXTENDED_RESIDENT_SNAPSHOTS = (
+    "docs/evidence/flight-demo/2026-10-30-m2-extended-resident-publication/"
+    "static-hygiene.txt",
+    "docs/evidence/flight-demo/2026-10-30-m2-extended-resident/"
+    "target-1793404701167257000/UNADMITTED.map",
+    "docs/evidence/flight-demo/2026-10-30-m2-extended-resident/"
+    "target-1793405200824046000/UNADMITTED.map",
+)
 PROJECTION_SNAPSHOTS = tuple(
     "docs/evidence/flight-demo/2026-10-21-m2-projection-sequence/" + name
     for name in (
@@ -86,7 +94,8 @@ def load_manifest(data):
                 or not (path.startswith(EVIDENCE_ROOTS)
                         or path in (LEGACY_D81, Q46_FONT_SNAPSHOT, TRANSFORM_REFERENCE,
                                     INTERPOLATION_FONT_SNAPSHOT, SDK_PATH_PATCH)
-                        or path in PROJECTION_SNAPSHOTS)
+                        or path in PROJECTION_SNAPSHOTS
+                        or path in EXTENDED_RESIDENT_SNAPSHOTS)
                 or not isinstance(digest, str)
                 or not re.fullmatch(r"[0-9a-f]{64}", digest)
             ):

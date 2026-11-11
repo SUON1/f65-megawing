@@ -1,0 +1,257 @@
+{
+  "identity": "65AERO-M2-EXACT-WIDE-1",
+  "commands": [
+    {
+      "argv": [
+        "/usr/bin/clang",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Wconversion",
+        "-Werror",
+        "-Iinterfaces/generated",
+        "-Isrc/core",
+        "-Isrc/input",
+        "-Isrc/presentation",
+        "-Isrc/environment",
+        "-Isrc/graphics",
+        "-Isrc/diagnostics/m2_rebuild",
+        "-Isrc/platform/m2_rebuild",
+        "-Isrc/platform/m1",
+        "-Isrc/diagnostics/r0f",
+        "-O2",
+        "-shared",
+        "-fPIC",
+        "-DM2_EXACT_WIDE",
+        "-DM2_MATH_HOST_BUS",
+        "src/environment/m2_fixture.c",
+        "src/graphics/m2_limb.c",
+        "src/graphics/m2_compact.c",
+        "src/graphics/m2_compact_public.c",
+        "src/graphics/m2_record_private.c",
+        "interfaces/generated/m2_tables.c",
+        "src/platform/m2_rebuild/wide_math.c",
+        "tests/flight_demo/m2_rebuild/wide_math_bus.c",
+        "-o",
+        "/private/tmp/f65-wide-host-final/candidate.dylib"
+      ],
+      "exit": 0,
+      "log": "oracle-compile.txt"
+    },
+    {
+      "argv": [
+        "/usr/bin/clang",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Wconversion",
+        "-Werror",
+        "-Iinterfaces/generated",
+        "-Isrc/core",
+        "-Isrc/input",
+        "-Isrc/presentation",
+        "-Isrc/environment",
+        "-Isrc/graphics",
+        "-Isrc/diagnostics/m2_rebuild",
+        "-Isrc/platform/m2_rebuild",
+        "-Isrc/platform/m1",
+        "-Isrc/diagnostics/r0f",
+        "-O2",
+        "-shared",
+        "-fPIC",
+        "src/environment/m2_fixture.c",
+        "src/graphics/m2_geometry.c",
+        "interfaces/generated/m2_tables.c",
+        "/private/tmp/f65-wide-host-final/native-camera.c",
+        "-o",
+        "/private/tmp/f65-wide-host-final/native.dylib"
+      ],
+      "exit": 0,
+      "log": "native-compile.txt"
+    },
+    {
+      "argv": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-B",
+        "tests/flight_demo/m2_rebuild/wide_math_oracle.py",
+        "/private/tmp/f65-wide-host-final/candidate.dylib",
+        "/private/tmp/f65-wide-host-final/native.dylib"
+      ],
+      "exit": 0,
+      "log": "wide_math_oracle.txt"
+    },
+    {
+      "argv": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-B",
+        "tests/flight_demo/m2/oracle.py",
+        "/private/tmp/f65-wide-host-final/candidate.dylib"
+      ],
+      "exit": 0,
+      "log": "oracle.txt"
+    },
+    {
+      "argv": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-B",
+        "tests/flight_demo/m2/clip_regressions.py",
+        "/private/tmp/f65-wide-host-final/candidate.dylib"
+      ],
+      "exit": 0,
+      "log": "clip_regressions.txt"
+    },
+    {
+      "argv": [
+        "/usr/bin/clang",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Wconversion",
+        "-Werror",
+        "-Iinterfaces/generated",
+        "-Isrc/core",
+        "-Isrc/input",
+        "-Isrc/presentation",
+        "-Isrc/environment",
+        "-Isrc/graphics",
+        "-Isrc/diagnostics/m2_rebuild",
+        "-Isrc/platform/m2_rebuild",
+        "-Isrc/platform/m1",
+        "-Isrc/diagnostics/r0f",
+        "-fsanitize=address,undefined",
+        "-DM2_MATH_HOST_BUS",
+        "-DM2_MATH_SELF_TEST",
+        "src/platform/m2_rebuild/wide_math.c",
+        "tests/flight_demo/m2_rebuild/wide_math_bus.c",
+        "-o",
+        "/private/tmp/f65-wide-host-final/gateway"
+      ],
+      "exit": 0,
+      "log": "gateway-compile.txt"
+    },
+    {
+      "argv": [
+        "/private/tmp/f65-wide-host-final/gateway",
+        "0"
+      ],
+      "exit": 0,
+      "log": "gateway-0.txt"
+    },
+    {
+      "argv": [
+        "/private/tmp/f65-wide-host-final/gateway",
+        "1"
+      ],
+      "exit": 0,
+      "log": "gateway-1.txt"
+    },
+    {
+      "argv": [
+        "/private/tmp/f65-wide-host-final/gateway",
+        "2"
+      ],
+      "exit": 0,
+      "log": "gateway-2.txt"
+    },
+    {
+      "argv": [
+        "/private/tmp/f65-wide-host-final/gateway",
+        "3"
+      ],
+      "exit": 0,
+      "log": "gateway-3.txt"
+    },
+    {
+      "argv": [
+        "/private/tmp/f65-wide-host-final/gateway",
+        "4"
+      ],
+      "exit": 0,
+      "log": "gateway-4.txt"
+    },
+    {
+      "argv": [
+        "/private/tmp/f65-wide-host-final/gateway",
+        "5"
+      ],
+      "exit": 0,
+      "log": "gateway-5.txt"
+    },
+    {
+      "argv": [
+        "/usr/bin/clang",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Wconversion",
+        "-Werror",
+        "-Iinterfaces/generated",
+        "-Isrc/core",
+        "-Isrc/input",
+        "-Isrc/presentation",
+        "-Isrc/environment",
+        "-Isrc/graphics",
+        "-Isrc/diagnostics/m2_rebuild",
+        "-Isrc/platform/m2_rebuild",
+        "-Isrc/platform/m1",
+        "-Isrc/diagnostics/r0f",
+        "-fsanitize=address,undefined",
+        "-DM2_EXACT_WIDE",
+        "-DM2_MATH_HOST_BUS",
+        "src/environment/m2_fixture.c",
+        "src/graphics/m2_limb.c",
+        "src/graphics/m2_compact.c",
+        "src/graphics/m2_compact_public.c",
+        "src/graphics/m2_record_private.c",
+        "interfaces/generated/m2_tables.c",
+        "src/platform/m2_rebuild/wide_math.c",
+        "tests/flight_demo/m2_rebuild/wide_math_bus.c",
+        "src/core/m1_runtime.c",
+        "src/input/m1_input.c",
+        "src/presentation/m1_snapshot.c",
+        "src/input/m2_rebuild_input.c",
+        "src/diagnostics/m2_rebuild/camera.c",
+        "src/graphics/m2_rebuild.c",
+        "src/graphics/m2_rebuild_text.c",
+        "src/platform/m2_rebuild/guard.c",
+        "tests/flight_demo/m2_rebuild/host.c",
+        "-o",
+        "/private/tmp/f65-wide-host-final/host"
+      ],
+      "exit": 0,
+      "log": "host-compile.txt"
+    },
+    {
+      "argv": [
+        "/private/tmp/f65-wide-host-final/host",
+        "/private/tmp/f65-wide-host-final/frame.indices"
+      ],
+      "exit": 0,
+      "log": "host.txt"
+    }
+  ],
+  "status": "PASS",
+  "inputs": {
+    "src/environment/m2_fixture.c": "bbf33786a0a3a20dbb7e45f87186406b36bcf89fd940ef496ec4a3103b5fdce1",
+    "src/graphics/m2_limb.c": "24ea25155a7d5689015988a8140e2b6887f350afec9883933092ebb6487c0bf1",
+    "src/graphics/m2_compact.c": "93c38ceaf4672bbe108d23612fee248f83fec2c2658883f0465138d0c118fd62",
+    "src/graphics/m2_compact_public.c": "a24919e71e642ab4c1a6b6b9b7b56dfd9960ec82036a6c3a7f162289701e44cf",
+    "src/graphics/m2_record_private.c": "a95a8485562d1b64ba3aaf613cc912f271fbbaa81decd3ae7cf74864937f7f60",
+    "interfaces/generated/m2_tables.c": "dd23e7167eb442a80157c2e40101075f5f517e7bd57f6de5673eca1db4cb399f",
+    "src/platform/m2_rebuild/wide_math.c": "477d1f4b879fc31614147e91d53f79496db728ac922c1d5995aa409f21504eba",
+    "tests/flight_demo/m2_rebuild/wide_math_bus.c": "1f823d04a342376c09d5273bd0efda6099e5f717188ea172eaecdaef1e12642e",
+    "src/core/m1_runtime.c": "7a6e816ad70e4d5c0859e768ff69109cac4c16c14deff328934a3b2c6d12111c",
+    "src/input/m1_input.c": "9a6f763a41615d58287b9d6b68560f961766648223e1a0af7a4b1e0964211e05",
+    "src/presentation/m1_snapshot.c": "0bc27b247f8b9a678c09c68afa158831477ade48949b8bc9b3631ecc11ca7191",
+    "src/input/m2_rebuild_input.c": "8ba01e0125251cfca67f73077a18faf2f493524e58596a08c2b9a135529e357e",
+    "src/diagnostics/m2_rebuild/camera.c": "cc0f7f24e87a5974159c2afe4a851b785d0c83f69d2af08af5c44950c55d43af",
+    "src/graphics/m2_rebuild.c": "c7aa006fe43630f07819a543df69629eb7bf52f4a26c7ed35f3c8baadbec5e2f",
+    "src/graphics/m2_rebuild_text.c": "4e2dcd0ac533432dc13c940c332ca5c05e5ec057281802e3d630233aceb727ae",
+    "src/platform/m2_rebuild/guard.c": "eff47ff7fc8396b2114e43b498f2818b3317852835e320ec8bda79390c20c4c3",
+    "tests/flight_demo/m2_rebuild/wide_math_oracle.py": "8cb7ef344d70605d348528d0d4923312e5405850162b816a63c93383024ee9a5",
+    "tests/flight_demo/m2_rebuild/limb_oracle.py": "9c27bf1483e222a2e9c6824927293cebc2adf903c90f80933484dfe044919f16",
+    "tests/flight_demo/m2_rebuild/host.c": "9aef0772a8ff2b8dad90fe530bfc2a26cc96fc073dcfd47157176d6069c5fb01",
+    "src/graphics/m2_limb.h": "9dc8a328bdac11cddf683b5d4f0cc3f7550b4ed141fb873c73d46939bf37dc09",
+    "src/platform/m2_rebuild/wide_math.h": "c63b4f0c3d9fe85b5378acb3941c608acc123d22c8600082da50ad08e346575d"
+  }
+}

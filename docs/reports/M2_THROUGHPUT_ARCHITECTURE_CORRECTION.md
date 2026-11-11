@@ -1,0 +1,63 @@
+# M2 throughput architecture correction
+
+**M2 BLOCKED at the integrated cost estimate.** The display layout is resource-feasible. The proposed exact arithmetic path lacks a credible cold and moving-camera bound for the 20 Hz complete frame. The independent, separately authorized PAL and NTSC boot traces both passed. The source baseline is `a46279c15b2e7604a93e7ad8a78cabf58e1f576d`. [Estimate](../evidence/flight-demo/2026-11-09-m2-throughput-architecture/throughput-estimate.json) · [Boot static proof](../evidence/flight-demo/2026-11-09-m2-throughput-architecture/boot-static.json)
+
+## Display feasibility
+
+The private layout keeps the 2,000-byte hidden map and existing alignment. Fixed dynamic slots are indexed by the 640 world cells. Each dynamic tile has at most one possible consumer. An 80-byte bitmap records which world tiles are needed. The visible map and tiles are immutable until their store is hidden. The Platform write seam would accept local tile IDs and derive physical addresses. It would reject incomplete maps, invalid cell-to-tile relationships and visible-store writes. Shared Color RAM and palette retain their owners and initialization lifetime.
+
+| Offset in each bank | Role |
+| --- | --- |
+| `$0000–$07CF` | 1,000 little-endian map entries, built in the hidden generation |
+| `$07D0–$07FF` | Existing alignment |
+| `$0800–$A7FF` | 640 exclusive dynamic world slots |
+| `$A800–$B27F` | 42 immutable tiles for sky, ground and nonblank glyphs |
+| `$B280–$F7FF` | Existing tile-band capacity left unused |
+| `$F800–$F83F` | Existing immutable black tile for spaces and the footer |
+| `$F840–$FFFF` | Existing protected slack |
+
+The two store bases are `$020000` and `$030000`. The pinned VIC-IV model reads little-endian map entries and computes the character address as `(entry & $1FFF) × 64`. FCM fetches eight bytes per row. Trim bits 13–15 stay zero and the two stores reference only their own tiles. A line can cross at most 39 column and 15 row boundaries. The affine horizon therefore mixes at most 55 cells, and each clipped monotone runway raster can visit at most 55. The union bound is 550 dynamic tiles for the horizon and nine segments. The 640-slot reservation also independently bounds allocation. The model carries the exact 320×200 image, including telemetry and blank footer. Actual target scanout and publication timing remain unproven. [Pinned VIC-IV fetch](https://github.com/lgblgblgb/xemu/blob/40dfef0d1d5f56be2469492715c12bdb32c75b67/targets/mega65/vic4.c)
+
+The independent host reconstruction produced byte-identical pixels for the sealed default frame from both maps. Each needed 48 dynamic tiles. A full map, 48 tiles and 96 existing runway writes represent 5,168 copied bytes versus 61,536. The old PF001 byte loop alone would cost at least 134,368 cycles for those bytes. A conservative capacity scenario is 40,080 bytes with 550 tiles and up to 2,880 line writes. This is a sizing scenario using an upper demand bound. A single exact integrated upper bound would have to include row-span fills, raster writes, all map staging and validation, text layout, physical copy setup, and the commit window. In particular, issuing 1,000 individual two-byte copies or retaining the old per-pixel painter would consume much of the savings. The proposed map staging reuses the existing Platform 64-byte buffer after its initialization lifetime. [Host reconstruction and linked arithmetic](../evidence/flight-demo/2026-11-09-m2-throughput-architecture/throughput-estimate.json)
+
+## Integrated estimate gate
+
+The old complete default-frame lower bound is 12,626,832 cycles. A disjoint subset of the existing linked arithmetic alone proves the following floor. These numbers stand on their own because the earlier aggregate includes other role paths.
+
+| Mandatory default-frame arithmetic | Linked CPU cycle minimum |
+| --- | ---: |
+| 162 DELTA operations, each with 12 eight-byte doubles | 1,539,648 |
+| 1,290 multiply rows of six cells | 1,199,700 |
+| 3,456 seven-byte remainder shifts | 1,088,640 |
+| **Disjoint subset** | **3,827,988** |
+
+The 2,025,000-cycle planning allocation is 800,000 for exact numerics, 925,000 for all display work and publication, and 300,000 for five ticks and scheduling. Each is a design allocation. The sealed image's tick envelope tightens from 864,989 to 438,269 cycles under the proved one-command queue invariant. The composition samples one command for the immediately following tick, drains it in stage 3, and has no other producer. The revised conservative envelope still exceeds the 405,000-cycle tick limit. Conversion, polling, guard overhead, interrupts and the commit window still require exact link admission.
+
+The exact DELTA shift can use sign-extended byte/nibble packing. Arithmetic can decode once per bounded group of kernel units. A completed geometry cache can reuse the full pose and relevant Environment/fixture and numeric-contract identities, while registration and telemetry are renewed. Cache hits do not cover changed poses or a cold frame.
+
+Starting a restoring divide at `k = max(1, bit_length(N) − bit_length(D) + 1)` with remainder `N >> k` skips only leading zero quotient bits. The retained host kernel and independent integer reference agreed on all 3,252 cases, including every remaining remainder and quotient, signed rounding and 996 overflow outcomes. It used 189,990 rather than 312,192 bits across that corpus. Independent review found 36 default-frame divisions and 588 normalized bits before the one-bit minimum for zero/small quotients. The maximum in a 305-camera sample was 1,178 bits under that mathematical normalization. Neither sample bounds the camera envelope. [Exact host result](../evidence/flight-demo/2026-11-09-m2-throughput-architecture/normalized-divide.json)
+
+A conservative count is 162 interpolation divisions and 36 perspective divisions across nine segments. Each segment can encounter six cuts with three axis updates, followed by four projection coordinates. The segment's coordinate difference is below `2^38` in Q24, even with rounding, and an interpolation quotient is bounded by that difference. This gives at most 39 normalized interpolation bits. A positive near-plane denominator and the range of the projected numerator give at most 37 normalized perspective bits. This sizes the remaining divider at 7,650 bits. Charging just the existing 315-cycle remainder-shift body at that count gives 2,409,750 cycles. The count combines conservative paths and is not an observed frame. An 800,000-cycle allocation requires a tighter combined clip bound or a faster exact kernel. Retaining the old multiply and DELTA bodies would also exceed it. Only 576 of the 656 resident margin bytes remain after the proposed bitmap and before added code and scratch. Removed code and new kernel sizes require measurement.
+
+**Decision for the next increment.** Authorize a private, bounded exact arithmetic backend with explicit Platform ownership of the hardware math registers, if that seam is chosen. The pinned emulator supplies a 32×32 product, which can reconstruct a signed 48×48 magnitude using exact partial products. Its divider returns `(A << 32) / B`. Wide division needs an exact algorithm and proof of correction, including rounding and overflow. Define the foreground-exclusive lifetime, register and fault behavior, then prove the cold and moving envelope before joining the display representation. The current ABI registry has no admitted math-register seam. No timing, resident fit or scanout was measured for a revised renderer. [Platform ABI](../../interfaces/f65_platform_abi.json5) · [Pinned math implementation](https://github.com/lgblgblgb/xemu/blob/40dfef0d1d5f56be2469492715c12bdb32c75b67/targets/mega65/io_mapper.c)
+
+## Observed boot-only execution
+
+`65AERO-M2-BOOT-TRACE-1` is a separate 3,267-byte PRG with SHA-256 `0e81aa0e2f1440fc12bbd8530afac0c8d98b7f638f0f603a4d60b2af318f79cb`. Its 3,820-byte resident footprint includes 550 BSS and five compiler scratch bytes. The linked application stack envelope is 40 hardware and 25 software bytes with the admitted interrupt frame allowance. The exact HICKUP path uses three bytes on its separate stack. The only foreground root calls `cfentry` and `cfrom_begin`, writes the boot result, and enters a reset-only terminal. It retains the inherited initialization-only message and Attic ROM-backup ownership. There is one reachable `$D640` write, no reachable runtime clock setup, display construction, simulation or DMA submission. [Exact PRG](../evidence/flight-demo/2026-11-09-m2-throughput-architecture/target/BOOT-ONLY.prg) · [Linked accounting](../evidence/flight-demo/2026-11-09-m2-throughput-architecture/build.json)
+
+The pinned native debugger armed Xemu's existing guest breakpoint in the READY injection callback before the PRG copy. It observed each milestone before its guest opcode. The observer changes only the emulator breakpoint, step and pause controls. It reads pending interrupt fields and CIA masks directly without acknowledging them. Between SYS and canonical state, a host input fence would stop before Xemu could process RESTORE. The isolated emulator used disposable in-memory boot media as a startup dependency. It opened no file-backed carrier. [Native address anchors](../evidence/flight-demo/2026-11-09-m2-throughput-architecture/native-observer-anchors.json) · [Pinned pre-opcode path](https://github.com/lgblgblgb/xemu/blob/40dfef0d1d5f56be2469492715c12bdb32c75b67/targets/mega65/mega65.c)
+
+| Observed point | PAL and NTSC |
+| --- | --- |
+| BASIC SYS `$2017` | B `$00`, SP `$01EF`, MAP mask `$8E`. The selected low megabyte and offset are zero, so the entry fetch resolves to bank-zero `$2017`. Pending IRQ/NMI zero and CIA2 interrupt mask zero. |
+| Canonical `$20DB` | MAP zero, B `$02`, SP `$01FF`, software SP `$D000`, CPU ports `$2F/$35`, `$D030=$44`, cartridge registers `$FD/$C1`, IRQ masked. |
+| CF001 before `$222E` | A `$70`, hardware SP `$01F0`, software SP `$CFF8`. Live HICKUP executable slices and ROM hash match the pinned references. |
+| Privileged `$8000` | B `$BF`, SP `$BEFF`, private MAP mask `$30`. Saved context captured in `$D640–$D658`. |
+| Returned `$2231` | Original MAP, B, CPU ports, hardware and software SP, resident bytes and page-one bytes matched. A and `$D67D` became `$6B` from `$6F`, carry set, ROM write protection disabled. Physical ROM bytes matched across the trap. |
+| Terminal `$2300` | `outcome=1`, `cffault=0`, `cfreclaimed=1`, `nmi_seen=0`. Reset-only terminal reached. |
+
+PAL and NTSC used the exact same PRG and pinned emulator/ROM bytes. Whole live HICKUP hashes differ across captures because the private firmware window includes mutable state. The actual CF001 executable slices matched at the checked addresses. This qualifies the restricted path under the captured conditions. It does not qualify the full runtime image or arbitrary interrupt arrival, and no fault was injected into the passing runs. [PAL capture](../evidence/flight-demo/2026-11-09-m2-throughput-architecture/runs/pal/capture.json) · [NTSC capture](../evidence/flight-demo/2026-11-09-m2-throughput-architecture/runs/ntsc/capture.json) · [Pinned trap restoration](https://github.com/lgblgblgb/xemu/blob/40dfef0d1d5f56be2469492715c12bdb32c75b67/targets/mega65/hypervisor.c)
+
+The first PAL setup stopped inside the SDL dummy-window path before injection. The next attempt stopped before SYS execution because the observer rejected an active MAP bit even though its effective address was identical. The pinned mapping policy resolved the check. An initial NTSC capture verified CF001 restoration before a native debugger single-step interrupted the terminal observation. The final observer permits only that exact native displacement while the guest PC and monitor controls still match. The passing NTSC trace reached the terminal. Structured captures and launch identities are sealed here. The raw console files, including incidental host messages, stay local with recorded hashes. [Preserved attempts](../evidence/flight-demo/2026-11-09-m2-throughput-architecture/seal.json)
+
+The 15 existing linked verifier regressions, two focused observer regressions, 16 static CI policy tests, and the sanitized ownership-range check passed. The 162 sealed members in the two prior packets and 480 unrelated paths matched their hashes. Six available historical worktrees matched HEAD and status. Two missing temporary worktrees remain unverified at the Git-worktree tier. The full renderer remains sealed at its existing failed service gate. [Preservation](../evidence/flight-demo/2026-11-09-m2-throughput-architecture/preservation.json)

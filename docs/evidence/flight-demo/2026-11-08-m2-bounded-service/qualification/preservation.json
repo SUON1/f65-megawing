@@ -1,0 +1,46 @@
+{
+  "status": "PASS for all available recorded identities",
+  "baseline": "53ea27cbcd145be625c6e6602eac1f232e41b0cc",
+  "main_ancestor": "9570f0ab427121a4e8f042041a14c89aaaeff9e2",
+  "baseline_tracked_entries": 16419,
+  "baseline_sealed_packet": {
+    "matched": 109,
+    "missing": [],
+    "changed": []
+  },
+  "historical_seal_sha256": "ec07cdec4dff93ca7b3458d66f24e7997a4fe6743e5e0f1b0143bc9ff01dd640",
+  "original_checkout_unrelated": {
+    "matched": 480,
+    "missing": [],
+    "changed": []
+  },
+  "prior_worktrees": {
+    "/Users/slice/Developer/f65-megawing": {
+      "head_matches": true,
+      "status_matches": true
+    },
+    "/private/tmp/f65-m2-final-unbanked-fit": "NOT VERIFIED at Git-worktree tier: missing checkout or .git",
+    "/private/tmp/f65-m2-unbanked-renderer": "NOT VERIFIED at Git-worktree tier: missing checkout or .git",
+    "/Users/slice/.codex/worktrees/physics-v4-review-revisions/f65-megawing": {
+      "head_matches": true,
+      "status_matches": true
+    },
+    "/Users/slice/Developer/f65-megawing-m2-banked-renderer-intent": {
+      "head_matches": true,
+      "status_matches": true
+    },
+    "/Users/slice/Developer/f65-megawing-m2-option-b": {
+      "head_matches": true,
+      "status_matches": true
+    },
+    "/Users/slice/Developer/f65-megawing-m2-residency-feasibility": {
+      "head_matches": true,
+      "status_matches": true
+    },
+    "/Users/slice/Developer/f65-megawing-m2-source-baseline": {
+      "head_matches": true,
+      "status_matches": true
+    }
+  },
+  "scope": "fresh independent clone of the approved branch; no operations that write to the original or other checkouts"
+}

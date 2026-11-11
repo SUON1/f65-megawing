@@ -19,14 +19,24 @@ static uint32_t copies;
 static uint32_t fail_at;
 static int8_t commit_result;
 static uint32_t commit_calls;
+static uint8_t sticky_fault;
+static uint8_t fault_after_copy;
+static M2Camera *camera_after_copy;
+static M2RebuildRenderer *generation_after_copy;
+static const uint16_t unit_costs[M2RB_FAILED] = {1, 1, 1, 1, 1, 1, 1, 1};
 
 // Explicit synthetic tick input; never target execution/timing evidence.
 static uint32_t current_tick = 1000u;
 
 static uint8_t dispatch(M2RebuildRenderer *renderer, M1Snapshots *pool,
-                         const M2Camera *camera, uint32_t budget)
+                         const M2Camera *camera, uint16_t budget)
 {
-    return m2rb_dispatch(renderer, pool, camera, budget, current_tick);
+    return m2rb_dispatch(renderer, pool, camera, budget, unit_costs, current_tick);
+}
+
+uint8_t m2rb_io_fault(void)
+{
+    return sticky_fault;
 }
 
 uint8_t m2rb_io_write(uint8_t store, uint16_t offset,
@@ -42,6 +52,21 @@ uint8_t m2rb_io_write(uint8_t store, uint16_t offset,
         return 0u;
     }
     memcpy(&stores[store][offset], bytes, count);
+    if (camera_after_copy != NULL)
+    {
+        // Deliberately violate the no-writer proof while retaining the revision.
+        ++camera_after_copy->yaw;
+        camera_after_copy = NULL;
+    }
+    if (generation_after_copy != NULL)
+    {
+        ++generation_after_copy->generation;
+        generation_after_copy = NULL;
+    }
+    if (fault_after_copy)
+    {
+        sticky_fault = 1u;
+    }
     return 1u;
 }
 
@@ -64,6 +89,10 @@ static void reset_backend(void)
     copies = 0u;
     fail_at = 0u;
     commit_calls = 0u;
+    sticky_fault = 0u;
+    fault_after_copy = 0u;
+    camera_after_copy = NULL;
+    generation_after_copy = NULL;
     commit_result = 1;
     current_tick = 1000u;
 }
@@ -77,7 +106,8 @@ static void publish(M1Snapshots *pool, uint32_t tick)
 static void until(M2RebuildRenderer *renderer, M1Snapshots *pool,
                   const M2Camera *camera, uint8_t phase)
 {
-    for (uint32_t work = 0u; work < 16000u; ++work)
+    // Nine <=3000-step programs + bounded horizon/paint/copy/raster/text <40000.
+    for (uint32_t work = 0u; work < 40000u; ++work)
     {
         if (renderer->phase == phase)
         {
@@ -188,9 +218,11 @@ static void guard_tests(void)
     assert(!m2rb_guard(100u, 100u, 1u, 1u));
     assert(!m2rb_guard(101u, 100u, 1u, 1u));
     assert(!m2rb_guard(100u, 1000u, 899u, 1u));
-    assert(m2rb_guard(100u, 1000u, 898u, 1u));
-    assert(m2rb_guard(UINT32_MAX - 9u, 20u, 20u, 9u));
+    assert(m2rb_guard(100u, 1000u, 898u, 1u) == 898u);
+    assert(m2rb_guard(UINT32_MAX - 9u, 20u, 20u, 9u) == 20u);
     assert(!m2rb_guard(0u, 0x80000000u, 1u, 1u));
+    assert(!m2rb_guard(0u, 100000u, 65536u, 1u));
+    assert(m2rb_guard(0u, 100000u, 1u, 1u) == UINT16_MAX);
 }
 
 static void complete_frame(const char *output)
@@ -205,7 +237,23 @@ static void complete_frame(const char *output)
     M2RebuildRenderer unchanged = renderer;
     assert(!dispatch(&renderer, &pool, &camera, 0u));
     assert(memcmp(&unchanged, &renderer, sizeof(renderer)) == 0);
-    until(&renderer, &pool, &camera, M2RB_COMMIT);
+    uint32_t visits[M2RB_FAILED] = {0};
+    uint32_t division_bits = 0u;
+    uint32_t multiply_rows = 0u;
+    for (uint32_t work = 0u; renderer.phase != M2RB_COMMIT; ++work)
+    {
+        assert(work < 40000u && renderer.phase < M2RB_FAILED);
+        ++visits[renderer.phase];
+        if (renderer.phase == M2RB_PREPARE || renderer.phase == M2RB_PROJECT)
+        {
+            division_bits += renderer.geometry.waiting && renderer.geometry.job.phase == 2u;
+            multiply_rows += renderer.geometry.waiting && renderer.geometry.job.phase == 1u;
+        }
+        assert(dispatch(&renderer, &pool, &camera, 1u));
+    }
+    printf("FRAME WORK %u %u %u %u %u %u %u 1 DIVBITS %u MULROWS %u PIXELS %u\n",
+           visits[0], visits[1], visits[2], visits[3], visits[4], visits[5], visits[6],
+           division_bits, multiply_rows, copies - visits[M2RB_COPY]);
     assert(renderer.prepared_count == 1u && renderer.projected_count == 9u);
     assert(renderer.commits == 0u && !renderer.shown && !selected_valid);
     for (uint8_t i = 0u; i < 3u; ++i)
@@ -220,7 +268,7 @@ static void complete_frame(const char *output)
     m2rb_text_row(&renderer, 6u);
     assert(memcmp(renderer.text, "ALTITUDE: NOT IMPLEMENTED", 25u) == 0);
     m2rb_text_row(&renderer, 7u);
-    assert(memcmp(renderer.text, "AIRSPEED: NOT IMPLEMENTED", 25u) == 0);
+    assert(memcmp(renderer.text + 15u, "AIRSPEED: NOT IMPLEMENTED", 25u) == 0);
     commit_result = 0;
     assert(dispatch(&renderer, &pool, &camera, 1u));
     assert(!renderer.shown && renderer.phase == M2RB_COMMIT);
@@ -251,6 +299,99 @@ static void complete_frame(const char *output)
     assert(renderer.fault == 4u && renderer.phase == M2RB_FAILED);
     assert(renderer.front == previous_store && selected == previous_store);
     assert(memcmp(front_copy, stores[selected], sizeof(front_copy)) == 0);
+
+    // Reconstruct exactly the same frame with mixed-cost batches. These costs
+    // are synthetic, deliberately different for every role.
+    const uint16_t costs[M2RB_FAILED] = {2, 3, 7, 5, 11, 13, 17, 19};
+    reset_backend();
+    m2rb_renderer_init(&renderer);
+    memset(&pool, 0, sizeof(pool));
+    publish(&pool, 42u);
+    assert(m2rb_dispatch(&renderer, &pool, &camera, UINT16_MAX, costs, current_tick));
+    assert(renderer.phase == M2RB_PREPARE && copies == 0u);
+    uint32_t batches = 0u;
+    while (renderer.phase != M2RB_COMMIT)
+    {
+        assert(++batches < 40000u && renderer.phase < M2RB_FAILED);
+        // Changing pose without changing revision must cancel at every batch
+        // entry. The clone only takes this pre-continuation rejection path.
+        M2Camera changed = camera;
+        ++changed.yaw;
+        M2RebuildRenderer rejected = renderer;
+        M1Snapshots rejected_pool = pool;
+        uint32_t previous_copies = copies;
+        assert(m2rb_dispatch(&rejected, &rejected_pool, &changed, 97u, costs, current_tick));
+        assert(rejected.phase == M2RB_BEGIN && rejected.cancellations == 1u);
+        assert(copies == previous_copies && !selected_valid);
+        assert(m2rb_dispatch(&renderer, &pool, &camera, 97u, costs, current_tick));
+        assert(!selected_valid && commit_calls == 0u);
+    }
+    commit_result = 0;
+    assert(m2rb_dispatch(&renderer, &pool, &camera, UINT16_MAX, costs, current_tick));
+    assert(commit_calls == 1u && renderer.phase == M2RB_COMMIT && !selected_valid);
+    commit_result = 1;
+    assert(m2rb_dispatch(&renderer, &pool, &camera, UINT16_MAX, costs, current_tick));
+    assert(commit_calls == 2u && renderer.phase == M2RB_BEGIN && renderer.commits == 1u);
+    assert(memcmp(front_copy, stores[selected], sizeof(front_copy)) == 0);
+    printf("BATCH PASS: %u mixed-cost batches and same-revision camera changes\n", batches);
+}
+
+static void batch_budget_and_exit_faults(void)
+{
+    const uint16_t costs[M2RB_FAILED] = {1, 1, 1, 3, 5, 1, 1, 1};
+    for (uint8_t injection = 0u; injection < 4u; ++injection)
+    {
+        M2RebuildRenderer renderer;
+        M1Snapshots pool = {0};
+        M2Camera camera;
+        reset_backend();
+        m2rb_camera_init(&camera);
+        m2rb_renderer_init(&renderer);
+        publish(&pool, 42u);
+        until(&renderer, &pool, &camera, M2RB_BACKGROUND);
+        assert(!m2rb_dispatch(&renderer, &pool, &camera, 2u, costs, current_tick));
+        assert(renderer.tile_row == 0u && copies == 0u);
+        // Eight rows fit. The next role costs five counts and only four remain.
+        assert(m2rb_dispatch(&renderer, &pool, &camera, 28u, costs, current_tick));
+        assert(renderer.phase == M2RB_COPY && copies == 0u);
+        uint16_t blocked[M2RB_FAILED] = {0};
+        assert(!m2rb_dispatch(&renderer, &pool, &camera, UINT16_MAX, blocked, current_tick));
+        assert(copies == 0u);
+        if (injection == 0u)
+        {
+            camera_after_copy = &camera;
+        }
+        else if (injection == 1u)
+        {
+            generation_after_copy = &renderer;
+        }
+        else if (injection == 2u)
+        {
+            fault_after_copy = 1u;
+        }
+        else
+        {
+            ++renderer.bundles[renderer.destination].registration.generation;
+        }
+        // Grant covers COPY plus one BACKGROUND row. A sticky fault stops before
+        // the second operation, and a stale generation stops before any write.
+        assert(m2rb_dispatch(&renderer, &pool, &camera, 8u, costs, current_tick));
+        assert(!selected_valid && commit_calls == 0u);
+        assert(copies == (injection == 3u ? 0u : 1u));
+        if (injection == 0u)
+        {
+            assert(renderer.phase == M2RB_BEGIN && renderer.cancellations == 1u);
+        }
+        else
+        {
+            assert(renderer.phase == M2RB_FAILED);
+            assert(renderer.fault == (injection == 2u ? 10u : 9u));
+        }
+        if (injection == 2u)
+        {
+            assert(renderer.tile_row == 0u);
+        }
+    }
 }
 
 static void source_age_generations(void)
@@ -401,11 +542,8 @@ static void held_and_replay(void)
                 {
                     assert(m2rb_camera_edges(&camera[mode], M2RB_YAW_RIGHT) == 1);
                 }
-                uint8_t quanta = mode == 0u ? 40u : 1u;
-                for (uint8_t work = 0u; work < quanta; ++work)
-                {
-                    assert(dispatch(&renderer[mode], &pools[mode], &camera[mode], 1u));
-                }
+                uint16_t work_counts = mode == 0u ? 40u : 1u;
+                assert(dispatch(&renderer[mode], &pools[mode], &camera[mode], work_counts));
             }
         }
         assert(core[0].tick == tick + 1u && core[0].checksum == core[1].checksum);
@@ -417,15 +555,111 @@ static void held_and_replay(void)
     m1_release(&pools[2], held);
 }
 
+static void exact_horizon_spans(void)
+{
+    static const int16_t tilts[] = {-60,-59,-45,-1,0,1,45,59,60};
+    uint32_t comparisons = 0u;
+    uint16_t maximum_work = 0u;
+    for (uint8_t pitch = 0u; pitch < sizeof(tilts) / sizeof(tilts[0]); ++pitch)
+    {
+        for (uint8_t roll = 0u; roll < sizeof(tilts) / sizeof(tilts[0]); ++roll)
+        {
+            for (uint16_t yaw = 0u; yaw < 360u; yaw += 89u)
+            {
+                M2Camera camera;
+                m2rb_camera_init(&camera);
+                camera.pitch = tilts[pitch];
+                camera.roll = tilts[roll];
+                camera.yaw = (int16_t)yaw;
+                struct M2Prepared prepared;
+                assert(m2_prepare(&prepared, &camera));
+                M2Compact work;
+                M2Horizon horizon;
+                m2c_horizon_begin(&horizon);
+                uint16_t count = 0u;
+                int8_t result;
+                do
+                {
+                    result = m2c_horizon_service(&horizon, &work, &prepared);
+                    // <=64 command/setup services +320 edge moves +128 rows.
+                    assert(++count <= 512u && result >= 0);
+                } while (result == 0);
+                if (count > maximum_work)
+                {
+                    maximum_work = count;
+                }
+                for (uint16_t y = 0u; y < 128u; ++y)
+                {
+                    for (uint16_t x = 0u; x < 320u; ++x)
+                    {
+                        int64_t down = prepared.rotation.m[2] * 320L
+                            + prepared.rotation.m[5] * (2L * x - 319L)
+                            + prepared.rotation.m[8] * (2L * y - 127L);
+                        uint8_t ground = horizon.positive ? x >= horizon.boundary[y]
+                                                         : x < horizon.boundary[y];
+                        assert(ground == (down > 0));
+                        ++comparisons;
+                    }
+                }
+            }
+        }
+    }
+    printf("HORIZON PASS: %u exact pixels, max %u preparation services (not cycles)\n",
+           comparisons, maximum_work);
+}
+
+static void cancel_every_numeric_boundary(void)
+{
+    M2RebuildRenderer renderer;
+    M1Snapshots pool = {0};
+    M2Camera camera;
+    m2rb_camera_init(&camera);
+    m2rb_renderer_init(&renderer);
+    reset_backend();
+    publish(&pool, 42u);
+    uint32_t cutpoints = 0u;
+    for (uint32_t steps = 0u; steps < 40000u; ++steps)
+    {
+        if (renderer.phase == M2RB_BACKGROUND)
+        {
+            printf("CANCELLATION PASS: %u numeric continuation cutpoints\n", cutpoints);
+            return;
+        }
+        if (renderer.phase == M2RB_PREPARE || renderer.phase == M2RB_PROJECT)
+        {
+            M2RebuildRenderer cancelled = renderer;
+            M1Snapshots cancelled_pool = pool;
+            M2Camera changed = camera;
+            assert(m2rb_camera_edges(&changed, M2RB_YAW_RIGHT) == 1);
+            assert(dispatch(&cancelled, &cancelled_pool, &changed, 1u));
+            assert(cancelled.phase == M2RB_BEGIN && !cancelled.prepared.ready);
+            assert(cancelled.cancellations == 1u && copies == 0u);
+            // The captured snapshot was already released. A fresh generation
+            // waits for a new publication; the cloned test must not consume
+            // the original renderer's pool.
+            publish(&cancelled_pool, 43u);
+            assert(dispatch(&cancelled, &cancelled_pool, &changed, 1u));
+            assert(cancelled.phase == M2RB_PREPARE && cancelled.geometry.job.phase == 0u);
+            assert(cancelled.prepared.camera.revision == changed.revision);
+            ++cutpoints;
+        }
+        assert(dispatch(&renderer, &pool, &camera, 1u) && !renderer.fault);
+    }
+    assert(0 && "numeric preparation must exhaust its proved cardinality");
+}
+
 int main(int argc, char **argv)
 {
     assert(argc == 2);
     camera_tests();
     guard_tests();
     complete_frame(argv[1]);
+    batch_budget_and_exit_faults();
     source_age_generations();
     cancellation_and_faults();
     held_and_replay();
+    exact_horizon_spans();
+    cancel_every_numeric_boundary();
     puts("HOST PASS: frame/cache/camera/horizon/cancellation/held/fault/exhaustion/guard/replay DE675132");
     printf("host workspace %zu bytes; NOT target ABI/stack/timing evidence\n", sizeof(M2RebuildRenderer));
     return 0;

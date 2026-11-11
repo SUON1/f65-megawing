@@ -1,0 +1,421 @@
+     VMA      LMA     Size Align Out     In      Symbol
+       0        0        0     1 __basic_zp_start = 0x0002
+       0        0        0     1 __basic_zp_end = 0x0090
+       0        0        0     1 __rc0 = __basic_zp_start
+       0        0        0     1 __rc1 = __rc0 + 1
+       0        0        0     1 PROVIDE(__rc2 = __rc1 + 1)
+       0        0        0     1 __rc3 = __rc2 + 1
+       0        0        0     1 PROVIDE(__rc4 = __rc3 + 1)
+       0        0        0     1 __rc5 = __rc4 + 1
+       0        0        0     1 PROVIDE(__rc6 = __rc5 + 1)
+       0        0        0     1 __rc7 = __rc6 + 1
+       0        0        0     1 PROVIDE(__rc8 = __rc7 + 1)
+       0        0        0     1 __rc9 = __rc8 + 1
+       0        0        0     1 PROVIDE(__rc10 = __rc9 + 1)
+       0        0        0     1 __rc11 = __rc10 + 1
+       0        0        0     1 PROVIDE(__rc12 = __rc11 + 1)
+       0        0        0     1 __rc13 = __rc12 + 1
+       0        0        0     1 PROVIDE(__rc14 = __rc13 + 1)
+       0        0        0     1 __rc15 = __rc14 + 1
+       0        0        0     1 PROVIDE(__rc16 = __rc15 + 1)
+       0        0        0     1 __rc17 = __rc16 + 1
+       0        0        0     1 PROVIDE(__rc18 = __rc17 + 1)
+       0        0        0     1 __rc19 = __rc18 + 1
+       0        0        0     1 PROVIDE(__rc20 = __rc19 + 1)
+       0        0        0     1 __rc21 = __rc20 + 1
+       0        0        0     1 PROVIDE(__rc22 = __rc21 + 1)
+       0        0        0     1 __rc23 = __rc22 + 1
+       0        0        0     1 PROVIDE(__rc24 = __rc23 + 1)
+       0        0        0     1 __rc25 = __rc24 + 1
+       0        0        0     1 PROVIDE(__rc26 = __rc25 + 1)
+       0        0        0     1 __rc27 = __rc26 + 1
+       0        0        0     1 PROVIDE(__rc28 = __rc27 + 1)
+       0        0        0     1 __rc29 = __rc28 + 1
+       0        0        0     1 PROVIDE(__rc30 = __rc29 + 1)
+       0        0        0     1 __rc31 = __rc30 + 1
+       0        0        0     1 __basic_zp_size = __basic_zp_end - __basic_zp_start
+    2001     2001       16     1 .basic_header
+    2001     2001       16     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/basic-header.o:(.basic_header)
+    2015     2015        0     1                 next_line
+      22       22        0     1 .zp.data
+      22       22        0     1         __zp_data_start = .
+      22       22        0     1 __zp_data_load_start = LOADADDR(.zp.data)
+      22       22        0     1 __zp_data_size = SIZEOF(.zp.data)
+      22       22        0     1 .zp.bss
+      22       22        0     1         __zp_bss_start = .
+      22       22        0     1 __zp_bss_size = SIZEOF(.zp.bss)
+    2017     2017     5f2b     1 .text
+    2017     2017        0     1         _init = .
+    2017     2017        0     1         _start = .
+    2017     2017       61     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/startup_45gs02-912ed9.o:(.init.008)
+    2017     2017        0     1                 m2rb_startup
+    2078     2078        0     1                 m2rb_normalized
+    2078     2078        8     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(init-stack.S.obj):(.init.100)
+    2078     2078        0     1                 __do_init_stack
+    2080     2080        3     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(zero-bss.c.obj):(.init.200)
+    2080     2080        0     1                 __do_zero_bss
+    2083     2083        3     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/common/lib/crt0.o:(.call_main)
+    2086     2086        3     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(exit-custom.S.obj):(.after_main)
+    2086     2086        0     1                 __after_main
+    2089     2089        0     1         _fini = .
+    2089     2089        1     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/common/lib/crt0.o:(.fini_rts)
+    208a     208a      140     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/qualification_45gs02-467e42.o:(.text.r0f_pf)
+    208a     208a        0     1                 r0f_pf_enter
+    20ea     20ea        0     1                 r0f_pf_start_irq
+    2101     2101        0     1                 r0f_pf_stop_irq
+    210d     210d        0     1                 r0f_pf_irq
+    2139     2139        0     1                 r0f_pf_nmi
+    2141     2141        0     1                 r0f_pf_flat_copy
+    217e     217e        0     1                 r0f_pf_register_probe
+    21ca     21ca       b4     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/combined_45gs02-f3e8b4.o:(.text.r0fc_platform)
+    21ca     21ca        0     1                 r0fc_rom_toggle
+    21ed     21ed        0     1                 r0fc_stack_seed
+    2234     2234        0     1                 r0fc_stack_measure
+    227e     227e        4     1         /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/startup_45gs02-912ed9.o:(.text.m2rb_early_stop)
+    227e     227e        0     1                 m2rb_early_stop
+    2282     2282       13     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/mega65/lib/libcrt0.a(zero-bss.c.obj):(.text.__zero_bss)
+    2282     2282       13     1                 __zero_bss
+    2295     2295       77     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.m2_point_valid)
+    2295     2295       77     1                 m2_point_valid
+    230c     230c      2cf     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.m2_fixture_segment)
+    230c     230c      2cf     1                 m2_fixture_segment
+    25db     25db       31     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.m2w_i32)
+    25db     25db       31     1                 m2w_i32
+    260c     260c       29     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.m2w_negate)
+    260c     260c       29     1                 m2w_negate
+    2635     2635       4b     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.m2w_add)
+    2635     2635       4b     1                 m2w_add
+    2680     2680       15     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.m2w_double)
+    2680     2680       15     1                 m2w_double
+    2695     2695       66     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.m2w_compare)
+    2695     2695       66     1                 m2w_compare
+    26fb     26fb       59     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.m2w_positive)
+    26fb     26fb       59     1                 m2w_positive
+    2754     2754       5b     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.m2w_narrow)
+    2754     2754       5b     1                 m2w_narrow
+    27af     27af       ad     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.m2l_multiply)
+    27af     27af       ad     1                 m2l_multiply
+    285c     285c       6b     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.magnitude)
+    285c     285c       6b     1                 magnitude
+    28c7     28c7       5d     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.m2l_divide)
+    28c7     28c7       5d     1                 m2l_divide
+    2924     2924      1bf     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.m2l_service)
+    2924     2924      1bf     1                 m2l_service
+    2ae3     2ae3      13f     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.finish)
+    2ae3     2ae3      13f     1                 finish
+    2c22     2c22       28     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.remainder_double)
+    2c22     2c22       28     1                 remainder_double
+    2c4a     2c4a       2f     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.remainder_ge)
+    2c4a     2c4a       2f     1                 remainder_ge
+    2c79     2c79        a     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.m2c_prepare_begin)
+    2c79     2c79        a     1                 m2c_prepare_begin
+    2c83     2c83      24a     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.m2c_prepare_service)
+    2c83     2c83      24a     1                 m2c_prepare_service
+    2ecd     2ecd       be     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.sine)
+    2ecd     2ecd       be     1                 sine
+    2f8b     2f8b       89     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.m2c_project_begin)
+    2f8b     2f8b       89     1                 m2c_project_begin
+    3014     3014      779     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.m2c_project_service)
+    3014     3014      779     1                 m2c_project_service
+    378d     378d      1c9     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.distance)
+    378d     378d      1c9     1                 distance
+    3956     3956        4     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.m2c_horizon_begin)
+    3956     3956        4     1                 m2c_horizon_begin
+    395a     395a      2e3     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.m2c_horizon_service)
+    395a     395a      2e3     1                 m2c_horizon_service
+    3c3d     3c3d       f4     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.m2_camera_valid)
+    3c3d     3c3d       f4     1                 m2_camera_valid
+    3d31     3d31      37c     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.m2_raster_begin)
+    3d31     3d31      37c     1                 m2_raster_begin
+    40ad     40ad       43     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.raster_coordinate)
+    40ad     40ad       43     1                 raster_coordinate
+    40f0     40f0      1b9     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.m2_registration_prepared)
+    40f0     40f0      1b9     1                 m2_registration_prepared
+    42a9     42a9      107     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.m2_raster_next)
+    42a9     42a9      107     1                 m2_raster_next
+    43b0     43b0       24     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.m1_core_init)
+    43b0     43b0       24     1                 m1_core_init
+    43d4     43d4      12c     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.m1_command)
+    43d4     43d4      12c     1                 m1_command
+    4500     4500      32d     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.m1_tick)
+    4500     4500      32d     1                 m1_tick
+    482d     482d       67     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.m1_input_sample)
+    482d     482d       67     1                 m1_input_sample
+    4894     4894       6c     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.m1_extract)
+    4894     4894       6c     1                 m1_extract
+    4900     4900       95     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.m1_publish)
+    4900     4900       95     1                 m1_publish
+    4995     4995      104     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.m1_acquire)
+    4995     4995      104     1                 m1_acquire
+    4a99     4a99       10     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.m1_release)
+    4a99     4a99       10     1                 m1_release
+    4aa9     4aa9       1f     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.m2rb_input_edges)
+    4aa9     4aa9       1f     1                 m2rb_input_edges
+    4ac8     4ac8       b6     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.m2rb_camera_init)
+    4ac8     4ac8       b6     1                 m2rb_camera_init
+    4b7e     4b7e      131     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.m2rb_camera_equal)
+    4b7e     4b7e      131     1                 m2rb_camera_equal
+    4caf     4caf      31b     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.m2rb_camera_edges)
+    4caf     4caf      31b     1                 m2rb_camera_edges
+    4fca     4fca       50     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.clamp)
+    4fca     4fca       50     1                 clamp
+    501a     501a       13     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.m2rb_renderer_init)
+    501a     501a       13     1                 m2rb_renderer_init
+    502d     502d       f4     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.m2rb_dispatch)
+    502d     502d       f4     1                 m2rb_dispatch
+    5121     5121       e4     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.same_camera)
+    5121     5121       e4     1                 same_camera
+    5205     5205       4b     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.increment)
+    5205     5205       4b     1                 increment
+    5250     5250       ea     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.begin)
+    5250     5250       ea     1                 begin
+    533a     533a      10c     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.prepare)
+    533a     533a      10c     1                 prepare
+    5446     5446       ce     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.project)
+    5446     5446       ce     1                 project
+    5514     5514      13c     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.background)
+    5514     5514      13c     1                 background
+    5650     5650       57     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.copy_tile)
+    5650     5650       57     1                 copy_tile
+    56a7     56a7      15f     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.line)
+    56a7     56a7      15f     1                 line
+    5806     5806      14a     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.text)
+    5806     5806      14a     1                 text
+    5950     5950       37     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.commit)
+    5950     5950       37     1                 commit
+    5987     5987      28e     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.bundle_valid)
+    5987     5987      28e     1                 bundle_valid
+    5c15     5c15        c     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.fail)
+    5c15     5c15        c     1                 fail
+    5c21     5c21       a7     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.m2rb_text_row)
+    5c21     5c21       a7     1                 m2rb_text_row
+    5cc8     5cc8      231     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.number)
+    5cc8     5cc8      231     1                 number
+    5ef9     5ef9       da     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.m2rb_glyph)
+    5ef9     5ef9       da     1                 m2rb_glyph
+    5fd3     5fd3       cc     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.m2rb_guard)
+    5fd3     5fd3       cc     1                 m2rb_guard
+    609f     609f      262     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.m1_platform_begin)
+    609f     609f      262     1                 m1_platform_begin
+    6301     6301        3     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.m1_platform_now)
+    6301     6301        3     1                 m1_platform_now
+    6304     6304       16     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.m1_platform_period)
+    6304     6304       16     1                 m1_platform_period
+    631a     631a       11     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.m1_platform_key)
+    631a     631a       11     1                 m1_platform_key
+    632b     632b       12     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.m1_platform_fault)
+    632b     632b       12     1                 m1_platform_fault
+    633d     633d        9     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.cfput16)
+    633d     633d        9     1                 cfput16
+    6346     6346       1d     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.cfput32)
+    6346     6346       1d     1                 cfput32
+    6363     6363       38     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.cfline)
+    6363     6363       38     1                 cfline
+    639b     639b        c     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.screen_byte)
+    639b     639b        c     1                 screen_byte
+    63a7     63a7      1cf     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.cfcopy)
+    63a7     63a7      1cf     1                 cfcopy
+    6576     6576      1bd     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.cfphysical_crc)
+    6576     6576      1bd     1                 cfphysical_crc
+    6733     6733       54     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.crc_byte)
+    6733     6733       54     1                 crc_byte
+    6787     6787       7a     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.cfentry)
+    6787     6787       7a     1                 cfentry
+    6801     6801      222     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.cfrom_begin)
+    6801     6801      222     1                 cfrom_begin
+    6a23     6a23       33     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.cfclock_begin)
+    6a23     6a23       33     1                 cfclock_begin
+    6a56     6a56       8e     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.cfnow)
+    6a56     6a56       8e     1                 cfnow
+    6ae4     6ae4      285     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.cfratio)
+    6ae4     6ae4      285     1                 cfratio
+    6d69     6d69      15f     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.r0fc_range)
+    6d69     6d69      15f     1                 r0fc_range
+    6ec8     6ec8       ba     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.inside)
+    6ec8     6ec8       ba     1                 inside
+    6f82     6f82      102     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.m2rb_io_write)
+    6f82     6f82      102     1                 m2rb_io_write
+    7084     7084       17     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.store_base)
+    7084     7084       17     1                 store_base
+    709b     709b      176     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.copy)
+    709b     709b      176     1                 copy
+    7211     7211      234     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.m2rb_platform_init)
+    7211     7211      234     1                 m2rb_platform_init
+    7445     7445      242     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.initialize_store)
+    7445     7445      242     1                 initialize_store
+    7687     7687       25     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.word)
+    7687     7687       25     1                 word
+    76ac     76ac       a9     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.m2rb_io_commit)
+    76ac     76ac       a9     1                 m2rb_io_commit
+    7755     7755       21     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.raster)
+    7755     7755       21     1                 raster
+    7776     7776       52     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.m2rb_platform_keys)
+    7776     7776       52     1                 m2rb_platform_keys
+    77c8     77c8      259     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.main)
+    77c8     77c8      259     1                 main
+    7a21     7a21        5     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.stop)
+    7a21     7a21        5     1                 stop
+    7a26     7a26        5     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.exit)
+    7a26     7a26        5     1                 exit
+    7a2b     7a2b       24     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.memcpy)
+    7a2b     7a2b       24     1                 memcpy
+    7a4f     7a4f       3b     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.memcmp)
+    7a4f     7a4f       3b     1                 memcmp
+    7a8a     7a8a       1c     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.__memset)
+    7a8a     7a8a       1c     1                 __memset
+    7aa6     7aa6        b     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.__ashlqi3)
+    7aa6     7aa6        b     1                 __ashlqi3
+    7ab1     7ab1       13     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.__ashlhi3)
+    7ab1     7ab1       13     1                 __ashlhi3
+    7ac4     7ac4        b     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.__lshrqi3)
+    7ac4     7ac4        b     1                 __lshrqi3
+    7acf     7acf       13     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.__lshrhi3)
+    7acf     7acf       13     1                 __lshrhi3
+    7ae2     7ae2       17     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.__lshrsi3)
+    7ae2     7ae2       17     1                 __lshrsi3
+    7af9     7af9       a6     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.__umodhi3)
+    7af9     7af9       a6     1                 __umodhi3
+    7b9f     7b9f       d8     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.__udivmodhi4)
+    7b9f     7b9f       d8     1                 __udivmodhi4
+    7c77     7c77       6e     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.__modhi3)
+    7c77     7c77       6e     1                 __modhi3
+    7ce5     7ce5      1b2     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.__udivmodsi4)
+    7ce5     7ce5      1b2     1                 __udivmodsi4
+    7e97     7e97       32     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.__mulhi3)
+    7e97     7e97       32     1                 __mulhi3
+    7ec9     7ec9       79     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.text.__mulsi3)
+    7ec9     7ec9       79     1                 __mulsi3
+    7f42     7f42        0     1         __init_array_start = .
+    7f42     7f42        0     1         __init_array_end = .
+    7f42     7f42        0     1         __fini_array_start = .
+    7f42     7f42        0     1         __fini_array_end = .
+    7f48     7f48      66b     8 .rodata
+    7f48     7f48      2d8     8         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.rodata.m2_sine_q46)
+    7f48     7f48      2d8     1                 m2_sine_q46
+    8220     8220        1     1         /Users/slice/Developer/f65-megawing/toolchain/runtime/llvm-mos/bin/../mos-platform/common/lib/libcrt.a(const.S.obj):(.rodata)
+    8220     8220        0     1                 __set_v
+    8221     8221       38     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.rodata.m2c_prepare_service.products)
+    8221     8221       38     1                 m2c_prepare_service.products
+    8259     8259        c     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.rodata.m2rb_camera_edges.minimum)
+    8259     8259        c     1                 m2rb_camera_edges.minimum
+    8265     8265        c     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.rodata.m2rb_camera_edges.maximum)
+    8265     8265        c     1                 m2rb_camera_edges.maximum
+    8271     8271        9     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.rodata.m2rb_segment_ids)
+    8271     8271        9     1                 m2rb_segment_ids
+    827a     827a       10     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.rodata.m2rb_text_row.templates)
+    827a     827a       10     1                 m2rb_text_row.templates
+    828a     828a      16a     1         <internal>:(.rodata.str1.1)
+    83f4     83f4       4e     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.rodata.fields)
+    83f4     83f4       4e     1                 fields
+    8442     8442      11f     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.rodata.m2rb_glyph.rows)
+    8442     8442      11f     1                 m2rb_glyph.rows
+    8561     8561       38     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.rodata.r0fc_range.ranges)
+    8561     8561       38     1                 r0fc_range.ranges
+    8599     8599        d     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.rodata.m2rb_platform_keys.rows)
+    8599     8599        d     1                 m2rb_platform_keys.rows
+    85a6     85a6        d     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.rodata.m2rb_platform_keys.masks)
+    85a6     85a6        d     1                 m2rb_platform_keys.masks
+    85b3     85b3        0     1 .data
+    85b3     85b3        0     1         __data_start = .
+    85b3     85b3        0     1         __data_end = .
+    85b3     85b3        0     1 __data_load_start = LOADADDR(.data)
+    85b3     85b3        0     1 __data_size = SIZEOF(.data)
+    85b3     85b3      7aa     1 .bss
+    85b3     85b3        0     1         __bss_start = .
+    85b3     85b3        4     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.bss.period_q16)
+    85b3     85b3        4     1                 period_q16
+    85b7     85b7        1     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.bss.cfreclaimed)
+    85b7     85b7        1     1                 cfreclaimed
+    85b8     85b8        1     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.bss.backup_valid)
+    85b8     85b8        1     1                 backup_valid
+    85b9     85b9        1     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.bss.cffault)
+    85b9     85b9        1     1                 cffault
+    85ba     85ba       ff     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.bss.block)
+    85ba     85ba       ff     1                 block
+    86b9     86b9        1     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.bss.r0f_pf_cpu_port)
+    86b9     86b9        1     1                 r0f_pf_cpu_port
+    86ba     86ba        1     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.bss.r0f_pf_stack_high)
+    86ba     86ba        1     1                 r0f_pf_stack_high
+    86bb     86bb       ff     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.bss.cfworkspace)
+    86bb     86bb       ff     1                 cfworkspace
+    87ba     87ba        1     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.bss.features_open)
+    87ba     87ba        1     1                 features_open
+    87bb     87bb        1     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.bss.r0fc_trap_flags)
+    87bb     87bb        1     1                 r0fc_trap_flags
+    87bc     87bc        1     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.bss.r0fc_trap_base)
+    87bc     87bc        1     1                 r0fc_trap_base
+    87bd     87bd        1     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.bss.r0f_pf_nmi_seen)
+    87bd     87bd        1     1                 r0f_pf_nmi_seen
+    87be     87be        2     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.bss.r0f_pf_irq_count)
+    87be     87be        2     1                 r0f_pf_irq_count
+    87c0     87c0        1     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.bss.r0fc_hardware_low)
+    87c0     87c0        1     1                 r0fc_hardware_low
+    87c1     87c1        2     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.bss.r0fc_software_low)
+    87c1     87c1        2     1                 r0fc_software_low
+    87c3     87c3        1     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.bss.r0f_pf_irq_seq)
+    87c3     87c3        1     1                 r0f_pf_irq_seq
+    87c4     87c4        1     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.bss.r0f_pf_irq_seen)
+    87c4     87c4        1     1                 r0f_pf_irq_seen
+    87c5     87c5        7     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.bss.r0f_pf_probe_regs)
+    87c5     87c5        7     1                 r0f_pf_probe_regs
+    87cc     87cc        1     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.bss.r0f_pf_copy_ok)
+    87cc     87cc        1     1                 r0f_pf_copy_ok
+    87cd     87cd        2     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.bss.r0f_pf_probe_timeout)
+    87cd     87cd        2     1                 r0f_pf_probe_timeout
+    87cf     87cf        1     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.bss.r0fc_features)
+    87cf     87cf        1     1                 r0fc_features
+    87d0     87d0        1     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.bss.r0fc_hardware_seed)
+    87d0     87d0        1     1                 r0fc_hardware_seed
+    87d1     87d1        2     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.bss.r0fc_software_seed)
+    87d1     87d1        2     1                 r0fc_software_seed
+    87d3     87d3        1     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.bss.initialized)
+    87d3     87d3        1     1                 initialized
+    87d4     87d4        1     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.bss.enabled)
+    87d4     87d4        1     1                 enabled
+    87d5     87d5        1     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.bss.front)
+    87d5     87d5        1     1                 front
+    87d6     87d6       40     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.bss.buffer)
+    87d6     87d6       40     1                 buffer
+    8816     8816        2     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.bss.top)
+    8816     8816        2     1                 top
+    8818     8818        9     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.bss.r0f_pf_copy_request)
+    8818     8818        9     1                 r0f_pf_copy_request
+    8821     8821        1     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.bss.m2rb_launch_authorized)
+    8821     8821        1     1                 m2rb_launch_authorized
+    8822     8822       40     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.bss.core)
+    8822     8822       40     1                 core
+    8862     8862       16     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.bss.camera)
+    8862     8862       16     1                 camera
+    8878     8878      48b     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.bss.renderer)
+    8878     8878      48b     1                 renderer
+    8d03     8d03        2     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.bss.camera_input.0)
+    8d03     8d03        2     1                 camera_input.0
+    8d05     8d05        1     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.bss.input.0)
+    8d05     8d05        1     1                 input.0
+    8d06     8d06       2e     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.bss.snapshots)
+    8d06     8d06       2e     1                 snapshots
+    8d34     8d34        4     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.bss.m2rb_replay_checkpoint)
+    8d34     8d34        4     1                 m2rb_replay_checkpoint
+    8d38     8d38       20     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.bss.m2rb_target_budgets)
+    8d38     8d38       20     1                 m2rb_target_budgets
+    8d58     8d58        4     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.bss.m2rb_guard_budget)
+    8d58     8d58        4     1                 m2rb_guard_budget
+    8d5c     8d5c        1     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.bss.m2rb_status)
+    8d5c     8d5c        1     1                 m2rb_status
+    8d5d     8d5d        0     1         __bss_end = .
+    8d5d     8d5d        0     1 __bss_size = SIZEOF(.bss)
+    8d5d     8d5d       35     1 .noinit
+    8d5d     8d5d       35     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.noinit..Lstatic_stack)
+    8d92     8d92        0     1         __heap_start = ALIGN(., 2)
+    8d92     8d92        0     1 __stack = 0xd000
+       0        0       cc     1 .comment
+       0        0       cc     1         <internal>:(.comment)
+       0        0       1e     1 .llvm_sympart
+       0        0        f     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.llvm_sympart)
+       f        f        f     1         /private/tmp/f65-m2-unbanked-renderer/docs/evidence/flight-demo/2026-10-30-m2-unbanked-renderer/target-1793345752710330000/UNADMITTED.prg.lto.o:(.llvm_sympart)
+       0        0     1430     4 .symtab
+       0        0     1430     4         <internal>:(.symtab)
+       0        0       72     1 .shstrtab
+       0        0       72     1         <internal>:(.shstrtab)
+       0        0      ddd     1 .strtab
+       0        0      ddd     1         <internal>:(.strtab)

@@ -1,0 +1,63 @@
+{
+  "configuration": {
+    "standard": "NTSC",
+    "working_directory": "/private/tmp/f65-m2-boot-tools/ntsc",
+    "prg": "/private/tmp/f65-m2-boot-tools/target/BOOT-ONLY.prg",
+    "executable": "/private/tmp/f65-m2-boot-tools/ntsc/XemuBoot.app/Contents/MacOS/xmega65",
+    "static": "/private/tmp/f65-m2-boot-tools/static.json",
+    "stdout": "/private/tmp/f65-m2-boot-tools/ntsc/stdout.txt",
+    "stderr": "/private/tmp/f65-m2-boot-tools/ntsc/stderr.txt",
+    "result": "/private/tmp/f65-m2-boot-tools/ntsc/result.json",
+    "i2c_sha256": "15aaba90eece687188711b0d1f9bc012f8c7d6ae73ee2fe87ae1e130de6d7d38",
+    "identities": {
+      "xemu": "dd37baf7846b9696adcb662ffe5da040031b07214c66aef9a7f48cc30040b738",
+      "sdl": "4338adca59bfc6bad6ff44d0df03a9cd59c83a8916c478ae5d91e06b5d090761",
+      "rom": "af3c447f791a2fdc48cb21e1bd3fab015e32641228d9d30d21259b9e878c6fa0"
+    },
+    "environment": [
+      "SDL_VIDEODRIVER=cocoa",
+      "SDL_AUDIODRIVER=dummy"
+    ],
+    "arguments": [
+      "-skipconfigfile",
+      "-fastboot",
+      "-besure",
+      "-cpusinglestep",
+      "-nosound",
+      "-videostd",
+      "1",
+      "-lockvideostd",
+      "-fastclock",
+      "40.5",
+      "-rom",
+      "/Users/slice/Documents/Codex/f65-megawing/MEGA65.ROM",
+      "-virtsd",
+      "-sdimg",
+      "/private/tmp/f65-m2-boot-tools/ntsc/virtual",
+      "-prg",
+      "/private/tmp/f65-m2-boot-tools/target/BOOT-ONLY.prg"
+    ]
+  },
+  "debugger_argv": [
+    "/usr/bin/lldb",
+    "-b",
+    "-o",
+    "command script import /private/tmp/f65-m2-throughput-20261109/tools/flight_demo/m2_rebuild/boot_trace.py",
+    "-o",
+    "f65-boot-observe /private/tmp/f65-m2-boot-tools/ntsc/config.json"
+  ],
+  "result": "FAIL",
+  "disposition": "CF001 return verified. Rosetta LLDB reported an intermediate native trace at $100004660 before the guest terminal; harness killed the stopped child.",
+  "locally_retained_console": {
+    "stdout.txt": {
+      "path": "/private/tmp/f65-m2-boot-tools/ntsc/stdout.txt",
+      "bytes": 12288,
+      "sha256": "ad649c3e3463f19bc1c2d356bc9b770db9bd6a14c3c5b7f6160af1e20ca30dc9"
+    },
+    "stderr.txt": {
+      "path": "/private/tmp/f65-m2-boot-tools/ntsc/stderr.txt",
+      "bytes": 3863,
+      "sha256": "8e5afd236e4f6fdef7a055bfb5292d7f783aadde2aee012ea7eadc0c4f494371"
+    }
+  }
+}

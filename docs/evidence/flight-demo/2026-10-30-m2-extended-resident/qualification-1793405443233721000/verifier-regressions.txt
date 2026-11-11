@@ -1,0 +1,20 @@
+test_actual_load_extends_past_8000_with_unloaded_bss_and_scratch (test_linked_admission.LinkedAdmission) ... ok
+test_corrected_initialization_and_bypassed_callsite (test_linked_admission.LinkedAdmission) ... ok
+test_missing_changed_extended_payload_and_accounting_rejected (test_linked_admission.LinkedAdmission) ... ok
+test_original_global_relative_startup_branch_fails_closed (test_linked_admission.LinkedAdmission) ... ok
+test_zz_failed_packet_remains_sealed (test_linked_admission.LinkedAdmission) ... ok
+test_branch_into_partial_stack_initialization_rejected (test_stack_admission.StackAdmission) ... ok
+test_cld_bit_clv_keep_both_flag_outcomes (test_stack_admission.StackAdmission) ... ok
+test_interrupt_mapping_traps_and_all_direct_page_forms_rejected (test_stack_admission.StackAdmission) ... ok
+test_nm_alias_is_used_for_software_stack_initialization (test_stack_admission.StackAdmission) ... ok
+test_nonreturning_terminal_is_bounded_and_does_not_fall_through (test_stack_admission.StackAdmission) ... ok
+test_raw_long_branch_base_and_instruction_boundary (test_stack_admission.StackAdmission) ... ok
+test_return_domains_do_not_mix (test_stack_admission.StackAdmission) ... ok
+test_second_branch_arm_is_checked (test_stack_admission.StackAdmission) ... ok
+test_software_allocation_and_unknown_writes (test_stack_admission.StackAdmission) ... ok
+test_unknown_indirect_recursion_underflow_and_growing_loop_rejected (test_stack_admission.StackAdmission) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.148s
+
+OK
