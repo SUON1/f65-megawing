@@ -1,0 +1,71 @@
+test_all_calibration_endpoint_classes_and_rounding (test_corrected_clock_preflight.ClockAndPhaseTests) ... ok
+test_all_fraction_and_lattice_phases_with_wrap (test_corrected_clock_preflight.ClockAndPhaseTests) ... ok
+test_calibration_partition_and_sample_units_rejected (test_corrected_clock_preflight.ClockAndPhaseTests) ... ok
+test_independent_countdown_across_A_B_and_public_wrap (test_corrected_clock_preflight.ClockAndPhaseTests) ... FAIL
+test_releases_preserve_fraction_across_generations (test_corrected_clock_preflight.ClockAndPhaseTests) ... ok
+test_sampler_rejection_and_sticky_fault (test_corrected_clock_preflight.ClockAndPhaseTests) ... ok
+test_zero_counter_and_half_range_fail_closed (test_corrected_clock_preflight.ClockAndPhaseTests) ... ok
+test_busy_interval_vs_independent_all_phase_timeline (test_corrected_clock_preflight.ConditionalScheduleTests) ... ok
+test_missing_unknown_zero_units_and_tile_credit_fail (test_corrected_clock_preflight.ConditionalScheduleTests) ... ok
+test_native_guard_strict_equality_and_wrap (test_corrected_clock_preflight.ConditionalScheduleTests) ... ok
+test_strict_window_calibration_atomic_and_poll_constraints (test_corrected_clock_preflight.ConditionalScheduleTests) ... ok
+test_synthetic_profile_keeps_actual_admission_false (test_corrected_clock_preflight.ConditionalScheduleTests) ... ok
+test_wait_bound_both_edges_miss_and_first_poll (test_corrected_clock_preflight.ConditionalScheduleTests) ... ok
+test_changed_missing_and_symlink_inputs_refused (test_corrected_clock_preflight.FrozenInputTests) ... ok
+test_parent_symlink_and_unsupported_source_shape (test_corrected_clock_preflight.FrozenInputTests) ... ok
+test_sealed_cap_six_and_extra_member_refused (test_corrected_clock_preflight.FrozenInputTests) ... FAIL
+test_valid_inputs_preserve_unknowns_and_stop (test_corrected_clock_preflight.FrozenInputTests) ... ERROR
+test_wrong_root_and_old_source_as_current_refused (test_corrected_clock_preflight.FrozenInputTests) ... FAIL
+
+======================================================================
+ERROR: test_valid_inputs_preserve_unknowns_and_stop (test_corrected_clock_preflight.FrozenInputTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/f65-m2-corrected-clock-preflight/tests/flight_demo/m2_rebuild/test_corrected_clock_preflight.py", line 297, in test_valid_inputs_preserve_unknowns_and_stop
+    result = self.run_model()
+  File "/private/tmp/f65-m2-corrected-clock-preflight/tests/flight_demo/m2_rebuild/test_corrected_clock_preflight.py", line 294, in run_model
+    return subject.analyze(self.old, self.current, self.refs)
+  File "/private/tmp/f65-m2-corrected-clock-preflight/tools/flight_demo/m2_rebuild/corrected_clock_preflight.py", line 300, in analyze
+    old, target_ids, corrected_ids, refs, counts = frozen_inputs(old_root, corrected_root, references)
+  File "/private/tmp/f65-m2-corrected-clock-preflight/tools/flight_demo/m2_rebuild/corrected_clock_preflight.py", line 83, in frozen_inputs
+    regular_tree_path(root)
+  File "/private/tmp/f65-m2-corrected-clock-preflight/tools/flight_demo/m2_rebuild/corrected_clock_preflight.py", line 63, in regular_tree_path
+    raise ValueError(f"symlinked input: {path}")
+ValueError: symlinked input: /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/f65-cc3-fixtures-hs6rh7w3/old
+
+======================================================================
+FAIL: test_independent_countdown_across_A_B_and_public_wrap (test_corrected_clock_preflight.ClockAndPhaseTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/private/tmp/f65-m2-corrected-clock-preflight/tests/flight_demo/m2_rebuild/test_corrected_clock_preflight.py", line 76, in test_independent_countdown_across_A_B_and_public_wrap
+    self.assertIsNotNone(value)
+AssertionError: unexpectedly None
+
+======================================================================
+FAIL: test_sealed_cap_six_and_extra_member_refused (test_corrected_clock_preflight.FrozenInputTests)
+----------------------------------------------------------------------
+ValueError: symlinked input: /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/f65-cc3-fixtures-hs6rh7w3/old
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/private/tmp/f65-m2-corrected-clock-preflight/tests/flight_demo/m2_rebuild/test_corrected_clock_preflight.py", line 336, in test_sealed_cap_six_and_extra_member_refused
+    self.run_model()
+AssertionError: "input identity" does not match "symlinked input: /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/f65-cc3-fixtures-hs6rh7w3/old"
+
+======================================================================
+FAIL: test_wrong_root_and_old_source_as_current_refused (test_corrected_clock_preflight.FrozenInputTests)
+----------------------------------------------------------------------
+ValueError: symlinked input: /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/f65-cc3-fixtures-hs6rh7w3/old
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/private/tmp/f65-m2-corrected-clock-preflight/tests/flight_demo/m2_rebuild/test_corrected_clock_preflight.py", line 313, in test_wrong_root_and_old_source_as_current_refused
+    subject.analyze(self.old, self.old, self.refs)
+AssertionError: "distinct" does not match "symlinked input: /var/folders/bt/gybs30z52sx1jjjhm2h7_nj80000gq/T/f65-cc3-fixtures-hs6rh7w3/old"
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.261s
+
+FAILED (failures=3, errors=1)

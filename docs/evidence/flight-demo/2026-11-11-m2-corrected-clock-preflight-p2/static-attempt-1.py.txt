@@ -1,0 +1,106 @@
+"""Read-only P2 scope/preservation check; never modifies retained packets."""
+import ast
+from hashlib import sha256
+import json
+from pathlib import Path
+import re
+import subprocess
+
+ROOT = Path(__file__).resolve().parents[4]
+PACKET = Path(__file__).resolve().parent
+PRIOR = ROOT / "docs/evidence/flight-demo/2026-11-11-m2-corrected-clock-preflight"
+BASE = "fcba7cf4f742a216fba1a6954a4e74b7c9d59ec8"
+MAIN = "9570f0ab427121a4e8f042041a14c89aaaeff9e2"
+MODIFIED = {"WORK_IN_PROGRESS.md",
+            "tools/flight_demo/m2_rebuild/corrected_clock_preflight.py",
+            "tests/flight_demo/m2_rebuild/test_corrected_clock_preflight.py"}
+REPORT = "docs/reports/M2_CORRECTED_CLOCK_PREFLIGHT_WAIT_P2.md"
+
+
+def git(root, *args):
+    return subprocess.check_output(["git", *args], cwd=root)
+
+
+def verify(root, inventory):
+    for name, expected in inventory.items():
+        path = root / name
+        raw = path.read_bytes()
+        if path.is_symlink() or len(raw) != expected["bytes"] or sha256(raw).hexdigest() != expected["sha256"]:
+            raise ValueError(f"preservation mismatch: {path}")
+
+
+raw = (PRIOR / "seal.json").read_bytes()
+if sha256(raw).hexdigest() != "2e6b0b0a0dc2cf6b1f89cac0c8d8ee0fe00c2b303edc5a0b8929395b02f74be1":
+    raise ValueError("prior seal changed")
+seal = json.loads(raw)
+if {str(p.relative_to(PRIOR)) for p in PRIOR.rglob("*") if p.is_file()} != set(seal) | {"seal.json"}:
+    raise ValueError("prior sealed inventory changed")
+verify(PRIOR, seal)
+before = json.loads((PACKET / "before.json").read_text())
+verify(ROOT, {p: x for p, x in before.items() if p not in MODIFIED})
+baseline = json.loads((PRIOR / "baseline-before.json").read_text())
+verify(Path("/private/tmp/f65-m2-platform-clock"), baseline)
+verify(ROOT, {p: x for p, x in baseline.items() if p != "WORK_IN_PROGRESS.md"})
+related = json.loads((PRIOR / "related-before.json").read_text())
+for name, expected in related.items():
+    root = Path(name)
+    actual = {"head": git(root, "rev-parse", "HEAD").decode().strip(),
+              "status": git(root, "status", "--short").decode(),
+              "diff_sha256": sha256(git(root, "diff", "--binary")).hexdigest()}
+    if actual != {k: expected[k] for k in actual}:
+        raise ValueError(f"related checkout changed: {name}")
+    verify(root, expected["dirty_files"])
+if git(ROOT, "rev-parse", "HEAD").decode().strip() != BASE:
+    raise ValueError("wrong baseline")
+if git(ROOT, "rev-parse", "origin/main").decode().strip() != MAIN:
+    raise ValueError("main reference changed")
+if git(ROOT, "merge-base", "HEAD", "origin/main").decode().strip() != MAIN:
+    raise ValueError("unexpected ancestry")
+if git(ROOT, "branch", "--show-current").decode().strip() != "codex/65aero-m2-corrected-clock-preflight":
+    raise ValueError("wrong branch")
+if git(ROOT, "diff", "--cached", "--name-only"):
+    raise ValueError("unexpected staged paths")
+changed = set(git(ROOT, "ls-files", "--modified", "--others", "--exclude-standard", "-z").decode().split("\0")) - {""}
+prefix = str(PACKET.relative_to(ROOT)) + "/"
+if any(p not in before and p != REPORT and not p.startswith(prefix) for p in changed):
+    raise ValueError("out-of-scope path")
+counts = {"python": 0, "json": 0, "local_links": 0, "whitespace_files": 0}
+for name in sorted(changed):
+    path = ROOT / name
+    if path.suffix == ".gz":
+        continue
+    text = path.read_text()
+    if any(line.rstrip(" \t") != line for line in text.splitlines()):
+        raise ValueError(f"trailing whitespace: {name}")
+    counts["whitespace_files"] += 1
+    if path.suffix == ".py":
+        ast.parse(text, filename=name)
+        counts["python"] += 1
+    if path.suffix == ".json":
+        json.loads(text)
+        counts["json"] += 1
+    if path.suffix == ".md":
+        for link in re.findall(r"\[[^\]]+\]\(([^)]+)\)", text):
+            if "://" not in link and not link.startswith("#"):
+                if not (path.parent / link.split("#")[0]).exists():
+                    raise ValueError(f"broken link: {name}: {link}")
+                counts["local_links"] += 1
+for name in ("spec/manifests/spec-corpus.json", "interfaces/m2_extended_resident.json", "memory/m2-extended-resident-ledger.json"):
+    json.loads((ROOT / name).read_text())
+    if (ROOT / name).read_bytes() != git(ROOT, "show", f"{BASE}:{name}"):
+        raise ValueError(f"contract changed: {name}")
+if (PACKET / "run-1/preflight.stdout").read_bytes() != (PRIOR / "run-2/preflight.stdout").read_bytes():
+    raise ValueError("preflight output changed")
+history = json.loads((PACKET / "historical-preservation.stdout").read_text())
+if not history["status"].startswith("PASS") or history["unrelated_files"] != 480:
+    raise ValueError("historical preservation missing")
+subprocess.run(["git", "diff", "--check"], cwd=ROOT, check=True)
+print(json.dumps({"status": "PASS for P2 host/static/preservation scope", "counts": counts,
+                  "prior_packet_members": len(seal), "prior_active_identities": len(before),
+                  "preserved_prior_active": len(before) - len(MODIFIED),
+                  "authorized_modified_paths": sorted(MODIFIED),
+                  "published_identities": len(baseline), "candidate_unchanged_identities": len(baseline) - 1,
+                  "related_checkouts": len(related), "unrelated_paths": 480,
+                  "historical_provenance": history["historical_checkouts"],
+                  "preflight_output": "BYTE IDENTICAL TO SEALED ORIGINAL",
+                  "changed_paths": sorted(changed), "target_links": 0, "runtime_executions": 0}, indent=2))

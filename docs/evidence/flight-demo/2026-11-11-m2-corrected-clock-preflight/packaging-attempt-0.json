@@ -1,0 +1,7 @@
+{
+  "status": "FAILED before archive/identity creation",
+  "exit": 1,
+  "error": "FileNotFoundError: /private/tmp/f65-m2-corrected-clock-preflight/<stdin>",
+  "cause": "The packaging driver included the interactive __main__ module as a file.",
+  "correction": "Only real module files are included. No test rerun or evidence modification."
+}

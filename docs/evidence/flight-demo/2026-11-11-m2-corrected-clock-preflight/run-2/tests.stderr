@@ -1,0 +1,23 @@
+test_all_calibration_endpoint_classes_and_rounding (test_corrected_clock_preflight.ClockAndPhaseTests) ... ok
+test_all_fraction_and_lattice_phases_with_wrap (test_corrected_clock_preflight.ClockAndPhaseTests) ... ok
+test_calibration_partition_and_sample_units_rejected (test_corrected_clock_preflight.ClockAndPhaseTests) ... ok
+test_independent_countdown_across_A_B_and_public_wrap (test_corrected_clock_preflight.ClockAndPhaseTests) ... ok
+test_releases_preserve_fraction_across_generations (test_corrected_clock_preflight.ClockAndPhaseTests) ... ok
+test_sampler_rejection_and_sticky_fault (test_corrected_clock_preflight.ClockAndPhaseTests) ... ok
+test_zero_counter_and_half_range_fail_closed (test_corrected_clock_preflight.ClockAndPhaseTests) ... ok
+test_busy_interval_vs_independent_all_phase_timeline (test_corrected_clock_preflight.ConditionalScheduleTests) ... ok
+test_missing_unknown_zero_units_and_tile_credit_fail (test_corrected_clock_preflight.ConditionalScheduleTests) ... ok
+test_native_guard_strict_equality_and_wrap (test_corrected_clock_preflight.ConditionalScheduleTests) ... ok
+test_strict_window_calibration_atomic_and_poll_constraints (test_corrected_clock_preflight.ConditionalScheduleTests) ... ok
+test_synthetic_profile_keeps_actual_admission_false (test_corrected_clock_preflight.ConditionalScheduleTests) ... ok
+test_wait_bound_both_edges_miss_and_first_poll (test_corrected_clock_preflight.ConditionalScheduleTests) ... ok
+test_changed_missing_and_symlink_inputs_refused (test_corrected_clock_preflight.FrozenInputTests) ... ok
+test_parent_symlink_and_unsupported_source_shape (test_corrected_clock_preflight.FrozenInputTests) ... ok
+test_sealed_cap_six_and_extra_member_refused (test_corrected_clock_preflight.FrozenInputTests) ... ok
+test_valid_inputs_preserve_unknowns_and_stop (test_corrected_clock_preflight.FrozenInputTests) ... ok
+test_wrong_root_and_old_source_as_current_refused (test_corrected_clock_preflight.FrozenInputTests) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 2.694s
+
+OK

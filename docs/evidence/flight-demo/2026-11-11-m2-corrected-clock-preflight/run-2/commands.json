@@ -1,0 +1,33 @@
+[
+  {
+    "name": "tests",
+    "argv": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests/flight_demo/m2_rebuild",
+      "-p",
+      "test_corrected_clock_preflight.py",
+      "-v"
+    ],
+    "cwd": "/private/tmp/f65-m2-corrected-clock-preflight",
+    "exit": 0
+  },
+  {
+    "name": "preflight",
+    "argv": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "-B",
+      "tools/flight_demo/m2_rebuild/corrected_clock_preflight.py",
+      "--old-root",
+      "/private/tmp/f65-m2-fixed-kernel-cost-correction",
+      "--references",
+      "/private/tmp/f65-m2-service-reference"
+    ],
+    "cwd": "/private/tmp/f65-m2-corrected-clock-preflight",
+    "exit": 2
+  }
+]

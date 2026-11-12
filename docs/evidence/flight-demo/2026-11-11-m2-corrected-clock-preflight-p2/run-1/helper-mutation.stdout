@@ -1,0 +1,20 @@
+{
+  "kind": "helper",
+  "mutation_refused": true,
+  "expected_failure_names": [
+    "test_first_poll_closing_window_counterexample",
+    "test_schedule_wait_result_against_independent_timeline",
+    "test_wait_bound_both_edges_miss_and_first_poll"
+  ],
+  "actual_failure_names": [
+    "test_first_poll_closing_window_counterexample",
+    "test_schedule_wait_result_against_independent_timeline",
+    "test_wait_bound_both_edges_miss_and_first_poll"
+  ],
+  "tests_run": 3,
+  "errors": 0,
+  "mutated_source": "def publication_wait_bound(frame_cycles, window_cycles, poll_gap_cycles, publication_cycles):\n    \"\"\"Elapsed wait bound including first and later polls, all in CPU cycles.\n\n    Ticks/IRQs inside the wait are already charged through the poll-response\n    gap and frame interval. No additional tick reservation belongs here.\n    \"\"\"\n    for name, value in locals().copy().items():\n        integer(value, 1, 1 << 50, name)\n    if window_cycles >= frame_cycles or poll_gap_cycles >= window_cycles:\n        raise ValueError(\"invalid publication frame/window/poll-gap bound\")\n    return frame_cycles - window_cycles + poll_gap_cycles + publication_cycles\n",
+  "test_output": "test_wait_bound_both_edges_miss_and_first_poll (wait_p2_regressions.ConditionalScheduleTests) ... FAIL\ntest_first_poll_closing_window_counterexample (wait_p2_regressions.ConditionalScheduleTests) ... FAIL\ntest_schedule_wait_result_against_independent_timeline (wait_p2_regressions.ConditionalScheduleTests) ... FAIL\n\n======================================================================\nFAIL: test_wait_bound_both_edges_miss_and_first_poll (wait_p2_regressions.ConditionalScheduleTests)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/private/tmp/f65-m2-corrected-clock-preflight/tests/flight_demo/m2_rebuild/test_corrected_clock_preflight.py\", line 197, in test_wait_bound_both_edges_miss_and_first_poll\n    self.assertLessEqual(elapsed, bound)\nAssertionError: 94 not less than or equal to 88\n\n======================================================================\nFAIL: test_first_poll_closing_window_counterexample (wait_p2_regressions.ConditionalScheduleTests)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/private/tmp/f65-m2-corrected-clock-preflight/tests/flight_demo/m2_rebuild/test_corrected_clock_preflight.py\", line 208, in test_first_poll_closing_window_counterexample\n    self.assertLessEqual(elapsed, subject.publication_wait_bound(101, 23, 7, 3))\nAssertionError: 94 not less than or equal to 88\n\n======================================================================\nFAIL: test_schedule_wait_result_against_independent_timeline (wait_p2_regressions.ConditionalScheduleTests)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/private/tmp/f65-m2-corrected-clock-preflight/tests/flight_demo/m2_rebuild/test_corrected_clock_preflight.py\", line 223, in test_schedule_wait_result_against_independent_timeline\n    self.assertLessEqual(elapsed, result[\"publication_wait_elapsed_upper_CPU_cycles\"])\nAssertionError: 695934 not less than or equal to 693995\n\n----------------------------------------------------------------------\nRan 3 tests in 0.000s\n\nFAILED (failures=3)\n",
+  "source_files_modified": false,
+  "execution_authorized": false
+}

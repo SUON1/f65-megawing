@@ -1,0 +1,556 @@
+{
+  "identity": "65AERO-M2-FIXED-KERNEL-PREFLIGHT-3",
+  "status": "BLOCKED: mandatory changed-image costs UNPROVEN",
+  "historical_image_source_commit": "5c78bf7d00aadda0e63ce800e27fe3e142c651c0",
+  "corrected_source_commit": "fcba7cf4f742a216fba1a6954a4e74b7c9d59ec8",
+  "prg_sha256": "7fdcea61387c0e6b7ae92310725966ac6c0e29e82e8ba1c9a6be77335af76aad",
+  "target_seal_sha256": "e906a9472db26272268137773be4c0dd220bb264bd9ff10f1f2b88ef0bce518a",
+  "old_target_input_count": 81,
+  "corrected_source_inputs": {
+    "interfaces/generated/m1_development.h": {
+      "bytes": 1217,
+      "sha256": "9f9f3d28933cd585fac1f4efaaa53a1d32ed63565739dfba66e252faf835a272"
+    },
+    "interfaces/generated/m2_extended_resident.h": {
+      "bytes": 284,
+      "sha256": "53205465da8daa2dc2b1e4a0c1b22aa5b7d233af6bae13f69d711f8212d73332"
+    },
+    "interfaces/generated/m2_full.h": {
+      "bytes": 1007,
+      "sha256": "24868bc121f44cbcedb7b88b0b956f080ca120acf410abda0326d257e0e2d9a3"
+    },
+    "interfaces/generated/m2_pr1.h": {
+      "bytes": 1936,
+      "sha256": "bdb2825313c4b95df37de895db5479b36fae72bc6be6325b2437d6b3d78e44c3"
+    },
+    "interfaces/generated/m2_rebuild_profile.h": {
+      "bytes": 866,
+      "sha256": "78dd368c1226b39218dfc53cf49b56749865df86825751091edc78c5c95cfba3"
+    },
+    "interfaces/generated/m2_tables.c": {
+      "bytes": 1789,
+      "sha256": "dd23e7167eb442a80157c2e40101075f5f517e7bd57f6de5673eca1db4cb399f"
+    },
+    "interfaces/generated/r0a_interfaces.h": {
+      "bytes": 538,
+      "sha256": "7a8ad3dce5f8f20fcdd2adfd293273117eee6ff27dce65fccff3522b8080aece"
+    },
+    "interfaces/generated/r0b_interfaces.h": {
+      "bytes": 2177,
+      "sha256": "a31d5f860e8e76ac9795016531b396d7bc02a515957362ed25ed75a2af13bb6d"
+    },
+    "interfaces/generated/r0c_interfaces.h": {
+      "bytes": 285,
+      "sha256": "e69adb558aac7e3142d1b8396d047c70445d9906ece6389d4b9763e67c31d63f"
+    },
+    "interfaces/generated/r0d_interfaces.h": {
+      "bytes": 252,
+      "sha256": "a00a18cf593ac7d51e055522992f946eed0873006f69e0c8a650a0fdc43c6e97"
+    },
+    "interfaces/generated/r0e_interfaces.h": {
+      "bytes": 479,
+      "sha256": "29609c64855e4ac98cf28e05ece7d9a5bb46957e3c087a1ba4676cde80526bea"
+    },
+    "interfaces/generated/r0f_combined.h": {
+      "bytes": 2880,
+      "sha256": "a728d596e43163e28d1de7d2e17ee366b6df4970be8924bff9f64ca2e4a0d4f2"
+    },
+    "interfaces/generated/r0f_group1_export.h": {
+      "bytes": 697,
+      "sha256": "e86f3dcb16fb8a204b6411329a661853db113725d8138212dff2bcb8c266ff3d"
+    },
+    "interfaces/generated/r0f_group1_pool.h": {
+      "bytes": 1160,
+      "sha256": "2e4dd7b2805cb62fa936c1ba52231b7092fe762e8332a2aee7fe37be11a57455"
+    },
+    "interfaces/generated/r0f_group1_presentation.h": {
+      "bytes": 1074,
+      "sha256": "0bb9fbe4add169446e6f713524b82c7368efa319dc092611537ff4e9087b3f45"
+    },
+    "interfaces/generated/r0f_group1_trace.h": {
+      "bytes": 3119,
+      "sha256": "63e342c6fce691550541ca8b21bc82b42fb893f9366b95ac43b4adebcee413d6"
+    },
+    "interfaces/generated/r0f_interfaces.h": {
+      "bytes": 942,
+      "sha256": "a1c0c55cf73e0aae634e2c4267496f700f90959d5529b25ac5a02652337bc995"
+    },
+    "interfaces/generated/r0f_platform.h": {
+      "bytes": 1235,
+      "sha256": "e9067d9be6ddf5d78ad4a771e18f3199cb6e7256912bc6bbf29dfec923874363"
+    },
+    "interfaces/generated/r0f_resume.h": {
+      "bytes": 761,
+      "sha256": "55ba5146aa0c008590f18eab49c1cdb42b0e42dd67015963bbf85034ced57805"
+    },
+    "interfaces/generated/r0f_successor.h": {
+      "bytes": 2052,
+      "sha256": "dd1fbd6fc50bffed153f50fce5975359300f472f998f67c65fa7fffc3eb59db1"
+    },
+    "interfaces/generated/r0f_successor_integration.h": {
+      "bytes": 2698,
+      "sha256": "412e7ec4ab655b9905a83babd185c1a10b23f2e6bea34cdc4f08ef824f679a91"
+    },
+    "src/core/m1_runtime.c": {
+      "bytes": 3104,
+      "sha256": "7a6e816ad70e4d5c0859e768ff69109cac4c16c14deff328934a3b2c6d12111c"
+    },
+    "src/core/m1_runtime.h": {
+      "bytes": 589,
+      "sha256": "dea575f388825684fc341a869d2c55e746a6fa4188a8a624d369f7dfcc1c41bd"
+    },
+    "src/diagnostics/m2_rebuild/camera.c": {
+      "bytes": 3387,
+      "sha256": "cc0f7f24e87a5974159c2afe4a851b785d0c83f69d2af08af5c44950c55d43af"
+    },
+    "src/diagnostics/m2_rebuild/camera.h": {
+      "bytes": 398,
+      "sha256": "63bf8bea94191e5d398e80d62eff57ab2bc8c4774181beabb0063286a58862cb"
+    },
+    "src/diagnostics/m2_rebuild/main.c": {
+      "bytes": 2693,
+      "sha256": "5e0b7e56020015a658cd239df0be1968b702f06fa53ce629866472e74545bf95"
+    },
+    "src/diagnostics/r0f/combined_model.c": {
+      "bytes": 7409,
+      "sha256": "9aaf2f9b7002c69297be58ff969f57d5e0c034c40659bec9b496f7e8c2ace861"
+    },
+    "src/diagnostics/r0f/combined_model.h": {
+      "bytes": 1332,
+      "sha256": "0931d1e42914903d61d073be597910575a941171c6592b45d4a81649123113df"
+    },
+    "src/diagnostics/r0f/combined_platform.c": {
+      "bytes": 12125,
+      "sha256": "428d54c3274c4c71f64c5c880337a3f2de8d9810518ea9caaa0ce5a99909d47a"
+    },
+    "src/diagnostics/r0f/combined_platform.h": {
+      "bytes": 1389,
+      "sha256": "4d83f75144d74dca6d9442daee528d59e97672d50b8aa41d9f810d4a27436736"
+    },
+    "src/diagnostics/r0f/group1_capture.h": {
+      "bytes": 1158,
+      "sha256": "2082534cb82bbd36fcca164846749026ffab79b2b01e91e4d75be22edf7a8b0f"
+    },
+    "src/diagnostics/r0f/group1_export.h": {
+      "bytes": 1069,
+      "sha256": "a419aa2496fb30ab76dccde87eaf4bdfd5d9957be5618f0fa16b77e883cce168"
+    },
+    "src/diagnostics/r0f/group1_pool.h": {
+      "bytes": 737,
+      "sha256": "ed1a6ccf581e3985ead6a7fe8a324238ff88b4e55b30558f058903deb37b645e"
+    },
+    "src/diagnostics/r0f/group1_presentation.h": {
+      "bytes": 2914,
+      "sha256": "ff5c576734a893cf7f2e156b2c54457c0b2324ef51b5fa02ffb8478db6bc300a"
+    },
+    "src/diagnostics/r0f/group1_scene.h": {
+      "bytes": 396,
+      "sha256": "a621fca30042136d6b152c9cc799782616e1c1c4126fd808fb9ca476bd4daf10"
+    },
+    "src/diagnostics/r0f/group1_timing.h": {
+      "bytes": 1631,
+      "sha256": "b2e8a54fa58836a5c87e8abc860fa3d66b433b924d290b28975c48fc9732bd19"
+    },
+    "src/diagnostics/r0f/group1_transport.h": {
+      "bytes": 500,
+      "sha256": "4791323db21777634796cbab4dc7d3bc37bab0bef95220f80c7fbd8cc4a7d5a0"
+    },
+    "src/diagnostics/r0f/group1_workload.h": {
+      "bytes": 326,
+      "sha256": "76129ad092877528f7114f6f484225dac7101a2873a2e83f4cc4c0f6148bd41a"
+    },
+    "src/diagnostics/r0f/resume_model.h": {
+      "bytes": 238,
+      "sha256": "a9b80f303261868e41420612edf06ebb8800dc60abb36bda7478b73c53366458"
+    },
+    "src/diagnostics/r0f/successor_capture.h": {
+      "bytes": 208,
+      "sha256": "181ff142b1525430911c35c2b7244eb540e05229c80cdd2db18ecb31ec79a484"
+    },
+    "src/diagnostics/r0f/successor_irq.h": {
+      "bytes": 397,
+      "sha256": "adb0619bb19a91c775f304aa8d71b7798e22c9f0a0f48eee6a437fdb629e86e6"
+    },
+    "src/diagnostics/r0f/successor_lifecycle.h": {
+      "bytes": 1581,
+      "sha256": "622681480cf001f90d9e5ff49a20d136248192796cc73568b466ec931c563546"
+    },
+    "src/environment/m2_fixture.c": {
+      "bytes": 2500,
+      "sha256": "bbf33786a0a3a20dbb7e45f87186406b36bcf89fd940ef496ec4a3103b5fdce1"
+    },
+    "src/environment/m2_fixture.h": {
+      "bytes": 377,
+      "sha256": "b648aacefa74936f5dd0825f7c2012265c50c86db196b8cca5a07b90d7fb3926"
+    },
+    "src/graphics/m1_graphics.h": {
+      "bytes": 1025,
+      "sha256": "aba7047213e7b7a0d8ba7a926128e81eabc4862506698a64f684b7c4135d153f"
+    },
+    "src/graphics/m2_commands.inc": {
+      "bytes": 3596,
+      "sha256": "bc8d99837ed08ed0f949ccc62f3ea5afeca5e8493cfd08eb21be05fb7f7acc0e"
+    },
+    "src/graphics/m2_compact.c": {
+      "bytes": 13612,
+      "sha256": "93c38ceaf4672bbe108d23612fee248f83fec2c2658883f0465138d0c118fd62"
+    },
+    "src/graphics/m2_compact.h": {
+      "bytes": 2612,
+      "sha256": "9250881c6315620ef128372c96c978f93c2321f67f1377e032341e2f98f2f003"
+    },
+    "src/graphics/m2_compact_public.c": {
+      "bytes": 9372,
+      "sha256": "a24919e71e642ab4c1a6b6b9b7b56dfd9960ec82036a6c3a7f162289701e44cf"
+    },
+    "src/graphics/m2_geometry.h": {
+      "bytes": 1935,
+      "sha256": "181651397e6a59ea759a4da226072c51a7d71abf5b5dd1811377a229cbe906cd"
+    },
+    "src/graphics/m2_limb.c": {
+      "bytes": 13310,
+      "sha256": "24ea25155a7d5689015988a8140e2b6887f350afec9883933092ebb6487c0bf1"
+    },
+    "src/graphics/m2_limb.h": {
+      "bytes": 1353,
+      "sha256": "9dc8a328bdac11cddf683b5d4f0cc3f7550b4ed141fb873c73d46939bf37dc09"
+    },
+    "src/graphics/m2_prepared_private.h": {
+      "bytes": 802,
+      "sha256": "36e823c4eb20fc638f21553184b78328c40a96fea072ed14d7e2bbe509d6acb1"
+    },
+    "src/graphics/m2_q46_private.h": {
+      "bytes": 1570,
+      "sha256": "a39cec23b356a09e99a451650b68f72a62d7ba3a1c43e550cccd23356fa50f2d"
+    },
+    "src/graphics/m2_raster_private.h": {
+      "bytes": 361,
+      "sha256": "5fa31c7ae70d8dc302a23e01665abd9efd4c0856e3fc9165e27dbee28e57d169"
+    },
+    "src/graphics/m2_rebuild.c": {
+      "bytes": 11778,
+      "sha256": "c7aa006fe43630f07819a543df69629eb7bf52f4a26c7ed35f3c8baadbec5e2f"
+    },
+    "src/graphics/m2_rebuild.h": {
+      "bytes": 2047,
+      "sha256": "ed8323ab7899ee14677eeccafb7704a946548c480841149d9767cd7761ef8913"
+    },
+    "src/graphics/m2_rebuild_text.c": {
+      "bytes": 5247,
+      "sha256": "4e2dcd0ac533432dc13c940c332ca5c05e5ec057281802e3d630233aceb727ae"
+    },
+    "src/graphics/m2_record_private.c": {
+      "bytes": 3545,
+      "sha256": "a95a8485562d1b64ba3aaf613cc912f271fbbaa81decd3ae7cf74864937f7f60"
+    },
+    "src/graphics/m2_record_private.h": {
+      "bytes": 363,
+      "sha256": "58d191e11e1761b2c6781ac2208b875947e23117c33352fe9dfa2d5b602ca9d5"
+    },
+    "src/input/m1_input.c": {
+      "bytes": 461,
+      "sha256": "9a6f763a41615d58287b9d6b68560f961766648223e1a0af7a4b1e0964211e05"
+    },
+    "src/input/m1_input.h": {
+      "bytes": 158,
+      "sha256": "92652343774a66a65d16bcec4a13a401215305958c7ed4c283d078086eb3cbae"
+    },
+    "src/input/m2_rebuild_input.c": {
+      "bytes": 213,
+      "sha256": "8ba01e0125251cfca67f73077a18faf2f493524e58596a08c2b9a135529e357e"
+    },
+    "src/input/m2_rebuild_input.h": {
+      "bytes": 523,
+      "sha256": "18d957492e830282d61fcb4022e756b57d329ea0cb6c51faf5ae095ce6d055bc"
+    },
+    "src/platform/m1/clock_private.h": {
+      "bytes": 1709,
+      "sha256": "16b540ff7950d3102229ad4cabbef6bef5422736bec316822a7a973fd39e8439"
+    },
+    "src/platform/m1/m1_platform.c": {
+      "bytes": 5420,
+      "sha256": "ceb7fcbc1c00d53380713376592ffb66fe20aa96f432315cfdaaf2ea26bd8006"
+    },
+    "src/platform/m1/m1_platform.h": {
+      "bytes": 613,
+      "sha256": "00211a594d0b43ab1163c9025abd2f83ac4d25311e2f7227e942e1eb85e1f119"
+    },
+    "src/platform/m2_rebuild/extended_resident.ld": {
+      "bytes": 927,
+      "sha256": "7d908d5d1a160794649c89bfb8dc096754af4fe22d2c8a1e8d9ba0d5ce95c80b"
+    },
+    "src/platform/m2_rebuild/extended_startup_45gs02.s": {
+      "bytes": 1403,
+      "sha256": "09c7242f125c4e050e7f476f1484ae3305091a9746c8ed4fd6e85e33628333ba"
+    },
+    "src/platform/m2_rebuild/guard.c": {
+      "bytes": 687,
+      "sha256": "eff47ff7fc8396b2114e43b498f2818b3317852835e320ec8bda79390c20c4c3"
+    },
+    "src/platform/m2_rebuild/guard.h": {
+      "bytes": 312,
+      "sha256": "3257265ab9c85c60de155be2cfa266df1f579976d062a3cc410710991b5d6226"
+    },
+    "src/platform/m2_rebuild/io.h": {
+      "bytes": 515,
+      "sha256": "806a8e94a2ecec0840f085612926df61a2bb43d4fb7a7e80879c62c8c1f355d3"
+    },
+    "src/platform/m2_rebuild/platform.c": {
+      "bytes": 8503,
+      "sha256": "24035b74a18e3402ac7fe69180a20794f6ec14be60d3d6d7a972f714cfbf2464"
+    },
+    "src/platform/m2_rebuild/platform.h": {
+      "bytes": 184,
+      "sha256": "d6d62c35496027454c3aa1b96414cf269de29122e31b4d30289947076a25c8e1"
+    },
+    "src/platform/m2_rebuild/startup.ld": {
+      "bytes": 257,
+      "sha256": "86e35c7d6759f9a50c94fcb51fc23cfd1f3d91e0b105ff46e59695b47ba8ff52"
+    },
+    "src/platform/m2_rebuild/startup_45gs02.s": {
+      "bytes": 1184,
+      "sha256": "d5055b8aba3afa24f42ff7faa45cf4749af95e7963a227a19025ed1b716882cc"
+    },
+    "src/platform/m2_rebuild/wide_math.c": {
+      "bytes": 2825,
+      "sha256": "477d1f4b879fc31614147e91d53f79496db728ac922c1d5995aa409f21504eba"
+    },
+    "src/platform/m2_rebuild/wide_math.h": {
+      "bytes": 479,
+      "sha256": "c63b4f0c3d9fe85b5378acb3941c608acc123d22c8600082da50ad08e346575d"
+    },
+    "src/platform/r0f/combined_45gs02.s": {
+      "bytes": 1846,
+      "sha256": "f57927e7b4177adb68a72c3f98d4d76b96257c3940c4bd96f9799effa7fbae11"
+    },
+    "src/platform/r0f/qualification_45gs02.s": {
+      "bytes": 3297,
+      "sha256": "c2ee3a522bd20795074b04a1a1a317baf80a420eebfd3aa1cb2c5f9a1fb9e600"
+    },
+    "src/presentation/m1_snapshot.c": {
+      "bytes": 1333,
+      "sha256": "0bc27b247f8b9a678c09c68afa158831477ade48949b8bc9b3631ecc11ca7191"
+    },
+    "src/presentation/m1_snapshot.h": {
+      "bytes": 416,
+      "sha256": "964af7bf654b102d5db67eccf8104e224916b7ac40da6a3540d1271c6dc1abe6"
+    }
+  },
+  "packet_members": {
+    "2026-11-11-m2-fixed-kernel-preflight": 20,
+    "2026-11-11-m2-fixed-kernel-cost-correction": 23,
+    "2026-11-11-m2-platform-clock": 13,
+    "2026-11-11-m2-platform-clock-p2": 16
+  },
+  "reference_revision": "40dfef0d1d5f56be2469492715c12bdb32c75b67",
+  "reference_sha256": {
+    "targets/mega65/mega65.c": "b6550e3263d82a2b59b452c7f3d400f56544ab8be36c4b46cdcc087bfc67621e",
+    "targets/mega65/vic4.c": "7abafaf98dde6c8a3b5ad582b811dd1a9071e0ff2f47bbc2a767b6372b878928",
+    "targets/mega65/vic4.h": "15147c924d88ae1d4c01a407bb12097d5d9b076e34eb6eba9a4f982db200272f",
+    "targets/mega65/io_mapper.c": "ab5dc491ed0b2c41ac4e3c8ed6413ee1db3d9191cf75dfa6b9094adb91bcdfd0",
+    "targets/mega65/xemu-target.h": "ab0f7ad422e7601eacc63e8ad29f837b78ecc22b856900c1da7fbfb6ceecaca7",
+    "xemu/cpu65.c": "2f138d3da13583b8f21669fe09d802296fdf211e98826d46e16d5b546e1cfc14",
+    "xemu/cpu65_mega65_timings.h": "6bb84846f83975acbdff5f16e39ebe7b5e08390cb68ed0cab2a85df311b4af58",
+    "xemu/cia6526.c": "ce7429739fbd4e76784ab18061086b250f0b990252a21bce9f9c32879ce5ca21"
+  },
+  "raw_source_witnesses": {
+    "timer_a_decrements_by_supplied_ticks": true,
+    "timer_a_underflow_at_zero": true,
+    "timer_a_adds_latch_not_latch_plus_one": true,
+    "timer_b_counts_a_underflows": true,
+    "timer_b_underflow_at_zero": true,
+    "timer_b_adds_latch_not_latch_plus_one": true,
+    "both_latches_ffff": true,
+    "linked_timer_force_load_and_start": true,
+    "cia1_ticks_32_per_scanline_update": true,
+    "binary_composite_timestamp": true,
+    "coherent_sampler_and_reload_exclusion": true
+  },
+  "corrected_source_witnesses": {
+    "modulo_converter": true,
+    "sticky_fault_and_half_range": true,
+    "seventeen_samples_and_ratio": true,
+    "ratio_remainder_carry": true,
+    "raster_then_selector_readback": true,
+    "record_latch_and_uncertain_fault": true,
+    "q16_release_carry": true,
+    "one_cia_update_after_cpu_batch": true,
+    "multi_operation_batch": true,
+    "physical_raster_updated_after_increment": true,
+    "selector_dependent_fetch": true,
+    "irq_disabled_sources_and_raster_ack": true
+  },
+  "clock_semantics": "PASS at source-model tier; accepted PC/P2 host evidence retained; no changed-image proof",
+  "nominal_100Hz_rate_qualification": "UNPROVEN: broad phase enclosure permits approximately +/-6.25 percent calibration bias; this is not an adopted rate tolerance",
+  "calibration_phase_model": {
+    "PAL": {
+      "offset_domain_updates": [
+        0,
+        624
+      ],
+      "endpoint_classes": 1249,
+      "period_q16_min": 614400000,
+      "period_q16_max": 696320000,
+      "minimum_due_separation_lines": 292,
+      "minimum_due_separation_CPU_cycles": 378432,
+      "safe_interior_raster_interval": [
+        5,
+        96
+      ],
+      "minimum_interior_CPU_cycles": 117936,
+      "minimum_prefetch_complete_lines": 14,
+      "coverage": "integer interval enclosure of every offset, Q16 carry and 32-count lattice phase"
+    },
+    "NTSC": {
+      "offset_domain_updates": [
+        0,
+        526
+      ],
+      "endpoint_classes": 1053,
+      "period_q16_min": 618696503,
+      "period_q16_max": 701189370,
+      "minimum_due_separation_lines": 295,
+      "minimum_due_separation_CPU_cycles": 379665,
+      "safe_interior_raster_interval": [
+        5,
+        48
+      ],
+      "minimum_interior_CPU_cycles": 55341,
+      "minimum_prefetch_complete_lines": 14,
+      "coverage": "integer interval enclosure of every offset, Q16 carry and 32-count lattice phase"
+    }
+  },
+  "conditional_window": "source ordering established; whole first-high-read through matching record including IRQ must be <1287 NTSC /1296 PAL CPU cycles",
+  "conditional_schedule": {
+    "status": "sufficient interval constraints only; no numeric candidate allowance",
+    "W": "377*C_product + 198*C_division + W_frame_rest (includes full 640 tiles/45840 bytes)",
+    "R": "least upper fixed point W+(1+ceil(R/T))*(C_tick+F)+(1+ceil(R/L))*I",
+    "G": "same response bound for complete failed-poll cost, including carry-in ticks, fragments and IRQs",
+    "requirements": [
+      "finite R; G<T and G<U; F>atomic with total guard/idle tail charged",
+      "tick observation/work plus IRQ fits before next minimum due event",
+      "H=R_frame*(L+batch_excess); U=(top-21)*L",
+      "V=H-U+2G+C_publication; no additional tick reservation inside V",
+      "A=R+V; A<=2025000; B+A<=2025000",
+      "input_age+2*A+B<=4050000; no reset of phase between generations"
+    ]
+  },
+  "model_conditions": [
+    "pinned normal 40.5MHz CPU multi-op mode; no DMA, trace, single-step or hypervisor debugging; no early batch stop on successful path",
+    "frame-counter observation gap <one frame; frame read through successful clock sample <one line",
+    "bounded batch overshoot and raw sampler window <one line, including IRQ",
+    "every successful changed-image clock gap <2^31 native counts, never inferred just from small delta",
+    "at most one IRQ per physical line plus one pending; no successful continuation through NMI fault",
+    "foreground/guard native-count grants include 32*(ceil(C/L)+1) endpoint envelope and all wrapper/staleness cost",
+    "FK-D4 capture policy is a successor obligation, unimplemented in historical executable",
+    "normal publication returns without yield; preactivation failure retains old frame; uncertain selector is terminal/reset with displayed identity UNPROVEN",
+    "cell-exclusive tiles/complete maps; 80-byte bitmap,24-byte delta; synchronous retired 64-byte Platform buffer reuse, including failure/cancellation"
+  ],
+  "retained_demand": {
+    "products": 377,
+    "divisions": 198,
+    "quotient_digits": 396,
+    "tiles": 640,
+    "display_bytes": 45840
+  },
+  "unknown_costs": {
+    "frame_poll_gap": {
+      "value": null,
+      "units_and_scope": "CPU cycles: every calibration frame-counter observation gap"
+    },
+    "frame_read_to_sample": {
+      "value": null,
+      "units_and_scope": "CPU cycles: frame read through successful corrected sample, retries/IRQ included"
+    },
+    "clock_gap": {
+      "value": null,
+      "units_and_scope": "native counts: all changed-image successful sample gaps, including initialization/failure paths"
+    },
+    "batch_excess": {
+      "value": null,
+      "units_and_scope": "CPU cycles per scanline: normal-mode instruction-batch overshoot upper bound"
+    },
+    "product": {
+      "value": null,
+      "units_and_scope": "CPU cycles: complete exact signed/carry/round/overflow product, all wrappers"
+    },
+    "division": {
+      "value": null,
+      "units_and_scope": "CPU cycles: complete normalization, two quotient digits, correction, finish and wrappers"
+    },
+    "frame_rest": {
+      "value": null,
+      "units_and_scope": "CPU cycles: all nonarithmetic foreground work, dispatch/clocks/guards, geometry control, horizon, maps, 640 tiles, text, 45840-byte transfer and setup; excludes tick/IRQ/wait"
+    },
+    "atomic": {
+      "value": null,
+      "units_and_scope": "CPU cycles: largest indivisible foreground operation, including call/return"
+    },
+    "tick": {
+      "value": null,
+      "units_and_scope": "CPU cycles: full ordered 21-stage tick and input/release work, corrected clock and observation latency; excludes IRQ"
+    },
+    "fragment": {
+      "value": null,
+      "units_and_scope": "CPU cycles per release: TOTAL unusable guard/atomic tail, no-grant polling and observation staleness, at least atomic + guard/idle tail"
+    },
+    "irq": {
+      "value": null,
+      "units_and_scope": "CPU cycles: complete interrupt entry/handler/return under pinned arrival envelope"
+    },
+    "poll": {
+      "value": null,
+      "units_and_scope": "CPU cycles: complete unsuccessful commit loop including clock/fault/guard/return and retries; excludes separately charged tick/IRQ/fragment"
+    },
+    "publication": {
+      "value": null,
+      "units_and_scope": "CPU cycles: first raster high read through selector/readback, first enable, matching record, calls and IRQ; no yielding"
+    },
+    "capture_gap": {
+      "value": null,
+      "units_and_scope": "CPU cycles: previous commit through next logical capture, including scheduling/IRQ/input"
+    },
+    "input_age": {
+      "value": null,
+      "units_and_scope": "CPU cycles: persistent input change through its authoritative sampled pose, including tick/IRQ/observation"
+    },
+    "clock_resident_extra": {
+      "value": null,
+      "units_and_scope": "bytes: additional clock state/code/padding/scratch/alignment, minimum 10 logical bytes"
+    },
+    "stack": {
+      "value": null,
+      "units_and_scope": "bytes: changed whole-program HW/SW stack, compiler helpers, IRQ/NMI/fault paths"
+    }
+  },
+  "first_unresolved_gate": "changed-image observation/calibration/clock and batch envelopes; no target costs measured",
+  "actual_complete_cost_admission": "UNPROVEN",
+  "actual_phase_schedule": "NOT REACHED",
+  "remaining_cost_allowance_cycles": null,
+  "launch_budget": null,
+  "service_budgets": null,
+  "historical_resident": {
+    "bytes": 29426,
+    "ceiling": 28671,
+    "deficit": 755,
+    "scratch": 87,
+    "reserve": 0
+  },
+  "historical_cold_lower_bound": {
+    "cycles": 2323776,
+    "ceiling": 2025000,
+    "deficit": 298776
+  },
+  "conditional_replacement_bytes": {
+    "retirement": 6935,
+    "gross": 6180,
+    "after_margin_and_data": 5820,
+    "current_expression": "5820-C_clock",
+    "upper_before_other_clock_charges": 5810
+  },
+  "resident_admission": "UNPROVEN / NOT BUILT",
+  "stack_admission": "UNPROVEN / NOT BUILT",
+  "target_links": 0,
+  "runtime_executions": 0,
+  "execution_authorized": false
+}
